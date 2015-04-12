@@ -1741,14 +1741,16 @@ Ein Schema heißt \textit{normal}\index{Schema!normal}, wenn seine Halme normal 
 \begin{enumerate}[(i)]
 \item Ein \textit{Primdivisor}\index{Primdivisor} auf $X$ ist ein abgeschlossenes, integres Unterschema der Kodimension $1$.
 \item Ein \textit{Weil-Divisor}\index{Divisor!Weil} ist ein Element der freien abelschen Gruppe $\operatorname{Div}(X)$, die von den Primdivisoren erzeugt wird. Wir schreiben ein Divisor als $D=\sum_i n_iY_i$ mit Primdivisoren $Y_i$ und $n_i\in\mathbb{Z}$ mit $n_i=0$ für fast alle $i$. Ein solcher Divisor heißt \textit{effektiv}\index{Divisor!effektiv}, falls alle $n_i\geq 0$ sind.
-\item Sei $Y$ ein Primdivisor auf $X$ und $\eta$ ein generischer Punkt in $Y$. Dann ist $\mathcal{O}_{X,\eta}$ nach \hyperref[6.4]{Theorem 6.4} ein diskreter Bewertungsring mit Quotientenkörper $K$, der \textit{Funktionenkörper}\index{Funktionenkörper} von $X$. Sei $v_Y:K^\times\to\mathbb{Z}$ die zugehörige diskrete Bewertung. Sei $f\in K^\times$. Ist $v_Y(f)>0$, so sagen wir, dass $f$ eine \textit{Nullstelle}\index{Nullstelle} entlang $Y$ von der Ordnung $v_Y(f)$ hat. Ist $v_Y(f)<0$, so sagen wir, dass $f$ ein \textit{Pol}\index{Pol} entlang $Y$ von der Ordnung $-v_Y(f)$ besitzt.
+\item Sei $Y$ ein Primdivisor auf $X$ und $\eta$ ein generischer Punkt in $Y$. Dann ist $\mathcal{O}_{X,\eta}$ nach \hyperref[6.4]{Theorem 6.4} ein diskreter Bewertungsring mit Quotientenkörper $K$, der \textit{Funktionenkörper}\index{Funktionenkörper} von $X$. Wir bezeichnen die zugehörige diskrete Bewertung mit  $v_Y:K^\times\to\mathbb{Z}$. 
+
+Sei $f\in K^\times$. Ist $v_Y(f)>0$, so sagen wir, dass $f$ eine \textit{Nullstelle}\index{Nullstelle} entlang $Y$ von der Ordnung $v_Y(f)$ hat. Ist $v_Y(f)<0$, so sagen wir, dass $f$ ein \textit{Pol}\index{Pol} entlang $Y$ von der Ordnung $-v_Y(f)$ besitzt.
 \end{enumerate}
 
 \paragraph{Lemma 6.6.}\label{6.6} Sei $X$ ein Schema mit $(\star)$ und $f\in K^\times$. Dann ist $v_Y(f)=0$ für fast alle Primdivisoren $Y$.
 
 \paragraph{Beweis.} Sei $\varnothing \neq U = \operatorname{Spec}(A)\subset_\text{o}X$ affin mit $f|_U$ \textit{regulär}, d.h. $f|_U\in\mathcal{O}_X(U)$. Sei $Z=X\setminus U\subsetneq X$ abgeschlossen. Da $X$ noethersch ist, enthält $Z$ höchstens endlich viele Primdivisoren von $X$, alle anderen treffen $U$. Es genügt also zu zeigen, dass es nur endlich viele Primdivisoren $Y$ in $U$ gibt mit $v_Y(f)\neq 0$, d.h. $v_Y(f)>0$. Es gilt mit $Y=\overline{\{ \eta\}}$:
-\[v_Y(f)>0\iff f\in\mathcal{O}_{U,\eta}=A_\eta\iff f\in\eta\iff Y=V(\eta)\subset V(f)\subsetneq U \]
-$V(f)$ enthält aber nur endlich viele abgeschlossene irreduzible Teilmengen der Kodimension $1$.\qed
+\[v_Y(f)>0\iff f\not\in\mathcal{O}_{U,\eta}^\times=A_\eta^\times\iff f\in\eta\iff Y=V(\eta)\subset V(f)\subset U \]
+Da $f\neq 0$, ist $V(f)\subsetneq U$ eine echte abgeschlossene Teilmenge, und enthält daher nur endlich viele abgeschlossene irreduzible Teilmengen der Kodimension $1$ in $U$.\qed
 
 \paragraph{Definition 6.7.}\label{6.7} Sei $X$ ein Schema mit $(\star)$ und $f\in K^\times$. Der Divisor $\operatorname{div}(f)$ von $f$ ist definiert als:
 \[\operatorname{div}(f)=\sum_Y v_Y(f)Y \]
@@ -1781,7 +1783,74 @@ Somit ist $K^\times\to\operatorname{Div}(X),\ f\mapsto\operatorname{div}(f)$ ein
 
 \paragraph{Definition 6.13.}\label{6.13} Sei $X=\mathbf{P}^n_k$. Jeder Primdivisor $Y$ in $X$ hat die Form $Y=V_+(f_Y)$. Betrachte die Abbildung $Y\mapsto\deg(f_Y)$. Diese induziert ein Gruppenhomomorphismus $\operatorname{Div}(X)\to\mathbb{Z}$. Wir zeigen, dass dieser über $\operatorname{Cl}(X)$ faktorisiert. Sei $f\in K^\times$. Dann gilt:
 \[\deg\operatorname{div}(f)=\sum_Y v_Y(f) \deg(Y)=\sum_Y v_Y(f) \deg(f_Y) \]
-$f=\frac{g}{h}$ mit homogenen $g,h$ vom selben Grad $d$. Sei $g=g_1^{n_1}\cdots g_r^{n_r}$ eine Zerlegung in irreduzible Elemente $g_i$ vom Grad $d_i$. Dann sind $Y_i=\operatorname{div}(g_i)$ nach \hyperref[6.12]{Satz 6.12 (ii)} Primdivisoren.
+Sei $f=\frac{g}{h}$ mit homogenen $g,h$ vom selben Grad $d$. Sei $g=g_1^{n_1}\cdots g_r^{n_r}$ eine Zerlegung in irreduzible Elemente $g_i$ vom Grad $d_i$. Dann sind $Y_i=\operatorname{div}(g_i)$ nach \hyperref[6.12]{Satz 6.12 (ii)} Primdivisoren. Es gilt:
+\[\deg\operatorname{div}(g)=\sum_i n_i\deg(g_i) = \sum_i n_id_i = d \]
+Analog ist $\deg\operatorname{div}(h)=d$. Somit ist $\deg\operatorname{div}(f)=\deg\operatorname{div}(g)-\deg\operatorname{div}(h)=0$.\qed
+
+\paragraph{Satz 6.15.}\label{6.15} Sei $X=\mathbf{P}_k^n$. Dann gilt:
+\begin{enumerate}[(i)]
+\item Ist $D$ ein Divisor auf $X$, so ist $D\sim\deg(D)\cdot V_+(T_0)$
+\item $\deg:\operatorname{Cl}(X)\to\mathbb{Z}$ ist ein Isomorphismus.
+\end{enumerate}
+
+\paragraph{Beweis.} \begin{enumerate}[(i)]
+\item Sei $D=\sum_Y n_YY$ ein Divisor mit Primdivisoren $Y$. Nach \hyperref[6.12]{Satz 6.12 (ii)} ist $Y=V_+(f_Y)$ mit irreduziblen, homogenen Polynomen $f_Y$ vom Grad $r_Y$. Wir schreiben $f_Y=T_0^{r_Y} g_Y$, wobei $g_Y$ ein Polynom in $\frac{T_1}{T_0},\ldots,\frac{T_n}{T_0}$ ist. Die $g_Y$ sind rationale Funktionen auf $\mathbf{P}_k^n$ und es gilt:
+\[\operatorname{div}(g_Y) = V_+(f_Y)-r_YV_+(T_0) \implies V_+(f_Y)\sim r_YV_+(T_0) \]
+Also gilt $D=\sum_Yn_Y V_+(f_Y)\sim \big(\sum n_Y r_Y\big) V_+(T_0) = \deg(D)\cdot V_+(T_0)$.
+\item folgt aus (i) und wegen $\deg V_+(T_0)=1$.\qed
+\end{enumerate}
+
+\paragraph{Satz 6.16.}\label{6.16} Sei $X$ ein Schema mit $(\star)$, $Z\subsetneq X$ eine abgeschlossene Teilmenge und $U=X\setminus Z$. Dann gilt:
+\begin{enumerate}[(i)]
+\item Es gibt einen surjektiven Homomorphismus $\operatorname{Cl}(X)\to\operatorname{Cl}(U)$, der durch $\sum n_iY_i\mapsto \sum n_i(Y_i\cap U)$ gegeben ist, wobei wir die leeren $Y_i\cap U$ ignorieren.
+\item Ist $\operatorname{codim}(Z,X)\geq 2$, dann ist die obige Abbildung ein Isomorphismus.
+\item Ist $Z$ irreduzibel und $\operatorname{codim}(Z,X)=1$, so gibt es eine exakte Folge:
+\[\mathbb{Z}\to\operatorname{Cl}(X)\to\operatorname{Cl}(U)\to 0 \]
+wobei die erste Abbildung durch $1\mapsto Z$ gegeben ist.
+\end{enumerate}
+
+\paragraph{Beweis.}\begin{enumerate}[(i)]
+\item Ist $Y$ ein Primdivisor auf $X$, so ist $Y\cap U$ leer oder ein Primdivisor auf $U$. Sei $f\in K^\times$ mit $\operatorname{div}(f)=\sum n_iY_i$. Fassen wir $f$ als rationale Funktion auf $U$ auf, so erhalten wir $\operatorname{div}(f|_U)=\sum n_i(Y_i\cap U)$. Somit ist die Abbildung $\operatorname{Cl}(X)\to\operatorname{Cl}(U)$ wohldefiniert.
+
+Die Surjektivität sieht man wie folgt: Sei $Y$ ein Primdivisor auf $U$ und $\overline{Y}$ der Abschluss von $Y$ in $X$. Dann ist $\overline{Y}$ ein Primdivisor auf $X$ mit $\overline{Y}\cap U=Y$.
+\item $\operatorname{Div}(X)$ bzw. $\operatorname{Cl}(X)$ hängen nur von Teilmengen der Kodimension $1$ ab.
+\item Es ist $\ker(\operatorname{Cl}(X)\to\operatorname{Cl}(U)) = \{ [D]\in\operatorname{Cl}(X)\mid \operatorname{supp}(D)\subset Z\}=\langle[Z]\rangle$, da $Z$ irreduzibel ist.\qed
+\end{enumerate}
+
+\paragraph{Beispiel 6.17.}\label{6.17} Sei $Y$ eine irreduzible Kurve vom Grad $d$ in $\mathbf{P}_k^2$. Wir haben ein kommutatives Diagramm:
+\[\begin{tikzcd}
+\mathbb{Z} \rar\dar["\cong"'] & \operatorname{Cl}(\mathbf{P}_k^2) \rar\dar["\cong"', "\deg"]& \operatorname{Cl}(\mathbf{P}_k^2\setminus Y) \rar\dar["\cong"]& 0\\
+d\mathbb{Z} \rar[hook] & \mathbb{Z}\rar & \mathbb{Z}/d\mathbb{Z}\rar & 0
+\end{tikzcd}\]
+
+\paragraph{Definition 6.18.}\label{6.18} Sei $k$ ein algebraisch abgeschlossener Körper. Eine \textit{Kurve}\index{Kurve} über $k$ ist ein integres, separiertes Schema $X$ von endlichem Typ über $k$ der Dimension $1$.
+\begin{itemize}
+\item $X$ heißt \textit{vollständig}\index{Kurve!vollständig}, wenn $X\to k$ eigentlich ist.
+\item $X$ heißt \textit{nicht-singulär}\index{Kurve!nicht-singulär}, falls alle lokalen Ringe von $X$ regulär sind.
+\end{itemize}
+
+\paragraph{Satz 6.19.}\label{6.19} Sei $X$ eine vollständige, nicht-singuläre Kurve über $k$ und $Y$ eine beliebige Kurve über $k$ mit einem Morphismus $f:X\to Y$. Dann gilt:
+\[f(X)\text{ ist ein Punkt} \quad\text{oder}\quad f(X)=Y \]
+Im zweiten Fall gilt:
+\begin{enumerate}[(i)]
+\item Die Funktionenkörpererweiterung $K(X)/K(Y)$ ist endlich.
+\item $f$ ist endlich.
+\item $Y$ ist vollständig.
+\end{enumerate}
+
+\paragraph{Lemma 6.20.}\label{6.20} Sei $f:X\to Y$ surjektiv, $g:Y\to Z$ separiert und von endlichem Typ, und $g\circ f:X\to Z$ eigentlich. Dann ist $g$ eigentlich.
+
+\paragraph{Beweis von \hyperref[6.19]{6.19}.} TODO
+
+\paragraph{Theorem 6.21.}\label{6.21} Sei $B$ ein Integritätsring und eine endlich erzeugte Algebra über einem Körper $k$. Setze $K=\operatorname{Quot}(B)$ und sei $L/K$ eine endliche Erweiterung. Dann ist der Ganzabschluss $A$ von $B$ in $L$ ein endlich erzeugter $B$"~Modul.
+
+\paragraph{Beweis.} Siehe z.B. Zariski-Samuel: Commutative Algebra I, Chapter V, Theorem 9.\qed
+
+\paragraph{Beweis von \hyperref[6.20]{6.20}.} TODO
+
+\paragraph{Definition 6.22.}\label{6.22} Sei $f:X\to Y$ ein dominanter Morphismus von Kurven. Dann heißt $\deg(f)=[K(X):K(Y)]$ der \textit{Grad} von $f$\index{Grad}. Sei $X$ eine nicht-singuläre Kurve, erfüllt also insbesondere $(\star)$. Ein Primdivisor von $X$ ist genau ein abgeschlossener Punkt. Ein Divisor $D$ ist somit von der folgenden Form:
+\[D=\sum_i n_iP_i,\quad n_i\in\mathbb{Z},\ P_i\text{ abgeschlossene Punkte} \]
+Der \textit{Grad}\index{Grad} von $D$ ist definiert als $\deg(D)=\sum n_i$.
 
 \printindex
 \end{document}
