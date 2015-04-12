@@ -1,11 +1,11 @@
 \documentclass[11pt,b5paper,openany]{memoir}
 \usepackage[utf8]{inputenc}
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{paralist}
 \usepackage{makeidx}
-\usepackage{graphicx}
-\usepackage{dsfont}
+\usepackage{graphicx, tikz}
+\usetikzlibrary{cd, babel}
 \usepackage{hyperref}
 \hypersetup{
     bookmarksopen=true,
@@ -174,7 +174,9 @@ Ist $X$ ebenfalls affin, so gilt $X\cong Y$, genau dann wenn $A(X)\cong A(Y)$. D
 \end{enumerate}
 
 \paragraph{Definition 1.2.}\label{1.2} Eine Prägarbe $F$ auf einem topologischen Raum $X$ heißt \textit{Garbe}\index{Garbe}, falls die folgenden Diagramme exakt sind:
-\[\xymatrix{0\ar[r] & F(U)\ar[r]_-{\operatorname{res}} & \displaystyle\prod_i F(U_i)\ar@<.5ex>[r]\ar@<-.5ex>[r]_-{\operatorname{res}} & \displaystyle\prod_{i,j}F(U_i\cap U_j)} \]
+\[\begin{tikzcd}
+0\ar[r] & F(U)\ar[r, "\operatorname{res}"] & \displaystyle\prod_i F(U_i)\ar[r, "\operatorname{res}", shift left] \ar[r, shift right] & \displaystyle\prod_{i,j}F(U_i\cap U_j)
+\end{tikzcd} \]
 für alle $U\subset_\text{o}X$ und jede offene Überdeckung $U=\bigcup_i U_i$, d.h:
 \begin{enumerate}[(i)]
 \item $s\mapsto (\operatorname{res}^U_{U_i}(s))_i$ ist injektiv, d.h. aus $s|_{U_i}=0$ für alle $i$ folgt $s=0$.
@@ -183,10 +185,10 @@ für alle $U\subset_\text{o}X$ und jede offene Überdeckung $U=\bigcup_i U_i$, d
 
 \paragraph{Definition 1.3.}\label{1.3} \begin{enumerate}[(i)]
 \item Ein \textit{Morphismus}\index{Morphismus!Prägarben} $\varphi:F\to G$ von Prägarben auf $X$ ist ein Morphismus kontravarianter Funktoren, d.h. eine Kollektion von Morphismen $(\varphi(U))_{U\subset_\text{o}X}$, so dass für alle offenen Mengen $V\subset U$ folgendes Diagramm kommutativ ist:
-\[\xymatrix{
-F(U)\ar[rr]^{\varphi(U)}\ar[d]_{\operatorname{res}^U_V} && G(U)\ar[d]^{\operatorname{res}^U_V}\\
-F(V)\ar[rr]_{\varphi(V)} && G(V)
-} \]
+\[\begin{tikzcd}
+F(U)\ar[rr, "\varphi(U)"]\ar[d, "\operatorname{res}^U_V"'] && G(U)\ar[d, "\operatorname{res}^U_V"]\\
+F(V)\ar[rr, "\varphi(V)"'] && G(V)
+\end{tikzcd} \]
 \item Ein \textit{Morphismus}\index{Morphismus!Garben} von Garben ist ein Morphismus von Prägarben. Die (Prä-)Garben bilden eine Kategorie.
 \end{enumerate}
 
@@ -230,10 +232,10 @@ heißen \textit{Prägarbenkern}, \textit{-kokern} und \textit{-bild} von $\varph
 \paragraph{Satz \& Definition 1.8.}\label{1.8} Sei $F$ eine Prägarbe. Dann existiert eine Garbe $F^+$ und ein Morphismus von Prägarben $\theta:F\to F^+$ mit folgender Universaleigenschaft:
 
 Sei $G$ eine Garbe und $\phi:F\to G$ ein Morphismus von Prägarben. Dann existiert ein eindeutig bestimmter Morphismus $\psi:F^+\to G$, so dass das folgende Diagramm kommutiert:
-\[\xymatrix{ 
-F\ar[rr]^-\theta\ar[d]_\phi && F^+\ar@{-->}[dll]^\psi\\
+\[\begin{tikzcd} 
+F\ar[rr, "\theta"]\ar[d, "\phi"'] && F^+\ar[dll, "\psi", dashed]\\
 G
-} \]
+\end{tikzcd} \]
 $F^+$ ist somit eindeutig bestimmt und heißt die zu $F$ \textit{assoziierte Garbe}\index{assoziierte Garbe!Prägarbe}.
 
 \paragraph{Beweis.} Für jede offene Menge $U\subset X$ setze $F^+(U)$ als die Menge aller Abbildungen $s:U\to\coprod_{P\in U}F_P$, so dass:
@@ -264,7 +266,9 @@ Mit anderen Worten: $\varphi$ ist genau dann injektiv, wenn $\varphi(U):F(U)\to 
 Nach der Universaleigenschaft gibt es einen natürlichen Morphismus $\psi:\operatorname{im}(\varphi)\to G$. Dieser ist injektiv, da $(\operatorname{im}\varphi)_P:\operatorname{im}(\varphi_P) \to G_P$ für alle $P\in X$ injektiv ist.
 \item $\varphi$ heißt \textit{surjektiv}\index{Surjektivität}, wenn $\operatorname{im}(\varphi)=G$.
 \item Eine Garbensequenz
-\[\xymatrix{\cdots \ar[r] & F^i\ar[r]^{\varphi^i} & F^{i+1}\ar[r]^{\varphi^{i+1}} & F^{i+2}\ar[r] & \cdots } \]
+\[\begin{tikzcd}
+\cdots \ar[r] & F^i\ar[r, "\varphi^i"] & F^{i+1}\ar[r, "\varphi^{i+1}"] & F^{i+2}\ar[r] & \cdots 
+\end{tikzcd} \]
 heißt \textit{exakt}\index{Exaktheit}, falls $\ker(\varphi^{i+1})=\operatorname{im}(\varphi^i)$ für alle $i$ gilt.
 \item Sei $F'$ eine Untergarbe von $F$. Die \textit{Quotientengarbe}\index{Quotientengarbe} $F/F'$ ist die assoziierte Garbe zur Prägarbe $U\mapsto F(U)/F'(U)$. Offensichtlich gilt $(F/F')_P=F_P/F'_P$ für alle $P\in X$.
 \item Der \textit{Kokern}\index{Kokern} von $\varphi$ ist die assoziierte Garbe zum Prägarbenkokern von $\varphi$.
@@ -280,9 +284,9 @@ Insbesondere ist ein Garbenmorphismus genau dann injektiv bzw. surjektiv falls a
 
 Ist $\varphi$ surjektiv, so muss im Allgemeinen $\varphi(U):F(U)\to G(U)$ nicht surjektiv sein.
 \item Sei $0\to F'\to F\to F''$ eine exakte Garbensequenz und $U\subset_\text{o}X$. Dann ist auch die folgende Sequenz exakt:
-\[\xymatrix{
+\[\begin{tikzcd}[cramped, sep=small]
 0 \ar[r] & \Gamma(U,F') \ar[r]& \Gamma(U,F) \ar[r]& \Gamma(U,F'')
-} \]
+\end{tikzcd} \]
 Der Funktor $\Gamma(U,-)$ ist linksexakt, aber nicht exakt.
 \item Sei $\varphi:F\to G$ ein injektiver Morphismus von Prägarben. Dann ist der induzierte Morphismus $\varphi^+:F^+\to G^+$ der assoziierten Garben auch injektiv. Der Funktor $-^+$ ist sogar exakt.
 \end{enumerate}
@@ -299,10 +303,10 @@ d.h. die Folgen $0\to\ker(\varphi)\to F\to\operatorname{im}(\varphi)\to 0$ und $
 \item Sei $(F_i,\varphi_{i,j})$ ein direktes System von Garben auf $X$. Der \textit{direkte Limes}\index{Limes!direkt} $(\varinjlim F_i,\varphi_i)$ ist die assoziierte Garbe zur Prägarbe $U\mapsto \varinjlim F_i(U)$.
 
 Der direkte Limes besitzt die übliche Universaleigenschaft: Sei $G$ eine Garbe und $\psi_i:F_i\to G$ Morphismen mit $\varphi_k\varphi_{ik}=\psi_i$ für alle $i\leq k$. Dann existiert ein eindeutig bestimmter Morphismus $\psi:\varinjlim F_i\to G$, so dass das folgende Diagramm kommutiert:
-\[\xymatrix{
-F_i\ar[rr]^{\varphi_i}\ar[d]_{\psi_i} & & \varinjlim F_i\ar@{-->}[lld]^\psi\\
+\[\begin{tikzcd}
+F_i\ar[rr, "\varphi_i"]\ar[d, "\psi_i"'] & & \varinjlim F_i\ar[lld, "\psi", dashed]\\
 G
-} \]
+\end{tikzcd} \]
 \item Ebenso wird der \textit{projektive Limes}\index{Limes!projektiv} definiert, wobei alle Pfeile umgedreht werden. Es ist außerdem $U\mapsto\varprojlim F_i(U)$ bereits eine Garbe.
 \item Sei $F$ eine Garbe auf $X$ und $s\in F(U)$ ein Schnitt über $U\subset_\text{o}X$. Dann heißt
 \[\operatorname{Supp}(s)=\{P\in U\mid s_P\neq 0\} \]
@@ -367,9 +371,9 @@ F_P,&\text{wenn }P\in U\\
 0,&\text{sonst}
 \end{cases} \]
 Sei $F$ eine Garbe auf $X$. Dann ist die folgende Sequenz exakt:
-\[\xymatrix{
+\[\begin{tikzcd}[cramped, sep=small]
 0\ar[r] & j_!(F|_U)\ar[r] & F \ar[r]& i_\ast(F|_Z)\ar[r] & 0
-} \]
+\end{tikzcd} \]
 
 \section{Schemata}
 
@@ -460,18 +464,18 @@ wobei $f:X\to Y$ eine stetige Abbildung und $f^\sharp:\mathcal{O}_Y\to f_\ast\ma
 \item Definiere $f$ durch $f(\mathfrak{p})=\varphi^{-1}(\mathfrak{p})$ für alle $\mathfrak{p}\in\operatorname{Spec}(B)$. Sei $\mathfrak{a}\subset A$ ein Ideal. Dann ist $f^{-1}(V(\mathfrak{a}))=V(\varphi(\mathfrak{a}))$. Daher ist $f$ stetig. Sei $\mathfrak{p}\in\operatorname{Spec}(B)$. Dann liefert $\varphi$ einen lokalen Homomorphismus $\varphi_\mathfrak{p}:A_{\varphi^{-1}(\mathfrak{p})}\to B_\mathfrak{p}$. Das liefert für $V\subset_\text{o}\operatorname{Spec}(A)$ einen Ringhomomorphismus:
 \[f^\sharp(V):\mathcal{O}_A(V)\to\mathcal{O}_B(f^{-1}(V)) \]
 indem man eine Abbildung $s:V\to\coprod_{\mathfrak{q}\in V} A_\mathfrak{q}$ auf die folgende Abbildung $f^\sharp(s): f^{-1}(V)\to\coprod_{\mathfrak{p}\in f^{-1}(V)}B_\mathfrak{p}$ schickt:
-\[ \xymatrix{
-f^{-1}(V) \ar[r]^-f\ar@{-}[d] & V\ar[r]^-s\ar@{-}[d] & A_{\varphi^{-1}(\mathfrak{p})}\ar[r]^-{\varphi_\mathfrak{p}}\ar@{-}[d] & B_\mathfrak{p}\ar@{-}[d]\\
-\mathfrak{p}\ar@{|->}[r] & f(\mathfrak{p}) = \varphi^{-1}(\mathfrak{p})\ar@{|->}[r] & s(\varphi^{-1}(\mathfrak{p}))\ar@{|->}[r] & \varphi_\mathfrak{p}(s(\varphi^{-1}(\mathfrak{p})))
-} \]
+\[ \begin{tikzcd}[row sep=.1em]
+f^{-1}(V) \ar[r, "f"] & V\ar[r, "s"] & A_{\varphi^{-1}(\mathfrak{p})}\ar[r, "\varphi_\mathfrak{p}"] & B_\mathfrak{p}\\
+\mathfrak{p}\ar[r, mapsto] & f(\mathfrak{p}) = \varphi^{-1}(\mathfrak{p})\ar[r, mapsto] & s(\varphi^{-1}(\mathfrak{p}))\ar[r, mapsto] & \varphi_\mathfrak{p}(s(\varphi^{-1}(\mathfrak{p})))
+\end{tikzcd} \]
 Die $f^\sharp(V)$ gibt uns einen Garbenmorphismus $f^\sharp:\mathcal{O}_A\to f_\ast \mathcal{O}_B$. Die durch $f^\sharp$ induzierte Abbildungen auf den Halmen sind gerade die $\varphi_\mathfrak{p}$. Somit ist $(f,f^\sharp)$ ein Morphismus lokal geringten Räumen.
 \item Sei $(f,f^\sharp):(\operatorname{Spec}B,\mathcal{O}_B)\to(\operatorname{Spec}A,\mathcal{O}_A)$ ein Morphismus von lokal geringten Räu\-men. $f^\sharp$ induziert einen Ringhomomorphismus:
 \[\varphi: A=\Gamma(\operatorname{Spec}A,\mathcal{O}_A)\to\Gamma(\operatorname{Spec}B,\mathcal{O}_B) =B \]
 Sei $\mathfrak{p}\in\operatorname{Spec}(B)$. Dann haben wir induzierte lokale Homomorphismen mit kommutativem Diagramm:
-\[\xymatrix{
-A_{f(\mathfrak{p})} = \mathcal{O}_{A,f(\mathfrak{p})}  \ar[r]^-{f^\sharp_\mathfrak{p}} & \mathcal{O}_{B,\mathfrak{p}} = B_\mathfrak{p}\\
-A \ar[r]_\varphi\ar[u] & B\ar[u]
-} \]
+\[\begin{tikzcd}
+A_{f(\mathfrak{p})} = \mathcal{O}_{A,f(\mathfrak{p})}  \ar[r, "f^\sharp_\mathfrak{p}"] & \mathcal{O}_{B,\mathfrak{p}} = B_\mathfrak{p}\\
+A \ar[r, "\varphi"']\ar[u] & B\ar[u]
+\end{tikzcd} \]
 Da die $f^\sharp_\mathfrak{p}$ lokale Homomorphismen sind, folgt $f(\mathfrak{p})=\varphi^{-1}(\mathfrak{p})$. Somit ist $f^\sharp$ von dem Ringhomomorphismus $\varphi$ induziert.\qed
 \end{enumerate}
 
@@ -499,10 +503,10 @@ $R=\{x\in K\mid v(x)\geq 0\}$ definiert einen Teilring von $K$ und heißt \texti
 \item Der Punkt $t_0=\mathfrak{m}\in\operatorname{Spec}(R)$ ist abgeschlossen, da $V(\mathfrak{m})=\{\mathfrak{m}\}$ und besitzt $R=R_{t_0}$ als lokalen Ring.
 \item Der Punkt $t_1=(0)\in\operatorname{Spec}(R)$ ist offen und dicht in $\operatorname{Spec}(R)$, da $V(0)=\operatorname{Spec}(R)$. $t_1$ besitzt $K=\operatorname{Quot}(R)=R_{t_1}$ als lokalen Ring.
 \end{itemize}
-\[\xymatrix{
+\[\begin{tikzcd}[row sep=.1em]
 \operatorname{Spec}(K)\ar[r] & \operatorname{Spec}(R) &\ar[l] \operatorname{Spec}(R/\mathfrak{m})\\
-(0)\ar@{|->}[r]\ar@{-}[u] & t_1\quad t_0 \ar@{-}@<-1.8ex>[u]\ar@{-}@<2.2ex>[u]& \ar@{|->}[l] (0)\ar@{-}[u]
-} \]
+(0)\ar[r, mapsto] & t_1\quad t_0 & \ar[l, mapsto] (0)
+\end{tikzcd} \]
 \item[3.] Sei $k$ ein Körper. Die \textit{affine Gerade}\index{affine Gerade} $\mathbf{A}_k^1$ über $k$ ist $\operatorname{Spec}k[X]$. Sei $\xi$ das Nullideal in $\operatorname{Spec}k[X]$. Dann ist $\overline{\{\xi\}}=\mathbf{A}_k^1$. Ein solcher Punkt heißt \textit{generischer Punkt}\index{generischer Punkt}. Alle anderen Punkte sind abgeschlossen, da diese den maximalen Idealen in $k[X]$ entsprechen. Es besteht eine Bijektion zwischen den irreduziblen, nicht-konstanten, normierten Polynomen aus $k[X]$ und den abgeschlossenen Punkten von $\mathbf{A}_k^1$.
 
 Ist $k$ algebraisch abgeschlossen, so besteht eine Bijektion zwischen den Elementen aus $k$ und den abgeschlossenen Punkten von $\mathbf{A}_k^1$.
@@ -527,16 +531,16 @@ Somit ist $(X,\mathcal{O}_X)$ ein lokal geringter Raum. Da alle $X_i$ Schemata s
 wobei wir $(f:X\to\operatorname{Spec}A ,\ f^\sharp:\mathcal{O}_A\to f_\ast\mathcal{O}_X)$ durch das Nehmen der globalen Schnitte auf den Ringhomomorphismus $A=\Gamma(\operatorname{Spec}A,\mathcal{O}_A)\to\Gamma(X,\mathcal{O}_X)$ schicken.
 
 \paragraph{Beweis.} Sei $X=\bigcup_\nu X_\nu$ eine affine Überdeckung. Ein Morphismus $(f,f^\sharp)$ ist eindeutig durch seine Einschränkungen $(f_\nu,f_\nu^\sharp)$ auf $X_\nu$ bestimmt. Diese sind nach \hyperref[2.6]{Satz 2.6} wiederum eindeutig bestimmt durch $\alpha(f_\nu)$. Ferner kommutiert das folgende Diagramm:
-\[\xymatrix{
-A\ar[d]_{\alpha(f)}\ar[rr]^-{\alpha(f_\nu)} && \Gamma(X_\nu,\mathcal{O}_{X_\nu})\\
-\Gamma(X,\mathcal{O}_X)\ar[rru]_-{\operatorname{res}}
-} \]
+\[\begin{tikzcd}
+A\ar[d, "\alpha(f)"']\ar[rr, "\alpha(f_\nu)"] && \Gamma(X_\nu,\mathcal{O}_{X_\nu})\\
+\Gamma(X,\mathcal{O}_X)\ar[rru, "\operatorname{res}"']
+\end{tikzcd} \]
 weshalb $\alpha(f)$ schon alle $\alpha(f_\nu)$ eindeutig bestimmt. Somit ist $\alpha$ injektiv. Sei nun ein Ringhomomorphismus $h:A\to\Gamma(X,\mathcal{O}_X)$ gegeben und $h_\nu:A\to\Gamma(X,\mathcal{O}_X)\to\Gamma(X_\nu,\mathcal{O}_X)$. Nach \hyperref[2.6]{Satz 2.6 (iii)} existiert ein $f_\nu:X_\nu\to\operatorname{Spec}(A)$ mit $\alpha(f_\nu)=h_\nu$. Für alle $\nu,\mu$ ist das folgende Diagramm kommutativ:
-\[\xymatrix{
-& \Gamma(X_\nu,\mathcal{O}_X)\ar[dr]^{\operatorname{res}} &\\
-A\ar[ur]^{h_\nu} \ar[dr]_{h_\mu} & & \Gamma(X_\nu\cap X_\mu,\mathcal{O}_X)\\
-& \Gamma(X_\mu,\mathcal{O}_X)\ar[ur]_{\operatorname{res}} &
-} \]
+\[\begin{tikzcd}
+& \Gamma(X_\nu,\mathcal{O}_X)\ar[dr, "\operatorname{res}"] &\\
+A\ar[ur, "h_\nu"] \ar[dr, "h_\mu"'] & & \Gamma(X_\nu\cap X_\mu,\mathcal{O}_X)\\
+& \Gamma(X_\mu,\mathcal{O}_X)\ar[ur, "\operatorname{res}"'] &
+\end{tikzcd} \]
 Aus der Injektivität von $\alpha$ folgt $f_\nu=f_\mu$ auf $X_\nu\cap X_\mu$. Kleben wir die $f_\nu$ nun zusammen, so erhalten wir ein $f:X\to\operatorname{Spec}(A)$ mit $\alpha(f)=h$.\qed 
 
 \paragraph{Korollar 2.14.}\label{2.14} Es gibt eine pfeilumkehrende Kategorienäquivalenz zwischen der Kategorie der affinen Schemata und der Kategorie der kommutativen Ringe mit $1$.
@@ -585,15 +589,15 @@ wobei $\psi$ die folgende kanonische Abbildung ist:
 Sei $U\subset_\text{o}X$ eine affine Umgebung von $x$ mit $U=\operatorname{Spec}(A)$. Nach \hyperref[2.3]{Satz 2.3 (i)} gilt $\mathcal{O}_{X,x}=\mathcal{O}_{U,x}=A_x$. Die kanonische Abbildung $A\to A_x$ induziert $\psi:\operatorname{Spec}(\mathcal{O}_{X,x})\to U\hookrightarrow X$. Diese Abbildung ist unabhängig von $U$: 
 
 Sei $U'\subset_\text{o}X$ eine weitere affine Umgebung von $x$. Dann existiert eine affine Umgebung $U''\subset_\text{o}U\cap U'$ mit $x\in U''$, also können wir o.B.d.A. $\operatorname{Spec}(A)= U\subset U'=\operatorname{Spec}(A')$ annehmen. Es existiert ein kanonischer Homomorphismus $A'\to A$ derart, dass das folgende Diagramm kommutiert:
-\[\xymatrix{
+\[\begin{tikzcd}
 A'\ar[rd]\ar[r] & A\ar[d]\\
 & A'_x= \mathcal{O}_{X,x}= A_x &
-} \]
+\end{tikzcd} \]
 Somit kommutiert:
-\[\xymatrix{
+\[\begin{tikzcd}
 X & U'\ar[l] & U\ar[l]\\
  && \operatorname{Spec}(\mathcal{O}_{X,x})\ar[lu]\ar[u]
-}\qedhere\]
+\end{tikzcd}\qedhere\]
 
 \paragraph{Satz 2.19.}\label{2.19} \begin{enumerate}[(i)]
 \item Sei $A$ ein Ring und $f\in A$. Dann gilt:
@@ -619,10 +623,10 @@ X & U'\ar[l] & U\ar[l]\\
 wobei $\mathfrak{N}_U$ das Nilradikal von $\mathcal{O}_X(U)$ bezeichnet. Dann ist $(X,\mathcal{O}_X^\text{red})$ ein Schema, das zu $X$ assoziierte \textit{reduzierte Schema}\index{Schema!reduziert} $X_\text{red}$. Es gibt einen Morphismus $f:X_\text{red}\to X$ mit dem Homöomorphismus $\operatorname{id}$ auf den unterliegenden topologischen Räumen und $f^\sharp:\mathcal{O}_X\to f_\ast\mathcal{O}_X^\text{red}$ gegeben durch:
 \[\mathcal{O}_X(U)\to\mathcal{O}_X^\text{red}(U),\ s\mapsto \Big(U\stackrel{s}{\to}\coprod_{P\in U}\mathcal{O}_{X,P} \to\coprod_{P\in U}\mathcal{O}_{X,P}^\text{red}\Big) \]
 \item Sei $f:X\to Y$ ein Morphismus von Schemata mit $X$ reduziert. Setze $g=f$ auf den unterliegenden topologischen Räumen. Da $X$ reduziert ist, faktorisiert $f^\sharp:\mathcal{O}_Y\to f_\ast\mathcal{O}_X$ über $\mathcal{O}_Y^\text{red}$. $f^\sharp$ induziert $g^\sharp:\mathcal{O}_Y^\text{red}\to g_\ast\mathcal{O}_X=f_\ast\mathcal{O}_X$. Es gibt also einen eindeutig bestimmten Morphismus $g:X\to Y_\text{red}$ mit kommutativem Diagramm:
-\[\xymatrix{
-X\ar[rr]^f\ar@{-->}[drr]_g && Y\\
+\[\begin{tikzcd}
+X\ar[rr, "f"]\ar[drr, "g"'] && Y\\
 && Y_\text{red}\ar[u]
-} \]
+\end{tikzcd} \]
 \end{enumerate}
 
 \paragraph{} Sei $S=\bigoplus_{d\geq 0} S_d$ ein graduierter Ring und $S_+=\bigoplus_{d>0}S_d$. Ein Primideal $\mathfrak{p}\subset S$ ist genau dann homogen, wenn aus $fg\in\mathfrak{p}$ für gewisse homogene Elemente $f,g\in S$ stets $f\in\mathfrak{p}$ oder $g\in\mathfrak{p}$ folgt. Für ein homogenes Ideal $\mathfrak{a}\subset S$ setze:
@@ -673,10 +677,10 @@ Dieses ist ein Isomorphismus.
 der \textit{$n$-dimensionaler projektiver Raum}\index{projektiver Raum} über $A$. Ist speziell $A=k$ ein algebraisch abgeschlossener Körper, so ist $\mathbf{P}_k^n$ ein Schema. Dessen Teilraum aller abgeschlossenen Punkte ist homöomorph zur projektiven $n$-dimensionalen Varietät.
 
 \paragraph{Definition 2.25.} \label{2.25} Sei $S$ ein beliebiges Schema. Ein \textit{Schema über $S$}\index{Schema!über $S$} ist ein Schema $X$ zusammen mit einem Morphismus $X\to S$, der sogenannte \textit{Strukturmorphismus}\index{Strukturmorphismus}. Ein Morphismus zweier Schemata $X$ und $Y$ über $S$ ist ein Morphismus $f:X\to X'$, so dass das folgende Diagramm kommutiert:
-\[\xymatrix{
-X\ar[rr]^f\ar[d] && X'\ar[lld]\\
+\[\begin{tikzcd}
+X\ar[rr, "f"]\ar[d] && X'\ar[lld]\\
 S
-} \]
+\end{tikzcd} \]
 So ein Morphismus nennt man auch \textit{$S$-Morphismus}\index{Morphismus!$S$-Schemata}. Bezeichne die Kategorie aller Schemata über $S$ mit $S$-Morphismen mit $\mathbf{Sch}(S)$. Für einen Ring $A$ setzen wir auch $\mathbf{Sch}(A)=\mathbf{Sch}(\operatorname{Spec}A)$.
 
 \paragraph{Satz 2.26.}\label{2.26} Sei $k$ ein algebraisch abgeschlossener Körper. Dann gibt es einen natürlichen Funktor
@@ -856,16 +860,16 @@ Ist $Y$ eine abgeschlossene Teilmenge von $X$, so setzen wir:
 \paragraph{Definition 3.17.}\label{3.17} Sei $S$ ein Schema und $X,Y$ $S$-Schemata. Das \textit{Faserprodukt}\index{Faserprodukt} $X\times_SY$ von $X$ und $Y$ über $S$ ist ein Schema, zusammen mit Projektionsmorphismen $p_1:X\times_SY\to X$ und $p_2:X\times_SY\to Y$ derart, dass:
 \begin{enumerate}[(i)]
 \item Das folgende Diagramm kommutiert:
-\[ \xymatrix{
-X\times_S Y\ar[r]^-{p_2}\ar[d]_-{p_1} & Y\ar[d]\\
+\[ \begin{tikzcd}
+X\times_S Y\ar[r, "p_2"]\ar[d, "p_1"'] & Y\ar[d]\\
 X\ar[r] & S
-}\]
+\end{tikzcd}\]
 \item Ist $Z$ ein $S$-Schema und $f:Z\to X,\ g:Z\to Y$ Morphismen derart, dass das folgende Diagramm kommutiert:
-\[\xymatrix{
-Z\ar@/^1pc/[rrd]^g\ar@/_1pc/[ddr]_f\ar@{-->}[rd]^\theta &&\\
-&X\times_S Y\ar[r]_-{p_2}\ar[d]^-{p_1} & Y\ar[d]\\
+\[\begin{tikzcd}
+Z\ar[rrd, bend left, "g"]\ar[ddr, "f"', bend right]\ar[rd, "\theta", dashed] &&\\
+&X\times_S Y\ar[r, "p_2"']\ar[d, "p_1"] & Y\ar[d]\\
 &X\ar[r] & S
-} \]
+\end{tikzcd} \]
 so existiert einen eindeutig bestimmten Morphismus $\theta:Z\to X\times_SY$ mit $f=p_1\theta$ und $g=p_2\theta$.
 \end{enumerate}
 Wird für Schemata $X$ und $Y$ kein Bezug zu einer Basis angegeben, so ist immer das Endobjekt $S=\operatorname{Spec}(\mathbb{Z})$ gemeint, d.h. $X\times Y=X\times_{\operatorname{Spec}(\mathbb{Z})}Y$.
@@ -877,42 +881,42 @@ Wird für Schemata $X$ und $Y$ kein Bezug zu einer Basis angegeben, so ist immer
 \paragraph{Beweis von \hyperref[3.18]{Theorem 3.18}.} Die Eindeutigkeit ist klar.
 \begin{enumerate}
 \item Schritt: Seien $X=\operatorname{Spec}(A),\ Y=\operatorname{Spec}(B),\ S=\operatorname{Spec}(R)$ affin. Somit sind $A$ und $B$ $R$-Algebren. Wir zeigen $X\times_S Y=\operatorname{Spec}(A\otimes_R B)$. Die Projektionsabbildung $p_1:\operatorname{Spec}(A\otimes_RB)\to \operatorname{Spec}(A)$ ist durch die natürliche Abbildung $\tilde{p}_1:A\to A\otimes_RB$ gegeben, analog für $p_2$. Offensichtlich kommutiert:
-\[\xymatrix{
- A\ar[r]^-{\tilde{p}_1} & A\otimes_RB\\
- R\ar[r]\ar[u] & B\ar[u]_{\tilde{p}_2}
-} \]
+\[\begin{tikzcd}
+ A\ar[r, "\tilde{p}_1"] & A\otimes_RB\\
+ R\ar[r]\ar[u] & B\ar[u, "\tilde{p}_2"']
+\end{tikzcd} \]
 Sei also $Z$ ein $S$-Schema und Morphismen $f:Z\to X,\ g:Z\to Y$ gegeben, die über $S$ gleich sind. Diese entsprechen Ringhomomorphismen $\tilde{f}:A\to\Gamma(Z,\mathcal{O}_Z)$ und $\tilde{g}:B\to\Gamma(Z,\mathcal{O}_Z)$ nach \hyperref[2.13]{Satz 2.13}. Es kommutiert:
-\[\xymatrix{
+\[\begin{tikzcd}
 &&\Gamma(Z,\mathcal{O}_Z)\\
-A\ar[r]_-{\tilde{p}_2}\ar@/^1pc/[rru]^{\tilde{f}}& A\otimes_RB\ar@{-->}[ru]_{\tilde{\theta}} &\\
-R\ar[r]\ar[u] & B\ar[u]^{\tilde{p}_2}\ar@/_1pc/[ruu]_{\tilde{g}}
-} \]
+A\ar[r, "\tilde{p}_2"']\ar[rru, "\tilde{f}", bend left]& A\otimes_RB\ar[ru, "\tilde{\theta}"', dashed] &\\
+R\ar[r]\ar[u] & B\ar[u, "\tilde{p}_2"]\ar[ruu, "\tilde{g}"', bend right]
+\end{tikzcd} \]
 Wegen der Universaleigenschaft des Tensorprodukts gibt es genau einen Ringhomomorphismus $\tilde{\theta}:A\otimes_RB\to\Gamma(Z,\mathcal{O}_Z)$ mit $\tilde{f}\tilde{\theta}=\tilde{p}_1$ und $\tilde{g}\tilde{\theta}=\tilde{p}_2$. \hyperref[2.13]{Satz 2.13} liefert ein eindeutiges $\theta:Z\to\operatorname{Spec}(A\otimes_RB)$ mit $f=p_1\theta$ und $g=p_2\theta$.
 \item Schritt: Seien $X,Y$ beliebige $S$-Schemata und $U\subset_\text{o}X$. Wir nehmen an, dass das Faserprodukt $X\times_SY$ mit Projektionen $p_1,p_2$ existiert. Wir zeigen, dass für die offene Teilmenge $p_1^{-1}(U)\subset X\times_SY$ stets $p_1^{-1}(U)=U\times_SY$ gilt.
 
 Da $p_1^{-1}(U)\subset X\times_SY$, kommutiert das Diagramm:
-\[\xymatrix{
-p_1^{-1}(U)\ar[r]^-{p_2}\ar[d]_{p_1} & Y\ar[d]\\
+\[\begin{tikzcd}
+p_1^{-1}(U)\ar[r, "p_2"]\ar[d, "p_1"'] & Y\ar[d]\\
 U\ar[r] & S
-} \]
+\end{tikzcd} \]
 Sei $Z$ ein $S$-Schema und Morphismen $f:Z\to U,\ g:Z\to Y$ gegeben, so dass $(Z\stackrel{f}{\to} U\stackrel{i}{\hookrightarrow} X\to S)=(Z\stackrel{g}{\to} Y\to S)$. Nach der Universaleigenschaft von $X\times_SY$ existiert ein eindeutiges $\theta:Z\to X\times_SY$ mit $if=p_1\theta$ und $g=p_2\theta$. Insbesondere gilt $\theta(Z)\subset p_1^{-1}(U)$, also $\theta:Z\to p_1^{-1}(U)$. Somit erfüllt $p_1^{-1}(U)$ die Universaleigenschaft von $U\times_SY$.
 \item Schritt: Seien $X,Y$ $S$-Schemata und $\{X_i\}$ eine offene Überdeckung von $X$. Wir nehmen an, dass alle Faserprodukte $X_i\times_SY$ mit Projektionen $p_{1i},p_{2i}$ existieren. Wir zeigen, dass in diesem Fall auch $X\times_SY$ existiert.
 
 Setze $X_{ij}=X_i\cap X_j$ und $U_{ij}=p_{1i}^{-1}(X_{ij})\subset X_i\times_SY$. Nach Schritt 2 folgt nun $U_{ij}=X_{ij}\times_SY$. Wegen Eindeutigkeit existieren nun Isomorphismen $\varphi_{ij}:U_{ij}\stackrel{\sim}{\to}U_{ji}$ mit $\varphi_{ij}=\varphi_{ji}^{-1}$, $\varphi_{ij}(U_{ij}\cap U_{ik})=U_{ji}\cap U_{jk}$ und $\varphi_{ik}=\varphi_{jk}\circ\varphi_{ij}$ auf $U_{ij}\cap U_{jk}$. Mithilfe \hyperref[2.11]{2.11} verkleben wir die $X_i\times_SY$ via $\varphi_{ij}$ und erhalten so ein Schema $Z$ mit Morphismen $\psi_j:X_j\times_SY\to Z$, die Isomorphismen auf einem offenen Unterschema induzieren. Seien $p_1,p_2$ die Morphismen, die durch Verkleben der $p_{1i}$ bzw. $p_{2i}$ entstehen, siehe \hyperref[3.19]{Lemma 3.19}. Wir zeigen nun, dass $Z$ gerade das Faserprodukt $X\times_SY$ mit Projektionsmorphismen $p_1,p_2$ ist.
 
 Es gilt $Z=\bigcup_j\psi_j(X_j\times_SY)$. Also folgt die Kommutativität des zweiten Diagramms aus dem ersten:
-\[\xymatrix{
-X_j\times_S Y\ar[r]^-{p_{1j}}\ar[d]_{p_{2j}} & X_j\ar[d]\\
+\[\begin{tikzcd}
+X_j\times_S Y\ar[r, "p_{1j}"]\ar[d, "p_{2j}"'] & X_j\ar[d]\\
 Y\ar[r] & S
-}\qquad\qquad \xymatrix{
-Z\ar[d]_{p_2}\ar[r]^-{p_1} & X\ar[d]\\
+\end{tikzcd}\qquad\qquad \begin{tikzcd}
+Z\ar[d, "p_2"']\ar[r, "p_1"] & X\ar[d]\\
 Y\ar[r] & S
-}\]
+\end{tikzcd}\]
 Sei nun $Z'$ ein weiteres $S$-Schema und $f:Z'\to X,\ g:Z'\to Y$ gegeben, die über $S$ gleich sind. Setze $Z_i'=f^{-1}(X_i)$ für alle $i$. Zu jedem $i$ existiert genau ein Morphismus ${\theta}_i:Z_i'\to X_i\times_SY\hookrightarrow Z$ mit $f|_{Z_i'}=p_{1i}\circ{\theta}_i$ und $g|_{Z_i'}=p_{2i}\circ{\theta}_i$. Es kommutiert:
-\[\xymatrix{
-X_i\times_SY\ar@{^{(}->}[r]\ar[d]_{p_{1i}} & Z\ar[d]^{p_1}\\
-X_i\ar@{^{(}->}[r] & X
-} \]
+\[\begin{tikzcd}
+X_i\times_SY\ar[r, hook]\ar[d, "p_{1i}"'] & Z\ar[d, "p_1"]\\
+X_i\ar[r, hook] & X
+\end{tikzcd} \]
 Es gilt $Z_i'\cap Z_j'=f^{-1}(X_i\cap X_j)=f^{-1}(X_{ij})$ und daher $f|_{Z'_i\cap Z'_j}=p_{1i}\circ\theta_i|_{Z'_i\cap Z'_j}=p_{1j}\circ\theta_j|_{Z_i'\cap Z_j'}$, entsprechend für $g$. Wegen Eindeutigkeit folgt $\theta_i|_{Z_i'\cap Z_j'}=\theta_j|_{Z'_i\cap Z'_j}$. Daher können wir die $\theta_i$ zu einem Morphismus $\theta:Z'\to Z$ verkleben mit $f=p_1\theta$ und $g=p_2\theta$. $\theta$ ist eindeutig, da $\theta|_{Z_i'}=\theta_i$ und alle $\theta_i$ eindeutig sind.
 \item Schritt: Seien $X,Y$ $S$-Schemata und $S$ affin. Wir zeigen, dass $X\times_SY$ existiert.
 
@@ -922,12 +926,12 @@ Seien $X=\bigcup_iX_i$ und $Y=\bigcup_jY_j$ offene affine Überdeckungen. Nach S
 Seien $q:X\to S$ und $r:Y\to S$ die Strukturmorphismen und $S=\bigcup_iS_i$ eine offene affine Überdeckung. Setze $X_i=q^{-1}(S_i)$ und $Y_i=r^{-1}(S_i)$. Nach Schritt 4 existieren $X_i\times_{S_i}Y_i$. Wir zeigen, dass $X_i\times_{S_i}Y_i$ die Universaleigenschaft von $X_i\times_SY$ erfüllt.
 
 Seien $f:Z\to X_i$ und $g:Z\to Y$ gegeben, die über $S$ gleich sind. Dann gilt $rg(Z)=qf(Z)\subset q(X_i)\subset S_i$, also $g(Z)\subset Y_i$. Wir erhalten kommutatives Diagramm:
-\[\xymatrix{
-Z\ar@/_1pc/[ddr]_f\ar@/^1pc/[rrd]_g\ar@/^1pc/[rrrd]^g\ar@{-->}[rd]_\theta\\
-& X_i\times_{S_i}Y_i\ar[r]_-{p_2}\ar[d]^{p_1} & Y_i\ar@{^{(}->}[r]\ar[d] & Y\ar[dd]^r\\
-& X_i\ar@{^{(}->}[d]\ar[r] & S_i\ar@{^{(}->}[dr] &\\
+\[\begin{tikzcd}
+Z\ar[ddr, "f"', bend right]\ar[rrd, "g"', bend left]\ar[rrrd, "g", bend left]\ar[rd, "\theta"', dashed]\\
+& X_i\times_{S_i}Y_i\ar[r, "p_2"']\ar[d, "p_1"] & Y_i\ar[r, hook]\ar[d] & Y\ar[dd, "r"]\\
+& X_i\ar[d, hook]\ar[r] & S_i\ar[dr, hook] &\\
 & X\ar[rr]_q & & S
-} \]
+\end{tikzcd} \]
 Es existiert genau ein $\theta:Z\to X_i\times_{S_i} Y_i$ mit $f=p_1\theta$ und $g=p_2\theta$. Somit existieren auch $X_i\times_SY$. Nach Schritt 3 existiert auch $X\times_SY$.\qed
 \end{enumerate}
 
@@ -951,27 +955,27 @@ Ein Morphismus $i:Y\to X$ heißt \textit{Immersion}\index{Immersion}, wenn $i$ e
 \end{enumerate}
 
 \paragraph{Beweis.} (i) bis (v) folgen direkt aus der Universaleigenschaft des Faserprodukts. Für (vi) seien $\varphi:Z\to X,\ \psi:Z\to Y$ Morphismen über $T$ und $\xi:X\to S,\ \eta:Y\to S$ die Strukturmorphismen. Wir erhalten folgendes kommutative Diagramm:
-\[ \xymatrix{
-Z\ar@/^1pc/[rrd]^\varphi\ar@{-->}[rd]_\theta\ar@/_1pc/[ddr]_\psi\\
-& X\ar[r]\ar[d]\times_SY & X\ar[d]_\xi\ar@/^1pc/[ddr] &\\
-& Y\ar[r]^\eta\ar@/_1pc/[rrd] & S\ar[dr]^\sigma&\\
+\[ \begin{tikzcd}
+Z\ar[rrd, "\varphi", bend left]\ar[rd, "\theta"', dashed]\ar[ddr, "\psi"', bend right]\\
+& X\ar[r]\ar[d]\times_SY & X\ar[d, "\xi"']\ar[ddr, bend left] &\\
+& Y\ar[r, "\eta"]\ar[rrd, bend right] & S\ar[dr, "\sigma"]&\\
 &&&T
-}\]
+\end{tikzcd}\]
 Wegen der Injektivität von $\sigma$, folgt aus $\sigma\xi\varphi=\sigma\eta\psi$ stets $\xi\varphi=\eta\psi$. Es existiert ein eindeutiges, kompatibles $\theta:Z\to X\times_SY$. Somit erfüllt $X\times_SY$ die Universaleigenschaft von $X\times_TY$.\qed
 
 \paragraph{Definition 3.22.}\label{3.22} Seien $f:X_1\to X_2$ und $g:Y_1\to Y_2$ $S$-Morphismen mit kommutativen Diagramm:
-\[\xymatrix{
-&X_1 \ar[r]^f& X_2\\
-X_1\times_SY_1\ar[dr]_{p_2}\ar[ur]^{p_1}\ar@{-->}[rrr]^{f\times_Sg} &&& X_2\times_SY_2\ar[lu]_{q_1}\ar[ld]^{q_2}\\
-& Y_1\ar[r]_g&Y_2
-} \]
+\[\begin{tikzcd}
+&X_1 \ar[r, "f"]& X_2\\
+X_1\times_SY_1\ar[dr, "p_2"']\ar[ur, "p_1"]\ar[rrr, "f\times_Sg", dashed] &&& X_2\times_SY_2\ar[lu, "q_1"']\ar[ld, "q_2"]\\
+& Y_1\ar[r, "g"']&Y_2
+\end{tikzcd} \]
 Es existiert genau ein Morphismus $f\times_Sg: X_1\times_SY_1\to X_2\times_SY_2$ mit $fp_1=q_1(f\times_Sg)$ und $gp_2=q_2(f\times_Sg)$.
 
 \paragraph{Definition 3.23.}\label{3.23} Sei $f:X\to S$ ein Morphismus von Schemata. Für ein Morphismus $g:T\to S$ erhält man ein $T$-Schema $X_T=X\times_ST$ mit:
-\[\xymatrix{
-X_T\ar[r]\ar[d] & T\ar[d]^g\\
-X\ar[r]_f & S
-} \]
+\[\begin{tikzcd}
+X_T\ar[r]\ar[d] & T\ar[d, "g"]\\
+X\ar[r, "f"'] & S
+\end{tikzcd} \]
 Man sagt, dass $X_T$ durch \textit{Basiswechsel} von $X$ über $S$ durch $T$ erhalten bleibt.\index{Basiswechsel}
 
 \paragraph{Lemma 3.24.}\label{3.24} Sei $U\subset S$ ein offenes Unterschema. Dann gilt für den Basiswechsel $X_U$ von $f:X\to S$:
@@ -1031,10 +1035,10 @@ Sei nun $S$ beliebig und $S=\bigcup_\lambda S_\lambda$ eine offene affine Überd
 \end{enumerate}
 
 \paragraph{Definition 3.31.}\label{3.31} Sei $f:X\to Y$ ein Morphismus von Schemata und $y\in Y$ ein Punkt mit Restklassenkörper $\kappa(y)=\mathcal{O}_{Y,y}/\mathfrak{m}_{Y,y}$. Sei weiter $i:\operatorname{Spec}\kappa(y)\to Y$ der natürliche Morphismus gegeben durch $(y,\operatorname{id}_{\kappa(y)})$ (siehe \hyperref[2.18]{Satz 2.18}). Dann heißt das Faserprodukt $X_y=X\times_Y\operatorname{Spec}\kappa(y)$ die \textit{Faser}\index{Faser} von $f$ über dem Punkt $y$.
-\[\xymatrix{
-X_y\ar[r]^-{p_2}\ar[d]_{p_1} & \operatorname{Spec}\kappa(y)\ar[d]^i\\
-X\ar[r]_f & Y
-}\]
+\[\begin{tikzcd}
+X_y\ar[r, "p_2"]\ar[d, "p_1"'] & \operatorname{Spec}\kappa(y)\ar[d, "i"]\\
+X\ar[r, "f"'] & Y
+\end{tikzcd}\]
 
 \paragraph{Satz.} $X_y$ ist ein $\kappa(y)$-Schema mit $f^{-1}(y)$ als unterliegender topologischer Raum.
 
@@ -1087,10 +1091,10 @@ wobei $v:K^\times\to G$ eine Bewertung ist, d.h. $v(xy)=v(x)+v(y)$ und $v(x+y)\g
 \begin{enumerate}[(i)]
 \item $f$ ist separiert.
 \item Sei $R$ ein Bewertungsring des Körpers $K=\operatorname{Quot}(R)$ und $i:U=\operatorname{Spec}(K)\hookrightarrow T=\operatorname{Spec}(R)$ die kanonische Inklusion. Seien ferner Morphismen $T\to Y,\ U\to X$ derart gegeben, dass das folgende Diagramm kommutativ ist:
-\[\xymatrix{
-U\ar[r]\ar[d]_i & X\ar[d]^f\\
-T\ar[r]\ar@{-->}[ur]^h & Y
-}\]
+\[\begin{tikzcd}
+U\ar[r]\ar[d, "i"'] & X\ar[d, "f"]\\
+T\ar[r]\ar[ur, "h", dashed] & Y
+\end{tikzcd}\]
 Dann gibt es höchstens eine Abbildung $h:T\to X$, die das obige Diagramm kommutativ macht. Mit anderen Worten: Die folgende kanonische Abbildung ist für jeden Bewertungsring $R$ über $Y$ injektiv:
 \[\operatorname{Hom}_Y(\operatorname{Spec}(R),X)\to\operatorname{Hom}_Y(\operatorname{Spec}(K),X),\ h\mapsto h\circ i \]
 \end{enumerate}
@@ -1109,10 +1113,10 @@ Ein Morphismus von Schemata $f$ heißt \textit{quasikompakt}\index{quasikompakt}
 \end{enumerate}
 
 \paragraph{Beweis.} (i)$\implies$(ii) ist trivial. Sei also $X'\subset X$ abgeschlossen und setze $Y'=\overline{f(X')}$. Wir zeigen $Y'=f(X')$. Wir versehen $X'$ und $Y'$ mit der eindeutig bestimmten, reduzierte abgeschlossene Unterschemastruktur in $X$ bzw. $Y$. Seien $i:X'\hookrightarrow X$ und $j:Y'\hookrightarrow Y$ die natürlichen Inklusionen. Das Urbildschema $(f\circ i)^{-1}(Y')$ ist reduziert, besitzt $X'$ als unterliegender topologischer Raum und ist als Schema gleich $X'$, da die reduzierte Unterschemastrukturen eindeutig sind. Somit existiert ein eindeutig bestimmter Morphismus $f':X'\to Y'$:
-\[\xymatrix{
-X'\ar[r]^{f'}\ar[d]_i & Y'\ar[d]^j\\
-X\ar[r]_f & Y
-} \]
+\[\begin{tikzcd}
+X'\ar[r, "f'"]\ar[d, "i"'] & Y'\ar[d, "j"]\\
+X\ar[r, "f"'] & Y
+\end{tikzcd} \]
 $f'$ erfüllt ebenfalls die Voraussetzung (ii). Ferner ist $f'$ quasikompakt. $i$ ist als abgeschlossene Immersion quasikompakt, also auch $f\circ i=j\circ f':X'\to Y$. Unter Basiswechsel sehen wir, dass $X'\times_YY'\to Y'$ quasikompakt ist. Da $j$ eine Immersion ist, ist $X'\cong X'\times_{Y'}Y' = X'\times_YY'$, also ist $X'\to Y'$ quasikompakt.
 
 Wir müssen noch zeigen: Ist $f:X\to Y$ ein quasikompakter, dominanter Morphismus reduzierter Schema, welcher (ii) erfüllt, so ist $f$ surjektiv. Sei dazu $y'\in Y$ gegeben und $y$ ein generischer Punkt der irreduziblen Komponente von $Y$, in der $y'$ liegt. Somit ist $y'$ eine Spezialisierung von $y$. Gilt nun $f^{-1}(y)\neq\varnothing$, so gibt es ein $x\in X$ mit $f(x)=y$. Wegen (ii) gibt es eine Spezialisierung $x'$ von $x$ mit $f(x')=y'$ und wir sind fertig. Somit ist noch das nächste Lemma zu zeigen.\qed
@@ -1141,17 +1145,17 @@ Somit genügt es zu zeigen, dass $g^{-1}(y)\neq \varnothing$, da $g^{-1}(y)=f^{-
 
 \paragraph{Definition 4.15.}\label{4.15} Seien $(A,\mathfrak{m}_A),(B,\mathfrak{m}_B)$ lokale Ringe, die in einem Körper $K$ eingebettet sind. Wir sagen $B$ \textit{dominiert}\index{dominiert} $A$, wenn $A\subset B$ und $\mathfrak{m}_B\cap A=\mathfrak{m}_A$ gilt. Mit anderen Worten, wenn die natürliche Inklusion $A\hookrightarrow B$ ein lokaler Homomorphismus ist.
 
-\paragraph{Beweis von \hyperref[4.14]{Lemma 4.14}.} (i) ist gerade \hyperref[2.18]{Satz 2.18}. Setze $t_0=\mathfrak{m}_R\in T$ und $t_1=(0)\in T$. Für (ii) sei $f:T\to X$ ein Morphismus. Setze $x_i=f(t_i)$ und $Z=\overline{\{x_1\}}$ mit der reduzierten Unterschemastruktur. Dann gilt $f^{-1}(Z)=T$ als Mengen. Nach \hyperref[2.21]{Regeln 2.21 (iii)} faktorisiert $f$ in der Form:
-\[\xymatrix{
-T\ar[rr]^f\ar[rrd] &&X\\
+\paragraph{Beweis von \hyperref[4.14]{Lemma 4.14}.} (i) ist gerade \hyperref[2.18]{Satz 2.18}. Setze $t_0=\mathfrak{m}_R\in T$ und $t_1=(0)\in T$. Für (ii) sei $f:T\to X$ ein Morphismus. Setze $x_i=f(t_i)$ und $Z=\overline{\{x_1\}}$ mit der reduzierten Unterschemastruktur. Dann gilt $f^{-1}(Z)=T$ als Mengen. Nach \hyperref[2.21]{Regeln~2.21~(iii)} faktorisiert $f$ in der Form:
+\[\begin{tikzcd}
+T\ar[rr, "f"]\ar[rrd] &&X\\
 && Z\ar[u]
-} \]
+\end{tikzcd} \]
 Beachte, dass für $U\subset_\text{o} Z$ mit $x_0\in U$ auch $x_1\in U$ gilt. Das induziert $\mathcal{O}_{Z,x_0}\to\mathcal{O}_{Z,x_1}$, analog haben wir $\mathcal{O}_{T,t_0}\to\mathcal{O}_{T,t_1}$. Wir erhalten folgendes kommutative Diagramm:
-\[\xymatrix{
+\[\begin{tikzcd}
 \mathcal{O}_{Z,x_1} \ar[r]& \mathcal{O}_{T,t_1}=K\\
-\mathcal{O}_{Z,x_0} \ar[r]\ar[u]& \mathcal{O}_{T,t_0}=R\ar@{^{(}->}[u]\\
-\mathfrak{m}_{Z,x_0}\ar[r]\ar@{^{(}->}[u] & \mathfrak{m}_{T,t_0}\ar@{^{(}->}[u]
-}\]
+\mathcal{O}_{Z,x_0} \ar[r]\ar[u]& \mathcal{O}_{T,t_0}=R\ar[u, hook]\\
+\mathfrak{m}_{Z,x_0}\ar[r]\ar[u, hook] & \mathfrak{m}_{T,t_0}\ar[u, hook]
+\end{tikzcd}\]
 Da $Z$ reduziert und irreduzibel ist, ist $Z$ integer. Daher ist $\mathcal{O}_{Z,x_1}=\kappa(x_1)$, alle Abbildungen sind injektiv und wir sehen, dass $R$ über $\mathcal{O}_{Z,x_0}$ dominiert.
 
 Sei umgekehrt $x_0,x_1\in X$ mit $x_0\in\overline{\{x_1\}}= Z$ und $\mathcal{O}_{Z,x_0}\hookrightarrow R$ ein lokaler Homomorphismus. Das induziert $T=\operatorname{Spec}(R)\to\operatorname{Spec}(\mathcal{O}_{Z,x_0})\to Z\to X$. Diese beiden Konstruktionen sind invers zueinander.\qed
@@ -1159,37 +1163,37 @@ Sei umgekehrt $x_0,x_1\in X$ mit $x_0\in\overline{\{x_1\}}= Z$ und $\mathcal{O}_
 \paragraph{Beweis zu \hyperref[4.8]{Theorem 4.8}.} Sei $f:X\to Y$ ein Morphismus von Schemata mit $X$ noethersch.
 \begin{itemize}
 \item Sei zunächst $f$ separiert und $R$ ein Bewertungsring des Körpers $K=\operatorname{Quot}(R)$ mit Inklusion $i:U=\operatorname{Spec}(K)\hookrightarrow\operatorname{Spec}(R)=T$. Seien $T\to Y,\ U\to X$ gegeben und $h_1,h_2:T\to X$ mit kommutativem Diagramm:
-\[\xymatrix{
-U\ar[d]_i\ar[r] & X\ar[d]^f\\
-T\ar[r]\ar@<.5ex>[ur]^{h_1}\ar@<-.5ex>[ur]_{h_2} & Y
-} \]
+\[\begin{tikzcd}
+U\ar[d, "i"']\ar[r] & X\ar[d, "f"]\\
+T\ar[r]\ar[ur, "h_1", shift left]\ar[ur, "h_2"', shift right] & Y
+\end{tikzcd} \]
 Setze $t_0=\mathfrak{m}_R\in T$ und $t_1=(0)\in T$. Aus der Kommutativität $h_1i=h_2i$ folgt insbesondere $h_1(t_1)=h_2(t_1)$. Setze $h''=(h_1,h_2)_Y:T\to X\times_Y X$. Betrachte nun folgendes kommutative Diagramm:
-\[\xymatrix{
-U\ar[r]\ar[d]^i\ar@/_3pc/[rdd]_{h_2i}\ar@/^3pc/[rrd]^{h_1i} & X\ar[d]^-\Delta &\\
-T\ar[r]_-{h''} & X\times_Y X\ar[r]^-{p_1}\ar[d]_-{p_2} & X\ar[d]^f\\
-& X\ar[r]_f & Y
-} \]
+\[\begin{tikzcd}
+U\ar[r]\ar[d, "i"]\ar[rdd, "h_2i"', bend right=90]\ar[rrd, "h_1i", bend left=50] & X\ar[d, "\Delta"] &\\
+T\ar[r, "h''"'] & X\times_Y X\ar[r, "p_1"]\ar[d, "p_2"'] & X\ar[d, "f"]\\
+& X\ar[r, "f"'] & Y
+\end{tikzcd}\]
 Es gilt $\{h''(t_1)\}= h''i(U)\subset\Delta(X)$. Da $f$ separiert ist, ist $\Delta(X)$ abgeschlossen und es folgt $h''(t_0)\in h''(\overline{\{t_1\}})\subset\overline{\{h''(t_1)\}}\subset\Delta(X)$. Es folgt:
 \[h_1(t_0)=p_1h''(t_0)=p_2h''(t_0)=h_2(t_0) \]
 Aus der Kommutativität folgt, dass $h_1^\sharp$ und $h_2^\sharp$ dieselbe Abbildung $\kappa(x_1)\hookrightarrow K$ mit $x_1=h_1(t_1)=h_2(t_1)$ induzieren. Mit \hyperref[4.14]{Lemma 4.14 (ii)} folgt $h_1=h_2$.
 \item Für die andere Richtung genügt es nach \hyperref[4.6]{Satz 4.6} zu zeigen, dass $\Delta(X)\subset X\times_YX$ abgeschlossen ist. Nach \hyperref[3.30]{Satz 3.30 (ii)} ist $\Delta$ eine Immersion. Da $X$ noethersch ist, ist $\Delta$ quasikompakt. Nach \hyperref[4.13]{Korollar 4.13} genügt es zu zeigen, dass $\Delta(X)$ stabil unter Spezialisierungen ist.
 
 Sei also $\xi_1\in\Delta(X)$ und $\xi_0\in\overline{\{\xi_1\}}$. Sei $K=\kappa(\xi_1)$ und $\mathcal{O}=\mathcal{O}_{\overline{\{\xi_1\}},\xi_0}$, wobei $\overline{\{\xi_1\}}$ mit der reduzierten Unterschemastruktur versehen ist, d.h. $\mathcal{O}$ ist ein lokaler Ring in $K$. Mit \hyperref[4.16]{Satz 4.16} und dem Lemma von Zorn sehen wir, dass für jeden lokalen Ring $\mathcal{O}$ in $K$ einen Bewertungsring $R$ gibt, der $\mathcal{O}$ dominiert. Sei $R$ ein solcher Bewertungsring. Nach \hyperref[4.14]{4.14 (ii)} haben wir einen Morphismus $h:T=\operatorname{Spec}(R)\to X\times_YX$ mit $t_i\mapsto\xi_i$, wobei $t_0=\mathfrak{m}_R\in T,\ t_1=(0)\in T$. Betrachte das kommutative Diagramm:
-\[\xymatrix{
-\operatorname{Spec}(K)\ar[r]^-i & T\ar[dr]^h\ar@/^1pc/[rrd]^{p_1h}\ar@/_1pc/[ddr]_{p_2h}\\
-& & X\times_YX\ar[r]_-{p_1}\ar[d]^{p_2} & X\ar[d]^f\\
-&& X\ar[r]_f & Y
-}\]
+\[\begin{tikzcd}
+\operatorname{Spec}(K)\ar[r, "i"] & T\ar[dr, "h"]\ar[rrd, "p_1h", bend left]\ar[ddr, "p_2h"', bend right]\\
+& & X\times_YX\ar[r, "p_1"']\ar[d, "p_2"] & X\ar[d, "f"]\\
+&& X\ar[r, "f"'] & Y
+\end{tikzcd}\]
 Ist $x\in X$, so ist $\kappa(x)\cong\kappa(\Delta(x))$, wegen:
-\[\xymatrix{
-X\ar[rr]^-\Delta\ar[rrd]_{\operatorname{id}} & & X\times_Y X\ar[d]^{p_i}\\
+\[\begin{tikzcd}
+X\ar[rr, "\Delta"]\ar[rrd, "\operatorname{id}"'] & & X\times_Y X\ar[d, "p_i"]\\
 && X
-} \]
+\end{tikzcd} \]
 Betrachte nun das folgende Diagramm:
-\[\xymatrix{
-\operatorname{Spec}(K)\ar[rd]_{hi}\ar@{-->}[r]^-g & X\ar[d]^\Delta \\
+\[\begin{tikzcd}
+\operatorname{Spec}(K)\ar[rd, "hi"']\ar[r, "g", dashed] & X\ar[d, "\Delta"] \\
 & X\times_YX 
-}\]
+\end{tikzcd}\]
 Wähle ein $x_1\in X$ mit $\Delta(x_1)=\xi_1$ und $j:\kappa(x_1)\hookrightarrow K$ als den von $hi$ induzierten $\kappa(\Delta(x_1))\hookrightarrow K$. Nach \hyperref[4.14]{Lemma 4.14 (i)} erhalten wir den zu $(x_1, j)$ passenden Morphismus $g:\operatorname{Spec}(K)\to X$, das das obige Diagramm kommutativ macht. Also faktorisiert $\operatorname{Spec}(K)\to X\times_YX$ über $\operatorname{Spec}(K)\to X\stackrel{\Delta}{\to}X\times_YX$, d.h. $p_1hi=p_2hi$. Nach Voraussetzung folgt $p_1h=p_2h$, d.h. auch $T\to X\times_YX$ faktorisiert über $T\to X\stackrel{\Delta}{\to}X\times_YX$. Somit folgt $\xi_0\in \Delta(X)$.\qed
 \end{itemize}
 
@@ -1223,10 +1227,10 @@ In diesem Fall heißt $X$ auch \textit{eigentlich über} $Y$.
 \begin{enumerate}[(i)]
 \item $f$ ist eigentlich.
 \item Sei $R$ ein Bewertungsring des Körpers $K=\operatorname{Quot}(R)$ und $i:U=\operatorname{Spec}(K)\hookrightarrow T=\operatorname{Spec}(R)$ die kanonische Inklusion. Seien ferner Morphismen $T\to Y$ und $U\to X$ derart gegeben, dass das folgende Diagramm kommutativ ist:
-\[\xymatrix{
-U\ar[r]^u\ar[d]_i & X\ar[d]^f\\
-T\ar[r]_t\ar@{-->}[ru]^h & Y
-}\]
+\[\begin{tikzcd}
+U\ar[r, "u"]\ar[d, "i"'] & X\ar[d, "f"]\\
+T\ar[r, "t"']\ar[ru, "h", dashed] & Y
+\end{tikzcd}\]
 Dann existiert ein eindeutig bestimmter Morphismus $h:T\to X$, der das Diagramm kommutativ macht. Mit anderen worten ist die folgende Abbildung bijektiv:
 \[\operatorname{Hom}_Y(T,X)\to\operatorname{Hom}_Y(U,X),\ h\mapsto h\circ i \]
 \end{enumerate}
@@ -1240,29 +1244,29 @@ Dann existiert ein eindeutig bestimmter Morphismus $h:T\to X$, der das Diagramm 
 
 \paragraph{Beweis von \hyperref[4.20]{Theorem 4.20}.}\begin{itemize}
 \item Sei $f$ eigentlich. Nach Definition ist $f$ separiert, somit ist ein Morphismus $h:T\to X$ wie oben eindeutig bestimmt nach \hyperref[4.8]{Theorem 4.8}. Es bleibt die Existenz zu zeigen. Betrachte die Basiserweiterung $X_T=X\times_YT$ von $X$ mit $T\to Y$:
-\[\xymatrix{
-U \ar@{-->}[dr]_\theta\ar@/^1pc/[rrd]^u\ar@/_1pc/[ddr]_i &&\\
-& X_T\ar[r]_-{p_1}\ar[d]^{f'} & X\ar[d]^f\\
-& T\ar[r]_t & Y
-} \]
+\[\begin{tikzcd}
+U \ar[dr, "\theta"', dashed]\ar[rrd, "u", bend left]\ar[ddr, "i"', bend right] &&\\
+& X_T\ar[r, "p_1"']\ar[d, "f'"] & X\ar[d, "f"]\\
+& T\ar[r, "t"'] & Y
+\end{tikzcd} \]
 Wir erhalten ein $\theta:U\to X_T$, so dass das obige Diagramm kommutiert. Sei $\xi_1\in X_T$ das Bild des einzigen Punktes $t_1\in U$ und $Z=\overline{\{\xi_1\}}\subset X_T$ mit der reduzierten Unterschemastruktur. Da $f$ universell abgeschlossen ist, ist $f'$ abgeschlossen, somit ist $f'(Z)\subset T$ abgeschlossen. Da $f'(\xi_1)=t_1$ und $t_1$ der generische Punkt von $T$ ist, gilt $f'(Z)=T$. Es existiert also ein $\xi_0\in Z$ mit $f'(\xi_0)=t_0$, wobei $t_0$ der abgeschlossene Punkt in $T$ ist. 
 
 Betrachte den zu $f'$ gehörigen lokalen Homomorphismus $R\hookrightarrow\mathcal{O}_{Z,\xi_0}$. Da $\xi_1$ der generische Punkt von $Z$ ist, gilt $\kappa(\xi_1)=\mathcal{O}_{Z,\xi_1}$ und nach \hyperref[4.14]{Lemma 4.14 (i)} erhalten wir $\kappa(\xi_1)\subset K$, der durch $U\to Z$ induziert wird. Nach \hyperref[4.16]{Satz 4.16} ist $R$ als Bewertungsring maximal unter allen lokalen Ringen in $K$ bzgl. Dominanz. Ferner gilt $\mathcal{O}_{Z,\xi_0}\subset\mathcal{O}_{Z,\xi_1}=\kappa(\xi_1)\subset K$ und $\mathcal{O}_{Z,\xi_0}\subsetneq K$, da $\xi_0\neq\xi_1$. Wegen $f'(\xi_0)=t_0$ dominiert $\mathcal{O}_{Z,\xi_0}$ den Ring $R$, d.h. $R\cong\mathcal{O}_{Z,\xi_0}$, insbesondere dominiert $R$ über $\mathcal{O}_{Z,\xi_0}$. Nach \hyperref[4.14]{Lemma 4.14 (ii)} erhalten wir Morphismus $h':T\cong\operatorname{Spec}(\mathcal{O}_{Z,\xi_0})\to X_T,\ t_i\mapsto \xi_i$. Wir erhalten $h:T\stackrel{h'}{\to}X_T\stackrel{p_1}{\to}X$ mit $fh=fp_1h'=tf'h'=t$ und $hi=p_1h'i=p_1h'f'\theta = p_1\theta = u$.
 \item Es gelte (ii). $f$ ist nach Voraussetzung von endlichem Typ und separiert nach \hyperref[4.8]{Theorem 4.8}. Sei also $Y'\to Y$ ein Morphismus und $f':X'=X\times_YY'\to Y'$ die Basiserweiterung von $f$. Wir zeigen, dass $f'$ abgeschlossen ist. Sei $Z\subset X'$ abgeschlossen mit der reduzierten Unterschemastruktur. Betrachte das kommutative Diagramm:
-\[ \xymatrix{
-Z\ar@{^{(}->}[r]\ar[dr] & X'\ar[r]\ar[d]^{f'} & X\ar[d]^f\\
+\[ \begin{tikzcd}
+Z\ar[r, hook]\ar[dr] & X'\ar[r]\ar[d, "f'"] & X\ar[d, "f"]\\
 & Y'\ar[r] & Y
-} \]
+\end{tikzcd} \]
 Da $f$ von endlichem Typ ist, ist nach \hyperref[3.25]{Satz 3.25 (ii)} auch $f'$ von endlichem Typ. Es folgt, dass $f'|_Z:Z\to Y'$ von endlichem Typ ist und somit quasikompakt. $f'|_Z$ faktorisiert über $Z\to f'(Z)\hookrightarrow Y'$. Wir sehen, dass $f'(Z)\hookrightarrow Y'$ quasikompakt ist. Nach \hyperref[4.13]{Korollar 4.13} genügt es zu zeigen, dass $f'(Z)$ stabil unter Spezialisierungen ist.
 
 Sei also $z_1\in Z$ und $y_1=f'(z_1),\ y_0\in\overline{\{y_1\}}$. Wir versehen $\overline{\{y_1\}}$ mit der reduzierten Unterschemastruktur. Sei $\mathcal{O}=\mathcal{O}_{\overline{\{y_1\}},y_0 }$. Dann ist $\operatorname{Quot}(\mathcal{O})=\kappa(y_1)\hookrightarrow \kappa(z_1)=:K$.  Sei $R$ ein Bewertungsring von $K$, der $\mathcal{O}$ dominiert. Nach \hyperref[4.14]{Lemma 4.14} haben wir Morphismen:
 \[U=\operatorname{Spec}(K)\to Z,\ t_1\mapsto z_1 \]
 \[T=\operatorname{Spec}(R)\to Y',\ t_i\mapsto y_i \]
 Betrachte folgendes kommutative Diagramm:
-\[\xymatrix{
-U\ar[r] \ar[d]_i & Z\ar@{^{(}->}[r] \ar[dr] & X'\ar[r]\ar[d]^{f'} & X\ar[d]^f\\
-T\ar[rr]\ar@{-->}[rrru]\ar@{-->}[rru] & & Y'\ar[r] & Y
-} \]
+\[\begin{tikzcd}
+U\ar[r] \ar[d, "i"'] & Z\ar[r, hook] & X'\ar[r]& X\ar[d, "f"]\\
+T\ar[rr]\ar[rrru, dashed]\ar[rru, dashed] & & Y'\ar[r]\ar[from=u, "f'", crossing over]\ar[from=ul, crossing over] & Y
+\end{tikzcd} \]
 Nach Voraussetzung gibt es ein Morphismus $h:T\to X$, der das Diagramm kommutativ macht. Aus der Universaleigenschaft des Faserprodukts $X'$ erhalten wir ein Morphismus $h':T\to X'$, der $h:T\to X$ liftet. Nach Voraussetzung ist $Z$ abgeschlossen und da der generische Punkt $t_1\in T$ auf $z_1\in X'$ abgebildet wird, faktorisiert $h':T\to X'$ über $h':T\to Z\to X'$. Setze $z_0=h'(t_0)\in Z$. Dann ist $f'(z_0)=y_0$, also $y_0\in f'(Z)$.\qed
 \end{itemize}
 
@@ -1276,11 +1280,11 @@ Nach Voraussetzung gibt es ein Morphismus $h:T\to X$, der das Diagramm kommutati
 \end{enumerate}
 
 \paragraph{Beweis.} Wir zeigen nur (v). Da $X$ noethersch ist, ist $f$ quasikompakt. Nach \hyperref[4.21]{Lemma 4.21} ist $f$ von endlichem Typ. Nach \hyperref[4.17]{Satz 4.17} ist $f$ separiert. Sei nun $R$ ein Bewertungsring und seien Morphismen $U\to X,\ T\to Y$ gegeben mit kommutativem Diagramm:
-\[\xymatrix{
-U \ar[r]^u\ar[d]_i& X\ar[d]^f\\
-T\ar[r]_t\ar[dr]_{t'} & Y\ar[d]^g\\
+\[\begin{tikzcd}
+U \ar[r, "u"]\ar[d, "i"']& X\ar[d, "f"]\\
+T\ar[r, "t"]\ar[dr, "t'"'] & Y\ar[d, "g"]\\
 & Z
-} \]
+\end{tikzcd} \]
 Wir wollen ein $h:T\to X$ konstruieren mit $fh=t$ und $hi=u$. Setze $t'=gt$. Da $gf$ eigentlich ist, gibt es genau ein $h:T\to X$ mit $gfh=t'$ und $hi=u$. Sei $t''=fh$. Nun ist $g$ separabel und $ti=fu=fhi=t''i$ und $gt=t'=gfh=gt''$. Nach \hyperref[4.8]{Theorem 4.8} folgt $t=t''$ und somit $fh=t$.\qed
 
 \paragraph{} Ist $\varphi:A\to B$ ein Ringhomomorphismus und $\operatorname{Spec}(B)\to\operatorname{Spec}(A)$ der zugehörige Morphismus, so gilt:
@@ -1298,19 +1302,19 @@ Insbesondere gilt $\mathbf{P}_A^n\cong\mathbf{P}_\mathbb{Z}^n\times_\mathbb{Z}A$
 \paragraph{Beweis.} Es reicht zu zeigen, dass $\mathbf{P}_\mathbb{Z}^n$ eigentlich über $\mathbb{Z}$ ist, da der Basiswechsel nach \hyperref[4.22]{Korollar 4.22 (iii)} eigentlich über $Y$ ist. Ist $f:X\hookrightarrow \mathbf{P}^n_Y \to Y$ projektiv, so ist er als Verkettung von eigentlichen Morphismen wieder eigentlich, siehe \hyperref[4.22]{Korollar 4.22}. Ist $f:X\hookrightarrow X'\to Y$ quasiprojektiv, so ist $f$ als Verkettung separierter Morphismen separiert, siehe \hyperref[4.17]{Korollar 4.17}. Da $X$ noethersch ist, ist $X\hookrightarrow X'$ eine quasikompakte offene Immersion, also nach \hyperref[4.21]{Lemma 4.21 (i)} vom endlichem Typ.
 
 Sei also $X=\mathbf{P}_\mathbb{Z}^n$ und $X=\bigcup V_i$ eine offene affine Überdeckung mit $V_i=D_+(x_i)=\operatorname{Spec}\mathbb{Z}\big[\frac{x_0}{x_i},\ldots,\frac{x_n}{x_i} \big]$. Es ist also $X$ von endlichem Typ. Sei nun $R$ ein Bewertungsring mit Quotientenkörper $K=\operatorname{Quot}(R)$ und $U\to X,\ T\to\operatorname{Spec}(\mathbb{Z})$ Morphismen mit kommutativem Diagramm:
-\[\xymatrix{
-U\ar[r]^u\ar[d]_i & X\ar[d]\\
-T\ar[r]_-t & \operatorname{Spec}(\mathbb{Z})
-}\]
+\[\begin{tikzcd}
+U\ar[r, "u"]\ar[d, "i"'] & X\ar[d]\\
+T\ar[r, "t"'] & \operatorname{Spec}(\mathbb{Z})
+\end{tikzcd}\]
 Wir zeigen nun per Induktion, dass genau ein Morphismus $h:T\to X$ existiert, der das obige Diagramm kommutativ ergänzt. Für $n=0$ ist $X=\operatorname{Spec}(\mathbb{Z})$ und die Aussage ist klar. Sei $n\geq 1$ und $\xi_1$ das Bild des einzigen Punktes aus $U$ in $X$. Ist $\xi_1\in X\setminus V_i$ für ein $i$, so folgt die Behauptung nach Induktionsvoraussetzung, da die Hyperebene $X\setminus V_i$ isomorph zu $\mathbf{P}_\mathbb{Z}^{n-1}$ ist.
 
 Sei also $\xi_1\in\bigcap V_i$, d.h. alle Funktionen der Form $\frac{x_i}{x_j}$ sind invertierbar in $\mathcal{O}_{\xi_1}$. Der Morphismus $U\to X$ liefert Inklusion $\kappa(\xi_1)\hookrightarrow K$. Sei weiter $f_{ij}\in K^\times$ das Bild von $\frac{x_i}{x_j}$ unter $\mathcal{O}_{\xi_1}\to \kappa(\xi_1)\hookrightarrow K$. Dann folgt $f_{ik}=f_{ij}f_{jk}$ für alle $i,j,k$. Sei $v:K\to G$ die zu $R$ gehörige Bewertung und setze $g_i=v(f_{i0})$ für alle $i$. Sei $k$ derart, dass $g_k$ minimal unter $g_0,\ldots,g_n$ ist. Es gilt für alle $i$:
 \[v(f_{ik})=v(f_{i0})-v(f_{k0})=g_i-g_k\geq 0 \]
 Es folgt $f_{ik}\in R$ für alle $i$. Es gibt Homomorphismen:
-\[\xymatrix{
-\mathbb{Z}\big[\frac{x_0}{x_k},\ldots,\frac{x_n}{x_k}\big]\ar[rr]^-\varphi_-{\frac{x_i}{x_k}\mapsto f_{ik} } \ar[d]&& R\ar[d]\\
+\[\begin{tikzcd}
+\mathbb{Z}\big[\frac{x_0}{x_k},\ldots,\frac{x_n}{x_k}\big]\ar[rr, "\varphi", "\frac{x_i}{x_k}\mapsto f_{ik}"'] \ar[d]&& R\ar[d]\\
 \mathcal{O}_{\xi_1}\ar[r] & \kappa(\xi_1)\ar[r] & K
-}\]
+\end{tikzcd}\]
 Wir erhalten den zu $\varphi$ gehörige Morphismus $T\to V_k$ und somit $h:T\to V_k\hookrightarrow X$. Offensichtlich ist $T\to X\to\operatorname{Spec}(\mathbb{Z})$ der Morphismus $t$ unt $U\to T\to X$ der Morphismus $u$. Ferner ist $h$ eindeutig nach Konstruktion.\qed
 
 \paragraph{Satz 4.25.}\label{4.25} Sei $k$ ein algebraisch abgeschlossener Körper. Das Bild des Funktors $t:\mathbf{Var}(k)\to \mathbf{Sch}(k)$ ist die Menge aller quasiprojektiven, integren Schemata über $k$. Insbesondere ist $t(V)$ integer, separiert und von endlichem Typ für jede Varietät $V$.
@@ -1392,10 +1396,10 @@ Dann ist $\widetilde{M}$ mit den gewöhnlichen Restriktionsabbildungen eine Garb
 
 \paragraph{Beweis.} Für (i) zeigen wir: \begin{itemize}
 \item \textit{Funktorialität:} Sei $\psi:M\to N$ ein $A$"~Modulhomomorphismus. Dieser induziert für alle $f\in A$ einen $A_f$"~Modulhomomorphismus $\psi_f:M_f\to N_f$. Ist $D(f)\supset D(g)$, so erhalten wir das folgende kommutative Diagramm:
-\[\xymatrix{
-M_f\ar[rr]^{\psi_f}\ar[d] && N_f\ar[d]\\
-M_g\ar[rr]_{\psi_g} && N_g
-} \]
+\[\begin{tikzcd}
+M_f\ar[rr, "\psi_f"]\ar[d] && N_f\ar[d]\\
+M_g\ar[rr, "\psi_g"'] && N_g
+\end{tikzcd} \]
 Da $D(f),\ f\in A$ eine Basis der Topologie bilden, induzieren $\psi_f,\ f\in A$ einen $\widetilde{A}$"~Homomorphismus $\widetilde{\psi}:\widetilde{M}\to\widetilde{N}$ mit $\widetilde{\psi}|_{D(f)}=\psi_f$.
 \item \textit{Volltreu:} Die Umkehrabbildung zu $\operatorname{Hom}_A(M,N)\to\operatorname{Hom}_{\widetilde{A}}(\widetilde{M},\widetilde{N})$ ist gegeben durch das Bilden der globalen Schnitte: 
 \[\operatorname{Hom}_{\widetilde{A}}(\widetilde{M},\widetilde{N})\to\operatorname{Hom}_A(\Gamma(X,\widetilde{M}),\Gamma(X,\widetilde{N}))=\operatorname{Hom}_A(M,N)\]
@@ -1450,10 +1454,10 @@ ein Isomorphismus mit Umkehrabbildung $\theta\mapsto\Gamma(X,\theta)$.
 \paragraph{Beweis von \hyperref[5.9]{Satz 5.9}.} Die Rückrichtungen der beiden Aussagen sind trivial. Sei $U\subset_\text{o}X$ affin. Nach dem Beweis von \hyperref[5.8]{Lemma 5.8} gibt es eine Basis der Topologie von $U$, bestehend aus affinen Teilmengen $V_i$ derart, dass $\mathcal{F}|_{V_i}\cong\widetilde{N_i}$ mit einem Modul $N_i$ ist. Somit ist $\mathcal{F}|_U$ quasikohärent. Wir können somit o.B.d.A. $X=U=\operatorname{Spec}(A)$ als affin annehmen.
 
 Setze $M=\Gamma(X,\mathcal{F})$ und $\alpha:\widetilde{M}\to\mathcal{F}$ als das Bild von $\operatorname{id}_M$ unter der Abbildung im vorherigen Lemma. Wie im Beweis von \hyperref[5.8]{Lemma 5.8} gezeigt, gibt es eine Überdeckung der Form $X=\bigcup_{i=1}^mD(g_i)$ mit $\mathcal{F}|_{D(g_i)}\cong\widetilde{M_i}$ für einen $A_{g_i}$"~Modul $M_i$. Es gilt $M_i=\mathcal{F}(D(g_i))\cong M_{g_i}$ und wir haben ein kommutatives Diagramm:
-\[\xymatrix{
-\mathcal{F}(X)_{g_i}\ar[rr]^\cong && \mathcal{F}(D(g_i))\\
-\mathcal{F}(X)\ar[u]\ar[urr]_{\operatorname{res}}
-} \]
+\[\begin{tikzcd}
+\mathcal{F}(X)_{g_i}\ar[rr, "\cong"] && \mathcal{F}(D(g_i))\\
+\mathcal{F}(X)\ar[u]\ar[urr, "\operatorname{res}"']
+\end{tikzcd} \]
 Somit ist $\alpha|_{D(g_i)}$ ein Isomorphismus für alle $i$. Da die $D(g_i)$ ganz $X$ überdecken, ist $\alpha$ ein Isomorphismus.
 
 Sei nun $X$ zusätzlich noethersch. Dann sind die $A_{g_i}$"~Moduln $M_{g_i}$ endlich erzeugt. Wir zeigen, dass $M$ endlich erzeugt ist. Da $A$ noethersch ist, sind alle $A_{g_i}$ noethersch. Also sind die endlich erzeugten $A_{g_i}$"~Moduln $M_{g_i}$ noethersch. Analog zu \hyperref[3.6]{Satz 3.6} folgt $M$ noethersch. Insbesondere ist $M$ endlich erzeugt. \qed
@@ -1486,10 +1490,10 @@ Sei nun $X=\bigcup_i D(f_i)$ eine endliche offene Überdeckung, so dass sich $s|
 Sei nun $0\to\mathcal{F}'\to\mathcal{F}\to\mathcal{F}''\to 0$ eine kurze exakte Sequenz von $\mathcal{O}_X$"~Moduln mit $\mathcal{F}',\mathcal{F}''$ quasikohärent. Nach \hyperref[5.11]{Satz 5.11} ist die folgende Folge exakt:
 \[0\to\Gamma(X,\mathcal{F}')\to\Gamma(X,\mathcal{F})\to\Gamma(X,\mathcal{F}'')\to 0 \]
 Da $M\mapsto\widetilde{M}$ ein exakter Funktor ist, folgt die Exaktheit von:
-\[\xymatrix{
+\[\begin{tikzcd}
 0  \ar[r]& \widetilde{\Gamma(X,\mathcal{F}')} \ar[d] \ar[r]& \widetilde{\Gamma(X,\mathcal{F})} \ar[d] \ar[r]& \widetilde{\Gamma(X,\mathcal{F}'')} \ar[d] \ar[r]& 0\\
 0 \ar[r] & \mathcal{F}'  \ar[r]& \mathcal{F}  \ar[r]&  \ar[r]\mathcal{F}''  \ar[r]& 0
-} \]
+\end{tikzcd} \]
 Die vertikalen Pfeile links und rechts sind nach \hyperref[5.10]{Korollar 5.10} Isomorphismen. Nach dem 5er Lemma ist somit auch der mittlere Pfeil ein Isomorphismus und $\mathcal{F}$ ist quasikohärent.
 
 Sei nun $X$ noethersch und $\mathcal{F}',\mathcal{F}''$ kohärent. Dann sind $\Gamma(X,\mathcal{F}'),\Gamma(X,\mathcal{F}'')$ endlich erzeugt und somit auch $\Gamma(X,\mathcal{F})$. Es folgt die Kohärenz von $\mathcal{F}$.\qed
@@ -1504,11 +1508,11 @@ Sei nun $X$ noethersch und $\mathcal{F}',\mathcal{F}''$ kohärent. Dann sind $\G
 \paragraph{Lemma 5.14.}\label{5.14} Sei $Y$ ein affines Schema, $f:X\to Y$ ein separierter Morphismus und $U,V\subset_\text{o}X$ affin. Dann ist $U\cap V$ ein abgeschlossenes Unterschema eines affinen Schemas. Wir werden in \hyperref[5.18]{Korollar 5.18} sehen, dass $U\cap V$ sogar affin ist. Insbesondere ist $U\cap V$ quasikompakt.
 
 \paragraph{Beweis.} Betrachte das kartesische Diagramm:
-\[\xymatrix{
-X\times_Y X\ar[r]^-{p_2}\ar[d]_{p_1} & X\ar[d]^f\\
-X\ar[r]_f & Y
-} \]
-Nach \hyperref[3.20]{3.20} ist $p_1^{-1}(U)\cap p_2^{-1}(V)=U\times_YV$ affin. Es ist $U\cap V\cong \Delta_{X/Y}(X)\cap U\times_YV\subset U\times_YV$. Nun ist $\Delta_{X/Y}(X)$ abgeschlossen in $X\times_YX$, d.h. $U\cap V$ ist ein abgeschlossenes Unterschema in $U\times_YV$.\qed
+\[\begin{tikzcd}
+X\times_Y X\ar[r, "p_2"]\ar[d, "p_1"'] & X\ar[d, "f"]\\
+X\ar[r, "f"'] & Y
+\end{tikzcd} \]
+Nach \hyperref[3.20]{Lemma~3.20} ist $p_1^{-1}(U)\cap p_2^{-1}(V)=U\times_YV$ affin. Es gilt: \[U\cap V\cong \Delta_{X/Y}(X)\cap U\times_YV\subset U\times_YV\] Nun ist $\Delta_{X/Y}(X)$ abgeschlossen in $X\times_YX$, d.h. $U\cap V$ ist ein abgeschlossenes Un\-ter\-sche\-ma in $U\times_YV$.\qed
 
 \paragraph{Beweis von \hyperref[5.13]{Satz 5.13}.} Für (i) und (ii) ist die Aussage lokal in $X$ und in $Y$. Daher können wir o.B.d.A. $X=\operatorname{Spec}(B)$ und $Y=\operatorname{Spec}(A)$ als affin annehmen. Dann folgt die Behauptung aus der Kategorienäquivalenz \hyperref[5.10]{Korollar 5.10} und \hyperref[5.3]{Satz 5.3 (v)} $f^\ast\widetilde{M} = \widetilde{M\otimes_AB}$.
 
@@ -1660,10 +1664,10 @@ Umgekehrt ist jeder graduierte Ring $S$, der von $S_1$ als $S_0=A$"~Algebra endl
 \paragraph{Beweis.} Sei $X$ projektiv. Dann folgt (i) aus \hyperref[4.24]{Theorem~4.24} und es gibt eine abgeschlossene Immersion $i:X\to\mathbf{P}_Y^r$ für ein $r$, so dass $i^\ast\mathcal{O}(1)$ sehr ampel ist.
 
 Sei umgekehrt $i:X\hookrightarrow\mathbf{P}_Y^r$ eine Immersion und $\mathcal{L}\cong i^\ast(\mathcal{O}(1))$ eine sehr ample Garbe auf $X$ bzgl. $Y$. Betrachte das kartesische Quadrat:
-\[\xymatrix{
-\mathbf{P}^r_Y \ar@{=}[r] & Y\times \mathbf{P}_\mathbb{Z}^r \ar[r]\ar[d]& Y\ar[d]\\
-&\mathbf{P}_\mathbb{Z}^r\ar[r] & \mathbb{Z}
-} \]
+\[\begin{tikzcd}
+\mathbf{P}^r_Y = Y\times \mathbf{P}_\mathbb{Z}^r \ar[r]\ar[d]& Y\ar[d]\\
+\mathbf{P}_\mathbb{Z}^r\ar[r] & \mathbb{Z}
+\end{tikzcd} \]
 $\mathbf{P}_\mathbb{Z}^r\to\mathbb{Z}$ ist separiert, da projektiv, also ist auch der Basiswechsel $\mathbf{P}_Y^r\to Y$ separiert. Ferner ist $X\to Y$ eigentlich, nach \hyperref[4.22]{Korollar 4.22 (v)} ist auch $X\hookrightarrow \mathbf{P}_Y^r$ eigentlich, also insbesondere abgeschlossen.\qed
 
 \paragraph{Definition 5.33.}\label{5.33} Sei $X$ ein Schema und $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul. $\mathcal{F}$ heißt \textit{von globalen Schnitten erzeugt}\index{von globalen Schnitten erzeugt}, wenn es eine Familie von globalen Schnitten $s_i\in\Gamma(X,\mathcal{F}),\ i\in I$ gibt, so dass für alle $x\in X$ die Bilder der $s_i$ den Halm $\mathcal{F}_x$ als $\mathcal{O}_X$"~Modul erzeugen. Dies ist äquivalent zu: Es gibt einen surjektiven Garbenmorphismus $\bigoplus_{i\in I}\mathcal{O}_X\to \mathcal{F}$.
