@@ -1849,7 +1849,7 @@ Es ist $f(X)\hookrightarrow Y$ eine abgeschlossene Immersion, also separiert nac
 
 Sei nun $f(X)=Y$, also ist $Y$ vollständig. Sei $Y=\overline{\{\eta\}}$ und $X=\overline{\{\xi\}}$. Da $f:X\to Y$ dominant ist, folgt $f(\xi)=\eta$ und wir erhalten eine Inklusion $K(Y)=\mathcal{O}_{Y,\eta}\to\mathcal{O}_{X,\xi}=K(X)$. Da beide Körper endlich erzeugt über $k$ vom Transzendenzgrad $\dim(X)=1$ sind, ist $K(X)/K(Y)$ endlich.
 
-Es bleibt zu zeigen, dass $f$ endlich ist. Sei $V=\operatorname{Spec}(B)\subset_\text{o}Y$ affin. Dann ist $B=\mathcal{O}_Y(V)\subset K(Y)\subset K(X)$. Es ist zu zeigen, dass $f^{-1}(V)=\operatorname{Spec}(A)$ affin ist, wobei $A$ ein endlich erzeugter $B$"~Modul ist. In der Tat folgt aus der Normalität von $X$ stets $f^{-1}(V)=\operatorname{Spec}(A)$, wobei $A$ der Ganzabschluss von $B$ in $K(X)$ ist. Alles folgt nun aus \hyperref[6.21]{Theorem 6.21}.\qed
+Es bleibt zu zeigen, dass $f$ endlich ist. Sei $V=\operatorname{Spec}(B)\subset_\text{o}Y$ affin. Dann ist $B=\mathcal{O}_Y(V)\subset K(Y)\subset K(X)$. Es ist zu zeigen, dass $f^{-1}(V)=\operatorname{Spec}(A)$ affin ist, wobei $A$ ein endlich erzeugter $B$"~Modul ist. In der Tat folgt aus der Normalität von $X$ stets $f^{-1}(V)=\operatorname{Spec}(A)$, wobei $A$ der Ganzabschluss von $B$ in $K(X)$ ist. Alles folgt nun aus dem folgenden \hyperref[6.21]{Theorem 6.21}.\qed
 
 \paragraph{Theorem 6.21.}\label{6.21} Sei $B$ ein Integritätsring und eine endlich erzeugte Algebra über einem Körper $k$. Setze $K=\operatorname{Quot}(B)$ und sei $L/K$ eine endliche Erweiterung. Dann ist der Ganzabschluss $A$ von $B$ in $L$ ein endlich erzeugter $B$"~Modul.
 
@@ -1860,6 +1860,17 @@ Es bleibt zu zeigen, dass $f$ endlich ist. Sei $V=\operatorname{Spec}(B)\subset_
 \paragraph{Definition 6.22.}\label{6.22} Sei $f:X\to Y$ ein dominanter Morphismus von Kurven. Dann heißt $\deg(f)=[K(X):K(Y)]$ der \textit{Grad} von $f$\index{Grad}. Sei $X$ eine nicht-singuläre Kurve, erfüllt also insbesondere $(\star)$. Ein Primdivisor von $X$ ist genau ein abgeschlossener Punkt. Ein Divisor $D$ ist somit von der folgenden Form:
 \[D=\sum_i n_iP_i,\quad n_i\in\mathbb{Z},\ P_i\text{ abgeschlossene Punkte} \]
 Der \textit{Grad}\index{Grad} von $D$ ist definiert als $\deg(D)=\sum n_i$.
+
+\paragraph{Definition 6.23.}\label{6.23} Sei $f:X\to Y$ ein endlicher Morphismus nicht-singulärer Kurven. Wir definieren ein Homomorphismus $f^\ast:\operatorname{Div}(Y)\to\operatorname{Div}(X)$ wie folgt:
+
+Sei $Q\in Y$ ein abgeschlossener Punkt und wähle ein $t\in\mathcal{O}_{Y,Q}\subset K(Y)$ mit $v_Q(t)=1$, wobei $v_Q$ die diskrete Bewertung zu $\mathcal{O}_{Y,Q}$ ist. $t$ heißt \textit{lokaler Parameter}\index{lokaler Parameter} an der Stelle $Q$. Wir setzen:
+\[f^\ast(Q) = \sum_{P\in f^{-1}(Q)}v_P(t)P \]
+Da $f$ endlich ist, ist obige Summe nach \hyperref[6.24]{Lemma 6.24} endlich.
+
+\paragraph{Lemma 6.24.}\label{6.24} \begin{enumerate}[(i)]
+\item Die Eigenschaft endlich zu sein ist stabil unter Basiswechsel.
+\item Ist $f:X\to Y$ ein endlicher Morphismus und $y\in Y$, so ist $f^{-1}(y)$ endlich.
+\end{enumerate}
 
 \printindex
 \end{document}
