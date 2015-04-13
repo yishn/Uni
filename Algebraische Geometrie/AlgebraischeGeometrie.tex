@@ -1830,7 +1830,7 @@ d\mathbb{Z} \rar[hook] & \mathbb{Z}\rar & \mathbb{Z}/d\mathbb{Z}\rar & 0
 \end{itemize}
 
 \paragraph{Satz 6.19.}\label{6.19} Sei $X$ eine vollständige, nicht-singuläre Kurve über $k$ und $Y$ eine beliebige Kurve über $k$ mit einem Morphismus $f:X\to Y$. Dann gilt:
-\[f(X)\text{ ist ein Punkt} \quad\text{oder}\quad f(X)=Y \]
+\[f(X)=\operatorname{Pt} \quad\text{oder}\quad f(X)=Y \]
 Im zweiten Fall gilt:
 \begin{enumerate}[(i)]
 \item Die Funktionenkörpererweiterung $K(X)/K(Y)$ ist endlich.
@@ -1840,7 +1840,16 @@ Im zweiten Fall gilt:
 
 \paragraph{Lemma 6.20.}\label{6.20} Sei $f:X\to Y$ surjektiv, $g:Y\to Z$ separiert und von endlichem Typ, und $g\circ f:X\to Z$ eigentlich. Dann ist $g$ eigentlich.
 
-\paragraph{Beweis von \hyperref[6.19]{6.19}.} TODO
+\paragraph{Beweis von \hyperref[6.19]{6.19}.} Da $X$ eigentlich über $k$ ist, ist $f(X)\subset Y$ ein abgeschlossenes Unterschema. Da $X$ irreduzibel ist, ist $f(X)$ auch irreduzibel. Nun ist $\dim(Y)=1$, folgt entweder $f(X)=\operatorname{Pt}$ oder $f(X)=Y$. Betrachte das folgende kommutative Diagramm:
+\[\begin{tikzcd}
+X \rar["f"] & f(X)\rar[hook]\ar[dr] & Y\dar\\
+ & & k
+\end{tikzcd} \]
+Es ist $f(X)\hookrightarrow Y$ eine abgeschlossene Immersion, also separiert nach \hyperref[4.17]{Satz 4.17 (i)}. Somit ist auch $f(X)/ k$ separiert. Nach \hyperref[6.20]{Lemma 6.20} ist $f(X)/k$ eigentlich.
+
+Sei nun $f(X)=Y$, also ist $Y$ vollständig. Sei $Y=\overline{\{\eta\}}$ und $X=\overline{\{\xi\}}$. Da $f:X\to Y$ dominant ist, folgt $f(\xi)=\eta$ und wir erhalten eine Inklusion $K(Y)=\mathcal{O}_{Y,\eta}\to\mathcal{O}_{X,\xi}=K(X)$. Da beide Körper endlich erzeugt über $k$ vom Transzendenzgrad $\dim(X)=1$ sind, ist $K(X)/K(Y)$ endlich.
+
+Es bleibt zu zeigen, dass $f$ endlich ist. Sei $V=\operatorname{Spec}(B)\subset_\text{o}Y$ affin. Dann ist $B=\mathcal{O}_Y(V)\subset K(Y)\subset K(X)$. Es ist zu zeigen, dass $f^{-1}(V)=\operatorname{Spec}(A)$ affin ist, wobei $A$ ein endlich erzeugter $B$"~Modul ist. In der Tat folgt aus der Normalität von $X$ stets $f^{-1}(V)=\operatorname{Spec}(A)$, wobei $A$ der Ganzabschluss von $B$ in $K(X)$ ist. Alles folgt nun aus \hyperref[6.21]{Theorem 6.21}.\qed
 
 \paragraph{Theorem 6.21.}\label{6.21} Sei $B$ ein Integritätsring und eine endlich erzeugte Algebra über einem Körper $k$. Setze $K=\operatorname{Quot}(B)$ und sei $L/K$ eine endliche Erweiterung. Dann ist der Ganzabschluss $A$ von $B$ in $L$ ein endlich erzeugter $B$"~Modul.
 
