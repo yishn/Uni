@@ -1883,6 +1883,8 @@ Da $f$ endlich ist, ist obige Summe nach \hyperref[6.24]{Lemma 6.24} endlich.
 \item Ist $f:X\to Y$ ein endlicher Morphismus und $y\in Y$, so ist $f^{-1}(y)$ endlich.
 \end{enumerate}
 
+\paragraph{Beweis.} TODO
+
 \paragraph{Satz 6.25.}\label{6.25} Sei $f:X\to Y$ ein endlicher Morphismus nicht-singulärer Kurven. Dann:
 \[\deg(f^\ast D)=\deg(f)\cdot \deg(D) \]
 
@@ -1891,18 +1893,32 @@ Da $f$ endlich ist, ist obige Summe nach \hyperref[6.24]{Lemma 6.24} endlich.
 
 \paragraph{Lemma 6.27.}\label{6.27} Sei $X$ eine normale Kurve über $k$, $U\subset X$ offen, $\varphi:X\to\mathbf{P}^n$ eine rationale Abbildung. Dann lässt sich $\varphi$ zu einem einem Morphismus auf $X$ fortsetzen.
 
-\paragraph{Definition 6.28.}\label{6.28} Sei $X$ ein Schema.
+\paragraph{Definition 6.28.}\label{6.28} Sei $(X,\mathcal{O})$ ein Schema.
 \begin{enumerate}[(i)]
 \item Sei $U=\operatorname{Spec}(A)\subset_\text{o}X$ affin und $S$ die Menge aller Nicht-Nullteiler in $A$. Dann heißt $K(U)=A_S$ \textit{totaler Quotientenring} von $A$.\index{totaler Quotientenring}
 \item Sei $\mathcal{K}$ die Ringgarbe, die zur Prägarbe $U\mapsto\varprojlim_{V\subset U\text{ affin}} K(V)$ assoziiert ist. $\mathcal{K}$ heißt \textit{Garbe der totalen Quotientenringe} von $\mathcal{O}$.
 \item $\mathcal{K}^\times:U\mapsto \mathcal{K}(U)^\times$ sei die Garbe von multiplikativen Gruppe der invertierbaren Elemente in $\mathcal{K}$. $\mathcal{O}^\times$ sei die Garbe der invertierbaren Elemente in $\mathcal{O}$.
 \end{enumerate}
 
-\paragraph{Definition 6.29.}\label{6.29} Sei $X$ ein Schema. Ein Element aus $\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$ heißt \textit{Cartier-Divisor}\index{Divisor!Cartier}. Ein Cartier-Divisor kann also durch ein System $(U_i,f_i)_i$ beschrieben werden, wobei $(U_i)_i$ eine offene Überdeckung von $X$ ist, und $f_i\in\Gamma(U_i,\mathcal{K}^\times)$, so dass für alle $i,j$ stets $\frac{f_i}{f_j}\in\Gamma(U_i\cap U_j,\mathcal{O}^\times)$ gilt.
+\paragraph{Definition 6.29.}\label{6.29} Sei $(X,\mathcal{O})$ ein Schema. Ein Element aus $\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$ heißt \textit{Cartier-Divisor}\index{Divisor!Cartier}. Ein Cartier-Divisor kann also durch ein System $(U_i,f_i)_i$ beschrieben werden, wobei $(U_i)_i$ eine offene Überdeckung von $X$ ist, und $f_i\in\Gamma(U_i,\mathcal{K}^\times)$, so dass für alle $i,j$ stets $\frac{f_i}{f_j}\in\Gamma(U_i\cap U_j,\mathcal{O}^\times)$ gilt.
 
 Ein Cartier-Divisor heißt \textit{prinzipal}\index{Divisor!prinzipal} oder \textit{Hauptdivisor}\index{Hauptdivisor}, wenn er im Bild der kanonischen Abbildung $\Gamma(X,\mathcal{K}^\times)\to\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$ ist. Zwei Cartier-Divisoren heißen \textit{linear äquivalent}\index{linear äquivalent}, falls ihre Differenz prinzipal ist.
 
-\paragraph{Satz 6.30.}\label{6.30} Sei $X$ ein integres, separiertes, noethersches Schema. Ferner sei $X$ \textit{lokal faktoriell}\index{lokal faktoriell}, d.h. alle lokalen Ringe sind faktoriell. Dann ist die Gruppe $\operatorname{Div}(X)$ von Weil-Divisoren isomorph zur Gruppe der Cartier-Divisoren $\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$. Prinzipale Weil-Divisoren entsprechen prinzipale Cartier-Divisoren.
+\paragraph{Satz 6.30.}\label{6.30} Sei $(X,\mathcal{O})$ ein integres, separiertes, noethersches Schema. Ferner sei $X$ \textit{lokal faktoriell}\index{lokal faktoriell}, d.h. alle lokalen Ringe sind faktoriell. Dann ist die Gruppe $\operatorname{Div}(X)$ von Weil-Divisoren isomorph zur Gruppe der Cartier-Divisoren $\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$. Prinzipale Weil-Divisoren entsprechen prinzipale Cartier-Divisoren.
+
+\paragraph{Beweis.} $X$ ist normal, da faktorielle Ringe insbesondere ganzabgeschlossen sind. Nach \hyperref[6.4]{Theorem 6.4} erfüllt $X$ $(\star)$. Also können wir von Weil-Divisoren sprechen. Da $X$ integer ist, ist $K(U)=\operatorname{Quot}(A)= K$ der Funktionenkörper von $X$ für alle $U=\operatorname{Spec}(A)\subset_\text{o}X$. Somit ist $\mathcal{K}$ konstante Garbe.
+
+Sei $(U_i,f_i)_i$ ein Cartier-Divisor mit einer offenen Überdeckung $(U_i)_i$ von $X$ und $f_i\in\Gamma(U_i,\mathcal{K}^\times)=K^\times$. Wir ordnen diesen Cartier-Divisor den folgenden Weil-Divisor zu:
+\[D=\sum_Y v_Y(f_{i_Y})Y \]
+wobei $Y$ die Primdivisoren von $X$ durchläuft und $i_Y$ ein Index mit $U_i\cap Y\neq\varnothing$. Die Summe ist endlich, da $X$ noethersch ist. $D$ ist unabhängig von Wahl der Indizes $i_Y$:
+
+Seien $i,j$ mit $U_i\cap Y\neq\varnothing$ und $U_j\cap Y\neq\varnothing$. Dann ist $\frac{f_i}{f_j}$ auf $U_i\cap U_j$ invertierbar, d.h. $\frac{f_i}{f_j}\in\Gamma(U_i\cap U_j,\mathcal{O}^\times)$. Es folgt $v_Y\big(\frac{f_i}{f_j}\big)=0$, also $v_Y(f_i)=v_Y(f_j)$.
+
+Sei nun umgekehrt $D=\sum_Yn_YY$ ein Weil-Divisor auf $X$ und $x\in X$. Dann induziert $D$ ein Weil-Divisor $D_x$ auf $\operatorname{Spec}(\mathcal{O}_x)$, nämlich:
+\[D_x=\sum_Y n_Y(Y\cap\operatorname{Spec}(\mathcal{O}_x)) \]
+Da $\mathcal{O}_x$ als faktoriell vorausgesetzt wird, ist nach \hyperref[6.10]{Satz 6.10} $\operatorname{Cl}(\operatorname{Spec}\mathcal{O}_x)=0$ und $D_x$ ein Hauptdivisor, d.h. $D_x=(f_x)$ für ein $f_x\in K^\times$. Fassen wir $(f_x)$ als Weil-Divisor in $X$ auf, so sehen wir, dass sich $(f_x)$ und $D$ nur bei Primdivisoren, die nicht durch $x$ gehen, unterscheiden. Davon gibt es nur endlich viele, deren Koeffizienten nicht verschwinden. Daher existiert eine offene Umgebung $U_x$ von $x$ mit $(f_x)|_{U_x}=D|_{U_x}$. Das System $(U_x,f_x)_{x\in X}$ liefert einen Cartier-Divisor.
+
+Geben $f,f'$ denselben Weil-Divisor auf $U\subset_\text{o}X$ offen, so ist $\frac{f}{f'}\in\Gamma(U,\mathcal{O}^\times)$, da $X$ normal ist. Daher ist die Konstruktion wohldefiniert. Die obigen Konstruktionen sind invers zueinander.\qed
 
 \printindex
 \end{document}
