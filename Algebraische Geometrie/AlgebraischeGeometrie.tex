@@ -1748,9 +1748,9 @@ Sei $f\in K^\times$. Ist $v_Y(f)>0$, so sagen wir, dass $f$ eine \textit{Nullste
 
 \paragraph{Lemma 6.6.}\label{6.6} Sei $X$ ein Schema mit $(\star)$ und $f\in K^\times$. Dann ist $v_Y(f)=0$ für fast alle Primdivisoren $Y$.
 
-\paragraph{Beweis.} Sei $\varnothing \neq U = \operatorname{Spec}(A)\subset_\text{o}X$ affin mit $f|_U$ \textit{regulär}, d.h. $f|_U\in\mathcal{O}_X(U)$. Sei $Z=X\setminus U\subsetneq X$ abgeschlossen. Da $X$ noethersch ist, enthält $Z$ höchstens endlich viele Primdivisoren von $X$, alle anderen treffen $U$. Es genügt also zu zeigen, dass es nur endlich viele Primdivisoren $Y$ in $U$ gibt mit $v_Y(f)\neq 0$, d.h. $v_Y(f)>0$. Es gilt mit $Y=\overline{\{ \eta\}}$:
+\paragraph{Beweis.} Sei $\varnothing \neq U = \operatorname{Spec}(A)\subset_\text{o}X$ affin mit $f|_U$ \textit{regulär}, d.h. $f|_U\in\mathcal{O}_X(U)$. Sei $Z=X\setminus U\subsetneq X$ abgeschlossen. Da $X$ noethersch und irreduzibel ist, ist $Z$ noethersch mit $\operatorname{codim}(Z,X)\geq 1$ und besitzt nur endlich viele irreduzible Komponenten. Daher enthält $Z$ höchstens endlich viele Primdivisoren von $X$, alle anderen treffen $U$. Es genügt also zu zeigen, dass es nur endlich viele Primdivisoren $Y$ in $U$ gibt mit $v_Y(f)\neq 0$, d.h. $v_Y(f)>0$. Es gilt mit $Y=\overline{\{ \eta\}}$:
 \[v_Y(f)>0\iff f\not\in\mathcal{O}_{U,\eta}^\times=A_\eta^\times\iff f\in\eta\iff Y=V(\eta)\subset V(f)\subset U \]
-Da $f\neq 0$, ist $V(f)\subsetneq U$ eine echte abgeschlossene Teilmenge, und enthält daher nur endlich viele abgeschlossene irreduzible Teilmengen der Kodimension $1$ in $U$.\qed
+Da $f\neq 0$, ist $V(f)\subsetneq U$ eine echte abgeschlossene Teilmenge, und enthält daher nur endlich viele irreduzible Komponenten, also Primdivisoren in $U$.\qed
 
 \paragraph{Definition 6.7.}\label{6.7} Sei $X$ ein Schema mit $(\star)$ und $f\in K^\times$. Der Divisor $\operatorname{div}(f)$ von $f$ ist definiert als:
 \[\operatorname{div}(f)=\sum_Y v_Y(f)Y \]
@@ -1864,7 +1864,7 @@ Wir zeigen nun, dass $f'$ surjektiv ist. Sei $y'\in Y'$ und sei $x\in X$ mit $f(
 \[\delta : \operatorname{Spec}\kappa(x)\times_{\kappa(y)}\operatorname{Spec}\kappa(y') = \operatorname{Spec}(\kappa(x)\otimes_{\kappa(y)}\kappa(y'))\hookrightarrow X\times_YY' \]
 Da $\kappa(x)\otimes_{\kappa(y)}\kappa(y')\neq 0$, gilt für jedes $z\in\operatorname{im}(\delta)$ stets $h'(z)=x$ und $f'(z)=y'$. Dies zeigt die Surjektivität von $f'$.
 
-Also ist die Surjektivität von $f$ stabil unter Basiswechsel. Da alle anderen Eigenschaften in den Voraussetzungen stabil unter Basiswechsel sind (siehe \hyperref[4.17]{4.17 (iii)} und \hyperref[4.22]{4.22}), reicht es zu zeigen, dass $g$ abgeschlossen ist. Sei $Y'\subset Y$ eine abgeschlossene Teilmengen. Dann ist wegen der Surjektivität von $f$:
+Also ist die Surjektivität von $f$ stabil unter Basiswechsel. Da alle anderen Eigenschaften in den Voraussetzungen ebenfalls stabil unter Basiswechsel sind (siehe \hyperref[4.17]{4.17 (iii)} und \hyperref[4.22]{4.22}), reicht es zu zeigen, dass $g$ abgeschlossen ist. Sei $Y'\subset Y$ eine abgeschlossene Teilmengen. Dann ist wegen der Surjektivität von $f$:
 \[g(Y')=(g\circ f)\circ f^{-1}(Y') \]
 $g(Y')$ ist abgeschlossen, da $g\circ f$ abgeschlossen ist.\qed
 
