@@ -1898,7 +1898,14 @@ f_Z^{-1}(W)= (X\times_YZ)\times_ZW &\cong X\times_YW \\
 und $A\otimes_BC$ ist ein endlich erzeugter $C$"~Modul.
 \item Sei $f^{-1}(y)\neq\varnothing$. Betrachte den Morphismus:
 \[f^{-1}(y)= X\times_Y\operatorname{Spec}\kappa(y)\to\operatorname{Spec}\kappa(y) \]
-Dieser ist endlich nach (i). Also ist $f^{-1}(y)=\operatorname{Spec}(A)$ affin, wobei $A$ ein endlich dimensionierter $\kappa(y)$"~Vektorraum ist. Somit ist $\dim f^{-1}(y)=0$, als topologischer Raum ist $f^{-1}(y)$ also eine endliche Menge an Punkten.
+Dieser ist endlich nach (i). Also ist $f^{-1}(y)=\operatorname{Spec}(A)$ affin, wobei $A$ ein endlich dimensionierter $\kappa(y)$"~Vektorraum ist. Somit ist $\dim f^{-1}(y)=\dim\kappa(y)= 0$, als topologischer Raum ist $f^{-1}(y)$ also eine endliche Menge an Punkten.\qed
+\end{enumerate}
+
+\paragraph{Bemerkung.} \begin{enumerate}[(i)]
+\item In \hyperref[6.23]{Definition 6.23} ist $f^\ast Q$ unabhängig von der Wahl des lokalen Parameters, da ein lokaler Parameter eindeutig bis auf eine Einheit in $\mathcal{O}_{Y,Q}$ bestimmt ist.
+\item $f^\ast$ \textit{respektiert lineare Äquivalenz}, d.h. für $h\in K(Y)^\times,\ \operatorname{div}(h)=\sum_Qv_Q(h)Q$ gilt:
+\[f^\ast(\operatorname{div}(h))=\sum_Qv_Q(h)\sum_{P\in f^{-1}(Q)}v_P(t)P=\sum_Pv_P(h)P=\operatorname{div}(h) \]
+da $v_P(h)=v_P(t)\cdot v_Q(h)$ ist. Somit induziert $f^\ast$ eine Abbildung $\operatorname{Cl}(Y)\to\operatorname{Cl}(X)$.\qed
 \end{enumerate}
 
 \paragraph{Satz 6.25.}\label{6.25} Sei $f:X\to Y$ ein endlicher Morphismus nicht-singulärer Kurven. Dann:
