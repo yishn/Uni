@@ -1855,7 +1855,16 @@ Es bleibt zu zeigen, dass $f$ endlich ist. Sei $V=\operatorname{Spec}(B)\subset_
 
 \paragraph{Beweis.} Siehe z.B. Zariski-Samuel: Commutative Algebra I, Chapter V, Theorem 9.\qed
 
-\paragraph{Beweis von \hyperref[6.20]{6.20}.} TODO
+\paragraph{Beweis von \hyperref[6.20]{6.20}.} Es reicht zu zeigen, dass $g$ universell abgeschlossen ist. Sei $h:Y'\to Y$ ein beliebiger Morphismus und betrachte den Basiswechsel:
+\[\begin{tikzcd}
+X\times_Y Y' \ar[r, "f'"]\ar[d, "h'"'] & Y' \ar[d, "h"]\\
+X\ar[r, "f"'] & Y
+\end{tikzcd} \]
+Wir zeigen nun, dass $f'$ surjektiv ist. Sei $y'\in Y'$ und sei $x\in X$ mit $f(x)=h(y')=:y$. Behauptung: Es gibt ein $z\in X\times_YY'$ mit $h'(z)=x$ und $f'(z)=y'$. Seien $i_x:\{x\}\hookrightarrow X,\ i_{y'}:\{y'\}\hookrightarrow Y'$ die Inklusionen. Diese liefern einen $Y$"~Morphismus:
+\[\delta : \operatorname{Spec}\kappa(x)\times_{\kappa(y)}\operatorname{Spec}\kappa(y') = \operatorname{Spec}(\kappa(x)\otimes_{\kappa(y)}\kappa(y'))\hookrightarrow X\times_YY' \]
+Da $\kappa(x)\otimes_{\kappa(y)}\kappa(y')\neq 0$, gilt für jedes $z\in\operatorname{im}(\delta)$ stets $h'(z)=x$ und $f'(z)=y'$. Dies zeigt die Surjektivität von $f'$.
+
+Da alle anderen Eigenschaften in den Voraussetzungen stabil unter Basiswechsel sind (siehe \hyperref[4.17]{4.17 (iii)} und \hyperref[4.22]{4.22}), reicht es zu zeigen, dass $g$ abgeschlossen ist. Sei $Y'\subset Y$ eine abgeschlossene Teilmengen. Dann ist wegen der Surjektivität von $g$
 
 \paragraph{Definition 6.22.}\label{6.22} Sei $f:X\to Y$ ein dominanter Morphismus von Kurven. Dann heißt $\deg(f)=[K(X):K(Y)]$ der \textit{Grad} von $f$\index{Grad}. Sei $X$ eine nicht-singuläre Kurve, erfüllt also insbesondere $(\star)$. Ein Primdivisor von $X$ ist genau ein abgeschlossener Punkt. Ein Divisor $D$ ist somit von der folgenden Form:
 \[D=\sum_i n_iP_i,\quad n_i\in\mathbb{Z},\ P_i\text{ abgeschlossene Punkte} \]
