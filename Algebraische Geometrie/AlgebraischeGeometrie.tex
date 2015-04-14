@@ -1883,7 +1883,23 @@ Da $f$ endlich ist, ist obige Summe nach \hyperref[6.24]{Lemma 6.24} endlich.
 \item Ist $f:X\to Y$ ein endlicher Morphismus und $y\in Y$, so ist $f^{-1}(y)$ endlich.
 \end{enumerate}
 
-\paragraph{Beweis.} TODO
+\paragraph{Beweis.} \begin{enumerate}[(i)]
+\item Sei $f:X\to Y$ ein endlicher Morphismus und $g:Z\to Y$ beliebig. Betrachte den folgenden Basiswechsel:
+\[\begin{tikzcd}
+X\times_YZ \dar\rar["f_Z"] & Z\dar["g"]\\
+X \rar["f"'] & Y
+\end{tikzcd} \]
+Sei $V=\operatorname{Spec}(B)\subset_\text{o}Y$ affin. Dann existiert ein affines $W=\operatorname{Spec}(C)\subset_\text{o}Z$ mit $g(W)\subset V$. Es ist $f^{-1}(V)=\operatorname{Spec}(A)$ affin, wobei $A$ ein endlich erzeugter $B$"~Modul ist. Es gilt:
+\begin{align*}
+f_Z^{-1}(W)= (X\times_YZ)\times_ZW &\cong X\times_YW \\
+&\cong (X\times_YV)\times_VW\\
+&\cong f^{-1}(V)\times_VW=\operatorname{Spec}(A\otimes_BC)
+\end{align*}
+und $A\otimes_BC$ ist ein endlich erzeugter $C$"~Modul.
+\item Sei $f^{-1}(y)\neq\varnothing$. Betrachte den Morphismus:
+\[f^{-1}(y)= X\times_Y\operatorname{Spec}\kappa(y)\to\operatorname{Spec}\kappa(y) \]
+Dieser ist endlich nach (i). Also ist $f^{-1}(y)=\operatorname{Spec}(A)$ affin, wobei $A$ ein endlich dimensionierter $\kappa(y)$"~Vektorraum ist. Somit ist $\dim f^{-1}(y)=0$, als topologischer Raum ist $f^{-1}(y)$ also eine endliche Menge an Punkten.
+\end{enumerate}
 
 \paragraph{Satz 6.25.}\label{6.25} Sei $f:X\to Y$ ein endlicher Morphismus nicht-singulärer Kurven. Dann:
 \[\deg(f^\ast D)=\deg(f)\cdot \deg(D) \]
