@@ -1864,7 +1864,9 @@ Wir zeigen nun, dass $f'$ surjektiv ist. Sei $y'\in Y'$ und sei $x\in X$ mit $f(
 \[\delta : \operatorname{Spec}\kappa(x)\times_{\kappa(y)}\operatorname{Spec}\kappa(y') = \operatorname{Spec}(\kappa(x)\otimes_{\kappa(y)}\kappa(y'))\hookrightarrow X\times_YY' \]
 Da $\kappa(x)\otimes_{\kappa(y)}\kappa(y')\neq 0$, gilt für jedes $z\in\operatorname{im}(\delta)$ stets $h'(z)=x$ und $f'(z)=y'$. Dies zeigt die Surjektivität von $f'$.
 
-Da alle anderen Eigenschaften in den Voraussetzungen stabil unter Basiswechsel sind (siehe \hyperref[4.17]{4.17 (iii)} und \hyperref[4.22]{4.22}), reicht es zu zeigen, dass $g$ abgeschlossen ist. Sei $Y'\subset Y$ eine abgeschlossene Teilmengen. Dann ist wegen der Surjektivität von $g$
+Also ist die Surjektivität von $f$ stabil unter Basiswechsel. Da alle anderen Eigenschaften in den Voraussetzungen stabil unter Basiswechsel sind (siehe \hyperref[4.17]{4.17 (iii)} und \hyperref[4.22]{4.22}), reicht es zu zeigen, dass $g$ abgeschlossen ist. Sei $Y'\subset Y$ eine abgeschlossene Teilmengen. Dann ist wegen der Surjektivität von $f$:
+\[g(Y')=(g\circ f)\circ f^{-1}(Y') \]
+$g(Y')$ ist abgeschlossen, da $g\circ f$ abgeschlossen ist.\qed
 
 \paragraph{Definition 6.22.}\label{6.22} Sei $f:X\to Y$ ein dominanter Morphismus von Kurven. Dann heißt $\deg(f)=[K(X):K(Y)]$ der \textit{Grad} von $f$\index{Grad}. Sei $X$ eine nicht-singuläre Kurve, erfüllt also insbesondere $(\star)$. Ein Primdivisor von $X$ ist genau ein abgeschlossener Punkt. Ein Divisor $D$ ist somit von der folgenden Form:
 \[D=\sum_i n_iP_i,\quad n_i\in\mathbb{Z},\ P_i\text{ abgeschlossene Punkte} \]
@@ -1880,6 +1882,27 @@ Da $f$ endlich ist, ist obige Summe nach \hyperref[6.24]{Lemma 6.24} endlich.
 \item Die Eigenschaft endlich zu sein ist stabil unter Basiswechsel.
 \item Ist $f:X\to Y$ ein endlicher Morphismus und $y\in Y$, so ist $f^{-1}(y)$ endlich.
 \end{enumerate}
+
+\paragraph{Satz 6.25.}\label{6.25} Sei $f:X\to Y$ ein endlicher Morphismus nicht-singulärer Kurven. Dann:
+\[\deg(f^\ast D)=\deg(f)\cdot \deg(D) \]
+
+\paragraph{Korollar 6.26.}\label{6.26} Hauptdivisoren auf einer vollständigen, nicht-singulären Kurve haben Grad $0$. Wir erhalten eine surjektive Gradabbildung:
+\[\deg:\operatorname{Cl}(X)\to\mathbb{Z} \]
+
+\paragraph{Lemma 6.27.}\label{6.27} Sei $X$ eine normale Kurve über $k$, $U\subset X$ offen, $\varphi:X\to\mathbf{P}^n$ eine rationale Abbildung. Dann lässt sich $\varphi$ zu einem einem Morphismus auf $X$ fortsetzen.
+
+\paragraph{Definition 6.28.}\label{6.28} Sei $X$ ein Schema.
+\begin{enumerate}[(i)]
+\item Sei $U=\operatorname{Spec}(A)\subset_\text{o}X$ affin und $S$ die Menge aller Nicht-Nullteiler in $A$. Dann heißt $K(U)=A_S$ \textit{totaler Quotientenring} von $A$.\index{totaler Quotientenring}
+\item Sei $\mathcal{K}$ die Ringgarbe, die zur Prägarbe $U\mapsto\varprojlim_{V\subset U\text{ affin}} K(V)$ assoziiert ist. $\mathcal{K}$ heißt \textit{Garbe der totalen Quotientenringe} von $\mathcal{O}$.
+\item $\mathcal{K}^\times:U\mapsto \mathcal{K}(U)^\times$ sei die Garbe von multiplikativen Gruppe der invertierbaren Elemente in $\mathcal{K}$. $\mathcal{O}^\times$ sei die Garbe der invertierbaren Elemente in $\mathcal{O}$.
+\end{enumerate}
+
+\paragraph{Definition 6.29.}\label{6.29} Sei $X$ ein Schema. Ein Element aus $\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$ heißt \textit{Cartier-Divisor}\index{Divisor!Cartier}. Ein Cartier-Divisor kann also durch ein System $(U_i,f_i)_i$ beschrieben werden, wobei $(U_i)_i$ eine offene Überdeckung von $X$ ist, und $f_i\in\Gamma(U_i,\mathcal{K}^\times)$, so dass für alle $i,j$ stets $\frac{f_i}{f_j}\in\Gamma(U_i\cap U_j,\mathcal{O}^\times)$ gilt.
+
+Ein Cartier-Divisor heißt \textit{prinzipal}\index{Divisor!prinzipal} oder \textit{Hauptdivisor}\index{Hauptdivisor}, wenn er im Bild der kanonischen Abbildung $\Gamma(X,\mathcal{K}^\times)\to\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$ ist. Zwei Cartier-Divisoren heißen \textit{linear äquivalent}\index{linear äquivalent}, falls ihre Differenz prinzipal ist.
+
+\paragraph{Satz 6.30.}\label{6.30} Sei $X$ ein integres, separiertes, noethersches Schema. Ferner sei $X$ \textit{lokal faktoriell}\index{lokal faktoriell}, d.h. alle lokalen Ringe sind faktoriell. Dann ist die Gruppe $\operatorname{Div}(X)$ von Weil-Divisoren isomorph zur Gruppe der Cartier-Divisoren $\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times)$. Prinzipale Weil-Divisoren entsprechen prinzipale Cartier-Divisoren.
 
 \printindex
 \end{document}
