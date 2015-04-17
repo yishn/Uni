@@ -1999,5 +1999,19 @@ Da $X$ irreduzibel ist, folgt $\mathcal{L}\otimes\mathcal{K}\cong\mathcal{K}$. D
 
 \paragraph{Beweis.} Nach \hyperref[6.37]{Korollar 6.37} und \hyperref[6.15]{Satz 6.15} ist $\operatorname{Pic}(X)\cong \operatorname{Cl}(X)\cong\mathbb{Z}$. Ferner wird $\operatorname{Cl}(X)$ von der Hyperebene $D=V_+(T_0)$ erzeugt. Dann gilt $\mathcal{L}(D)T_0=\mathcal{O}(1)$, da $\mathcal{O}(1)|_{D_+(T_i)}=\mathcal{O}_{D_+(T_i)}T_i$ und $\mathcal{L}(D)|_{D_+(T_i)}=\mathcal{O}_{D_+(T_i)}\frac{T_i}{T_0}$.\qed
 
+\section{Projektive Morphismen}
+
+\paragraph{Satz 7.1.}\label{7.1} Sei $A$ ein Ring und $X$ ein Schema über $A$.
+\begin{enumerate}[(i)]
+\item Ist $\varphi:X\to\mathbf{P}_A^n$ ein $A$-Morphismus. Dann ist $\varphi^\ast(\mathcal{O}(1))$ eine invertierbare Garbe auf $X$, die von globalen Schnitten $s_i=\varphi^\ast(x_i),\ i=0,\ldots,n$ erzeugt wird, wobei $x_i\in\Gamma(\operatorname{Proj}(A[x_0,\ldots,x_n]),\mathcal{O}(1))$.
+\item Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und $s_0,\ldots,s_n\in\Gamma(X,\mathcal{L})$ globale Schnitte, die $\mathcal{L}$ erzeugen. Dann existiert ein eindeutig bestimmter $A$"~Morphismus $\varphi:X\to\mathbf{P}_A^n$ derart, dass $\mathcal{L}\cong\varphi^\ast(\mathcal{O}(1))$ mit $s_i=\varphi^\ast(x_i)$ für gewisse $x_0,\ldots,x_n\in X$ gibt.
+\end{enumerate}
+
+\paragraph{Satz 7.2.}\label{7.2} Sei $\varphi:X\to\mathbf{P}_A^n$ ein $A$"~Morphismus, der zu einer invertierbaren Garbe $Z$ auf $X$ und globale Schnitte $s_0,\ldots,x_n\in\Gamma(X,Z)$ gehört, die $\mathcal{L}$ erzeugen. Dann ist $\varphi$ genau dann eine abgeschlossene Immersion, wenn die folgenden Bedingungen gelten:
+\begin{enumerate}[(i)]
+\item Alle offenen Teilmengen $X_i$ wie im Beweis von \hyperref[7.1]{Satz 7.1 (ii)} sind affin.
+\item Für alle $i$ ist die Abbildung $A[Y_0,\ldots,\widehat{Y_i},\ldots,Y_n]\to\Gamma(X_i,\mathcal{O}_{X_i}),\ Y_j\mapsto \frac{s_j}{s_i}$ surjektiv.
+\end{enumerate}
+
 \printindex
 \end{document}
