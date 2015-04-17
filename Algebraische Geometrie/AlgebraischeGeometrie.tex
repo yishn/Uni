@@ -1943,5 +1943,61 @@ Da $\mathcal{O}_x$ als faktoriell vorausgesetzt wird, ist nach \hyperref[6.10]{S
 
 Geben $f,f'$ denselben Weil-Divisor auf $U\subset_\text{o}X$ offen, so ist $\frac{f}{f'}\in\Gamma(U,\mathcal{O}^\times)$, da $X$ normal ist. Daher ist die Konstruktion wohldefiniert. Die obigen Konstruktionen sind invers zueinander.\qed
 
+\paragraph{Satz 6.31.}\label{6.31} Seien $\mathcal{L},\mathcal{M}$ invertierbare Garben auf einem Schema $X$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\mathcal{L}\otimes \mathcal{M}$ ist invertierbar.
+\item $\operatorname{\mathcal{H}om}_{\mathcal{O}_X}(\mathcal{L},\mathcal{O}_X)$ ist invertierbar und wird mit $\mathcal{L}^{-1}$ bezeichnet.
+\item $\mathcal{L}\otimes\mathcal{L}^{-1}\cong\mathcal{O}_X$
+\item $\operatorname{\mathcal{H}om}_{\mathcal{O}_X}(\mathcal{L},\mathcal{L})=\mathcal{O}_X$
+\end{enumerate}
+
+\paragraph{Definition 6.32.}\label{6.32}\begin{enumerate}[(i)]
+\item Wir setzen:
+\[\mathcal{L}^{\otimes m}=\underbrace{\mathcal{L}\otimes\cdots\otimes\mathcal{L}}_{m\text{-mal}},\quad\quad \mathcal{L}^{\otimes -m}=(\mathcal{L}^{-1})^{\otimes m},\quad m\geq 0 \]
+Also gilt $\mathcal{L}^{\otimes n}\otimes\mathcal{L}^{\otimes m}=\mathcal{L}^{\otimes (n+m)}$ für alle $n,m\in\mathbb{Z}$.
+\item Die \textit{Picard-Gruppe} $\operatorname{Pic}(X)$\index{Picard-Gruppe} eines Schemas $X$ ist die abelsche Gruppe von Isomorphieklassen invertierbarer Garben auf $X$ mit der Operation $\otimes$.
+\end{enumerate}
+
+\paragraph{Definition 6.33.}\label{6.33} Sei $D$ ein Cartier-Divisor auf $X$ repräsentiert durch $(U_i,f_i)_i$. Dann ist die Untergarbe $\mathcal{L}(D)$ von $\mathcal{K}$ definiert durch:
+\[\mathcal{L}(D)|_{U_i}=\mathcal{O}_{U_i}f_i^{-1}\subset\mathcal{K}|_{U_i} \]
+Diese ist wohldefiniert, denn auf $U_i\cap U_j$ haben wir $\mathcal{L}(D)|_{U_i\cap U_j}=\mathcal{O}_{U_i\cap U_j}f_i^{-1}=\mathcal{O}_{U_i\cap U_j}f_j^{-1}$, da $\frac{f_i}{f_j}\in\Gamma(U_i\cap U_j,\mathcal{O}^\times)$. $\mathcal{L}(D)$ heißt die zum Divisor $D$ \textit{assoziierte Garbe}\index{assoziierte Garbe!zum Divisor}.
+
+\paragraph{Satz 6.34.}\label{6.34} Sei $X$ ein Schema.
+\begin{enumerate}[(i)]
+\item Für jeden Cartier-Divisor $D$ ist $\mathcal{L}(D)$ eine invertierbare Garbe auf $X$. Die Abbildung $D\mapsto\mathcal{L}(D)$ induziert eine Bijektion:
+\[\{\text{Cartier-Divisoren auf }X \}\to\{\text{Invertierbare Untergarben von }\mathcal{K} \} \]
+\item $\mathcal{L}(D_1-D_2)\cong\mathcal{L}(D_1)\otimes\mathcal{L}(D_2)^{-1}$ für Cartier-Divisoren $D_1,D_2$
+\item $D_1\sim D_2\iff\mathcal{L}(D_1)\cong\mathcal{L}(D_2)$
+\end{enumerate}
+
+\paragraph{Beweis.} \begin{enumerate}[(i)]
+\item Sei repräsentiert durch $(U_i,f_i)_i$ mit $f_i\in\Gamma(U_i,\mathcal{K}^\times)$. Dann ist $\mathcal{O}_{U_i}\to\mathcal{L}(D)|_{U_i},\ 1\mapsto f_i^{-1}$ ein Isomorphismus, also $\mathcal{L}(D)$ invertierbar. Sei umgekehrt $\varphi:\mathcal{L}\hookrightarrow\mathcal{K}$ eine invertierbare Untergarbe und $\{U_i\}$ eine Überdeckung von $X$ mit $\tilde{\varphi}:\mathcal{O}_{U_i}\stackrel{\sim}{\to}\mathcal{L}|_{U_i}\hookrightarrow\mathcal{K}|_{U_i}$. Setze $f_i=\tilde{\varphi}(U_i)(1)^{-1}$. Dann definiert $(U_i,f_i)_i$ ein Cartier-Divisor $D$ mit $\mathcal{L}(D)=\mathcal{L}$.
+\item Seien $D_1, D_2$ repräsentiert durch $(U_i,f_i)_i$ bzw. $(U_i,g_i)_i$. Dann wird $D_1-D_2$ repräsentiert durch $(U_i,f_ig_i^{-1})_i$. Also gilt:
+\[\mathcal{L}(D_1-D_2)|_{U_i}=\mathcal{O}_{U_i}(f_i^{-1}g_i)=\mathcal{L}(D_1)|_{U_i}\otimes \mathcal{L}(D_2)|_{U_i}^{-1}\subset\mathcal{K}|_{U_i} \]
+Somit folgt $\mathcal{L}(D_1-D_2)=\mathcal{L}(D_1)\otimes\mathcal{L}(D_2)^{-1}$.
+\item Wegen (ii) reicht es zu zeigen, dass $D$ genau dann ein Hauptdivisor ist, wenn $\mathcal{L}(D)\cong\mathcal{O}_X$. Sei $D$ prinzipal, d.h. $D=(f)$ für ein $f\in\Gamma(X,\mathcal{K}^\times)$. Somit ist $\mathcal{L}(D)=\mathcal{O}_Xf^{-1}\cong\mathcal{O}_X$. Sei umgekehrt $\varphi:\mathcal{O}_X\to\mathcal{L}(D)$ ein Isomorphismus. Setze $f$ als das Bild von $1$ der folgenden Komposition:
+\[\Gamma(X,\mathcal{O}_X)\stackrel{\sim}{\to} \Gamma(X,\mathcal{L}(D))\hookrightarrow\Gamma(X,\mathcal{K}^\times) \]
+Dann ist $\mathcal{L}(D)=\mathcal{L}((f^{-1}))$, also $D=(f^{-1})$.\qed
+\end{enumerate}
+
+\paragraph{Korollar 6.35.}\label{6.35} Sei $X$ ein Schema. Dann induziert die Abbildung $D\mapsto\mathcal{L}(D)$ einen injektiven Gruppenhomomorphismus:
+\[\operatorname{CaCl}(X)\hookrightarrow\operatorname{Pic}(X)\]
+wobei $\operatorname{CaCl}(X)$ die Cartier-Divisorenklassengruppe bezeichnet. Im Allgemeinen ist diese Abbildung nicht surjektiv.
+
+\paragraph{Satz 6.36.}\label{6.36} Sei $X$ ein integres Schema. Dann ist die Abbildung $\operatorname{CaCl}(X)\to\operatorname{Pic}(X)$ ein Gruppenisomorphismus.
+
+\paragraph{Beweis.} Es genügt zu zeigen, dass jede invertierbare Garbe isomorph zu einer Untergarbe von $\mathcal{K}$ ist. Da $X$ integer ist, ist $\mathcal{K}$ konstante Garbe mit $\mathcal{K}(U)=K$ der Funktionenkörper von $X$ für alle $U$. Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und betrachte $\mathcal{L}\otimes\mathcal{K}$. Sei $X=\bigcup_i U_i$ eine offene Überdeckung mit $\mathcal{L}|_{U_i}\cong\mathcal{O}_{U_i}$. Dann gilt:
+\[(\mathcal{L}\otimes_{\mathcal{O}_X}\mathcal{K})|_{U_i}=\mathcal{L}|_{U_i}\otimes_{\mathcal{O}_{U_i}}\mathcal{K}|_{U_i}=\mathcal{K}|_{U_i} \]
+Da $X$ irreduzibel ist, folgt $\mathcal{L}\otimes\mathcal{K}\cong\mathcal{K}$. Die kanonische Abbildung $\mathcal{L}\to\mathcal{L}\otimes\mathcal{K}\cong\mathcal{K}$ zeigt, dass $\mathcal{L}$ isomorph zu einer Untergarbe von $\mathcal{K}$ ist.\qed
+
+\paragraph{Korollar 6.37.}\label{6.37} Sei $X$ ein noethersches, integres, separiertes und lokal faktorielles Schema. Dann existiert ein Isomorphismus:
+\[\operatorname{Cl}(X)\cong\operatorname{Pic}(X) \]
+
+\paragraph{Beweis.} Folgt aus \hyperref[6.30]{Satz 6.30} und \hyperref[6.36]{Satz 6.36}.\qed
+
+\paragraph{Korollar 6.38.}\label{6.38} Sei $k$ ein Körper und $X=\mathbf{P}_k^n$. Dann ist jede invertierbare Garbe auf $X$ isomorph zu einem $\mathcal{O}(\ell)$ für ein $\ell\in\mathbb{Z}$.
+
+\paragraph{Beweis.} Nach \hyperref[6.37]{Korollar 6.37} und \hyperref[6.15]{Satz 6.15} ist $\operatorname{Pic}(X)\cong \operatorname{Cl}(X)\cong\mathbb{Z}$. Ferner wird $\operatorname{Cl}(X)$ von der Hyperebene $D=V_+(T_0)$ erzeugt. Dann gilt $\mathcal{L}(D)T_0=\mathcal{O}(1)$, da $\mathcal{O}(1)|_{D_+(T_i)}=\mathcal{O}_{D_+(T_i)}T_i$ und $\mathcal{L}(D)|_{D_+(T_i)}=\mathcal{O}_{D_+(T_i)}\frac{T_i}{T_0}$.\qed
+
 \printindex
 \end{document}
