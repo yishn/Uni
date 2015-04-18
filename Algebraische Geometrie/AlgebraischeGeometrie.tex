@@ -2000,15 +2000,20 @@ Da $X$ irreduzibel ist, folgt $\mathcal{L}\otimes\mathcal{K}\cong\mathcal{K}$. D
 
 \section{Projektive Morphismen}
 
-\paragraph{Satz 7.1.}\label{7.1} Sei $A$ ein Ring und $X$ ein Schema über $A$.
+\paragraph{Satz 7.1.}\label{7.1} Sei $A$ ein Ring, $X$ ein Schema über $A$ und $\mathbf{P}_A^n=\operatorname{Proj}A[x_0,\ldots,x_n]$.
 \begin{enumerate}[(i)]
-\item Ist $\varphi:X\to\mathbf{P}_A^n$ ein $A$-Morphismus. Dann ist $\varphi^\ast(\mathcal{O}(1))$ eine invertierbare Garbe auf $X$, die von globalen Schnitten $s_i=\varphi^\ast(x_i),\ i=0,\ldots,n$ erzeugt wird, wobei $x_i\in\Gamma(\operatorname{Proj}(A[x_0,\ldots,x_n]),\mathcal{O}(1))$.
-\item Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und $s_0,\ldots,s_n\in\Gamma(X,\mathcal{L})$ globale Schnitte, die $\mathcal{L}$ erzeugen. Dann existiert ein eindeutig bestimmter $A$"~Morphismus $\varphi:X\to\mathbf{P}_A^n$ derart, dass $\mathcal{L}\cong\varphi^\ast(\mathcal{O}(1))$ mit $s_i=\varphi^\ast(x_i)$ für gewisse $x_0,\ldots,x_n\in X$ gibt.
+\item Ist $\varphi:X\to\mathbf{P}_A^n$ ein $A$-Morphismus. Dann ist $\varphi^\ast(\mathcal{O}(1))$ eine invertierbare Garbe auf $X$, die von globalen Schnitten $s_i=\varphi^\ast(x_i),\ i=0,\ldots,n$ erzeugt wird, wobei $x_i\in\Gamma(\mathbf{P}_A^n,\mathcal{O}(1))$.
+\item Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und $s_0,\ldots,s_n\in\Gamma(X,\mathcal{L})$ globale Schnitte, die $\mathcal{L}$ erzeugen. Dann existiert ein eindeutig bestimmter $A$"~Morphismus $\varphi:X\to\mathbf{P}_A^n$ derart, dass $\mathcal{L}\cong\varphi^\ast(\mathcal{O}(1))$ mit $s_i=\varphi^\ast(x_i)$.
+\end{enumerate}
+
+\paragraph{Beweis.} \begin{enumerate}[(i)]
+\item Nach \hyperref[5.35]{5.35} erzeugen die globalen Schnitte $x_0,\ldots,x_n$ die Garbe $\mathcal{O}(1)$. Ferner ist $\varphi^\ast(\mathcal{O}(1))$ invertierbar und werden von $\varphi^\ast(x_i)=s_i$ erzeugt.
+\item Setze $X_i=\{P\in X\mid (s_i)_P\not\in\mathfrak{m}_P\mathcal{L}_P\}\subset_\text{o}X$. Da die $s_i$ die Garbe $\mathcal{L}$ erzeugen, gilt $X=\bigcup_iX_i$. Sei $U_i=D_+(x_i)\cong\operatorname{Spec}A[Y_0,\ldots,\widehat{Y_i},\ldots,Y_n],\ Y_j=\frac{x_j}{x_i}$. Betrachte den Ringhomomorphismus $\phi:A[Y_0,\ldots,\widehat{Y_i},\ldots,Y_n]\to\Gamma(X_i,\mathcal{O}_{X_i}),\ Y_j\mapsto \frac{s_j}{s_i}$. Dieser ist wohldefiniert, da  $(s_i)_P\not\in \mathfrak{m}_P\mathcal{L}_P\cong\mathfrak{m}_P\mathcal{O}_{X,P}$ für alle $P\in X_i$ gilt und daher $\frac{s_j}{s_i}\in\Gamma(X_i,\mathcal{O}_{X_i})$. Sei $X_i\to U_i$ der zu $\phi$ gehörige $A$"~Morphismus von $A$"~Schemata. Verkleben ergibt ein $A$"~Morphismus $\varphi:X\to\mathbf{P}_A^n$. Nach Konstruktion ist $\varphi$ eindeutig bestimmt durch $\mathcal{L}\cong\varphi^\ast(\mathcal{O}(1))$ und $s_i=\varphi^\ast(x_i)$.\qed 
 \end{enumerate}
 
 \paragraph{Satz 7.2.}\label{7.2} Sei $\varphi:X\to\mathbf{P}_A^n$ ein $A$"~Morphismus, der zu einer invertierbaren Garbe $Z$ auf $X$ und globale Schnitte $s_0,\ldots,x_n\in\Gamma(X,Z)$ gehört, die $\mathcal{L}$ erzeugen. Dann ist $\varphi$ genau dann eine abgeschlossene Immersion, wenn die folgenden Bedingungen gelten:
 \begin{enumerate}[(i)]
-\item Alle offenen Teilmengen $X_i$ wie im Beweis von \hyperref[7.1]{Satz 7.1 (ii)} sind affin.
+\item Alle offenen Teilmengen $X_i$ im Beweis von \hyperref[7.1]{Satz 7.1 (ii)} sind affin.
 \item Für alle $i$ ist die Abbildung $A[Y_0,\ldots,\widehat{Y_i},\ldots,Y_n]\to\Gamma(X_i,\mathcal{O}_{X_i}),\ Y_j\mapsto \frac{s_j}{s_i}$ surjektiv.
 \end{enumerate}
 
