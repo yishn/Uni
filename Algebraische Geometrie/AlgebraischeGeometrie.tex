@@ -2017,5 +2017,34 @@ Da $X$ irreduzibel ist, folgt $\mathcal{L}\otimes\mathcal{K}\cong\mathcal{K}$. D
 \item Für alle $i$ ist die Abbildung $A[Y_0,\ldots,\widehat{Y_i},\ldots,Y_n]\to\Gamma(X_i,\mathcal{O}_{X_i}),\ Y_j\mapsto \frac{s_j}{s_i}$ surjektiv.
 \end{enumerate}
 
+\paragraph{Beweis.} Sei $\varphi$ eine abgeschlossene Immersion. Dann ist $X_i=U_i\cap X$ ein abgeschlossenes Unterschema von $U_i=D_+(x_i)\subset\mathbf{P}_A^n=\operatorname{Proj}A[x_0,\ldots,x_n]$. Da $U_i$ affin ist, ist nach \hyperref[5.18]{Korollar 5.18} auch $X_i$ affin und wir erhalten einen surjektiven Ringhomomorphismus $A[Y_0,\ldots,\widehat{Y_i},\ldots,Y_n]\to \Gamma(X_i,\mathcal{O}_{X_i})$.
+
+Sei nun umgekehrt (i) und (ii) erfüllt. Dann ist $X_i$ nach (ii) ein abgeschlossenes Unterschema von $U_i$. Da $X=\bigcup_i X_i$ und $X_i=\varphi^{-1}(U_i)$, ist $X$ ein abgeschlossenes Unterschema von $\mathbf{P}_A^n$.\qed
+
+\paragraph{Definition 7.3.}\label{7.3} Eine invertierbare Garbe $\mathcal{L}$ auf einem noetherschen Schema $X$ heißt \textit{ampel}\index{$\mathcal{O}_X$-Modul!ampel}, falls für jede kohärente Garbe $\mathcal{F}$ auf $X$ ein $n_0>0$ existiert, so dass für alle $n\geq n_0$ der $\mathcal{O}_X$"~Modul $\mathcal{F}\otimes\mathcal{L}^n$ von globalen Schnitten erzeugt wird.
+
+\paragraph{Beispiel 7.4.}\label{7.4} Ist $X$ affin, so ist jede invertierbare Garbe ampel: Jede kohärente Garbe wird von globalen Schnitten endlich erzeugt, vgl. \hyperref[5.10]{Korollar 5.10}.
+
+\paragraph{Bemerkung 7.5.}\label{7.5} \hyperref[5.37]{Serres Theorem 5.37} besagt, dass jede sehr ample Garbe $\mathcal{L}$ auf einem Schema $X$ über einem noetherschen Ring ampel ist. Die Umkehrung ist im Allgemeinen falsch.
+
+\paragraph{Satz 7.6.}\label{7.6} Sei $\mathcal{L}$ eine invertierbare Garbe auf einem noetherschen Schema $X$. Dann sind folgende Aussagen äquivalent:
+\begin{enumerate}[(i)]
+\item $\mathcal{L}$ ist ampel.
+\item $\mathcal{L}^m$ ist ampel für alle $m>0$.
+\item $\mathcal{L}^m$ ist ampel für ein $m>0$.
+\end{enumerate}
+
+\paragraph{Beweis.} (i)$\implies$(ii)$\implies$(iii) ist klar. Sei nun $\mathcal{L}^m$ ampel für ein $m>0$ und $\mathcal{F}$ eine kohärente Garbe auf $X$. Nach Definition existiert ein $n_0>0$, so dass für alle $n\geq n_0$ die Garbe $\mathcal{F}\otimes(\mathcal{L}^m)^n$ von globalen Schnitten erzeugt wird. Betrachte die Garben $\mathcal{F}\otimes\mathcal{L}^k$ für $k=1,\ldots,m-1$. Diese sind kohärent, d.h. es gibt für jedes $k$ ein $n_k>0$, so dass für alle $n\geq n_k$ die Garbe $\mathcal{F}\otimes\mathcal{L}^k\otimes(\mathcal{L}^m)^n$ von globalen Schnitten erzeugt wird. Setzen wir nun $N=m\cdot\max\{n_k\mid k=1,\ldots,m-1\}$, so wird $\mathcal{F}\otimes\mathcal{L}^n$ von globalen Schnitten erzeugt für alle $n\geq N$. Somit ist $\mathcal{L}$ ampel.\qed
+
+\paragraph{Satz 7.7.}\label{7.7} Sei $X$ ein Schema von endlichem Typ über einem noetherschen Ring $A$ und $\mathcal{L}$ eine invertierbare Garbe auf $X$. Dann ist $\mathcal{L}$ genau dann ampel, wenn $\mathcal{L}^m$ sehr ampel bzgl. $\operatorname{Spec}(A)$ für ein $m>0$ ist.
+
+\paragraph{Lemma 7.8.}\label{7.8} Sei $X$ ein noethersches Schema, $U\subset_\text{o}X$ und $\mathcal{F}$ eine kohärente Garbe auf $U$. Dann existiert eine kohärente Garbe $\mathcal{F}'$ auf $X$ mit $\mathcal{F}'|_U=\mathcal{F}$.
+
+\paragraph{Beweis.} Sei o.B.d.A. $X$ affin. Sei $j:U\hookrightarrow X$ die Immersion. Dann ist $\mathcal{F}'=j_\ast\mathcal{F}$ nach \hyperref[5.13]{Satz 5.13 (iii)} quasikohärent. Ferner sind quasikohärente Garben auf einem noetherschen Schema Vereinigung seiner kohärenten Untergarben. Daher gilt:
+\[j_\ast\mathcal{F} =\mathcal{F}' = \bigcup_\lambda\mathcal{F}'_\lambda \]
+mit kohärenten Untergarben $\mathcal{F}'_\lambda$. Nach \hyperref[5.13]{Satz 5.13 (ii)} sind $j^\ast\mathcal{F}'_\lambda$ kohärent. Somit ist $\mathcal{F}=\bigcup_\lambda j^\ast\mathcal{F}'_\lambda$, wobei $j^\ast\mathcal{F}'_\lambda$ die kohärenten Untergarben von $\mathcal{F}$ durchläuft. Da $\mathcal{F}$ kohärent ist, gilt $\mathcal{F}=j^\ast\mathcal{F}'_\lambda$ für ein $\lambda$. Somit ist $\mathcal{F}'=\mathcal{F}'_\lambda$ kohärent.\qed
+
+\paragraph{Beweis von \hyperref[7.8]{Lemma 7.8}.}
+
 \printindex
 \end{document}
