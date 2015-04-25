@@ -2046,5 +2046,61 @@ mit kohärenten Untergarben $\mathcal{F}'_\lambda$. Nach \hyperref[5.13]{Satz 5.
 
 \paragraph{Beweis von \hyperref[7.7]{Lemma 7.7}.} Sei zunächst $\mathcal{L}^m$ sehr ampel für ein $m>0$. Es existiert also eine Immersion $i:X\to\mathbf{P}_A^n$ mit $\mathcal{L}^m\cong i^\ast(\mathcal{O}(1))$. Sei $\overline{X}$ der Abschluss von $X$ in $\mathbf{P}_A^n$. Dann ist $\overline{X}$ ein projektives Schema über $\operatorname{Spec}(A)$. Nach \hyperref[7.5]{7.5} ist $\mathcal{O}_{\overline{X}}(1)$ ampel auf $\overline{X}$. Sei $\mathcal{F}$ eine kohärente Garbe auf $X$ und $\overline{\mathcal{F}}$ die kohärente Garbe in \hyperref[7.8]{Lemma 7.8} auf $\overline{X}$ mit $\overline{F}|_X=\mathcal{F}$. Wird $\overline{\mathcal{F}}\otimes\mathcal{O}_{\overline{X}}(\ell)$ von globalen Schnitten erzeugt, so ist dies auch für $\mathcal{F}\otimes\mathcal{O}_X(\ell)$ der Fall. Daher ist $\mathcal{L}^m$ ampel auf $X$ und nach \hyperref[7.6]{Satz 7.6} auch $\mathcal{L}$. Die andere Richtung ist schwierig.
 
+\paragraph{Definition.} Sei $X$ ein Schema. Ein quasikohärenter $\mathcal{O}_X$"~Modul $\mathcal{S}$ habe die Eigenschaft $(\star)$, wenn $X$ noethersch ist und wenn er eine Struktur einer graduierten $\mathcal{O}_X$"~Algebra trägt, d.h. $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{S}_d$ mit homogenen Teilen $\mathcal{S}_d$, so dass:
+\begin{enumerate}[(i)]
+\item $\mathcal{S}_0=\mathcal{O}_X$
+\item $\mathcal{S}_1$ ist ein kohärenter $\mathcal{O}_X$"~Modul.
+\item $\mathcal{S}$ wird lokal von $\mathcal{S}_1$ als $\mathcal{O}_X$"~Modul erzeugt.
+\end{enumerate}
+
+\paragraph{Definition 7.9.}\label{7.9} Sei $X$ ein Schema und $\mathcal{S}$ ein graduierter $\mathcal{O}_X$"~Modul mit $(\star)$. Sei $U=\operatorname{Spec}(A)\subset_\text{o}X$, $\mathcal{S}(U)=\Gamma(U,\mathcal{S}|_U)$ die graduierte $A$"~Algebra und $\pi_U:\operatorname{Proj}\mathcal{S}(U)\to U$ der kanonische Morphismus. Für $U,V\subset_\text{o}X$ affin gilt $\pi_U^{-1}(U\cap V)\cong\pi_V^{-1}(U\cap V)$. Verkleben von $\pi_U$ liefert ein Schema $\operatorname{\mathbf{Proj}}(\mathcal{S})$ und ein Morphismus $\pi:\operatorname{\mathbf{Proj}}(\mathcal{S})\to X$, so dass für alle affinen $U\subset_\text{o}X$ stets $\pi^{-1}(U)\cong\operatorname{Proj}\mathcal{S}(U)$ gilt. Die invertierbaren Garben $\mathcal{O}(1)$ auf $\operatorname{Proj}\mathcal{S}(U)$ lassen sich zu einer invertierbaren Garbe $\mathcal{O}(1)$ auf $\operatorname{\mathbf{Proj}}(\mathcal{S})$ verkleben.
+
+\paragraph{Beispiel 7.10.}\label{7.10} Sei $\mathcal{O}_X[T_0,\ldots,T_n]=\mathcal{S}$. Dann ist $\operatorname{\mathbf{Proj}}(\mathcal{S})=\mathbf{P}_X^n=\mathbf{P}_\mathbb{Z}^n\times X$ mit der getwisteten Garbe $\mathcal{O}(1)$ wie in \hyperref[5.30]{Definition 5.30}.
+
+\paragraph{Lemma 7.11.}\label{7.11} Sei $\mathcal{S}$ eine Garbe graduierter Algebren mit $(\star)$ auf $X$. Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und $\mathcal{S}'$ die folgende Garbe graduierter Algebren:
+\[\mathcal{S}_d' =\mathcal{S}_1\otimes\mathcal{L}^d,\quad d\geq 0 \]
+Dann erfüllt $\mathcal{S}'$ ebenfalls $(\star)$ und es gibt einen natürlichen Isomorphismus:
+\[\begin{tikzcd}
+P'=\operatorname{\mathbf{Proj}}(\mathcal{S}')\ar[d, "\pi'"']\ar[r, "\varphi", "\cong"'] & P=\operatorname{\mathbf{Proj}}(\mathcal{S})\ar[dl, "\pi"]\\
+X&
+\end{tikzcd} \]
+Es gilt $\mathcal{O}_{P'}(1)\cong \varphi^\ast\mathcal{O}_P(1)\otimes\pi'^\ast\mathcal{L}$. $\mathcal{S}'$ wird auch mit $\mathcal{S}\ast\mathcal{L}$ bezeichnet.
+
+\paragraph{Satz 7.12.}\label{7.12} Sei $X$ und $\mathcal{S}$ mit $(\star)$. Sei $P=\operatorname{\mathbf{Proj}}(\mathcal{S})$ mit $\pi:P\to X$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\pi$ ist eigentlicher Morphismus.
+\item Besitzt $X$ eine ample Garbe $\mathcal{L}$, so ist $\pi$ projektiv und $\mathcal{O}_P(1)\otimes\pi^\ast\mathcal{L}^n$ ist eine sehr ample invertierbare Garbe von $P$ über $X$.
+\end{enumerate}
+
+\paragraph{Definition 7.13.}\label{7.13} \begin{enumerate}[(i)]
+\item Sei $A$ ein Ring und $M$ ein $A$"~Modul. Setze:
+\[T^0(M)=A,\quad T^n(M)= M^{\otimes n},\ n\geq 1 \]
+Dann ist $T(M)=\bigoplus_{n\geq 0}T^n(M)$ eine $A$"~Algebra mit $\otimes$ als Multiplikation, die sogenannte \textit{Tensor"~Algebra}\index{Tensor-Algebra} von $M$.
+\item Die \textit{symmetrische (Tensor-)Algebra}\index{Tensor-Algebra!symmetrisch} von $M$ ist definiert als der Quotient von $T(M)$ nach dem Ideal, das von den Elementen $x\otimes y-y\otimes x,\ x,y\in M$ erzeugt wird. $S(M)=\bigoplus_{n\geq 0}S^n(M)$ ist dann eine kommutative, graduierte $A$"~Algebra. $S^n(M)$ heißt \textit{$n$-tes symmetrisches Produkt}\index{symmetrisches Produkt} von $M$.
+\item Sei $X$ ein Schema und $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul. Dann wird die Tensor-Algebra $T(\mathcal{F})$ bzw. die symmetrische Algebra $S(\mathcal{F})$ von $\mathcal{F}$ als assoziierte Garbe zur Prägarbe $U\mapsto T(\mathcal{F}(U))$ bzw. $U\mapsto S(\mathcal{F}(U))$ definiert. $T(\mathcal{F})$ und $S(\mathcal{F})$ sind $\mathcal{O}_X$"~Algebren.
+\end{enumerate}
+
+\paragraph{Beispiel.} Sei $M$ ein freier $A$"~Modul vom Rang $r$. Dann gilt $S(M)\cong A[X_1,\ldots,X_r]$.
+
+\paragraph{Definition 7.14.}\label{7.14} Sei $X$ ein noethersches Schema und $\mathcal{E}$ eine lokal freie, kohärente Garbe auf $X$. Sei $\mathcal{S}=S(\mathcal{E})$ die symmetrische Algebra von $\mathcal{E}$ und $\mathbf{P}(\mathcal{E})=\operatorname{\mathbf{Proj}}(\mathcal{S})$. Dann ist $\mathcal{S}$ eine Garbe von graduierten $\mathcal{O}_X$"~Algebren, die $(\star)$ erfüllt. $\pi:\mathbf{P}(\mathcal{E})\to X$ heißt \textit{projektives Vektorbündel}\index{Vektorbündel!projektiv} über $X$.
+
+\paragraph{Bemerkung.} Ist $\mathcal{E}$ frei vom Rang $n+1$ über $U\subset_\text{o}X$, so ist $\pi^{-1}(U)\cong\mathbf{P}_U^n$.
+
+\paragraph{Satz 7.15.}\label{7.15} Sei $\pi:\mathbf{P}(\mathcal{E})\to X$ ein projektives Vektorbündel über $X$. Dann gilt mit $\mathcal{S}=S(\mathcal{E})$:
+\begin{enumerate}[(i)]
+\item Ist Rang von $\mathcal{E}$ größer gleich $2$, so gibt es einen kanonischen Isomorphismus von graduierten $\mathcal{O}_X$"~Algebren:
+\[\mathcal{S}\cong\bigoplus_{\ell\in\mathbb{Z}}\pi_\ast\mathcal{O}(\ell)\]
+Insbesondere folgt $\pi_\ast(\mathcal{O}(\ell))=0$ für $\ell<0$ und $\pi_\ast(\mathcal{O})=\mathcal{O}_X$, $\pi_\ast(\mathcal{O}(1))=\mathcal{E}$.
+\item Es gibt einen natürliche surjektiven Morphismus:
+\[\pi^\ast\mathcal{E}\to\mathcal{O}(1) \]
+\end{enumerate}
+
+\paragraph{Satz 7.16.}\label{7.16} Sei $\pi:\mathbf{P}(\mathcal{E})\to X$ ein projektives Vektorbündel von $X$ und $g:Y\to X$ ein Morphismus. Dann gibt es genau dann einen Morphismus $f$ mit kommutativen Diagramm
+\[\begin{tikzcd}
+Y\rar[dashed, "f"]\dar["g"'] &\mathbf{P}(\mathcal{E})\ar[dl, "\pi"]\\
+X&
+\end{tikzcd}\]
+wenn es eine invertierbare Garbe $\mathcal{L}$ auf $Y$ zusammen mit einem surjektiven Garbenmorphismus $g^\ast\mathcal{E}\to\mathcal{L}$ gibt.
+
 \printindex
 \end{document}
