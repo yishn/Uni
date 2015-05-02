@@ -2000,6 +2000,8 @@ Da $X$ irreduzibel ist, folgt $\mathcal{L}\otimes\mathcal{K}\cong\mathcal{K}$. D
 
 \section{Projektive Morphismen}
 
+\subsection{Ample Garben}
+
 \paragraph{Satz 7.1.}\label{7.1} Sei $A$ ein Ring, $X$ ein Schema über $A$ und $\mathbf{P}_A^n=\operatorname{Proj}A[x_0,\ldots,x_n]$.
 \begin{enumerate}[(i)]
 \item Ist $\varphi:X\to\mathbf{P}_A^n$ ein $A$-Morphismus. Dann ist $\varphi^\ast(\mathcal{O}(1))$ eine invertierbare Garbe auf $X$, die von globalen Schnitten $s_i=\varphi^\ast(x_i),\ i=0,\ldots,n$ erzeugt wird, wobei $x_i\in\Gamma(\mathbf{P}_A^n,\mathcal{O}(1))$.
@@ -2045,6 +2047,8 @@ Sei nun umgekehrt (i) und (ii) erfüllt. Dann ist $X_i$ nach (ii) ein abgeschlos
 mit kohärenten Untergarben $\mathcal{F}'_\lambda$. Nach \hyperref[5.13]{Satz 5.13 (ii)} sind $j^\ast\mathcal{F}'_\lambda$ kohärent. Somit ist $\mathcal{F}=\bigcup_\lambda j^\ast\mathcal{F}'_\lambda$, wobei $j^\ast\mathcal{F}'_\lambda$ die kohärenten Untergarben von $\mathcal{F}$ durchläuft. Da $\mathcal{F}$ kohärent ist, gilt $\mathcal{F}=j^\ast\mathcal{F}'_\lambda$ für ein $\lambda$. Somit ist $\mathcal{F}'=\mathcal{F}'_\lambda$ kohärent.\qed
 
 \paragraph{Beweis von \hyperref[7.7]{Lemma 7.7}.} Sei zunächst $\mathcal{L}^m$ sehr ampel für ein $m>0$. Es existiert also eine Immersion $i:X\to\mathbf{P}_A^n$ mit $\mathcal{L}^m\cong i^\ast(\mathcal{O}(1))$. Sei $\overline{X}$ der Abschluss von $X$ in $\mathbf{P}_A^n$. Dann ist $\overline{X}$ ein projektives Schema über $\operatorname{Spec}(A)$. Nach \hyperref[7.5]{7.5} ist $\mathcal{O}_{\overline{X}}(1)$ ampel auf $\overline{X}$. Sei $\mathcal{F}$ eine kohärente Garbe auf $X$ und $\overline{\mathcal{F}}$ die kohärente Garbe in \hyperref[7.8]{Lemma 7.8} auf $\overline{X}$ mit $\overline{F}|_X=\mathcal{F}$. Wird $\overline{\mathcal{F}}\otimes\mathcal{O}_{\overline{X}}(\ell)$ von globalen Schnitten erzeugt, so ist dies auch für $\mathcal{F}\otimes\mathcal{O}_X(\ell)$ der Fall. Daher ist $\mathcal{L}^m$ ampel auf $X$ und nach \hyperref[7.6]{Satz 7.6} auch $\mathcal{L}$. Die andere Richtung ist schwierig.
+
+\subsection{Projektive Vektorbündel}
 
 \paragraph{Definition.} Sei $X$ ein Schema. Ein quasikohärenter $\mathcal{O}_X$"~Modul $\mathcal{S}$ habe die Eigenschaft $(\star)$, wenn $X$ noethersch ist und wenn er eine Struktur einer graduierten $\mathcal{O}_X$"~Algebra trägt, d.h. $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{S}_d$ mit homogenen Teilen $\mathcal{S}_d$, so dass:
 \begin{enumerate}[(i)]
@@ -2095,12 +2099,67 @@ Insbesondere folgt $\pi_\ast(\mathcal{O}(\ell))=0$ für $\ell<0$ und $\pi_\ast(\
 \[\pi^\ast\mathcal{E}\to\mathcal{O}(1) \]
 \end{enumerate}
 
-\paragraph{Satz 7.16.}\label{7.16} Sei $\pi:\mathbf{P}(\mathcal{E})\to X$ ein projektives Vektorbündel von $X$ und $g:Y\to X$ ein Morphismus. Dann gibt es genau dann einen Morphismus $f$ mit kommutativen Diagramm
+\paragraph{Satz 7.16.}\label{7.16} \textit{(Universaleigenschaft des projektiven Vektorbündels)} Sei $\pi:\mathbf{P}(\mathcal{E})\to X$ ein projektives Vektorbündel von $X$ und $g:Y\to X$ ein Morphismus. Dann gibt es genau dann einen Morphismus $f$ mit kommutativen Diagramm
 \[\begin{tikzcd}
 Y\rar[dashed, "f"]\dar["g"'] &\mathbf{P}(\mathcal{E})\ar[dl, "\pi"]\\
 X&
 \end{tikzcd}\]
 wenn es eine invertierbare Garbe $\mathcal{L}$ auf $Y$ zusammen mit einem surjektiven Garbenmorphismus $g^\ast\mathcal{E}\to\mathcal{L}$ gibt.
+
+\subsection{Aufblasung}
+
+\paragraph{Definition 7.17.}\label{7.17} Sei $X$ ein noethersches Schema und $\mathcal{J}$ eine kohärente Idealgarbe auf $X$. Setze $\mathcal{J}^0=\mathcal{O}_X$ und $\mathcal{J}^d$ als das $d$-fache Produkt des Ideals $\mathcal{J}$. Sei $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{J}^d$. Dann erfüllen $X$ und $\mathcal{S}$ die Bedingung $(\star)$. $\widetilde{X}=\mathbf{Proj}(\mathcal{S})$ heißt die \textit{Aufblasung} von $X$ bzgl. $\mathcal{J}$.\index{Aufblasung}
+
+Ist $Y$ das abgeschlossene Unterschema von $X$, das zu $\mathcal{J}$ gehört, so sagen wir auch, dass $\widetilde{X}$ die Aufblasung von $X$ entlang $Y$ ist.
+
+\paragraph{Beispiel 7.18.}\label{7.18} Sei $X=\mathbf{A}^n_k$ und $P\in X$ der Nullpunkt, d.h. $X=\operatorname{Spec}(A),\ A=k[X_1,\ldots,X_n],\ I=(X_1,\ldots,X_n)$. Dann ist die Aufblasung von $X$ bei $P$ gegeben durch:
+\[\widetilde{X}=\operatorname{Proj}(S),\quad S=\bigoplus_{d\geq 0}I^d\]
+Betrachte die surjektive Abbildung $\psi:A[Y_1,\ldots,Y_n]\to S,\ Y_i\mapsto X_i$. Wir sehen, dass $\widetilde{X}$ isomorph zu dem abgeschlossenen Unterschema von $\mathbf{P}_A^{n-1}$ ist, das durch die homogenen Polynome in den $Y_i$, die $\ker(\psi)$ erzeugen, definiert ist:
+\[\ker(\psi)=\langle X_iY_j-X_jY_i\mid i,j=1,\ldots,n\rangle\]
+
+\paragraph{Definition 7.19.}\label{7.19} Sei $f:X\to Y$ ein Morphismus und $\mathcal{J}\subset\mathcal{O}_Y$ eine Idealgarbe auf $Y$. Wir definieren die \textit{inverse Idealgarbe}\index{Idealgarbe!invers} $\mathcal{J}'\subset\mathcal{O}_X$ auf $X$ wie folgt:
+
+$\mathcal{J}\hookrightarrow\mathcal{O}_Y\stackrel{f^\sharp}{\to}f_\ast\mathcal{O}_X$ liefert nach \hyperref[5.1]{5.1 (xi)} ein $\mathcal{O}_X$"~Modulmorphismus $f^\ast\mathcal{J}\to\mathcal{O}_X$. Setze $\mathcal{J}'=\operatorname{im}(f^\ast\mathcal{J}\to\mathcal{O}_X)$.
+
+Alternativ: Betrachte die Idealgarbe $f^{-1}\mathcal{J}$ auf $f^{-1}\mathcal{O}_Y$ und den Morphismus $f^{-1}\mathcal{O}_Y\to \mathcal{O}_Y$, der zu $f^\sharp$ adjungiert ist. Dann ist $\mathcal{J}'$ die vom Bild von $f^{-1}\mathcal{J}$ in $\mathcal{O}_X$ erzeugte Idealgarbe. Wir schreiben daher auch $\mathcal{J}'=f^{-1}\mathcal{J}\cdot\mathcal{O}_X$.
+
+\paragraph{Bemerkung.} Im Allgemeinen sind $f^\ast\mathcal{J}$ und $f^{-1}\mathcal{J}$ verschiedene Idealgarben.
+
+\paragraph{Satz 7.20.}\label{7.20} Sei $X$ ein noethersches Schema und $\mathcal{J}$ eine kohärente Idealgarbe auf $X$. Sei $\pi:\widetilde{X}\to X$ die Aufblasung von $X$ bzgl. $\mathcal{J}$. Dann gilt:
+\begin{enumerate}[(i)]
+\item Die inverse Idealgarbe $\widetilde{J}=\pi^{-1}\mathcal{J}\cdot\mathcal{O}_{\widetilde{X}}$ ist invertierbar auf $\mathcal{O}_{\widetilde{X}}$.
+\item Sei $Y$ das zu $\mathcal{J}$ gehörige abgeschlossene Unterschema und $U=X\setminus Y$. Dann ist $\pi:\pi^{-1}(U)\to U$ ein Isomorphismus.
+\end{enumerate}
+
+\paragraph{Beweis.}\begin{enumerate}[(i)]
+\item Sei $\widetilde{X}=\mathbf{Proj}(\mathcal{S}),\ \mathcal{S}=\bigoplus_{d\geq 0}\mathcal{J}^d$ und $V\subset_\text{o}X$ affin. Dann ist $\mathcal{O}(1)|_{\operatorname{Proj}\mathcal{S}(V)}$ die assoziierte Garbe zum graduierten $\mathcal{S}(V)$"~Modul $\mathcal{S}(V)(1)=\bigoplus_{d\geq 0}\mathcal{J}^{d+1}(V)=\mathcal{J}(V)\cdot \mathcal{S}(V)$ das von $\mathcal{J}(V)$ in $\mathcal{S}(V)$ erzeugte Ideal. Es folgt $\widetilde{\mathcal{J}}=\pi^{-1}\mathcal{J}\cdot\mathcal{O}_{\widetilde{X}}=\mathcal{O}_{\widetilde{X}}(1)$, also invertierbar.
+\item Es ist $\mathcal{J}|_U\cong\mathcal{O}_U$, da $0\to\mathcal{J}\to\mathcal{O}_X\stackrel{i^\sharp}{\to }i_\ast\mathcal{O}_Y\to 0$ exakt ist. Daher gilt $\pi^{-1}(U)=\operatorname{\mathbf{Proj}}\mathcal{O}_U[T]=U$. Beachte, dass für ein allgemeines $A$ stets $\operatorname{Proj}A[T]=D_+(T)=\operatorname{Spec}A[T]_{(T)}=\operatorname{Spec}(A)$ gilt.\qed
+\end{enumerate}
+
+\paragraph{Satz 7.21.}\label{7.21} \textit{(Universaleigenschaft des Aufblasens)} Sei $X$ ein noethersches Schema, $\mathcal{J}$ eine kohärente Idealgarbe auf $X$ und $\pi:\widetilde{X}\to X$ die Aufblasung von $X$ bzgl. $\mathcal{J}$. Ist $f:Z\to X$ ein Morphismus, so dass $f^{-1}\mathcal{J}\cdot\mathcal{O}_Z$ eine invertierbare Idealgarbe auf $Z$ ist, so existiert ein eindeutig bestimmter Morphismus $g:Z\to\widetilde{X}$ mit kommutativem Diagramm:
+\[\begin{tikzcd}
+Z\rar["g", dashed]\ar[rd, "f"'] & \widetilde{X}\dar["\pi"]\\
+& X
+\end{tikzcd} \]
+
+\paragraph{Lemma 7.22.}\label{7.22} Sei $X$ ein Schema, $f:\mathcal{L}\to\mathcal{M}$ ein surjektiver Morphismus invertierbarer Garben. Dann ist $f$ ein Isomorphismus.
+
+\paragraph{Beweis.} Siehe Bourbaki: Commutative Algebra II, §3.2 Korollar zu Proposition 6.\qed
+
+\paragraph{Korollar 7.23.}\label{7.23} Sei $f:Y\to X$ ein Morphismus noetherscher Schemata und $\mathcal{J}$ eine kohärente Idealgarbe auf $X$. Sei $\widetilde{X}$ die Aufblasung bzgl. $\mathcal{J}$ und $\widetilde{Y}$ die Aufblasung bzgl. $\mathcal{J}_Y=f^{-1}\mathcal{J}\cdot\mathcal{O}_Y$. Dann existiert ein eindeutig bestimmter Morphismus $\widetilde{f}$ mit kommutativem Diagramm:
+\[\begin{tikzcd}
+\widetilde{Y}\ar[rr, "\widetilde{f}"]\dar["\pi_Y"'] && \widetilde{X}\dar["\pi_X"]\\
+Y\ar[rr, "f"'] && X
+\end{tikzcd}\]
+Ist $f$ eine abgeschlossene Immersion, so auch $\widetilde{f}$.
+
+\paragraph{Beweis.} $\mathcal{J}_Y$ ist kohärent, da nach \hyperref[5.13]{Satz 5.13 (ii)} $f^\ast\mathcal{J}$ kohärent ist und nach \hyperref[5.12]{Satz 5.12 (ii)} auch $\operatorname{im}(f^\ast\mathcal{J}\to\mathcal{O}_Y)$. Nach \hyperref[7.20]{Satz 7.20} ist $\pi_Y^{-1}\mathcal{J}_Y\cdot\mathcal{O}_{\widetilde{Y}}$ eine invertierbare Garbe auf $\widetilde{Y}$. Nach \hyperref[7.21]{Satz 7.21} existiert $\widetilde{f}$ und ist eindeutig bestimmt.
+
+Sei nun $f$ eine abgeschlossene Immersion und:
+\[\widetilde{X}=\operatorname{\mathbf{Proj}}(\mathcal{S}),\quad \mathcal{S}=\bigoplus_{d\geq 0}\mathcal{J}^d,\qquad\widetilde{Y}=\mathbf{Proj}(\mathcal{S}_Y),\quad\mathcal{S}_Y=\bigoplus_{d\geq 0}\mathcal{J}_Y^d \]
+Ist $Y\hookrightarrow X$ eine abgeschlossene Immersion, so ist $\mathcal{J}\to\mathcal{J}_Y$ surjektiv und somit ist auch $\mathcal{S}\to\mathcal{S}_Y$ als Homomorphismus graduierter Ringe surjektiv. Daher ist $\widetilde{Y}\hookrightarrow\widetilde{X}$ eine abgeschlossene Immersion.\qed
+
+\paragraph{Definition 7.24.}\label{7.24} Ist $Y\hookrightarrow X$ eine abgeschlossene Immersion noetherscher Schemata. Dann heißt das abgeschlossene Unterschema $\widetilde{Y}$ von $\widetilde{X}$ auch \textit{strikte Transformation} von $Y$ bzgl. der Aufblasung $\pi:\widetilde{X}\to X$.\index{strikte Transformation}
 
 \printindex
 \end{document}
