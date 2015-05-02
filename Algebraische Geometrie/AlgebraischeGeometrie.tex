@@ -2161,5 +2161,78 @@ Ist $Y\hookrightarrow X$ eine abgeschlossene Immersion, so ist $\mathcal{J}\to\m
 
 \paragraph{Definition 7.24.}\label{7.24} Ist $Y\hookrightarrow X$ eine abgeschlossene Immersion noetherscher Schemata. Dann heißt das abgeschlossene Unterschema $\widetilde{Y}$ von $\widetilde{X}$ auch \textit{strikte Transformation} von $Y$ bzgl. der Aufblasung $\pi:\widetilde{X}\to X$.\index{strikte Transformation}
 
+\section{Differentiale}
+
+Sei $A$ ein Ring, $B$ eine $A$"~Algebra und $M$ ein $B$"~Modul.
+
+\paragraph{Definition 8.1.}\label{8.1} Eine \textit{$A$"~Derivation}\index{Derivation} von $B$ nach $M$ ist eine Abbildung $\mathrm{d}:B\to M$ mit:
+\begin{enumerate}[(i)]
+\item $\mathrm{d}$ ist additiv
+\item $\mathrm{d}(b\cdot b')=b\cdot \mathrm{d}(b')+ b'\cdot \mathrm{d}(b)$
+\item $\mathrm{d}(a)=0$ für alle $a\in A$
+\end{enumerate}
+Der $B$"~Modul aller $A$"~Derivationen von $B$ nach $M$ bezeichnen wir mit $D_A(B,M)$.
+
+\paragraph{Definition 8.2.}\label{8.2} Der $B$"~Modul $\Omega_{B/A}$ der \textit{relativen Differentialformen}\index{Differentialform!relativ} von $B$ über $A$ zusammen mit einer $A$"~Derivation $\mathrm{d}:B\to\Omega_{B/A}$ ist definiert durch folgende Universaleigenschaft:
+
+Für alle $B$"~Moduln $M$ und $A$"~Derivationen $\mathrm{d}':B\to M$ gibt es genau ein $B$"~Ho\-mo\-mor\-phis\-mus $f:\Omega_{B/A}\to M$, so dass folgendes Diagramm kommutiert:
+\[\begin{tikzcd}
+B\ar[r, "\mathrm{d}"]\ar[rd, "\mathrm{d}'"'] & \Omega_{B/A}\ar[d, "f", dashed]\\
+& M
+\end{tikzcd}\]
+Die Eindeutigkeit von $\Omega_{B/A}$ ist klar. Für die Existenz betrachte den freien $B$"~Modul $F$ mit Basis $\{d_b\mid b\in B\}$. Dann gilt:
+\[\Omega_{B/A}=F / \langle d_{b+b'}-d_b-d_{b'},\ d_{bb'}-bd_{b'}-b'd_b,\ d_a\rangle \]
+Zusammen mit der $A$"~Derivation $\mathrm{d}:B\to\Omega_{B/A},\ b\mapsto d_b$ erfüllt diese Konstruktion die Universaleigenschaft.
+
+\paragraph{Satz 8.3.}\label{8.3} Sei $B$ eine $A$"~Algebra und $f:B\otimes_A B\to B,\ b\otimes b'\mapsto bb'$. Betrachte $B\otimes_AB$ als $B$"~Modul via $b(b_1\otimes b_2)=(bb_1)\otimes b_2$. $B\otimes_A B$ wird zur $B$"~Algebra durch $(b_1\otimes b_1')(b_2\otimes b_2')=(b_1b_2)\otimes (b_1'b_2')$. Sei $I=\ker(f)$. Dann ist $I/I^2$ ein $B$"~Modul. Setze $\mathrm{d}:B\to I/I^2,\ \mathrm{d}b=1\otimes b-b\otimes 1\mod I^2$. Dann ist $\Omega_{B/A}= (I/I^2,\mathrm{d})$.
+
+\paragraph{Beweis.} Wir zeigen zunächst $I=\sum_{b\in B}B\mathrm{d}b$. Sei $\beta=\sum b_i\otimes c_i\in I$, also $\sum b_ic_i=0$. Dann gilt:
+\begin{align*}
+\beta &= \sum_i (b_i(1\otimes c_i-c_i\otimes 1) + b_ic_i\otimes 1)\\
+&= \sum_i b_i \mathrm{d}c_i + \Big(\sum_i b_ic_i\Big)\otimes 1 \in\sum_{b\in B} B\mathrm{d}b
+\end{align*}
+Wir zeigen nun, dass $\mathrm{d}$ eine $A$"~Derivation ist. $\mathrm{d}(A)=0$ und die Additivität ist klar.
+\begin{align*}
+\mathrm{d}b\mathrm{d}c &= (1\otimes b- b\otimes 1)(1\otimes c-c\otimes 1)\\
+&= bc\otimes 1 - b\otimes c- c\otimes b+1\otimes bc\\
+&=\mathrm{d}(bc) + 2bc\otimes 1- b(\mathrm{d}c+c\otimes 1) - c (\mathrm{d}b + b\otimes 1)\\
+&=\mathrm{d}(bc)-b\mathrm{d}c - c \mathrm{d}b
+\end{align*}
+Also ist $\mathrm{d}(bc)\equiv b\mathrm{d}c+c\mathrm{d}b\mod I^2$. Somit müssen wir noch zeigen, dass $(I/I^2,\mathrm{d})$ die Universaleigenschaft von $\Omega_{B/A}$ erfüllt. Sei $M$ ein $B$"~Modul und $\mathrm{D}:B\to M$ eine $A$"~Derivation. Zu zeigen ist die Existenz und Eindeutigkeit von einem $B$"~Homomorphismus $f:I/I^2\to M$ mit $\mathrm{D}=f\circ \mathrm{d}$. Da $I=\sum B\mathrm{d}b$ ist, folgt die Eindeutigkeit.
+
+Betrachte die \textit{triviale Erweiterung} $B\ast M$ von $B$ mit $M$, d.h. $B\oplus M$ mit der Multiplikation $(b_1,m_1)(b_2,m_2)=(b_1b_2,b_1m_2+b_2m_1)$. Dann ist $B\ast M$ ein Ring mit Einselement $(1,0)$. $B\ast M$ trägt eine $B$"~Modulstruktur via $b'(b,m)=(bb',bm)$, d.h. $B\ast M$ ist eine $B$"~Algebra. Wir haben kanonische $B$"~Homomorphismen:
+\begin{itemize}
+\item Die Einbettung $M\hookrightarrow B\ast M,\ m\mapsto (0,m)$
+\item Die Projektion $B\ast M\to B,\ (b,m)\mapsto b$
+\end{itemize}
+Betrachte den $B$"~Algebrenhomomorphismus $\varphi:B\otimes_AB\to B\ast M,\ x\otimes y\mapsto (xy,x\mathrm{D}y)$. Es gilt $\varphi(I)\subset M\subset B\ast M$, da $\varphi(\mathrm{d}b)=\varphi(1\otimes b- b\otimes 1)=(b,\mathrm{D}b)-(b,b\mathrm{D}1)=(0,\mathrm{D}b)$. Da $M^2=0$ in $B\ast M$, induziert $\varphi$ eine Abbildung $\phi: B\otimes_A B/I^2\to B\ast M$. Dann erfüllt $f=\phi|_{I/I^2}:I/I^2\to M$ die gewünschte Eigenschaft $f\circ\mathrm{d}=\mathrm{D}$.\qed
+
+\paragraph{Satz 8.4.}\label{8.4} Es gibt für jeden $B$"~Modul $M$ einen kanonischen $B$"~Modulisomorphismus:
+\[\operatorname{Hom}_B(\Omega_{B/A},M)\to\operatorname{Der}_A(B,M),\ f\mapsto f\circ\mathrm{d} \]
+
+\paragraph{Beweis.} Folgt direkt aus der Universaleigenschaft.\qed
+
+\paragraph{Beispiel 8.5.}\label{8.5} Sei $B=A[X_1,\ldots,X_n]$. Dann ist $\Omega_{B/A}=\bigoplus_{i=1}^n B\mathrm{d}X_i$ ein freier $B$"~Modul vom Rang $n$. Allgemein gilt: Wird $B$ als $A$"~Algebra von $y_1,\ldots,y_m$ erzeugt, so ist $\Omega_{B/A}=\sum_{i=1}^m B\mathrm{d}y_1$, da:
+\[\mathrm{d}\Big(\prod_i y_i^{n_i}\Big) = \sum_i n_i\prod_{j\neq i} y_j^{n_j}y_i^{n_i - 1}\mathrm{d}y_i \]
+Angenommen, $\sum_i b_i\mathrm{d}X_i=0$. Betrachte die Derivationen $\frac{\partial}{\partial X_i}\in\operatorname{Der}_A(B)$. Nach \hyperref[8.4]{Satz 8.4} existiert für jedes $k$ ein $f_k\in\operatorname{Hom}_B(\Omega_{B/A},B)$ mit $\frac{\partial}{\partial X_k}=f_k\circ\mathrm{d}$. Es gilt für alle $k$:
+\[ 0= f_k\Big(\sum_{i=1}^n b_i\mathrm{d}X_i\Big)= \sum_{i=1}^n b_i f_k(\mathrm{d}X_i) = \sum_{i=1}^n b_i \frac{\partial X_i}{\partial X_k} = \sum_{i=1}^n b_i\delta_{ik}=b_k \]
+Somit ist $\Omega_{B/A}=\bigoplus_{i=1}^nB\mathrm{d}X_i$
+
+\paragraph{Satz 8.6.}\label{8.6} \begin{enumerate}[(i)]
+\item Sei $S$ eine multiplikative Teilmenge der $A$"~Algebra $B$. Dann gilt:
+\[S^{-1}\Omega_{B/A}\cong\Omega_{S^{-1}B/A} \]
+\item Seien $A',B$ $A$"~Algebren und $B'=B\otimes_AA'$. Dann gilt:
+\[\Omega_{B'/A'}\cong\Omega_{B/A}\otimes_BB' \]
+\end{enumerate}
+
+\paragraph{Satz 8.7.}\label{8.7} Seien $\phi:A\to B,\ \psi:B\to C$ Ringhomomorphismen. Dann gilt:
+\begin{enumerate}[(i)]
+\item \textit{(Erste fundamentale exakte Sequenz)} Es gibt eine kurze exakte Sequenz:
+\[\begin{tikzcd}
+\Omega_{B/A}\otimes_BC \ar[r, "v"] & \Omega_{C/A} \ar[r, "u"] & \Omega_{C/B}\rar & 0
+\end{tikzcd} \]
+\item $v$ ist injektiv und die Sequenz zerfällt, genau dann wenn für alle $C$"~Moduln $M$ und jedes $\mathrm{D}\in \operatorname{Der}_A(B,M)$ zu einer Derivation aus $\operatorname{Der}_A(C,M)$ fortgesetzt werden kann.
+\end{enumerate}
+
 \printindex
 \end{document}
