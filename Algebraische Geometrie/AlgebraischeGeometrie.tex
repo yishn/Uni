@@ -2227,7 +2227,7 @@ Somit ist $\Omega_{B/A}=\bigoplus_{i=1}^nB\mathrm{d}X_i$
 
 \paragraph{Satz 8.7.}\label{8.7} Seien $\phi:A\to B,\ \psi:B\to C$ Ringhomomorphismen. Dann gilt:
 \begin{enumerate}[(i)]
-\item \textit{(Erste fundamentale exakte Sequenz)}\index{Fundamentale exakte Sequenz} Es gibt eine kurze exakte Sequenz:
+\item \textit{(Erste fundamentale exakte Sequenz)}\index{Fundamentale exakte Sequenz} Es gibt eine exakte Sequenz:
 \[\begin{tikzcd}
 \Omega_{B/A}\otimes_BC \ar[r, "v"] & \Omega_{C/A} \ar[r, "u"] & \Omega_{C/B}\rar & 0
 \end{tikzcd} \]
@@ -2260,7 +2260,7 @@ Daher ist $\delta$ wohldefiniert. Nun ist für alle $C$"~Moduln $M$ die folgende
 \end{tikzcd} \]
 wobei $\varphi(D:B\to M) = (D|_I:I\to M)$.\qed
 
-\paragraph{Korollar 8.10.}\label{8.10} Ist $B$ eine endlich erzeugte $A$"~Algebra oder Lokalisierung einer endlich erzeugten $A$"~Algebra, so ist auch $\Omega_{B/A}$ endlich erzeugt.
+\paragraph{Korollar 8.10.}\label{8.10} Ist $B$ eine endlich erzeugte $A$"~Algebra oder Lokalisierung einer endlich erzeugten $A$"~Algebra, so ist $\Omega_{B/A}$ endlich erzeugter $B$"~Modul.
 
 \paragraph{Beweis.} Es ist $B \cong A[x_1,\ldots,x_n]/I$ für ein Ideal $I$. Wegen \hyperref[8.5]{Beispiel 8.5} ist $\Omega_{A[x_1,\ldots,x_n]/A}$ ein endlich erzeugter $A[x_1,\ldots,x_n]$"~Modul. Nach \hyperref[8.9]{Satz 8.9} ist $\Omega_{B/A}$ ein endlich erzeugter $B$"~Modul. Die Aussage über die Lokalisierung folgt aus \hyperref[8.6]{Satz 8.6 (i)}.\qed
 
@@ -2271,6 +2271,43 @@ wobei $\varphi(D:B\to M) = (D|_I:I\to M)$.\qed
 \item $\dim_K\Omega_{K/k}\geq \operatorname{trdeg}(K/k)$
 \item Gleichheit in (i) gilt genau dann, wenn $K/k$ separabel erzeugt ist.
 \end{enumerate}
+
+\paragraph{Korollar 8.13.}\label{8.13} Sei $K/k$ eine endliche Erweiterung. Dann gilt:
+\[\Omega_{K/k}=0\iff K/k\text{ ist separabel} \]
+
+\paragraph{Satz 8.14.}\label{8.14} Sei $B$ ein lokaler Ring mit Maximalideal $\mathfrak{m}$ und Restklassenkörper $k$. Ferner gebe es einen Schnitt von $B\twoheadrightarrow k$, also ist $B$ eine $k$"~Algebra. Dann ist die Abbildung $\delta$ in der \hyperref[8.9]{zweiten fundamentalen Sequenz} ein Isomorphismus:
+\[\delta:\mathfrak{m}/\mathfrak{m}^2\to \Omega_{B/k}\otimes_B k \]
+
+\paragraph{Beweis.} Es ist $\operatorname{coker}(\delta)=\Omega_{k/k}=0$. Die Injektivität von $\delta$ ist äquivalent zur Surjektivität von:
+\[\delta^\ast :\operatorname{Hom}_k(\Omega_{B/k}\otimes_B k,k)\to\operatorname{Hom}_k(\mathfrak{m}/\mathfrak{m}^2,k) \]
+Nun ist $\operatorname{Hom}_k(\Omega_{B/k}\otimes_B k,k) = \operatorname{Hom}_B(\Omega_{B/k},k)=\operatorname{Der}_k(B,k)$. Die Abbildung $\operatorname{Der}_k(B,k)\to\operatorname{Hom}_k(\mathfrak{m}/\mathfrak{m}^2,k),\ (d:B\to k)\mapsto (d|_\mathfrak{m}:\mathfrak{m}\to k)$ kommutiert mit $\delta^\ast$. Beachte, dass für $d\in\operatorname{Der}_k(B,k)$ stets $d(\mathfrak{m}^2)=0\in k$ gilt.
+
+Sei nun $h\in\operatorname{Hom}_k(\mathfrak{m}/\mathfrak{m}^2,k)$ und $b\in B$. Wegen des Schnitts $k\to B$, hat $b$ eine eindeutige Darstellung $b=\lambda+c,\ \lambda\in k,\ c\in\mathfrak{m}$. Setze $d:B\to k,\ d(b) =h(\overline{c})$. Dann ist $d(k)=0$, $d$ additiv und es gilt:
+\begin{align*}
+d(bb') &= d(\lambda\lambda'+\lambda c'+\lambda' c+cc')\\
+&= h(\overline{\lambda c'+\lambda' c})\\
+&= \lambda h(\overline{c'}) + \lambda' h(\overline{c})\\
+&= \lambda d(b')+\lambda' d(b)= bd(b')+b'd(b)\in k
+\end{align*}
+für alle $b=\lambda+c,\ b'=\lambda'+c'\in B$. Es gilt $\delta^\ast (d)=h$.\qed
+
+\paragraph{Satz 8.15.}\label{8.15} Sei $B$ ein lokaler Ring und es gebe einen Schnitt von $B\to k$. Ferner sei der Restklassenkörper $k$ vollkommen. Sei $B$ die Lokalisierung einer endlich erzeugten $k$"~Algebra. Dann ist $\Omega_{B/k}$ genau dann ein freier $B$"~Modul vom Rang $\dim(B)$, wenn $B$ regulär ist.
+
+\paragraph{Beweis.} Sei $\Omega_{B/k}$ frei vom Rang $\dim(B)$. Nach \hyperref[8.14]{Satz 8.14} ist $\dim_k\mathfrak{m}/\mathfrak{m}^2=\dim(B)$, also ist $B$ per Definition regulär.
+
+Sei umgekehrt $B$ regulär von Dimension $r$. Nach \hyperref[8.14]{Satz 8.14} gilt:
+\[r =\dim_k\mathfrak{m}/\mathfrak{m}^2=\dim_k\Omega_{B/k}\otimes_B k \]
+Sei $K$ der Quotientenkörper von $B$. Nach \hyperref[8.6]{Satz 8.6} ist $\Omega_{B/k}\otimes_B K=\Omega_{K/k}$. Nun ist $K/k$ separabel erzeugt, da $k$ vollkommen (siehe z.B. Matsumura Chapter 10, Corollary p. 194). Nach \hyperref[8.12]{Satz 8.12} gilt:
+\[\dim_K\Omega_{K/k}=\operatorname{trdeg}(K/k)=\dim(B) = r \]
+Nach \hyperref[8.10]{Korollar 8.10} ist $\Omega_{B/k}$ endlich erzeugter $B$"~Modul.\qed
+
+\paragraph{Lemma 8.16.}\label{8.16} Sei $A$ ein noetherscher, lokaler, nullteilerfreier Ring mit Restklassenkörper $k$ und Quotientenkörper $K$. Sei $M$ ein endlich erzeugter $A$"~Modul mit:
+\[\dim_k(M\otimes_Ak)=\dim_K(M\otimes_AK)=r \]
+Dann ist $M$ frei vom Rang $r$.
+
+\paragraph{Beweis.} Wegen $\dim_k(M\otimes_Ak)=r$, gibt es nach Nakayama eine Surjektion $\varphi:A^r\to M$. Setze $N=\ker(\varphi)$. Da $K$ flach über $A$ ist, haben wir eine kurze exakte Folge:
+\[0\longrightarrow N\otimes_AK\longrightarrow K^r\longrightarrow M\otimes_AK\longrightarrow 0 \]
+Da $\dim_K(M\otimes_AK)=\dim_KK^r$, folgt $N\otimes_AK=0$, also $N=0$, da $N\subset A^r$ und $A$ torsionsfrei ist.\qed
 
 \printindex
 \end{document}
