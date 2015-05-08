@@ -2260,5 +2260,17 @@ Daher ist $\delta$ wohldefiniert. Nun ist für alle $C$"~Moduln $M$ die folgende
 \end{tikzcd} \]
 wobei $\varphi(D:B\to M) = (D|_I:I\to M)$.\qed
 
+\paragraph{Korollar 8.10.}\label{8.10} Ist $B$ eine endlich erzeugte $A$"~Algebra oder Lokalisierung einer endlich erzeugten $A$"~Algebra, so ist auch $\Omega_{B/A}$ endlich erzeugt.
+
+\paragraph{Beweis.} Es ist $B \cong A[x_1,\ldots,x_n]/I$ für ein Ideal $I$. Wegen \hyperref[8.5]{Beispiel 8.5} ist $\Omega_{A[x_1,\ldots,x_n]/A}$ ein endlich erzeugter $A[x_1,\ldots,x_n]$"~Modul. Nach \hyperref[8.9]{Satz 8.9} ist $\Omega_{B/A}$ ein endlich erzeugter $B$"~Modul. Die Aussage über die Lokalisierung folgt aus \hyperref[8.6]{Satz 8.6 (i)}.\qed
+
+\paragraph{Definition 8.11.}\label{8.11} Eine Körpererweiterung $K/k$ heißt \textit{separabel erzeugt}\index{separabel erzeugt}, falls es eine Transzendenzbasis $\{x_\lambda\}_{\lambda\in\Lambda}$ für $K/k$ gibt, so dass $K/k[x_\lambda\mid \lambda\in\Lambda]$ separabel ist.
+
+\paragraph{Satz 8.12.}\label{8.12} Sei $K/k$ eine endlich erzeugte Körpererweiterung. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\dim_K\Omega_{K/k}\geq \operatorname{trdeg}(K/k)$
+\item Gleichheit in (i) gilt genau dann, wenn $K/k$ separabel erzeugt ist.
+\end{enumerate}
+
 \printindex
 \end{document}
