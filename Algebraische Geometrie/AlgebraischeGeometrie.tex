@@ -2242,6 +2242,9 @@ Da $\operatorname{Hom}_C(\Omega_{B/A}\otimes_B C,M)\cong\operatorname{Hom}_B(\Om
 \[0\to\operatorname{Der}_B(C,M)\to\operatorname{Der}_A(C,M)\to\operatorname{Der}_A(B,M)\dashrightarrow 0 \]
 Die vorletzte Abbildung ist gegeben durch $(\delta:C\to M)\mapsto (\delta\circ\psi: B\to M)$. Ohne die $0$ rechts ist diese Folge per Definition exakt. Mit der $0$ rechts ist die Folge genau dann exakt, wenn die Forderung in (ii) gilt.\qed
 
+\paragraph{Beispiel 8.8.}\label{8.8} Sei $B$ eine $A$"~Algebra und $C=B[x_1,\ldots,x_n]$. Sei $M$ ein beliebiger $C$"~Modul und $D\in\operatorname{Der}_A(B,M)$. Sei $\widetilde{D}:C\to M$ die einem Polynom $F$, den Polynom $F^D$ zuordnet, wobei $F^D$ das Polynom ist, das man durch Anwenden von $D$ auf die Koeffizienten von $F$ erhält. Dann ist $\widetilde{D}$ eine Derivation mit $\widetilde{D}|_B=D$. Nach \hyperref[8.7]{Satz 8.7 (ii)} gilt:
+\[\Omega_{C/A}\cong (\Omega_{B/A}\otimes_BC)\oplus C\mathrm{d}x_1\oplus\cdots\oplus C\mathrm{d}x_n \]
+
 \paragraph{Satz 8.9.}\label{8.9}\textit{(Zweite fundamentale exakte Sequenz)}\index{Fundamentale exakte Sequenz} Sei $B$ eine $A$"~Algebra, $I$ ein Ideal in $B$ und $C=B/I$. Es gibt eine kanonische, exakte Folge von $C$"~Moduln:
 \[\begin{tikzcd}
 I/I^2\rar["\delta"] & \Omega_{B/A}\otimes_BC\rar["v"] & \Omega_{C/A}\rar & 0
