@@ -2309,5 +2309,22 @@ Dann ist $M$ frei vom Rang $r$.
 \[0\longrightarrow N\otimes_AK\longrightarrow K^r\longrightarrow M\otimes_AK\longrightarrow 0 \]
 Da $\dim_K(M\otimes_AK)=\dim_KK^r$, folgt $N\otimes_AK=0$, also $N=0$, da $N\subset A^r$ und $A$ torsionsfrei ist.\qed
 
+\subsection{Differentialgarben}
+
+Sei $f:X\to Y$ ein Morphismus von Schemata und $\Delta:X\to X\times_YX$ die Diagonale. $\Delta$ ist nach \hyperref[3.30]{Satz 3.30} eine Immersion und liefert ein Isomorphismus auf $\Delta(X)$, wobei $\Delta(X)$ ein abgeschlossenes Unterschema eines offenen Unterschema $W\subset X\times_YX$ ist.
+
+\paragraph{Definition 8.17.}\label{8.17} Sei $\mathcal{J}$ die Idealgarbe von $\Delta(X)$ in $W$. Dann heißt
+\[\Omega_{X/Y}=\Delta^\ast(\mathcal{J}/\mathcal{J}^2) \]
+die Garbe der \textit{relativen Differentiale}\index{Differentialform!relativ} von $X$ über $Y$.
+
+\paragraph{Bemerkung 8.18.}\label{8.18}\begin{enumerate}[(i)]
+\item $\mathcal{J}/\mathcal{J}^2$ ist ein $\mathcal{O}_{\Delta(X)}$"~Modul und somit ist über den Isomorphismus $X\to\Delta(X)$ die Modulgarbe $\Omega_{X/Y}$ ein $\mathcal{O}_X$"~Modul. Wegen \hyperref[5.13]{Satz 5.13 (i)} ist $\Omega_{X/Y}$ quasikohärent. Ist $Y$ noethersch und $f:X\to Y$ von endlichem Typ, und somit $X$ und $X\times_YX$ noethersch, dann ist $\Omega_{X/Y}$ kohärent.
+\item Sei $U=\operatorname{Spec}(A)\subset_\text{o}Y$ und $V=\operatorname{Spec}(B)\subset_\text{o}X$ mit $f(V)\subset U$. Dann ist $V\times_UV$ affin offen in $X\times_YX$ mit $V\times_UV= \operatorname{Spec}(B\otimes_AB)$. Es ist
+\[\Delta(X)\cap V\times_UV = \operatorname{Spec}(B\otimes_AB/\ker(B\otimes_AB\to B)) \]
+ein abgeschlossenes Unterschema von $V\times_UV$. Sei $I=\ker(B\otimes_AB\to B)$, also gilt:
+\[\mathcal{J}/\mathcal{J}^2|_{\Delta(X)\cap V\times_UV} = \widetilde{I/I^2} \]
+Nach \hyperref[8.3]{Satz 8.3} folgt $\Omega_{V/U}=\widetilde{\Omega_{B/A}}$. Somit ist \hyperref[8.17]{Definitino 8.17} verträglich mit dem affinen Fall. Ist $X=\bigcup V$ eine Überdeckung durch affin offenen $V$ und $Y=\bigcup U$ eine Überdeckung durch affin offenen $U$, so liefert die Verklebung von $\widetilde{\Omega_{B/A}},\ \mathrm{d}:B\to\Omega_{B/A}$ gerade $\Omega_{X/Y},\ \mathrm{d}:\mathcal{O}_X\to\Omega_{X/Y}$. $\mathrm{d}$ ist ein Garbenmorphismus und ist in jedem Punkt eine Derivation von lokalen Ringen.
+\end{enumerate}
+
 \printindex
 \end{document}
