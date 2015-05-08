@@ -2227,12 +2227,35 @@ Somit ist $\Omega_{B/A}=\bigoplus_{i=1}^nB\mathrm{d}X_i$
 
 \paragraph{Satz 8.7.}\label{8.7} Seien $\phi:A\to B,\ \psi:B\to C$ Ringhomomorphismen. Dann gilt:
 \begin{enumerate}[(i)]
-\item \textit{(Erste fundamentale exakte Sequenz)} Es gibt eine kurze exakte Sequenz:
+\item \textit{(Erste fundamentale exakte Sequenz)}\index{Fundamentale exakte Sequenz} Es gibt eine kurze exakte Sequenz:
 \[\begin{tikzcd}
 \Omega_{B/A}\otimes_BC \ar[r, "v"] & \Omega_{C/A} \ar[r, "u"] & \Omega_{C/B}\rar & 0
 \end{tikzcd} \]
 \item $v$ ist injektiv und die Sequenz zerfällt, genau dann wenn für alle $C$"~Moduln $M$ und jedes $\mathrm{D}\in \operatorname{Der}_A(B,M)$ zu einer Derivation aus $\operatorname{Der}_A(C,M)$ fortgesetzt werden kann.
 \end{enumerate}
+
+\paragraph{Beweis.} Definiere $u$ und $v$ durch:
+\[v(\mathrm{d}b\otimes c)= c\mathrm{d}\psi(b),\quad u(c\mathrm{d}c') = c\mathrm{d}c',\qquad b\in B,\ c,c'\in C \]
+Äquivalent zu (i) bzw. (ii) ist die Exaktheit der $4$-Term- bzw. $5$-Termsequenzen:
+\[0\to\operatorname{Hom}_C(\Omega_{C/B},M)\to\operatorname{Hom}_C(\Omega_{C/A},M)\to\operatorname{Hom}_C(\Omega_{B/A}\otimes_B C,M)\dashrightarrow 0  \]
+Da $\operatorname{Hom}_C(\Omega_{B/A}\otimes_B C,M)\cong\operatorname{Hom}_B(\Omega_{B/A},M)$, ist nach \hyperref[8.4]{Satz 8.4} ist die Exaktheit nachzuweisen von:
+\[0\to\operatorname{Der}_B(C,M)\to\operatorname{Der}_A(C,M)\to\operatorname{Der}_A(B,M)\dashrightarrow 0 \]
+Die vorletzte Abbildung ist gegeben durch $(\delta:C\to M)\mapsto (\delta\circ\psi: B\to M)$. Ohne die $0$ rechts ist diese Folge per Definition exakt. Mit der $0$ rechts ist die Folge genau dann exakt, wenn die Forderung in (ii) gilt.\qed
+
+\paragraph{Satz 8.9.}\label{8.9}\textit{(Zweite fundamentale exakte Sequenz)}\index{Fundamentale exakte Sequenz} Sei $B$ eine $A$"~Algebra, $I$ ein Ideal in $B$ und $C=B/I$. Es gibt eine kanonische, exakte Folge von $C$"~Moduln:
+\[\begin{tikzcd}
+I/I^2\rar["\delta"] & \Omega_{B/A}\otimes_BC\rar["v"] & \Omega_{C/A}\rar & 0
+\end{tikzcd} \]
+wobei $v(\mathrm{d}b\otimes c)= c\mathrm{d}\overline{b}$ und $\delta$ die durch die Abbildung $I\to\Omega_{B/A}\otimes_BC,\ x\mapsto \mathrm{d}x\otimes 1$ induzierte $C$"~lineare Abbildung ist.
+
+\paragraph{Beweis.} Für $x,x'\in I$ gilt:
+\[\mathrm{d}(xx')\otimes 1 = \mathrm{d}x\otimes x' + \mathrm{d}x'\otimes x =0 \]
+Daher ist $\delta$ wohldefiniert. Nun ist für alle $C$"~Moduln $M$ die folgenden Folgen exakt:
+\[\begin{tikzcd}
+0 \rar & \operatorname{Hom}_C(\Omega_{C/A},M)\dar["\cong"] \rar & \operatorname{Hom}_C(\Omega_{B/A}\otimes_BC,M)\dar["\cong"] \rar & \operatorname{Hom}_C(I/I^2,M)\dar["\cong"]\\
+0 \rar & \operatorname{Der}_A(B/I,M) \rar & \operatorname{Der}_A(B,M) \rar["\varphi"'] & \operatorname{Hom}_B(I,M)
+\end{tikzcd} \]
+wobei $\varphi(D:B\to M) = (D|_I:I\to M)$.\qed
 
 \printindex
 \end{document}
