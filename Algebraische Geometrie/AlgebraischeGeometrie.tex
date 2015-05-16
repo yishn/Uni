@@ -1825,7 +1825,7 @@ d\mathbb{Z} \rar[hook] & \mathbb{Z}\rar & \mathbb{Z}/d\mathbb{Z}\rar & 0
 \paragraph{Definition 6.18.}\label{6.18} Sei $k$ ein algebraisch abgeschlossener Körper. Eine \textit{Kurve}\index{Kurve} über $k$ ist ein integres, separiertes Schema $X$ von endlichem Typ über $k$ der Dimension $1$.
 \begin{itemize}
 \item $X$ heißt \textit{vollständig}\index{Kurve!vollständig}, wenn $X\to k$ eigentlich ist.
-\item $X$ heißt \textit{nicht-singulär}\index{Kurve!nicht-singulär}, falls alle lokalen Ringe von $X$ regulär sind.
+\item $X$ heißt \textit{nicht-singulär}\index{nicht-singulär}, falls alle lokalen Ringe von $X$ regulär sind.
 \end{itemize}
 
 \paragraph{Satz 6.19.}\label{6.19} Sei $X$ eine vollständige, nicht-singuläre Kurve über $k$ und $Y$ eine beliebige Kurve über $k$ mit einem Morphismus $f:X\to Y$. Dann gilt:
@@ -2341,7 +2341,7 @@ Dann gilt $\Omega_{X'/Y'}\cong (g')^\ast(\Omega_{X/Y})$.
 \paragraph{Beweis.} Es reicht, die Exaktheit lokal zu überprüfen. Dies folgt aus der \hyperref[8.7]{ersten fundamentalen exakten Sequenz}.\qed
 
 \paragraph{Satz 8.21.}\label{8.21} Sei $f:X\to Y$ ein Morphismus und $Z$ ein abgeschlossenes Unterschema von $X$ zum Ideal $\mathcal{J}$. Dann gibt es eine exakte Sequenz von Garben auf $Z$:
-\[\mathcal{J}/\mathcal{J}^2 \longrightarrow \Omega_{X/Y}\otimes_{\mathcal{O}_X}\mathcal{O}_Z\longrightarrow\Omega_{Z/Y}\longrightarrow 0 \]
+\[\mathcal{J}/\mathcal{J}^2 \stackrel{\delta}{\longrightarrow} \Omega_{X/Y}\otimes_{\mathcal{O}_X}\mathcal{O}_Z\longrightarrow\Omega_{Z/Y}\longrightarrow 0 \]
 
 \paragraph{Beweis.} Folgt aus der \hyperref[8.9]{zweiten fundamentalen exakten Sequenz}.\qed
 
@@ -2363,6 +2363,43 @@ Lokalisierung nach $x_i$ liefert eine Surjektion von freien $S_{x_i}$"~Moduln $E
 Es ist $D_+(x_i)=\operatorname{Spec}A[\frac{x_0}{x_i},\ldots,\widehat{\frac{x_i}{x_i}},\ldots,\frac{x_n}{x_i}]$. Nach \hyperref[8.22]{Satz 8.22} gilt:
 \[\Omega_{X/Y}|_{D_+(x_i)}=\bigoplus_{j\neq i}\mathcal{O}_{D_+(x_i)}\mathrm{d}\frac{x_j}{x_i} \]
 Setze nun $\varphi_i(\mathrm{d}\frac{x_j}{x_i})=\frac{1}{x_i^2}(x_ie_j-x_je_i)$. $\varphi_i$ ist ein Isomorphismus. Die $\varphi_i$ lassen sich nun zu einem Isomorphismus $\varphi:\Omega_{X/Y}\to\widetilde{M}$ verkleben.\qed
+
+\subsection{Nicht-singuläre Varietäten}
+
+\paragraph{Definition 8.24.}\label{8.24} Eine Varietät $X$ über einem algebraisch abgeschlossenen Körper $k$, d.h. ein integres, separiertes Schema von endlichem Typ, heißt \textit{nicht-singulär}\index{nicht-singulär}, wenn alle lokalen Ringe regulär sind.
+
+\paragraph{Satz 8.25.}\label{8.25} Sei $X$ ein irreduzibles, separiertes Schema von endlichem Typ über einem algebraisch abgeschlossenen Körper $k$. Dann ist $\Omega_{X/k}$ genau dann lokal frei vom Rang $n=\dim(X)$, wenn $X$ eine nicht-singuläre Varietät über $k$ ist.
+
+\iffalse
+\paragraph{Beweis.} Sei $x\in X$ ein abgeschlossener Punkt. Dann ist $\dim(\mathcal{O}_{X,x})=n$ und $\kappa(x)=k$. Es ist $B=\mathcal{O}_{X,x}$ eine endlich erzeugte $k$"~Algebra und $\Omega_{B/k}=(\Omega_{X/k})_x$. Nach \hyperref[8.15]{Satz 8.15} ist $(\Omega_{X/k})_x$ genau dann frei vom Rang $n$, wenn $\mathcal{O}_{X,x}$ regulär ist. Somit haben wir mit \hyperref[8.26]{Lemma 8.26} folgende Äquivalenzen:
+\begin{align*}
+& \text{Alle lokalen Ringe sind regulär}\\
+\iff & \text{Alle lokalen Ringe von abgeschlossenen Punkten sind regulär}\\
+\iff & (\Omega_{X/k})_x \text{ ist frei vom Rang $n$ für alle abgeschlossene $x\in X$}\\
+\iff & \Omega_{X/k}\text{ ist lokal frei vom Rang $n$}\qedhere
+\end{align*}
+\fi
+
+\paragraph{Lemma 8.26.}\label{8.26} Sei $X$ ein noethersches Schema und $\mathcal{F}$ eine kohärente Garbe. Dann ist $\mathcal{F}$ genau dann lokal frei, wenn $\mathcal{F}_x$ freier $\mathcal{O}_{X,x}$"~Modul für alle $x\in X$ ist.
+
+\paragraph{Korollar 8.27.}\label{8.27} Sei $X$ eine nicht-singuläre Varietät über $k$ und $Y\subset X$ ein irreduzibles, abgeschlossenes Unterschema zur Idealgarbe $\mathcal{J}$. Dann ist $Y$ genau dann nicht-singulär, wenn folgende Bedingungen erfüllt sind:
+\begin{enumerate}[(i)]
+\item $\Omega_{Y/k}$ ist lokal frei.
+\item In der exakten Sequenz aus \hyperref[8.21]{Satz 8.21} ist $\delta$ injektiv:
+\[0\longrightarrow\mathcal{J}/\mathcal{J}^2\stackrel{\delta}{\longrightarrow}\Omega_{X/k}\otimes_{\mathcal{O}_X}\mathcal{O}_Y\longrightarrow\Omega_{Y/k}\longrightarrow 0 \]
+\end{enumerate}
+
+\chapter{Kohomologie}
+
+Wir verwenden folgende Bezeichnungen für abelsche Kategorien:
+\begin{itemize}
+\item $\mathbf{Ab}$, die Kategorie der abelschen Gruppen
+\item $\mathbf{Mod}(A)$, die Kategorie der Moduln über einem kommutativen Ring $A$ mit Eins
+\item $\mathbf{Ab}(X)$, die Kategorie der Garben abelscher Gruppen über einem topologischen Raum $X$
+\item $\mathbf{Mod}(X)$, die Kategorie der $\mathcal{O}_X$"~Moduln auf einem geringten Raum $(X,\mathcal{O}_X)$
+\item $\mathbf{Qcoh}(X)$, die Kategorie der quasikohärenten $\mathcal{O}_X$"~Moduln auf einem Schema $X$
+\item $\mathbf{Coh}(X)$, die Kategorie der kohärenten $\mathcal{O}_X$"~Modulgarben auf einem noetherschen Schema $X$
+\end{itemize}
 
 \printindex
 \end{document}
