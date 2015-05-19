@@ -2050,27 +2050,27 @@ mit kohärenten Untergarben $\mathcal{F}'_\lambda$. Nach \hyperref[5.13]{Satz 5.
 
 \subsection{Projektive Vektorbündel}
 
-\paragraph{Definition.} Sei $X$ ein Schema. Ein quasikohärenter $\mathcal{O}_X$"~Modul $\mathcal{S}$ habe die Eigenschaft $(\star)$, wenn $X$ noethersch ist und wenn er eine Struktur einer graduierten $\mathcal{O}_X$"~Algebra trägt, d.h. $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{S}_d$ mit homogenen Teilen $\mathcal{S}_d$, so dass:
+\paragraph{Definition.} Sei $X$ ein Schema. Ein quasikohärenter $\mathcal{O}_X$"~Modul $\mathcal{S}$ habe die Eigenschaft $(\dagger)$, wenn $X$ noethersch ist und wenn er eine Struktur einer graduierten $\mathcal{O}_X$"~Algebra trägt, d.h. $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{S}_d$ mit homogenen Teilen $\mathcal{S}_d$, so dass:
 \begin{enumerate}[(i)]
 \item $\mathcal{S}_0=\mathcal{O}_X$
 \item $\mathcal{S}_1$ ist ein kohärenter $\mathcal{O}_X$"~Modul.
 \item $\mathcal{S}$ wird lokal von $\mathcal{S}_1$ als $\mathcal{O}_X$"~Modul erzeugt.
 \end{enumerate}
 
-\paragraph{Definition 7.9.}\label{7.9} Sei $X$ ein Schema und $\mathcal{S}$ ein graduierter $\mathcal{O}_X$"~Modul mit $(\star)$. Sei $U=\operatorname{Spec}(A)\subset_\text{o}X$, $\mathcal{S}(U)=\Gamma(U,\mathcal{S}|_U)$ die graduierte $A$"~Algebra und $\pi_U:\operatorname{Proj}\mathcal{S}(U)\to U$ der kanonische Morphismus. Für $U,V\subset_\text{o}X$ affin gilt $\pi_U^{-1}(U\cap V)\cong\pi_V^{-1}(U\cap V)$. Verkleben von $\pi_U$ liefert ein Schema $\operatorname{\mathbf{Proj}}(\mathcal{S})$ und ein Morphismus $\pi:\operatorname{\mathbf{Proj}}(\mathcal{S})\to X$, so dass für alle affinen $U\subset_\text{o}X$ stets $\pi^{-1}(U)\cong\operatorname{Proj}\mathcal{S}(U)$ gilt. Die invertierbaren Garben $\mathcal{O}(1)$ auf $\operatorname{Proj}\mathcal{S}(U)$ lassen sich zu einer invertierbaren Garbe $\mathcal{O}(1)$ auf $\operatorname{\mathbf{Proj}}(\mathcal{S})$ verkleben.
+\paragraph{Definition 7.9.}\label{7.9} Sei $X$ ein Schema und $\mathcal{S}$ ein graduierter $\mathcal{O}_X$"~Modul mit $(\dagger)$. Sei $U=\operatorname{Spec}(A)\subset_\text{o}X$, $\mathcal{S}(U)=\Gamma(U,\mathcal{S}|_U)$ die graduierte $A$"~Algebra und $\pi_U:\operatorname{Proj}\mathcal{S}(U)\to U$ der kanonische Morphismus. Für $U,V\subset_\text{o}X$ affin gilt $\pi_U^{-1}(U\cap V)\cong\pi_V^{-1}(U\cap V)$. Verkleben von $\pi_U$ liefert ein Schema $\operatorname{\mathbf{Proj}}(\mathcal{S})$ und ein Morphismus $\pi:\operatorname{\mathbf{Proj}}(\mathcal{S})\to X$, so dass für alle affinen $U\subset_\text{o}X$ stets $\pi^{-1}(U)\cong\operatorname{Proj}\mathcal{S}(U)$ gilt. Die invertierbaren Garben $\mathcal{O}(1)$ auf $\operatorname{Proj}\mathcal{S}(U)$ lassen sich zu einer invertierbaren Garbe $\mathcal{O}(1)$ auf $\operatorname{\mathbf{Proj}}(\mathcal{S})$ verkleben.
 
 \paragraph{Beispiel 7.10.}\label{7.10} Sei $\mathcal{O}_X[T_0,\ldots,T_n]=\mathcal{S}$. Dann ist $\operatorname{\mathbf{Proj}}(\mathcal{S})=\mathbf{P}_X^n=\mathbf{P}_\mathbb{Z}^n\times X$ mit der getwisteten Garbe $\mathcal{O}(1)$ wie in \hyperref[5.30]{Definition 5.30}.
 
-\paragraph{Lemma 7.11.}\label{7.11} Sei $\mathcal{S}$ eine Garbe graduierter Algebren mit $(\star)$ auf $X$. Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und $\mathcal{S}'$ die folgende Garbe graduierter Algebren:
+\paragraph{Lemma 7.11.}\label{7.11} Sei $\mathcal{S}$ eine Garbe graduierter Algebren mit $(\dagger)$ auf $X$. Sei $\mathcal{L}$ eine invertierbare Garbe auf $X$ und $\mathcal{S}'$ die folgende Garbe graduierter Algebren:
 \[\mathcal{S}_d' =\mathcal{S}_1\otimes\mathcal{L}^d,\quad d\geq 0 \]
-Dann erfüllt $\mathcal{S}'$ ebenfalls $(\star)$ und es gibt einen natürlichen Isomorphismus:
+Dann erfüllt $\mathcal{S}'$ ebenfalls $(\dagger)$ und es gibt einen natürlichen Isomorphismus:
 \[\begin{tikzcd}
 P'=\operatorname{\mathbf{Proj}}(\mathcal{S}')\ar[d, "\pi'"']\ar[r, "\varphi", "\cong"'] & P=\operatorname{\mathbf{Proj}}(\mathcal{S})\ar[dl, "\pi"]\\
 X&
 \end{tikzcd} \]
 Es gilt $\mathcal{O}_{P'}(1)\cong \varphi^\ast\mathcal{O}_P(1)\otimes\pi'^\ast\mathcal{L}$. $\mathcal{S}'$ wird auch mit $\mathcal{S}\ast\mathcal{L}$ bezeichnet.
 
-\paragraph{Satz 7.12.}\label{7.12} Sei $X$ und $\mathcal{S}$ mit $(\star)$. Sei $P=\operatorname{\mathbf{Proj}}(\mathcal{S})$ mit $\pi:P\to X$. Dann gilt:
+\paragraph{Satz 7.12.}\label{7.12} Sei $X$ und $\mathcal{S}$ mit $(\dagger)$. Sei $P=\operatorname{\mathbf{Proj}}(\mathcal{S})$ mit $\pi:P\to X$. Dann gilt:
 \begin{enumerate}[(i)]
 \item $\pi$ ist eigentlicher Morphismus.
 \item Besitzt $X$ eine ample Garbe $\mathcal{L}$, so ist $\pi$ projektiv und $\mathcal{O}_P(1)\otimes\pi^\ast\mathcal{L}^n$ ist eine sehr ample invertierbare Garbe von $P$ über $X$.
@@ -2086,7 +2086,7 @@ Dann ist $T(M)=\bigoplus_{n\geq 0}T^n(M)$ eine $A$"~Algebra mit $\otimes$ als Mu
 
 \paragraph{Beispiel.} Sei $M$ ein freier $A$"~Modul vom Rang $r$. Dann gilt $S(M)\cong A[X_1,\ldots,X_r]$.
 
-\paragraph{Definition 7.14.}\label{7.14} Sei $X$ ein noethersches Schema und $\mathcal{E}$ eine lokal freie, kohärente Garbe auf $X$. Sei $\mathcal{S}=S(\mathcal{E})$ die symmetrische Algebra von $\mathcal{E}$ und $\mathbf{P}(\mathcal{E})=\operatorname{\mathbf{Proj}}(\mathcal{S})$. Dann ist $\mathcal{S}$ eine Garbe von graduierten $\mathcal{O}_X$"~Algebren, die $(\star)$ erfüllt. $\pi:\mathbf{P}(\mathcal{E})\to X$ heißt \textit{projektives Vektorbündel}\index{Vektorbündel!projektiv} über $X$.
+\paragraph{Definition 7.14.}\label{7.14} Sei $X$ ein noethersches Schema und $\mathcal{E}$ eine lokal freie, kohärente Garbe auf $X$. Sei $\mathcal{S}=S(\mathcal{E})$ die symmetrische Algebra von $\mathcal{E}$ und $\mathbf{P}(\mathcal{E})=\operatorname{\mathbf{Proj}}(\mathcal{S})$. Dann ist $\mathcal{S}$ eine Garbe von graduierten $\mathcal{O}_X$"~Algebren, die $(\dagger)$ erfüllt. $\pi:\mathbf{P}(\mathcal{E})\to X$ heißt \textit{projektives Vektorbündel}\index{Vektorbündel!projektiv} über $X$.
 
 \paragraph{Bemerkung.} Ist $\mathcal{E}$ frei vom Rang $n+1$ über $U\subset_\text{o}X$, so ist $\pi^{-1}(U)\cong\mathbf{P}_U^n$.
 
@@ -2108,7 +2108,7 @@ wenn es eine invertierbare Garbe $\mathcal{L}$ auf $Y$ zusammen mit einem surjek
 
 \subsection{Aufblasung}
 
-\paragraph{Definition 7.17.}\label{7.17} Sei $X$ ein noethersches Schema und $\mathcal{J}$ eine kohärente Idealgarbe auf $X$. Setze $\mathcal{J}^0=\mathcal{O}_X$ und $\mathcal{J}^d$ als das $d$-fache Produkt des Ideals $\mathcal{J}$. Sei $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{J}^d$. Dann erfüllen $X$ und $\mathcal{S}$ die Bedingung $(\star)$. $\widetilde{X}=\mathbf{Proj}(\mathcal{S})$ heißt die \textit{Aufblasung} von $X$ bzgl. $\mathcal{J}$.\index{Aufblasung}
+\paragraph{Definition 7.17.}\label{7.17} Sei $X$ ein noethersches Schema und $\mathcal{J}$ eine kohärente Idealgarbe auf $X$. Setze $\mathcal{J}^0=\mathcal{O}_X$ und $\mathcal{J}^d$ als das $d$-fache Produkt des Ideals $\mathcal{J}$. Sei $\mathcal{S}=\bigoplus_{d\geq 0}\mathcal{J}^d$. Dann erfüllen $X$ und $\mathcal{S}$ die Bedingung $(\dagger)$. $\widetilde{X}=\mathbf{Proj}(\mathcal{S})$ heißt die \textit{Aufblasung} von $X$ bzgl. $\mathcal{J}$.\index{Aufblasung}
 
 Ist $Y$ das abgeschlossene Unterschema von $X$, das zu $\mathcal{J}$ gehört, so sagen wir auch, dass $\widetilde{X}$ die Aufblasung von $X$ entlang $Y$ ist.
 
@@ -2242,7 +2242,7 @@ Da $\operatorname{Hom}_C(\Omega_{B/A}\otimes_B C,M)\cong\operatorname{Hom}_B(\Om
 \[0\longrightarrow \operatorname{Der}_B(C,M)\longrightarrow \operatorname{Der}_A(C,M)\longrightarrow \operatorname{Der}_A(B,M)\dashrightarrow 0 \]
 Die vorletzte Abbildung ist gegeben durch $(\delta:C\to M)\mapsto (\delta\circ\psi: B\to M)$. Ohne die $0$ rechts ist diese Folge per Definition exakt. Mit der $0$ rechts ist die Folge genau dann exakt, wenn die Forderung in (ii) gilt.\qed
 
-\paragraph{Beispiel 8.8.}\label{8.8} Sei $B$ eine $A$"~Algebra und $C=B[x_1,\ldots,x_n]$. Sei $M$ ein beliebiger $C$"~Modul und $D\in\operatorname{Der}_A(B,M)$. Sei $\widetilde{D}:C\to M$ die einem Polynom $F$, den Polynom $F^D$ zuordnet, wobei $F^D$ das Polynom ist, das man durch Anwenden von $D$ auf die Koeffizienten von $F$ erhält. Dann ist $\widetilde{D}$ eine Derivation mit $\widetilde{D}|_B=D$. Nach \hyperref[8.7]{Satz 8.7 (ii)} gilt:
+\paragraph{Beispiel 8.8.}\label{8.8} Sei $B$ eine $A$"~Algebra und $C=B[x_1,\ldots,x_n]$. Sei $M$ ein beliebiger $C$"~Mo\-dul und $D\in\operatorname{Der}_A(B,M)$. Sei $\widetilde{D}:C\to M$ die einem Polynom $F$, den Polynom $F^D$ zuordnet, wobei $F^D$ das Polynom ist, das man durch Anwenden von $D$ auf die Koeffizienten von $F$ erhält. Dann ist $\widetilde{D}$ eine Derivation mit $\widetilde{D}|_B=D$. Nach \hyperref[8.7]{Satz 8.7 (ii)} gilt:
 \[\Omega_{C/A}\cong (\Omega_{B/A}\otimes_BC)\oplus C\mathrm{d}x_1\oplus\cdots\oplus C\mathrm{d}x_n \]
 
 \paragraph{Satz 8.9.}\label{8.9}\textit{(Zweite fundamentale exakte Sequenz)}\index{Fundamentale exakte Sequenz} Sei $B$ eine $A$"~Algebra, $I$ ein Ideal in $B$ und $C=B/I$. Es gibt eine kanonische, exakte Folge von $C$"~Moduln:
@@ -2400,6 +2400,37 @@ Wir verwenden folgende Bezeichnungen für abelsche Kategorien:
 \item $\mathbf{Qcoh}(X)$, die Kategorie der quasikohärenten $\mathcal{O}_X$"~Moduln auf einem Schema $X$
 \item $\mathbf{Coh}(X)$, die Kategorie der kohärenten $\mathcal{O}_X$"~Modulgarben auf einem noetherschen Schema $X$
 \end{itemize}
+
+\section{Kohomologie von Garben}
+
+\paragraph{Satz 9.15.}\label{9.15} Sei $A$ ein Ring. Dann ist jeder $A$"~Modul isomorph zu einem Untermodul eines injektiven $A$"~Moduls.
+
+\paragraph{Satz 9.16.}\label{9.16} Sei $(X,\mathcal{O}_X)$ ein geringter Raum. Dann hat die Kategorie $\mathbf{Mod}(\mathcal{O}_X)$ genügend viele Injektive.
+
+\paragraph{Beweis.} Sei $\mathcal{F}\in\mathbf{Mod}(\mathcal{O}_X)$. Dann ist $\mathcal{F}_x\in\mathbf{Mod}(\mathcal{O}_{X,x})$. Nach \hyperref[9.15]{Satz 9.15} gibt es ein Monomorphismus $\mathcal{F}_x\to I_x$ mit einem injektiven $\mathcal{O}_{X,x}$"~Modul $I_x$. Sei $j:\{x\}\hookrightarrow X$ die kanonische Inklusion und betrachte die $I_x$ als Garben auf $\{x\}$. Setze:
+\[\mathcal{J}=\prod_{x\in X}j_\ast I_x \]
+Dann gilt:
+\[\operatorname{Hom}_{\mathcal{O}_X}(\mathcal{F},\mathcal{J}) = \prod_{x\in X}\operatorname{Hom}_{\mathcal{O}_X}(\mathcal{F},j_\ast I_x) = \prod_{x\in X}\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{F}_x,I_x) \]
+Die $\mathcal{F}_x\hookrightarrow I_x$ geben ein Monomorphismus $\mathcal{F}\hookrightarrow \mathcal{J}$. Ferner gilt:
+\[\operatorname{Hom}_{\mathcal{O}_X}(-,\mathcal{J})=\prod_{x\in X}\operatorname{Hom}_{\mathcal{O}_{X,x}}((-)_x, I_x) \]
+Da Halmbildung exakt und $I_x$ injektive Objekte sind, ist dies ein exakter Funktor. Somit ist $\mathcal{J}$ ein injektiver $\mathcal{O}_X$"~Modul.\qed
+
+\paragraph{Korollar 9.17.}\label{9.17} Sei $X$ ein topologischer Raum. Dann besitzt $\mathbf{Ab}(X)$ genügend viele Injektive.
+
+\paragraph{Beweis.} Sei $\mathcal{O}_X$ die konstante Garbe $\mathbb{Z}$ auf $X$. Dann ist $(X,\mathcal{O}_X)$ ein geringter Raum und es gilt $\mathbf{Mod}(\mathcal{O}_X)=\mathbf{Ab}(X)$.\qed
+
+\paragraph{Definition 9.18.}\label{9.18} Sei $X$ ein topologischer Raum und $\Gamma(X,-):\mathbf{Ab}(X)\to \mathbf{Ab}$ der globale Schnittfunktor. Wir definieren:
+\[\mathrm{H}^i(X,-)= \mathrm{R}^i\Gamma(X,-) \]
+$\mathrm{H}^i(X,\mathcal{F})$ heißt \textit{$i$-te Kohomologiegruppe}\index{Kohomologiegruppe} von der Garbe $\mathcal{F}$. Haben $X$ und $\mathcal{F}$ Zusatzstrukturen, z.B. $X$ Schema oder $\mathcal{F}\in \mathbf{Qcoh}(X)$, so wird die Kohomologie trotzdem immer im obigen Sinne verstanden, d.h. $\mathcal{F}\in\mathbf{Ab}(X)$.
+
+Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul. $\mathcal{F}$ heißt\textit{welk}\index{$\mathcal{O}_X$-Modul!welk}, falls für alle offenen $V\subset U$ die Restriktionsabbildung $\mathcal{F}(U)\to\mathcal{F}(V)$ surjektiv ist.
+
+\paragraph{Lemma 9.19.}\label{9.19} Ist $(X,\mathcal{O}_X)$ ein geringter Raum, so ist jeder injektiver $\mathcal{O}_X$"~Modul $\mathcal{J}$ welk.
+
+\paragraph{Beweis.} Seien $i:U\hookrightarrow X$ und $j:V\hookrightarrow X$ die natürlichen Inklusionen. Betrachte die Inklusion $j_!\mathcal{O}_X|_V\hookrightarrow i_!\mathcal{O}_X|_U$ von $\mathcal{O}_X$"~Moduln. Es folgt die Surjektivität von:
+\[\mathcal{J}(U) = \operatorname{Hom}(i_!\mathcal{O}_X|_U,\mathcal{J})\to \operatorname{Hom}(j_!\mathcal{O}_X|_V,\mathcal{J})=\mathcal{J}(V)\qedhere \]
+
+\paragraph{Satz 9.20.}\label{9.20} Sei $X$ ein topologischer Raum und $\mathcal{F}$ eine welke Garbe auf $X$. Dann ist $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.
 
 \printindex
 \end{document}
