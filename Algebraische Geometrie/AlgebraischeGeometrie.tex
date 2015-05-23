@@ -2432,5 +2432,76 @@ Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}$ ein $\mathcal{O}_X$
 
 \paragraph{Satz 9.20.}\label{9.20} Sei $X$ ein topologischer Raum und $\mathcal{F}$ eine welke Garbe auf $X$. Dann ist $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.
 
+\paragraph{Lemma 9.21.}\label{9.21} Sei $X$ ein topologischer Raum. Sei $0\to\mathcal{G}'\to\mathcal{G}\to\mathcal{G}''\to 0$ eine exakte Sequenz von Garben.
+\begin{enumerate}[(i)]
+\item Ist $\mathcal{G}'$ eine welke Garbe, so ist für alle $U\subset_\text{o}X$ die folgende Sequenz exakt:
+\[0\longrightarrow \mathcal{G}'\longrightarrow \mathcal{G}\longrightarrow \mathcal{G}''\longrightarrow 0 \]
+\item Sind $\mathcal{G'}$ und $\mathcal{G}$ welk, so auch $\mathcal{G}''$.
+\end{enumerate}
+
+\paragraph{Beweis.}
+\begin{enumerate}[(i)]
+\item Sei o.B.d.A. $U=X$ und sei $s''\in\mathcal{G}''(X)$. Setze:
+\[E=\{(U,s)\mid U\subset_\text{o}X,\ s\in\mathcal{G}(U),\ s\mapsto s''|_U \} \]
+$E$ ist partiell geordnet bzgl. Inklusion. Jede Kette in $E$ besitzt eine obere Schranke in $E$. Nach Zorns Lemma gibt es ein maximales Element $(U,s)\in E$.
+
+Gibt es ein $x\in X\setminus U$, so existiert eine offene Umgebung $V$ von $x$ und $t\in\mathcal{G}(V)$ mit $t\mapsto s''|_V$, da $\mathcal{G}\to\mathcal{G}''$ surjektiv ist. Da $\mathcal{G}$ welk ist, so setzt sich $s-t\in\mathcal{G}(U\cap V)$ zu einem Schnitt auf $\mathcal{G}(V)$ fort. Ersetzen wir $t$ durch $s-t\in\mathcal{G}(V)$, können wir o.B.d.A. $s=t$ auf $V$ annehmen. Die Existenz von $(V,s)$ ist ein Widerspruch zur Maximalität von $(U,s)$ Somit folgt $U=X$.
+\item Für $V\subset U$ offen in $X$ kommutiert das folgende Diagramm mit exakten Zeilen:
+\[\begin{tikzcd}
+0 \rar & \mathcal{G}'(U)\rar\dar[two heads] & \mathcal{G}(U)\rar\dar[two heads] & \mathcal{G}''(U)\rar\dar & 0\\
+0 \rar & \mathcal{G}'(V)\rar & \mathcal{G}(V)\rar & \mathcal{G}''(V)\rar & 0
+\end{tikzcd} \]
+Es folgt die Surjektivität von $\mathcal{G}''(U)\to\mathcal{G}''(V)$.\qed
+\end{enumerate}
+
+\paragraph{Beweis von \hyperref[9.20]{Satz 9.20}.} Sei $0\to\mathcal{F}\to\mathcal{J}\to\mathcal{G}\to 0$ exakt mit $\mathcal{J}$ injektiv. Nun sind $\mathcal{F}$ und $\mathcal{J}$ welk. Nach \hyperref[9.21]{Lemma 9.21} ist auch $\mathcal{G}$ welk und wir haben eine exakte Folge:
+\[0\longrightarrow\mathcal{F}(X)\longrightarrow\mathcal{J}(X)\longrightarrow\mathcal{G}(X)\longrightarrow 0 \]
+Da $\mathrm{H}^i(X,\mathcal{J})=0$ für alle $i>0$, gilt $\mathrm{H}^1(X,\mathcal{F})=0$ und $\mathrm{H}^i(X,\mathcal{F})=\mathrm{H}^{i-1}(X,\mathcal{G})$ für alle $i\geq 2$. Somit folgt die Aussage per Induktion nach $i$.\qed
+
+\paragraph{Satz 9.22.}\label{9.22} Sei $(X,\mathcal{O}_X)$ ein geringter Raum. Dann sind die derivierten Funktoren von
+\[\Gamma(X,-): \mathbf{Mod}(X)\to\mathbf{Ab} \]
+gerade die Kohomologie-Funktoren.
+
+\paragraph{Beweis.} $\mathrm{R}^i\Gamma(X,-)$ wird über eine injektive Auflösung in $\mathbf{Mod}(X)$ berechnet. Nun sind injektive Objekte in $\mathbf{Mod}(X)$ nach \hyperref[9.19]{Lemma 9.19} welk und nach \hyperref[9.20]{Satz 9.20} insbesondere azyklisch bzgl. $\Gamma(X,-)$.Somit ist $\mathrm{R}^i\Gamma(X,-)=\mathrm{H}^i(X,-)$.\qed
+
+\paragraph{Bemerkung 9.23.}\label{9.23} Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul. Da die Kohomologie durch Auflösungen in der Kategorie $\mathbf{Mod}(X)$ berechnet werden kann, haben alle Kohomologiegruppen von $\mathcal{F}$ eine $A$"~Modulstruktur mit $A=\Gamma(X,\mathcal{O}_X)$.
+
+\paragraph{Lemma 9.24.}\label{9.24} Sei $X$ ein noetherscher topologischer Raum und $\mathcal{F}=\varinjlim_\alpha\mathcal{F}_\alpha$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\mathcal{F}(X)=\varinjlim_\alpha\mathcal{F}_\alpha(X)$
+\item Sind alle $\mathcal{F}_\alpha$ welk, so auch $\mathcal{F}$.
+\end{enumerate}
+
+\paragraph{Beweis.}\begin{enumerate}
+\item[(ii)] Für alle $\alpha$ und $V\subset U$ offen in $X$ ist $\mathcal{F}_\alpha(U)\to\mathcal{F}_\alpha(V)$ surjektiv. Da $\varinjlim$ exakt ist, folgt mit (i) die Surjektivität von:
+\[\mathcal{F}(U)=\varinjlim_\alpha\mathcal{F}_\alpha(U)\to\varinjlim\mathcal{F}_\alpha(V) = \mathcal{F}(V) \]
+\item[(i)] Der Funktor $\Gamma(X,-)$ vertauscht mit $\varinjlim$, siehe z.B. Godement, Topologie algébrique et théorie des faisceaux, p. 169.\qed
+\end{enumerate}
+
+\paragraph{Satz 9.25.}\label{9.25} Sei $X$ ein noetherscher topologischer Raum und $(\mathcal{F}_\alpha)_{\alpha\in A}$ ein induktives System in $\mathbf{Ab}(X)$. Dann gibt es einen natürlichen Isomorphismus:
+\[\varinjlim\mathrm{H}^i(X,\mathcal{F}_\alpha) \stackrel{\sim}{\to} \mathrm{H}^i(X,\varinjlim\mathcal{F}_\alpha) \]
+
+\paragraph{Beweis.} Für alle $\alpha$ haben wir natürliche Abbildungen $\mathcal{F}_\alpha\to\varinjlim\mathcal{F}_\alpha$. Wir erhalten $\mathrm{H}^i(X,\mathcal{F}_\alpha)\to\mathrm{H}^i(X,\varinjlim\mathcal{F}_\alpha)$ und daher eine Abbildung:
+\[\varinjlim\mathrm{H}^i(X,\mathcal{F}_\alpha)\to\mathrm{H}^i(X,\varinjlim\mathcal{F}_\alpha) \]
+Dies ist nach \hyperref[9.24]{Lemma 9.24 (i)} für $i=0$ ein Isomorphismus. Betrachte die abelsche Kategorie $\mathbf{Ind}_A(\mathbf{Ab}(X))$ der direkten Limiten von Objekten aus $\mathbf{Ab}(X)$ indiziert durch $A$. Da $\varinjlim$ exakt ist, haben wir eine natürliche Transformation von $\delta$-Funktoren $\mathbf{Ind}_A(\mathbf{Ab}(X))\to\mathbf{Ab}$
+\[\varinjlim\mathrm{H}^i(X,-)\to\mathrm{H}^i(X,\varinjlim -) \]
+die für $i=0$ übereinstimmt. Jetzt genügt es zu zeigen, dass beide Funktoren auslöschbar sind. Dann sind beide universell und insbesondere gleich.
+
+Sei $(\mathcal{F}_\alpha)\in\mathbf{Ind}_A(\mathbf{Ab}(X))$. Zu $\alpha$ definieren wir die Garbe $\mathcal{G}_\alpha$ wie folgt:
+\[U\mapsto \Big\{s:U\to\coprod_{P\in U}(\mathcal{F}_\alpha)_P\mid s(P)\in (\mathcal{F}_\alpha)_P \Big\} \]
+Dann ist $\mathcal{G}_\alpha$ welk und $\mathcal{F}_\alpha\hookrightarrow\mathcal{G}_\alpha$. Nach Konstruktion bilden die $\mathcal{G}_\alpha$ ein induktives System und wir erhalten einen Monomorphismus $u:(\mathcal{F}_\alpha)\hookrightarrow (\mathcal{G}_\alpha)$ in $\mathbf{Ind}_A(\mathbf{Ab}(X))$. Ferner gilt $\mathrm{H}^i(X,\mathcal{G}_\alpha)=0$ für alle $i>0$ nach \hyperref[9.20]{Satz 9.20}, also $\varinjlim\mathrm{H}^i(X,\mathcal{G}_\alpha)=0$ für alle $i>0$. Somit ist $\varinjlim\mathrm{H}^i(X,-)$ auslöschbar.
+
+Da $\varinjlim\mathcal{G}_\alpha$ nach \hyperref[9.24]{Satz 9.24 (ii)} welk ist, ist auch $\mathrm{H}^i(X,\varinjlim\mathcal{G}_\alpha)=0$ für alle $i>0$, d.h. auch $\mathrm{H}^i(X,\varinjlim -)$ ist auslöschbar.\qed
+
+\paragraph{Lemma 9.26.}\label{9.26} Sei $Y\subset X$ abgeschlossen mit natürlicher Inklusion $i:Y\hookrightarrow X$ und $\mathcal{F}\in\mathbf{Ab}(Y)$. Dann gilt:
+\[\mathrm{H}^i(Y,\mathcal{F})=\mathrm{H}^i(X, i_\ast\mathcal{F}) \]
+
+\paragraph{Beweis.} Sei $\mathcal{J}^\bullet$ eine injektive Auflösung von $\mathcal{F}$ auf $Y$; insbesondere ist $\mathcal{J}^\bullet$ eine welke Auflösung. Dann ist $i_\ast\mathcal{J}^\bullet$ eine welke Auflösung von $i_\ast\mathcal{F}$ auf $X$. Für alle $i$ gilt:
+\[\Gamma(Y,\mathcal{J}^i) = \Gamma(X,i_\ast\mathcal{J}^i) \]
+Somit ergeben sich die gleichen Kohomologiegruppen.\qed
+
+\paragraph{Satz 9.27.}\label{9.27} \textit{(Verschwindungssatz von Grothendieck)}\index{Verschwindungssatz} Sei $X$ ein noetherscher topologischer Raum der Dimension $n$. Dann gilt für alle abelschen Garben $\mathcal{F}$ auf $X$:
+\[\mathrm{H}^i(X,\mathcal{F})=0\quad\text{für alle }i>n \]
+
 \printindex
 \end{document}
