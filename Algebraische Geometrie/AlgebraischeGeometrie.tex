@@ -2503,5 +2503,27 @@ Somit ergeben sich die gleichen Kohomologiegruppen.\qed
 \paragraph{Satz 9.27.}\label{9.27} \textit{(Verschwindungssatz von Grothendieck)}\index{Verschwindungssatz} Sei $X$ ein noetherscher topologischer Raum der Dimension $n$. Dann gilt für alle abelschen Garben $\mathcal{F}$ auf $X$:
 \[\mathrm{H}^i(X,\mathcal{F})=0\quad\text{für alle }i>n \]
 
+\paragraph{Beweis.} Sei $\mathcal{F}$ eine Garbe abelscher Gruppen auf $X$.
+\begin{enumerate}
+\item Schritt: \textit{(Reduktion auf irreduzible $X$)} Sei $X$ reduzibel und $Y\subset X$ eine irreduzible Komponente mit Einbettungen $i:Y\hookrightarrow X,\ j:U=X\setminus Y\hookrightarrow X$. Nach \hyperref[1.16]{1.16} ist die folgende Garbensequenz exakt:
+\[0\longrightarrow \mathcal{F}_U \longrightarrow\mathcal{F}\longrightarrow\mathcal{F}_Y\longrightarrow 0 \]
+wobei $\mathcal{F}_U= j_!(\mathcal{F}|_U)$ und $\mathcal{F}_Y=i_\ast(\mathcal{F}|_Y)$ ist. Es genügt zu zeigen, dass $\mathrm{H}^i(X,\mathcal{F}_U)=0=\mathrm{H}^i(X,\mathcal{F}_Y)$ für alle $i>n$ ist. Betrachte $g:\overline{U}\hookrightarrow X$. Nun hat $\overline{U}$ weniger irreduzible Komponenten als $X$. Setze $\mathcal{F}_{\overline{U}}=g^\ast\mathcal{F}_U$. Es folgt nach \hyperref[9.26]{Lemma 9.26}:
+\[\mathrm{H}^i(\overline{U},\mathcal{F}_{\overline{U}})=\mathrm{H}^i(X,g_\ast\mathcal{F}_{\overline{U}}) = \mathrm{H}^i(X,\mathcal{F}_U) \]
+\[\mathrm{H}^i(X,\mathcal{F}_Y)=\mathrm{H}^i(X,i_\ast\mathcal{F}|_Y)=\mathrm{H}^i(Y,\mathcal{F}|_Y) \]
+Per Induktion nach Anzahl der irreduziblen Komponenten von $X$ können wir o.B.d.A. $X$ als irreduzibel annehmen.
+\item Schritt: Sei $X$ irreduzibel und $\dim(X)=0$. Die einzigen offenen Mengen von $X$ sind $\varnothing$ und $X$, d.h. $\Gamma(X,-):\mathbf{Ab}(X)\to\mathbf{Ab}$ ist eine Äquivalenz von Kategorien. Insbesondere ist $\Gamma(X,-)$ exakt, d.h. $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.
+\item Schritt: Sei $X$ irreduzibel und $\dim(X)=n$. Sei $j:U\hookrightarrow X$ offen und $s\in\mathcal{F}(U)$. Da
+\[\mathcal{F}(U)=\operatorname{Hom}(\mathbb{Z},\mathcal{F}(U))=\operatorname{Hom}_U(\mathbb{Z}|_U,\mathcal{F}|_U)=\operatorname{Hom}_X(j_!(\mathbb{Z}|_U),\mathcal{F}) \]
+wobei $\mathbb{Z}|_U$ die konstante Garbe bezeichnet, entspricht $s$ einen Morphismus $j_!(\mathbb{Z}|_U)\to\mathcal{F}$. Setze $\mathcal{F}_s=\operatorname{im}(j_!(\mathbb{Z}|_U)\to\mathcal{F})$. $\mathcal{F}_s$ heißt die von $s$ erzeugte Untergarbe von $\mathcal{F}$. Sei $\alpha=(s_i)_{i\in I},\ s_i\in\mathcal{F}(U_i)$ eine beliebige Familie von Schnitten. Setze:
+\[\mathcal{F}_\alpha = \sum_{i\in I}\mathcal{F}_{s_i}\subset\mathcal{F}\]
+Sei $J$ die Menge aller endlichen Familien $\alpha=(s_i)$. $J$ wird mit der folgenden par\-tiel\-len Ordnung zu einem gerichteten System:
+\[\alpha'\leq\alpha\iff \alpha'\text{ ist Unterfamilie von }\alpha \]
+Für $\alpha'\leq\alpha$ gilt $\mathcal{F}_{\alpha'}\subset\mathcal{F}_\alpha$. Somit ist $\mathcal{F}=\varinjlim_{\alpha\in J}\mathcal{F}_\alpha$. Nach \hyperref[9.25]{Satz 9.25} reicht es zu zeigen, dass $\mathrm{H}^i(X,\mathcal{F}_\alpha)=0$ für alle $i>n$ und alle $\alpha\in J$.
+
+Sei nun $\alpha'\leq\alpha$. Betrachte die exakte Sequenz $0\to\mathcal{F}_{\alpha'}\to\mathcal{F}_\alpha\to\mathcal{G}\to 0$. $\mathcal{G}$ ist erzeugt von $\#\alpha - \#\alpha'$ Schnitten über geeignete offenen Mengen. Per Induktion nach $\#\alpha$ können wir unter Betrachtung der langen exakten Kohomologiefolge o.B.d.A. annehmen, dass $\mathcal{F}$ von einem Schnitt über einer geeigneten offenen Menge $U$ erzeugt wird, d.h. $\mathcal{F}=\mathcal{F}_s$. Die zu $s$ gehörige Morphismus $\mathbb{Z}_U=j_!(\mathbb{Z}|_U)\to\mathcal{F}$ ist surjektiv.
+
+Definiere die Garbe $\mathcal{R}$ durch die exakte Folge $0\to\mathcal{R}\to\mathbb{Z}_U\to\mathcal{F}\to 0$. Unter Betrachtung der langen exakten Kohomologiefolge genügt es zu zeigen, dass $\mathrm{H}^i(X,\mathcal{R})=0=\mathrm{H}^i(X,\mathbb{Z}_U)$ für alle $i>n$ ist.
+\end{enumerate}
+
 \printindex
 \end{document}
