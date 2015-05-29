@@ -173,4 +173,24 @@ Dann ist $(X',f)\in\Sigma$ und $\Sigma$ ist induktiv geordnet. Nach Zorn gibt es
 
 \paragraph{Satz 9.30.}\label{9.30} Sei $A$ ein noetherscher Ring und $I$ ein injektiver $A$-Modul. Dann ist die Garbe $\widetilde{I}$ welk über $\operatorname{Spec}(A)$.
 
-%\paragraph{Beweis.} Sei $Y=\overline{\operatorname{supp}(\widetilde{I}}$.
+\paragraph{Lemma 9.31.}\label{9.31} Sei $A$ ein noetherscher Ring und $I$ ein injektiver $A$-Modul. Dann ist für jedes $f\in A$ die natürliche Abbildung $\theta:I\to I_f$ surjektiv.
+
+\paragraph{Beweis.} Betrachte die folgenden Ideale in $A$:
+\[\mathfrak{b}_i=\operatorname{ann}(f^i)= \{x\in A\mid f^ix=0\} \]
+Dann gilt $\mathfrak{b}_1\subset\mathfrak{b}_2\subset\ldots\subset\mathfrak{b}_r=\mathfrak{b}_{r+1}=\ldots$ für ein $r$. Sei $x\in I_f$. Dann gibt es ein $y\in I$ und ein $n\geq 0$ mit $x=\frac{\theta(y)}{f^n}$. Definiere den $A$-Modulhomomorphismus:
+\[\varphi: (f^{n+r})\to I,\ f^{n+r}\mapsto f^ry \]
+Dieser ist wohldefiniert, da $\operatorname{ann}(f^{n+r})= \mathfrak{b}_{n+r}=\mathfrak{b}_r = \operatorname{ann}(f^r)\subset\operatorname{ann}(f^ry)$. Da $I$ injektiv ist, gibt es eine Fortsetzung $\psi:A\to I$ von $\varphi$. Sei $z=\psi(1)$. Dann gilt $f^{n+r}z=f^ry$, also $\theta(z)=\frac{\theta(y)}{f^n}=x$.\qed
+
+\paragraph{Beweis von \hyperref[9.30]{9.30}.} Sei $Y=\overline{\operatorname{supp}(\widetilde{I})}$. Besteht $Y$ nur aus einem abgeschlossenen Punkt, so ist $\widetilde{I}$ eine Wolkenkratzergarbe und somit welk.
+
+Sei nun $Y$ größer und die Aussage für alle kleineren $Y$ bewiesen. Es genügt zu zeigen, dass alle Restriktionsabbildungen der Form $\Gamma(X,\widetilde{I})\to\Gamma(U,\widetilde{I})$ surjektiv sind. Sei $U\subset_\text{o}X$. Ist $Y\cap U=\varnothing$, so ist nichts zu zeigen. Sei $Y\cap U\neq\varnothing$. Es existiert ein $f\in A$ mit $X_f=D(f)\subset U$ und $X_f\cap Y\neq\varnothing$. Setze $Z=X\setminus X_f$ und $\Gamma_Z(U,\widetilde{I})=\{s\in\Gamma(U,\widetilde{I})\mid\operatorname{supp}(s)\subset Z \}$. Betrachte:
+\[\begin{tikzcd}
+\Gamma(X,\widetilde{I})\rar & \Gamma(U,\widetilde{I})\rar & \Gamma(X_f,\widetilde{I})\\
+\Gamma_Z(X,\widetilde{I})\rar\uar[hook] & \Gamma_Z(U,\widetilde{I}) \uar[hook]&
+\end{tikzcd} \]
+Sei $s\in\Gamma(U,\widetilde{I})$ und betrachte die Restriktion $s'\in\Gamma(X_f,\widetilde{I})=I_f$. Nach \hyperref[9.31]{Lemma 9.31} gibt es ein $t\in I=\Gamma(X,\widetilde{I})$ mit $t|_{X_f}=s'$. Sein $t'$ die Restriktion von $t$ auf $U$. Dann ist $(s-t')|_{X_f}=0$, also $\operatorname{supp}(s-t')\subset Z$. Bleibt noch zu zeigen, dass $\Gamma_Z(X,\widetilde{I})\to\Gamma_Z(U,\widetilde{I})$ surjektiv ist. Dann existiert nämlich ein Urbild $x\in\Gamma_Z(X,\widetilde{I})$ von $s-t'$ und daher:
+\[(x+t)|_U=s-t'+t'=s\]
+Sei $J=\Gamma_Z(X,\widetilde{I})$ und $\mathfrak{a}=(f)\subset A$. Dann ist $J=\Gamma_\mathfrak{a}(I)$. Nach \hyperref[9.29]{Lemma 9.29} ist $J$ ein injektiver $A$-Modul mit $\operatorname{supp}(\widetilde{J})\subset Y\cap Z\subsetneq Y$. Nach Induktionsannahme ist $\widetilde{J}$ welk, also ist die Restriktionsabbildung surjektiv:
+\[\Gamma_Z(X,\widetilde{I}) = \Gamma(X,\widetilde{J})\to \Gamma(U,\widetilde{J})=\Gamma_Z(U,\widetilde{I})\qedhere \]
+
+\paragraph{Beweis von \hyperref[9.28]{9.28}.} Sei $\mathcal{F}=\widetilde{M}$ eine quasikohärente Garbe über einem noetherschen Ring $A$. Sei $0\to M\to I^\bullet$ eine injektive Auflösung in $\mathbf{Mod}(A)$. Wir erhalten eine exakte Folge $0\to\mathcal{F}\to\widetilde{I}^\bullet$. Nach \hyperref[9.30]{Satz 9.30} sind alle $\widetilde{I}^i$ welk und somit azyklisch für $\Gamma(X,-)$. Daher kann diese Auflösung zur Kohomologieberechnung benutzt werden. Anwendung von $\Gamma(X,-)$ gibt gerade die exakte Sequenz $0\to M\to I^\bullet$. Also ist $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.\qed
