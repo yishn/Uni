@@ -1,0 +1,103 @@
+\chapter{Varietäten}
+
+Sei $k$ ein algebraisch abgeschlossener Körper.
+
+\section{Affine Varietäten}
+
+\paragraph{Definition.} \begin{enumerate}[(i)]
+\item Die Menge aller $n$-Tupeln über $k$
+\[\mathbf{A}^n = \mathbf{A}_k^n = \{(a_1,\ldots,a_n)\mid a_i\in k\} \]
+heißt \textit{affiner $n$-dimensionaler Raum}\index{affiner Raum} über $k$. Ein Element $P=(a_1,\ldots,a_n)\in\mathbf{A}^n$ heißt \textit{Punkt}\index{Punkt} und die $a_i$ heißen \textit{Koordinaten}\index{Koordinate} von $P$.
+\item Der Polynomring über $k$ in $n$ Variablen bezeichnen wir mit $A=k[X_1,\ldots,X_n]$. Für $T\subset A$ definieren wir die \textit{Nullstellenmenge}\index{Nullstellenmenge} von $T$ wie folgt:
+\[Z(T)=\{P\in\mathbf{A}^n\mid \forall f\in T\colon f(P)=0\} \]
+Es gilt $Z(T)=Z(\mathfrak{a})$, wobei $\mathfrak{a}$ das von $T$ erzeugte Ideal in $A$ ist.
+\item Eine Teilmenge $Y\subset\mathbf{A}^n$ der Form $Y=Z(T)$ für ein $T\subset A$ heißt \textit{affine algebraische Menge}\index{algebraische Menge!affin}. Für algebraische Mengen $Y_i=Z(\mathfrak{a}_i)$ mit Ideale $\mathfrak{a}_i\subset A,\ i\in I$ gilt:
+\[Y_1\cup Y_2=Z(\mathfrak{a}_1\cap\mathfrak{a}_2),\quad \bigcap_{i\in I}Y_i = Z\Big(\sum_{i\in I}\mathfrak{a}_i\Big) \]
+Ferner gilt $\mathbf{A}^n=Z(0)$ und $\varnothing = Z(1)$. Wir statten $\mathbf{A}^n$ mit der sogenannten \textit{Zariski-Topologie}\index{Zariski-Topologie} aus, in dem wir eine Menge $U\subset\mathbf{A}^n$ genau dann offen nennen, wenn $\mathbf{A}^n\setminus U$ eine algebraische Menge ist.
+\item Eine \textit{affine Varietät}\index{Varietät!affin} $V$ ist eine \textit{irreduzible}\index{irreduzibel} abgeschlossene Menge in $\mathbf{A}^n$, d.h. aus $V=V_1\cup V_2$ mit abgeschlossenen Mengen $V_1,V_2\subset\mathbf{A}^n$ folgt $V_1=\varnothing$ oder $V_2=\varnothing$.
+
+Eine offene Teilmenge einer affinen Varietät bzgl. der induzierten Topologie nennt man \textit{quasi-affine Varietät}\index{Varietät!quasi-affin}.
+\item Sei $Y\subset\mathbf{A}^n$ eine algebraische Menge. Dann definieren wir das Ideal:
+\[I(Y)=\{f\in A\mid \forall P\in Y\colon f(P)=0\} \]
+Der \textit{Koordinatenring}\index{Koordinatenring} von $Y$ ist definiert als $A(Y)=A/I(Y)$.
+\end{enumerate}
+
+\paragraph{Definition.} Sei $\mathfrak{a}\subset A$ ein Ideal. Das \textit{Radikal}\index{Radikal} von $\mathfrak{a}$ ist definiert als:
+\[\operatorname{Rad}(\mathfrak{a})=\{f\in A\mid\exists r>0\colon f^r\in\mathfrak{a} \} \]
+Ein Ideal $\mathfrak{a}\subset A$ heißt \textit{Radikalideal}\index{Radikalideal}, wenn $\mathfrak{a}=\operatorname{Rad}(\mathfrak{a})$ gilt.
+
+\paragraph{Satz.} Es gibt eine inklusionsumkehrende Bijektion:
+\[\{\text{Algebraische Mengen in }\mathbf{A}^n\} \to \{\text{Radikalideale in }k[X_1,\ldots,X_n]\},\ Y\mapsto I(Y) \]
+mit der Umkehrabbildung $\mathfrak{a}\mapsto Z(\mathfrak{a})$. Eine algebraische Menge $Y$ ist genau dann irreduzibel, wenn $I(Y)\subset A$ ein Primideal ist.
+
+\section{Projektive Varietäten}
+
+\paragraph{Definition.}\begin{enumerate}[(i)]
+\item Zwei Punkte $(a_0,\ldots,a_n),(b_0,\ldots,b_n)\in \mathbf{A}^{n+1}$ heißen äquivalent, wenn ein $\lambda\in k^\times$ existiert, so dass $a_i=\lambda b_i$ für alle $i$ gilt. Die Äquivalenzklasse von $(a_0,\ldots,a_n)$ wird mit $(a_0\: \ldots\: a_n)$ bezeichnet. Der \textit{projektiver $n$-dimensionaler Raum}\index{projektiver Raum} über $k$ wird definiert als:
+\[\mathbf{P}^n=\mathbf{P}_k^n = \{(a_0\: \ldots\: a_n) \mid a_i\in k\text{ nicht alle $0$} \} \]
+Ein Element $P=(a_0\: \ldots\: a_n)\in\mathbf{P}^n$ heißt \textit{Punkt}\index{Punkt} und die $a_i$ heißen \textit{homogene Koordinaten} von $P$.\index{Koordinate!homogen}
+\item Der Polynomring über $k$ in $n+1$ Variablen $S=k[X_0,\ldots,X_n]$ wird mit der folgenden Zerlegung zu einem graduierten Ring:
+\[S=\bigoplus_{d\geq 0}S_d,\quad S_d=\Big\{ \sum a_{i_0,\ldots,i_n} X_0^{i_0}\cdots X_n^{i_n}\Bigm| a_{i_0,\ldots,i_n}\in k,\ \sum_{j=0}^n i_j=d \Big\} \]
+Die Elemente in $S_d$ heißen \textit{homogene Elemente vom Grad $d$}\index{homogene Elemente}. Ein Ideal $\mathfrak{a}\subset S$ heißt \textit{homogenes Ideal}\index{homogenes Ideal}, wenn $\mathfrak{a}=\bigoplus_{d\geq 0}(S_d\cap\mathfrak{a})$ gilt.
+\item Sei $\mathfrak{a}\subset S$ ein homogenes Ideal. Dann setzen wir:
+\[Z(\mathfrak{a}) = \{P\in\mathbf{P}^n\mid \forall f\in\mathfrak{a}\text{ homogen}\colon f(P)=0 \} \]
+Diese ist wohldefiniert, da $f(\lambda a_0,\ldots,\lambda a_n)=\lambda^d f(a_0,\ldots,a_n)$ für $f\in S_d$. Eine Menge $Y\subset\mathbf{P}^n$ heißt \textit{projektive algebraische Menge}\index{algebraische Menge!projektiv}, wenn $Y=Z(\mathfrak{a})$ für ein homogenes Ideal $\mathfrak{a}\subset S$ gilt.
+
+Analog wie im affinen Fall, können wir auch $\mathbf{P}^n$ mit der \textit{Zariski-Topologie} ausstatten, d.h. eine Menge $U\subset\mathbf{P}^n$ ist genau dann offen, wenn $\mathbf{P}^n\setminus U$ eine projektive algebraische Menge ist.\index{Zariski-Topologie}
+\item Eine \textit{projektive Varietät}\index{Varietät!projektiv} $V$ ist eine irreduzible abgeschlossene Menge in $\mathbf{P}^n$. Eine offene Teilmenge einer projektiven Varietät bzgl. der induzierten Topologie nennt man \textit{quasi-projektive Varietät}\index{Varietät!quasi-projektiv}.
+\item Sei $Y\subset\mathbf{P}^n$ eine algebraische Menge. Dann setzen wir $I(Y)$ als das Ideal in $S$, das von der folgenden Menge erzeugt wird:
+\[\{f\in S \text{ homogen}\mid \forall P\in Y\colon f(P)=0\} \]
+$I(Y)$ ist ein homogenes Ideal in $S$. Der \textit{homogene Koordinatenring}\index{Koordinatenring!homogen} von $Y$ ist definiert als $S(Y)=S/I(Y)$.
+\end{enumerate}
+
+\paragraph{Satz.} Wir haben eine inklusionsumkehrende Bijektion:
+\[\{\text{Algebraische Mengen in }\mathbf{P}^n\}\to\{\text{Radikalideale in }k[X_0,\ldots,X_n]\},\ Y\mapsto I(Y) \]
+mit der Umkehrabbildung $\mathfrak{a}\mapsto Z(\mathfrak{a})$.
+
+\paragraph{Satz.} Sei $Y$ eine (quasi-)projektive Varietät. Dann wird $Y$ von offenen Mengen der Form $Y\cap U_i,\ i=0,\ldots,n$ überdeckt mit:
+\[U_i=\{(a_0\: \ldots\: a_n)\in \mathbf{P}^n\mid a_i\neq 0\} \]
+Die Abbildungen $\varphi_i: U_i\to\mathbf{A}^n,\ (a_0\: \ldots\: a_n)\mapsto \big(\frac{a_0}{a_i},\ldots,\widehat{\frac{a_i}{a_i}},\ldots,\frac{a_n}{a_i}\big)$ sind wohldefiniert und Ho\-möo\-mor\-phis\-men, d.h. die $Y\cap U_i$ sind (quasi-)affine Varietäten.
+
+\section{Morphismen}
+
+\paragraph{Definition.} \begin{enumerate}[(i)]
+\item Sei $Y\subset\mathbf{A}^n$ eine quasi-affine Varietät. Eine Abbildung $f:Y\to k$ heißt \textit{reguläre Funktion} in $P\in Y$, wenn eine offene Umgebung $U\subset Y$ mit $P\in U$ existiert, so dass $f=\frac{g}{h}$ auf $U$ für gewisse $g,h\in A$ gilt.
+
+Sei $Y\subset\mathbf{P}^n$ eine quasi-projektive Varietät. Eine Abbildung $f:Y\to k$ heißt \textit{reguläre Funktion}\index{reguläre Funktion} in $P\in Y$, wenn eine offene Umgebung $U\subset Y$ mit $P\in U$ existiert, so dass $f=\frac{g}{h}$ auf $U$ für gewisse homogene Polynome $g,h\in S$ vom gleichen Grad.
+
+Identifizieren wir $k\cong \mathbf{A}^1$ so ist eine reguläre Funktion notwendigerweise stetig.
+\item Eine stetige Abbildung $\varphi:X\to Y$ zwischen zwei (quasi-projektive) Varietäten heißt \textit{Morphismus}\index{Morphismus!Varietäten}, wenn für jede offene Menge $V\subset Y$ und reguläre Funktion $f:V\to k$ auch $f\circ\varphi:\varphi^{-1}(V)\to k$ regulär ist.
+
+Damit erhält man die Kategorie $\textbf{Var$(k)$}$ aller Varietäten auf $k$.
+\end{enumerate}
+
+%\paragraph{Bemerkung.} Sei $Y$ eine Varietät und $f,g:Y\to k$ reguläre Funktionen. Existiert eine nichtleere offene Menge $U\subset Y$ mit $f=g$ auf $U$, so folgt $f=g$ auf ganz $Y$: Sei dazu o.B.d.A. $U$ so klein, dass $f$ und $g$ als Brüche homogener Polynome vom gleichen Grad dargestellt werden kann. Dann ist die Nullstellenmenge $\{P\in Y\mid (f-g)(P)=0\}$ abgeschlossen und dicht in $Y$.
+
+\paragraph{Definition.} Sei $Y$ eine Varietät und $P\in Y$ ein Punkt.
+\begin{enumerate}[(i)]
+\item Wir bezeichnen den Ring aller regulären Funktionen auf $Y$ mit $\mathcal{O}(Y)$.
+\item $\mathcal{O}_{P,Y}=\{\langle U,f\rangle\mid P\in U\subset_\text{o} Y,\ f\text{ ist auf $U$ regulär}\}$ heißt der Ring der \textit{Keime} regulärer Funktionen auf $Y$ in $P$.\index{Keim} Wir identifizieren zwei Keime $\langle U,f\rangle=\langle V,g\rangle$, wenn $f=g$ auf $U\cap V$ gilt.
+
+$\mathcal{O}_{P,Y}$ ist ein lokaler Ring, dessen Maximalideal wir mit $\mathfrak{m}_P$ bezeichnen.
+\item $K(Y)=\{\langle U,f\rangle\mid\varnothing\neq U\subset_\text{o}Y,\ f\text{ ist auf $U$ regulär}\}$ heißt der \textit{Funktionenkörper}\index{Funktionenkörper}  von $Y$. Die Elemente von $K(Y)$ heißen \textit{rationale Funktionen} auf $Y$\index{rationale Funktion}.
+\end{enumerate}
+Es gilt $\mathcal{O}(Y)\subset\mathcal{O}_{P,Y}\subset K(Y)$.
+
+\paragraph{Theorem.} Sei $Y\subset\mathbf{A}^n$ eine affine Varietät. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\mathcal{O}(Y)\cong A(Y)$
+\item Die Abbildung $Y\to \{\text{Maximale Ideale in }A(Y)\},\ P\mapsto \mathfrak{m}_P\subset\mathcal{O}_{P,Y}$ ist eine Bijektion.
+\item $\mathcal{O}_{P,Y}\cong A(Y)_{\mathfrak{m}_P}$ und $\dim\mathcal{O}_{P,Y}=\dim Y$.
+\item $K(Y)\cong\operatorname{Quot}(A(Y))$
+\end{enumerate}
+
+\paragraph{Theorem.} Sei $Y\subset\mathbf{P}^n$ eine projektive Varietät. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\mathcal{O}(Y)=k$
+\item $\mathcal{O}_{P,Y}\cong S(Y)_{(\mathfrak{m}_P)}$
+\item $K(Y)\cong S(Y)_{((0))}$
+\end{enumerate}
+
+\paragraph{Theorem.} Sei $X$ eine beliebige Varietät und $Y$ eine affine Varietät. Dann haben wir eine Bijektion:
+\[\operatorname{Mor}_{\textbf{Var}}(X,Y) \to \operatorname{Hom}_{\textbf{$k$-Alg}}(A(Y),\mathcal{O}(X)),\ f\mapsto(\varphi\mapsto \varphi\circ f) \]
+Ist $X$ ebenfalls affin, so gilt $X\cong Y$, genau dann wenn $A(X)\cong A(Y)$. Der Funktor $\textbf{affine Var$(k)$}\to\textbf{nullteilerfreie $k$-Alg},\ X\mapsto A(X)$ ist eine pfeilumkehrende Äquivalenz von Kategorien.

@@ -1,0 +1,135 @@
+\chapter{Kohomologie}
+
+Wir verwenden folgende Bezeichnungen für abelsche Kategorien:
+\begin{itemize}
+\item $\mathbf{Ab}$, die Kategorie der abelschen Gruppen
+\item $\mathbf{Mod}(A)$, die Kategorie der Moduln über einem kommutativen Ring $A$ mit Eins
+\item $\mathbf{Ab}(X)$, die Kategorie der Garben abelscher Gruppen über einem topologischen Raum $X$
+\item $\mathbf{Mod}(X)$, die Kategorie der $\mathcal{O}_X$"~Moduln auf einem geringten Raum $(X,\mathcal{O}_X)$
+\item $\mathbf{Qcoh}(X)$, die Kategorie der quasikohärenten $\mathcal{O}_X$"~Moduln auf einem Schema $X$
+\item $\mathbf{Coh}(X)$, die Kategorie der kohärenten $\mathcal{O}_X$"~Modulgarben auf einem noetherschen Schema $X$
+\end{itemize}
+
+\section{Kohomologie von Garben}
+
+\paragraph{Satz 9.15.}\label{9.15} Sei $A$ ein Ring. Dann ist jeder $A$"~Modul isomorph zu einem Untermodul eines injektiven $A$"~Moduls.
+
+\paragraph{Satz 9.16.}\label{9.16} Sei $(X,\mathcal{O}_X)$ ein geringter Raum. Dann hat die Kategorie $\mathbf{Mod}(\mathcal{O}_X)$ genügend viele Injektive.
+
+\paragraph{Beweis.} Sei $\mathcal{F}\in\mathbf{Mod}(\mathcal{O}_X)$. Dann ist $\mathcal{F}_x\in\mathbf{Mod}(\mathcal{O}_{X,x})$. Nach \hyperref[9.15]{Satz 9.15} gibt es ein Monomorphismus $\mathcal{F}_x\to I_x$ mit einem injektiven $\mathcal{O}_{X,x}$"~Modul $I_x$. Sei $j:\{x\}\hookrightarrow X$ die kanonische Inklusion und betrachte die $I_x$ als Garben auf $\{x\}$. Setze $\mathcal{J}=\prod_{x\in X}j_\ast I_x$. Dann gilt:
+\[\operatorname{Hom}_{\mathcal{O}_X}(\mathcal{F},\mathcal{J}) = \prod_{x\in X}\operatorname{Hom}_{\mathcal{O}_X}(\mathcal{F},j_\ast I_x) = \prod_{x\in X}\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{F}_x,I_x) \]
+Die $\mathcal{F}_x\hookrightarrow I_x$ geben ein Monomorphismus $\mathcal{F}\hookrightarrow \mathcal{J}$. Ferner gilt:
+\[\operatorname{Hom}_{\mathcal{O}_X}(-,\mathcal{J})=\prod_{x\in X}\operatorname{Hom}_{\mathcal{O}_{X,x}}((-)_x, I_x) \]
+Da Halmbildung exakt und $I_x$ injektive Objekte sind, ist dies ein exakter Funktor. Somit ist $\mathcal{J}$ ein injektiver $\mathcal{O}_X$"~Modul.\qed
+
+\paragraph{Korollar 9.17.}\label{9.17} Sei $X$ ein topologischer Raum. Dann besitzt $\mathbf{Ab}(X)$ genügend viele Injektive.
+
+\paragraph{Beweis.} Sei $\mathcal{O}_X$ die konstante Garbe $\mathbb{Z}$ auf $X$. Dann ist $(X,\mathcal{O}_X)$ ein geringter Raum und es gilt $\mathbf{Mod}(\mathcal{O}_X)=\mathbf{Ab}(X)$.\qed
+
+\paragraph{Definition 9.18.}\label{9.18} Sei $X$ ein topologischer Raum und $\Gamma(X,-):\mathbf{Ab}(X)\to \mathbf{Ab}$ der globale Schnittfunktor. Wir definieren:
+\[\mathrm{H}^i(X,-)= \mathrm{R}^i\Gamma(X,-) \]
+$\mathrm{H}^i(X,\mathcal{F})$ heißt \textit{$i$-te Kohomologiegruppe}\index{Kohomologiegruppe} von der Garbe $\mathcal{F}$. Haben $X$ und $\mathcal{F}$ Zusatzstrukturen, z.B. $X$ Schema oder $\mathcal{F}\in \mathbf{Qcoh}(X)$, so wird die Kohomologie trotzdem immer im obigen Sinne verstanden, d.h. $\mathcal{F}\in\mathbf{Ab}(X)$.
+
+Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul. $\mathcal{F}$ heißt\textit{welk}\index{$\mathcal{O}_X$-Modul!welk}, falls für alle offenen $V\subset U$ die Restriktionsabbildung $\mathcal{F}(U)\to\mathcal{F}(V)$ surjektiv ist.
+
+\paragraph{Lemma 9.19.}\label{9.19} Ist $(X,\mathcal{O}_X)$ ein geringter Raum, so ist jeder injektiver $\mathcal{O}_X$"~Modul $\mathcal{J}$ welk.
+
+\paragraph{Beweis.} Seien $i:U\hookrightarrow X$ und $j:V\hookrightarrow X$ die natürlichen Inklusionen. Betrachte die Inklusion $j_!\mathcal{O}_X|_V\hookrightarrow i_!\mathcal{O}_X|_U$ von $\mathcal{O}_X$"~Moduln. Es folgt die Surjektivität von:
+\[\mathcal{J}(U) = \operatorname{Hom}(i_!\mathcal{O}_X|_U,\mathcal{J})\to \operatorname{Hom}(j_!\mathcal{O}_X|_V,\mathcal{J})=\mathcal{J}(V)\qedhere \]
+
+\paragraph{Satz 9.20.}\label{9.20} Sei $X$ ein topologischer Raum und $\mathcal{F}$ eine welke Garbe auf $X$. Dann ist $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.
+
+\paragraph{Lemma 9.21.}\label{9.21} Sei $X$ ein topologischer Raum. Sei $0\to\mathcal{G}'\to\mathcal{G}\to\mathcal{G}''\to 0$ eine exakte Sequenz von Garben.
+\begin{enumerate}[(i)]
+\item Ist $\mathcal{G}'$ eine welke Garbe, so ist für alle $U\subset_\text{o}X$ die folgende Sequenz exakt:
+\[0\longrightarrow \mathcal{G}'(U)\longrightarrow \mathcal{G}(U)\longrightarrow \mathcal{G}''(U)\longrightarrow 0 \]
+\item Sind $\mathcal{G'}$ und $\mathcal{G}$ welk, so auch $\mathcal{G}''$.
+\end{enumerate}
+
+\paragraph{Beweis.}
+\begin{enumerate}[(i)]
+\item Sei o.B.d.A. $U=X$ und sei $s''\in\mathcal{G}''(X)$. Setze:
+\[E=\{(U,s)\mid U\subset_\text{o}X,\ s\in\mathcal{G}(U),\ s\mapsto s''|_U \} \]
+$E$ ist partiell geordnet bzgl. Inklusion. Jede Kette in $E$ besitzt eine obere Schranke in $E$. Nach Zorns Lemma gibt es ein maximales Element $(U,s)\in E$.
+
+Gibt es ein $x\in X\setminus U$, so existiert eine offene Umgebung $V$ von $x$ und $t\in\mathcal{G}(V)$ mit $t\mapsto s''|_V$, da $\mathcal{G}\to\mathcal{G}''$ surjektiv ist. Da $\mathcal{G}$ welk ist, so setzt sich $s-t\in\mathcal{G}(U\cap V)$ zu einem Schnitt auf $\mathcal{G}(V)$ fort. Ersetzen wir $t$ durch $s-t\in\mathcal{G}(V)$, können wir o.B.d.A. $s=t$ auf $V$ annehmen. Die Existenz von $(V,s)$ ist ein Widerspruch zur Maximalität von $(U,s)$ Somit folgt $U=X$.
+\item Für $V\subset U$ offen in $X$ kommutiert das folgende Diagramm mit exakten Zeilen:
+\[\begin{tikzcd}
+0 \rar & \mathcal{G}'(U)\rar\dar[two heads] & \mathcal{G}(U)\rar\dar[two heads] & \mathcal{G}''(U)\rar\dar & 0\\
+0 \rar & \mathcal{G}'(V)\rar & \mathcal{G}(V)\rar & \mathcal{G}''(V)\rar & 0
+\end{tikzcd} \]
+Es folgt die Surjektivität von $\mathcal{G}''(U)\to\mathcal{G}''(V)$.\qed
+\end{enumerate}
+
+\paragraph{Beweis von \hyperref[9.20]{Satz 9.20}.} Sei $0\to\mathcal{F}\to\mathcal{J}\to\mathcal{G}\to 0$ exakt mit $\mathcal{J}$ injektiv. Nun sind $\mathcal{F}$ und $\mathcal{J}$ welk. Nach \hyperref[9.21]{Lemma 9.21} ist auch $\mathcal{G}$ welk und wir haben eine exakte Folge:
+\[0\longrightarrow\mathcal{F}(X)\longrightarrow\mathcal{J}(X)\longrightarrow\mathcal{G}(X)\longrightarrow 0 \]
+Da $\mathrm{H}^i(X,\mathcal{J})=0$ für alle $i>0$, gilt $\mathrm{H}^1(X,\mathcal{F})=0$ und $\mathrm{H}^i(X,\mathcal{F})=\mathrm{H}^{i-1}(X,\mathcal{G})$ für alle $i\geq 2$. Somit folgt die Aussage per Induktion nach $i$.\qed
+
+\paragraph{Satz 9.22.}\label{9.22} Sei $(X,\mathcal{O}_X)$ ein geringter Raum. Dann sind die derivierten Funktoren von
+\[\Gamma(X,-): \mathbf{Mod}(X)\to\mathbf{Ab} \]
+gerade die Kohomologie-Funktoren.
+
+\paragraph{Beweis.} $\mathrm{R}^i\Gamma(X,-)$ wird über eine injektive Auflösung in $\mathbf{Mod}(X)$ berechnet. Nun sind injektive Objekte in $\mathbf{Mod}(X)$ nach \hyperref[9.19]{Lemma 9.19} welk und nach \hyperref[9.20]{Satz 9.20} insbesondere azyklisch bzgl. $\Gamma(X,-)$.Somit ist $\mathrm{R}^i\Gamma(X,-)=\mathrm{H}^i(X,-)$.\qed
+
+\paragraph{Bemerkung 9.23.}\label{9.23} Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul. Da die Kohomologie durch Auflösungen in der Kategorie $\mathbf{Mod}(X)$ berechnet werden kann, haben alle Kohomologiegruppen von $\mathcal{F}$ eine $A$"~Modulstruktur mit $A=\Gamma(X,\mathcal{O}_X)$.
+
+\paragraph{Lemma 9.24.}\label{9.24} Sei $X$ ein noetherscher topologischer Raum und $\mathcal{F}=\varinjlim_\alpha\mathcal{F}_\alpha$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\mathcal{F}(X)=\varinjlim_\alpha\mathcal{F}_\alpha(X)$
+\item Sind alle $\mathcal{F}_\alpha$ welk, so auch $\mathcal{F}$.
+\end{enumerate}
+
+\paragraph{Beweis.}\begin{enumerate}
+\item[(ii)] Für alle $\alpha$ und $V\subset U$ offen in $X$ ist $\mathcal{F}_\alpha(U)\to\mathcal{F}_\alpha(V)$ surjektiv. Da $\varinjlim$ exakt ist, folgt mit (i) die Surjektivität von:
+\[\mathcal{F}(U)=\varinjlim_\alpha\mathcal{F}_\alpha(U)\to\varinjlim\mathcal{F}_\alpha(V) = \mathcal{F}(V) \]
+\item[(i)] Der Funktor $\Gamma(X,-)$ vertauscht mit $\varinjlim$, siehe z.B. Godement, Topologie algébrique et théorie des faisceaux, p. 169.\qed
+\end{enumerate}
+
+\paragraph{Satz 9.25.}\label{9.25} Sei $X$ ein noetherscher topologischer Raum und $(\mathcal{F}_\alpha)_{\alpha\in A}$ ein induktives System in $\mathbf{Ab}(X)$. Dann gibt es einen natürlichen Isomorphismus:
+\[\varinjlim\mathrm{H}^i(X,\mathcal{F}_\alpha) \stackrel{\sim}{\to} \mathrm{H}^i(X,\varinjlim\mathcal{F}_\alpha) \]
+
+\paragraph{Beweis.} Für alle $\alpha$ haben wir natürliche Abbildungen $\mathcal{F}_\alpha\to\varinjlim\mathcal{F}_\alpha$. Wir erhalten $\mathrm{H}^i(X,\mathcal{F}_\alpha)\to\mathrm{H}^i(X,\varinjlim\mathcal{F}_\alpha)$ und daher eine Abbildung:
+\[\varinjlim\mathrm{H}^i(X,\mathcal{F}_\alpha)\to\mathrm{H}^i(X,\varinjlim\mathcal{F}_\alpha) \]
+Dies ist nach \hyperref[9.24]{Lemma 9.24 (i)} für $i=0$ ein Isomorphismus. Betrachte die abelsche Kategorie $\mathbf{Ind}_A(\mathbf{Ab}(X))$ der direkten Limiten von Objekten aus $\mathbf{Ab}(X)$ indiziert durch $A$. Da $\varinjlim$ exakt ist, haben wir eine natürliche Transformation von $\delta$-Funktoren $\mathbf{Ind}_A(\mathbf{Ab}(X))\to\mathbf{Ab}$
+\[\varinjlim\mathrm{H}^i(X,-)\to\mathrm{H}^i(X,\varinjlim -) \]
+die für $i=0$ übereinstimmt. Jetzt genügt es zu zeigen, dass beide Funktoren auslöschbar sind. Dann sind beide universell und insbesondere gleich.
+
+Sei $(\mathcal{F}_\alpha)\in\mathbf{Ind}_A(\mathbf{Ab}(X))$. Zu $\alpha$ definieren wir die Garbe $\mathcal{G}_\alpha$ wie folgt:
+\[U\mapsto \Big\{s:U\to\coprod_{P\in U}(\mathcal{F}_\alpha)_P\mid s(P)\in (\mathcal{F}_\alpha)_P \Big\} \]
+Dann ist $\mathcal{G}_\alpha$ welk und $\mathcal{F}_\alpha\hookrightarrow\mathcal{G}_\alpha$. Nach Konstruktion bilden die $\mathcal{G}_\alpha$ ein induktives System und wir erhalten einen Monomorphismus $u:(\mathcal{F}_\alpha)\hookrightarrow (\mathcal{G}_\alpha)$ in $\mathbf{Ind}_A(\mathbf{Ab}(X))$. Ferner gilt $\mathrm{H}^i(X,\mathcal{G}_\alpha)=0$ für alle $i>0$ nach \hyperref[9.20]{Satz 9.20}, also $\varinjlim\mathrm{H}^i(X,\mathcal{G}_\alpha)=0$ für alle $i>0$. Somit ist $\varinjlim\mathrm{H}^i(X,-)$ auslöschbar.
+
+Da $\varinjlim\mathcal{G}_\alpha$ nach \hyperref[9.24]{Satz 9.24 (ii)} welk ist, ist auch $\mathrm{H}^i(X,\varinjlim\mathcal{G}_\alpha)=0$ für alle $i>0$, d.h. auch $\mathrm{H}^i(X,\varinjlim -)$ ist auslöschbar.\qed
+
+\paragraph{Lemma 9.26.}\label{9.26} Sei $Y\subset X$ abgeschlossen mit natürlicher Inklusion $i:Y\hookrightarrow X$ und $\mathcal{F}\in\mathbf{Ab}(Y)$. Dann gilt:
+\[\mathrm{H}^i(Y,\mathcal{F})=\mathrm{H}^i(X, i_\ast\mathcal{F}) \]
+
+\paragraph{Beweis.} Sei $\mathcal{J}^\bullet$ eine injektive Auflösung von $\mathcal{F}$ auf $Y$; insbesondere ist $\mathcal{J}^\bullet$ eine welke Auflösung. Dann ist $i_\ast\mathcal{J}^\bullet$ eine welke Auflösung von $i_\ast\mathcal{F}$ auf $X$. Für alle $i$ gilt:
+\[\Gamma(Y,\mathcal{J}^i) = \Gamma(X,i_\ast\mathcal{J}^i) \]
+Somit ergeben sich die gleichen Kohomologiegruppen.\qed
+
+\paragraph{Satz 9.27.}\label{9.27} \textit{(Verschwindungssatz von Grothendieck)}\index{Verschwindungssatz} Sei $X$ ein noetherscher topologischer Raum der Dimension $n$. Dann gilt für alle abelschen Garben $\mathcal{F}$ auf $X$:
+\[\mathrm{H}^i(X,\mathcal{F})=0\quad\text{für alle }i>n \]
+
+\paragraph{Beweis.} Sei $\mathcal{F}$ eine Garbe abelscher Gruppen auf $X$.
+\begin{enumerate}
+\item Schritt: \textit{(Reduktion auf irreduzible $X$)} Sei $X$ reduzibel und $Y\subset X$ eine irreduzible Komponente mit Einbettungen $i:Y\hookrightarrow X,\ j:U=X\setminus Y\hookrightarrow X$. Nach \hyperref[1.16]{1.16} ist die folgende Garbensequenz exakt:
+\[0\longrightarrow \mathcal{F}_U \longrightarrow\mathcal{F}\longrightarrow\mathcal{F}_Y\longrightarrow 0 \]
+wobei $\mathcal{F}_U= j_!(\mathcal{F}|_U)$ und $\mathcal{F}_Y=i_\ast(\mathcal{F}|_Y)$ ist. Es genügt zu zeigen, dass $\mathrm{H}^i(X,\mathcal{F}_U)=0=\mathrm{H}^i(X,\mathcal{F}_Y)$ für alle $i>n$ ist. Betrachte $g:\overline{U}\hookrightarrow X$. Nun hat $\overline{U}$ weniger irreduzible Komponenten als $X$. Setze $\mathcal{F}_{\overline{U}}=g^\ast\mathcal{F}_U$. Es folgt nach \hyperref[9.26]{Lemma 9.26}:
+\[\mathrm{H}^i(\overline{U},\mathcal{F}_{\overline{U}})=\mathrm{H}^i(X,g_\ast\mathcal{F}_{\overline{U}}) = \mathrm{H}^i(X,\mathcal{F}_U) \]
+\[\mathrm{H}^i(X,\mathcal{F}_Y)=\mathrm{H}^i(X,i_\ast\mathcal{F}|_Y)=\mathrm{H}^i(Y,\mathcal{F}|_Y) \]
+Per Induktion nach Anzahl der irreduziblen Komponenten von $X$ können wir ohne Einschränkung $X$ als irreduzibel annehmen.
+\item Schritt: Sei $X$ irreduzibel und $\dim(X)=0$. Die einzigen offenen Mengen von $X$ sind $\varnothing$ und $X$, d.h. $\Gamma(X,-):\mathbf{Ab}(X)\to\mathbf{Ab}$ ist eine Äquivalenz von Kategorien. Insbesondere ist $\Gamma(X,-)$ exakt, d.h. $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.
+\item Schritt: Sei $X$ irreduzibel und $\dim(X)=n$. Sei $j:U\hookrightarrow X$ offen und $s\in\mathcal{F}(U)$. Da
+\[\mathcal{F}(U)=\operatorname{Hom}(\mathbb{Z},\mathcal{F}(U))=\operatorname{Hom}_U(\mathbb{Z}|_U,\mathcal{F}|_U)=\operatorname{Hom}_X(j_!(\mathbb{Z}|_U),\mathcal{F}) \]
+wobei $\mathbb{Z}|_U$ die konstante Garbe bezeichnet, entspricht $s$ einen Morphismus $j_!(\mathbb{Z}|_U)\to\mathcal{F}$. Setze $\mathcal{F}_s=\operatorname{im}(j_!(\mathbb{Z}|_U)\to\mathcal{F})$. $\mathcal{F}_s$ heißt die von $s$ erzeugte Untergarbe von $\mathcal{F}$. Sei $\alpha=(s_i)_{i\in I},\ s_i\in\mathcal{F}(U_i)$ eine beliebige Familie von Schnitten. Setze:
+\[\mathcal{F}_\alpha = \sum_{i\in I}\mathcal{F}_{s_i}\subset\mathcal{F}\]
+Sei $J$ die Menge aller endlichen Familien $\alpha=(s_i)$. $J$ wird mit der folgenden par\-tiel\-len Ordnung zu einem gerichteten System:
+\[\alpha'\leq\alpha\iff \alpha'\text{ ist Unterfamilie von }\alpha \]
+Für $\alpha'\leq\alpha$ gilt $\mathcal{F}_{\alpha'}\subset\mathcal{F}_\alpha$. Somit ist $\mathcal{F}=\varinjlim_{\alpha\in J}\mathcal{F}_\alpha$. Nach \hyperref[9.25]{Satz 9.25} reicht es zu zeigen, dass $\mathrm{H}^i(X,\mathcal{F}_\alpha)=0$ für alle $i>n$ und alle $\alpha\in J$.
+
+Sei nun $\alpha'\leq\alpha$. Betrachte die exakte Sequenz $0\to\mathcal{F}_{\alpha'}\to\mathcal{F}_\alpha\to\mathcal{G}\to 0$. $\mathcal{G}$ ist erzeugt von $\#\alpha - \#\alpha'$ Schnitten über geeignete offenen Mengen. Per Induktion nach $\#\alpha$ können wir unter Betrachtung der langen exakten Kohomologiefolge o.B.d.A. annehmen, dass $\mathcal{F}$ von einem Schnitt über einer geeigneten offenen Menge $U$ erzeugt wird, d.h. $\mathcal{F}=\mathcal{F}_s$. Die zu $s$ gehörige Morphismus $\mathbb{Z}_U=j_!(\mathbb{Z}|_U)\to\mathcal{F}$ ist surjektiv.
+
+Definiere die Garbe $\mathcal{R}$ durch die exakte Folge $0\to\mathcal{R}\to\mathbb{Z}_U\to\mathcal{F}\to 0$. Unter Betrachtung der langen exakten Kohomologiefolge genügt es zu zeigen, dass $\mathrm{H}^i(X,\mathcal{R})=0=\mathrm{H}^i(X,\mathbb{Z}_U)$ für alle $i>n$ ist.
+\item Schritt: Für $x\in U$ ist $\mathcal{R}_x$ eine Untergruppe von $\mathbb{Z}$. Ist $\mathcal{R} = 0$, so folgt $\mathcal{F}\cong\mathbb{Z}_U$. Sei nun $\mathcal{R}\neq 0$. Setze:
+\[d=\min\{m>0\mid m\in\mathcal{R}_x,\ x\in U\} \]
+\end{enumerate}
