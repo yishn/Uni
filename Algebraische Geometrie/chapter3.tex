@@ -130,6 +130,47 @@ Für $\alpha'\leq\alpha$ gilt $\mathcal{F}_{\alpha'}\subset\mathcal{F}_\alpha$. 
 Sei nun $\alpha'\leq\alpha$. Betrachte die exakte Sequenz $0\to\mathcal{F}_{\alpha'}\to\mathcal{F}_\alpha\to\mathcal{G}\to 0$. $\mathcal{G}$ ist erzeugt von $\#\alpha - \#\alpha'$ Schnitten über geeignete offenen Mengen. Per Induktion nach $\#\alpha$ können wir unter Betrachtung der langen exakten Kohomologiefolge o.B.d.A. annehmen, dass $\mathcal{F}$ von einem Schnitt über einer geeigneten offenen Menge $U$ erzeugt wird, d.h. $\mathcal{F}=\mathcal{F}_s$. Die zu $s$ gehörige Morphismus $\mathbb{Z}_U=j_!(\mathbb{Z}|_U)\to\mathcal{F}$ ist surjektiv.
 
 Definiere die Garbe $\mathcal{R}$ durch die exakte Folge $0\to\mathcal{R}\to\mathbb{Z}_U\to\mathcal{F}\to 0$. Unter Betrachtung der langen exakten Kohomologiefolge genügt es zu zeigen, dass $\mathrm{H}^i(X,\mathcal{R})=0=\mathrm{H}^i(X,\mathbb{Z}_U)$ für alle $i>n$ ist.
-\item Schritt: Für $x\in U$ ist $\mathcal{R}_x$ eine Untergruppe von $\mathbb{Z}$. Ist $\mathcal{R} = 0$, so folgt $\mathcal{F}\cong\mathbb{Z}_U$. Sei nun $\mathcal{R}\neq 0$. Setze:
+\item Schritt: Wir zeigen $\mathrm{H}^i(X,\mathcal{R})=0$ für alle $i>n$ per Induktion über $n=\dim(X)$. Für $x\in U$ ist $\mathcal{R}_x$ eine Untergruppe von $\mathbb{Z}$. Ist $\mathcal{R} = 0$, so folgt $\mathcal{F}\cong\mathbb{Z}_U$. Sei nun $\mathcal{R}\neq 0$. Setze:
 \[d=\min\{m>0\mid m\in\mathcal{R}_x,\ x\in U\} \]
+Es existiert ein $\varnothing\neq V\subset_\text{o}U$ mit $\mathcal{R}|_V\cong d\cdot\mathbb{Z}|_V\subset \mathbb{Z}|_V$. Wir erhalten $\mathcal{R}_V=j_!(\mathcal{R}|_V)=\mathbb{Z}_V$, wobei $j:V\hookrightarrow X$ die kanonische Inklusion ist. Wir erhalten die exakte Sequenz:
+\[0\longrightarrow\mathbb{Z}_V\longrightarrow\mathcal{R}\longrightarrow\mathcal{R}/\mathbb{Z}_V\longrightarrow 0 \]
+Nun gilt $\operatorname{supp}(\mathcal{R}/\mathbb{Z}_V)\subset\overline{U\setminus V}\subset X$. Da $X$ irreduzibel ist, gilt $\dim(\overline{U\setminus V})<n$. Aus der Induktionsannahme folgt mit \hyperref[9.26]{Lemma 9.26} für alle $i\geq n$:
+\[\mathrm{H}^i(X,\mathcal{R}/\mathbb{Z}_V) = \mathrm{H}^i(\overline{U\setminus V},\mathcal{R}/\mathbb{Z}_V|_{\overline{U\setminus V}})=0 \]
+Nach der langen exakten Kohomologiesequenz reicht es zu zeigen, dass $\mathrm{H}^i(X,\mathbb{Z}_V)=0$ für $i>n$ gilt.
+\item Schritt: Wir zeigen $\mathrm{H}^i(X,\mathbb{Z}_V)=0$ für alle $i>n$ per Induktion über $n=\dim(X)$. Sei $U\subset_\text{o}X$ und $Y=X\setminus U$. Dann ist $0\to\mathbb{Z}_U\to\mathbb{Z}\to\mathbb{Z}_Y\to 0$ exakt nach \hyperref[1.16]{1.16}. Wegen $\dim(Y)<\dim(X)$ folgt nach der Induktionsannahme und \hyperref[9.26]{Lemma 9.26} für alle $i\geq n$:
+\[\mathrm{H}^i(X,\mathbb{Z}_Y)=\mathrm{H}^i(Y,\mathbb{Z}|_Y)=0 \]
+Ferner ist die konstante Garbe $\mathbb{Z}$ welk. Nach \hyperref[9.20]{Satz 9.20} folgt $\mathrm{H}^i(X,\mathbb{Z})=0$ für alle $i>0$. Die lange exakte Kohomologiesequenz liefert $\mathrm{H}^i(X,\mathbb{Z}_U)=0$ für $i>n$.\qed
 \end{enumerate}
+
+\paragraph{Satz 9.28.}\label{9.28} Sei $X=\operatorname{Spec}(A)$ noethersch. Dann ist $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$ und alle quasikohärenten Garben $\mathcal{F}$.
+
+\paragraph{Bemerkung.} Dieser Satz gilt auch für nicht-noethersche Ringe $A$.
+
+\paragraph{Satz von Artin-Rees.}\index{Satz von Artin-Rees}\label{prop:artin-rees} Sei $A$ ein noetherscher Ring, $\mathfrak{a}\subset A$ ein Ideal und $M\subset N$ endlich erzeugte $A$"~Moduln. Dann ist die $\mathfrak{a}$-adische Topologie auf $M$ induziert von der $\mathfrak{a}$-adischen Topologie auf $N$, d.h:
+\[\forall n\geq 0,\ \exists m\geq n:\ \mathfrak{a}^nM\supset\mathfrak{a}^mN\cap M \]
+
+\paragraph{Beweis.} Siehe beispielsweise Bosch: Algebraic Geometry and Commutative Algebra, 2.3. Lemma 1.\qed
+
+\paragraph{Definition.} Sei $A$ ein Ring, $\mathfrak{a}\subset A$ ein Ideal und $M$ ein $A$"~Modul. Wir definieren:
+\[\Gamma_\mathfrak{a}(M)=\{m\in M\mid\exists n>0:\ \mathfrak{a}^nm=0 \} \]
+
+\paragraph{Lemma 9.29.}\label{9.29} Sei $A$ noethersch, $\mathfrak{a}\subset A$ ein Ideal und $I$ ein injektiver $A$"~Modul. Dann ist $\Gamma_\mathfrak{a}(I)$ ebenfalls injektiv.
+
+\paragraph{Beweis.} Setze $J=\Gamma_\mathfrak{a}(I)$. Wir zeigen zunächst: Für alle Ideale $\mathfrak{b}\subset A$ und alle $A$-Modulhomomorphismen $\varphi:\mathfrak{b}\to J$ gibt es einen $A$-Modulhomomorphismus $\psi:A\to J$ mit $\psi|_\mathfrak{b}=\varphi$.
+
+Sei $\mathfrak{b}\subset A$ ein notwendigerweise endlich erzeugtes Ideal und $\varphi:\mathfrak{b}\to J$ ein $A$-Modulhomomorphismus. Zu $x\in J$ gibt es nach Definition ein $n>0$ mit $\mathfrak{a}^nx=0$. Da $\mathfrak{b}$ endlich erzeugt ist, existiert ein $n$ mit:
+\[0=\mathfrak{a}^n\varphi(\mathfrak{b})=\varphi(\mathfrak{a}^n\mathfrak{b}) \]
+Nach dem \hyperref[prop:artin-rees]{Satz von Artin-Rees} gibt es ein $m\geq n$ mit $\mathfrak{a}^n\mathfrak{b}\supset\mathfrak{b}\cap\mathfrak{a}^m$, also $\varphi(\mathfrak{b}\cap\mathfrak{a}^m)=0$. Somit faktorisiert $\varphi$ über $\mathfrak{b}/(\mathfrak{b}\cap\mathfrak{a}^m)$:
+\[\begin{tikzcd}
+A \rar & A/\mathfrak{a}^m\ar[rrd, dashed] &&\\
+\mathfrak{b} \uar[hook]\rar & \mathfrak{b}/(\mathfrak{b}\cap\mathfrak{a}^m) \uar[hook]\rar & J\rar[hook] & I
+\end{tikzcd}\]
+Da $I$ injektiv ist, gibt es eine Fortsetzung $\psi':A/\mathfrak{a}^m\to I$ von $\varphi$, das obiges Diagramm kommutativ macht. Nun gilt $\mathfrak{a}^m\psi'(A/\mathfrak{a}^m)=0$, d.h. $\psi'(A/\mathfrak{a}^m)\subset J$. Somit ist $\psi:A\to A/\mathfrak{a}^m\to J$ eine Fortsetzung von $\varphi:\mathfrak{b}\to J$.
+
+Sei nun $X$ ein $A$-Modul, $X'\subset X$ ein Untermodul und $f:X'\to J$ ein Homomorphismus. Betrachte:
+\[\Sigma=\{(Y,g)\mid Y\subset X\text{ Untermodul},\ X'\subset Y,\ g:Y\to J,\ g|_{X'}=f \} \]
+Dann ist $(X',f)\in\Sigma$ und $\Sigma$ ist induktiv geordnet. Nach Zorn gibt es ein maximales Element $(Y,g)\in\Sigma$. Angenommen, $Y\neq X$. Dann gibt es ein $x\in X\setminus Y$. Betrachte das Ideal $\mathfrak{b}=\{\lambda\in A\mid\lambda x\in Y\}\subset A$ und den $A$-Modulhomomorphismus $\varphi:\mathfrak{b}\to J,\ \lambda\mapsto g(\lambda x)$. Diese können wir zu einem $\psi:A\to J$ fortsetzen. Definiere $g':\langle Y,x\rangle\to J$ durch $g'|_Y=g$ und $g'(x)=\psi(1)$. Diese Abbildung ist ein wohldefinierter $A$-Modulhomomorphismus, da $g'(y+\lambda x)=g'(y)+\psi(\lambda)$ für $y\in Y,\ \lambda\in A$ und ist $\lambda x\in Y$, so folgt $\lambda\in\mathfrak{b}$, d.h. $\psi(\lambda)=\varphi(\lambda)=g(\lambda x)=g'(\lambda x)$. Dies ist ein Widerspruch zur Maximalität von $(Y,g)$, daher folgt $Y=X$.\qed
+
+\paragraph{Satz 9.30.}\label{9.30} Sei $A$ ein noetherscher Ring und $I$ ein injektiver $A$-Modul. Dann ist die Garbe $\widetilde{I}$ welk über $\operatorname{Spec}(A)$.
+
+%\paragraph{Beweis.} Sei $Y=\overline{\operatorname{supp}(\widetilde{I}}$.
