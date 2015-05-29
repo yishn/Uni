@@ -149,9 +149,9 @@ G
 \end{tikzcd} \]
 \item Ebenso wird der \textit{projektive Limes}\index{Limes!projektiv} definiert, wobei alle Pfeile umgedreht werden. Es ist außerdem $U\mapsto\varprojlim F_i(U)$ bereits eine Garbe.
 \item Sei $F$ eine Garbe auf $X$ und $s\in F(U)$ ein Schnitt über $U\subset_\text{o}X$. Dann heißt
-\[\operatorname{Supp}(s)=\{P\in U\mid s_P\neq 0\} \]
-wobei $s_P\in F_P$ der Keim von $s$ in $P$ bezeichnet, der \textit{Support}\index{Support} von $s$. $\operatorname{Supp}(s)$ ist abgeschlossen in $U$.
-\[\operatorname{Supp}(F)=\{P\in X\mid F_P\neq 0\} \]
+\[\operatorname{supp}(s)=\{P\in U\mid s_P\neq 0\} \]
+wobei $s_P\in F_P$ der Keim von $s$ in $P$ bezeichnet, der \textit{Support}\index{Support} von $s$. $\operatorname{supp}(s)$ ist abgeschlossen in $U$.
+\[\operatorname{supp}(F)=\{P\in X\mid F_P\neq 0\} \]
 heißt \textit{Support} von $F$. Dieser ist nicht notwendigerweise abgeschlossen.
 \item Seien $F,G$ Garben abelscher Gruppen auf $X$. Für ein $U\subset_\text{o}X$ sei $F|_U$ die Einschränkung von $F$ auf $U$, d.h. $F|_U(V)=F(V)$ für alle $V\subset_\text{o}U$. Dann ist die Menge $\operatorname{Hom}(F|_U,G|_U)$ der Morphismen von $F|_U$ nach $G|_U$ eine abelsche Gruppe.
 \[U\mapsto\operatorname{Hom}(F|_U,G|_U)\]
@@ -186,7 +186,7 @@ Es existiert eine natürliche Bijektion:
 in dem wir ein $\varphi:f^{-1}(G)\to F$ auf $\psi: G\stackrel{\operatorname{ad}}{\longrightarrow} f_\ast f^{-1}G\stackrel{f_\ast(\varphi)}{\longrightarrow} f_\ast F$ schicken und ein $\psi:G\to f_\ast F$ auf $\varphi:f^{-1}G \stackrel{f^{-1}(\psi)}{\longrightarrow} f^{-1}f_\ast F\stackrel{\operatorname{ad}}{\longrightarrow}F$ schicken. Somit ist $f^{-1}$ linksadjungiert zu $f_\ast$.
 \end{enumerate}
 
-\paragraph{Definition 1.15.}\label{1.15} Sei $X$ ein topologischer Raum mit $P\in X$ und $A$ eine abelsche Gruppe. Sei $\mathcal{A}$ die konstante Garbe auf $\overline{\{P\}}$ und $i:\overline{\{P\}}\hookrightarrow X$ die natürliche Inklusion. Dann heißt die Garbe $i_\ast \mathcal{A}$ \textit{Wolkenkratzergarbe}. Es gilt:
+\paragraph{Definition 1.15.}\label{1.15} Sei $X$ ein topologischer Raum mit $P\in X$ und $A$ eine abelsche Gruppe. Sei $\mathcal{A}$ die konstante Garbe auf $\overline{\{P\}}$ und $i:\overline{\{P\}}\hookrightarrow X$ die natürliche Inklusion. Dann heißt die Garbe $i_\ast \mathcal{A}$ \textit{Wolkenkratzergarbe}\index{Wolkenkratzergarbe}. Es gilt:
 \[(i_\ast\mathcal{A})(U) = \begin{cases}
 A, &\text{wenn } P\in U\\
 0, &\text{sonst}
@@ -844,7 +844,7 @@ Betrachte nun die exakte $A$-Modulsequenz $A\stackrel{\psi}{\to}B\to B/\psi(A)\t
 \[A_\mathfrak{q}\to B\otimes_A A_\mathfrak{q}\to B/\psi(A)\otimes_A A_\mathfrak{q}\to 0 \]
 Sei das Bild von $\tilde{\psi}$ von der Form $V(\mathfrak{a})\cong\operatorname{Spec}(B)$ für ein Ideal $\mathfrak{a}\subset A$. Für ein Primideal $\mathfrak{q}\in\operatorname{Spec}(A)$ gilt:
 \begin{align*}
-B\otimes_A A_\mathfrak{q}\neq 0 &\iff \mathfrak{q}\in\operatorname{Supp}(B)\text{, wobei $B$ als $A$-Modul aufgefasst wird}\\
+B\otimes_A A_\mathfrak{q}\neq 0 &\iff \mathfrak{q}\in\operatorname{supp}(B)\text{, wobei $B$ als $A$-Modul aufgefasst wird}\\
 &\iff \mathfrak{q}\supset\mathfrak{a}\\
 &\iff \mathfrak{q}\in\operatorname{im}(\tilde{\psi})\\
 &\iff\mathfrak{q}=\psi^{-1}(\mathfrak{p})\text{ für ein }\mathfrak{p}\in\operatorname{Spec}(B)\\
@@ -1376,10 +1376,10 @@ Wegen \hyperref[5.3]{Satz 5.3 (iv)} sind $f_\ast(\mathcal{F}|_{U_i})$ und $f_\as
 \item Sei $Y\subset X$ abgeschlossen. Dann ist $i:Y\hookrightarrow X$ ein quasikompakter Morphismus. Wegen \hyperref[4.17]{Satz 4.17 (i)} ist $i$ separiert. Nach \hyperref[5.13]{Satz 5.13 (iii)} ist $i_\ast\mathcal{O}_Y$ quasikohärent, also $\mathcal{J}_Y$ quasikohärent nach \hyperref[5.12]{Satz 5.12 (i)}.
 \item Ist $X$ noethersch und $U\subset_\text{o}X$ affin mit $U=\operatorname{Spec}(A)$, so ist auch $A$ noethersch nach \hyperref[3.6]{Satz 3.6}. Daher ist $I=\Gamma(U,\mathcal{J}_Y|_U)$ ein endlich erzeugtes Ideal in $A$. Nach \hyperref[5.9]{Satz 5.9} ist $\mathcal{J}_Y$ kohärent.
 \item Sei $\mathcal{J}$ eine quasikohärente Idealgarbe auf $X$. Setze:
-\[Y=\operatorname{Supp}(\mathcal{O}_X/\mathcal{J})=\{x\in X\mid (\mathcal{O}_X/\mathcal{J})_x\neq 0 \}\subset X \]
+\[Y=\operatorname{supp}(\mathcal{O}_X/\mathcal{J})=\{x\in X\mid (\mathcal{O}_X/\mathcal{J})_x\neq 0 \}\subset X \]
 Wir zeigen, dass $(Y,\mathcal{O}_X/\mathcal{J})$ ein abgeschlossenes Unterschema von $X$ ist. Dies ist eine lokale Frage, sei o.B.d.A. $X=\operatorname{Spec}(A)$ affin. Da $\mathcal{J}$ quasikohärent ist, folgt $\mathcal{J}=\widetilde{\mathfrak{a}}$ für ein Ideal $\mathfrak{a}\subset A$. Es gilt:
 \begin{align*}
-Y&=\operatorname{Supp}(\mathcal{O}_X/\mathcal{J})=\operatorname{Supp}(\widetilde{A/\mathfrak{a}})\\
+Y&=\operatorname{supp}(\mathcal{O}_X/\mathcal{J})=\operatorname{supp}(\widetilde{A/\mathfrak{a}})\\
 &= \{\mathfrak{p}\in X\mid (A/\mathfrak{a})_\mathfrak{p}\neq 0\}\\
 &=\{\mathfrak{p}\in X\mid\mathfrak{a}\subset\mathfrak{p}\}=\operatorname{Spec}(A/\mathfrak{a})
 \end{align*}
