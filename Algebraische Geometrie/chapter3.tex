@@ -235,4 +235,42 @@ Dann ist $\check{\mathrm{H}}^k(\mathcal{U},-)$ ein Funktor nach $\mathbf{Ab}$.
 
 \paragraph{Bemerkung 10$-\varepsilon$.4.}\label{9.5.4} Es lässt sich auch bilden:
 \[\check{\mathrm{H}}^\bullet(X,\mathcal{F}) = \varinjlim_{\mathcal{U}}\check{\mathrm{H}}^\bullet(\mathcal{U},\mathcal{F}) \]
-Es gilt stets $\check{\mathrm{H}}^1(X,\mathcal{F})\cong \mathrm{H}^1(X,\mathcal{F})$. Im Allgemeinen gilt keine Gleichheit für höhere Kohomologiegruppen.
+Es gilt stets $\check{\mathrm{H}}^1(X,\mathcal{F})\cong \mathrm{H}^1(X,\mathcal{F})$. Im Allgemeinen gibt es keine Isomorphie für höhere Kohomologiegruppen.
+
+\section{Kohomologie des projektiven Raumes}
+
+\paragraph{Satz 10.1.}\label{10.1} Sei $A$ ein noetherscher Ring, $S=A[X_0,\ldots,X_r]$ für ein $r\geq 1$ und $X=\operatorname{Proj}(S)=\mathbf{P}_A^r$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\bigoplus_{n\in\mathbb{Z}} \mathrm{H}^0(X,\mathcal{O}_X(n))\cong S$ ist ein Isomorphismus von graduierten $S$"~Moduln.
+\item $\mathrm{H}^i(X,\mathcal{O}_X(n))=0$ für $0<i<r$ und alle $n\in\mathbb{Z}$.
+\item $\mathrm{H}^r(X,\mathcal{O}_X(-r-1))\cong A$
+\item Für alle $n\in\mathbb{Z}$ ist die natürliche Paarung
+\[ \mathrm{H}^0(X,\mathcal{O}_X(n))\times\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))\to\mathrm{H}^r(X,\mathcal{O}_X(-r-1))\cong A \]
+eine perfekte Paarung freier $A$"~Moduln, d.h. sie induziert einen Isomorphismus:
+\[\mathrm{H}^0(X,\mathcal{O}_X(n))^\ast\cong \mathrm{H}^r(X,\mathcal{O}_X(-n-r-1)) \]
+Diese Paarung stimmt mit dem Cup-Produkt überein.
+\end{enumerate}
+
+\paragraph{Lemma 10.2.}\label{10.2} Sei $X$ ein separiertes, noethersches Schema, $\mathcal{U}$ eine offen affine Überdeckung und $\mathcal{F}$ eine quasikohärente Garbe auf $X$. Dann gilt:
+\[\check{\mathrm{H}}^\bullet(\mathcal{U},\mathcal{F}) = \mathrm{H}^\bullet(X,\mathcal{F}) \]
+
+\paragraph{Beweis von \hyperref[10.1]{10.1}.} Setze $\mathcal{F}=\bigoplus_{n\in\mathbb{Z}}\mathcal{O}_X(n)$. Da die Kohomologie mit direkten Summen vertauscht, liefert $\mathrm{H}^\bullet(X,\mathcal{F})$ gerade alle nötigen Daten. Sei $\mathcal{U}=(U_i)_{i=0,\ldots,r}$ mit $U_i=D_+(X_i)$. Nach \hyperref[10.2]{Lemma 10.2} gilt $\mathrm{H}^\bullet(X,\mathcal{F})=\check{\mathrm{H}}^\bullet(\mathcal{U},\mathcal{F})$. Nach \hyperref[5.21]{Satz 5.21} gilt:
+\[\mathcal{F}(U_{i_0}\cap\cdots\cap U_{i_k}) = \mathcal{F}(D_+(X_{i_0}\cdots X_{i_k})) \cong S_{X_{i_0}\cdots X_{i_k}} \]
+Somit ist:
+\[C^\bullet(\mathcal{U},\mathcal{F}) = \Big(\prod_{i_0\in I} S_{X_{i_0}}\to \prod_{i_0<i_1} S_{X_{i_0}X_{i_1}}\to\cdots\to S_{X_0\cdots X_r} \to 0\to\cdots\Big) \]
+\begin{enumerate}
+\item[(i)] folgt aus \hyperref[5.25]{Satz 5.25}.
+\item[(iii)] Es gilt:
+\[\mathrm{H}^r(X,\mathcal{F}) = \operatorname{coker}\Big(d:\prod_k S_{X_0\cdots \widehat{X_k}\cdots X_r} \to S_{X_0\cdots X_r} \Big) \]
+Wir betrachten $S_{X_0\cdots X_r}$ als freien $A$"~Modul mit Basis $\{X_0^{e_0}\cdots X_r^{e_r}\mid e_i\in\mathbb{Z}\}$. Damit ist das Bild von $d$ der freie Untermodul, der von den Monomen $X_0^{e_0}\cdots X_r^{e_r}$ mit $e_i\geq 0$ erzeugt wird. Somit ist $\mathrm{H}^r(X,\mathcal{F})$ der freie $A$"~Modul mit Basis $\{X_0^{e_0}\cdots X_r^{e_r}\mid e_i < 0\}$. Nun ist $\mathrm{H}^r(X,\mathcal{O}_X(-r-1))$ gerade die Elemente vom Grad $-r-1$ in $\mathrm{H}^r(X,\mathcal{F})$, d.h. gerade der Untermodul, der von den Monomen $\{X_0^{e_0}\cdots X_r^{e_r}\mid e_i<0,\ \sum e_i=-r-1\}$ erzeugt wird. Somit ist:
+\[\mathrm{H}^r(X,\mathcal{F}) = \frac{1}{X_0\cdots X_r} A\cong A \]
+\item[(iv)] Sei zunächst $n<0$. Dann ist $\mathrm{H}^0(X,\mathcal{O}_X(n))=0$ nach (i). Da $-n-r-1>-r-1$, folgt nach der Rechnung in (iii) auch $\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))=0$ und die Dualität ist trivial.
+
+Sei nun $n\geq 0$. Dann ist $\mathrm{H}^0(X,\mathcal{O}_X(n))$ ein freier $A$"~Modul mit Basis $\{X_0^{m_0}\cdots X_r^{m_r}\mid m_i\geq 0,\ \sum m_i=n\}$. $\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))$ ist freier $A$"~Modul mit Basis $\{X_0^{e_0}\cdots X_r^{e_r}\mid e_i<0,\ \sum e_i = -n-r-1\}$. Auf Ebene der Čech-Kohomologie ist die Paarung gegeben durch:
+\begin{align*}
+\mathrm{H}^0(X,\mathcal{O}_X(n))\times\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))&\to\mathrm{H}^r(X,\mathcal{O}_X(-r-1)),\\
+(X_0^{m_0}\cdots X_r^{m_r}, X_0^{e_0}\cdots X_r^{e_r})&\mapsto X_0^{m_0+e_0}\cdots X_r^{m_r+e_r}
+\end{align*}
+In $\mathrm{H}^r(X,\mathcal{O}_X(-r-1))$ gilt $X_0^{m_0+e_0}\cdots X_r^{m_r+e_r}\neq 0$ genau dann, wenn $m_i+e_i = -1$ für alle $i$ gilt. Somit ist durch $\{X_0^{-m_0-1}\cdots X_r^{-m_r-1}\in\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))\mid m_i\geq 0,\ \sum m_i=n\}$ eine Dualbasis gegeben und die Paarung ist somit perfekt.
+
+\end{enumerate}
