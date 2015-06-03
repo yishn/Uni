@@ -146,7 +146,7 @@ Ferner ist die konstante Garbe $\mathbb{Z}$ welk. Nach \hyperref[9.20]{Satz 9.20
 
 \paragraph{Bemerkung.} Dieser Satz gilt auch für nicht-noethersche Ringe $A$.
 
-\paragraph{Satz von Artin-Rees.}\index{Satz von Artin-Rees}\label{prop:artin-rees} Sei $A$ ein noetherscher Ring, $\mathfrak{a}\subset A$ ein Ideal und $M\subset N$ endlich erzeugte $A$"~Moduln. Dann ist die $\mathfrak{a}$-adische Topologie auf $M$ induziert von der $\mathfrak{a}$-adischen Topologie auf $N$, d.h:
+\paragraph{Satz von Krull.}\index{Satz von Krull}\label{prop:krull} Sei $A$ ein noetherscher Ring, $\mathfrak{a}\subset A$ ein Ideal und $M\subset N$ endlich erzeugte $A$"~Moduln. Dann ist die $\mathfrak{a}$-adische Topologie auf $M$ induziert von der $\mathfrak{a}$-adischen Topologie auf $N$, d.h:
 \[\forall n\geq 0,\ \exists m\geq n:\ \mathfrak{a}^nM\supset\mathfrak{a}^mN\cap M \]
 
 \paragraph{Beweis.} Siehe beispielsweise Bosch: Algebraic Geometry and Commutative Algebra, 2.3. Lemma 1.\qed
@@ -160,7 +160,7 @@ Ferner ist die konstante Garbe $\mathbb{Z}$ welk. Nach \hyperref[9.20]{Satz 9.20
 
 Sei $\mathfrak{b}\subset A$ ein notwendigerweise endlich erzeugtes Ideal und $\varphi:\mathfrak{b}\to J$ ein $A$-Modulhomomorphismus. Zu $x\in J$ gibt es nach Definition ein $n>0$ mit $\mathfrak{a}^nx=0$. Da $\mathfrak{b}$ endlich erzeugt ist, existiert ein $n$ mit:
 \[0=\mathfrak{a}^n\varphi(\mathfrak{b})=\varphi(\mathfrak{a}^n\mathfrak{b}) \]
-Nach dem \hyperref[prop:artin-rees]{Satz von Artin-Rees} gibt es ein $m\geq n$ mit $\mathfrak{a}^n\mathfrak{b}\supset\mathfrak{b}\cap\mathfrak{a}^m$, also $\varphi(\mathfrak{b}\cap\mathfrak{a}^m)=0$. Somit faktorisiert $\varphi$ über $\mathfrak{b}/(\mathfrak{b}\cap\mathfrak{a}^m)$:
+Nach dem \hyperref[prop:krull]{Satz von Krull} gibt es ein $m\geq n$ mit $\mathfrak{a}^n\mathfrak{b}\supset\mathfrak{b}\cap\mathfrak{a}^m$, also $\varphi(\mathfrak{b}\cap\mathfrak{a}^m)=0$. Somit faktorisiert $\varphi$ über $\mathfrak{b}/(\mathfrak{b}\cap\mathfrak{a}^m)$:
 \[\begin{tikzcd}
 A \rar & A/\mathfrak{a}^m\ar[rrd, dashed] &&\\
 \mathfrak{b} \uar[hook]\rar & \mathfrak{b}/(\mathfrak{b}\cap\mathfrak{a}^m) \uar[hook]\rar & J\rar[hook] & I
@@ -194,3 +194,45 @@ Sei $J=\Gamma_Z(X,\widetilde{I})$ und $\mathfrak{a}=(f)\subset A$. Dann ist $J=\
 \[\Gamma_Z(X,\widetilde{I}) = \Gamma(X,\widetilde{J})\to \Gamma(U,\widetilde{J})=\Gamma_Z(U,\widetilde{I})\qedhere \]
 
 \paragraph{Beweis von \hyperref[9.28]{9.28}.} Sei $\mathcal{F}=\widetilde{M}$ eine quasikohärente Garbe über einem noetherschen Ring $A$. Sei $0\to M\to I^\bullet$ eine injektive Auflösung in $\mathbf{Mod}(A)$. Wir erhalten eine exakte Folge $0\to\mathcal{F}\to\widetilde{I}^\bullet$. Nach \hyperref[9.30]{Satz 9.30} sind alle $\widetilde{I}^i$ welk und somit azyklisch für $\Gamma(X,-)$. Daher kann diese Auflösung zur Kohomologieberechnung benutzt werden. Anwendung von $\Gamma(X,-)$ gibt gerade die exakte Sequenz $0\to M\to I^\bullet$. Also ist $\mathrm{H}^i(X,\mathcal{F})=0$ für alle $i>0$.\qed
+
+\paragraph{Korollar 9.32.}\label{9.32} Sei $X$ ein noethersches Schema und $\mathcal{F}\in\mathbf{Qcoh}(X)$. Dann kann $\mathcal{F}$ in eine welke quasikohärente Garbe eingebettet werden.
+
+\paragraph{Beweis.} Sei $X=\bigcup_i U_i$ eine endliche, offen affine Überdeckung mit $U_i=\operatorname{Spec}(A_i)$ und $\mathcal{F}|_{U_i}\cong\widetilde{M_i}$. Setze:
+\[\mathcal{G} =\bigoplus_i f_{i\ast}\widetilde{I_i} \]
+wobei $f_i:U_i\hookrightarrow X$ die kanonische Inklusion und $M_i\hookrightarrow I_i$ mit injektivem $I_i$. Es folgt $\mathcal{F}|_{U_i}=\widetilde{M_i} \hookrightarrow\widetilde{I_i}$. Betrachte den kanonischen Morphismus $\mathcal{F}\to f_{i\ast}f_i^\ast\mathcal{F}=f_{i\ast}\mathcal{F}|_{U_i}\to f_{i\ast}\widetilde{I_i}$. Dieser induziert einen Morphismus $\mathcal{F}\to\bigoplus_i f_{i\ast}\widetilde{I_i}=\mathcal{G}$. Betrachtet man die Halme, so sieht man, dass dieser Morphismus injektiv ist.
+
+Nach \hyperref[9.30]{Satz 9.30} sind $\widetilde{I_i}$ alle welk, daher sind die $f_{i\ast}\widetilde{I_i}$ welk und somit auch $\mathcal{G}$. Da alle $\widetilde{I_i}$ quasikohärent sind, sind auch alle $f_{i\ast}\widetilde{I_i}$ quasikohärent nach \hyperref[5.3]{Satz 5.3 (iv)} und somit ist auch $\mathcal{G}$ quasikohärent.\qed
+
+\paragraph{Theorem 9.33.}\label{9.33} \textit{(Serre)} Sei $X$ ein noethersches Schema. Dann sind folgende Aussagen äquivalent:
+\begin{enumerate}[(i)]
+\item $X$ ist affin.
+\item $\mathrm{H}^i(X,\mathcal{F})=0$ für alle quasikohärenten $\mathcal{F}$ und $i>0$.
+\item $\mathrm{H}^1(X,\mathcal{J})=0$ für alle kohärenten Idealgarben $\mathcal{J}$.
+\end{enumerate}
+
+\paragraph{Beweis.} Siehe z.B. Hartshorne: Algebraic Geometry III 3.7.\qed
+
+\section{Der Čech-Komplex}
+
+\paragraph{Definition 10-$\varepsilon$.1.}\label{9.5.1} Sei $X$ ein topologischer Raum, $\mathcal{F}$ eine Prägarbe abelscher Gruppen auf $X$, $I$ eine total geordnete Indexmenge und $\mathcal{U}=(U_i)_{i\in I}$ eine offene Überdeckung von $X$. Wir definieren:
+\[C^k(\mathcal{U},\mathcal{F})=\prod_{i_0<\ldots<i_k}\mathcal{F}(U_{i_0}\cap\cdots\cap U_{i_k}),\quad k\geq 0 \]
+mit Randoperatoren
+\[d: C^k(\mathcal{U},\mathcal{F})\to C^{k+1}(\mathcal{U},\mathcal{F}) \]
+wobei diese für $\alpha=(\alpha_{i_0,\ldots,i_k})_{i_0<\ldots<i_k}$ durch
+\[(d\alpha)_{i_0,\ldots,i_k} = \sum_{j=0}^{k+1} (-1)^j \cdot\alpha_{i_0,\ldots,\widehat{i_j},\ldots,i_{k+1}}|_{U_{i_0}\cap\cdots\cap U_{i_{k+1}}} \]
+definiert sind. Die Folge $C^\bullet(\mathcal{U},\mathcal{F})$ heißt \textit{Čech-Komplex} von $\mathcal{U}$ mit Koeffizienten in $\mathcal{F}$.\index{Cech-Komplex}
+
+\paragraph{Satz 10-$\varepsilon$.2.}\label{9.5.2} Es gilt für $C^\bullet(\mathcal{U},\mathcal{F})$:
+\begin{enumerate}[(i)]
+\item $d\circ d =0$
+\item Für eine Prägarbe $\mathcal{F}$ auf $X$ und eine offene Überdeckung $\mathcal{U}$ setzen wir:
+\[\check{\mathrm{H}}^k(\mathcal{U},\mathcal{F}) = \frac{\ker( C^k(\mathcal{U},\mathcal{F})\to C^{k+1}(\mathcal{U},\mathcal{F}) )}{\operatorname{im}(C^{k-1}(\mathcal{U},\mathcal{F})\to C^{k}(\mathcal{U},\mathcal{F}))},\quad k\geq 0 \]
+Dann ist $\check{\mathrm{H}}^k(\mathcal{U},-)$ ein Funktor nach $\mathbf{Ab}$.
+\item Es gilt $\check{\mathrm{H} }^0(\mathcal{U},-)=\Gamma(X,-)$.
+\end{enumerate}
+
+\paragraph{Definition 10-$\varepsilon$.3.}\label{9.5.3} $\check{\mathrm{H}}^k(\mathcal{U},\mathcal{F})$ heißt $k$-te \textit{Čech-Kohomologiegruppe}\index{Cech-Kohomologie} von $\mathcal{U}$ mit Koeffizienten in $\mathcal{F}$.
+
+\paragraph{Bemerkung 10-$\varepsilon$.4.}\label{9.5.4} Es lässt sich auch bilden:
+\[\check{\mathrm{H}}^\bullet(X,\mathcal{F}) = \varinjlim_{\mathcal{U}}\check{\mathrm{H}}^\bullet(\mathcal{U},\mathcal{F}) \]
+Es gilt stets $\check{\mathrm{H}}^1(X,\mathcal{F})\cong \mathrm{H}^1(X,\mathcal{F})$. Im Allgemeinen gilt keine Gleichheit für höhere Kohomologiegruppen.
