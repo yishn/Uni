@@ -271,6 +271,34 @@ Sei nun $n\geq 0$. Dann ist $\mathrm{H}^0(X,\mathcal{O}_X(n))$ ein freier $A$"~M
 \mathrm{H}^0(X,\mathcal{O}_X(n))\times\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))&\to\mathrm{H}^r(X,\mathcal{O}_X(-r-1)),\\
 (X_0^{m_0}\cdots X_r^{m_r}, X_0^{e_0}\cdots X_r^{e_r})&\mapsto X_0^{m_0+e_0}\cdots X_r^{m_r+e_r}
 \end{align*}
-In $\mathrm{H}^r(X,\mathcal{O}_X(-r-1))$ gilt $X_0^{m_0+e_0}\cdots X_r^{m_r+e_r}\neq 0$ genau dann, wenn $m_i+e_i = -1$ für alle $i$ gilt. Somit ist durch $\{X_0^{-m_0-1}\cdots X_r^{-m_r-1}\in\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))\mid m_i\geq 0,\ \sum m_i=n\}$ eine Dualbasis gegeben und die Paarung ist somit perfekt.
+In $\mathrm{H}^r(X,\mathcal{O}_X(-r-1))$ gilt $X_0^{m_0+e_0}\cdots X_r^{m_r+e_r}\neq 0$ genau dann, wenn $m_i+e_i = -1$, d.h. $e_i=-m_i-1$, für alle $i$ gilt. Somit bilden die dualen Elemente von $X_0^{-m_0-1}\cdots X_r^{-m_r-1},\ m_i\geq 0,\ \sum m_i =n$ eine Basis von $\mathrm{H}^r(X,\mathcal{O}_X(-n-r-1))^\ast$. Die Paarung ist somit perfekt.
+\item[(ii)] Wir zeigen die Aussage per Induktion über $r$. Für $r=1$ ist die Aussage trivial. Wir lokalisieren $C^\bullet(\mathcal{U},\mathcal{F})$ homogen nach $X_r$ und setze $\mathcal{U}_r = (U_i\cap U_r)_{i=0,\ldots,r}$. Dann gilt:
+\[C^\bullet(\mathcal{U},\mathcal{F})_{(X_r)} = C^\bullet(\mathcal{U}_r,\mathcal{F}|_{U_r}) \]
+Insbesondere ist $U_r\in\mathcal{U}_r$, also folgt $\check{\mathrm{H}}^k(\mathcal{U}_r,\mathcal{F}|_{U_r})=0$ für $k>0$. Ferner ist die homogene Lokalisierung ein exakter Funktor und vertauscht somit mit der Kohomologie. Es folgt:
+\begin{align*}
+0 = \check{\mathrm{H}}^k(\mathcal{U}_r,\mathcal{F}|_{U_r}) &= \mathrm{H}^k(C^\bullet(\mathcal{U}_r,\mathcal{F}|_{U_r}))\\
+&= \mathrm{H}^k(C^\bullet(\mathcal{U},\mathcal{F})_{(X_r)})
+= \check{\mathrm{H}}^k(\mathcal{U},\mathcal{F})_{(X_r)} = \mathrm{H}^k(X,\mathcal{F})_{(X_r)}
+\end{align*}
+Also wird für alle $k>0$ jedes $\alpha\in\mathrm{H}^k(X,\mathcal{F})$ durch eine Potenz von $X_r$ annulliert. Wir zeigen nun, dass die $X_r$-Multiplikation $\mathrm{H}^k(X,\mathcal{F})\to\mathrm{H}^k(X,\mathcal{F})$ für $0<k<r$ injektiv ist. Daraus folgt die Behauptung.
 
+Betrachte die exakte Sequenz von graduierten $S$"~Moduln:
+\[0\longrightarrow S(-1)\stackrel{\cdot X_r}{\longrightarrow} S\longrightarrow S/(X_r)\longrightarrow 0  \]
+Sie wird zu einer exakten Sequenz von Garben:
+\[0\longrightarrow\mathcal{O}_X(-1)\longrightarrow\mathcal{O}_X\longrightarrow\mathcal{O}_H\longrightarrow 0 \]
+mit $H=V_+(X_r)$. Twiste diese Sequenz mit allen $\mathcal{O}_X(n)$ und bilde direkte Summe. Diese Operationen sind alle exakt, daher erhalten wir die exakte Sequenz:
+\[0\longrightarrow\mathcal{F}(-1)\stackrel{\cdot X_r}{\longrightarrow}\mathcal{F}\longrightarrow\mathcal{F}_H=\bigoplus_{n\in\mathbb{Z}}\mathcal{O}_H(n)\longrightarrow 0 \]
+Betrachte die lange exakte Kohomologiesequenz:
+\[\cdots \longrightarrow \mathrm{H}^{k-1}(X,\mathcal{F}_H)\longrightarrow\mathrm{H}^k(X,\mathcal{F}(-1))\stackrel{\cdot X_r}{\longrightarrow}\mathrm{H}^k(X,\mathcal{F})\longrightarrow\mathrm{H}^k(X,\mathcal{F}_H)\longrightarrow\cdots \]
+Nach Induktionsannahme ist $\mathrm{H}^k(H,\mathcal{F}_H)=0$ für $0<k<r-1$, da $H\cong\mathbf{P}_A^{r-1}$. Nach \hyperref[9.26]{Lemma 9.26} gilt $\mathrm{H}^k(H,\mathcal{F}_H)= \mathrm{H}^k(X,\mathcal{F}_H)$. Somit sind die $X_r$-Multiplikationen $\mathrm{H}^k(X,\mathcal{F}(-1))\to\mathrm{H}^k(X,\mathcal{F})$ für $1<k<r-1$ Isomorphismen.
+
+Für $k=1$ betrachte die exakte Sequenz $0\to S(-1)\to S\to S/(X_r)\to 0$:
+\[0\longrightarrow\mathrm{H}^0(X,\mathcal{F}(-1))\longrightarrow \mathrm{H}^0(X,\mathcal{F})\longrightarrow\mathrm{H}^0(X,\mathcal{F}_H)\longrightarrow 0 \]
+Wir erhalten die exakte Folge:
+\[0 \longrightarrow \mathrm{H}^1(X,\mathcal{F}(-1))\stackrel{\cdot X_r}{\longrightarrow}\mathrm{H}^1(X,\mathcal{F})\longrightarrow\mathrm{H}^1(X,\mathcal{F}_H)=0\longrightarrow\cdots \]
+Für $k=r-1$ betrachte die exakte Folge:
+\begin{align*}
+0=\mathrm{H}^{r-2}(X,\mathcal{F}_H)&\longrightarrow\mathrm{H}^{r-1}(X,\mathcal{F}(-1))\stackrel{\cdot X_r}{\longrightarrow}\mathrm{H}^{r-1}(X,\mathcal{F})\\
+&\longrightarrow\mathrm{H}^{r-1}(X,\mathcal{F}_H)\stackrel{\delta}{\longrightarrow}\mathrm{H}^r(X,\mathcal{F}(-1))\stackrel{\cdot X_r}{\longrightarrow}\mathrm{H}^r(X,\mathcal{F})\qedhere
+\end{align*}
 \end{enumerate}
