@@ -299,3 +299,68 @@ Wir erhalten die exakte Folge:
 Für $k=r-1$ betrachte die exakte Folge:
 \[0=\mathrm{H}^{r-2}(X,\mathcal{F}_H)\longrightarrow\mathrm{H}^{r-1}(X,\mathcal{F}(-1))\stackrel{\cdot X_r}{\longrightarrow}\mathrm{H}^{r-1}(X,\mathcal{F})\qedhere\]
 \end{enumerate}
+
+\paragraph{Satz 10.3.}\label{10.3} \textit{(Serre)} Sei $X$ ein projektives Schema über einem noetherschen Ring $A$, $\mathcal{O}_X(1)$ eine sehr ample Garbe auf $X$ über $\operatorname{Spec}(A)$ und $\mathcal{F}$ eine kohärente Garbe auf $X$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\mathrm{H}^i(X, \mathcal{F})$ ist endlich erzeugter $A$"~Modul für alle $i\geq 0$.
+\item Es gibt ein $n_0$, so dass $\mathrm{H}^i(X, \mathcal{F}(n))=0$ für alle $i>0$ und $n\geq n_0$.
+\end{enumerate}
+
+\paragraph{Bemerkung 10.4.}\label{10.4} Als Spezialfall von (i) gilt \hyperref[5.39]{Satz 5.39}: $\Gamma(X,\mathcal{F})$ ist endlich erzeugter $A$-Modul für kohärente Garben $\mathcal{F}$.
+
+\paragraph{Beweis.} Da $\mathcal{O}_X(1)$ sehr ampel ist, gibt es eine Immersion $i:X\hookrightarrow  \mathbf{P}_A^r$ für ein $r$ mit $\mathcal{O}_X(1)=i^\ast\mathcal{O}(1)$. Aus der Projektivität folgt nach \hyperref[4.24]{Theorem 4.24} die Eigentlichkeit von $X\to\operatorname{Spec}(A)$. Nun ist $\mathbf{P}_A^r\to\operatorname{Spec}(A)$ separiert, also folgt nach \hyperref[4.22]{Korollar 4.22 (v)} die Eigentlichkeit von $X\to\mathbf{P}_A^r$, insbesondere ist $i$ abgeschlossen. Da $\mathcal{F}$ kohärent ist, ist auch $i_\ast\mathcal{F}$ nach \hyperref[5.36]{Lemma 5.36 (ii)} kohärent auf $\mathbf{P}_A^r$ und nach \hyperref[9.26]{Lemma 9.26} gilt $\mathrm{H}^i(X,\mathcal{F}(n)) =\mathrm{H}^i(\mathbf{P}_A^r, i_\ast\mathcal{F}(n))$. Wir können also o.B.d.A. $X=\mathbf{P}_A^r$ annehmen.
+
+Die Aussagen (i) und (ii) gelten für Garben der Form $\mathcal{O}_X(q),\ q\in\mathbb{Z}$ nach \hyperref[10.1]{Satz 10.1}, dem \hyperref[9.27]{Verschwindungssatz} und der Tatsache:
+\[\mathrm{H}^r(X,\mathcal{O}_X(q)) \cong \operatorname{Hom}(\mathrm{H}^0(X,\mathcal{O}_X(-q-r-1)), A) =0\quad\text{für $-q-r-1<0$, d.h. q>-r-1} \]
+Es folgt (i) und (ii) für endliche direkte Summen von $\mathcal{O}_X(q),\ q\in\mathbb{Z}$. Sei nun $\mathcal{F}$ beliebig kohärent. Die allgemeine Aussage beweisen wir nun per absteigende Induktion über $i$. Für $i>r$ folgt alles aus dem Verschwindungssatz. Sei nun $i\leq r$ und die Aussage für höhere $i$ bewiesen. Nach \hyperref[5.38]{Korollar 5.38} gibt es eine exakte Sequenz:
+\[0\longrightarrow\mathcal{R}\longrightarrow\mathcal{O}_X(q)^N\longrightarrow\mathcal{F}\longrightarrow 0 \]
+$\mathcal{R}$ ist kohärent nach \hyperref[5.12]{Satz 5.12}. Betrachte die lange exakte Kohomologiesequenz:
+\[\cdots\longrightarrow \mathrm{H}^i(X,\mathcal{O}_X(q)^N)\longrightarrow\mathrm{H}^i(X,\mathcal{F})\longrightarrow\mathrm{H}^{i+1}(X,\mathcal{R})\longrightarrow\cdots \]
+Die äußeren beiden Gruppen sind endlich erzeugt. Da $A$ noethersch ist, folgt die endliche Erzeugbarkeit von $\mathrm{H}^i(X,\mathcal{F})$. Twisten wir die Folge um $n$ ergibt:
+\[\cdots\longrightarrow \mathrm{H}^i(X,\mathcal{O}_X(q+n)^N)\longrightarrow\mathrm{H}^i(X,\mathcal{F}(n))\longrightarrow\mathrm{H}^{i+1}(X,\mathcal{R}(n))\longrightarrow\cdots\]
+Die äußeren beiden Gruppen verschwinden für hinreichend große $n$, daher verschwindet auch $\mathcal{H}^i(X,\mathcal{F}(n))$ für $n\geq n_0$. Da die Kohomologiegruppen für fast alle $i$ komplett verschwinden, kann $n_0$ unabhängig von $i$ gewählt werden.\qed
+
+\paragraph{Satz 10.5.}\label{10.5} Sei $A$ ein noetherscher Ring und $X$ eigentlich über $\operatorname{Spec}(A)$. Sei $\mathcal{L}$ eine invertierbare Garbe. Dann sind äquivalent:
+\begin{enumerate}[(i)]
+\item $\mathcal{L}$ ist ampel.
+\item Für alle kohärenten Garben $\mathcal{F}$ auf $X$ gibt es ein $n_0$, so dass $\mathrm{H}^i(X,\mathcal{F}\otimes \mathcal{L}^{\otimes n})=0$ für alle $i>0$ und $n\geq n_0$.
+\end{enumerate}
+
+\paragraph{Beweis.} \begin{itemize}
+\item Sei $\mathcal{L}$ ampel auf $X$. Nach \hyperref[7.7]{Satz 7.7} existiert ein $m>0$, so dass $\mathcal{L}^{\otimes m}$ sehr ampel auf $X$ bzgl. $\operatorname{Spec}(A)$ ist. Da $X$ eigentlich über $A$ ist, folgt nach \hyperref[5.32]{Satz 5.32} die Projektivität von $X\to\operatorname{Spec}(A)$. Wenden wir \hyperref[10.3]{Satz 10.3} auf $\mathcal{F},\ \mathcal{F}\otimes\mathcal{L},\ \mathcal{F}\otimes\mathcal{L}^{\otimes 2},\ \ldots,\ \mathcal{F}\otimes\mathcal{L}^{\otimes (m-1)}$ an, so erhalten wir (ii).
+\item Sei nun (ii) erfüllt und $\mathcal{F}$ eine kohärente Garbe auf $X$. Wir zeigen, dass es ein $n_0$ existiert, so dass für alle $n\geq n_0$ die Garbe $\mathcal{F}\otimes\mathcal{L}^{\otimes n}$ von globalen Schnitten erzeugt wird.
+\end{itemize}
+
+\section{Ext-Gruppen}
+
+Sei $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul auf einem geringten Raum $(X,\mathcal{O}_X)$. Wir haben folgende linksexakte Funktoren:
+\[\operatorname{Hom}(\mathcal{F},-):\mathbf{Mod}(X)\to\mathbf{Ab} \]
+\[\operatorname{\mathcal{H}om}_{\mathcal{O}_X}(\mathcal{F},-):\mathbf{Mod}(X)\to\mathbf{Mod}(X) \]
+
+\paragraph{Definition 11.1.}\label{11.1} Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}\in\mathbf{Mod}(X)$. Für $i\geq 0$ definieren wir:
+\[\operatorname{Ext}^i(\mathcal{F},-)=\mathrm{R}^i\operatorname{Hom}(\mathcal{F},-) \]
+\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},-) =\mathrm{R}^i\operatorname{\mathcal{H}om}(\mathcal{F},-) \]
+
+\paragraph{Bemerkung 11.2.}\label{11.2} Es gilt:
+\begin{enumerate}[(i)]
+\item $\operatorname{Ext}^0=\operatorname{Hom},\ \operatorname{\mathcal{E}xt}^0 =\operatorname{\mathcal{H}om}$
+\item $\operatorname{Ext}^i(\mathcal{F},\mathcal{J})=0$ und $\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{J})=0$ für alle $i>0$ und injektive $\mathcal{J}$.
+\end{enumerate}
+
+\paragraph{Lemma 11.3.}\label{11.3} Sei $\mathcal{J}\in\mathbf{Mod}(X)$ injektiv und $U\subset_\text{o}X$. Dann ist $\mathcal{J}|_U\in\mathbf{Mod}(U)$ injektiv.
+
+\paragraph{Beweis.} Sei $j:U\hookrightarrow X$ die natürliche Inklusion. Sei $\mathcal{F}\subset\mathcal{G}$ in $\mathbf{Mod}(U)$ und $\mathcal{F}\to\mathcal{J}|_U$ gegeben. Es gilt $j_!\mathcal{F}\subset j_!\mathcal{G}$ und wir erhalten einen Morphismus $j_!\mathcal{F}\to j_!(\mathcal{J}|_U)\hookrightarrow\mathcal{J}$. Da $\mathcal{J}$ injektiv ist, existiert eine Fortsetzung $j_!\mathcal{G}\to\mathcal{J}$. Somit ist $\mathcal{G}=(j_!\mathcal{G})|_U\to\mathcal{J}|_U$ eine Fortsetzung von $\mathcal{F}=(j_!\mathcal{F})|_U\to\mathcal{J}|_U$.\qed
+
+\paragraph{Satz 11.4.}\label{11.4} Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $U\subset_\text{o} X$. Dann gilt für $\mathcal{F},\mathcal{G}\in\mathbf{Mod}(X)$ und alle $i\geq 0$:
+\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})|_U\cong \operatorname{\mathcal{E}xt}^i(\mathcal{F}|_U,\mathcal{G}|_U) \]
+
+\paragraph{Beweis.} Beide Seiten sind $\delta$-Funktoren $\mathbf{Mod}(X)\to\mathbf{Mod}(X)$ und gleich für $i=0$. Sie verschwinden beide auf Injektiven, sind somit auslöschbar, also universell.\qed
+
+\paragraph{Satz 11.5.}\label{11.5} Sei $\mathcal{G}$ ein $\mathcal{O}_X$-Modul. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\operatorname{\mathcal{E}xt}^0(\mathcal{O}_X,\mathcal{G})\cong\mathcal{G}$
+\item $\operatorname{\mathcal{E}xt}^i(\mathcal{O}_X,\mathcal{G})=0$ für alle $i>0$
+\item $\operatorname{Ext}^i(\mathcal{O}_X,\mathcal{G}) \cong\mathrm{H}^i(X,\mathcal{G})$ für alle $i\geq 0$
+\end{enumerate}
+
+\paragraph{Beweis.} Es gilt $\operatorname{\mathcal{H}om}(\mathcal{O}_X,-) = \operatorname{Id}$ und $\operatorname{Hom}(\mathcal{O}_X,-)=\Gamma(X,-)$.\qed
