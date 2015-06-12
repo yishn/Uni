@@ -364,3 +364,37 @@ Sei $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul auf einem geringten Raum $(X,\mathc
 \end{enumerate}
 
 \paragraph{Beweis.} Es gilt $\operatorname{\mathcal{H}om}(\mathcal{O}_X,-) = \operatorname{Id}$ und $\operatorname{Hom}(\mathcal{O}_X,-)=\Gamma(X,-)$.\qed
+
+\paragraph{Satz 11.6.}\label{11.6} Sei $0\to\mathcal{F}'\to\mathcal{F}\to\mathcal{F}''\to 0$ eine exakte Folge in $\mathbf{Mod}(X)$ und $\mathcal{G}\in\mathbf{Mod}(X)$. Dann ist die folgende Folge exakt:
+\[0\longrightarrow\operatorname{Hom}(\mathcal{F}'',\mathcal{G})\longrightarrow\operatorname{Hom}(\mathcal{F},\mathcal{G})\longrightarrow\mathcal{Hom}(\mathcal{F}')\longrightarrow\operatorname{Ext}^1(\mathcal{F}'',\mathcal{G})\longrightarrow\operatorname{Ext}^1(\mathcal{F},\mathcal{G})\longrightarrow\cdots\]
+Analog für $\operatorname{\mathcal{H}om}$ und $\operatorname{\mathcal{E}xt}$.
+
+\paragraph{Beweis.} Sei $0\to\mathcal{G}\to\mathcal{J}^\bullet$ eine injektive Auflösung. Dann ist $\operatorname{Hom}(-,\mathcal{J}^i)$ exakt. Es folgt daher die Exaktheit von:
+\[0\longrightarrow\operatorname{Hom}(\mathcal{F}'',\mathcal{J}^\bullet)\longrightarrow\operatorname{Hom}(\mathcal{F},\mathcal{J}^\bullet)\longrightarrow\operatorname{Hom}(\mathcal{F}',\mathcal{J}^\bullet)\longrightarrow 0\]
+Die lange exakte Kohomologiesequenz liefert die Aussage. Die Aussage für $\operatorname{\mathcal{E}xt}$ folgt analog mithilfe von \hyperref[11.3]{Lemma 11.3}.\qed
+
+\paragraph{Satz 11.7.}\label{11.7} Sei $\cdots\to\mathcal{L}_1\to\mathcal{L}_0\to\mathcal{F}\to 0$ eine exakte Sequenz von $\mathcal{O}_X$-Moduln, wobei alle $\mathcal{L}_i$ lokal frei von endlichem Rang ist. Dann gilt für alle $\mathcal{O}_X$-Moduln $\mathcal{G}$:
+\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})\cong \mathrm{H}^i(\operatorname{\mathcal{H}om}(\mathcal{L}_\bullet,\mathcal{G})) \]
+
+\paragraph{Beweis.} Beide Seiten sind $\delta$-Funktoren $\mathbf{Mod}(X)\to\mathbf{Mod}(X)$ in $\mathcal{G}$, die gleich für $i=0$ sind. Beide Seiten verschwinden für injektive $\mathcal{G}$. Somit sind beide $\delta$-Funktoren universell.\qed
+
+\paragraph{Beispiel 11.8.}\label{11.8} Sei $X$ ein quasiprojektives Schema über $\operatorname{Spec}(A)$ mit $A$ noethersch. Nach \hyperref[5.38]{Korollar 5.38} ist jede kohärente Garbe von $X$ ein Quotient von einer lokal freien Garbe von endlichem Rang. Somit besitzt jede kohärente Garbe eine lokal freie Auflösung $\mathcal{L}_\bullet\to\mathcal{F}\to 0$ von endlichem Rang. Somit kann $\operatorname{\mathcal{E}xt}^\bullet(\mathcal{F},-)$ durch eine lokal freie Auflösung von endlichem Rang in der ersten Variable berechnet werden. $\mathbf{Mod}(X)$ besitzt aber nicht genügend viele Projektive.
+
+\paragraph{Lemma 11.9.}\label{11.9} Sei $\mathcal{L}\in\mathbf{Mod}(X)$ lokal frei von endlichem Rang und $\mathcal{J}\in\mathbf{Mod}(X)$ injektiv. Dann ist $\mathcal{J}\otimes\mathcal{L}$ injektiv.
+
+\paragraph{Beweis.} Wir zeigen, dass $\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})$ exakter Funktor ist. Nun gilt:
+\[\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})=\operatorname{Hom}(-\otimes\mathcal{L}^\wedge,\mathcal{J})\]
+mit $\mathcal{L}^\wedge =\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$. Da $\mathcal{J}$ injektiv ist, folgt die Behauptung.\qed
+
+\paragraph{Satz 11.10.}\label{11.10} Sei $\mathcal{L}$ eine lokal freie Garbe von endlichem Rang und $\mathcal{L}^\wedge=\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$ sein Dual. Dann gilt für alle $\mathcal{F},\mathcal{G}\in\mathbf{Mod}(X)$:
+\begin{align*}
+\operatorname{Ext}^i(\mathcal{F}\otimes\mathcal{L},\mathcal{G}) &\cong \operatorname{Ext}^i(\mathcal{F},\mathcal{L}^\wedge\otimes\mathcal{G})\\
+\operatorname{\mathcal{E}xt}^i(\mathcal{F}\otimes\mathcal{L},\mathcal{G}) &\cong \operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{L}^\wedge\otimes\mathcal{G})
+\end{align*}
+
+\paragraph{Beweis.} Für $i=0$ sind die Aussagen klar. Es ist $-\otimes\mathcal{L}^\wedge$ ein exakter Funktor. Somit sind beide Seiten $\delta$-Funktoren in $\mathcal{G}$, die auf Injektive $\mathcal{G}$ verschwinden und daher universell.\qed
+
+\paragraph{Satz 11.11.}\label{11.11} Sei $X$ ein noethersches Schema, $\mathcal{F}$ eine kohärente Garbe auf $X$, $\mathcal{G}$ ein  $\mathcal{O}_X$-Modul und $x\in X$. Dann gilt:
+\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})_x\cong \operatorname{Ext}^i_{\mathcal{O}_{X,x}}(\mathcal{F}_x,\mathcal{G}_x) = \mathrm{R}^i\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{F}_x,\mathcal{G}_x) \]
+
+\paragraph{Beweis.} Die Aussage ist lokal, sei also o.B.d.A. $X$ affin. Dann besitzt $\mathcal{F}$ eine lokal freie Auflösung von endlichem Rang $\mathcal{L}_\bullet\to\mathcal{F}\to 0$ nach \hyperref[11.8]{11.8}. Somit ist $\mathcal{L}_{\bullet,x}\to\mathcal{F}_x\to 0$ eine freie Auflösung. Wir können diese Auflösung zur Berechnung der Kohomologie verwenden. Da $\operatorname{\mathcal{H}om}(\mathcal{L},\mathcal{G})_x=\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{L}_x,\mathcal{G}_x)$ für lokal freie Garben $\mathcal{L}$ und Halmbildung exakt ist, folgt die Gleichheit der Ext-Gruppen.\qed
