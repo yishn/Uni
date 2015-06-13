@@ -52,7 +52,7 @@ Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}$ ein $\mathcal{O}_X$
 \[E=\{(U,s)\mid U\subset_\text{o}X,\ s\in\mathcal{G}(U),\ s\mapsto s''|_U \} \]
 $E$ ist partiell geordnet bzgl. Inklusion. Jede Kette in $E$ besitzt eine obere Schranke in $E$. Nach Zorns Lemma gibt es ein maximales Element $(U,s)\in E$.
 
-Gibt es ein $x\in X\setminus U$, so existiert eine offene Umgebung $V$ von $x$ und $t\in\mathcal{G}(V)$ mit $t\mapsto s''|_V$, da $\mathcal{G}\to\mathcal{G}''$ surjektiv ist. Da $\mathcal{G}$ welk ist, so setzt sich $s-t\in\mathcal{G}(U\cap V)$ zu einem Schnitt auf $\mathcal{G}(V)$ fort. Ersetzen wir $t$ durch $s-t\in\mathcal{G}(V)$, können wir o.B.d.A. $s=t$ auf $V$ annehmen. Die Existenz von $(V,s)$ ist ein Widerspruch zur Maximalität von $(U,s)$ Somit folgt $U=X$.
+Gibt es ein $x\in X\setminus U$, so existiert eine offene Umgebung $V$ von $x$ und $t\in\mathcal{G}(V)$ mit $t\mapsto s''|_V$, da $\mathcal{G}\to\mathcal{G}''$ surjektiv ist. Da $\mathcal{G}'$ welk ist, so setzt sich $s-t\in\mathcal{G}'(U\cap V)$ zu einem Schnitt auf $\mathcal{G}'(V)$ fort. Ersetzen wir $t$ durch $s-t\in\mathcal{G}'(V)$, können wir o.B.d.A. $s=t$ auf $V$ annehmen. Die Existenz von $(V,s)$ ist ein Widerspruch zur Maximalität von $(U,s)$ Somit folgt $U=X$.
 \item Für $V\subset U$ offen in $X$ kommutiert das folgende Diagramm mit exakten Zeilen:
 \[\begin{tikzcd}
 0 \rar & \mathcal{G}'(U)\rar\dar[two heads] & \mathcal{G}(U)\rar\dar[two heads] & \mathcal{G}''(U)\rar\dar & 0\\
