@@ -374,7 +374,7 @@ Die lange exakte Kohomologiesequenz liefert die Aussage. Die Aussage für $\oper
 \paragraph{Satz 11.7.}\label{11.7} Sei $\cdots\to\mathcal{L}_1\to\mathcal{L}_0\to\mathcal{F}\to 0$ eine exakte Sequenz von $\mathcal{O}_X$-Moduln, wobei alle $\mathcal{L}_i$ lokal frei von endlichem Rang ist. Dann gilt für alle $\mathcal{O}_X$-Moduln $\mathcal{G}$:
 \[\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})\cong \mathrm{H}^i(\operatorname{\mathcal{H}om}(\mathcal{L}_\bullet,\mathcal{G})) \]
 
-\paragraph{Beweis.} Beide Seiten sind $\delta$-Funktoren $\mathbf{Mod}(X)\to\mathbf{Mod}(X)$ in $\mathcal{G}$, die gleich für $i=0$ sind. Beide Seiten verschwinden für injektive $\mathcal{G}$. Somit sind beide $\delta$-Funktoren universell.\qed
+\paragraph{Beweis.} Beide Seiten sind $\delta$-Funktoren $\mathbf{Mod}(X)\to\mathbf{Mod}(X)$ in $\mathcal{G}$, die gleich für $i=0$ sind. Beide Seiten verschwinden für injektive $\mathcal{G}$, also sind beide $\delta$-Funktoren universell.\qed
 
 \paragraph{Beispiel 11.8.}\label{11.8} Sei $X$ ein quasiprojektives Schema über $\operatorname{Spec}(A)$ mit $A$ noethersch. Nach \hyperref[5.38]{Korollar 5.38} ist jede kohärente Garbe von $X$ ein Quotient von einer lokal freien Garbe von endlichem Rang. Somit besitzt jede kohärente Garbe eine lokal freie Auflösung $\mathcal{L}_\bullet\to\mathcal{F}\to 0$ von endlichem Rang. Somit kann $\operatorname{\mathcal{E}xt}^\bullet(\mathcal{F},-)$ durch eine lokal freie Auflösung von endlichem Rang in der ersten Variable berechnet werden. $\mathbf{Mod}(X)$ besitzt aber nicht genügend viele Projektive.
 
@@ -382,7 +382,7 @@ Die lange exakte Kohomologiesequenz liefert die Aussage. Die Aussage für $\oper
 
 \paragraph{Beweis.} Wir zeigen, dass $\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})$ exakter Funktor ist. Nun gilt:
 \[\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})=\operatorname{Hom}(-\otimes\mathcal{L}^\vee,\mathcal{J})\]
-mit $\mathcal{L}^\vee =\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$. Da $\mathcal{J}$ injektiv ist, folgt die Behauptung.\qed
+mit $\mathcal{L}^\vee =\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$. Da $\mathcal{J}$ injektiv und $-\otimes\mathcal{L}^\vee$ exakt ist, folgt die Behauptung.\qed
 
 \paragraph{Satz 11.10.}\label{11.10} Sei $\mathcal{L}$ eine lokal freie Garbe von endlichem Rang und $\mathcal{L}^\vee=\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$ sein Dual. Dann gilt für alle $\mathcal{F},\mathcal{G}\in\mathbf{Mod}(X)$:
 \begin{align*}
