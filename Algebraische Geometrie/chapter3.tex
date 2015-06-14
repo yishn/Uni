@@ -310,8 +310,8 @@ Für $k=r-1$ betrachte die exakte Folge:
 
 \paragraph{Beweis.} Da $\mathcal{O}_X(1)$ sehr ampel ist, gibt es eine Immersion $i:X\hookrightarrow  \mathbf{P}_A^r$ für ein $r$ mit $\mathcal{O}_X(1)=i^\ast\mathcal{O}(1)$. Aus der Projektivität folgt nach \hyperref[4.24]{Theorem 4.24} die Eigentlichkeit von $X\to\operatorname{Spec}(A)$. Nun ist $\mathbf{P}_A^r\to\operatorname{Spec}(A)$ separiert, also folgt nach \hyperref[4.22]{Korollar 4.22 (v)} die Eigentlichkeit von $X\to\mathbf{P}_A^r$, insbesondere ist $i$ abgeschlossen. Da $\mathcal{F}$ kohärent ist, ist auch $i_\ast\mathcal{F}$ nach \hyperref[5.36]{Lemma 5.36 (ii)} kohärent auf $\mathbf{P}_A^r$ und nach \hyperref[9.26]{Lemma 9.26} gilt $\mathrm{H}^i(X,\mathcal{F}(n)) =\mathrm{H}^i(\mathbf{P}_A^r, i_\ast\mathcal{F}(n))$. Wir können also o.B.d.A. $X=\mathbf{P}_A^r$ annehmen.
 
-Die Aussagen (i) und (ii) gelten für Garben der Form $\mathcal{O}_X(q),\ q\in\mathbb{Z}$ nach \hyperref[10.1]{Satz 10.1}, dem \hyperref[9.27]{Verschwindungssatz} und der Tatsache:
-\[\mathrm{H}^r(X,\mathcal{O}_X(q)) \cong \operatorname{Hom}(\mathrm{H}^0(X,\mathcal{O}_X(-q-r-1)), A) =0\quad\text{für $-q-r-1<0$, d.h. q>-r-1} \]
+Die Aussagen (i) und (ii) gelten für Garben der Form $\mathcal{O}_X(q),\ q\in\mathbb{Z}$ nach \hyperref[10.1]{Satz 10.1}, dem \hyperref[9.27]{Verschwindungssatz} und der Tatsache, dass für $-q-r-1<0$, also $q>-r-1$, gilt:
+\[\mathrm{H}^r(X,\mathcal{O}_X(q)) \cong \operatorname{Hom}(\mathrm{H}^0(X,\mathcal{O}_X(-q-r-1)), A) =0 \]
 Es folgt (i) und (ii) für endliche direkte Summen von $\mathcal{O}_X(q),\ q\in\mathbb{Z}$. Sei nun $\mathcal{F}$ beliebig kohärent. Die allgemeine Aussage beweisen wir nun per absteigende Induktion über $i$. Für $i>r$ folgt alles aus dem Verschwindungssatz. Sei nun $i\leq r$ und die Aussage für höhere $i$ bewiesen. Nach \hyperref[5.38]{Korollar 5.38} gibt es eine exakte Sequenz:
 \[0\longrightarrow\mathcal{R}\longrightarrow\mathcal{O}_X(q)^N\longrightarrow\mathcal{F}\longrightarrow 0 \]
 $\mathcal{R}$ ist kohärent nach \hyperref[5.12]{Satz 5.12}. Betrachte die lange exakte Kohomologiesequenz:
@@ -334,12 +334,10 @@ Die äußeren beiden Gruppen verschwinden für hinreichend große $n$, daher ver
 \section{Ext-Gruppen}
 
 Sei $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul auf einem geringten Raum $(X,\mathcal{O}_X)$. Wir haben folgende linksexakte Funktoren:
-\[\operatorname{Hom}(\mathcal{F},-):\mathbf{Mod}(X)\to\mathbf{Ab} \]
-\[\operatorname{\mathcal{H}om}_{\mathcal{O}_X}(\mathcal{F},-):\mathbf{Mod}(X)\to\mathbf{Mod}(X) \]
+\[\operatorname{Hom}(\mathcal{F},-):\mathbf{Mod}(X)\to\mathbf{Ab},\quad\operatorname{\mathcal{H}om}(\mathcal{F},-):\mathbf{Mod}(X)\to\mathbf{Mod}(X) \]
 
 \paragraph{Definition 11.1.}\label{11.1} Sei $(X,\mathcal{O}_X)$ ein geringter Raum und $\mathcal{F}\in\mathbf{Mod}(X)$. Für $i\geq 0$ definieren wir:
-\[\operatorname{Ext}^i(\mathcal{F},-)=\mathrm{R}^i\operatorname{Hom}(\mathcal{F},-) \]
-\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},-) =\mathrm{R}^i\operatorname{\mathcal{H}om}(\mathcal{F},-) \]
+\[\operatorname{Ext}^i(\mathcal{F},-)=\mathrm{R}^i\operatorname{Hom}(\mathcal{F},-),\quad\operatorname{\mathcal{E}xt}^i(\mathcal{F},-) =\mathrm{R}^i\operatorname{\mathcal{H}om}(\mathcal{F},-) \]
 
 \paragraph{Bemerkung 11.2.}\label{11.2} Es gilt:
 \begin{enumerate}[(i)]
@@ -366,7 +364,7 @@ Sei $\mathcal{F}$ ein $\mathcal{O}_X$"~Modul auf einem geringten Raum $(X,\mathc
 \paragraph{Beweis.} Es gilt $\operatorname{\mathcal{H}om}(\mathcal{O}_X,-) = \operatorname{Id}$ und $\operatorname{Hom}(\mathcal{O}_X,-)=\Gamma(X,-)$.\qed
 
 \paragraph{Satz 11.6.}\label{11.6} Sei $0\to\mathcal{F}'\to\mathcal{F}\to\mathcal{F}''\to 0$ eine exakte Folge in $\mathbf{Mod}(X)$ und $\mathcal{G}\in\mathbf{Mod}(X)$. Dann ist die folgende Folge exakt:
-\[0\longrightarrow\operatorname{Hom}(\mathcal{F}'',\mathcal{G})\longrightarrow\operatorname{Hom}(\mathcal{F},\mathcal{G})\longrightarrow\mathcal{Hom}(\mathcal{F}')\longrightarrow\operatorname{Ext}^1(\mathcal{F}'',\mathcal{G})\longrightarrow\operatorname{Ext}^1(\mathcal{F},\mathcal{G})\longrightarrow\cdots\]
+\[0\to\operatorname{Hom}(\mathcal{F}'',\mathcal{G})\to\operatorname{Hom}(\mathcal{F},\mathcal{G})\to\operatorname{Hom}(\mathcal{F}',\mathcal{G})\to\operatorname{Ext}^1(\mathcal{F}'',\mathcal{G})\to\operatorname{Ext}^1(\mathcal{F},\mathcal{G})\to\cdots\]
 Analog für $\operatorname{\mathcal{H}om}$ und $\operatorname{\mathcal{E}xt}$.
 
 \paragraph{Beweis.} Sei $0\to\mathcal{G}\to\mathcal{J}^\bullet$ eine injektive Auflösung. Dann ist $\operatorname{Hom}(-,\mathcal{J}^i)$ exakt. Es folgt daher die Exaktheit von:
@@ -383,19 +381,19 @@ Die lange exakte Kohomologiesequenz liefert die Aussage. Die Aussage für $\oper
 \paragraph{Lemma 11.9.}\label{11.9} Sei $\mathcal{L}\in\mathbf{Mod}(X)$ lokal frei von endlichem Rang und $\mathcal{J}\in\mathbf{Mod}(X)$ injektiv. Dann ist $\mathcal{J}\otimes\mathcal{L}$ injektiv.
 
 \paragraph{Beweis.} Wir zeigen, dass $\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})$ exakter Funktor ist. Nun gilt:
-\[\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})=\operatorname{Hom}(-\otimes\mathcal{L}^\wedge,\mathcal{J})\]
-mit $\mathcal{L}^\wedge =\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$. Da $\mathcal{J}$ injektiv ist, folgt die Behauptung.\qed
+\[\operatorname{Hom}(-,\mathcal{J}\otimes\mathcal{L})=\operatorname{Hom}(-\otimes\mathcal{L}^\vee,\mathcal{J})\]
+mit $\mathcal{L}^\vee =\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$. Da $\mathcal{J}$ injektiv ist, folgt die Behauptung.\qed
 
-\paragraph{Satz 11.10.}\label{11.10} Sei $\mathcal{L}$ eine lokal freie Garbe von endlichem Rang und $\mathcal{L}^\wedge=\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$ sein Dual. Dann gilt für alle $\mathcal{F},\mathcal{G}\in\mathbf{Mod}(X)$:
+\paragraph{Satz 11.10.}\label{11.10} Sei $\mathcal{L}$ eine lokal freie Garbe von endlichem Rang und $\mathcal{L}^\vee=\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$ sein Dual. Dann gilt für alle $\mathcal{F},\mathcal{G}\in\mathbf{Mod}(X)$:
 \begin{align*}
-\operatorname{Ext}^i(\mathcal{F}\otimes\mathcal{L},\mathcal{G}) &\cong \operatorname{Ext}^i(\mathcal{F},\mathcal{L}^\wedge\otimes\mathcal{G})\\
-\operatorname{\mathcal{E}xt}^i(\mathcal{F}\otimes\mathcal{L},\mathcal{G}) &\cong \operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{L}^\wedge\otimes\mathcal{G})
+\operatorname{Ext}^i(\mathcal{F}\otimes\mathcal{L},\mathcal{G}) &\cong \operatorname{Ext}^i(\mathcal{F},\mathcal{L}^\vee\otimes\mathcal{G})\\
+\operatorname{\mathcal{E}xt}^i(\mathcal{F}\otimes\mathcal{L},\mathcal{G}) &\cong \operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{L}^\vee\otimes\mathcal{G})
 \end{align*}
 
-\paragraph{Beweis.} Für $i=0$ sind die Aussagen klar. Es ist $-\otimes\mathcal{L}^\wedge$ ein exakter Funktor. Somit sind beide Seiten $\delta$-Funktoren in $\mathcal{G}$, die auf Injektive $\mathcal{G}$ verschwinden und daher universell.\qed
+\paragraph{Beweis.} Für $i=0$ sind die Aussagen klar. Es ist $-\otimes\mathcal{L}^\vee$ ein exakter Funktor. Somit sind beide Seiten $\delta$-Funktoren in $\mathcal{G}$, die auf Injektive $\mathcal{G}$ verschwinden und daher universell.\qed
 
 \paragraph{Satz 11.11.}\label{11.11} Sei $X$ ein noethersches Schema, $\mathcal{F}$ eine kohärente Garbe auf $X$, $\mathcal{G}$ ein  $\mathcal{O}_X$-Modul und $x\in X$. Dann gilt:
-\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})_x\cong \operatorname{Ext}^i_{\mathcal{O}_{X,x}}(\mathcal{F}_x,\mathcal{G}_x) = \mathrm{R}^i\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{F}_x,\mathcal{G}_x) \]
+\[\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})_x\cong \operatorname{Ext}^i_{\mathcal{O}_{X,x}}(\mathcal{F}_x,\mathcal{G}_x) = \mathrm{R}^i\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{F}_x,-)(\mathcal{G}_x) \]
 
 \paragraph{Beweis.} Die Aussage ist lokal, sei also o.B.d.A. $X$ affin. Dann besitzt $\mathcal{F}$ eine lokal freie Auflösung von endlichem Rang $\mathcal{L}_\bullet\to\mathcal{F}\to 0$ nach \hyperref[11.8]{11.8}. Somit ist $\mathcal{L}_{\bullet,x}\to\mathcal{F}_x\to 0$ eine freie Auflösung. Wir können diese Auflösung zur Berechnung der Kohomologie verwenden. Da $\operatorname{\mathcal{H}om}(\mathcal{L},\mathcal{G})_x=\operatorname{Hom}_{\mathcal{O}_{X,x}}(\mathcal{L}_x,\mathcal{G}_x)$ für lokal freie Garben $\mathcal{L}$ und Halmbildung exakt ist, folgt die Gleichheit der Ext-Gruppen.\qed
 
@@ -408,7 +406,10 @@ mit $\mathcal{L}^\wedge =\operatorname{Hom}(\mathcal{L},\mathcal{O}_X)$. Da $\ma
 \paragraph{Beweis von \hyperref[11.12]{11.12}.} Für $i=0$ ist die Aussage klar. Sei zunächst $\mathcal{F}=\mathcal{O}_X$. Dann folgt aus \hyperref[11.5]{Satz 11.5} und \hyperref[10.3]{Satz 10.3} für alle $i>0$ und hinreichend großes $n$:
 \[\operatorname{Ext}^i(\mathcal{O}_X,\mathcal{G}(n))=\mathrm{H}^i(X,\mathcal{G}(n))=0=\Gamma(X,\operatorname{\mathcal{E}xt}^i(\mathcal{O}_X,\mathcal{G}(n))) \]
 Sei nun $\mathcal{F}$ lokal frei von endlichem Rang. Nach \hyperref[11.10]{Satz 11.10} gilt für hinreichend große $n$:
-\[\operatorname{Ext}^i(\mathcal{F},\mathcal{G}(n))=\operatorname{Ext}^i(\mathcal{O}_X,\mathcal{F}^\wedge\otimes\mathcal{G}(n))=0=\Gamma(X,\operatorname{\mathcal{E}xt}^i(\mathcal{O}_X,\mathcal{F}^\wedge\otimes\mathcal{G}(n)))=\Gamma(X,\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G}(n))) \]
+\begin{align*}
+\operatorname{Ext}^i(\mathcal{F},\mathcal{G}(n))&=\operatorname{Ext}^i(\mathcal{O}_X,\mathcal{F}^\vee\otimes\mathcal{G}(n))=0\\
+&=\Gamma(X,\operatorname{\mathcal{E}xt}^i(\mathcal{O}_X,\mathcal{F}^\vee\otimes\mathcal{G}(n)))=\Gamma(X,\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G}(n)))
+\end{align*}
 Sei nun $\mathcal{F}$ beliebig kohärent. Nach \hyperref[5.38]{Korollar 5.38} gibt es eine kurze exakte Folge $0\to\mathcal{R}\to\mathcal{L}\to\mathcal{F}\to 0$ mit einem lokal freien $\mathcal{L}$ von endlichem Rang. Wir erhalten für hinreichend große $n$ die folgende exakte Folge:
 \[0\longrightarrow\operatorname{Hom}(\mathcal{F},\mathcal{G}(n))\longrightarrow\operatorname{Hom}(\mathcal{L},\mathcal{G}(n))\longrightarrow\operatorname{Hom}(\mathcal{R},\mathcal{G}(n))\longrightarrow\operatorname{Ext}^1(\mathcal{F},\mathcal{G}(n))\longrightarrow 0 \]
 Analog für $\operatorname{\mathcal{H}om}$ und $\operatorname{\mathcal{E}xt}$:
