@@ -466,3 +466,19 @@ derart, dass für alle kohärenten Garben $\mathcal{F}$ auf $X$ die natürliche 
 \paragraph{Beweis.} Da $\omega^1_X$ dualisierend und $\omega_X^0$ kohärent ist, folgt:
 \[\operatorname{Hom}(\mathrm{H}^n(X,\omega^0_X),k)\cong\operatorname{Hom}(\omega_X^0,\omega_X^1)\]
 Sei $\varphi$ das Bild von $t\in \operatorname{Hom}(\mathrm{H}^n(X,\omega^0_X),k)$ in $\operatorname{Hom}(\omega_X^0,\omega_X^1)$. Dann gilt $t'\circ\mathrm{H}^n(\varphi)=t$. Analog erhalten wir für $\omega_X^0$ dualisierend und $\omega_X^1$ kohärent einen Morphismus $\psi:\omega_X^1\to\omega_X^0$ mit $t\circ\mathrm{H}^n(\psi)=t'$. Es folgt $t\circ\mathrm{H}^n(\psi\circ\varphi)=t$. Da $\omega_X^0$ dualisierend ist, folgt $\psi\circ\varphi=\operatorname{id}$. Analog ist $\varphi\circ\psi=\operatorname{id}$.\qed
+
+\paragraph{Lemma 12.4.}\label{12.4} Sei $X$ ein abgeschlossenes Unterschema von $P=\mathbf{P}_k^N$ der Kodimension $r$ und $j:X\hookrightarrow P$ die kanonische Inklusion. Dann gilt für alle $i<r$:
+\[\operatorname{\mathcal{E}xt}^i_P(j_\ast\mathcal{O}_X,\omega_P)=0 \]
+
+\paragraph{Lemma 12.5.}\label{12.5} Sei $X$ noethersch und $\mathcal{F},\mathcal{G}\in\mathbf{Coh}(X)$. Dann ist die Garbe $\operatorname{\mathcal{E}xt}^i(\mathcal{F},\mathcal{G})$ kohärent für alle $i\geq 0$.
+
+\paragraph{Beweis von \hyperref[12.4]{12.4}} Für alle $i$ ist nach \hyperref[12.5]{Lemma 12.5} $\mathcal{F}^i=\operatorname{\mathcal{E}xt}^i_P(j_\ast\mathcal{O}_X,\omega_P)$ kohärent auf $P$, da $j_\ast\mathcal{O}_X$ kohärent nach \hyperref[5.13]{Satz 5.13 (iii)} ist. Nach \hyperref[5.37]{Satz 5.37} wird $\mathcal{F}^i(q)$ von globalen Schnitten erzeugt für hinreichend große $q$. Somit reicht es zu zeigen, dass $\Gamma(P,\mathcal{F}^i(q))=0$ für hinreichend große $q$ und alle $i<r$. Nun gilt mit \hyperref[11.12]{Satz 11.12} und \hyperref[12.1]{Satz 12.1 (iii)} für hinreichend große $q$:
+\begin{align*}
+\Gamma(P,\mathcal{F}^i(q)) &\cong \operatorname{Ext}_P^i(j_\ast\mathcal{O}_X,\omega_P(q))\\
+&\cong \mathrm{H}^{N-i}(P,j_\ast\mathcal{O}_X(-q))' = \mathrm{H}^{N-i}(X,\mathcal{O}_X(-q))'
+\end{align*}
+Für $N-i>\dim(X)$ verschwinden diese nach dem Verschwindungssatz, d.h. $i<N-\dim(X)=r$.\qed
+
+\paragraph{Lemma 12.6.}\label{12.6} Sei $X$ ein abgeschlossenes Unterschema von $P=\mathbf{P}_k^N$ der Kodimension $r$ und $j:X\hookrightarrow P$ die kanonische Inklusion. Sei $\omega_X^0=\operatorname{\mathcal{E}xt}_P^r(j_\ast\mathcal{O}_X,\omega_P)$. Dann gibt es einen Isomorphismus von Funktoren $\mathbf{Mod}(X)\to\mathbf{Ab}$:
+\[\operatorname{Hom}(-,\omega_X^0)\cong\operatorname{Ext}_P^r(j_\ast-,\omega_P) \]
+
