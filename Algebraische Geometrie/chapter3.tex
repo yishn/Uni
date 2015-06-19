@@ -419,7 +419,7 @@ Beachte $\operatorname{Ext}^j(\mathcal{R},\mathcal{G}(n))\cong\operatorname{Ext}
 
 \section{Die Serre-Dualität}
 
-\paragraph{Satz 12.1.}\label{12.1} \textit{(Dualität für den projektiven Raum)}\index{Serre-Dualität} Sei $X=\mathbf{P}_k^n$ und $\omega_X=\bigwedge^n\Omega_{X/k}$ die $n$-te äußere Potenz von $\Omega_{X/k}$, die sogenannte \textit{kanonische Garbe}\index{kanonische Garbe} auf $X$. Dann ist $\omega_X$ eine invertierbare Garbe und es gilt:
+\paragraph{Satz 12.1.}\label{12.1} \textit{(Dualität für den projektiven Raum)}\index{Serre-Dualität} Sei $X=\mathbf{P}_k^n$ und $\omega_X=\bigwedge^n\Omega_{X/k}$ die $n$-te äußere Potenz von $\Omega_{X/k}$, die sogenannte \textit{kanonische Garbe}\index{Garbe!kanonisch} auf $X$. Dann ist $\omega_X$ eine invertierbare Garbe und es gilt:
 \begin{enumerate}[(i)]
 \item $\mathrm{H}^n(X,\omega_X)\cong k$
 \item Sei $\mathcal{F}$ kohärent auf $X$. Dann ist
@@ -455,3 +455,14 @@ Nun sind $\operatorname{Hom}(-,\omega_X)$ und $\operatorname{Hom}(\mathrm{H}^n(X
 \[\operatorname{Ext}^i(\mathcal{E},\omega_X) =\bigoplus_{i=1}^N\mathrm{H}^i(X,\omega_X(q))=0 \]
 Ferner gilt $\mathrm{H}^{n-i}(X,\mathcal{E})'=\bigoplus_{i=1}^N\mathrm{H}^{n-i}(X,\mathcal{O}_X(-q))'=0$ für $n>i>0$ nach \hyperref[10.1]{Satz 10.1}. Ist $i=n$, so gilt $\mathrm{H}^0(X,\mathcal{O}_X(-q))=0$ für alle $q>0$.\qed
 \end{enumerate}
+
+\paragraph{Definition 12.2.}\label{12.2} Sei $X$ ein eigentliches Schema über einem Körper $k$ der Dimension $n$. Eine \textit{dualisierende Garbe}\index{Garbe!dualisierend} für $X$ ist eine kohärente Garbe $\omega_X^0$ auf $X$ zusammen mit einer \textit{Spurabbildung}\index{Spurabbildung}
+\[t:\mathrm{H}^n(X,\omega_X^0)\to k \]
+derart, dass für alle kohärenten Garben $\mathcal{F}$ auf $X$ die natürliche Paarung perfekt ist:
+\[\operatorname{Hom}(\mathcal{F},\omega_X^0) \times\mathrm{H}^n(X,\mathcal{F}) \longrightarrow\mathrm{H}^n(X,\omega_X^0)\stackrel{t}{\longrightarrow}k \]
+
+\paragraph{Satz 12.3.}\label{12.3} Sei $X$ eigentlich über einem Körper $k$. Seien $(\omega_X^0,t)$ und $(\omega_X^1,t')$ dualisierende Garben für $X$. Dann existiert einen eindeutig bestimmten Isomorphismus $\varphi:\omega_X^0\to\omega_X^1$, der mit der Spurabbildung verträglich ist, d.h. $t'\circ\mathrm{H}^n(\varphi)=t$.
+
+\paragraph{Beweis.} Da $\omega^1_X$ dualisierend und $\omega_X^0$ kohärent ist, folgt:
+\[\operatorname{Hom}(\mathrm{H}^n(X,\omega^0_X),k)\cong\operatorname{Hom}(\omega_X^0,\omega_X^1)\]
+Sei $\varphi$ das Bild von $t\in \operatorname{Hom}(\mathrm{H}^n(X,\omega^0_X),k)$ in $\operatorname{Hom}(\omega_X^0,\omega_X^1)$. Dann gilt $t'\circ\mathrm{H}^n(\varphi)=t$. Analog erhalten wir für $\omega_X^0$ dualisierend und $\omega_X^1$ kohärent einen Morphismus $\psi:\omega_X^1\to\omega_X^0$ mit $t\circ\mathrm{H}^n(\psi)=t'$. Es folgt $t\circ\mathrm{H}^n(\psi\circ\varphi)=t$. Da $\omega_X^0$ dualisierend ist, folgt $\psi\circ\varphi=\operatorname{id}$. Analog ist $\varphi\circ\psi=\operatorname{id}$.\qed
