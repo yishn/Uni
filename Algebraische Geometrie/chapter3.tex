@@ -416,3 +416,42 @@ Analog für $\operatorname{\mathcal{H}om}$ und $\operatorname{\mathcal{E}xt}$:
 \[0\longrightarrow\operatorname{\mathcal{H}om}(\mathcal{F},\mathcal{G}(n))\longrightarrow\operatorname{\mathcal{H}om}(\mathcal{L},\mathcal{G}(n))\longrightarrow\operatorname{\mathcal{H}om}(\mathcal{R},\mathcal{G}(n))\longrightarrow\operatorname{\mathcal{E}xt}^1(\mathcal{F},\mathcal{G}(n))\longrightarrow 0\]
 Beachte $\operatorname{Ext}^j(\mathcal{R},\mathcal{G}(n))\cong\operatorname{Ext}^{j+1}(\mathcal{F},\mathcal{G}(n))$ und $\operatorname{\mathcal{E}xt}^j(\mathcal{R},\mathcal{G}(n))\cong\operatorname{\mathcal{E}xt}^{j+1}(\mathcal{F},\mathcal{G}(n))$ für $j\geq 1$. Da $\mathcal{R}$ kohärent ist, folgt die Aussage per Induktion über $j$. Für $j=0$ twisten wir die obige Folge genug und wenden $\Gamma(X,-)$ an. \hyperref[11.13]{Lemma 11.13} gibt uns ein $m$, so dass:
 \[\Gamma(X,\operatorname{\mathcal{E}xt}^1(\mathcal{F},\mathcal{G}(n+m))) =\operatorname{Ext}^1(\mathcal{F},\mathcal{G}(n+m))\qedhere \]
+
+\section{Die Serre-Dualität}
+
+\paragraph{Satz 12.1.}\label{12.1} \textit{(Dualität für den projektiven Raum)}\index{Serre-Dualität} Sei $X=\mathbf{P}_k^n$ und $\omega_X=\bigwedge^n\Omega_{X/k}$ die $n$-te äußere Potenz von $\Omega_{X/k}$, die sogenannte \textit{kanonische Garbe}\index{kanonische Garbe} auf $X$. Dann ist $\omega_X$ eine invertierbare Garbe und es gilt:
+\begin{enumerate}[(i)]
+\item $\mathrm{H}^n(X,\omega_X)\cong k$
+\item Sei $\mathcal{F}$ kohärent auf $X$. Dann ist
+\[\operatorname{Hom}(\mathcal{F},\omega_X)\times\mathrm{H}^n(X,\mathcal{F})\to\mathrm{H}^n(X,\omega_X)\cong k \]
+eine perfekte Paarung endlich-dimensionierter $k$-Vektorräume.
+\item Für alle $i\geq 0$ gibt es eine natürliche Isomorphie von kontravarianten Funktoren $\mathbf{Coh}(X)\to\mathbf{Ab}$:
+\[\operatorname{Ext}^i(-,\omega_X)\cong\mathrm{H}^{n-i}(X,-)' \]
+wobei $'$ den Dualraum bezeichnet. Für $i=0$ ist diese gerade durh die Paarung von (ii) induziert.
+\end{enumerate}
+
+\paragraph{Beweis.} Da die Garbe der relativen Differentiale $\Omega_{X/k}$ lokal frei vom Rang $n$ ist, ist $\omega_X$ vom Rang $\binom{n}{n}=1$, also invertierbar.
+\begin{enumerate}[(i)]
+\item Aus der exakten Sequenz in \hyperref[8.23]{Satz 8.23}
+\[0\longrightarrow\Omega_{X/k}\longrightarrow\mathcal{O}_X(-1)^{n+1}\longrightarrow\mathcal{O}_X\longrightarrow 0 \]
+folgt $\omega_X=\bigwedge^n\Omega_{X/k}\cong\mathcal{O}_X(-n-1)$. Nach \hyperref[10.1]{Satz 10.1 (iii)} gilt $\mathrm{H}^n(X,\mathcal{O}_X(-n-1))\cong k$.
+\item Ein $f\in\operatorname{Hom}(\mathcal{F},\omega_X)$ liefert $\mathrm{H}^n(X,\mathcal{F})\to\mathrm{H}^n(X,\omega_X)$. Dies induziert eine Paarung:
+\[\operatorname{Hom}(\mathcal{F},\omega_X)\times\mathrm{H}^n(X,\mathcal{F})\to\mathrm{H}^n(X,\omega_X),\ (f,a)\mapsto \mathrm{H}^n(f)(a) \]
+Ist $\mathcal{F}\cong\mathcal{O}_X(q)$, so gilt $\operatorname{Hom}(\mathcal{O}_X(q),\omega_X)=\operatorname{Hom}(\mathcal{O}_X,\omega_X(-q))\cong\mathrm{H}^0(X,\omega_X(-q))$ nach \hyperref[11.5]{Satz 11.5 (iii)}. Betrachte das kommutative Diagramm:
+\[\begin{tikzcd}
+\mathrm{H}^0(X,\omega_X(-q)) \times \mathrm{H}^n(X,\mathcal{O}_X(q)) \rar\ar[d, shift left=4em, "\cong"]\ar[d, shift right=4em, "\cong"']& \mathrm{H}^n(X,\omega_X)\ar[d, "\cong"]\\
+\mathrm{H}^0(X,\mathcal{O}_X(-n-q-1))\times\mathrm{H}^n(X,\mathcal{O}_X(q))\rar &\mathrm{H}^n(X,\mathcal{O}_X(-n-1))
+\end{tikzcd} \]
+Daher ist die Paarung nach \hyperref[10.1]{Satz 10.1 (iv)} nicht ausgeartet. Die Aussage folgt daher auch für endliche direkte Summen von $\mathcal{O}_X(q)$.
+
+Sei nun $\mathcal{F}$ beliebig kohärent. Nach \hyperref[5.38]{Korollar 5.38} erhalten wir eine exakte Sequenz $\mathcal{E}_1\to\mathcal{E}_2\to\mathcal{F}\to 0$, wobei $\mathcal{E}_i$ endliche direkte Summen von $\mathcal{O}_X(q)$ ist. Sei $0\to\mathcal{G}'\to\mathcal{G}\to\mathcal{G}''\to 0$ eine exakte Sequenz kohärenter Garben. Nach dem Verschwindungssatz und unter Betrachtung der langen exakten Kohomologiefolge folgt die Exaktheit von:
+\[\mathrm{H}^n(X,\mathcal{G}')\longrightarrow\mathrm{H}^n(X,\mathcal{G})\longrightarrow\mathrm{H}^n(X,\mathcal{G}'')\longrightarrow 0\]
+Nun sind $\operatorname{Hom}(-,\omega_X)$ und $\operatorname{Hom}(\mathrm{H}^n(X,-),k)$ linksexakte kontravariante Funktoren. Also folgt die Behauptung aus dem Fünferlemma:
+\[\begin{tikzcd}
+0\rar & \operatorname{Hom}(\mathcal{F},\omega_X) \dar\rar& \operatorname{Hom}(\mathcal{E}_2,\omega_X) \rar\dar["\cong"']& \operatorname{Hom}(\mathcal{E}_1,\omega_X)\dar["\cong"]\\
+0 \rar& \mathrm{H}^n(X,\mathcal{F})'\rar & \mathrm{H}^n(X,\mathcal{E}_2)'\rar & \mathrm{H}^n(X,\mathcal{E}_1)'
+\end{tikzcd}\]
+\item Beide Seiten sind kontravariante $\delta$-Funktoren $\mathbf{Coh}(X)\to\mathbf{Ab}$. Für $i=0$ sind sie isomorph nach (ii). Also reicht es zu zeigen, dass beide $\delta$-Funktoren auslöschbar, also universell sind. Für $\mathcal{F}\in\mathbf{Coh}(X)$, existiert nach \hyperref[5.38]{Korollar 5.38} für alle hinreichend große $q$ eine Surjektion $\mathcal{E}\to\mathcal{F}$ mit $\mathcal{E}=\bigoplus_{i=1}^N\mathcal{O}_X(-q)$. Nach \hyperref[11.5]{Satz 11.5 (iii)} und \hyperref[10.3]{Satz 10.3} gilt für $i>0$ und hinreichend große $q$:
+\[\operatorname{Ext}^i(\mathcal{E},\omega_X) =\bigoplus_{i=1}^N\mathrm{H}^i(X,\omega_X(q))=0 \]
+Ferner gilt $\mathrm{H}^{n-i}(X,\mathcal{E})'=\bigoplus_{i=1}^N\mathrm{H}^{n-i}(X,\mathcal{O}_X(-q))'=0$ für $n>i>0$ nach \hyperref[10.1]{Satz 10.1}. Ist $i=n$, so gilt $\mathrm{H}^0(X,\mathcal{O}_X(-q))=0$ für alle $q>0$.\qed
+\end{enumerate}
