@@ -479,6 +479,87 @@ Sei $\varphi$ das Bild von $t\in \operatorname{Hom}(\mathrm{H}^n(X,\omega^0_X),k
 \end{align*}
 Für $N-i>\dim(X)$ verschwinden diese nach dem Verschwindungssatz, d.h. $i<N-\dim(X)=r$.\qed
 
-\paragraph{Lemma 12.6.}\label{12.6} Sei $X$ ein abgeschlossenes Unterschema von $P=\mathbf{P}_k^N$ der Kodimension $r$ und $j:X\hookrightarrow P$ die kanonische Inklusion. Sei $\omega_X^0=\operatorname{\mathcal{E}xt}_P^r(j_\ast\mathcal{O}_X,\omega_P)$. Dann gibt es einen Isomorphismus von Funktoren $\mathbf{Mod}(X)\to\mathbf{Ab}$:
+\paragraph{Lemma 12.6.}\label{12.6} Sei $X$ ein abgeschlossenes Unterschema von $P=\mathbf{P}_k^N$ der Kodimension $r$ und $j:X\hookrightarrow P$ die kanonische Inklusion. Sei $\omega_X^0=j^\ast\operatorname{\mathcal{E}xt}_P^r(j_\ast\mathcal{O}_X,\omega_P)$. Dann gibt es einen Isomorphismus von Funktoren $\mathbf{Mod}(X)\to\mathbf{Ab}$:
 \[\operatorname{Hom}(-,\omega_X^0)\cong\operatorname{Ext}_P^r(j_\ast-,\omega_P) \]
 
+\iffalse
+\paragraph{Beweis.} Sei $0\to\omega_P\to\mathcal{J}^\bullet$ eine injektive Auflösung von $\omega_P$ in $\mathbf{Mod}(P)$ und $\mathcal{F}\in\mathbf{Mod}(X)$. Dann gilt:
+\[\operatorname{Ext}_P^i(j_\ast\mathcal{F},\omega_P)=\mathrm{H}^i(\operatorname{Hom}_P(j_\ast\mathcal{F},\mathcal{J}^\bullet)) \]
+Es faktorisiert jeder Morphismus $j_\ast\mathcal{F}\to\mathcal{J}^i$ über $\mathcal{I}^i = \operatorname{\mathcal{H}om}_P(j_\ast\mathcal{O}_X,\mathcal{J}^i)$. Also gilt:
+\[\operatorname{Ext}_P^i(j_\ast\mathcal{F},\omega_P)=\mathrm{H}^i(\operatorname{Hom}_X(\mathcal{F},j^\ast\mathcal{I}^\bullet)) \]
+Nun sind die $j^\ast\mathcal{I}^i$ alle injektive $\mathcal{O}_X$"~Moduln, da $\operatorname{Hom}_X(-,j^\ast\mathcal{I}^i)=\operatorname{Hom}_P(j_\ast-,\mathcal{J}^i)$ exakt ist. Wegen \hyperref[12.4]{Lemma 12.4} gilt für $i<r$:
+\[\mathrm{H}^i(j^\ast\mathcal{I}^\bullet) = \mathrm{H}^i(j^\ast\operatorname{\mathcal{H}om}_P(j_\ast\mathcal{O}_X,\mathcal{J}^\bullet))=\operatorname{\mathcal{E}xt}^i_P(j_\ast\mathcal{O}_X,\omega_P)=0 \]
+Also ist der Komplex $\mathcal{I}^\bullet$ exakt bis zum $r$-ten Schritt.
+\fi
+
+\paragraph{Satz 12.7.}\label{12.7} Sei $X/k$ ein projektives Schema. Dann besitzt $X$ eine dualisierende Garbe.
+
+\iffalse
+\paragraph{Beweis.} Sei $j:X\hookrightarrow P=\mathbf{P}_k^N$ eine abgeschlossene Immersion, $n=\dim(X),\ r=\operatorname{codim}(X)$. Setze $\omega_X^0=j^\ast\operatorname{\mathcal{E}xt}^r_P(j_\ast\mathcal{O}_X,\omega_P)$. Nach \hyperref[12.6]{Lemma 12.6} gilt für alle $\mathcal{F}\in\mathbf{Mod}(X)$:
+\[\operatorname{Hom}_X(\mathcal{F},\omega_X^0) \cong\operatorname{Ext}_P^r(j_\ast\mathcal{F},\omega_P) \]
+Ist $\mathcal{F}$ kohärent, so gilt nach \hyperref[12.1]{Satz 12.1} und \hyperref[9.26]{Lemma 9.26}:
+\[\operatorname{Ext}_P^r(j_\ast\mathcal{F},\omega_P)\cong\mathrm{H}^{N-r}(P,j_\ast\mathcal{F})'\cong\mathrm{H}^n(X,\mathcal{F})' \]
+\fi
+
+\paragraph{Definition.} Sei $(A,\mathfrak{m})$ ein lokaler, noetherscher Ring und $M$ ein $A$"~Modul. $x_1,\ldots,x_r\in A$ heißt \textit{reguläre Sequenz}\index{reguläre Sequenz}, wenn $x_1$ kein Nullteiler von $M$ ist und für $i>1$ das Element $x_i$ kein Nullteiler von $M/(x_1,\ldots,x_{i-1})M$ ist. Die \textit{Tiefe}\index{Tiefe} von $M$ ist definiert als:
+\[\operatorname{depth}(M) = \sup\{r\mid \text{es existiert eine reguläre Sequenz }x_1,\ldots,x_r\in\mathfrak{m}\} \]
+$A$ heißt \textit{Cohen-Macaulay}\index{Cohen-Macaulay}, falls seine Tiefe gerade $\dim(A)$ ist.
+
+\paragraph{Satz 12.8.}\label{12.8} \textit{(Dualitätssatz für projektive Schemata)} Sei $X$ ein projektives Schema über einem algebraisch abgeschlossenen Körper $k$ der Dimension $n$. Sei $\omega_X^0$ die dualisierende Garbe auf $X$ und $\mathcal{O}(1)$ eine sehr ample Garbe auf $X$. Dann gilt:
+\begin{enumerate}[(i)]
+\item Für alle $i\geq 0$ und alle kohärenten Garben $\mathcal{F}$ auf $X$ gibt es natürliche, in $\mathcal{F}$ funktorielle Abbildungen:
+\[\theta^i:\operatorname{Ext}^i(\mathcal{F},\omega_X^0)\to\mathrm{H}^{n-i}(X,\mathcal{F})' \]
+wobei $\theta^0$ durch die Definition der dualisierende Garbe gegeben ist.
+\item Folgende Bedingungen sind äquivalent:
+\begin{enumerate}[(a)]
+\item $X$ ist \textit{Cohen-Macaulay}\index{Cohen-Macaulay}, d.h. alle lokalen Ringe sind Cohen-Macaulay, und \textit{äquidimensional}\index{äquidimensional}, d.h. alle irreduziblen Komponenten haben dieselbe Dimension.
+\item Für alle lokal freien Garben $\mathcal{F}$ auf $X$ gilt $\mathrm{H}^i(X,\mathcal{F}(-q))=0$ für alle $i<n$ und hinreichend große $q$.
+\item Alle $\theta^i,\ i\geq 0$ aus (i) sind Isomorphismen für alle $\mathcal{F}\in\mathbf{Coh}(X)$.
+\end{enumerate}
+\end{enumerate}
+
+\paragraph{Bemerkung 12.9.}\label{12.9} Ist $X/k$ nicht-singulär, so ist $X$ Cohen-Macaulay, da reguläre Ringe stets Cohen-Macaulay sind.
+
+\paragraph{Korollar 12.10.}\label{12.10} Sei $X/k$ ein projektives, äquidimensionales Cohen-Macaulay Schema der Dimension $n$ über einem algebraisch abgeschlossenen Körper $k$. Sei $\mathcal{F}$ eine lokal freie Garbe von endlichem Rang auf $X$. Dann gibt es für $i\geq 0$ natürliche Isomorphismen:
+\[\mathrm{H}^i(X,\mathcal{F})\cong\mathrm{H}^{n-i}(X,\mathcal{F}^\vee\otimes\omega_X^0)' \]
+
+\paragraph{Beweis.} Nach \hyperref[11.10]{Satz 11.10} und \hyperref[11.5]{Satz 11.5 (iii)} gilt:
+\[\mathrm{H}^i(X,\mathcal{F})\cong\operatorname{Ext}^{n-i}(\mathcal{F},\omega_X^0)'=\operatorname{Ext}^{n-i}(\mathcal{O}_X,\mathcal{F}^\vee\otimes\omega_X^0)' = \mathrm{H}^{n-i}(X,\mathcal{F}^\vee\otimes\omega_X^0)'\qedhere \]
+
+\paragraph{Korollar 12.11.}\label{12.11} Sei $X$ eine nicht-singuläre projektive Varietät der Dimension $n$ über einem abgeschlossenen Körper $k$. Dann ist die dualisierende Garbe $\omega_X^0$ isomorph zur kanonischen Garbe $\omega_X=\bigwedge^n\Omega_{X/k}$.
+
+\paragraph{Definition.} Sei $A$ ein Ring und $M$ ein $A$-Modul. Die \textit{projektive Dimension}\index{projektive Dimension} von $M$ ist definiert als:
+\[\operatorname{pd}_A(M)=\inf\{ m\mid\text{es gibt eine projektive Auflösung } 0\to P_m\to\cdots\to P_0\to M\to 0 \} \]
+
+\paragraph{Satz 12.12.}\label{12.12} Sei $A$ ein Ring und $M$ ein $A$-Modul. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\operatorname{pd}_A(M)\leq m\iff \operatorname{Ext}^i(M,N)=0$ für $i>m$ und alle $A$-Moduln $N$.
+\item Ist $A$ regulär und $M$ endlich erzeugter $A$-Modul, so gilt:
+\[\operatorname{pd}_A(M)+\operatorname{depth}(M)=\dim(A) \]
+Es ist $\operatorname{pd}_A(M)\leq m$ genau dann, wenn $\operatorname{Ext}^i(M,A)=0$ für alle $i> m$.
+\end{enumerate}
+
+\paragraph{Beweis von \hyperref[12.8]{12.8}.}\begin{enumerate}[(i)]
+\item Sei $q$ hinreichend groß, so dass wir eine Surjektion $\mathcal{E}=\mathcal{O}_X(-q)^N\to\mathcal{F}$ erhalten. Nach \hyperref[11.5]{Satz 11.5 (iii)} und \hyperref[10.3]{Satz 10.3 (ii)} gilt für alle $i>0$ und hinreichend große $q$:
+\[\operatorname{Ext}^i(\mathcal{E},\omega_X^0)\cong\bigoplus_{i=1}^N\mathrm{H}^i(X,\omega_X^0(q))=0 \]
+Somit ist $\operatorname{Ext}^i(-,\omega_X^0)$ auslöschbar für $i>0$ und somit ein universeller, kontravarianter $\delta$-Funktor $\mathbf{Coh}(X)\to\mathbf{Ab}$. Da $\mathrm{H}^{n-i}(X,-)'$ auch kontravarianter $\delta$-Funktor ist, gibt es nach der Universaleigenschaft einen eindeutigen Morphismus $(\theta^i)_{i\geq 0}$ von $\delta$-Funktoren, wobei $\theta^0$ der vorgegebene ist.
+\item Sei (a) erfüllt. Sei $i:X\hookrightarrow P=\mathbf{P}_k^N$ eine abgeschlossene Immersion. Für alle lokal freien Garben $\mathcal{F}$ auf $X$ und jedem abgeschlossenen Punkt $x\in X$ gilt wegen Cohen-Macaulay und Äquidimensionalität:
+\[\operatorname{depth}(\mathcal{F}_x)=\dim(\mathcal{O}_{X,x})=n \]
+Sei $A=\mathcal{O}_{P,x}$. Dann ist $A$ ein regulärer lokaler Ring mit $\dim(A)=N$, da $P$ nicht-singulär ist. Nach \hyperref[12.12]{Satz 12.12 (ii)} gilt:
+\[\operatorname{pd}_A(i_\ast\mathcal{F}_x)=\dim(A) - \operatorname{depth}(\mathcal{F}_x)=N-n \]
+Aus \hyperref[11.11]{Satz 11.11} und \hyperref[12.12]{Satz 12.12 (ii)} folgt für $i>N-n$:
+\[\operatorname{\mathcal{E}xt}^i_P(i_\ast\mathcal{F},-)_x=\operatorname{Ext}^i_{\mathcal{O}_{P,x}}(i_\ast\mathcal{F}_x, -_x)=0 \]
+Für $i<n$ gilt somit $\operatorname{\mathcal{E}xt}^{N-i}_P(i_\ast\mathcal{F},-)=0$. Für hinreichend große $q$ folgt nach \hyperref[9.26]{Lemma 9.26}, \hyperref[12.1]{Satz 12.1} und \hyperref[11.12]{Satz 11.12}:
+\begin{align*}
+\mathrm{H}^i(X,\mathcal{F}(-q))' &= \mathrm{H}^i(P,i_\ast\mathcal{F}(-q))'\\
+&=\operatorname{Ext}_P^{N-i}(i_\ast\mathcal{F},\omega_P(q)) = \Gamma(P,\operatorname{\mathcal{E}xt}_P^{N-i}(i_\ast\mathcal{F},\omega_P(q)))=0
+\end{align*}
+Sei nun (b) erfüllt. Wie oben mit $\mathcal{F}=\mathcal{O}_X$ folgt $\operatorname{\mathcal{E}xt}^i_P(\mathcal{O}_X,\omega_P)=0$ für $i>N-n$. Da $\omega_P=\mathcal{O}_P(-N-1)$, gilt für $i>N-n$:
+\[\operatorname{\mathcal{E}xt}^i_P(\mathcal{O}_X,\omega_P)=\operatorname{\mathcal{E}xt}^i_P(\mathcal{O}_X,\mathcal{O}_P)(-N-1)=0\]
+Durch Halmbildung folgt $\operatorname{Ext}_A^i(\mathcal{O}_{X,x},A)=0$ für $A=\mathcal{O}_{P,x}$ und $i>N-n$. Somit gilt nach \hyperref[12.12]{Satz 12.12 (ii)} $\operatorname{pd}_A(\mathcal{O}_{X,x})\leq N-n$ und somit $\operatorname{depth}(\mathcal{O}_{X,x})\geq n=\dim(X)$. Da die andere Ungleichung stets gilt, folgt $\operatorname{depth}(\mathcal{O}_{X,x})=\dim(X)$ für alle abgeschlossenen Punkte $x\in X$. Somit ist $X$ Cohen-Macaulay, da Lokalisierungen von Cohen-Macaulay  Ringe bzgl. Primideale wieder Cohen-Macaulay sind. Es folgt (a).
+
+Sei (b) erfüllt. Da $\operatorname{Ext}^i(-,\omega_X^0)$ universeller $\delta$-Funktor ist, reicht es für (c) zu zeigen, dass auch $\mathrm{H}^{n-i}(X,-)'$ universeller $\delta$-Funktor ist. Wir zeigen die Auslöschbarkeit. Sei $\mathcal{F}$ kohärent und $\mathcal{E}=\mathcal{O}_X(-q)^N\to\mathcal{F}$ für hinreichend große $q$ eine Surjektion. Wegen (b) ist $\mathrm{H}^{n-i}(X,\mathcal{E})'=0$ für $i>0$ und hinreichend große $q$.
+
+Sei (c) erfüllt. Seien alle $\theta^i$ Isomorphismen und $\mathcal{F}$ lokal frei. Dann gilt nach \hyperref[10.3]{Satz 10.3} für $n-i>0$ und hinreichend große $q$:
+\[\mathrm{H}^i(X,\mathcal{F}(-q))\cong\operatorname{Ext}^{n-i}(\mathcal{F}(-q),\omega_X^0)'=\mathrm{H}^{n-i}(X,\mathcal{F}^\vee\otimes\omega_X^0(q))'=0\qedhere \]
+\end{enumerate}
