@@ -566,8 +566,24 @@ Sei (c) erfüllt. Seien alle $\theta^i$ Isomorphismen und $\mathcal{F}$ lokal fr
 
 \section{Der Satz von Riemann-Roch für Kurven}
 
-Eine Kurve ist ein eigentliches, nicht-singuläres, integres Schema $X$ der Dimension $1$ über einem algebraisch abgeschlossenen Körper $k$. Dann ist $X$ notwendigerweise projektiv, siehe z.B. Hartshorne II Proposition 6.7.
+Eine Kurve ist ein eigentliches, nicht-singuläres, integres Schema $X$ der Dimension $1$ über einem algebraisch abgeschlossenen Körper $k$. Dann ist $X$ notwendigerweise projektiv, siehe z.B. Hartshorne II Proposition 6.7. Da $X$ nicht-singulär ist, sind alle lokalen Ringe regulär und insbesondere faktoriell. Ferner stimmen die Weil-Divisoren mit den Cartier-Divisoren überein:
+\[\operatorname{Div}(X)\cong\Gamma(X,\mathcal{K}^\times/\mathcal{O}^\times_X)\]
+Wir haben einen Isomorphismus:
+\[\operatorname{Cl}(X)\cong\operatorname{Pic}(X) \]
 
 \paragraph{Definition 13.1.}\label{13.1} Sei $X$ eine Kurve. Dann heißt
 \[g=g(X)=\dim_k\mathrm{H}^1(X,\mathcal{O}_X)=\dim_k\mathrm{H}^0(X,\omega_X)<\infty \]
 das \textit{Geschlecht}\index{Geschlecht} von $X$, wobei die letzte Gleichung aus der \hyperref[12.8]{Serre-Dualität} folgt.
+
+\paragraph{Definition 13.2.}\label{13.2} \begin{enumerate}[(i)]
+\item Ein Divisor $D=\sum_i n_iP_i$ heißt \textit{effektiv}\index{Divisor!effektiv}, wenn $n_i\geq 0$ für alle $i$ gilt.
+\item Für einen Divisor $D_0$ heißt die Menge $|D_0|=\{D\in\operatorname{Div}(X)\mid D\sim D_0,\ D\text{ effektiv}\}$ \textit{vollständiges lineares System}\index{vollständiges lineares System} auf $X$. Sie kann evtl. leer sein.
+\end{enumerate}
+
+\paragraph{Bemerkung 13.3.}\label{13.3} Sei $D$ ein Divisor auf einer nicht-singulären, projektiven Varietät $X$ über einem algebraisch abgeschlossenen Körper $k$. Dann ist
+\[(\mathrm{H}^0(X,\mathcal{L}(D))\setminus\{0\})/k^\times\to |D|,\ s\mapsto (s)_0 \]
+eine Bijektion von Mengen, wobei $(s)_0$ den Nullstellendivisor von $s$ bezeichnet. Siehe z.B. Hartshorne II Proposition 7.7.
+
+\paragraph{Definition 13.4.}\label{13.4} Sei $D\in\operatorname{Div}(X)$. Wir definieren
+\[\ell(D)=\dim_k\mathrm{H}^0(X,\mathcal{L}(D)) \]
+und bezeichnen $\ell(D)-1$ als die \textit{Dimension}\index{Dimension} von $|D|$. Nach \hyperref[10.3]{Satz 10.3} ist $\ell(D)<\infty$.
