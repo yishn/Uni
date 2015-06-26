@@ -588,3 +588,33 @@ eine Bijektion von Mengen, wobei $(s)_0$ den Nullstellendivisor von $s$ bezeichn
 \paragraph{Definition 13.4.}\label{13.4} Sei $D\in\operatorname{Div}(X)$. Wir definieren
 \[\ell(D)=\dim_k\mathrm{H}^0(X,\mathcal{L}(D)) \]
 und bezeichnen $\ell(D)-1$ als die \textit{Dimension}\index{Dimension} von $|D|$. Nach \hyperref[10.3]{Satz 10.3} ist $\ell(D)<\infty$.
+
+\paragraph{Lemma 13.5.}\label{13.5} Sei $X$ eine Kurve und $D\in\operatorname{Div}(X)$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $\ell(D)>0\implies\deg(D)\geq 0$
+\item Sind $\ell(D)>0$ und $\deg(D)=0$, so folgt $D\sim 0$, also $\mathcal{L}(D)\cong\mathcal{O}_X$.
+\end{enumerate}
+
+\paragraph{Beweis.} Ist $\ell(D)>0$, so ist $|D|\neq\varnothing$. Sei $D\sim D'$ mit effektivem $D'$. Dann ist $\deg(D)=\deg(D')\geq 0$. Ist zusätzlich $\deg(D)=0$, so auch $\deg(D')=0$. Da $D'$ effektiv ist, folgt $D'=0$.\qed
+
+\paragraph{Definition 13.6.}\label{13.6} Ein Divisor $K\in\operatorname{Div}(X)$ heißt \textit{kanonischer Divisor}\index{Divisor!kanonisch}, falls $K\sim D$ mit $\mathcal{L}(D)\cong\omega_X$.
+
+\paragraph{Definition.} Sei $X$ ein projektives Schema über einem Körper $k$ und $\mathcal{F}\in\mathbf{Coh}(X)$. Die \textit{Euler-Charakteristik}\index{Euler-Charakteristik} von $\mathcal{F}$ ist definiert als:
+\[\chi(\mathcal{F})=\sum_{i\geq 0}(-1)^i\dim_k\mathrm{H}^i(X,\mathcal{F}) \]
+
+\paragraph{Satz 13.7.}\label{13.7} \textit{(Riemann-Roch)} Sei $X$ eine Kurve vom Geschlecht $g$ und $D\in\operatorname{Div}(X)$. Dann gilt für einen kanonischen Divisor $K$:
+\[\ell(D)-\ell(K-D) = \deg(D)+1-g \]
+
+\paragraph{Beweis.} Der Divisor $K-D$ gehört zur invertierbaren Garbe $\omega_X\otimes\mathcal{L}(D)^\vee$. \hyperref[12.10]{Serre-Dualität} liefert nun:
+\[\mathrm{H}^0(X,\omega\otimes\mathcal{L}(D)^\vee)' \cong\mathrm{H}^1(X,\mathcal{L}(D)) \]
+Es ist somit zu zeigen $\chi(\mathcal{L}(D))=\deg(D)+1-g$. Sei zunächst $D=0$. Dann gilt:
+\[\mathrm{H}^0(X,\mathcal{L}(D))=\mathrm{H}^0(X,\mathcal{O}_X)=k \]
+Also $\dim_k\mathrm{H}^0(X,\mathcal{L}(D))=1$. Per Definition gilt $\dim_k\mathrm{H}^1(X,\mathcal{L}(D))=\dim_k\mathrm{H}^1(X,\mathcal{O}_X)=g$. Somit folgt $\chi(\mathcal{O}_X)=0+1-g$.
+
+Sei nun $D\in\operatorname{Div}(X)$ mit $\chi(\mathcal{L}(D))=\deg(D)+1-g$ und $P\in X$ ein abgeschlossener Punkt. Sei $\{P\}\subset X$ das zu $P$ gehörige abgeschlossene Unterschema von $X$ mit konstanter Strukturgarbe $k(P)\cong k$. Sei $\mathcal{J}_P$ die zughörige Idealgarbe von $\{P\}$. Es ist $\mathcal{J}_P=\mathcal{L}(-P)$. Nun ist $j_\ast k(P)$ eine Wolkenkratzergarbe auf $X$ mit Support $\{P\}$, wobei $j:\{P\}\hookrightarrow X$ die kanonische Inklusion bezeichnet. Wir erhalten somit eine exakte Sequenz:
+\[0\longrightarrow\mathcal{L}(-P)\longrightarrow\mathcal{O}_X\longrightarrow j_\ast k(P)\longrightarrow 0 \]
+Tensorieren mit der lokal freien Garbe $\mathcal{L}(D+P)$ ergibt die exakte Sequenz:
+\[0\longrightarrow\mathcal{L}(D)\longrightarrow\mathcal{L}(D+P)\longrightarrow j_\ast k(P)\longrightarrow 0 \]
+da $j_\ast k(P)\otimes\mathcal{L}(D+P)=j_\ast k(P)$. Es folgt:
+\[\chi(\mathcal{L}(D+P)) = \chi(\mathcal{L}(D)) + \chi(k(P))=\chi(\mathcal{L}(D))+1 = \deg(D)+1 = \deg(D+P) \]
+Da jeder Divisor von $0$ aus aufgebaut werden kann, folgt die Aussage.\qed
