@@ -618,3 +618,25 @@ Tensorieren mit der lokal freien Garbe $\mathcal{L}(D+P)$ ergibt die exakte Sequ
 da $j_\ast k(P)\otimes\mathcal{L}(D+P)=j_\ast k(P)$. Es folgt:
 \[\chi(\mathcal{L}(D+P)) = \chi(\mathcal{L}(D)) + \chi(k(P))=\chi(\mathcal{L}(D))+1 = \deg(D)+1 = \deg(D+P) \]
 Da jeder Divisor von $0$ aus aufgebaut werden kann, folgt die Aussage.\qed
+
+\paragraph{Korollar 13.8.}\label{13.8} Sei $X$ eine Kurve vom Geschlecht $g$ und $D\in\operatorname{Div}(X)$. Für einen kanonischen Divisor $K$ gilt:
+\begin{enumerate}[(i)]
+\item $\ell(K)=g$, $\deg(K)=2g-2$
+\item Ist $\deg(D)>2g-2$, so folgt $\ell(D)=\deg(D)+1-g$. Für eine elliptische Kurve gilt insbesondere $\ell(D)=\deg(D)$ für $\deg(D)>0$.
+\end{enumerate}
+
+\paragraph{Beweis.}\begin{enumerate}[(i)]
+\item Für $D=0$ bzw. $D=K$ folgt aus \hyperref[13.7]{Satz 13.7}:
+\[\ell(K)=-\deg(D)+g-1+\ell(D)=g,\quad \deg(K)=\ell(K)-\ell(0)+g-1=2g-2 \]
+\item Sei $D'\in\operatorname{Div}(X)$ mit $\deg(D')<0$. Nach \hyperref[13.5]{Lemma 13.5} folgt $\ell(D')\leq 0$, also $\ell(D')=0$. Wegen $\deg(K-D)=2g-2-\deg(D)<0$ folgt $\ell(K-D)=0$.\qed
+\end{enumerate}
+
+\paragraph{Beispiel 13.9.}\label{13.9} Sei $X$ eine elliptische Kurve und $P_0\in X$ ein abgeschlossener Punkt. Betrachte die Untergruppe:
+\[\operatorname{Pic}^0(X)=\{[\mathcal{L}(D)]\in\operatorname{Pic}(X)\mid\deg(D)=0 \} \]
+Dann ist die folgende Abbildung eine Bijektion:
+\[X_0\stackrel{\sim}{\to}\operatorname{Pic}^0(X),\ P\mapsto [\mathcal{L}(P-P_0)] \]
+wobei $X_0\subset X$ die Teilmenge aller abgeschlossenen Punkte von $X$ bezeichnet. Wir erhalten durch Strukturtransport eine Gruppenstruktur auf $X_0$ mit $P_0$ als neutralem Element.
+
+\paragraph{Beweis.} Sei $D\in\operatorname{Div}(X)$ mit $\deg(D)=0$. Riemann-Roch liefert:
+\[\ell(D+P_0)-\ell(K-D-P_0)=\deg(D+P_0)+1-g=1 \]
+Wegen $\deg(K)=2g-2=0$ ist $\deg(K-D-P_0)=-1$. Nach \hyperref[13.5]{Lemma 13.5} folgt $\ell(K-D-P_0)=0$, also $\ell(D+P_0)=1$ und die Dimension von $|D+P_0|$ ist $0$. Daher existiert genau ein effektiver Divisor $D'\sim D+P_0$. Wegen $\deg(D')=\deg(D+P_0)=1$ ist $D'=P$.\qed
