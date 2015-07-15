@@ -83,12 +83,19 @@ Integer congue euismod justo, quis venenatis tortor. Proin sem leo, accumsan ege
 \vfill
 \clearpage
 
-\mainmatter
 \pagenumbering{arabic} 
 \setcounter{page}{5}
 \tableofcontents
 
 \chapter{Introduction}
+
+\begin{theorem}[\textit{Pop}]\label{thm:main-result}
+Let $K,K'$ be two finite field extensions of $\mathbb{Q}(T)$. If there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $K'\to K$.
+\end{theorem}
+
+\begin{theorem}[\textit{Neukirch-Uchida}]\label{thm:neukirch-uchida}
+Let $k,k'$ be two global fields. Then any isomorphism $G_k\to G_{k'}$ is induced by a unique isomorphism $k'^s\to k^s$.  In particular, if $k,k'$ have isomorphic absolute Galois groups, they are isomorphic as fields.
+\end{theorem}
 
 \clearpage
 
