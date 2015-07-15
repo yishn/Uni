@@ -1,16 +1,12 @@
-\documentclass[11pt,a4paper,openany]{memoir}
+\documentclass[11pt, a4paper, openany]{memoir}
 \usepackage{fontspec}
 \usepackage[english]{babel}
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
-\usepackage{paralist}
-\usepackage{tikz-cd}
-\linespread{1.1}
+\usepackage{paralist, tikz-cd}
+\usepackage[inner=4cm, outer=3cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{hyperref}
-\hypersetup{
-	bookmarksopen=true,
-	pdfstartview=FitH
-}
-\usepackage[inner=4cm,outer=3cm,top=3cm,bottom=3cm]{geometry}
+\hypersetup{bookmarksopen=true, pdfstartview=FitH}
+\linespread{1.1}
 \author{Yichuan Shen}
 \title{Title of the Master Thesis}
 \makeindex
@@ -30,7 +26,7 @@
 \newtheorem*{remark}{Remark}
 
 \frontmatter
-\pagenumbering{gobble} 
+\pagenumbering{gobble}
 
 \makeatletter
 \begin{center}
@@ -41,7 +37,7 @@ Fakultät für Mathematik und Informatik\\
 Studiengang Mathematik\\
 \vspace{8mm}
 \end{large}
-\vfill 
+\vfill
 \begin{large}
 \textbf{MASTER THESIS}\\
 \end{large}
@@ -57,7 +53,7 @@ Supervisor: \textsc{prof. dr. alexander schmidt}\\
 \makeatother
 
 \clearpage
-\ 
+\
 \clearpage
 
 \vspace*{0cm}
@@ -83,7 +79,7 @@ Integer congue euismod justo, quis venenatis tortor. Proin sem leo, accumsan ege
 \vfill
 \clearpage
 
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 \setcounter{page}{5}
 \tableofcontents
 
@@ -91,16 +87,9 @@ Integer congue euismod justo, quis venenatis tortor. Proin sem leo, accumsan ege
 
 \mainmatter
 \setcounter{page}{9}
+
 \input{synopsis.tex}
-
-\begin{thebibliography}{99999}
-
-\bibitem[Sp96]{Sp96}
-	M. Spiess (1996)
-	\textit{An arithmetic proof of Pop's Theorem concerning Galois groups of function fields over number fields}.
-    J. reine angew. Math. \textbf{478}, 107\---126.
-
-\end{thebibliography}
+\input{bibliography.tex}
 
 \printindex
 \end{document}
