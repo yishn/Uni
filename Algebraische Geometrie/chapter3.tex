@@ -611,13 +611,15 @@ Es ist somit zu zeigen $\chi(\mathcal{L}(D))=\deg(D)+1-g$. Sei zunächst $D=0$. 
 \[\mathrm{H}^0(X,\mathcal{L}(D))=\mathrm{H}^0(X,\mathcal{O}_X)=k \]
 Also $\dim_k\mathrm{H}^0(X,\mathcal{L}(D))=1$. Per Definition gilt $\dim_k\mathrm{H}^1(X,\mathcal{L}(D))=\dim_k\mathrm{H}^1(X,\mathcal{O}_X)=g$. Somit folgt $\chi(\mathcal{O}_X)=0+1-g$.
 
-Sei nun $D\in\operatorname{Div}(X)$ mit $\chi(\mathcal{L}(D))=\deg(D)+1-g$ und $P\in X$ ein abgeschlossener Punkt. Sei $\{P\}\subset X$ das zu $P$ gehörige abgeschlossene Unterschema von $X$ mit konstanter Strukturgarbe $k(P)\cong k$. Sei $\mathcal{J}_P$ die zughörige Idealgarbe von $\{P\}$. Es ist $\mathcal{J}_P=\mathcal{L}(-P)$. Nun ist $j_\ast k(P)$ eine Wolkenkratzergarbe auf $X$ mit Support $\{P\}$, wobei $j:\{P\}\hookrightarrow X$ die kanonische Inklusion bezeichnet. Wir erhalten somit eine exakte Sequenz:
+Sei nun $D\in\operatorname{Div}(X)$ und $P\in X$ ein abgeschlossener Punkt. Sei $\{P\}\subset X$ das zu $P$ gehörige abgeschlossene Unterschema von $X$ mit konstanter Strukturgarbe $k(P)\cong k$. Sei $\mathcal{J}_P$ die zughörige Idealgarbe von $\{P\}$. Es ist $\mathcal{J}_P=\mathcal{L}(-P)$. Nun ist $j_\ast k(P)$ eine Wolkenkratzergarbe auf $X$ mit Support $\{P\}$, wobei $j:\{P\}\hookrightarrow X$ die kanonische Inklusion bezeichnet. Wir erhalten somit eine exakte Sequenz:
 \[0\longrightarrow\mathcal{L}(-P)\longrightarrow\mathcal{O}_X\longrightarrow j_\ast k(P)\longrightarrow 0 \]
 Tensorieren mit der lokal freien Garbe $\mathcal{L}(D+P)$ ergibt die exakte Sequenz:
 \[0\longrightarrow\mathcal{L}(D)\longrightarrow\mathcal{L}(D+P)\longrightarrow j_\ast k(P)\longrightarrow 0 \]
 da $j_\ast k(P)\otimes\mathcal{L}(D+P)=j_\ast k(P)$. Es folgt:
-\[\chi(\mathcal{L}(D+P)) = \chi(\mathcal{L}(D)) + \chi(k(P))=\chi(\mathcal{L}(D))+1 = \deg(D)+1 = \deg(D+P) \]
-Da jeder Divisor von $0$ aus aufgebaut werden kann, folgt die Aussage.\qed
+\[\chi(\mathcal{L}(D+P)) = \chi(\mathcal{L}(D)) + \chi(k(P))=\chi(\mathcal{L}(D))+1 \]
+Andererseits gilt:
+\[\deg(D) + 2 - g = \deg(D+P) + 1 - g \]
+Somit gilt $\chi(\mathcal{L}(D))=\deg(D)+1-g$ genau dann, wenn $\chi(\mathcal{L}(D+P)) = \deg(D+P)+1-g$. Da jeder Divisor von $0$ aus aufgebaut werden kann, folgt die Aussage.\qed
 
 \paragraph{Korollar 13.8.}\label{13.8} Sei $X$ eine Kurve vom Geschlecht $g$ und $D\in\operatorname{Div}(X)$. Für einen kanonischen Divisor $K$ gilt:
 \begin{enumerate}[(i)]
