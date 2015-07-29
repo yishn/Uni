@@ -1,0 +1,1473 @@
+\documentclass[11pt,a4paper,openany]{memoir}
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{paralist}
+\usepackage[all]{xy}
+\linespread{1.1}
+\usepackage{hyperref}
+\hypersetup{
+	bookmarksopen=true,
+	pdfstartview=FitH
+}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\author{Yichuan Shen}
+\title{Die Golod-Shafarevich Ungleichung}
+\makeindex
+%\chapterstyle{tandh}
+
+\makeatletter
+\DeclareFontFamily{OMX}{MnSymbolE}{}
+\DeclareSymbolFont{MnLargeSymbols}{OMX}{MnSymbolE}{m}{n}
+\SetSymbolFont{MnLargeSymbols}{bold}{OMX}{MnSymbolE}{b}{n}
+\DeclareFontShape{OMX}{MnSymbolE}{m}{n}{
+    <-6>  MnSymbolE5
+   <6-7>  MnSymbolE6
+   <7-8>  MnSymbolE7
+   <8-9>  MnSymbolE8
+   <9-10> MnSymbolE9
+  <10-12> MnSymbolE10
+  <12->   MnSymbolE12
+}{}
+\DeclareFontShape{OMX}{MnSymbolE}{b}{n}{
+    <-6>  MnSymbolE-Bold5
+   <6-7>  MnSymbolE-Bold6
+   <7-8>  MnSymbolE-Bold7
+   <8-9>  MnSymbolE-Bold8
+   <9-10> MnSymbolE-Bold9
+  <10-12> MnSymbolE-Bold10
+  <12->   MnSymbolE-Bold12
+}{}
+
+\let\llangle\@undefined
+\let\rrangle\@undefined
+\DeclareMathDelimiter{\llangle}{\mathopen}%
+                     {MnLargeSymbols}{'164}{MnLargeSymbols}{'164}
+\DeclareMathDelimiter{\rrangle}{\mathclose}%
+                     {MnLargeSymbols}{'171}{MnLargeSymbols}{'171}
+\makeatother
+
+\begin{document}
+
+\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Satz}
+\newtheorem{corollary}[theorem]{Korollar}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Beispiel}
+\theoremstyle{remark}
+\newtheorem*{remark}{Bemerkung}
+
+\frontmatter
+\pagenumbering{gobble} 
+
+%\begin{titlingpage}
+	\begin{center}
+	\vspace*{0cm}
+	%\vspace{8mm}
+	\begin{large}
+	Universität Heidelberg\\
+	%\vspace{2mm}
+	Fakultät für Mathematik und Informatik\\
+	%\vspace{2mm}
+	Studiengang Mathematik\\
+	\vspace{8mm}
+	\end{large}
+	\vfill 
+	\begin{large}
+	\textbf{BACHELORARBEIT}\\
+	\end{large}
+	\vspace{10mm}
+	\begin{huge} Die Golod-Shafarevich Ungleichung \end{huge}\\ 
+	\vspace{2mm}
+	\begin{huge}für $p$"~adisch analytische pro"~$p$ Gruppen \end{huge}\\ 
+	\vspace{10mm}
+	von \textsc{yichuan shen}\\
+	\vspace{3cm}
+	\vfill
+	betreut von \textsc{prof. dr. alexander schmidt}\\
+	%\includegraphics[scale=.2]{seal.pdf}\\
+	%\vspace{2mm}
+	\today
+	\end{center}
+%\end{titlingpage}
+
+\clearpage
+\ 
+\clearpage
+
+\vspace*{0cm}
+\vfill
+\paragraph{Erklärung zur Bachelorarbeit.} Hiermit erkläre ich, dass ich die Bachelorarbeit selbst\-stän\-dig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Die Arbeit ist keinem anderen Prüfungsamt in gleicher oder vergleichbarer Form vorgelegt worden. Sie wurde bisher nicht veröffentlicht.\\
+\vspace{7mm}\\
+\rule{7cm}{0.4pt}
+\clearpage
+
+\vspace*{0cm}
+\vfill
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+In this thesis, we want to present the Golod-Shafarevich inequality and all nec\-es\-sary requirements, especially verifying the inequality for finite $p$-groups and $p$-adic analytic pro"~$p$ groups. We shall use the purely algebraic characterization of an analytic pro"~$p$ group, de\-vel\-oped by Lubotzky and Mann with powerful pro"~$p$ groups.
+\end{abstract}
+
+\vspace{1cm}
+
+\renewcommand{\abstractname}{Zusammenfassung}
+\begin{abstract}
+In dieser Arbeit wollen wir die Golod-Shafarevich Ungleichung und die nötigen Voraussetzungen vorstellen, und diese für endliche $p$-Gruppen und $p$-adisch analytische pro-$p$ Gruppen nachweisen. Wir verwenden dabei die rein algebraische Charakterisierung einer analytischen pro"~$p$ Gruppe von Lubotzky und Mann über potenzreiche pro"~$p$ Gruppen.
+\end{abstract}
+\vfill
+\clearpage
+
+\pagenumbering{arabic} 
+\setcounter{page}{5}
+\tableofcontents
+
+\chapter{Einführung}
+
+Zu einem Zahlkörper $K=K_0$ kann man die maximal abelsche, unverzweigte Erweiterung $K_1$ von $K$ bilden. Die zugehörige Galoisgruppe von $K_1/K$ ist dann isomorph zu der Idealklassengruppe $\operatorname{Cl}_K$ von $K$. Dieses Verfahren kann man mit $K_1$ fortführen und man erhält $K_2$, usw. So entsteht der sogenannte Klassenkörperturm:
+\[K=K_0\subset K_1\subset K_2\subset\ldots,\quad K_\infty:=\bigcup K_i \]
+
+Furtwängler hat 1924 vermutet, dass es stets für jeden Zahlkörper $K$ ein $i$ gibt mit $K_i=K_{i+1}$, mit anderen Worten, dass der Klassenkörperturm über $K$ stationär wird. Wegen der Endlichkeit der Klassenzahl ist dies äquivalent dazu, dass $\operatorname{Gal}(K_\infty/K)$ endlich ist. Wäre dies der Fall, so könnte man jeden Zahlkörper in einem endlichen Erweiterungskörper $K_\infty$ einbetten, dessen Ganzheitsring ein Hauptidealring ist. 
+
+Doch 1964 konnte dies durch Golod und Shafarevich in \cite{GS64} widerlegt werden. Dazu haben sie die maximale Erweiterung $K_i^{(p)}$ in $K_i$ über $K$ mit einer $p$-Gruppe als Galoisgruppe über $K$ betrachtet, mit einer fixierten Primzahl $p$. So erhält man den $p$-Klassenkörperturm:
+\[K=K_0^{(p)}\subset K_1^{(p)}\subset K_2^{(p)}\subset\ldots,\quad K_\infty^{(p)}:=\bigcup K_i^{(p)}\subset K_\infty \]
+$\operatorname{Gal}(K_\infty^{(p)}/K)$ ist somit eine pro"~$p$ Gruppe. Die Golod-Shafarevich Ungleichung für endliche $p$"~Gruppen gibt uns eine hinreichende Bedingung, wann eine pro"~$p$ Gruppe $G$ unendlich ist: 
+
+\paragraph{Theorem.} \textit{(Die Golod-Shafarevich Ungleichung)} Für eine endliche $p$-Gruppe $G$ gilt:
+\[ t\geq \frac{d^2}{4} \]
+wobei $d$ die minimale Anzahl von Erzeugern und $t$ die minimale Anzahl der dazugehörigen Relationen von $G$ als pro"~$p$ Gruppe bezeichnet.
+
+\paragraph{} Mithilfe dieser Ungleichung kann man somit Beispiele konstruieren, für das $\operatorname{Gal}(K_\infty^{(p)}/K)$ nicht endlich ist, und insbesondere $\operatorname{Gal}(K_\infty/K)$ nicht endlich ist. Das klassische Beispiel, das Shafarevich nutzte, ist $K=\mathbb{Q}(\sqrt{-D})$ mit $D=3\cdot 5\cdot 7\cdot 11\cdot 13\cdot 17\cdot 19$. 
+
+Lie"~Gruppen, d.h. Gruppen mit einer Mannigfaltigkeitsstruktur, deren Grup\-pen\-ope\-ra\-tio\-nen glatt sind, spielen über  $\mathbb{C}$ oder $\mathbb{R}$ vor allem in der theoretischen Physik eine große Rolle. Andererseits finden Lie-Gruppen über $\mathbb{Q}_p$, sogenannte $p$-adisch analytische Gruppen, in der arithmetischen Geometrie nützliche Anwendungen. 
+
+In dieser Arbeit wollen wir hauptsächlich (sofern nichts anderes angegeben) \cite{DDMS99} folgen und eine etwas allgemeinere Formulierung der Golod-Shafarevich Ungleichung beweisen. Diese werden wir nicht nur für endliche $p$"~Gruppen, sondern auch für $p$"~adisch analytische pro"~$p$ Gruppen nachweisen. Dabei verwenden wir die rein algebraische Charakterisierung einer analytischen pro"~$p$ Gruppe von Lubotzky und Mann \cite{LM87} über potenzreiche pro"~$p$ Gruppen.
+
+\section{Überblick}
+
+Im ersten Kapitel werden die Grundlagen von pro"~$p$ Gruppen behandelt. Wir werden klären, was Erzeuger und Relationen in der Kategorie der pro"~$p$ Gruppen bedeuten und im Falle einer endlich erzeugten pro"~$p$ Gruppe eine einfache Charakterisierung für die minimale Anzahl von Erzeugern herleiten.
+
+Im zweiten Kapitel betrachten wir analytische pro"~$p$ Gruppen. Insbesondere untersuchen wir potenzreiche pro"~$p$ Gruppen und wie sich deren gruppentheoretischen Eigenschaften auf den Gruppenring über $\mathbb{F}_p$ übertragen. Diese Resultate zeigen dann, dass die Voraussetzungen der Golod-Shafarevich Ungleichung für analytische pro"~$p$ Gruppen erfüllt sind.
+
+Im dritten Kapitel führen wir zunächst den vollständigen Gruppenring ein und untersuchen diese für endlich erzeugte, freie pro"~$p$ Gruppen über $\mathbb{F}_p$. Im zweiten Teil zeigen wir schließlich die Golod-Shafarevich Ungleichung.
+
+\section{Danksagung}
+
+Ich würde gerne Professor Dr. Alexander Schmidt für das Betreuen meiner Arbeit danken. Besonderen Dank gilt Dr. Malte Witte, der mir nicht nur auf Fehler und Ungenauigkeiten im Text aufmerksam gemacht hat, sondern mir auch mit viel Geduld und Verständnis meinen Problemen und Fragen geholfen hat.
+
+\clearpage
+
+\section{Notation}
+
+$\begin{array}{ll}
+\mathbb{N} & \text{natürliche Zahlen inklusive $0$} \\
+\mathbb{Z} & \text{ganze Zahlen}\\
+\mathbb{Q} & \text{rationale Zahlen}\\
+\mathbb{R} & \text{reelle Zahlen}\\
+\mathbb{C} & \text{komplexe Zahlen}\\
+\mathbb{Z}_p & \text{$p$-adische ganze Zahlen}\\
+\mathbb{Q}_p & \text{$p$-adische Zahlen}\\
+\mathbb{F}_q & \text{Körper der Ordnung $q$}\\
+\\
+\overline{X} & \text{topologischer Abschluss von $X$}\\
+\subset & \text{Teilmenge}\\
+\subset_\text{o}& \text{offene Teilmenge}\\
+\lhd & \text{Normalteiler}\\
+\lhd_\text{o}& \text{offener Normalteiler}\\
+\\
+\langle X\rangle & \text{von $X$ erzeugte Gruppe}\\
+X^{\{n\}} & \{x^n\mid x\in X\}\\
+G^n & \langle G^{\{n\}} \rangle\text{, wobei $G$ eine multiplikative Gruppe ist} \\
+\left[G:H\right] & \text{Index von $H$ in $G$}\\
+AB & \{ab\mid a\in A,\ b\in B\}\\
+\left[a,b\right] & a^{-1}b^{-1}ab\\
+\left[A,B\right] & \langle \left[a,b\right]\mid a\in A,\ b\in B\rangle\\
+\\
+A^{(n)} & \text{$n$-fache direkte Summe über $A$}\\
+\dim_k(V) & \text{Dimension von $V$ als $k$-Vektorraum}\\
+\langle\alpha\rangle & \alpha_1+\ldots+\alpha_r\text{, wobei }\alpha=(\alpha_1,\ldots,\alpha_r)\\
+\mathbf{v}^\alpha & v_1^{\alpha_1}\cdots v_r^{\alpha_r}\text{, wobei $\mathbf{v}=(v_1,\ldots,v_r)$ und $\alpha\in\mathbb{N}^r$}\\
+\end{array}$
+
+\mainmatter
+\setcounter{page}{9}
+
+\chapter{Pro"~$p$ Gruppen}
+
+In dieser Arbeit geht es um \textit{pro"~$p$ Gruppen}. In diesem Kapitel werden die Grundlagen von \textit{proendlichen Gruppen} und pro"~$p$ Gruppen behandelt, insbesondere betrachten wir den Fall einer (topologisch) endlich erzeugten pro"~$p$ Gruppe. Ferner wird eingeführt, was eine \textit{Darstellung} einer pro"~$p$ Gruppe mittels Erzeugern und Relationen ist.
+
+\section{Proendliche Gruppen}
+
+\begin{definition}
+Eine \textit{proendliche Gruppe}\index{proendliche Gruppe} ist eine kompakte, hausdorffsche topologische Gruppe, deren offene Normalteiler eine Umgebungsbasis der Identität bilden.
+\end{definition}
+
+\begin{remark}
+Äquivalent dazu: Eine topologische Gruppe $G$ ist genau dann proendlich, wenn sie projektiver Limes endlicher, diskreter Gruppen ist. Ist $G$ proendlich, dann gibt es einen natürlichen topologischen Isomorphismus:
+\[G\cong\varprojlim_{N\lhd_\text{o}G}G/N \]
+Eine endliche Gruppe wird mit der diskreten Topologie zu einer proendlichen Gruppe.
+\end{remark}
+
+\iffalse
+\begin{proposition}\label{1.2.i}
+Sei $G$ eine proendliche Gruppe. Dann gilt:
+\begin{enumerate}[(i)]
+\item Jede offene Untergruppe von $G$ ist abgeschlossen, besitzt endlichen Index und enthält einen offenen Normalteiler von $G$. Der Durchschnitt aller offenen Untergruppen ist $\{1\}$. Enthält eine Untergruppe $U\subset G$ eine offene nichtleere Teilmenge, so ist $U$ offen.
+\item Eine abgeschlossene Untergruppe von $G$ ist genau dann offen, wenn sie einen endlichen Index in $G$ besitzt.
+\item Eine Teilmenge von $G$ ist genau dann offen, wenn sie eine Vereinigung von Mengen der Form $gN$ mit $g\in G,\ N\lhd_\text{o} G$ ist.
+\item Sei $N\lhd G$ abgeschlossen. Dann ist $G/N$ proendlich und die natürliche Projektion $G\to G/N$ ist eine offene, stetige Abbildung.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(iii) und (iv) folgen direkt aus der Definition. Für (i) und (ii) verwendet man die Kompaktheit und Hausdorff-Eigenschaft des Raumes und dass für jede Untergruppe $H\subset G$ gilt:
+\[ G- H = \bigcup_{g\not\in H} gH \qedhere \]
+\end{proof}
+\fi
+
+\begin{proposition}\label{1.2.iii}
+Sei $G$ eine proendliche Gruppe und $X\subset G$ eine Teilmenge. Dann gilt:
+\[ \overline{X} = \bigcap_{N\lhd_\text{o} G} XN \]
+Ist $X$ eine Untergruppe, so gilt $\overline{X} = \bigcap\ \{K\text{ Untergruppe} \mid X\subset K\subset_\text{o}G \}$.
+\end{proposition}
+
+\begin{proof}
+Sei $y\not\in\overline{X}$. Da $G\setminus\overline{X}$ offen ist, gibt es ein $N\lhd_\text{o}G$ mit $yN\cap X=\varnothing$. Dies ist äquivalent zu $y\not\in XN$. Dies zeigt $\bigcap XN\subset\overline{X}$. $X\subset\bigcap XN$ ist klar. Nun ist $XN=\bigcup_{x\in X} xN$ für jedes $N\lhd_\text{o}G$ eine endliche Vereinigung von abgeschlossenen Mengen, da $N$ von endlichem Index ist. Also ist $\bigcap XN$ abgeschlossen und $\overline{X}\subset \bigcap XN$.
+
+Ist $X$ eine Untergruppe, so ist $XN$ eine offene Untergruppe, die $X$ enthält. Die andere Inklusion folgt dadurch, dass offene Untergruppen abgeschlossen sind.
+\end{proof}
+
+\begin{corollary}
+Für jedes $N\lhd G$ ist der Abschluss $\overline{N}$ ebenfalls ein Normalteiler in $G$.
+\end{corollary}
+
+\begin{proof}
+Für $K\lhd_\text{o}G$ ist $NK$ ein Normalteiler in $G$ und der Durchschnitt von Normalteilern ist wieder ein Normalteiler.
+\end{proof}
+
+\paragraph{} Der folgende Satz und seine Korollare werden als bekannt vorausgesetzt und nur der Voll\-stän\-dig\-keit halber erwähnt:
+
+\begin{proposition}\label{1.4}
+Sei $(X_\lambda)_{\lambda\in\Lambda}$ ein projektives System von nichtleeren kompakten Räumen und stetigen Ü\-ber\-gangs\-ab\-bil\-dun\-gen $(\varphi_{\mu\nu})_{\mu\leq\nu}$. Dann ist der projektive Limes $\varprojlim X_\lambda$ nichtleer und kompakt.
+\end{proposition}
+
+\iffalse
+\begin{proof}
+Für $\nu\leq\mu$ setze:
+\[U_{\mu\nu}:=\Big\{(x_\lambda)\in\prod_{\lambda\in\Lambda}X_\lambda \mid \varphi_{\mu\nu}(x_\mu)\neq x_\nu \Big\} \]
+Diese sind offene Teilmengen von $\prod X_\lambda$, da alle $\varphi_{\mu\nu}$ stetig sind. Jede endliche Vereinigung von Mengen der Form $U_{\mu\nu}$ ist echt in $\prod X_\lambda$ enthalten: Wähle dazu ein $\kappa\in \Lambda$ mit $\kappa\geq \mu,\nu$ für alle Mengen $U_{\mu\nu}$, die in der Vereinigung auftauchen. Wähle $x_\kappa\in X_\kappa$ beliebig und setze:
+\[x_\lambda=\begin{cases}
+\varphi_{\kappa\lambda}(x_\kappa),&\lambda\leq\kappa\\
+\text{beliebiges Element in }X_\lambda,&\text{sonst}
+\end{cases} \]
+Dann liegt $(x_\lambda)$ nicht in der Vereinigung der $U_{\mu\nu}$. Nun ist die Vereinigung aller $U_{\mu\nu}$ das Komplement von $\varprojlim X_\lambda$ in $\prod X_\lambda$. Somit ist $\varprojlim X_\lambda$ abgeschlossen, also kompakt, da $\prod X_\lambda$ nach Tychonoff kompakt ist. Wäre nun $\varprojlim X_\lambda\neq\varnothing$, würden die $U_{\mu\nu}$ ganz $\prod X_\lambda$ überdecken. Also existiert eine endliche Teilüberdeckung, ein Widerspruch.
+\end{proof}
+\fi
+
+\begin{corollary}\label{1.4cor}
+Der projektive Limes von endlichen, nichtleeren Mengen ist nichtleer. 
+\end{corollary}
+
+\begin{corollary}\label{prop:compact-exact-limes}
+Sei $1\to (G_i')\to (G_i) \to (G_i'')\to 1$ eine exakte Folge projektiver Systeme von kompakten topologischen Gruppen. Dann ist die folgende Folge exakt:
+\[1\to\varprojlim G_i'\to\varprojlim G_i  \to \varprojlim G_i''\to 1 \]
+\end{corollary}
+
+\iffalse
+\begin{proof}
+Die Exaktheit von $1\to\varprojlim G_i'\to\varprojlim G_i\to\varprojlim G_i''$ ist klar. Für $(x_i)\in\varprojlim G_i''$ gilt $f^{-1}((x_i))=\varprojlim f_i^{-1}(x_i)$. Da alle $f_i^{-1}(x_i)$ nichtleer und kompakt sind, folgt $f^{-1}((x_i))\neq\varnothing$ nach Satz~\ref{1.4} und $f$ ist surjektiv.
+\end{proof}
+
+\begin{proposition}\label{1.3}
+Ist $G$ eine proendliche Gruppe, so ist $G$ topologisch isomorph zu $\varprojlim_{N\lhd_\text{o} G} G/N$. Umgekehrt ist der projektive Limes endlicher, diskreter Gruppen eine proendliche Gruppe.
+\end{proposition}
+
+\begin{proof}
+Sei $G$ proendlich. Der natürliche Homomorphismus $i:G\to\varprojlim G/N,\ g\mapsto (gN)_{N\lhd_\text{o}G}$ ist wegen $\bigcap_{N\lhd_\text{o}G}N=1$ injektiv. Da jede Projektion $G\to G/N$ stetig und surjektiv ist, ist $i$ stetig und surjektiv nach \ref{prop:compact-exact-limes}. Schließlich ist jeder stetige Isomorphismus zwischen kompakten Hausdorffräumen ein Homöomorphismus.
+
+Sei nun $(G_\lambda)_{\lambda\in\Lambda}$ ein projektives System end\-li\-cher dis\-kre\-ter Gruppen. Dann ist $\prod_{\lambda\in\Lambda}G_\lambda$ als Produkt kompakter Hausdorffräume wieder ein kompakter Hausdorffraum. Per Definition der Produkttopologie enthält jede Umgebung der $1$ eine Untergruppe der folgenden Form:
+\[U(S)=\prod_{\lambda\not\in S}G_\lambda\times\prod_{\lambda\in S}\{1\}\subset_\text{o}\prod_{\lambda\in\Lambda}G_\lambda \]
+mit $S\subset\Lambda$ endlich. Somit ist $\prod G_\lambda$ eine proendliche Gruppe. Es ist noch zu zeigen, dass $\varprojlim G_\lambda$ in $\prod G_\lambda$ abgeschlossen ist. Sei dazu $\widehat{g}=(g_\lambda)_{\lambda\in\Lambda}\in \prod G_\lambda \setminus \varprojlim G_\lambda$. Dann existieren $\nu>\mu$ in $\Lambda$ mit $\pi_{\nu\mu}(g_\nu)\neq g_\mu$, wobei $\pi_{\nu\mu}$ die Übergangsabbildung bezeichnet. Nun ist $\widehat{g}U(\{\nu,\mu\})$ eine offene Umgebung von $\widehat{g}$ in $\prod G_\lambda$ und $\widehat{g}U(\{\nu,\mu\})\cap\varprojlim G_\lambda=\varnothing$. Also ist $\prod G_\lambda\setminus\varprojlim G_\lambda\subset_\text{o} \prod G_\lambda$.
+\end{proof}
+\fi
+
+\begin{definition}
+Eine Teilmenge $X\subset G$ einer topologischen Gruppe $G$ \textit{erzeugt $G$ topologisch}\index{erzeugt topologisch}, wenn: \[\overline{\langle X\rangle}=G\] $G$ heißt \textit{endlich erzeugt}\index{endlich erzeugt}, wenn $G$ von einer endlichen Menge topologisch erzeugt wird. Wir setzen:
+\[d(G):=\inf\{\#X\mid G=\overline{\langle X\rangle}\} \]
+Eine proendliche Gruppe $G$ heißt \textit{prozyklisch}, wenn $d(G)=1$.
+\end{definition}
+
+\iffalse
+\begin{proposition}\label{1.5}
+Sei $G$ eine proendliche Gruppe und $H\subset G$ eine abgeschlossene Untergruppe.
+\begin{enumerate}[(i)]
+\item Eine Teilmenge $X\subset H$ erzeugt $H$ genau dann topologisch, wenn das Bild von $X$ in $HN/N$ die Gruppe $HN/N$ für jedes $N\lhd_\text{o}G$ erzeugt.
+\item Kann $HN/N$ für jedes $N\lhd_\text{o}G$ durch $d$ Elemente erzeugt werden, so kann $H$ durch $d$ Elemente topologisch erzeugt werden.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Sei zunächst $H=\overline{\langle X\rangle}$. Nach Satz~\ref{1.2.iii} gilt für alle $N\lhd_\text{o}G$:
+\[ H=\bigcap_{N\lhd_\text{o}G} \langle X \rangle N \subset \langle X\rangle N\]
+Sei nun umgekehrt $\langle X\rangle N/N=HN/N$ und $\varnothing\neq U\subset_\text{o}H$ eine Teilmenge. $U$ enthält eine offene Umgebung der Form $hN\cap H$ mit $h\in H,\ N\lhd_\text{o}G$. Nach Voraussetzung ist $hN=xN$ für ein $x\in\langle X\rangle\subset H$, d.h. $U\cap\langle X\rangle \neq\varnothing$. Somit liegt $\langle X\rangle$ dicht in $H$.
+\item Für jedes $N\lhd_\text{o}G$ sei $Y_N$ die Menge aller $d$-Tupel mit Elementen in $G/N$, die $HN/N$ erzeugen. Alle $Y_N$ sind endlich und nichtleer. Ist $\pi_{MN}:G/M\to G/N$ die natürliche Projektion, wobei $M\subset N,\ M,N\lhd_\text{o}G$, so induziert diese eine Abbildung $\pi_{MN}: Y_M\to Y_N$. Also bilden $(Y_N)_{N\lhd_\text{o}G}$ ein projektives System. Nach Satz~\ref{1.4} ist der projektive Limes nichtleer, sei also $(X_N)\in\varprojlim Y_N$. Dann existieren $x_1,\ldots,x_d\in G$, so dass $X_N=(x_1N,\ldots,x_dN)$ für alle $N\lhd_\text{o}G$. Nach (i) ist $\{x_1,\ldots,x_d\}$ somit ein topologisches Erzeugendensystem für $H$. \qedhere
+\end{enumerate}
+\end{proof}
+\fi
+
+\begin{proposition}\label{1.7}
+Ist $G$ eine endlich erzeugte proendliche Gruppe, dann ist jede offene Untergruppe von $G$ ebenfalls endlich erzeugt.
+\end{proposition}
+
+\begin{proof}
+Sei $X$ ein endliches topologisches Erzeugendensystem von $G$ und o.B.d.A. $X^{-1}=X$. Sei $H\subset_\text{o}G$ eine Untergruppe und $T$ ein Repräsentantensystem von den Rechtsnebenklassen $H\backslash G$ mit $1\in T$. Nun ist $T$ endlich. Für jedes $x\in X$ und $t\in T$ gibt es ein $s(t,x)\in T$, so dass $Htx=Hs(t,x)$. Wir setzen:
+\[Y=\{tx\cdot s(t,x)^{-1}\mid t\in T,\ x\in X \}\subset H \]
+Wir zeigen, dass $Y$ nun $H$ topologisch erzeugt. Betrachte die Untergruppe $M:=\overline{\langle Y\rangle}\subset G$. Ist $a\in M,\ t\in T$ und $x\in X$, so gilt:
+\[atx=atx\cdot s(t,x)^{-1} s(t,x)\in MT \]
+Also ist $MTX=MT$. Da $1\in MT$ und $X=X^{-1}$, folgt $\langle X\rangle\subset MT$. Da $T$ endlich, ist $MT$ abgeschlossen, also $MT=G$. Nun gilt $M\subset H$ und $H=MT\cap H=M(T\cap H)=M$.
+\end{proof}
+
+\begin{definition}
+Sei $G$ eine proendliche Gruppe. Die \textit{Frattinigruppe}\index{Frattinigruppe} $\Phi(G)$ von $G$ ist definiert durch:
+\[\Phi(G) = \bigcap\ \{M\mid M\subsetneq  G\text{ maximale offene Untergruppe} \} \]
+Es ist klar, dass $\Phi(G)\lhd G$ abgeschlossen ist. 
+\end{definition}
+
+\begin{proposition}\label{1.9}
+Sei $G$ eine proendliche Gruppe. Dann sind äquivalent:
+\begin{enumerate}[(i)]
+\item $X$ erzeugt $G$ topologisch.
+\item $X\cup\Phi(G)$ erzeugt $G$ topologisch.
+\item $X\Phi(G)/\Phi(G)$ erzeugt $G/\Phi(G)$ topologisch.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i)$\implies$(ii)$\implies$(iii) ist klar. Sei (iii) erfüllt und $H\subset_\text{o}G$ eine Untergruppe, die $X$ enthält. Ist $H\neq G$, so ist $H\subset M$ für eine maximale offene Untergruppe $M\subsetneq G$ und es gilt:
+\[\overline{\langle X\rangle }\Phi(G)/\Phi(G)\subset M/\Phi(G)\neq G/\Phi(G) \]
+ein Widerspruch. Somit ist $H=G$ und nach Satz~\ref{1.2.iii} folgt $\overline{\langle X\rangle}=G$.
+\end{proof}
+
+\begin{remark}
+Die Frattinigruppe von $G$ besteht aus Nichterzeugern, d.h. die Elemente von $\Phi(G)$ sind in jedem topologischen Erzeugendensystem von $G$ überflüssig.
+\end{remark}
+
+\begin{corollary}\label{cor:1.9}
+Sei $G$ eine proendliche Gruppe. Dann gilt $d(G)=d(G/\Phi(G))$.
+\end{corollary}
+
+\section{Endliche $p$-Gruppen}
+
+Sei $p$ eine Primzahl. Wie wir später sehen werden, sind pro"~$p$ Gruppen nichts anderes als ein projektiver Limes von endlichen $p$-Gruppen. Daher werden wir zunächst endliche $p$-Gruppen betrachten und ein paar Hilfsresultate beweisen.
+
+\begin{definition}
+Wir definieren die \textit{untere Zentralreihe} einer Gruppe $G$ wie folgt:
+\[\gamma_1(G):=G,\quad \gamma_{i+1}(G):=[\gamma_i(G),G] \]
+$G$ heißt \textit{nilpotent}, wenn $\gamma_k(G)=1$ für ein $k$ gilt.
+\end{definition}
+
+\begin{proposition}
+Das \textit{Zentrum}\index{Zentrum} $Z(G)=\{x\in G\mid \forall g\in G:\ xg=gx \}\lhd G$ einer nichttrivialen endlichen $p$"~Gruppe $G$ ist nichttrivial.
+\end{proposition}
+
+\begin{proof}
+Folgt aus der Klassengleichung.
+\end{proof}
+
+\begin{proposition}\label{0.4.ii}
+Jede endliche $p$-Gruppe $G$ ist nilpotent.
+\end{proposition}
+
+\begin{proof}
+Per Induktion über $\#G$. Ist $G=\{1\}$, so ist $G$ offensichtlich nilpotent. Sei nun $\#G>1$. Nach Induktionsvoraussetzung ist $G/Z(G)$ nilpotent, also gibt es ein $m$ mit $\gamma_m(G/Z(G))=1$. Es folgt somit $\gamma_{m+1}(G)=[\gamma_m(G),G]\subset [Z(G),G]=1$.
+\end{proof}
+
+\begin{proposition}\label{0.4.iii}
+Sei $G$ eine endliche $p$"~Gruppe. Dann ist jede maximale Untergruppe $M\subsetneq G$ normal und vom Index $p$ in $G$.
+\end{proposition}
+
+\begin{proof}
+Per Induktion über $n$, wobei $\#G=p^n$. Für $n=1$ ist die Aussage klar. Sei $M\subsetneq G$ eine maximale Untergruppe. Da $Z(G)\neq 1$, existiert ein $z\in Z(G)$ von Ordnung $p$. Ist $z\not\in M$, so gilt $M\langle z\rangle=G$ und somit $M\lhd G$ und $[G:M]=p$. Andernfalls ist $M/\langle z\rangle\subsetneq G/\langle z\rangle$ eine maximale Untergruppe und die Behauptung folgt aus der Induktionsvoraussetzung.
+\end{proof}
+
+\begin{lemma}\label{0.4.v:lemma}
+Sei $G$ eine endliche $p$"~Gruppe und $1\neq N\lhd G$. Dann gilt $Z(G)\cap N\neq 1$.
+\end{lemma}
+
+\begin{proof}
+Sei $k\geq 1$ so gewählt, dass $\gamma_k(G)\cap N\neq 1$ und $\gamma_{k+1}(G)\cap N=1$. Dann ist $1\neq\gamma_k(G)\cap N\subset Z(G)\cap N$.
+\end{proof}
+
+\begin{proposition}\label{0.4.v}
+Sei $G$ eine endliche $p$"~Gruppe und $1\neq N\lhd G$. Dann gibt es eine maximale Untergruppe $M\subsetneq N$ mit $M\lhd G$.
+\end{proposition}
+
+\begin{proof}
+Per Induktion über $\#N$. Ist $Z(G)\cap N=N$, d.h. $[N,G]=1$, so ist jede maximale Un\-ter\-grup\-pe $M\subsetneq N$ normal in $G$. Sei also $Z(G)\cap N\subsetneq N$. Da $[N,G]\lhd G$, folgt $K:= [N,G]\cap Z(G)\neq 1$ nach Lemma~\ref{0.4.v:lemma}. Da $[N,G]\subset N$, ist $K\subsetneq N$. Somit gilt $1\neq N/K\lhd G/K$ und nach Induktionsvoraussetzung gibt es eine maximale Untergruppe $M\subsetneq N$ mit $M/K\lhd G/K$, so dass $M\lhd G$ folgt.
+\end{proof}
+
+\begin{lemma}\label{1.23}
+Sei $G=\langle a_1,\ldots,a_d\rangle$ eine endlich erzeugte, nilpotente Gruppe. Dann ist jedes Element in $[G,G]$ von der Form $[x_1,a_1]\cdots[x_d,a_d]$ mit $x_1,\ldots,x_d\in G$.
+\end{lemma}
+
+\begin{proof}
+Sei $\gamma_c(G)\supsetneq \gamma_{c+1}(G)=1$, also $\gamma_c(G)\subset Z(G)$. Wir beweisen die Aussage per Induktion über $c$. Sei $c\geq 2$. Für $u,v\in\gamma_{c-1}(G)$ und $a,b\in G$ gilt:
+\[[u,ab]=[u,b]b^{-1}[u,a]b=[u,a][u,b],\quad [uv,a]=v^{-1}[u,a]v[v,a]=[u,a][v,a] \]
+Insbesondere ist $[u,a^n]=[u,a]^n=[u^n,a]$. Somit besitzt jedes $w\in\gamma_c(G)$ eine Darstellung:
+\[w=[w_1,a_1]\cdots[w_d,a_d],\quad w_1,\ldots,w_d\in\gamma_{c-1}(G) \]
+Sei $g\in[G,G]$. Die Induktionsvoraussetzung, auf $G/\gamma_c(G)$ angewendet, gibt uns $y_1,\ldots,y_d\in G$ und $w\in\gamma_c(G)$, so dass:
+\[g=[y_1,a_1]\cdots [y_d,a_d]w \]
+Schreiben wir $w=\prod[w_i,a_i]$, so folgt $g=\prod[w_iy_i,a_i]$, da $[w_i,a_i]\in Z(G)$.
+\end{proof}
+
+\section{Pro"~$p$ Gruppen}
+
+Sei $p$ eine Primzahl. Im Gegensatz zu einer allgemeinen proendlichen Gruppe hat die Frattinigruppe einer pro"~$p$ Gruppe eine einfache Form und wir können $d(G)$ sehr einfach charakterisieren. Im Fall einer endlich erzeugten pro"~$p$ Gruppe, können wir sogar eine explizite offene Umgebungsbasis induktiv angeben.
+
+\begin{definition}
+Eine \textit{pro"~$p$ Gruppe}\index{pro-$p$ Gruppe} ist eine proendliche Gruppe, in der jeder offene Normalteiler vom Index $p^n$ für ein $n\geq 0$ ist.
+\end{definition}
+
+\begin{remark}
+In einer pro"~$p$ Gruppe besitzt jede offene Untergruppe einen Index $p^n,\ n\geq 0$, da jede offene Untergruppe einen offenen Normalteiler enthält. Jede endliche $p$-Gruppe wird mit der diskreten Topologie zu einer pro"~$p$ Gruppe.
+\end{remark}
+
+\begin{proposition}\label{1.11}
+Sei $G$ eine proendliche Gruppe. Ist $G$ eine pro"~$p$ Gruppe und $H\subset G$ eine abgeschlossene Untergruppe, so ist $H$ eine pro"~$p$ Gruppe. Ist $H\lhd G$ abgeschlossen, so ist auch $G/H$ eine pro"~$p$ Gruppe.
+\end{proposition}
+
+\begin{proof}
+$H$ ist wieder proendlich und es gilt $[H:N]\mid [G:N]$ für alle $N\lhd_\text{o}H$. Ist $H\lhd G$, so ist $G/H$ wieder eine proendliche Gruppe und $\phi:G\to G/H$ ist stetig. Ist $N\lhd_\text{o}G/H$, so ist $\phi^{-1}(N)\lhd_\text{o}G$ und wir haben eine Bijektion $G/\phi^{-1}(N)\to (G/H)/N$.
+\end{proof}
+
+\begin{proposition}\label{1.12}
+Eine topologische Gruppe $G$ ist genau dann eine pro"~$p$ Gruppe, wenn $G$ ein projektiver Limes endlicher, diskreter $p$-Gruppen ist.
+\end{proposition}
+
+\begin{proof}
+Ist $G$ eine pro"~$p$ Gruppe, so ist sie insbesondere proendlich und es gilt $G\cong\varprojlim G/N$, wobei jedes $G/N$ eine endliche $p$"~Gruppe ist. Sei umgekehrt $G=\varprojlim_{\lambda\in\Lambda}G_\lambda$ mit endlichen $p$"~Gruppen $G_\lambda$. Somit enthält jede offene Untergruppe von $G$ eine Untergruppe der Form:
+\[ U(S) = G\cap \Big(\prod_{\lambda\not\in S}G_\lambda\times \prod_{\lambda\in S}\{1\}\Big) \]
+wobei $S\subset\Lambda$ endlich ist. Da $[G:U(S)]$ stets $\prod_{\lambda\in S}\#G_\lambda$ teilt, ist jede offene Untergruppe von $G$ vom $p$-Potenz-Index.
+\end{proof}
+
+\begin{proposition}\label{1.13}
+Ist $G$ eine pro"~$p$ Gruppe, so gilt mit $G^p=\langle g^p\mid g\in G\rangle$:
+\[\Phi(G)=\overline{G^p[G,G]} \]
+\end{proposition}
+
+\begin{proof}
+In jeder endlichen $p$-Gruppe ist nach Satz~\ref{0.4.iii} eine echte maximale Untergruppe stets ein Normalteiler vom Index $p$. Ist also $M\subsetneq_\text{o} G$ eine maximale Untergruppe und $N\lhd_\text{o} G$ mit $N\subset M$, so ist $M/N$ eine maximale Untergruppe von $G/N$ und somit $M\lhd G$ mit $[G:M]=p$. Es folgt $G^p[G,G]\subset M$. Dies zeigt $\Phi(G)=\bigcap M\supset G^p[G,G]$. Da $\Phi(G)$ abgeschlossen ist, folgt $\Phi(G)\supset \overline{G^p[G,G]}$.
+
+Es ist klar, dass $G^p\lhd G$ und $[G,G]\lhd G$. Daher ist $Q:=G/\overline{G^p[G,G]}$ eine pro"~$p$ Gruppe. Ist $N\lhd_\text{o}Q$, so ist $Q/N$ ein endlicher $\mathbb{F}_p$"~Vek\-tor\-raum, d.h. von der Form $Q/N\cong  \mathbb{F}_p^{(m)}$ für ein $m\geq 0$. Somit ist $\Phi(Q/N)=1$, also:
+\[\Phi(G) /\overline{G^p[G,G]}=\Phi(Q)\subset\bigcap_{N\lhd_\text{o}Q}N=1\qedhere \]
+\end{proof}
+
+\begin{proposition}\label{1.14}
+Sei $G$ eine pro"~$p$ Gruppe. Dann ist $G$ genau dann endlich erzeugt, wenn $\Phi(G)\lhd_\text{o}G$.
+\end{proposition}
+
+\begin{proof}
+Ist $\Phi(G)\lhd_\text{o}G$, so ist $G/\Phi(G)$ endlich und besitzt daher ein endliches Erzeugendensystem. Nach Satz~\ref{1.9} ist auch $G$ endlich erzeugt. 
+
+Sei nun $G=\overline{\langle X\rangle}$ mit $d:=\#X<\infty$. Ist $N\lhd_\text{o}G$ mit $\Phi(G)\subset N$, so ist $G/N$ nach Satz~\ref{1.13} ein von $d$ Elementen erzeugter $\mathbb{F}_p$"~Vektorraum, d.h. $[G:N]\leq p^d$. Wähle nun ein $M\lhd_\text{o}G$ mit $\Phi(G)\subset M$ und maximalem Index $[G:M]$. Wir zeigen nun $M\subset N$ für jedes $N\lhd_\text{o}G$ mit $\Phi(G)\subset N$. Es gilt $\Phi(G)\subset M\cap N\lhd_\text{o}G$, daher $[G:M\cap N]\leq [G:M]$. Also ist die natürliche Surjektion $G/M\cap N\to G/M$ ein Isomorphismus. Es folgt $M=M\cap N$, d.h. $M\subset N$. Da $\Phi(G)$ normal und abgeschlossen ist, gilt mit Satz~\ref{1.2.iii}:
+\[\Phi(G)=\bigcap\ \{N\mid \Phi(G)\subset N\lhd_\text{o} G\} = M \lhd_\text{o}G\qedhere \]
+\end{proof}
+
+\begin{corollary}\label{cor:1.19}
+Sei $G$ eine pro"~$p$ Gruppe. Dann gilt $d(G)=\dim_{\mathbb{F}_p}(G/\Phi(G))$.
+\end{corollary}
+
+\begin{proof}
+Ist $G$ eine endlich erzeugte pro"~$p$ Gruppe, so ist $G/\Phi(G)$ nach Satz~\ref{1.14} und Satz~\ref{1.13} diskret und ein $\mathbb{F}_p$-Vektorraum. Jedes Erzeugendensystem von $G/\Phi(G)$ als topologische Gruppe bildet somit ein Erzeugendensystem von $G/\Phi(G)$ als $\mathbb{F}_p$-Vektorraum und umgekehrt. Daher gilt mit Satz~\ref{cor:1.9}:
+\[d(G)=d(G/\Phi(G))= \dim_{\mathbb{F}_p}(G/\Phi(G))\qedhere \] 
+\end{proof}
+
+\paragraph{} Wir wollen nun die \textit{untere $p$-Zentralreihe} einführen. Wir werden zeigen, dass diese Untergruppen in einer endlich erzeugten pro"~$p$ Gruppe sogar eine offene, abzählbare Umgebungsbasis der $1\in G$ bilden. Ein Vorteil dieser Umgebungsbasis ist, dass wir sie induktiv angeben können.
+
+\begin{definition}
+Sei $G$ eine pro"~$p$ Gruppe. Wir setzen:
+\[P_1(G):=G,\quad P_{i+1}(G)=\overline{P_i(G)^p [P_i(G),G] },\ i\geq 1 \]
+Nach Satz~\ref{1.13} ist $\Phi(G)=P_2(G)$.
+\end{definition}
+
+\begin{remark}
+Beachte, dass $\Phi(P_i(G))\subset P_{i+1}(G)$ für alle $i$ gilt. Ferner ist klar, dass diese Gruppen Normalteiler in $G$ bilden. Wir werden später sehen, dass der Abschluss nicht nötig ist.
+\end{remark}
+
+\begin{proposition}\label{1.16}
+Sei $G$ eine endlich erzeugte pro"~$p$ Gruppe. Dann ist $P_i(G)\subset G$ offen für alle $i$ und $\{P_i(G)\mid i\geq 1\}$ bildet eine offene Umgebungsbasis der $1\in G$.
+\end{proposition}
+
+\begin{proof}
+Setze $G_n:=P_n(G)$. Offenbar ist $G_1=G$ endlich erzeugt und offen in $G$. Sei nun $n\geq 1$ und $G_n$ endlich erzeugt und offen in $G$. Satz~\ref{1.14} zeigt, dass $\Phi(G_n)\subset_\text{o} G_n$. Da $\Phi(G_n)\subset G_{n+1}\subset G_n$, ist $G_{n+1}\subset_\text{o}G_n\subset_\text{o}G$ und Satz~\ref{1.7} zeigt, dass $G_{n+1}$ endlich erzeugt ist.
+
+Es genügt nun zu zeigen, dass jeder offene Normalteiler von $G$ ein $G_i$ für ein $i$ enthält. Sei $N\lhd_\text{o}G$. Dann ist $G/N$ eine endliche $p$-Gruppe. Analog zu Satz~\ref{0.4.ii} zeigt man $P_k(G/N)=1$ für ein $k$. Also reicht es zu zeigen, dass $P_n(G)N/N\subset P_n(G/N)$ für alle $n$ gilt. Für $n=1$ ist die Aussage klar. Es gelte $G_nN/N\subset P_n(G/N)$ für ein $n$. Sei $M/N=P_{n+1}(G/N)$. Dann ist $M$ abgeschlossen in $G$ und $G_n^p[G_n,G]N\subset M$, also $G_{n+1}N\subset M$. Die Behauptung folgt per vollständiger Induktion.
+\end{proof}
+
+\begin{proposition}\label{1.19}
+Ist $G$ eine endlich erzeugte pro"~$p$ Gruppe, so ist $[G,G]\subset G$ abgeschlossen.
+\end{proposition}
+
+\begin{proof}
+Sei $G$ topologisch von $\{a_1,\ldots,a_d\}$ erzeugt. Setze:
+\[X:=\{[g_1,a_1]\cdots[g_d,a_d]\mid g_1,\ldots,g_d\in G \} \]
+Dann ist $X$ als Bild der stetigen Abbildung $G^{(d)}\to G,\ (g_1,\ldots,g_d)\mapsto \prod [g_i,a_i]$ kompakt und somit abgeschlossen. Sei $N\lhd_\text{o}G$. Dann ist $G/N$ eine endliche $p$"~Gruppe mit $G/N=\langle a_1N,\ldots,a_dN\rangle$. Nach Lemma~\ref{1.23} gilt $[G/N,G/N]=XN/N$, also $[G,G]N=XN$. Also folgt:
+\[[G,G]\subset\bigcap_{N\lhd_\text{o}G}XN=\overline{X}=X \]
+Da $X\subset [G,G]$, ist $[G,G]=X$ abgeschlossen.
+\end{proof}
+
+\begin{corollary}\label{1.20}
+Ist $G$ eine endlich erzeugte pro"~$p$ Gruppe, so gilt für alle $i$:
+\[\Phi(G)=G^p[G,G],\quad P_{i+1}(G)=P_i(G)^p[P_i(G),G] \]
+\end{corollary}
+
+\begin{proof}
+Setze $G_i:=P_i(G)$. Die Menge $G^{\{p\}}=\{g^p\mid g\in G\}$ ist als Bild der stetigen Abbildung $G\to G,\ g\mapsto g^p$ kompakt und somit abgeschlossen in $G$. Da $G/[G,G]$ abelsch ist, folgt $G^p[G,G]=G^{\{p\}}[G,G]$. Da $[G,G]$ nach \ref{1.19} abgeschlossen ist, sehen wir, dass $G^p[G,G]$ abgeschlossen ist, also gleich $\Phi(G)$. 
+
+Satz~\ref{1.16} und Satz~\ref{1.14} zeigen, dass $G_i$ eine endlich erzeugte pro"~$p$ Gruppe ist und daher $\Phi(G_i)\subset_\text{o}G_i$ gilt für alle $i$. Den ersten Teil auf $G_i$ angewendet ergibt:
+\[\Phi(G_i)=G_i^p[G_i,G_i]\subset G_i^p [G_i,G]\]
+Es folgt $G_i^p[G_i,G]\subset_\text{o}G_i\subset_\text{o}G$, also ist $G_i^p[G_i,G]$ abgeschlossen in $G$ und gleich $G_{i+1}$. Die Behauptung folgt per Induktion.
+\end{proof}
+
+\paragraph{} Wir wollen nun zeigen, dass jede Untergruppe einer endlich erzeugten pro"~$p$ Gruppe von endlichem Index offen ist. Als Konsequenz werden wir sehen, dass die Topologie einer endlich erzeugten pro"~$p$ Gruppe schon von ihrer Gruppenstruktur eindeutig bestimmt wird.
+
+\begin{lemma}\label{1.18}
+Sei $G$ eine pro"~$p$ Gruppe und $K\lhd G$ ein Normalteiler von endlichem Index. Dann ist $[G:K]$ eine $p$-Potenz.
+\end{lemma}
+
+\begin{proof}
+Sei $[G:K]=m=p^r q$ mit $p\nmid q$ und setze $X:=\{g^m\mid g\in G\}$. Dann ist $X\subset G$ als Bild der stetigen Abbildung $G\to G,\ g\mapsto g^m$ abgeschlossen und $X\subset K$. Sei nun $g\in G$ und $N\lhd_\text{o}G$. Wähle ein $e$, so dass $g^{p^e}\in N$. Wir können o.B.d.A. $e\geq r$ annehmen.  Es existieren $a,b\in\mathbb{Z}$ mit $aq+bp^{e-r}=1$, also $am+bp^e=p^r$. Es folgt:
+\[g^{p^r}=(g^a)^m(g^{p^e})^b\in XN \]
+Da $r$ unabhängig von $N$ ist, folgt $g^{p^r}\in \bigcap_{N\lhd_\text{o}G} XN=X\subset K$. Somit ist $G/K$ eine $p$-Gruppe.
+\end{proof}
+
+\begin{lemma}
+Sei $G$ eine Gruppe und $H\subset G$ eine Untergruppe von endlichem Index. Dann enthält $H$ einen Normalteiler in $G$ von endlichem Index.
+\end{lemma}
+
+\begin{proof}
+Setze $n:=[G:H]$. Für jedes $g\in G$ ist die Abbildung $\sigma_g : G/H\to G/H,\ \overline{x}\mapsto \overline{gx}$ eine Bijektion. Fassen wir $\sigma_g$ als Element der symmetrischen Gruppe $\mathfrak{S}_n$ auf, so ist die Abbildung $\phi:G\to \mathfrak{S}_n,\ g\mapsto \sigma_g$ ein Homomorphismus. Für $N:=\ker(\phi)\lhd G$ gilt $N\subset H$. Ferner gilt $[G:N]=\#\operatorname{im}(\phi)\leq\#\mathfrak{S}_n = n!$.
+\end{proof}
+
+\begin{theorem}\label{1.17}
+Ist $G$ eine endlich erzeugte pro"~$p$ Gruppe, so ist jede Untergruppe von endlichem Index in $G$ offen.
+\end{theorem}
+
+\begin{proof}
+Sei $K\subsetneq G$ eine Untergruppe von endlichem Index. Nach vorherigem Lemma können wir $K\lhd G$ annehmen. Per Induktion nach $[G:K]$ können wir $K\subset_\text{o}M$ annehmen, wenn $M$ eine endlich erzeugte pro"~$p$ Gruppe mit $K\subset M\subsetneq G$ ist. Sei $M:=G^p[G,G]K=\Phi(G)K$ Da $\Phi(G)$ nach Satz~\ref{1.14} offen ist, ist $M\subset_\text{o}G$ und daher nach Satz~\ref{1.7} endlich erzeugt. Nach Lemma~\ref{1.18} ist $G/K$ eine endliche $p$-Gruppe. Ist also $M=G$, so folgt $\Phi(G/K)=\Phi(G)K/K=G/K$, ein Widerspruch, da nichttriviale, endliche $p$-Gruppen stets echte maximale Untergruppen besitzen. Nach der Induktionsvoraussetzung folgt $K\subset_\text{o}M\subset_\text{o}G$.
+\end{proof}
+
+\begin{corollary}\label{1.21}
+Jeder abstrakte Gruppenhomomorphismus $\theta :G\to H$ von einer endlich erzeugten pro"~$p$ Gruppe $G$ in einer proendlichen Gruppe $H$ ist stetig.
+\end{corollary}
+
+\begin{proof}
+Ist $K\subset_\text{o} H$ eine Untergruppe, so ist $\theta^{-1}(K)$ eine Untergruppe vom Index kleiner gleich $[H:K]$, also offen in $G$ nach Theorem~\ref{1.17}. Da solche $K$ eine offene Umgebungsbasis der $1\in H$ bilden, ist $\theta$ stetig.
+\end{proof}
+
+\begin{remark}
+Somit ist jeder bijektiver Homomorphismus von einer endlich erzeugten pro"~$p$ Gruppe $G$ in eine proendliche Gruppe stets stetig und somit ein Homöomorphismus, da die Räume kompakt und hausdorffsch sind. 
+
+Insbesondere ist $G$ mit einer ggf. anderen proendlichen Topologie homöomorph zu $G$ mit ihrer ursprünglichen Topologie via der Identitätsabbildung. In diesem Sinne ist die Topologie einer endlich erzeugten pro"~$p$ Gruppe eindeutig durch ihre Gruppenstruktur bestimmt.
+\end{remark}
+
+\section{Erzeuger \& Relationen}
+
+Die Golod-Shafarevich Ungleichung macht Aussagen über die minimale Anzahl der \textit{Erzeugern} und \textit{Relationen} von pro"~$p$ Gruppen. Was diese in der Kategorie der pro"~$p$ Gruppen sind, werden wir in diesem Abschnitt definieren.
+
+\begin{definition}
+Sei $\Gamma$ eine gewöhnliche Gruppe und $\Lambda$ die Familie aller Normalteiler vom $p$-Potenz-Index in $\Gamma$. Dann bilden die Quotienten $(\Gamma/N)_{N\in\Lambda}$ ein projektives System endlicher $p$-Gruppen. Die \textit{pro"~$p$ Vervollständigung}\index{pro-$p$ Vervollständigung} von $\Gamma$ ist definiert als:
+\[\widehat{\Gamma} :=\varprojlim_{N\in\Lambda} \Gamma/N \]
+\end{definition}
+
+\begin{proposition} \textit{(Universaleigenschaft der pro"~$p$ Vervollständigung)}
+Sei $\eta : \Gamma\to\widehat{\Gamma}$ die Abbildung, die ein Element $g\in\Gamma$ auf die konstante Folge $(g)_{N\in\Lambda}$ schickt. Für alle Homomorphismen $\phi:\Gamma\to G$ in eine pro"~$p$ Gruppe $G$ gibt es einen eindeutig bestimmten, stetigen Homomorphismus $\widehat{\phi}:\widehat{\Gamma}\to G$ mit $\phi = \widehat{\phi}\circ\eta$.
+\end{proposition}
+
+\begin{proof}
+Sei $N\lhd_\text{o}G$ und betrachte $\varphi_N:\Gamma\stackrel{\phi}{\to} G\to G/N$. Der Kern $\ker(\varphi_N)$ ist ein Normalteiler in $\Gamma$ vom $p$-Potenz-Index, da $\varphi_N$ eine Injektion $\Gamma/\ker(\varphi_N)\to G/N$ induziert. Die Abbildungen $\widehat{\varphi}_N:\widehat{\Gamma}\to\Gamma/\ker(\varphi_N)\to G/N$ sind kompatibel, stetig und setzen sich zu einer stetigen Abbildung $\widehat{\varphi}:\widehat{\Gamma}\to G$ zusammen. $\phi=\widehat{\phi}\circ\eta$ ist klar. Ist $\widehat{\psi}$ eine weitere solche Abbildung, so stimmen $\widehat{\psi}$ und $\widehat{\phi}$ auf der dichten Teilmenge $\eta(\Gamma)\subset G$ überein. Da diese stetig sind und $G$ hausdorffsch, stimmen sie auf ganz $\widehat{\Gamma}$ überein.
+\end{proof}
+
+\begin{definition}
+Sei $X$ eine endliche Menge und $F(X)$ die freie Gruppe auf $X$. Dann heißt die pro"~$p$ Vervollständigung $\widehat{F}(X) := \widehat{F(X)}$ von $F(X)$ die \textit{freie pro"~$p$ Gruppe}\index{freie pro-$p$ Gruppe} auf $X$.
+\end{definition}
+
+\begin{remark}
+Für eine unendliche Menge $X$ muss die Definition einer freien pro"~$p$ Gruppe auf $X$ ein wenig modifiziert werden. Siehe z.B. \cite{Wil98}.
+\end{remark}
+
+\begin{example}
+Die pro"~$p$ Vervollständigung von $\mathbb{Z}$ ist gerade $\mathbb{Z}_p$ und in diesem Fall ist die natürliche Abbildung $\eta:\mathbb{Z}\to\mathbb{Z}_p$ injektiv, da $\ker(\eta)=\bigcap_{n\in\mathbb{N}} p^n\mathbb{Z}=0$. Daher ist $\mathbb{Z}_p$ die freie pro"~$p$ Gruppe auf einem Erzeuger.
+\end{example}
+
+\begin{proposition} \textit{(Universaleigenschaft der freien pro"~$p$ Gruppe auf einer endlichen Menge $X$)} 
+Jede Abbildung $\phi:X\to G$ in eine pro"~$p$ Gruppe $G$ setzt sich eindeutig zu einem stetigen Homomorphismus $\widehat{\phi} : \widehat{F}(X)\to G$ fort.
+\end{proposition}
+
+\begin{proof}
+$\phi:X\to G$ setzt sich eindeutig zu einem Homomorphismus $\phi:F(X)\to G$ fort. Nach der Universaleigenschaft der pro"~$p$ Vervollständigung erhalten wir einen eindeutigen, stetigen Homomorphismus $\widehat{\phi}:\widehat{F}(X)\to G$ mit $\widehat{\phi}\circ\eta = \phi$, wobei $\eta: F(X)\to\widehat{F}(X)$ die natürliche Abbildung bezeichnet. Nach Einschränkung auf $X\subset F(X)$ erhalten wir $\widehat{\phi}\circ i=\phi$ mit $i:=\eta|_X$. Zu zeigen ist nur noch, dass $i$ eine Injektion ist.
+
+Sei also $x,y\in X$ mit $x\neq y$. Betrachte die Abbildung $\varphi:X\to\mathbb{Z}_p$, die $x$ nach $1\in\mathbb{Z}_p$ und alle anderen Elemente nach $0\in\mathbb{Z}_p$ schickt. Nach dem erstem Teil erhalten wir einen stetigen Homomorphismus $\widehat{\varphi}:\widehat{F}(X)\to\mathbb{Z}_p$ mit $\widehat{\varphi}\circ i=\varphi$. Nach Konstruktion ist $\varphi(x)\neq\varphi(y)$, daher folgt $i(x)\neq i(y)$.
+\end{proof}
+
+\begin{remark}
+Wir haben also eine Inklusion $X\subset \widehat{F}(X)$ via $i$. Da $\eta(F(X))\subset\widehat{F}(X)$ dicht liegt, folgt $\overline{\langle X\rangle}=\widehat{F}(X)$, d.h. $\widehat{F}(X)$ wird von $X$ topologisch erzeugt.
+\end{remark}
+
+\iffalse
+\begin{proposition}\label{prop:freepropgroup2}
+Sei $Y\subset X$ endliche Mengen und $F(Y)\subset F(X)$ die freie Gruppen auf $Y$ bzw. $X$. Setze $K$ als den kleinsten Normalteiler in $F(X)$, der $Y$ enthält und $N$ als den kleinsten Normalteiler in $\widehat{F}(X)$, der $Y$ enthält. Dann ist $F(X)/K$ eine freie Gruppe und $\widehat{F}(X)/\overline{N}$ eine freie pro"~$p$ Gruppe auf $\#X-\#Y$ Erzeugern.
+\end{proposition}
+
+\begin{proof}
+Wir zeigen, dass $\widehat{F}(X)/\overline{N}$ die Universaleigenschaft von $\widehat{F}(X\setminus Y)$ erfüllt. Sei also $X\setminus Y\to G$ eine Abbildung in eine pro"~$p$ Gruppe. In dem wir Elemente aus $Y$ auf $1\in G$ schicken, erhalten wir eine Abbildung $X\to G$ und somit einen eindeutigen, stetigen Homomorphismus $\phi:\widehat{F}(X)\to G$. Offensichtlich gilt $N\subset\ker(\phi)$. Da $G$ hausdorffsch, ist $\ker(\phi)= \phi^{-1}(\{1\})$ abgeschlossen in $G$. Daher gilt $\overline{N}\subset\ker(\phi)$. $\phi$ induziert eine Abbildung $\tilde{\phi}:\widehat{F}(X)/\overline{N}\to G$. Für $F(X)/K$ analog.
+\end{proof}
+
+\begin{proposition}\label{prop:freepropgroup3}
+Seien $Y\subset X$ endliche Mengen. Dann induziert die Inklusion $F(Y)\to F(X)$ auf den abstrakten freien Gruppen eine Inklusion $\widehat{F}(Y)\to\widehat{F}(X)$.
+\end{proposition}
+
+\begin{proof}
+Sei $N\lhd F(Y)$ vom $p$-Potenz-Index. Wir zeigen zunächst, dass ein Normalteiler $M\lhd F(X)$ vom $p$-Potenz-Index existiert mit $N=F(Y)\cap M$. Betrachte den kleinsten Normalteiler $K\lhd F(X)$, der $X\setminus Y$ enthält und das folgende kommutative Diagramm:
+\[\xymatrix{
+F(X) \ar[r]^-\pi & F(X)/K\\
+F(Y) \ar[u]^i \ar[ru]_\phi
+} \]
+wobei $\phi$ der Isomorphismus aus Satz~\ref{prop:freepropgroup2}, $\pi$ die kanonische Projektion und $i$ die natürliche Inklusion bezeichnet. Setze $M:= \pi^{-1}(\phi(N))\lhd F(X)$. Per Definition gilt: 
+\[F(X)/M\cong (F(X)/K)/\phi(N)\cong F(Y)/N\]
+Daher ist $M$ vom $p$-Potenz-Index und es gilt $F(Y)\cap M = i^{-1}(M) = N$. Wir erhalten für jedes $M\lhd F(X)$ vom $p$-Potenz-Index kompatible Inklusionen $F(Y)/i^{-1}(M)\hookrightarrow F(X)/M$. Nun läuft $i^{-1}(M)$ über alle Normalteiler in $F(Y)$ vom $p$-Potenz-Index. Unter $\varprojlim$ erhalten wir einen stetigen Homomorphismus $\widehat{F}(Y)\hookrightarrow\widehat{F}(X)$.
+\end{proof}
+\fi
+
+\begin{definition}
+Sei $G$ eine pro"~$p$ Gruppe. Für eine endliche Menge $X$ und eine beliebige Teilmenge $R\subset \widehat{F}(X)$ schreiben wir $G=\langle X;R\rangle$, wenn:
+\[G \cong \widehat{F}(X)/\overline{N(R) } \]
+wobei $N(R)$ den kleinsten Normalteiler in $\widehat{F}(X)$ bezeichnet, der $R$ enthält. $\langle X;R\rangle$ heißt \textit{Darstellung}\index{Darstellung} von $G$. Ist $d(G)$ endlich, so heißt die Darstellung \textit{minimal}\index{Darstellung!minimal}, wenn $\#X=d(G)$.
+
+Ist $X$ ein endliches topologisches Erzeugendensystem von $G$, so lässt sich die natürliche Inklusion $X\hookrightarrow G$ zu einem surjektiven Homomorphismus $\pi:\widehat{F}(X)\to G$ fortsetzen. Ist $R\subset \ker(\pi)$, so induziert $\pi$ eine Abbildung $\widehat{F}(X)/\overline{N(R) }\to G$. Gilt $\overline{N(R)}=\ker(\pi)$, so ist $\langle X;R\rangle$ eine Darstellung von $G$.
+\end{definition}
+
+\begin{definition}
+Für eine endlich erzeugte pro"~$p$ Gruppe $G$, definieren wir:
+\[t(G):=\inf\{ \#R \mid G= \langle X;R\rangle,\ \#X = d(G) \} \]
+\end{definition}
+
+\begin{remark}
+Eine endliche $p$"~Gruppe $G$ mag als pro"~$p$ Gruppe eine Darstellung auf $d(G)$ Erzeugern und $t(G)$ Relationen haben, aber die Anzahl an Relationen als abstrakte Gruppe kann deutlich größer als $t(G)$ sein.
+\end{remark}
+
+\iffalse
+\begin{lemma}\label{4.33}
+Sei $G$ eine pro"~$p$ Gruppe und $K\lhd_\text{o}G$. Ist $K$ endlich darstellbar, so auch $G$.
+\end{lemma}
+
+\begin{proof}
+Sei zunächst $[G:K]=p$. Dann ist $G=\langle y\rangle K$ mit $y^p\in K$. Sei $\langle X;R\rangle$ eine endliche Darstellung von $K$ und $\pi:\widehat{F}(X)\to K$ der zugehörige Epimorphismus. Es existiert ein $v\in \widehat{F}(X)$ mit $y^p=\pi(v)$. Für alle $x\in X$ gibt es ein $w_x\in \widehat{F}(X)$, so dass $y^{-1}\pi(x)y=\pi(w_x)$. Nun setze $Y=X\cup\{t\}$ mit $t\not\in X$ und definiere ein Epimorphismus $\overline{\pi}:\widehat{F}(Y)\to G$ durch $\overline{\pi}(x)=\pi(x)$ für alle $x\in X$ und $\overline{\pi}(t)=y$. Nach Satz~\ref{prop:freepropgroup3} haben wir eine Inklusion $\widehat{F}(X)\subset\widehat{F}(Y)$. Setze:
+\[S:=\{t^pv^{-1}\}\cup\{t^{-1}xtw_x^{-1}\mid x\in X\}\subset \widehat{F}(Y) \]
+Sei $N=\overline{ N(R\cup S)}\subset \widehat{F}(Y)$ und setze $M:=\ker(\overline{\pi})$. Dann gilt $N\subset M$. Die Re\-la\-tionen $S=1$ in $\widehat{F}(Y)/N$ zeigen $\widehat{F}(X)N\lhd \widehat{F}(Y)$ und $[\widehat{F}(Y):\widehat{F}(X)N]\leq p$. Da $\overline{\pi}(\widehat{F}(Y))=G$ und $\overline{\pi}(\widehat{F}(X)N)=K$, folgt $M\subset \widehat{F}(X)N$, also $M=(M\cap \widehat{F}(X))N$. Nun gilt:
+\[M\cap \widehat{F}(X)=\ker(\pi)=\overline{N(R)} \subset N \]
+Somit gilt $M=N$. Also ist $\langle Y;R\cup S\rangle$ eine endliche Darstellung von $G$. 
+
+Sei nun $[G:K]=p^k$ für ein $k>1$. Da $G/K$ eine $p$"~Gruppe ist, existiert eine Reihe von Normalteilern in $G/K$:
+\[ 1 = G_0/K\subset G_1/K\subset\ldots\subset G_k/K=G/K \]
+mit $\#G_i/K=p^i$ und $(G_i/K)/(G_{i-1}/K)\cong\mathbb{Z}/p\mathbb{Z}$ für alle $i$. Insbesondere gilt $G_i\lhd_\text{o} G$ und $[G_i:G_{i-1}]=p$ für alle $i$. Da $K=G_0$, folgt nun, dass $G_1$ endlich darstellbar ist. Induktiv folgt, dass $G=G_k$ endlich darstellbar ist.
+\end{proof}
+\fi
+
+\chapter{Analytische pro"~$p$ Gruppen}
+
+In diesem Kapitel werden wir uns \textit{$p$-adisch analytische Gruppen} zuwenden, d.h. Gruppen, die eine Mannigfaltigkeitsstruktur über $\mathbb{Q}_p$ tragen und deren Gruppenoperationen analytische Funktionen sind. Es stellt sich heraus, dass man solche Mannigfaltigkeiten rein gruppentheoretisch beschreiben kann. Lazard zeigt dies in seinem Artikel \cite{Laz65}. Zusammen mit seinem Resultat zeigen Lubotzky und Mann in \cite{LM87} über \textit{potenzreiche pro"~$p$ Gruppen}:
+
+\begin{theorem}\label{thm:analytische-pro-p-gruppe}
+Eine pro"~$p$ Gruppe $G$ ist genau dann $p$-adisch analytisch, wenn $G$ endlich erzeugt ist und eine offene, potenzreiche pro"~$p$ Gruppe $H$ enthält, die normal in $G$ ist.
+\end{theorem}
+
+\paragraph{} Nach Satz~\ref{1.7} ist $H$ endlich erzeugt. Wir werden in dieser Arbeit hauptsächlich diese Charakterisierung einer analytischen pro"~$p$ Gruppe verwenden. Um die Struktur einer analytischen pro"~$p$ Gruppe zu verstehen, wenden wir uns daher zunächst potenzreichen Gruppen zu.
+
+\section{Potenzreiche $p$"~Gruppen}
+
+Wir wollen uns, genau wie bei pro"~$p$ Gruppen, zuerst auf endliche $p$"~Gruppen beschränken. Wir werden sehen, dass potenzreiche $p$"~Gruppen (und später auch potenzreiche pro"~$p$ Gruppen) viele einfache strukturelle Merkmale mit abelschen Gruppen teilen.
+
+\begin{definition}
+Sei $G$ eine endliche $p$"~Gruppe.
+\begin{enumerate}[(i)]
+\item $G$ heißt \textit{potenzreich}\index{potenzreiche Gruppe}, wenn $p$ ungerade und $[G,G]\subset G^p$, oder $p=2$ und $[G,G]\subset G^4$ gilt.
+\item Sei $N\subset G$ eine Untergruppe. Dann heißt $N$ \textit{potenzreich eingebettet}\index{potenzreich eingebettet} in $G$, wenn $p$ ungerade und $[N,G]\subset N^p$, oder $p=2$ und $[N,G]\subset N^4$ gilt. Wir schreiben in diesem Fall $N\lhd_\text{p.e.}G$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+Ist $p$ ungerade, so folgt aus Satz~\ref{1.13} $G^p=\Phi(G)$. Ist $N\lhd_\text{p.e.}G$, so ist $N$ insbesondere potenzreich und es gilt $N\lhd G$, da $g^{-1}n g=n[n,g]\in N$ für alle $n\in N$ und $g\in G$.
+\end{remark}
+
+\begin{lemma}\label{2.2}
+Sei $G$ eine endliche $p$"~Gruppe und $N,K,W\lhd G$ mit $N\subset W$. Dann gilt:
+\begin{enumerate}[(i)]
+\item Ist $N\lhd_\text{p.e.}G$, so gilt $NK/K\lhd_\text{p.e.}G/K$.
+\item Ist $p$ ungerade und $K\subset N^p$, oder $p=2$ und $K\subset N^4$, so gilt: \[N\lhd_\text{p.e.}G \iff N/K\lhd_\text{p.e.}G/K\]
+\item Ist $N\lhd_\text{p.e.}G$ und $x\in G$, so ist $\langle N,x\rangle$ potenzreich.
+\item Ist $N$ nicht potenzreich in $W$ eingebettet, so gibt es ein $J\lhd G$ mit:
+\begin{align*}
+N^p[[N,W],W] \subset J\subsetneq N^p[N,W],\quad [N^p[N,W]:J]=p,&\quad\text{wenn $p$ ungerade}\\
+\text{oder}\quad N^4[N,W]^2[[N,W],W]\subset J\subsetneq N^4[N,W],\quad [N^4[N,W]:J]=2,&\quad\text{wenn $p=2$}
+\end{align*}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) folgt direkt aus der Definition. Für (ii) sei $K\subset N^p$ bzw. $K\subset N^4$ und $N/K\lhd_\text{p.e.}G/K$. Dann gilt für alle $n\in N,\ g\in G$ stets $[n,g]\in N^pK=N^p$ bzw. $[n,g]\in N^4$, also $N\lhd_\text{p.e.}G$. 
+
+Für (iii) setze $H:=\langle N,x\rangle$. Nun ist $H/[N,H]$ abelsch, da alle Erzeuger miteinander kommutieren. Daher gilt $[H,H]\subset [N,H]$ und es folgt $[H,H]= [N,H]\subset[N,G]\subset N^p\subset H^p$ bzw. $[H,H]\subset H^4$. Somit ist $H$ potenzreich. 
+
+Für (iv) sei $p$ ungerade und $M:=N^p[N,W]\neq N^p$. Nun ist $N\lhd M$ und daher $N^p\lhd M$. Nach Satz~\ref{0.4.v} gibt es eine maximale Untergruppe $J/N^p\subset M/N^p$ mit $J/N^p\lhd G/N^p$, also $N^p\subset J$, $J\lhd M$, $J\lhd G$ und $[M:J]=p$ nach Satz~\ref{0.4.iii}. Schließlich ist $M/J$ einfach und nach Lemma~\ref{0.4.v:lemma} $M/J\cap Z(G/J)\neq 1$, also folgt $M/J\subset Z(G/J)$ und:
+\[N^p[[N,W],W]\subset N^p[M,G] \subset J\subset M \]
+Sei nun $p=2$ und $M:=N^4[N,W]\neq N^4$. Genauso wie oben finden wir ein $J\lhd G$, so dass $N^4\subset J\lhd M$ und $[M:J]=2$. Mit $M/J\subset Z(G/J)$ folgt:
+\[N^4[N,W]^2[[N,W],W]\subset N^4 M^2 [M,G]\subset J\subset M\qedhere \]
+\end{proof}
+
+\begin{remark}
+Um $N\lhd_\text{p.e.}W$ zu zeigen, können wir mit (ii) und (iv) ohne Einschränkung $N^p=1$ und $[[N,W],W]=1$ bzw. $N^4=[N,W]^2=[[N,W],W]=1$ annehmen. Diese Reduktionstechnik werden wir in aller Ausführlichkeit im Beweis des nächsten Satzes sehen.
+\end{remark}
+
+\begin{proposition}\label{2.3}
+Sei $G$ eine endliche $p$"~Gruppe und $N\subset G$ eine Untergruppe. Ist $N\lhd_\text{p.e.}G$, so folgt auch $N^p\lhd_\text{p.e.}G$.
+\end{proposition}
+
+\begin{proof}
+Sei $p$ zunächst ungerade. Nach Lemma~\ref{2.2} (ii) können wir durch Reduktion modulo $(N^p)^p$ o.B.d.A. $(N^p)^p=1$ annehmen. Ist $N^p$ nicht potenzreich in $G$ eingebettet, so gibt es nach Lemma~\ref{2.2} (iv) ein $J\lhd G$, so dass:
+\[ [[N^p,G],G]\subset J\subsetneq [N^p,G],\quad [[N^p,G]:J]=p \]
+Da $N^p\lhd G$, ist $J\subset[N^p,G]\subset N^p$. Nun ist $[(N/J)^p, G/J]= [N^p,G]/J$ eine Gruppe der Ordnung $p$ und damit nichttrivial. Daher ist $N^p/J$ nicht in $G/J$ potenzreich eingebettet und wir können durch Reduktion modulo $J$ zusätzlich $[[N^p,G],G]=1$ annehmen. Es folgt $[[N,G],G]\subset [N^p,G]\subset Z(G)$. Für jedes $x\in N$ und $g\in G$ gilt $[[x,g],vw]=[[x,g],w]w^{-1}\cdot [[x,g],v]w=[[x,g],v]\cdot[[x,g],w]$. Es folgt:
+\begin{align*}
+[x^p,g] &=\prod_{i=1}^p x^{-(p-i)}[x,g]x^{p-i}= \prod_{i=1}^p [x,g] \cdot[[x,g],x^{p-i}]\\
+&=\prod_{i=1}^p [x,g]\cdot [[x,g],x]^{p-i}= [x,g]^p\cdot [[x,g],x]^\frac{p(p-1)}{2}\in [N,G]^p\subset (N^p)^p
+\end{align*}
+Somit ist $[N^p,G]\subset (N^p)^p$, ein Widerspruch. Sei nun $p=2$. In diesem Fall gilt $[N,G]\subset N^4$ und wir können $(N^2)^4 = [N^2,G]^2= [[N^2,G],G]=1$ annehmen. Für alle $x\in N$ und $g\in G$ gilt:
+\[[x^4,g]=[x^2,g][[x^2,g],x^2][x^2,g]=[x^2,g]^2=1 \]
+Somit folgt $N^4\subset Z(G)$. Da $[[x,g],x]\in [[N,G],G]\subset [N^4,G]=1$ und $[x,g]\in[N,G]\subset N^4$, folgt:
+\[[x^2,g]=[x,g][[x,g],x][x,g]=[x,g]^2\in (N^4)^2=N^{\{8\}}\subset (N^2)^4\qedhere \]
+\end{proof}
+
+\paragraph{} Für eine potenzreiche $p$-Gruppe (und später potenzreiche pro"~$p$ Gruppe) haben wir eine noch einfachere Beschreibung der unteren $p$"~Zentralreihe.
+
+\begin{lemma}
+Sei $x,y\in G$. Dann gilt: 
+\[(xy)^n\equiv x^ny^n[y,x]^{\frac{n(n-1)}{2}}\mod [[G,G],G] \]
+\end{lemma}
+
+\begin{proof}
+Es ist $[[G,G],G]\lhd G$, da $g^{-1}[[a,b],c]g=[g^{-1}[a,b]g,g^{-1}cg]$ und $[G,G]\lhd G$. Außerdem enthält $Z(G/[[G,G],G])$ das Bild von $[G,G]$ in $G/[[G,G],G]$. Für $n=1$ ist die Aussage klar. Sei nun $n>1$ und die Aussage für alle kleineren $n$ schon bewiesen. Dann gilt:
+\begin{align*}
+(xy)^n = (xy)^{n-1}xy &\equiv x^{n-1}y^{n-1}[y,x]^{\frac{(n-1)(n-2)}{2}}\cdot xy\\
+&\equiv x^ny^n y^{-n}x^{-1}y^{n-1}xy [y,x]^\frac{(n-1)(n-2)}{2}\\
+&\equiv x^ny^ny^{-1}[y^{n-1},x] y[y,x]^\frac{(n-1)(n-2)}{2}\\
+&\equiv x^ny^n[y,x]^{n-1}[y,x]^\frac{(n-1)(n-2)}{2}\mod [[G,G],G]
+\end{align*}
+wobei die letzte Kongruenz aus der Tatsache $[y^n,x]=\prod_{i=1}^n y^{-(n-i)}[y,x]y^{n-i}$ folgt.
+\end{proof}
+
+\begin{proposition}\label{2.4}
+Sei $G$ eine potenzreiche $p$"~Gruppe und $G_i:=P_i(G)$. Dann gilt für alle $i$:
+\begin{enumerate}[(i)]
+\item $G_{i+1}=G_i^p=\Phi(G_i)$ und $G_i\lhd_\text{p.e.} G$.
+\item $x\mapsto x^p$ induziert einen surjektiven Homomorphismus $G_i/G_{i+1}\to G_{i+1}/G_{i+2}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Da $G=G_1$ potenzreich ist, gilt $G_1\lhd_\text{p.e.}G$. Sei $G_i\lhd_\text{p.e.}G$ für ein $i\geq 1$. Dann gilt $G_{i+1}=G_i^p[G_i,G]=G_i^p$ und nach Satz~\ref{2.3} folgt $G_{i+1}\lhd_\text{p.e.}G$.
+\item Wir haben gezeigt, dass alle $G_i$ potenzreich sind, $G_{i+1}=P_2(G_i)$ und $G_{i+2}=P_3(G_i)$. Nach Umbenennung können wir $i=1$ annehmen. Durch Ersetzen von $G$ mit $G/G_3$ können wir zusätzlich $G_3=1$ annehmen. Dann gilt $[G,G]\subset G_2\subset Z(G)$, also gilt nach vorherigem Lemma für alle $x,y\in G$:
+\[(xy)^p=x^py^p[y,x]^{\frac{p(p-1)}{2}} \]
+Ist $p$ ungerade, so gilt $p\mid \frac{p(p-1)}{2}$ und $[y,x]^\frac{p(p-1)}{2}\in G_2^p=G_3=1$. Ist $p=2$, so folgt $[G,G]\subset G^4\subset G_3=1$. In beiden Fällen gilt $(xy)^p=x^py^p$. Da $G^p=G_2$ und $(G^p)^p=G_3$, folgt die Behauptung.\qedhere
+\end{enumerate}
+\end{proof}
+
+\paragraph{} Die folgenden Aussagen zeigen die strukturellen Gemeinsamkeiten mit einer abelschen Gruppe:
+
+\begin{lemma}\label{2.5}
+Ist $G=\langle a_1,\ldots,a_d\rangle$ eine potenzreiche $p$-Gruppe, so ist $G^p=\langle a_1^p,\ldots,a_d^p\rangle$.
+\end{lemma}
+
+\begin{proof}
+Sei $\theta:G/G_2\to G_2/G_3$ der durch $x\mapsto x^p$ induzierter Homomorphismus. Dann ist $G_2/G_3$ erzeugt durch $\{\theta(a_1G_2),\ldots,\theta(a_dG_2) \}$, also $G_2=\langle a_1^p,\ldots,a_d^p\rangle G_3$. Da $G_3=\Phi(G_2)$ und $G_2=G^p$, folgt die Behauptung aus Satz~\ref{1.9}.
+\end{proof}
+
+\begin{proposition}\label{2.6}
+Ist $G$ eine potenzreiche $p$-Gruppe, so ist jedes Element in $G^p$ eine $p$-te Potenz.
+\end{proposition}
+
+\begin{proof}
+Per Induktion über $\#G$. Sei $g\in G^p$. Nach Lemma~\ref{2.4} existieren $x\in G$ und $y\in G_3$, so dass $g=x^py$. Setze $H:=\langle G^p,x\rangle$. Da $G^p=G_2\lhd_\text{p.e.}G$, folgt aus Lemma~\ref{2.2} (iii), dass $H$ potenzreich ist. Außerdem gilt $g\in H^p$, da $y\in G_3=(G^p)^p$. Ist $H\neq G$, so gibt uns die Induktionsvoraussetzung, dass $g$ eine $p$-te Potenz in $H$ ist. Ist $H=G$, so ist $G$ zyklisch, da $G=\langle G^p,x\rangle=\langle \Phi(G),x\rangle=\langle x\rangle$ und in diesem Fall ist die Behauptung trivial.
+\end{proof}
+
+\begin{theorem}\label{2.7}
+Sei $G=\langle a_1,\ldots,a_d\rangle$ und $G_i:=P_i(G)$. Dann gilt für alle $i$:
+\begin{enumerate}[(i)]
+\item $G_{i+k}=P_{k+1}(G_i)=G_i^{p^k}$ für alle $k\geq 0$. Insbesondere gilt $G_{i+1}=\Phi(G_i)$.
+\item $G_i=G^{p^{i-1}}=\{x^{p^{i-1}}\mid x\in G\}=\langle a_1^{p^{i-1}},\ldots,a_d^{p^{i-1}}\rangle\lhd_\text{p.e.}G$
+\item $x\mapsto x^{p^k}$ induziert einen surjektiven Homomorphismus $G_i/G_{i+1}\to G_{i+k}/G_{i+k+1}$
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Folgt hauptsächlich per Induktion aus Lemma~\ref{2.4}. Die restlichen Aussagen folgen aus Lemma~\ref{2.5} und Satz~\ref{2.6}.
+\end{proof}
+
+\begin{corollary}\label{2.8}
+Ist $G=\langle a_1,\ldots,a_d\rangle$ eine potenzreiche $p$-Gruppe, so ist $G=\langle a_1\rangle\cdots\langle a_d\rangle$ ein Produkt von zyklischen Untergruppen.
+\end{corollary}
+
+\begin{proof}
+Wähle $e$ so, dass $G_e\supsetneq G_{e+1}=1$. Per Induktion über $e$ können wir annehmen, dass $G=\langle a_1\rangle\cdots\langle a_d\rangle G_e$. Nun ist $G_e=\langle a_1^{p^{e-1}},\ldots,a_d^{p^{e-1}}\rangle$ und $G_e\subset Z(G)$.
+\end{proof}
+
+\iffalse
+\begin{theorem}\label{2.9}
+Ist $G$ eine potenzreiche $p$-Gruppe und $H\subset G$ eine Untergruppe, so gilt: \[d(H)\leq d(G)\]
+\end{theorem}
+
+\begin{proof}
+Per Induktion über $\#G$. Sei $d:=d(G)$ und setze $m:=d(G_2)$, wobei $G_i:=P_i(G)$. Nach Lemma~\ref{2.4} (i) ist $G_2$ potenzreich, d.h. nach der Induktionsvoraussetzung können wir annehmen, dass für $K:=H\cap G_2$ die Ungleichung $d(K)\leq m$ erfüllt.
+
+Betrachte die nach Lemma~\ref{2.4} (ii) surjektive Abbildung $\pi:G/G_2\to G_2/G_3,\ x\mapsto x^p$ und es gilt $\dim_{\mathbb{F}_p}(\ker(\pi))=d-m$. Es folgt $\dim_{\mathbb{F}_p}(\ker(\pi)\cap HG_2/G_2)\leq d-m$, also:
+\[\dim_{\mathbb{F}_p}(\pi (HG_2/G_2))\geq \dim_{\mathbb{F}_p}(HG_2/G_2)-(d-m)=m-(d-e) \]
+wobei $e:=\dim_{\mathbb{F}_p}(HG_2/G_2)\leq d$. Sei $h_1,\ldots,h_e\in H$, so dass $HG_2=\langle h_1,\ldots,h_e\rangle G_2$. Da $\Phi(K)\subset K^p\subset G_3$ gilt, induziert $K\to KG_3/G_3$ die Surjektion $\phi:K/\Phi(K)\to KG_3/G_3$. Das Bild des $\mathbb{F}_p$"~Unterraums $V:=\langle\overline{h_1^p},\ldots,\overline{h_e^p}\rangle\subset K/\Phi(K)$ unter $\phi$ ist gerade $\pi(HG_2/G_2)$, daher ist $\dim_{\mathbb{F}_p}(V)\geq \dim_{\mathbb{F}_p}(\pi(HG_2/G_2))\geq m-(d-e)$. Da $d(K)\leq m$, können wir $y_1,\ldots,y_{d-e}\in K$ finden mit:
+\[K=\langle h_1^p,\ldots,h_e^p,y_1,\ldots,y_{d-e}\rangle\Phi(K)=\langle h_1^p,\ldots,h_e^p,y_1,\ldots,y_{d-e}\rangle \]
+Somit folgt $H=H\cap\langle h_1,\ldots,h_e\rangle G_2=\langle h_1,\ldots,h_e\rangle K=\langle h_1,\ldots,h_e,y_1,\ldots,y_{d-e}\rangle$ und daher $d(H)\leq d$.
+\end{proof}
+\fi
+
+\section{Potenzreiche pro"~$p$ Gruppen}
+
+Wir wollen nun die Aussagen, die wir für potenzreiche $p$"~Gruppen hergeleitet haben, ebenfalls für potenzreiche pro"~$p$ Gruppen beweisen. Dabei werden wir uns bei den meisten Aussagen auf endlich erzeugte pro"~$p$ Gruppen beschränken, da die untere $p$-Zentralreihe in diesem Fall offene Untergruppen sind.
+
+\begin{definition}
+Sei $G$ eine pro"~$p$ Gruppe.
+\begin{enumerate}[(i)]
+\item $G$ heißt \textit{potenzreich}\index{potenzreiche Gruppe}, wenn $p$ ungerade und $[G,G]\subset \overline{G^p}$, oder $p=2$ und $[G,G]\subset \overline{G^4}$ gilt.
+\item Sei $N\subset_\text{o} G$ eine Untergruppe. Dann heißt $N$ \textit{potenzreich eingebettet}\index{potenzreich eingebettet} in $G$, wenn $p$ ungerade und $[N,G]\subset \overline{N^p}$, oder $p=2$ und $[N,G]\subset \overline{N^4}$ gilt. Wir schreiben in diesem Fall $N\lhd_\text{p.e.}G$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}\label{3.2}
+Sei $G$ eine pro"~$p$ Gruppe und $N\subset_\text{o}G$ eine Untergruppe. Dann ist $N\lhd_\text{p.e.}G$, genau dann wenn $NK/K\lhd_\text{p.e.} G/K$ ist für alle $K\lhd_\text{o}G$. 
+\end{proposition}
+
+\begin{proof}
+Ist $N\lhd_\text{p.e.}G$, so gilt $[N,G]\subset\overline{N^p}=\bigcap_{K\lhd_\text{o}G}N^pK$ nach Satz~\ref{1.2.iii}. Da für alle $K\lhd_\text{o}G$ stets $[N,G]\subset N^pK$ gilt, folgt $NK/K\lhd_\text{p.e.}G/K$.
+
+Sei nun umgekehrt $NK/K\lhd_\text{p.e.}G/K$ für alle $K\lhd_\text{o}G$. Dann folgt aus $[NK/K,G/K]\subset N^pK/K$ stets $[N,G]\subset [NK,G]\subset N^pK$. Somit ist $N\lhd_\text{p.e.}G$, da:
+\[[N,G]\subset\bigcap_{K\lhd_\text{o}G}N^pK=\overline{N^p}\qedhere \]
+\end{proof}
+
+\begin{remark}
+Ist $G$ eine potenzreiche pro"~$p$ Gruppe, so ist $G/K$ potenzreich für alle $K\lhd_\text{o}G$.
+\end{remark}
+
+\iffalse
+\begin{corollary}
+Eine topologische Gruppe $G$ ist genau dann eine potenzreiche pro"~$p$ Gruppe, wenn $G$ ein projektiver Limes endlicher potenzreicher $p$-Gruppen ist, in der alle Ü\-ber\-gangs\-ab\-bil\-dun\-gen surjektiv sind.
+\end{corollary}
+
+\begin{proof}
+Sei $G$ eine potenzreiche pro"~$p$ Gruppe. Dann ist $G\cong \varprojlim_{N\lhd_\text{o}G} G/N$ mit endlichen $p$-Gruppen $G/N$. Nach Satz~\ref{3.2} ist $G/N$ potenzreich. Sei umgekehrt $G=\varprojlim_{\lambda\in\Lambda}G_\lambda$. Dann ist $G$ eine pro"~$p$ Gruppe. Ist $K\lhd_\text{o}G$, so ist $G/K$ ein Quotient von gewissen $G_\lambda$, also potenzreich. Somit ist nach Satz~\ref{3.2} auch $G$ potenzreich.
+\end{proof}
+\fi
+
+\begin{lemma}\label{3.4}
+Sei $G$ eine endlich erzeugte, potenzreiche pro"~$p$ Gruppe. Dann gilt:
+\[\Phi(G)=G^p=\{g^p\mid g\in G\}\subset_\text{o}G \]
+\end{lemma}
+
+\iffalse
+\begin{proof}
+Sei $g\in\overline{G^p}$. Dann ist $gN\in (G/N)^p$ für alle $N\lhd_\text{o}G$, also ist $gN$ eine $p$-te Potenz in $G/N$ nach Satz~\ref{2.6}. Also ist $g$ eine $p$-te Potenz in $G$ nach Lemma~\ref{Ex1.6}. Somit ist $\overline{G^p}\subset G^p$, also enthält $G^p=\overline{G^p}$ nur $p$-te Potenzen in $G$. Da $[G,G]\subset\overline{G^p}$, ist $G^p=\Phi(G)=P_2(G)$ und offen nach Satz~\ref{1.16}.
+\end{proof}
+\fi
+
+\begin{proof}
+Sei $g\in\overline{G^p}$. Für alle $N\lhd_\text{o}G$ ist $gN\in (G/N)^p$ nach Satz~\ref{2.6} eine $p$-te Potenz. Setze $X_N:=\{hN\in G/N\mid h^pN=gN \}\neq\varnothing$ für $N\lhd_\text{o}G$. Diese bilden bzgl. den natürlichen Projektionen ein projektives System. Nach Korollar~\ref{1.4cor} gibt es ein $h\in\varprojlim X_N\subset G$. Offenbar gilt $h^p=g$ und daher gilt $\Phi(G)= \overline{G^p}=G^p=\{g^p\mid g\in G\}$.
+\end{proof}
+
+\begin{corollary}\label{3.5}
+Sei $G$ eine endlich erzeugte, potenzreiche pro"~$p$ Gruppe. Dann gilt für alle $i$:
+\[G^{p^i}=(G^{p^{i-1}})^p=\{g^{p^i}\mid g\in G\}\subset_\text{o} G^{p^{i-1}} \]
+\end{corollary}
+
+\begin{proof}
+Der Fall $i=1$ folgt aus Lemma~\ref{3.4}. Der allgemeine Fall folgt per Induktion, wenn wir $G$ mit $G^{p^{i-1}}$ ersetzen.
+\end{proof}
+
+\begin{theorem}\label{3.6}
+Sei $G=\overline{\langle a_1,\ldots,a_d\rangle}$ eine endlich erzeugte, potenzreiche pro"~$p$ Gruppe. Setze $G_i:=P_i(G)$ für alle $i$. Dann gilt:
+\begin{enumerate}[(i)]
+\item $G_{i+k}=P_{k+1}(G_i)=G_i^{p^k}$ für alle $k\geq 0$. Insbesondere gilt $G_{i+1}=\Phi(G_i)$.
+\item $G_i=G^{p^{i-1}}=\{g^{p^{i-1}}\mid g\in G\}=\overline{\langle a_1^{p^{i-1}},\ldots,a_d^{p^{i-1}}\rangle}\lhd_\text{p.e.}G$
+\item $x\mapsto x^{p^k}$ induziert einen surjektiven Homomorphismus $G_i/G_{i+1}\to G_{i+k}/G_{i+k+1}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Die zweite Gleichung in (ii) folgt aus Korollar~\ref{3.5}. Sei $N\lhd_\text{o}G$. Dann ist $G/N$ eine potenzreiche $p$-Gruppe. Aus Theorem~\ref{2.7} folgt $G^{p^{i-1}}N/N\lhd_\text{p.e.}G/N$. Daher gilt $G_i=G^{p^{i-1}} \lhd_\text{p.e.}G$ nach Satz~\ref{3.2}. Die restlichen Aussagen sind mit Korollar~\ref{3.5} analog zu Theorem~\ref{2.7}.
+\end{proof}
+
+\begin{proposition}\label{3.7}
+Ist $G=\overline{\langle a_1,\ldots,a_d\rangle}$ eine potenzreiche pro"~$p$ Gruppe, so ist $G=\overline{\langle a_1\rangle}\cdots\overline{\langle a_d\rangle}$ ein Produkt von prozyklischen pro"~$p$ Gruppen.
+\end{proposition}
+
+\begin{proof}
+Sei $A:=\overline{\langle a_1\rangle}\cdots\overline{\langle a_d\rangle}$. Als endliches Produkt von abgeschlossenen Teilmengen in $G$ ist $A\subset G$ abgeschlossen. Korollar~\ref{2.8} zeigt $AN/N=G/N$ für alle $N\lhd_\text{o}G$. Somit folgt:
+\[A=\bigcap_{N\lhd_\text{o}G}AN =\bigcap_{N\lhd_\text{o}G}GN=G\qedhere\]
+\end{proof}
+
+\iffalse
+\paragraph{} Ist $\Gamma$ eine abstrakte, zyklische Gruppe mit einem Erzeuger $g\in\Gamma$, so ist jedes Element in $\Gamma$ von der Form $g^\lambda$ mit $\lambda\in\mathbb{Z}$. Ähnlich kann man jedes Element einer prozyklischen pro"~$p$ Gruppe als $p$-adische Potenz eines topologischen Erzeugers darstellen:
+
+\begin{lemma}\label{1.24}
+Sei $G$ eine pro"~$p$ Gruppe, $g\in G$ und $(a_i),(b_i)$ $p$"~adisch konvergente Folgen in $\mathbb{Z}$, die den gleichen Grenzwert in $\mathbb{Z}_p$ besitzen. Dann konvergieren $(g^{a_i})$ und $(g^{b_i})$ in $G$ und besitzen den gleichen Grenzwert.
+\end{lemma}
+
+\begin{proof}
+Sei $N\lhd_\text{o}G$. Dann ist $[G:N]=p^j$ für ein $j$. Für alle hinreichend große $i$ und $k$ gilt $a_i\equiv a_k\mod p^j$, also $g^{a_i}\equiv g^{a_k}\mod N$. Somit ist $(g^{a_i})$ eine Cauchy-Folge in $G$ und konvergiert daher gegen ein $g_1\in G$. Genauso konvergiert $(g^{b_i})$ gegen ein $g_2\in G$. Für hinreichend große $k$ gilt $b_k\equiv a_k\mod p^j$, $g^{b_k}\equiv g_2\mod N$ und $g^{a_k}\equiv g_1\mod N$. Daher folgt:
+\[g_1^{}g_2^{-1}\equiv g^{a_k-b_k}\equiv 1\mod N \]
+Da $N$ beliebig war, folgt $g_1^{}g_2^{-1}\in\bigcap_{N\lhd_\text{o}G} N=1$.
+\end{proof}
+
+\begin{definition}
+Sei $G$ eine pro"~$p$ Gruppe, $g\in G$ und $\lambda\in\mathbb{Z}_p$. Dann setzen wir:
+\[g^\lambda :=\lim_{n\to\infty}g^{a_n} \]
+wobei $(a_n)$ eine Folge in $\mathbb{Z}$ mit Grenzwert $\lambda$ besitzt. Dies ist wohldefiniert nach Lemma~\ref{1.24}.
+\end{definition}
+
+\begin{proposition}\label{1.28}
+Sei $G=\overline{\langle g\rangle}$ eine prozyklische pro"~$p$ Gruppe. Dann gilt:
+\[G= \{g^\lambda\mid\lambda\in\mathbb{Z}_p \}\]
+\end{proposition}
+
+\begin{proof}
+Das Bild $g^{\mathbb{Z}_p}$ der nach Korollar~\ref{1.21} stetigen Abbildung $\mathbb{Z}_p\to G,\ \lambda\mapsto g^\lambda$ enthält offenbar $\langle g\rangle$ und da jedes Element in $g^{\mathbb{Z}_p}$ der Grenzwert einer Folge in $\langle g\rangle$ ist, folgt $g^{\mathbb{Z}_p}=\overline{\langle g\rangle}$.
+\end{proof}
+
+\begin{theorem}\label{3.8}
+Sei $G$ eine endlich erzeugte, potenzreiche pro"~$p$ Gruppe und $H\subset G$ eine abgeschlossene Untergruppe. Dann gilt: \[d(H)\leq d(G)\]
+\end{theorem}
+
+\begin{proof}
+Nach Theorem~\ref{2.9} gilt $d(HN/N)\leq d(G/N)$ für jedes $N\lhd_\text{o}G$. Nach Satz~\ref{1.5} folgt $d(H)\leq d(G)$.
+\end{proof}
+
+\paragraph{} Nun wollen wir zeigen, dass analytische pro"~$p$ Gruppen endlich darstellbar sind. Nach Lemma~\ref{4.33} können wir die Aussage auf einen offenen Normalteiler reduzieren. Wir führen dafür \textit{gleichmäßig potenzreiche} pro"~$p$ Gruppen ein:
+
+\begin{definition}
+Eine endlich erzeugte, potenzreiche pro"~$p$ Gruppe $G$ heißt \textit{gleichmäßig potenzreich}\index{potenzreich!gleichmäßig}, wenn für alle $i$ gilt:
+\[[P_i(G):P_{i+1}(G)]=[G:P_2(G)] \]
+\end{definition}
+
+\begin{lemma}\label{4.2} 
+Sei $G$ eine endlich erzeugte, potenzreiche pro"~$p$ Gruppe. Dann ist $P_k(G)$ gleich\-mäßig für hinreichend große $k$.
+\end{lemma}
+
+\begin{proof}
+Setze $G_i:=P_i(G)$ und $d_i:=\dim_{\mathbb{F}_p}(G_i/G_{i+1})$. Nach Theorem~\ref{3.6} (iii) gilt $d_1\geq d_2\geq d_3\geq\ldots$, also existiert ein $m$, so dass $d_k=d_m$ für alle $k\geq m$. Theorem~\ref{3.6} (ii) zeigt, dass $G_k$ potenzreich ist und Theorem~\ref{3.6} (i) zeigt $P_i(G_k)=G_{k+i-1}$ für alle $i$ und $k$.
+\end{proof}
+
+\begin{theorem}
+Jede analytische pro"~$p$ Gruppe $G$ ist endlich darstellbar.
+\end{theorem}
+
+\begin{proof}
+Nach Lemma~\ref{4.33} und Theorem~\ref{thm:analytische-pro-p-gruppe} können wir o.B.d.A. $G$ als endlich erzeugte, potenzreiche pro"~$p$ Gruppe annehmen. Ebenso können wir nach Lemma~\ref{4.2} annehmen, dass $G$ gleichmäßig ist. Sei $\{a_1,\ldots,a_d\}$ ein topologisches Erzeugendensystem von $G$ mit $d=d(G)$. Für alle $i,j$ gilt $[a_j,a_i]\in\overline{G^p}$, wenn $p$ ungerade ist, oder $[a_j,a_i]\in\overline{G^4}$, wenn $p=2$. Nach Theorem~\ref{3.6} (ii), Satz~\ref{3.7} und Satz~\ref{1.28} existiert für jedes $m,i,j\in\{1,\ldots,d\}$ ein $\lambda_m(i,j)\in p\mathbb{Z}_p$ für $p$ ungerade oder $\lambda_m(i,j)\in 4\mathbb{Z}_2$ für $p=2$, so dass:
+\[[a_j,a_i]=\prod_{m=1}^d a_m^{\lambda_m(i,j)} \]
+Setze $R:=\{[a_i,a_j] a_1^{\lambda_1(i,j)}\cdots a_d^{\lambda_d(i,j)} \mid 1\leq i<j\leq d \},\ H:=\langle a_1,\ldots,a_d ; R\rangle,\ H_i:=P_i(H)$ und $G_i:=P_i(G)$. Dann ist $R=1$ in $G$ erfüllt, also haben wir einen surjektiven Homomorphismus $\pi:H\to G$. Die Relationen $R=1$ in $H$ machen $H$ zu einer potenzreichen pro"~$p$ Gruppe. Beachte dabei, dass $[G,G]$ als abgeschlossener Normalteiler von Elementen der Form $[a_i,a_j],\ 1\leq i<j\leq d$ erzeugt werden. Mit Theorem~\ref{3.6} (iii) und Theorem~\ref{3.8} gilt für alle $i$: 
+\[[H_i:H_{i+1}]\leq [H:H_2]= p^{d(H)}\leq p^d\]
+Da $G$ gleichmäßig ist, folgt $[H:H_{n+1}]\leq p^{nd}=[G:G_{n+1}]$. Da $\pi$ surjektiv und $\pi(H_{n+1})\subset G_{n+1}$ gilt, ist die von $\pi$ induzierte Abbildung $H/H_{n+1}\to G/G_{n+1}$ ein Isomorphismus, also folgt $\ker(\pi)\subset H_{n+1}$ für alle $n$. Da $H$ hausdorffsch und $H_n,\ n\geq 1$ eine offene Umgebungsbasis bilden, folgt $\bigcap_{n=1}^\infty H_{n+1}=1$ und daher ist $\pi$ injektiv und somit ein topologischer Isomorphismus.
+\end{proof}
+\fi
+
+\section{Der Gruppenring}
+
+Sei $G=\overline{\langle a_1,\ldots,a_d\rangle}$ mit $d=d(G)$ eine endlich erzeugte pro"~$p$ Gruppe und $G_k:=P_k(G)$. Sei $R:=\mathbb{F}_p[G]$ der Gruppenring, $I_k:=\ker(R\to \mathbb{F}_p[G/G_k])$ und $I:=I_1$ das Augmentationsideal.
+
+\begin{lemma}\label{lemma:augmentation-ideal}
+Sei $N\lhd G$ und $J:=\ker(\mathbb{F}_p[G]\to \mathbb{F}_p[G/N])$. Dann ist $J$ als Linksideal durch $\{g-1\mid g\in N\}$ erzeugt. Ist $N=G$, so ist $J=I$ und $\{g-1\mid g\in G\setminus\{1\}\}$ eine $\mathbb{F}_p$-Basis von $I$.
+\end{lemma}
+
+\begin{proof}
+Die Elemente $g-1,\ g\in N$ liegen in $J$. Sei $\alpha=\sum_{g\in G}\lambda_gg\in J,\ \lambda_g=0$ für fast alle $g$. Dann gilt für das Bild von $\alpha$ in $\mathbb{F}_p[G/N]$:
+\[0=\overline{\alpha}= \sum_{g\in G} \lambda_g\overline{g} = \sum_{h\in S}\sum_{g\in N} \lambda_{gh}\overline{h}\]
+wobei $S\subset G$ ein Repräsentatensystem von den Rechtsnebenklassen $N\backslash G$ bezeichnet mit $1\in S$. Es folgt $\sum_{g\in N}\lambda_{gh}=0$ für alle $h\in S$. Daher gilt: 
+\[\alpha= \sum_{h\in S}\sum_{g\in N}\lambda_{gh}(gh-h) =\sum_{g\in N} \sum_{h\in S} \lambda_{gh} (g-1)h = \sum_{g\in N} (g-1)\sum_{h\in S}\lambda_{gh}h \]
+Für $N=G$ ist $S=\{1\}$. Daher sehen wir, dass $\{g-1\mid g\in G \setminus\{1\}\}$ ein $\mathbb{F}_p$"~Erzeugendensystem von $I$ ist. Die lineare Unabhängigkeit ist klar.
+\end{proof}
+
+\begin{proposition}\label{lemma:unipotency}
+Sei $G$ eine endliche $p$"~Gruppe der Ordnung $n$. Dann gilt $I^n=0$.
+\end{proposition}
+
+\begin{proof}
+Es ist $R/I\cong\mathbb{F}_p$. Daher ist $\mathbb{F}_p\subset R$ ein Repräsentantensystem von $R/I$. Jedes $x\in R\setminus I$ ist also von der Form: 
+\[x=\lambda + \sum_{g\in G} \lambda_g (g-1),\quad \lambda,\lambda_g\in \mathbb{F}_p,\ \lambda\neq 0 \]
+Sei $n=p^k$, d.h. $(g-1)^{p^k}=g^{p^k}-1=0$ für alle $g\in G$. Dann gilt $x^{p^k}=\lambda^{p^k}\in R^\times$, also $R\setminus I\subset R^\times$. Angenommen, $I^n\neq 0$, insbesondere ist $I^k\neq 0$ für alle $k=0,\ldots,n-1$. Sei $k$ beliebig, aber fest, und $\{x_1,\ldots,x_m\}$ ein minimales Erzeugendensystem von $I^k$ als $R$-Linksmodul. Ist $I^k=I^{k+1}$, so hat $x_m\in I^k=I^{k+1}$ die Form:
+\[x_m = i_1x_1+\ldots+i_mx_m,\quad i_1,\ldots,i_m\in I  \]
+Es folgt $(1-i_m)x_m=i_1x_1+\ldots+i_{m-1}x_{m-1}$. Nun ist $1-i_m\in R\setminus I\subset R^\times$. $x_m$ wird also schon durch $x_1,\ldots,x_{m-1}$ erzeugt, ein Widerspruch. Da $k$ beliebig war, ist $I^k\neq I^{k+1}$ für alle $k=0,\ldots,n-1$ und somit $\dim_{\mathbb{F}_p}(I^k/I^{k+1})\geq 1$. Es gilt:
+\[n- \dim_{\mathbb{F}_p}(I^n)= \dim_{\mathbb{F}_p}(R/I^n) = \sum_{i=0}^{n-1} \dim_{\mathbb{F}_p}(I^k/I^{k+1})\geq n  \]
+Also folgt $\dim_{\mathbb{F}_p}(I^n)=0$.
+\end{proof}
+
+\begin{corollary}\label{cor:finite-group-rho}
+Ist $G$ eine endliche $p$-Gruppe, so wird die Folge $c_n:=\dim_{\mathbb{F}_p}(I^n/I^{n+1})$ für hinreichend große $n$ konstant $0$. Insbesondere gilt:
+\[\varrho:=\limsup_{n\to\infty}\sqrt[n]{c_n}\leq 1 \]
+\end{corollary}
+
+\begin{remark}
+Wir werden sehen, dass der Konvergenzradius $\varrho^{-1}$ der Potenzreihe $\sum_{n=0}^\infty c_nX^n$ in den Voraussetzungen der Golod-Shafarevich Ungleichung auftaucht.
+\end{remark}
+
+\paragraph{} Die folgenden Aussagen werden sich später als nützlich erweisen, wenn wir den Gruppenring bzgl. der $I$-adischen Topologie vervollständigen:
+
+\begin{lemma}\label{7.1} Sei $k\geq 1$. Dann gilt mit $m(k)=[G:G_k]$:
+\[I^k\supset I_k \supset I^{m(k)}\]
+\end{lemma}
+
+\begin{proof}
+Sei $n:=[G:G_k]$. Nun ist $G/G_k$ eine endliche $p$"~Gruppe der Ordnung $n$. Es folgt $(x_1-1)\cdots(x_n-1)=0$ in $\mathbb{F}_p[G/G_k]$ für alle $x_1,\ldots,x_n\in G/G_k$ nach Satz~\ref{lemma:unipotency}. Da $I_k=\ker(R\to \mathbb{F}_p[G/G_k])$, folgt $(g_1-1)\cdots(g_n-1)\in I_k$ für alle $g_1,\ldots,g_n\in G$. Somit ist $I^n\subset I_k$.
+
+Die andere Inklusion beweisen wir per Induktion über $k$. Für $k=1$ gilt die Behauptung per Definition. Sei $k>1$ und $I^{k-1}\supset I_{k-1}$. Nach Korollar~\ref{1.20} wird $G_k$ von den Elementen der Form $x^p$ und $[x,y]$ mit $x\in G_{k-1},\ y\in G$ erzeugt. Setze $u:=x-1\in I_{k-1},\ v:=y-1\in I$. Dann gilt:
+\[x^p-1=(x-1)^p=u^p,\quad [x,y]-1=x^{-1}y^{-1}(xy-yx)=x^{-1}y^{-1}(uv-vu) \]
+Nach Induktionsvoraussetzung ist $u\in I^{k-1}$. Da $p\geq 2$ und $v\in I$, folgt $x^p-1\in I^k$ und $[x,y]-1\in I^k$. Wegen $xy-1=x(y-1)+(x-1)$ gilt $I_k=(G_k-1)R\subset I^k$.
+\end{proof}
+
+\begin{corollary}\label{7.2}
+Es gilt $\bigcap_{n=1}^\infty I^n=0$.
+\end{corollary}
+
+\begin{proof}
+Sei $c=\sum_{i=1}^n \lambda_ix_i\in R,\ c\neq 0$ mit $\lambda_i\in \mathbb{F}_p$ und paarweise verschiedene $x_i\in G$. Da $G$ hausdorffsch ist, finden wir ein $k$, dass $x_ix_j^{-1}\not\in G_k$ für alle $i\neq j$. Bezeichne die natürliche Abbildung $R\to \mathbb{F}_p[G/G_k]$ mit $\psi_k$. Dann sind $\psi_k(x_1),\ldots,\psi_k(x_n)$ paarweise verschiedene Elemente in $G/G_k$. Da es ein $i$ mit $\lambda_i\neq 0$ gibt, folgt $\psi_k(c)\neq 0$, also $c\not\in \ker(\psi_k)=I_k$. Nach Lemma~\ref{7.1} folgt $c\not\in I^m$ für ein $m$.
+\end{proof}
+
+\begin{proposition}\label{Ex1}
+Die Abbildung $g\mapsto g-1$ induziert einen Isomorphismus $G/\Phi(G)\to I/I^2$.
+\end{proposition}
+
+\begin{proof}
+Betrachte die wohldefinierte Abbildung $\phi:G\to I/I^2,\ g\mapsto (g-1)+I^2$. Wegen $xy-1=(x-1)+(y-1)+(x-1)(y-1)$ ist diese ein Homomorphismus. Da $I/I^2$ abelsch ist, gilt $[G,G]\subset\ker(\phi)$. Ferner gilt $g^p-1=(g-1)^p\in I^p\subset I^2$ für alle $g\in G$. Daher ist $\Phi(G)=G^p[G,G]\subset\ker(\phi)$ und wir erhalten einen Homomorphismus $\tilde{\phi}:G/\Phi(G)\to I/I^2$. 
+
+Wir wollen nun ein Inverses konstruieren. Nach Lemma~\ref{lemma:augmentation-ideal} besitzt $I$ die $\mathbb{F}_p$-Basis $g-1$, $g\in G\setminus\{1\}$. Sei $\psi:I\to G/\Phi(G)$ die durch $g-1\mapsto g\Phi(G)$ gegebene $\mathbb{F}_p$-lineare Abbildung. Wegen $(x-1)(y-1)=(xy-1)-(x-1)-(y-1)$ gilt für alle $g,h\in G$:
+\[\psi((g-1)(h-1))=gh\Phi(G)\cdot  (g\Phi(G))^{-1}(h\Phi(G))^{-1}=1 \]
+Also induziert $\psi$ einen Homomorphismus $\tilde{\psi}:I/I^2\to G/\Phi(G)$, die zu $\tilde{\phi}$ invers ist.
+\end{proof}
+
+\begin{corollary}\label{cor:Ex1}
+Es gilt $d(G) = \dim_{\mathbb{F}_p}(I/I^2)$.
+\end{corollary}
+
+\begin{proof}
+Folgt aus Korollar~\ref{cor:1.19}.
+\end{proof}
+
+\paragraph{} Wir werden nun den Rest des Kapitels ein Analogon von Korollar~\ref{cor:finite-group-rho} für analytische pro"~$p$ Gruppen beweisen. Es ist offensichtlich, dass wir dazu den Gruppenring einer endlich erzeugten, potenzreichen pro"~$p$ Gruppe über $\mathbb{F}_p$ untersuchen müssen, insbesondere wie sich die gruppentheoretischen Eigenschaften auf den Gruppenring übertragen.
+
+\begin{definition}
+Setze $\mathbf{a} :=(a_1,\ldots,a_d)$ und $\mathbf{b} :=(b_1,\ldots,b_d)$ mit $b_i:=a_i-1\in I$ für alle $i$. Für ein $d$-Tupel $\alpha=(\alpha_1,\ldots,\alpha_d)\in\mathbb{N}^d$ und ein $d$-Tupel $\mathbf{v}=(v_1,\ldots,v_d)$ setzen wir:
+\[\langle\alpha\rangle :=\alpha_1+\ldots+\alpha_d,\quad \mathbf{v}^\alpha := v_1^{\alpha_1}\cdots v_d^{\alpha_d} \]
+\end{definition}
+
+\begin{lemma}\label{7.8}
+Sei $\mathbf{u}:=(u_1,\ldots,u_r)\in G^{(r)}$ und $\mathbf{v}:=(v_1,\ldots,v_r)$ mit $v_i:=u_i-1\in I$. Dann gilt für alle $\beta\in\mathbb{N}^r$:
+\[\mathbf{u}^\beta =\sum_{\alpha\in\mathbb{N}^r}\binom{\beta_1}{\alpha_1}\cdots\binom{\beta_r}{\alpha_r}\mathbf{v}^\alpha ,\quad \mathbf{v}^\beta=\sum_{\alpha\in\mathbb{N}^r} (-1)^{\langle \beta\rangle -\langle \alpha\rangle}\binom{\beta_1}{\alpha_1}\cdots\binom{\beta_r}{\alpha_r} \mathbf{u}^\alpha \]
+Jede Summe ist endlich, da $\binom{\beta_i}{\alpha_i}=0$, wenn $\alpha_i>\beta_i$.
+\end{lemma}
+
+\begin{proof}
+Dies folgt direkt aus dem binomischen Lehrsatz. Es gilt:
+\begin{align*}
+\mathbf{v}^\beta &= (u_1-1)^{\beta_1}\cdots (u_r-1)^{\beta_r}\\
+&=\prod_{i=1}^r \Big(\sum_{\alpha_i=0}^{\beta_i} (-1)^{\beta_i-\alpha_i}\binom{\beta_i}{\alpha_i} u_i^{\alpha_i}\Big)= \sum_{\alpha\in\mathbb{N}^r}(-1)^{\langle \beta\rangle-\langle\alpha\rangle}\binom{\beta_1}{\alpha_1}\cdots\binom{\beta_r}{\alpha_r} \mathbf{u}^\alpha
+\end{align*}
+Analog für $\mathbf{u}^\beta = (v_1+1)^{\beta_1}\cdots (v_r+1)^{\beta_r}$.
+\end{proof}
+
+\begin{lemma}\label{7.9}
+Sei $G$ potenzreich und setze $T_k:=\{ \alpha\in\mathbb{N}^d\mid \alpha_i< p^{k-1}\text{ für alle }i=1,\ldots,d \}$. Dann gilt für alle $k\geq 1$:
+\[R=I_k+\sum_{\alpha\in T_k} \mathbb{F}_p \mathbf{b}^\alpha \]
+\end{lemma}
+
+\begin{proof}
+$I_k$ ist der Kern der natürlichen Surjektion $\pi:R\to \mathbb{F}_p[G/G_k]$. Nun ist $G/G_k$ diskret. Nach Theorem~\ref{3.6} (ii) und Satz~\ref{3.7} kann jedes Element in $G/G_k$ in der Form $a_1^{\alpha_1}\cdots a_d^{\alpha_d}G_k$ mit $0\leq\alpha_i <p^{k-1}$ geschrieben werden. Somit ist $\{\pi(\mathbf{a}^\alpha)\mid\alpha\in T_k \}$ ein Erzeugendensystem von $\mathbb{F}_p[G/G_k]$ als $\mathbb{F}_p$"~Vektorraum. Lemma~\ref{7.8} zeigt, dass $\{\pi(\mathbf{b}^\alpha)\mid \alpha\in T_k\}$ den gleichen Vektorraum erzeugt, also ist $\pi(R)=\pi\big(\sum_{\alpha\in T_k}\mathbb{F}_p  \mathbf{b}^\alpha\big)$.
+\end{proof}
+
+\begin{lemma}\label{7.10}
+Sei $G$ potenzreich und $u\in I^k,\ x\in G$. Dann gilt $ux-xu\in I^{k+2}$.
+\end{lemma}
+
+\begin{proof}
+Sei $y\in G$. Da $G$ potenzreich ist, gibt es nach Lemma~\ref{3.4} ein $z\in G$, so dass:
+\[yx-xy=xy([y,x]-1)=xy(z^p-1) \]
+Es gilt $z^p-1=(z-1)^p\in I^p\subset I^3$, also $yx-xy\in I^3$. Da $R$ von $G$ additiv erzeugt wird, ist die Behauptung für den Fall $k=1$ gezeigt. Sei nun $k\geq 1$ und $vy-yv\in I^{k+2}$ für alle $v\in I^{k}$ und $y\in G$. Nun ist $I^{k+1}$ erzeugt von Elementen der Form $vw$ mit $v\in I^{k}$ und $w\in I$, also folgt:
+\[vwx-xvw=v(wx-xw)+(vx-xv)w\in I^{k}I^3+ I^{k+2}I\subset I^{k+3}\qedhere \]
+\end{proof}
+
+\begin{proposition}\label{7.11}
+Sei $G$ potenzreich und $k\geq 1$. Dann gilt:
+\[ I^k = I^{k+1}+\sum_{\substack{\alpha\in\mathbb{N}^d\\\langle\alpha\rangle =k}}\mathbb{F}_p \mathbf{b}^\alpha \]
+\end{proposition}
+
+\begin{proof}
+Setze $W_k:=\sum_{\langle\alpha\rangle =k}\mathbb{F}_p\mathbf{b}^\alpha$. Da $b_i=a_i-1\in I$ für alle $i$, folgt $\mathbf{b}^\alpha\in I^k$ für alle $\alpha\in\mathbb{N}^d$ mit $\langle\alpha\rangle=k$. Somit gilt $I^k\supset I^{k+1}+W_k$. Die andere Inklusion beweisen wir per Induktion über $k$. Lemma~\ref{7.9} mit $k=2$ liefert:
+\[I\subset I_2+\sum_{\alpha\in T_2}\mathbb{F}_p\mathbf{b}^\alpha\subset I^2+\sum_{\langle\alpha\rangle =1}\mathbb{F}_p\mathbf{b}^\alpha+\mathbb{F}_p 1\subset I^2+W_1+\mathbb{F}_p1 \]
+da $I_2\subset I^2$ nach Lemma~\ref{7.1} und $\mathbf{b}^\alpha\in I^2$ für $\langle\alpha\rangle\geq 2$ gilt. Nun ist $I\cap\mathbb{F}_p1=0$. Sei nun $k>1$ und die Aussage für kleinere $k$ schon bewiesen. Dann gilt:
+\[I^k = I^{k-1} I=(I^k+W_{k-1})(I^2+W_1)\subset I^{k+1}+W_{k-1}W_1 \]
+Zu zeigen ist noch $W_{k-1}W_1\subset I^{k+1}+W_k$. Nun ist $W_{k-1}W_1$ von Elementen der Form $\mathbf{b}^\alpha b_i$ mit $i=1,\ldots,d$ und $\langle\alpha\rangle =k-1$ erzeugt. Es genügt, die Aussage für diese Elemente nach\-zu\-wei\-sen. Setze $u:= b_1^{\alpha_1}\cdots b_{i-1}^{\alpha_{i-1}}$ und $v:=b_i^{\alpha_i}\cdots b_d^{\alpha_d}$. Dann gilt
+\[\mathbf{b}^\alpha b_i=uvb_i=ub_iv+u(vb_i-b_iv)=\mathbf{b}^\beta+uw \]
+wobei $w:=vb_i-b_iv$ und $\beta:=(\alpha_1,\ldots,\alpha_i+1,\ldots, \alpha_d)$. Da $v\in I^n$ mit $n:=\alpha_i+\ldots+\alpha_d$, folgt aus Lemma~\ref{7.10} $w\in I^{n+2}$. Da $u\in I^{\langle\alpha\rangle -n}$, folgt $uw\in I^{\langle\alpha\rangle+2}$. Zudem gilt $\langle\beta\rangle = \langle\alpha\rangle+1=k$. Daher gilt:
+\[\mathbf{b}^\alpha b_i=\mathbf{b}^\beta+uw \in \mathbb{F}_p \mathbf{b}^\beta+ I^{\langle\alpha\rangle+2}\subset W_k+ I^{k+1} \qedhere \]
+\end{proof}
+
+\paragraph{} Eine Abschätzung für $\dim_{\mathbb{F}_p}(I^k/I^{k+1})$ nach oben wäre also die Anzahl aller $\alpha\in\mathbb{N}^d$ mit $\langle\alpha\rangle =k$. Diese Anzahl wollen wir im nächsten Satz berechnen:
+
+\begin{lemma}\label{Ex7.4Ex}
+Für alle $n,k\in\mathbb{N}$ gilt:
+\[\sum_{j=0}^n\binom{k-2+j}{k-2} =\binom{k-1+n}{k-1} \]
+\end{lemma}
+
+\begin{proof}
+Per Induktion über $n$. Für $n=0$ ist die Aussage klar. Sei die Aussage für ein $n$ bewiesen. Dann gilt für alle $k\in\mathbb{N}$:
+\begin{align*}
+\sum_{j=0}^{n+1}\binom{k-2+j}{k-2} &=\binom{k-1+n}{k-2} + \sum_{j=0}^n\binom{k-2+j}{k-2}\\
+&=\binom{k-1+n}{k-2} + \binom{k-1+n}{k-1}=\binom{k+n}{k-1}
+\end{align*}
+wobei die letzte Gleichung aus der Identität $\binom{n+1}{k+1}=\binom{n}{k}+\binom{n}{k+1}$ folgt.
+\end{proof}
+
+\begin{proposition}
+Sei $k\in\mathbb{N}$. Die Anzahl aller $\alpha\in\mathbb{N}^d$ mit $\langle \alpha\rangle =k$ beträgt gerade:
+\[f_d(k) := \binom{k+d-1}{d-1} \]
+\end{proposition}
+
+\begin{proof}
+Per Induktion über $d$. Es ist $f_1(k)=\binom{k}{0}=1$ für alle $k$, also ist die Behauptung für $d=1$ korrekt. Sei nun $d> 1$ und die Aussage für kleinere $d$ bewiesen. Sei $\alpha=(\alpha_1,\ldots,\alpha_d)\in\mathbb{N}^d$ mit $\langle\alpha\rangle=k$. Für $\alpha_1\in\mathbb{N}$ haben wir $k+1$ Möglichkeiten $\{0,\ldots,k\}$. Für $(\alpha_2,\ldots,\alpha_d)$ gibt es nach Induktionsvoraussetzung $f_{d-1}(k-\alpha_1)=\binom{k-\alpha_1+d-2}{d-2}$ Möglichkeiten. Also gibt es insgesamt folgende Anzahl von Möglichkeiten:
+\[\sum_{\alpha_1=0}^k f_{d-1}(k-\alpha_1)= \sum_{\alpha_1=0}^k \binom{d-2+k-\alpha_1}{d-2}=\sum_{\alpha_1=0}^k\binom{d-2+\alpha_1}{d-2}=\binom{d-1+k}{d-1}=f_d(k) \]
+wobei die vorletzte Gleichung aus dem vorherigen Lemma folgt.
+\end{proof}
+
+\begin{corollary}\label{Ex7.4}
+Sei $G$ potenzreich. Dann gilt $\dim_{\mathbb{F}_p}(I^k/I^{k+1})\leq f_d(k)$.
+\end{corollary}
+
+\begin{proof}
+Nach Lemma~\ref{7.11} wird $I^k/I^{k+1}$ von Elementen der Form $\mathbf{b}^\alpha$ mit $\langle\alpha\rangle =k$ erzeugt.
+\end{proof}
+
+\begin{corollary}
+Ist $G$ potenzreich, so gilt $\dim_{\mathbb{F}_p}(R/I^{k+1})\leq f_{d+1}(k)$.
+\end{corollary}
+
+\begin{proof}
+$\dim_{\mathbb{F}_p}(R/I^{k+1})=\sum_{i=0}^k\dim_{\mathbb{F}_p}(I^i/I^{i+1})\leq \sum_{i=0}^k\binom{i+d-1}{d-1}=\binom{d+k}{d}= f_{d+1}(k)$.
+\end{proof}
+
+\begin{proposition}\label{Ex7.5}
+Sei $G$ $p$-adisch analytisch. Dann existieren Konstanten $C>0$ und $e\in\mathbb{N}$, so dass $\dim_{\mathbb{F}_p}(R/I^n)\leq Cn^e$ für alle $n\geq 0$. Insbesondere gilt für die Folge $c_n:=\dim_{\mathbb{F}_p}(I^n/I^{n+1})$:
+\[\varrho:= \limsup_{n\to\infty}\sqrt[n]{c_n}\leq 1 \]
+\end{proposition}
+
+\begin{proof}
+Nach Theorem~\ref{thm:analytische-pro-p-gruppe} ist $G$ endlich erzeugt und enthält eine endlich erzeugte potenzreiche pro"~$p$ Gruppe $H\lhd_\text{o}G$. Setze $I_H$ als das Augmentationsideal in $\mathbb{F}_p[H]$ und $J:=I_HR\subset I$. 
+
+Für alle $i\in I_H^n$ und $x\in R$ gilt $ix\in J^n$. Daher ist $R/J^n$ ein $\mathbb{F}_p[H]/I_H^n$"~Modul. Sei $S\subset G$ ein Repräsentantensystem von den Rechtsnebenklassen $H\backslash G$. Der surjektive Homomorphismus $\mathbb{F}_p[H]^{(S)}\cong R\to R/J^n$ induziert die folgende Surjektion:
+\[(\mathbb{F}_p[H]/I_H^n)^{(S)}\to R/J^n\]
+Somit ist $R/J^n$ als $\mathbb{F}_p[H]/I_H^n$"~Modul durch $\#S=[G:H]$ Elementen erzeugt. Da $J\subset I$, haben wir eine Surjektion $R/J^n\to R/I^n$. Nach vorherigem Korollar folgt:
+\begin{align*}
+\dim_{\mathbb{F}_p}(R/I^n)&\leq\dim_{\mathbb{F}_p}(R/J^n)\\
+&\leq [G:H]\cdot\dim_{\mathbb{F}_p}(\mathbb{F}_p[H]/I_H^n)\\
+&\leq [G:H]\cdot f_{e+1}(n-1)\\
+&= [G:H]\cdot \frac{(n-1+e)!}{e! (n-1)!}\leq \frac{[G:H]}{e!}\cdot (n+e-1)^e
+\end{align*}
+wobei $e:=d(H)$. Dies zeigt die Behauptung. Da $\sqrt[n]{C}\to 1$ und $\sqrt[n]{n+1}\to 1$ für $n\to\infty$, folgt $\varrho=\limsup_{n\to\infty}\sqrt[n]{c_n} \leq \lim_{n\to\infty}\sqrt[n]{C(n+1)^e}=1$.
+\end{proof}
+
+\chapter{Die Ungleichung}
+
+Wir werden in diesem Kapitel den \textit{vollständigen Gruppenring} $\mathbb{F}_p[[G]]$ einführen. Mit proendlichen Gruppen ist die Arbeit mit dem vollständigen Gruppenring meist einfacher. Doch können wir im Allgemeinen die Elemente von $\mathbb{F}_p[[G]]$ nicht mehr so einfach beschreiben wie im gewöhnlichen Gruppenring $\mathbb{F}_p[G]$. Für den Fall, dass $G$ eine endlich erzeugte, freie pro"~$p$ Gruppe ist, haben wir aber trotz allem eine einfache Beschreibung von $\mathbb{F}_p[[G]]$. Diese werden wir im ersten Teil dieses Kapitels präsentieren und dabei \cite{Wil98} und \cite{Koc02} folgen.
+
+Im zweiten Teil können wir die Resultate verwenden und schließlich die \textit{Golod-Shafarevich Ungleichung} formulieren und beweisen.
+
+\section{Der vollständige Gruppenring}
+
+Sei $G$ eine endlich erzeugte pro"~$p$ Gruppe,  $I_k:=\ker(\mathbb{F}_p[G]\to\mathbb{F}_p[G/G_k])$ und $I:=I_1$ das Aug\-men\-ta\-tions\-i\-deal in $\mathbb{F}_p[G]$.
+
+\begin{definition}
+Der \textit{vollständige Gruppenring} von $G$ über $\mathbb{F}_p$ ist definiert als:
+\[\mathbb{F}_p[[G]] := \varprojlim_{N\lhd_\text{o}G}\mathbb{F}_p[G/N] = \varprojlim_{k\geq 1}\mathbb{F}_p[G/G_k] = \varprojlim_{k\geq 1} \mathbb{F}_p[G]/I_k \]
+wobei die Gleichung in der Mitte aus Satz~\ref{1.16} folgt. Also entsteht $\mathbb{F}_p[[G]]$ durch Ver\-voll\-stän\-di\-gung von $\mathbb{F}_p[G]$ bzgl. der offenen Umgebungsbasis $(I_k)_{k\geq 1}$ der $0$. Nach Lemma~\ref{7.1} induziert $(I^k)_{k\geq 1}$ dieselbe Topologie auf $\mathbb{F}_p[G]$. Daher gilt:
+\[\mathbb{F}_p[[G]]\cong\varprojlim_{k\geq 1} \mathbb{F}_p[G]/I^k \]
+Die Vervollständigung induziert eine offene Umgebungsbasis $(\widehat{I}^k)_{k\geq 1}$ auf $\mathbb{F}_p[[G]]$, wobei $\widehat{I}= \ker(\mathbb{F}_p[[G]]\to\mathbb{F}_p[G]/I\cong\mathbb{F}_p)$ und es gilt für alle $k$:
+\[\mathbb{F}_p[G]/I^k\cong \mathbb{F}_p[[G]]/\widehat{I}^k \]
+Nach Korollar~\ref{7.2} ist die natürliche Abbildung $\mathbb{F}_p[G]\to\mathbb{F}_p[[G]]$ eine Inklusion. Daher ist $\widehat{I}$ auch der topologische Abschluss von $I=(G-1)\mathbb{F}_p[G]$ in $\mathbb{F}_p[[G]]$, d.h. $\widehat{I}=(G-1)\mathbb{F}_p[[G]]$. 
+\end{definition}
+
+\begin{definition}
+Ein topologischer Ring heißt \textit{proendliche $\mathbb{F}_p$"~Algebra}, wenn sie projektiver Limes endlicher, diskreter $\mathbb{F}_p$"~Algebren ist.
+\end{definition}
+
+\begin{proposition}\textit{(Universaleigenschaft des vollständigen Gruppenrings)}
+Jeder stetige Homomorphismus $\phi:G\to E^\times$ von $G$ in die Einheitengruppe einer proendlichen $\mathbb{F}_p$"~Algebra $E$ setzt sich eindeutig zu einem stetigen $\mathbb{F}_p$"~Algebra-Homomorphismus $\mathbb{F}_p[[G]]\to E$ fort.
+\end{proposition}
+
+\begin{proof}
+Sei $E=\varprojlim_{\lambda\in\Lambda} E_\lambda$ und $\lambda\in\Lambda$. Betrachte die Komposition $\varphi_\lambda:G\to E^\times\to E_\lambda^\times$. Dann ist $\varphi_\lambda$ stetig und $\ker(\varphi_\lambda)\lhd_\text{o}G$. $\varphi$ induziert $G/\ker(\varphi_\lambda)\to E_\lambda^\times$. Diese setzt sich offensichtlich auf einem $\mathbb{F}_p$"~Algebra-Homomorphismus $\mathbb{F}_p[G/\ker(\varphi_\lambda)]\to E_\lambda$ eindeutig fort. Die Homomorphismen $\phi_\lambda:\mathbb{F}_p[[G]]\to \mathbb{F}_p[G/\ker(\varphi_\lambda)]\to E_\lambda$ sind kompatibel und setzen sich eindeutig zu einem stetigen $\mathbb{F}_p$"~Algebra-Homomorphismus $\widehat{\phi}:\mathbb{F}_p[[G]]\to E$ zusammen. Da die natürliche Abbildung $G\hookrightarrow \mathbb{F}_p[G]\hookrightarrow\mathbb{F}_p[[G]]$ eine Inklusion ist, setzt $\widehat{\phi}$ die ursprüngliche Abbildung $\phi$ fort.
+\end{proof}
+
+\paragraph{} Das folgende Lemma lässt uns die Hauptaussagen Korollar~\ref{cor:finite-group-rho} und Satz~\ref{Ex7.5} über den gewöhnlichen Gruppenring, die wir in Kapitel 2, Abschnitt 3 hergeleitet haben, auf den voll\-stän\-di\-gen Gruppenring übertragen:
+
+\begin{lemma}\label{lemma:nuisance}
+Es gilt $I^k/I^{k+1}\cong \widehat{I}^k/\widehat{I}^{k+1}$ für alle $k$.
+\end{lemma}
+
+\begin{proof}
+Wir haben ein kommutatives Diagramm mit exakten Zeilen:
+\[\xymatrix{
+0\ar[r] & I^k/I^{k+1} \ar[r]& \mathbb{F}_p[G]/I^{k+1} \ar[r]\ar[d]_\cong& \mathbb{F}_p[G]/I^k\ar[r]\ar[d]^\cong & 0\\
+0 \ar[r] & \widehat{I}^k/\widehat{I}^{k+1} \ar[r] & \mathbb{F}_p[[G]]/\widehat{I}^{k+1} \ar[r] &\mathbb{F}_p[[G]]/\widehat{I}^k \ar[r] & 0
+} \]
+Es folgt die Behauptung.
+\end{proof}
+
+\paragraph{} Die Hauptaussage, die wir für die Golod-Shafarevich Ungleichung benötigen werden, ist der folgende Satz~\ref{prop:Ex2}. Dafür werden wir zeigen, dass $\mathbb{F}_p[[F]]$ für eine endlich erzeugte, freie pro"~$p$ Gruppe $F$ isomorph zu einem Potenzreihenring über nichtkommutierende Variablen ist. Diese werden wir im Nachfolgenden formal einführen.
+
+\begin{proposition}\label{prop:Ex2}
+Sei $G={F}$ die freie pro"~$p$ Gruppe auf $\{x_1,\ldots,x_d\}$. Dann haben wir einen Isomorphismus von $\mathbb{F}_p[[{F}]]$"~Rechtsmoduln:
+\[\widehat{I} \cong \mathbb{F}_p[[{F}]]^{(d)}\]
+\end{proposition}
+
+\begin{definition}
+Eine \textit{formale Potenzreihe} über $\mathbb{F}_p$ in nichtkommutierenden Variablen $y_1,\ldots,y_d$ ist ein Ausdruck:
+\[\sum_{w\in W}\lambda_w w,\quad \lambda_w\in\mathbb{F}_p \]
+wobei $W:=\{y_{i_1}\cdots y_{i_r}\mid r\in\mathbb{N},\ 1\leq i_j\leq d \}$ die Menge der Monomen in $y_1,\ldots,y_d$ bezeichnet. Der \textit{Gesamtgrad} eines Monoms $w=y_{i_1}\cdots y_{i_r}$ ist gerade die Anzahl der Faktoren und wird mit $\deg(w)=r$ bezeichnet. Die Menge aller formalen Potenzreihen über $\mathbb{F}_p$ wird auf natürlicher Weise zu einer $\mathbb{F}_p$-Algebra und wird mit $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ bezeichnet. Wir haben einen Isomorphismus von $\mathbb{F}_p$"~Moduln:
+\[\phi:\prod_{w\in W}\mathbb{F}_p\to\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle,\ (\lambda_w)_w\mapsto \sum_{w\in W}\lambda_w w \]
+Statten wir $\mathbb{F}_p$ mit der diskreten Topologie aus, können wir die Produkttopologie von $\prod\mathbb{F}_p$ auf $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ übertragen. Somit wird $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ zu einem kompakten Hausdorffraum.
+
+Für jedes $n\geq 1$ sei ${D_n}$ die Menge aller formalen Potenzreihen $\sum_{w\in W}\lambda_w w$ mit $\lambda_w=0$ für alle $w\in W$, dessen Gesamtgrad $\deg(w)<n$ ist. Es ist klar, dass alle ${D_n}$ zweiseitige Ideale in $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ sind. Per Definition der Produkttopologie bilden $\{D_n\mid n\geq 1\}$ eine offene Umgebungsbasis der $0$. Daher ist die natürliche Abbildung $\eta :\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle\to\varprojlim_{n\geq 1} \mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle /D_n$ injektiv. Wegen Kompaktheit und Dichtheit des Bildes, ist $\eta$ ein topologischer Isomorphismus:
+\[\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle\cong\varprojlim_{n\geq 1} \mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle /D_n \]
+Da $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle /D_n\cong \prod_{\substack{w\in W,\ \deg(w)<n}}\mathbb{F}_p$ alles endliche $\mathbb{F}_p$"~Algebren bzw. $p$"~Gruppen sind, ist $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ eine proendliche $\mathbb{F}_p$"~Al\-ge\-bra und die additive Gruppe von $\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ eine pro"~$p$ Gruppe.
+\end{definition}
+
+\begin{lemma}
+$V:=1+{D_1} \subset\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle^\times$ ist eine pro"~$p$ Gruppe.
+\end{lemma}
+
+\begin{proof}
+Setze $P:=\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$. Offensichtlich ist $V$ abgeschlossen bzgl. Produktbildung. Sei $x=1+y\in V$ mit $y\in {D_1}$. Da $y^n\in {D_k}$ für $n\geq k$, konvergiert $s:=\sum_{n=0}^\infty (-y)^n$ in $P$. Dann ist $s\in 1+{D_1}$ ein inverses Element zu $x$, d.h. $x\in P^\times$. Daher ist $V$ eine multiplikative Gruppe.
+
+Für jedes $n\geq 1$, sei $V_n$ das Bild der Menge $V$ unter der Projektion $P\to P/D_n$. Es ist klar, dass $V_n$ eine multiplikative Gruppe ist. Da ${D_1}\subset_\text{o}P$, ist $V\subset_\text{o} P$ abgeschlossen und daher kompakt. Die Mengenabbildung $x\mapsto x-1$ induziert eine Bijektion $V_n\to {D_1}/D_n$. Also ist $V_n$ ist eine endliche $p$"~Gruppe, da $[D_1:D_n]\mid [P:D_n]$ eine $p$-Potenz ist. Daher ist $\varprojlim V_n$ eine pro"~$p$ Gruppe. Der Kern der natürlichen Projektion $V\to V_n$ ist gerade $1+D_n$. Da $P$ hausdorffsch ist, und $D_n,\ n\geq 1$ eine offene Umgebungsbasis von $P$ bilden, gilt $\bigcap_{n\geq 1} (1+D_n)=1$, und die natürliche Abbildung $V\to\varprojlim V_n$ ist injektiv. Da $V$ kompakt ist, ist $V\subset\varprojlim V_n$ abgeschlossen und somit eine pro"~$p$ Gruppe.
+\end{proof}
+
+\begin{theorem} \label{thm:completedgroupring-freeprop}
+Sei $G={F}$ die freie pro"~$p$ Gruppe auf $\{x_1,\ldots,x_d\}$. Dann setzt sich die Abbildung $y_i\mapsto x_i-1,\ i=1,\ldots,d$ zu einem topologischen Isomorphismus fort:
+\[\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle\cong\mathbb{F}_p [[{F}]] \]
+\end{theorem}
+
+\begin{proof}
+Setze $P:=\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$. Sei $P(y_1,\ldots,y_d)\in P$ eine formale Potenzreihe. Da $\widehat{I}^n,\ n\in\mathbb{N}$ eine offene Umgebungsbasis von $\mathbb{F}_p[[{F}]]$ ist, konvergiert die Potenzreihe $P(x_1-1,\ldots,x_d-1)$ in $\mathbb{F}_p[[{F}]]$. Daher ist der Einsetzungshomomorphismus wohldefiniert:
+\[\psi:P\to\mathbb{F}_p[[{F}]],\ y_i\mapsto x_i-1 \]
+Betrachte nun die Abbildung $x_i\mapsto y_i+1,\ i=1,\ldots,d$. Es ist $y_i+1\in V:=1+D_1$. Da $V$ nach dem vorherigen Lemma eine pro"~$p$ Gruppe ist, induziert diese einen stetigen Gruppenhomomorphismus $\varphi:{F}\to V\to P^\times$. Da $P$ eine proendliche $\mathbb{F}_p$"~Algebra ist, induziert $\varphi$ einen stetigen $\mathbb{F}_p$-Algebra-Homomorphismus $\phi:\mathbb{F}_p[[{F}]]\to P$, die offensichtlich zu $\psi$ invers ist.
+\end{proof}
+
+\begin{proof}[Beweis von Satz~\ref{prop:Ex2}.]
+Wegen $xy-1=(x-1)+(y-1)+(x-1)(y-1)$, wird $\widehat{I}=(F-1)\mathbb{F}_p[[{F}]]$ als Rechtsideal in $\mathbb{F}_p[[F]]$ durch die Elemente $x_i-1,\ i=1,\ldots,d$ erzeugt. Nach Theorem~\ref{thm:completedgroupring-freeprop} können wir $\widehat{I}$ mit dem von $y_1,\ldots,y_d$ erzeugten Rechtsideal $J$ in $P:=\mathbb{F}_p\llangle y_1,\ldots,y_d\rrangle$ identifizieren. Betrachte den $P$-Modulepimorphismus:
+\[ \phi: P^{(d)}\to J,\ e_i\mapsto y_i \]
+wobei $e_i\in P^{(d)}$ im $i$-ten Eintrag eine $1$ besitzt und überall sonst $0$. Es genügt also nur noch zu zeigen, dass $\phi$ injektiv ist. Sei also $\sum_{i=1}^d y_ix_i=0$ mit $x_i=\sum_{w\in W}\lambda_{w,i} w\in P$. Es folgt:
+\[0=\sum_{i=1}^dy_ix_i = \sum_{w\in W}\sum_{i=1}^d \lambda_{w,i} y_iw \]
+Da die Variablen $y_1,\ldots,y_d$ nicht kommutieren, sind die Monome $y_iw,\ i=1,\ldots,d,\ w\in W$ paarweise verschieden. Daher folgt $\lambda_{w,i}=0$ für alle $i$ und $w$ und daher $x_i=0$ für alle $i$.
+\end{proof}
+
+\iffalse
+\begin{proposition}
+Sei $F$ die abstrakte freie Gruppe auf $\{x_1,\ldots,x_d\}$. Dann gilt:
+\[(F-1)\mathbb{F}_p[F]=\bigoplus_{i=1}^d (x_i-1)\mathbb{F}_p[F]\]
+\end{proposition}
+
+\begin{proof}
+Wegen $xy-1=(x-1)+(y-1)+(x-1)(y-1)$, wird das Ideal $I_{F}:=(F-1)\mathbb{F}_p[F]$ schon durch die Elemente $x_i-1,\ i=1,\ldots,d$ erzeugt. Betrachte nun das semidirekte Produkt $H:=\mathbb{F}_p[F]^{(d)}\rtimes F$, d.h. das kartesische Produkt mit der Gruppenoperation $(x,f)\cdot (x',f') = (x+fx',ff')$. Wir identifizieren $\mathbb{F}_p[F]^{(d)}\subset H$ durch die Inklusion $\mathbb{F}_p[F]^{(d)}\hookrightarrow H,\ x\mapsto (x,1)$. Die Abbildung $x_i\mapsto (u_i,x_i)$, wobei $u_i\in \mathbb{F}_p[F]^{(d)}$ den Eintrag $1$ in der $i$-ten Komponente und überall sonst $0$ besitzt, lässt sich zu einem Homomorphismus $\theta:F\to H$ fortsetzen. Da $I_{F}$ als $\mathbb{F}_p$-Vektorraum die Basis $f-1,\ f\in F\setminus\{1\}$ besitzt, definiert
+\[\phi(f-1) := \theta(f)\cdot (0,f^{-1})\in \mathbb{F}_p[F]^{(d)} \]
+eine $\mathbb{F}_p$-lineare Abbildung $\phi:I\to \mathbb{F}_p[F]^{(d)}$. $\phi$ ist ein $\mathbb{F}_p[F]$-Modulhomomorphismus, da:
+\begin{align*}
+\phi(x_j(x_i-1)) &= \phi(x_jx_i-1)-\phi(x_j-1)\\
+&=\theta(x_jx_i)\cdot (0,x_i^{-1} x_j^{-1}) - \theta(x_j)\cdot (0,x_j^{-1})\\
+&=(u_j,x_j)\cdot (u_i,x_i)\cdot (0,x_i^{-1} x_j^{-1}) - u_j\\
+&= (u_j+x_ju_i,x_jx_i)\cdot (0,x_i^{-1}x_j^{-1}) - u_j \\
+&=u_j+ x_ju_i-u_j=x_j\phi(x_i-1) 
+\end{align*}
+Mit dem $\mathbb{F}_p[F]$-Modulhomomorphismus $\psi:\mathbb{F}_p[F]^{(d)}\to I,\ u_i\mapsto x_i-1$ haben wir eine Umkehrabbildung zu $\phi$.
+\end{proof}
+
+\begin{proposition}\label{prop:Ex2}
+Sei $\widehat{F}$ die freie pro"~$p$ Gruppe auf $\{x_1,\ldots,x_d\}$. Dann gilt:
+\[(\widehat{F}-1)\mathbb{F}_p[[\widehat{F}]]=\bigoplus_{i=1}^d (x_i-1)\mathbb{F}_p[[\widehat{F}]]\]
+\end{proposition}
+
+\begin{proof}
+Sei $\pi_n: \mathbb{F}_p[[\widehat{F}]]\to \mathbb{F}_p[\widehat{F}/\widehat{F_n}]\cong \mathbb{F}_p[F/F_n] $ die natürliche Projektion, wobei $\widehat{F_n}:=P_n(\widehat{F})$ und $F_n:=P_n(F)$. Seien $r_1,\ldots,r_d\in \mathbb{F}_p[[\widehat{F}]]$, so dass:
+\[\sum_{i=1}^d(x_i-1)r_i=0 \]
+Für jedes $i$ wähle ein $s_i\in \mathbb{F}_p[F/F_n]$ mit $r_i\equiv s_{i}\mod \ker(\pi_n)$. Wähle für jedes $i$ ein Urbild $y_i\in\mathbb{F}_p[F]$ von $s_i$. Dann gilt mit $I_n:=\ker(\mathbb{F}_p[F]\to\mathbb{F}_p[F/F_n])$ und $I:=I_1$:
+\[ \sum_{i=1}^d(x_i-1)y_i\in I_n\subset I^n \]
+Es existieren also $r_{j_1,\ldots,j_n}\in\mathbb{F}_p[F]$ für alle $j_1,\ldots,j_n=1,\ldots,d$, so dass:
+\[  \sum_{i=1}^d(x_i-1)y_i = \sum_{j_1,\ldots,j_n=1,\ldots,d} (x_{j_1}-1)\cdots (x_{j_n}-1) r_{j_1,\ldots,j_n} \]
+Nach dem vorherigen Satz folgt für alle $i$:
+\[y_i = \sum_{j_2,\ldots,j_n=1,\ldots,d} (x_{j_2}-1)\cdots (x_{j_n}-1)r_{i,j_2,\ldots, j_n} \in I^{n-1} \]
+\end{proof}
+\fi
+
+\section{Die Golod-Shafarevich Ungleichung}
+
+Sei $G$ eine pro"~$p$ Gruppe, so dass $d:=d(G)$ und $t:=t(G)$ endlich sind und $R:=\mathbb{F}_p[[G]]$ der vollständige Gruppenring. Wir haben eine Darstellung $G=\langle X;S\rangle$ mit $\#X=d$ und $\#S=t$. Setzen wir $F:=\widehat{F}(X)$ und $N:=\overline{N(S)}\lhd F$, so erhalten wir eine kurze exakte Folge:
+\[ 1\to N\to F\to G\to 1 \]
+
+\begin{definition}
+Sei $I\subset\mathbb{F}_p[G]$ das Augmentationsideal und $\widehat{I}$ sein Abschluss in $\mathbb{F}_p[[G]]$. Wir setzen:
+\[ c_n := \dim_{\mathbb{F}_p}(I^n/I^{n+1}) =\dim_{\mathbb{F}_p}(\widehat{I}^n/\widehat{I}^{n+1}),\qquad \varrho:=\limsup_{n\to\infty}\sqrt[n]{c_n} \]
+$\varrho^{-1}$ ist gerade der Konvergenzradius der Potenzreihe $\sum_{n=0}^\infty c_n X^n$ im archimedischen Sinne.
+\end{definition}
+
+\begin{theorem}\textit{(Die Golod-Shafarevich Ungleichung)}\label{thm:golod-shafarevich}
+Sei $G$ eine endlich erzeugte pro"~$p$ Gruppe mit $d(G)>1$. Ist $\varrho\leq 1$, so gilt:
+\[ t(G)\geq \frac{d(G)^2}{4} \]
+Ist $d(G)\neq 2$ oder $t(G)\neq 1$, so ist diese Ungleichung strikt.
+\end{theorem}
+
+\begin{remark}
+Ist $t(G)$ unendlich, so ist die Ungleichung trivialerweise erfüllt.
+\end{remark}
+
+\begin{corollary}
+Für endliche $p$-Gruppen $G$ gilt:
+\[t(G)\geq \frac{d(G)^2}{4} \]
+\end{corollary}
+
+\begin{proof}
+Folgt aus Theorem~\ref{thm:golod-shafarevich} und Korollar~\ref{cor:finite-group-rho}. Ist $G$ zyklisch, so ist $t(G)\geq 1$, da nichttriviale freie pro"~$p$ Gruppen unendlich sind.
+\end{proof}
+
+\begin{corollary}
+Für $p$-adisch analytische pro"~$p$ Gruppen $G$, die nicht prozyklisch sind, gilt:
+\[t(G)\geq \frac{d(G)^2}{4}\]
+\end{corollary}
+
+\begin{proof}
+Folgt aus Theorem~\ref{thm:golod-shafarevich} und Satz~\ref{Ex7.5}.
+\end{proof}
+
+\paragraph{} Bevor wir die Golod-Shafarevich Ungleichung beweisen können, benötigen wir zunächst das folgende Hilfslemma:
+
+\begin{lemma}\label{D2}
+Die kurze exakte Folge $1\to N\to F\to G\to 1$ induziert die folgende exakte Folge von $R$"~Moduln:
+\[ R^{(t)}\stackrel{\alpha}{\to} R^{(d)}\to \widehat{I}\to 0 \]
+mit $\alpha(R^{(t)})\subset \widehat{I}^{(d)}$.
+\end{lemma}
+
+\begin{proof}
+Setze $F_n:=P_n(F)$ und $G_n:=P_n(G)$ und sei $N=\overline{N(y_1,\ldots,y_t)}\lhd F$. Wir erhalten kompatible kurze exakte Folgen:
+\[ 0\to\sum_{i=1}^t(y_iF_n-1)\mathbb{F}_p[F/F_n]\to \mathbb{F}_p[F/F_n]\to\mathbb{F}_p[G/G_n]\to 0 \]
+Da alle Objekte endlich sind, erhalten wir nach Korollar~\ref{prop:compact-exact-limes} unter $\varprojlim$ die kurze exakte Folge:
+\[0\to K\to \mathbb{F}_p[[F]]\stackrel{\beta}{\to} \mathbb{F}_p[[G]]\to 0 \]
+mit einem Ringhomomorphismus $\beta$ und $K=\sum_{i=1}^t (y_i-1)\mathbb{F}_p[[F]]$, wobei $K\subset\mathbb{F}_p[[F]]$ als endlich erzeugtes Ideal in einem kompakten Hausdorffraum kompakt und daher abgeschlossen ist.
+
+Sei $\widehat{I}_F:=(F-1)\mathbb{F}_p[[F]]$ der Abschluss des Augmentationsideals $I_F\subset\mathbb{F}_p[F]$ in $\mathbb{F}_p[[F]]$. Dann ist $K\subset \widehat{I}_F$ und $\beta(\widehat{I}_F)=\widehat{I}$. $\beta$ induziert einen surjektiven Homomorphismus $\widehat{I}_F/\widehat{I}_F^2\to \widehat{I}/\widehat{I}^2$. Da $d(F)=d=d(G)$, gilt nach Korollar~\ref{cor:Ex1} und Lemma~\ref{lemma:nuisance} $\widehat{I}_F/\widehat{I}_F^2\cong I_F/I_F^2\cong \mathbb{F}_p^{(d)}\cong I/I^2\cong \widehat{I}/\widehat{I}^2$. Daher folgt $K=\ker(\beta)\subset \widehat{I}_F^2$. Aus der obigen kurzen exakten Folge erhalten wir somit die folgende exakte Folge:
+\[ K/K^2\stackrel{\gamma}{\to}\widehat{I}_F/\widehat{I}_FK\to \widehat{I}\to 0 \]
+mit $\operatorname{im}(\gamma)\subset\widehat{I}_F^2/\widehat{I}_FK$. Da $K$ ein durch $t$ Elementen erzeugter $\mathbb{F}_p[[F]]$-Rechtsmodul ist, ist $K/K^2$ ein von $t$ Elementen erzeugter $\mathbb{F}_p[[G]]$-Rechtsmodul. Wir erhalten also einen surjektiven Mo\-dul\-ho\-mo\-mor\-phis\-mus $\pi:R^{(t)}\to K/K^2$. Andererseits ist nach Satz~\ref{prop:Ex2} $\widehat{I}_F=(F-1)\mathbb{F}_p[[F]]$ ein freier $\mathbb{F}_p[[F]]$-Modul auf $d$ Erzeugern. Es folgt:
+\[\widehat{I}_F/\widehat{I}_FK\cong \mathbb{F}_p[[F]]^{(d)}/\mathbb{F}_p[[F]]^{(d)}K\cong R^{(d)} \]
+Zusammen erhalten wir die gewünschte exakte Folge:
+\[R^{(t)}\stackrel{\alpha}{\to}R^{(d)}\to \widehat{I}\to 0 \]
+mit $\alpha:=\gamma\circ\pi$. Es gilt $\alpha(R^{(t)})=\operatorname{im}(\gamma)\subset\widehat{I}^2_F/\widehat{I}_FK\cong R^{(d)}\widehat{I}=\widehat{I}^{(d)}$.
+\end{proof}
+
+\begin{proof}[Beweis von Theorem~\ref{thm:golod-shafarevich}] 
+Da $\varrho\leq 1$, konvergiert die folgende Potenzreihe für $x\in (0,1)$:
+\[P(x) := \sum_{n=0}^\infty c_nx^n \]
+Für $n\geq 0$ setze $s_n:=\dim_{\mathbb{F}_p}(R/\widehat{I}^{n+1})=\sum_{j=0}^nc_j$ und zusätzlich $s_{-1}:=0$. Sei $n\geq 1$. Tensorieren wir die exakte Folge aus Lemma~\ref{D2} mit $R/\widehat{I}^n$, so erhalten wir:
+\[ (R/\widehat{I}^n)^{(t)}\to (R/\widehat{I}^n)^{(d)} \to \widehat{I}/\widehat{I}^{n+1} \to 0 \]
+Mit $\alpha$ aus Lemma~\ref{D2} und $K_n:=\alpha^{-1}( (\widehat{I}^n)^{(d)})$, erhalten wir die kurze exakte Folge:
+\[ 0\to R^{(t)}/K_n \stackrel{\alpha_n}{\to} (R/\widehat{I}^n)^{(d)} \to\widehat{I}/\widehat{I}^{n+1}\to 0 \]
+Sei $i\in\widehat{I}^{n-1}$ und $r\in R^{(t)}$. Dann gilt $\alpha(ir)=i\alpha(r)\in(\widehat{I}^n)^{(d)}$, da $\alpha(R^{(t)})\subset\widehat{I}^{(d)}$, d.h. $ir\in K_n$. Daher ist $R^{(t)}/K_n$ ein $R/\widehat{I}^{n-1}$"~Modul und höchstens von der $\mathbb{F}_p$"~Dimension $ts_{n-2}$. Die beiden anderen Terme haben Dimensionen $ds_{n-1}$ bzw. $s_n-1$, da $\dim_{\mathbb{F}_p}(R/\widehat{I})=1$. Es folgt:
+\[ts_{n-2}-ds_{n-1}+s_n\geq 1 \]
+Multiplizieren wir diese Ungleichung mit $x^{n-1}-x^n$ und addiert man die resultierenden Ungleichungen, so erhalten wir unter Beachtung von $s_n-s_{n-1}=c_n$ und $x\in (0,1)$:
+\[ P(x)(tx^2-dx+1)\geq 1 \]
+Da $P(x)>0$, folgt $tx^2-dx+1>0$ für alle $x\in (0,1)$. Für $x\nearrow 1$ erhalten wir $t-d+1\geq 0$, also $t\geq d-1$. Für $d=2$ folgt $t\geq 1$. Sei nun $d\geq 3$. Dann gilt $\frac{d}{2t}\leq\frac{d}{2d-2} <1$. Setzen wir $x:=\frac{d}{2t}$ in die Ungleichung $tx^2-dx+1>0$ ein, erhalten wir $-\frac{d^2}{4t}+1>0$.
+\end{proof}
+
+\iffalse
+\section{Die Ungleichung für Vervollständigungen}
+
+Sei $p$ eine Primzahl, $\Gamma$ eine Gruppe und $\Gamma=\langle X;R\rangle$ eine endliche Darstellung als abstrakte Gruppe, d.h. $\Gamma\cong F(X)/N(R)$, wobei $F(X)$ die freie Gruppe auf $X$ bezeichnet.
+
+\begin{proposition}\label{prop:D4}
+Es ist $\widehat{\Gamma}=\langle X;R\rangle$ eine Darstellung der pro"~$p$ Vervollständigung von $\Gamma$ in der Kategorie der pro"~$p$ Gruppen.
+\end{proposition}
+
+\begin{proof}
+Wir zeigen, dass $\widehat{F}(X)/\overline{N(R)}$ die Universaleigenschaft der pro"~$p$ Vervollständigung von $\Gamma$ erfüllt. Sei $\Gamma \to G$ ein Homomorphismus in eine pro"~$p$ Gruppe $G$. Der Gruppenho\-mo\-mor\-phis\-mus $F(X)\to \Gamma\to G$ induziert einen eindeutigen, stetigen Homomorphismus $\pi:\widehat{F}(X)\to G$. Da $R\subset\ker(\pi)$ und $\widehat{F}(X)$ hausdorffsch, induziert $\pi$ einen eindeutigen, stetigen Homomorphismus $\widehat{F}(X)/\overline{N(R)}\to G$.
+\end{proof}
+
+\begin{definition}
+Da $d(\Gamma)=d(\widehat{\Gamma})$ im Allgemeinen nicht gilt, können wir die Golod-Shafarevich Ungleichung nicht direkt für abstrakte Gruppen verwenden. Wir definieren:
+\[d_p(\Gamma)=d(\Gamma/\Gamma^p[\Gamma,\Gamma]) \]
+\end{definition}
+
+\begin{proposition}\label{prop:D5}
+Ist $\Gamma$ eine endlich erzeugte Gruppe, so gilt $d(\widehat{\Gamma})=d_p(\Gamma)$.
+\end{proposition}
+
+\begin{proof}
+Setze $G:=\widehat{\Gamma}$. Nach Satz~\ref{prop:D4} ist $G$ topologisch endlich erzeugt. Da $\Gamma$ endlich erzeugt, ist $\Gamma/\Gamma^p[\Gamma,\Gamma]$ ein endlich dimensionaler $\mathbb{F}_p$-Vektorraum, also ist $\Gamma^p[\Gamma,\Gamma]$ vom $p$-Potenz-Index. Wir erhalten daher die Projektion $G\to\Gamma/\Gamma^p[\Gamma,\Gamma]$. Diese induziert eine Surjektion $G/\Phi(G)\to\Gamma/\Gamma^p[\Gamma,\Gamma]$. Als surjektive $\mathbb{F}_p$-lineare Abbildung zwischen endlich dimensionierte $\mathbb{F}_p$-Vektorräume ist diese ein Isomorphismus. Es folgt $d(G)=d(G/\Phi(G))=d_p(\Gamma)$.
+\end{proof}
+
+\begin{proposition}\label{prop:D6}
+Sei $G=\langle X;R\rangle$ eine pro"~$p$ Gruppe mit endlicher pro"~$p$ Darstellung. Dann existiert eine Darstellung $G=\langle Y;S\rangle$ mit $\#Y=d(G)$ und $\#S=\#R-(\#X-\#Y)$.
+\end{proposition}
+
+\begin{proof}
+Sei $F:=\widehat{F}(X)$, also haben wir einen surjektiven Homomorphismus $F\to G$ mit Kern $\overline{N(R)}\lhd F$. Diese induziert einen surjektiven Homomorphismus $\phi:F/\Phi(F)\to G/\Phi(G)$. Setze $K:=\ker(\phi)$. $K$ ist ein Unterraum des $\mathbb{F}_p$-Vektorraums $F/\Phi(F)$, der durch das Bild von $R$ erzeugt wird. Sei $\{r_1\Phi(F),\ldots,r_m\Phi(F)\}$ eine Basis von $K$ mit $r_1,\ldots,r_m\in R$. Dann gilt $m=d(F)-d(G)$ und $R':=\{r_1,\ldots,r_m\}\subset R$ ist Teilmenge einer freien Basis von $F$.
+\end{proof}
+
+\begin{corollary}\label{cor:D7}
+Es gilt $t(\widehat{\Gamma})\leq \#R -(\#X-d_p(\Gamma))$.
+\end{corollary}
+
+\begin{theorem}
+Sei $\Gamma=\langle X;R\rangle$ eine abstrakte Gruppe mit endlicher Darstellung und $p$ eine Primzahl. Erfüllt die pro"~$p$ Vervollständigung $\widehat{\Gamma}$ die Voraussetzungen von Theorem~\ref{thm:golod-shafarevich}, so gilt:
+\[\#R -(\#X-d_p(\Gamma))\geq \frac{d_p(\Gamma)^2}{4} \]
+\end{theorem}
+
+\begin{proof}
+Folgt direkt aus Korollar~\ref{cor:D7} und Theorem~\ref{thm:golod-shafarevich}.
+\end{proof}
+\fi
+
+\begin{thebibliography}{99999999}
+
+\bibitem[DDMS99]{DDMS99}
+	J. D. Dixon, M. P. F. du Sautoy, A. Mann, D. Segal (1999)
+	\textit{Analytic Pro"~$p$ Groups}.
+	Cambridge Studies in Advanced Mathematics,
+	2nd Edition.
+\bibitem[GS64]{GS64}
+	E. S. Golod, I. R. \v{S}afarevi\v{c} (1964)
+	\textit{Über Klassenkörpertürme} (russisch). Izv. Akad. Nauk SSSR, Ser. Mat. \textbf{28} 261-272
+\bibitem[Koc02]{Koc02}
+	H. Koch (2002) \textit{Galois Theory of $p$-Extensions}. Springer-Verlag.
+\bibitem[Laz65]{Laz65}
+	M. Lazard (1965) \textit{Groupes analytiques $p$-adiques}. Inst. Hautes Études Scientifiques, Publ. Math. \textbf{26} 389-603
+\bibitem[LM87]{LM87}
+	A. Lubotzky and A. Mann (1987) \textit{Powerful $p$-Groups}. J. Algebra. \textbf{105} 484-515
+\bibitem[Wil98]{Wil98}
+	J. S. Wilson (1998) \textit{Profinite Groups}. Oxford University Press, Oxford.
+
+\end{thebibliography}
+
+%\printindex
+\end{document}
