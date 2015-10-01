@@ -14,7 +14,7 @@ Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\i
 Let $K$ be a field of finite dimension. We denote the set of equivalence classes of non-archimedean valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
 
 We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$. The \textit{rank}\index{valuation!rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v$ is defined as the rank of its valuation group $\Gamma_v$ as a $\mathbb{Z}$-module:
-\[\operatorname{rrank}(v) = \dim_\mathbb{Q}\Gamma_v\otimes_\mathbb{Z}\mathbb{Q} \]
+\[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
 \end{definition}
 
 \begin{lemma}
@@ -52,4 +52,40 @@ $\operatorname{Spv}(K)$ with the topology defined above is a quasicompact $T_0$-
 Let $v,w\in\operatorname{Spv}(K)$. We have:
 \[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
 Thus $v$ is a closed point if and only if $\dim k(v)=0$.
+\end{lemma}
+
+\begin{lemma}
+Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
+\[\{\text{Specializations of }v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
+If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_v$. $w$ is henselian if and only if $v$ and $w\mod v$ are henselian.
+\end{lemma}
+
+\paragraph{} Let $K$ be a field of characteristic $0$ and dimension $2$.
+
+\begin{lemma}
+Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In the last case we have $\operatorname{cd}(G_K)\leq 2$.
+\end{lemma}
+
+\begin{definition}
+Let $K$ be finitely generated. A \textit{model} of $K$ is a regular, proper scheme $\mathfrak{X}$ over $\mathbb{Z}$ with function field $K$. A \textit{morphism of models} is a morphism of schemes inducing the identity on $K$. We denote the category of models of $K$ by $\mathbf{M}(K)$; it is filtered. 
+
+For every model $\mathfrak{X}$ there is a canonical map $\pi_\mathfrak{X}:\operatorname{Spv}(K)\to\mathfrak{X}$. $\pi_\mathfrak{X}(v)$  is the unique point of $\mathfrak{X}$ such that $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\subset\mathcal{O}_v$ and the inclusion $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\hookrightarrow \mathcal{O}_v$ is a homomorphism of local rings.
+\end{definition}
+
+\begin{lemma}
+\begin{enumerate}[(i)]
+\item $\operatorname{Spv}(K)$ together with the maps $\pi_{\mathfrak{X}}$ is the projective limit of topological spaces: 
+\[\operatorname{Spv}(K) =\varprojlim_{\mathfrak{X}\in\mathbf{M}(K)}\mathfrak{X}\]
+In particular we have:
+\[ |\operatorname{Spv}(K)| =\varprojlim_{\mathfrak{X}\in\mathbf{M}(K)}|\mathfrak{X}| \]
+\item For all $v\in\operatorname{Spv}(K)$ we have:
+\[ \mathcal{O}_v = \varinjlim_{\mathfrak{X}\in\mathbf{M}(K)}\mathcal{O}_{\mathfrak{X},\pi_\mathfrak{X}(v)} \]
+\item For $v\in\operatorname{Spv}(K)$ let $K_v$ be the quotient field of a henselization of $\mathcal{O}_v$ and for $\mathfrak{X}\in\mathbf{M}(K),\ x\in\mathfrak{X}$ let $K_\mathfrak{X}$ be the quotient field of a henselization of $\mathcal{O}_{\mathfrak{X},x}$. Then:
+\[ K_v=\varinjlim_{\mathfrak{X}\in\mathbf{M}(K)}K_{\pi_\mathfrak{X}(v)} \]
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma}\label{lemma:main-result}
+Let $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
+\[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})\to\prod_{w\in |\operatorname{Spv}(K)| }\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z}) \]
 \end{lemma}
