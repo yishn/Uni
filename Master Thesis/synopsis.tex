@@ -89,3 +89,41 @@ In particular we have:
 Let $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
 \[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})\to\prod_{w\in |\operatorname{Spv}(K)| }\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z}) \]
 \end{lemma}
+
+\begin{lemma}
+Let $K$ be henselian with respect to $w\in|\operatorname{Spv}(K)|$. Set $k=k(w)$ and $\Gamma = \Gamma_w$. Then $k$ is an algebraic extension of a finite field $\mathbb{F}_p$. Let $\ell\neq p$ be a prime and assume $\mu_\ell\subset K$. Then the following conditions are equivalent:
+\begin{enumerate}[(i)]
+\item $\mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$
+\item $\ell^\infty\nmid[k:\mathbb{F}_p]$ and $\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma) = 2$
+\end{enumerate}
+Otherwise we have $\mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})=0$. If $L/K$ is an algebraic extension and (i) holds, we have:
+\[ \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z}) = \begin{cases}
+\mathbb{Z}/\ell\mathbb{Z}, & \ell^\infty\nmid [L:K]\\
+0, & \text{otherwise}
+\end{cases} \]
+\end{lemma}
+
+\begin{proposition}
+Let $K_0/K$ be an algebraic extension.
+\begin{enumerate}[(i)]
+\item Suppose there exists a prime number $\ell$ with $\ell^\infty\nmid[K_0:K]$ and such that for every algebraic extension $L/K_0$ we have: 
+\[ \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z}) = \begin{cases}
+\mathbb{Z}/\ell\mathbb{Z}, & \ell^\infty\nmid [L:K_0]\\
+0, & \text{otherwise}
+\end{cases} \]
+Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
+\item Assume that the hypothesis of (i) is satisfied for two different prime numbers. Then $w$ is defectless.
+\end{enumerate}
+\end{proposition}
+
+\section{Local correspondence}
+
+Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ the corresponding intermediate field of $\overline{K'}/K'$ will be denoted by $L'$. In other words $\sigma G_L=G_{L'}$.
+
+\begin{lemma}
+Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselization of $w$. Then $E'$ is a henselization of $K'$ with respect to a unique $w'\in\operatorname{Spv}_\text{d}^{(2)}(K')$. The map $w\mapsto w'$ does not depend on the choice of the henselization.
+\end{lemma}
+
+\begin{lemma}
+$\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$.
+\end{lemma}
