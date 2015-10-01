@@ -193,3 +193,23 @@ Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
 In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
+
+\begin{theorem}[\textit{Pop}]\label{1.1}
+Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
+\end{theorem}
+
+\begin{step}
+There exists a unique group isomorphism $\varphi:K'^\times\to K^\times$ such that for any $P\in X_0$ we have $\varphi(U_{P'})=U_P$ where $P'=\sigma(P)$ and the following diagram:
+\[ \begin{tikzcd}
+U_{P'} \ar[r, "\varphi"]\ar[d, "r_{P'}"'] & U_P \ar[d, "r_P"]\\
+k(P') \ar[r, "\varphi_P"'] & k(P)
+\end{tikzcd} \]
+\end{step}
+
+\begin{step}
+Extending $\varphi$ to a map $K'\to K$ by setting $\varphi(0)=0$ yields a field isomorphism $\varphi:K'\to K$.
+\end{step}
+
+\begin{step}
+$\varphi$ induces $\sigma:G_K\to G_{K'}$, i.e. $\sigma(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$, and is uniquely determined by this property.
+\end{step}
