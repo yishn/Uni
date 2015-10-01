@@ -56,7 +56,7 @@ Thus $v$ is a closed point if and only if $\dim k(v)=0$.
 
 \begin{lemma}
 Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
-\[\{\text{Specializations of }v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
+\[\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_v$. $w$ is henselian if and only if $v$ and $w\mod v$ are henselian.
 \end{lemma}
 
@@ -199,7 +199,7 @@ Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension 
 \end{theorem}
 
 \begin{step}
-There exists a unique group isomorphism $\varphi:K'^\times\to K^\times$ such that for any $P\in X_0$ we have $\varphi(U_{P'})=U_P$ where $P'=\sigma(P)$ and the following diagram:
+There exists a unique group isomorphism $\varphi:K'^\times\to K^\times$ such that for any $P\in X_0$ we have $\varphi(U_{P'})=U_P$ where $P'=\sigma(P)$ and the following diagram commutes:
 \[ \begin{tikzcd}
 U_{P'} \ar[r, "\varphi"]\ar[d, "r_{P'}"'] & U_P \ar[d, "r_P"]\\
 k(P') \ar[r, "\varphi_P"'] & k(P)
