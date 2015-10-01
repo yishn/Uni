@@ -1,6 +1,6 @@
 \chapter{Synopsis}
 
-\section{Some results on $\operatorname{Spv}(K)$}
+\section{Some Results on $\operatorname{Spv}(K)$}
 
 \begin{definition}
 Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
@@ -116,7 +116,7 @@ Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
 \end{enumerate}
 \end{proposition}
 
-\section{Local correspondence}
+\section{Local Correspondence}
 
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ the corresponding intermediate field of $\overline{K'}/K'$ will be denoted by $L'$. In other words $\sigma G_L=G_{L'}$.
 
@@ -128,4 +128,68 @@ Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselizatio
 $\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denotes the inertial fields of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
 \[ G_{k(v)}\cong\operatorname{Gal}(E^\text{t}/E)\to\operatorname{Gal}(E'^{\text{t}}/E')\cong G_{k(v')} \]
 which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k(v)^\text{s}$. In particular $\varphi_v=\varphi_v^\text{s}|_{k(v')}:k(v')\to k(v)$ is an isomorphism.
+\end{lemma}
+
+\section{Global Correspondence mod $n$}
+
+\begin{lemma}\label{4.1}
+Let $E$ be a number field and let $X$ be a smooth projective geometrically connected curve over $E$. Let $\pi:X'\to X$ be a connected Galois covering of degree $d$ which splits completely, i.e. every closed point $P\in X_0$ has exactly $d$ pre-images in $X'$. Then $d=1$.
+\end{lemma}
+
+\paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
+
+Let $X$ and $X'$ be the unique smooth projective curve over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$.
+
+\begin{lemma}\label{4.2}
+We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
+\[ \begin{tikzcd}
+G_K \ar[r, "\sigma"] \ar[d, "\text{res}"'] & G_{K'}\ar[d, "\text{res}"]\\
+G_k \ar[r, "\sigma"'] & G_{k'}
+\end{tikzcd} \]
+Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$.
+\end{lemma}
+
+\begin{definition}\label{4.4}
+For a finite subset $S\subset X_0$ set:
+\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0\setminus S \} \]
+$K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\sigma(S)$.
+\end{definition}
+
+\begin{lemma}\label{4.5}
+\begin{enumerate}[(i)]
+\item There exists a finite subset $S\subset X_0$ such that:
+\[ \operatorname{Pic}(X\setminus S)=0=\operatorname{Pic}(X'\setminus S') \]
+Such a set $S$ is called \textit{admissible}. If $V\subset X$ is an open subscheme, then one can choose $S$ in $V_0$.
+\item Let $S$ be admissible. For all $n\in\mathbb{N}$ the following canonical maps are injective:
+\[ K^S/n \to K^\times /n,\quad K'^{S'}/n\to K'^\times /n \]
+$\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
+\end{enumerate}
+\end{lemma}
+
+\section{The Proof}
+
+\begin{definition}\label{5.1}
+An abelian group is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotien $A/A_\text{tor}$ is free abelian. $A$ is free-by-finite if and only if $A$ is the direct sum of a finite group and a free abelian group.
+\end{definition}
+
+\begin{lemma}\label{5.2}
+\begin{enumerate}[(i)]
+\item Let $A\to B$ be a homomorphism of abelian groups with finite kernel and cokernel. Then $A$ is free-by-finite iff $B$ is free-by-finite.
+\item Let $0\to A'\stackrel{i}{\to}A\stackrel{p}{\to}A''\to 0$ be an exact sequence of abelian groups. If $A'$ and $A''$ are free-by-finite, then $A$ is free-by-finite. Conversely, if $A$ is free-by-finite, then $A'$ is free-by-finite. If additionally, $A'$ is finitely generated, then $A''$ is free-by-finite.
+\item Let $A$ be free-by-finite. Then $\bigcap_{n\in\mathbb{N}}nA=0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma}\label{5.3}
+Let $F$ be a number field. Then:
+\begin{enumerate}[(i)]
+\item $F^\times$ is free-by-finite.
+\item Let $F_1,\ldots,F_n$ be finite extensions of $F$. Then $\prod_{i=1}^{n}F_i^\times/F^\times$ is free-by-finite, where $F^\times$ is considered as a subgroup of $\prod_{i=1}^{n}F_i^\times$ via the diagonal embedding.
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0$ with $T\cap S=\varnothing$ such that the following map is injective:
+\[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
+In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
