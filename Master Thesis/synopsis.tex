@@ -212,8 +212,12 @@ Let $F$ be a number field. Then:
 \begin{lemma}\label{5.4}
 Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0$ with $T\cap S=\varnothing$ such that the following map is injective:
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
-In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite. Such a pair $(S,T)$ is called \textit{admissible pair}.
+In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
+
+\begin{definition}
+For each admissible $S\subset X_0$ we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
+\end{definition}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
