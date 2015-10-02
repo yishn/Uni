@@ -149,7 +149,7 @@ G_k \ar[r, "\sigma"'] & G_{k'}
 Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$.
 \end{lemma}
 
-\paragraph{}\label{4.3} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
+\paragraph{} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the following diagram commutes:
 \[ \begin{tikzcd}
@@ -173,7 +173,7 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
 \[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0\setminus S \} \]
-$K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\sigma(S)$.
+$K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
 \end{definition}
 
 \begin{lemma}\label{4.5}
@@ -212,7 +212,7 @@ Let $F$ be a number field. Then:
 \begin{lemma}\label{5.4}
 Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0$ with $T\cap S=\varnothing$ such that the following map is injective:
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
-In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
+In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite. Such a pair $(S,T)$ is called \textit{admissible pair}.
 \end{lemma}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
