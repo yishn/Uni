@@ -149,6 +149,27 @@ G_k \ar[r, "\sigma"'] & G_{k'}
 Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$.
 \end{lemma}
 
+\paragraph{}\label{4.3} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
+\[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
+Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the following diagram commutes:
+\[ \begin{tikzcd}
+L'^\times/n \ar[r, "\varphi_n"]\dar & L^\times/n \dar\\
+M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
+\end{tikzcd} \]
+Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the residue map $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact:
+\[ 0\to U_P/n\to K^\times/n\to\mathbb{Z}/n\mathbb{Z}\to 0 \]
+
+\begin{lemma}\label{4.3}
+\begin{enumerate}[(i)]
+\item $\varphi_n$ induces an isomorphism $\varphi_n: U_{P'}/n\to U_P/n$.
+\item The following diagram commutes:
+\[ \begin{tikzcd}
+U_{P'}/n \rar["\varphi_n"] \dar["r_{P'}/n"'] & U_P/n \dar["r_P/n"]\\
+k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
+\end{tikzcd} \]
+\end{enumerate}
+\end{lemma}
+
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
 \[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0\setminus S \} \]
