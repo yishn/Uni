@@ -16,7 +16,7 @@
 #*.pdf
 seal.pdf
 thesis.pdf
-papers/
+sources/
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl

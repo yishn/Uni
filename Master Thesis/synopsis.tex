@@ -125,8 +125,8 @@ Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselizatio
 \end{lemma}
 
 \begin{lemma}\label{3.2}
-$\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denotes the inertial fields of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
-\[ G_{k(v)}\cong\operatorname{Gal}(E^\text{t}/E)\to\operatorname{Gal}(E'^{\text{t}}/E')\cong G_{k(v')} \]
+$\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denote the inertial fields of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
+\[ G_{k(v)}\cong\operatorname{Gal}(E^\text{t}/E) \to\operatorname{Gal}(E'^{\text{t}}/E')\cong G_{k(v')} \]
 which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k(v)^\text{s}$. In particular $\varphi_v=\varphi_v^\text{s}|_{k(v')}:k(v')\to k(v)$ is an isomorphism.
 \end{lemma}
 
@@ -156,7 +156,7 @@ Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the followin
 L'^\times/n \ar[r, "\varphi_n"]\dar & L^\times/n \dar\\
 M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 \end{tikzcd} \]
-Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the residue map $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact:
+Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact:
 \[ 0\to U_P/n\to K^\times/n\to\mathbb{Z}/n\mathbb{Z}\to 0 \]
 
 \begin{lemma}\label{4.3}
@@ -227,7 +227,7 @@ Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension 
 There exists a unique group isomorphism $\varphi:K'^\times\to K^\times$ such that for any $P\in X_0$ we have $\varphi(U_{P'})=U_P$ where $P'=\sigma(P)$ and the following diagram commutes:
 \[ \begin{tikzcd}
 U_{P'} \ar[r, "\varphi"]\ar[d, "r_{P'}"'] & U_P \ar[d, "r_P"]\\
-k(P') \ar[r, "\varphi_P"'] & k(P)
+k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \end{tikzcd} \]
 \end{step}
 
