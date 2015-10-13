@@ -13,7 +13,7 @@ Eine *Prägarbe (abelscher Gruppen)* ~~Prägarbe~~ `F` besteht aus folgenden Obj
 
 *Notation:* Für `V\subset U` und `s\in F(U)` schreiben wir auch `s|_V` für `\varrho^U_V(s)`.
 
-Ein *Morphismus* ~~Morphismus|Prägarbe~~ `F\to G` von Prägarben ist eine Familie von Homomorphismus `(F(U)\to G(U))_{U\subset X}`, so dass für `V\subset U` das folgende Diagramm kommutiert:
+Ein *Morphismus* ~~Morphismus|Prägarben~~ `F\to G` von Prägarben ist eine Familie von Homomorphismus `(F(U)\to G(U))_{U\subset X}`, so dass für `V\subset U` das folgende Diagramm kommutiert:
 
     \xymatrix{
         F(U) \ar[r] \ar[d]_{\varrho} & G(U) \ar[d]^{\varrho} \\
