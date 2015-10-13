@@ -13,15 +13,15 @@ Eine *Prägarbe (abelscher Gruppen)* ~~Prägarbe~~ `F` besteht aus folgenden Obj
 
 *Notation:* Für `V\subset U` und `s\in F(U)` schreiben wir auch `s|_V` für `\varrho^U_V(s)`.
 
-Ein *Morphismus* ~~Morphismus|Prägarben~~ `F\to G` von Prägarben ist eine Familie von Homomorphismus `(F(U)\to G(U))_{U\subset_\text{o} X}`, so dass für `V\subset U` das folgende Diagramm kommutiert:
+Ein *Morphismus* ~~Morphismus|Prägarben~~ `F\to G` von Prägarben ist eine Familie von Homomorphismus `(F(U)\to G(U))_{U\opensubset X}`, so dass für `V\subset U` das folgende Diagramm kommutiert:
 
     \xymatrix{
         F(U) \ar[r] \ar[d]_{\varrho} & G(U) \ar[d]^{\varrho} \\
         F(V) \ar[r]                  & G(V)
     }
 
-Die Prägarben abelscher Gruppen bilden eine abelsche Kategorie `\mathbf{PrSh}(X)`, wobei Kerne, Bilder, Kokerne, usw. schnittweise gebildet werden.
+Die Prägarben abelscher Gruppen bilden eine abelsche Kategorie `\PrSh(X)`, wobei Kerne, Bilder, Kokerne, usw. schnittweise gebildet werden.
 
 #1-2:Satz
 
-Die abelsche Kategorie `\mathbf{PrSh}(X)` hat genügend viele Injektive.
+Die abelsche Kategorie `\PrSh(X)` hat genügend viele Injektive.

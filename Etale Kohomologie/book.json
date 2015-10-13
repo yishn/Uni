@@ -11,5 +11,9 @@
             "title": "Literatur",
             "path": "literatur/"
         }
+    ],
+    "macros": [
+        "\\newcommand\\opensubset{\\subset_\\text{o}}",
+        "\\newcommand\\PrSh{\\mathbf{PrSh}}"
     ]
 }
