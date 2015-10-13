@@ -231,6 +231,32 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \end{tikzcd} \]
 \end{step}
 
+\begin{proof}
+Since any rational function on $X$ is uniquely determined by its values at those points where it is defined, $\varphi$ is unique. Furthermore, the following maps are injective for all finite subsets $S\subset X_0$:
+\[ r_S:K^S \to\prod_{P\in X_0\setminus S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
+For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
+\[ (\star) \qquad \begin{tikzcd}
+K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
+\displaystyle \prod_{P\in T}k(\sigma P)^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
+\end{tikzcd} \phantom{\qquad (\star)} \]
+The vertical maps are injective by definition. Thus, it suffices to show that the composition $\varrho:K'^{S'}\to\prod k(\sigma P)^\times\to \prod k(P)^\times\to\operatorname{coker}(r_{S,T})$ is trivial. Consider the commutative diagram which results from tensoring $\mathbb{Z}/n\mathbb{Z}$ with $(\star)$:
+\[ \begin{tikzcd}
+K'^{S'}/n \rar[dashed]\dar & K^S/n\dar\\
+\displaystyle \prod_{P\in T}k(\sigma P)^\times/n \rar & \displaystyle \prod_{P\in T}k(P)^\times/n
+\end{tikzcd} \]
+According to Lemma~\ref{4.3} and Lemma~\ref{4.5} this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$.
+
+Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. We have:
+\[ r_{S,T_1}\circ\varphi^{S,T_2}=\Big(\prod_{P\in T_1}\varphi_P\Big)\circ r_{S',T_1'} = r_{S,T_1}\circ\varphi^{S,T_1} \]
+Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. By symmetry, $\varphi^S$ is an isomorphism. 
+
+Now, if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
+\[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
+In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
+\[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
+Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi:K'^\times \to K^\times$. $\varphi$ has the desired properties.
+\end{proof}
+
 \begin{step}
 Extending $\varphi$ to a map $K'\to K$ by setting $\varphi(0)=0$ yields a field isomorphism $\varphi:K'\to K$.
 \end{step}
