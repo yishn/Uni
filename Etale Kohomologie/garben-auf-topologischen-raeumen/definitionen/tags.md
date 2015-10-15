@@ -108,7 +108,7 @@ Für eine Prägarbe `P` sind äquivalent:
         P_x, & \text{sonst}
     \end{cases}
 
-Diese ist sogar eine Garbe, die sog. *Wokenkratzergarbe* ~~Wolkenkratzergarbe~~ zur Gruppe `P_x` im Punkt `x`. Der Halm von `F` in `x` ist gerade `P_x`. Nun definieren wir uns `f:P\to F` als `0` auf `P(U)` für `x\not\in U` und als die natürliche Abbildung `P(U)\to P_x` für `x\in U`. Die von `f` auf den Halm bei `x` induzierte Abbildung ist die Identität auf `P_x\neq 0`, weshalb `f` nach [Korollar 1.9](#1-9) nicht die Nullabbildung ist.
+Diese ist sogar eine Garbe, die sog. *Wolkenkratzergarbe* ~~Wolkenkratzergarbe~~ zur Gruppe `P_x` im Punkt `x`. Der Halm von `F` in `x` ist gerade `P_x`. Nun definieren wir uns `f:P\to F` als `0` auf `P(U)` für `x\not\in U` und als die natürliche Abbildung `P(U)\to P_x` für `x\in U`. Die von `f` auf den Halm bei `x` induzierte Abbildung ist die Identität auf `P_x\neq 0`, weshalb `f` nach [Korollar 1.9](#1-9) nicht die Nullabbildung ist.
 
 #1-12:Korollar
 
