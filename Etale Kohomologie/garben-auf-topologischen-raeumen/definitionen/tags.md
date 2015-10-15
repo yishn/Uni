@@ -34,7 +34,7 @@ Sei `A` eine abelsche Gruppe. Dann definiert `F(U)=A` für alle `U\opensubset X`
 
 #1-4:Beispiel
 
-Ist `T` ein weiterer topologischer Raum, so definiert `F(U) = \Abb_\text{stg}(A, G(X))` eine Prägarbe von Mengen (bzw. abelscher Gruppen, wenn `T` eine abelsche topologische Gruppe ist).
+Ist `T` ein weiterer topologischer Raum, so definiert `F(U) = \Abb_\text{stg}(U, T)` eine Prägarbe von Mengen (bzw. abelscher Gruppen, wenn `T` eine abelsche topologische Gruppe ist).
 
 #1-5:Beispiel
 
