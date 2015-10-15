@@ -124,7 +124,7 @@ Die *konstante Garbe* ~~konstant|Garbe~~ `\underline{A}` zu einer abelschen Grup
 
     \underline{A}(U) = \Hom_\text{stg}(U, A)
 
-wobei wir `A` als diskrete topologische Gruppe auffassen, d.h. `\Hom_\text{stg}(U, A)` besteht aus den lokal konstanten Funktionen auf `U`, während `\underline{A}^\text{P}(U)` aus den konstanten Funktionen auf `U` besteht. Es gibt einen natürlichen Homomorphismus `\underline{A}^\text{P} \to \underline{A}`. Dieser ist universell für Homomorphismen in Garben, also:
+wobei wir `A` als diskrete topologische Gruppe auffassen, d.h. `\Hom_\text{stg}(U, A)` besteht aus den lokal konstanten Funktionen auf `U`, während `\underline{A}^\text{P}(U)` aus den konstanten Funktionen auf `U` besteht. Es gibt einen natürlichen Homomorphismus `\underline{A}^\text{P} \to \underline{A}`. Dieser ist universell für Homomorphismen in Garben, siehe [Lemma 1.13](#1-13).
 
 #1-13:Lemma
 

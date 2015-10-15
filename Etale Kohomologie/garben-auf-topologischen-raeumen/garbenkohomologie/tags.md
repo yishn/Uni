@@ -1,6 +1,6 @@
 #1-17:Definition
 
-Wir betrachten den *Schnittfunktor* ~~Schnittfunktor~~ `\Gamma(X, -): \Sh(X)\to \Ab`, `F\mapsto F(X)`. Da `i` linksexakt ist und `F\mapsto F(X)` auf Prägarben exakt ist, ist `\Gamma(X, -)` linksexakt.
+Wir betrachten den *Schnittfunktor* ~~Schnittfunktor~~ `\Gamma(X, -): \Sh(X)\to \Ab`, `F\mapsto F(X)`. Da `i` nach [Korollar 1.15](#1-15) linksexakt ist und `F\mapsto F(X)` auf Prägarben exakt ist, ist `\Gamma(X, -)` linksexakt.
 
 Sei `F` eine Garbe. Wir definieren die `i`-te *Kohomologie* ~~Kohomologie|Garbe~~ von `X` mit Werten in `F` als:
 
