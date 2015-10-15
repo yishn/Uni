@@ -5,7 +5,13 @@
     "toc": [
         {
             "title": "Garben auf topologischen Räumen",
-            "path": "garben-auf-topologischen-raeumen/"
+            "path": "garben-auf-topologischen-raeumen/",
+            "toc": [
+                {
+                    "title": "Definitionen",
+                    "path": "garben-auf-topologischen-raeumen/definitionen/"
+                }
+            ]
         },
         {
             "title": "Literatur",
@@ -13,7 +19,19 @@
         }
     ],
     "macros": [
+        "\\newcommand\\C{\\mathcal{C}}",
+        "\\newcommand\\R{\\mathbb{R}}",
+
         "\\newcommand\\opensubset{\\subset_\\text{o}}",
-        "\\newcommand\\PrSh{\\mathbf{PrSh}}"
+
+        "\\newcommand\\Sh{\\mathbf{Sh}}",
+        "\\newcommand\\PrSh{\\mathbf{PrSh}}",
+        "\\newcommand\\Ab{\\mathbf{Ab}}",
+
+        "\\DeclareMathOperator{\\Hom}{Hom}",
+        "\\DeclareMathOperator{\\Abb}{Abb}",
+        "\\DeclareMathOperator{\\id}{id}",
+        "\\DeclareMathOperator{\\coker}{coker}",
+        "\\DeclareMathOperator*{\\colim}{colim}"
     ]
 }
