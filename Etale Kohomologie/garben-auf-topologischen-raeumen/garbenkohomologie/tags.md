@@ -35,5 +35,5 @@ Eine Garbe `F` heißt *welk*, ~~welk|Garbe~~ wenn für jede offene Teilmenge `U\
 
 #1-21:Bemerkung
 
-* Injektive Garben sind welk nach [Lemma 1.19](#1-19).
-* Ist `F` welk, so ist für jedes `U\opensubset X` die Einschränkung `F|_U` eine welke Garbe auf `U`.
+*   Injektive Garben sind welk nach [Lemma 1.19](#1-19).
+*   Ist `F` welk, so ist für jedes `U\opensubset X` die Einschränkung `F|_U` eine welke Garbe auf `U`.

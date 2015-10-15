@@ -6,10 +6,10 @@ Sei `X` ein topologischer Raum.
 
 Eine *Prägarbe (abelscher Gruppen)* ~~Prägarbe~~ `F` besteht aus folgenden Objekten:
 
-* Zu jeder offenen Teilmenge `U\opensubset X` gibt es eine abelsche Gruppe `F(U)`.
-* Zu jedem Paar `V\subset U` offener Teilmengen gibt es einen Homomorphismus `\varrho^U_V:F(U)\to F(V)`, so dass für `W\subset V\subset U` gilt:
+*   Zu jeder offenen Teilmenge `U\opensubset X` gibt es eine abelsche Gruppe `F(U)`.
+*   Zu jedem Paar `V\subset U` offener Teilmengen gibt es einen Homomorphismus `\varrho^U_V:F(U)\to F(V)`, so dass für `W\subset V\subset U` gilt:
 
-      \varrho^U_W = \varrho^V_W\circ \varrho^U_V
+        \varrho^U_W = \varrho^V_W\circ \varrho^U_V
 
 *Notation:* Für `V\subset U` und `s\in F(U)` schreiben wir auch `s|_V` für `\varrho^U_V(s)`.
 
@@ -84,9 +84,9 @@ Ein Homomorphismus `f: F\to G` einer Prägarbe `F` in eine Garbe `G` ist genau d
 
 Sei `f:F\to G` ein Morphismus von Garben. Dann sind äquivalent:
 
-1. `f` ist ein Monomorphismus in `\Sh(X)`
-2. Für jedes `U` ist `f(U):F(U)\to G(U)` injektiv, d.h. `f` ist ein Monomorphismus in `\PrSh(X)`.
-3. `f_x: F_x\to G_x` ist injektiv für alle `x\in X`.
+1.  `f` ist ein Monomorphismus in `\Sh(X)`
+2.  Für jedes `U` ist `f(U):F(U)\to G(U)` injektiv, d.h. `f` ist ein Monomorphismus in `\PrSh(X)`.
+3.  `f_x: F_x\to G_x` ist injektiv für alle `x\in X`.
 
 ---
 
@@ -96,8 +96,8 @@ Offensichtlich ist der Prägarbenkern `\ker(f)` eine Garbe mit Halmen `\ker(f)_x
 
 Für eine Prägarbe `P` sind äquivalent:
 
-1. Für alle `x\in X` gilt `P_x=0`.
-2. Jeder Homomorphismus `f:P\to F` in eine Garbe `F` ist Null.
+1.  Für alle `x\in X` gilt `P_x=0`.
+2.  Jeder Homomorphismus `f:P\to F` in eine Garbe `F` ist Null.
 
 ---
 
@@ -114,9 +114,9 @@ Diese ist sogar eine Garbe, die sog. *Wolkenkratzergarbe* ~~Wolkenkratzergarbe~~
 
 Sei `f:F\to G` ein Garben-Morphismus. Dann sind äquivalent:
 
-1. `f` ist ein Epimorphismus in `\Sh(X)`.
-2. Zu jedem `U` und `s\in G(U)` existiert eine Überdeckung `(U_i)_{i\in I}` von `U` und Elemente `t_i\in F(U_i)` mit `f(t_i) = s|_{U_i}` für alle `i\in I`.
-3. `f_x: F_x\to G_x` ist surjektiv für alle `x\in X`.
+1.  `f` ist ein Epimorphismus in `\Sh(X)`.
+2.  Zu jedem `U` und `s\in G(U)` existiert eine Überdeckung `(U_i)_{i\in I}` von `U` und Elemente `t_i\in F(U_i)` mit `f(t_i) = s|_{U_i}` für alle `i\in I`.
+3.  `f_x: F_x\to G_x` ist surjektiv für alle `x\in X`.
 
 #1-12-1
 
