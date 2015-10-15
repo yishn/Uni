@@ -10,6 +10,10 @@
                 {
                     "title": "Definitionen",
                     "path": "garben-auf-topologischen-raeumen/definitionen/"
+                },
+                {
+                    "title": "Garbenkohomologie",
+                    "path": "garben-auf-topologischen-raeumen/garbenkohomologie/"
                 }
             ]
         },
@@ -21,6 +25,7 @@
     "macros": [
         "\\newcommand\\C{\\mathcal{C}}",
         "\\newcommand\\R{\\mathbb{R}}",
+        "\\newcommand\\Z{\\mathbb{Z}}",
 
         "\\newcommand\\opensubset{\\subset_\\text{o}}",
 
@@ -28,6 +33,7 @@
         "\\newcommand\\PrSh{\\mathbf{PrSh}}",
         "\\newcommand\\Ab{\\mathbf{Ab}}",
 
+        "\\DeclareMathOperator{\\H}{H}",
         "\\DeclareMathOperator{\\Hom}{Hom}",
         "\\DeclareMathOperator{\\Abb}{Abb}",
         "\\DeclareMathOperator{\\id}{id}",

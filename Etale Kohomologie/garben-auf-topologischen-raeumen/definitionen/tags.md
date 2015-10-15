@@ -1,4 +1,4 @@
-#1-INTRO
+#1-1-INTRO
 
 Sei `X` ein topologischer Raum.
 
