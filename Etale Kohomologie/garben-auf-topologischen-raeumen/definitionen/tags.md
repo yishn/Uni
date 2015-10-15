@@ -142,7 +142,7 @@ Nun ist `U` die disjunkte Vereinigung seiner offenen Teilmengen `f^{-1}(a),\ a\i
 
     G(U) = \prod_{a\in A} G(f^{-1}(a))
 
-Wir ordnen eine lokal konstante Funktion `f: U\to A` das Element von `G(U)` zu, welches für jedes `a\in A` in der `a`-ten Komponente gleich der Einschränkung von `\phi(a)\in G(X)` auf `f^{-1}(a)` ist. Die Abbildungen sind zueinander invers.
+Wir ordnen eine lokal konstante Funktion `f: U\to A` das Element `(\phi(a)|_{f^{-1}(a)})_{a\in A}\in G(U)` zu. Die Abbildungen sind zueinander invers.
 
 #1-14:Satz
 
