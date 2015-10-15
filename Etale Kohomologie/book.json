@@ -23,7 +23,6 @@
         }
     ],
     "macros": [
-        "\\newcommand\\C{\\mathcal{C}}",
         "\\newcommand\\R{\\mathbb{R}}",
         "\\newcommand\\Z{\\mathbb{Z}}",
 

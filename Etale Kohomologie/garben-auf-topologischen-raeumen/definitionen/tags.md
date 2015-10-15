@@ -38,9 +38,9 @@ Ist `T` ein weiterer topologischer Raum, so definiert `F(U) = \Abb_\text{stg}(A,
 
 #1-5:Beispiel
 
-Ist `X` eine glatte Mannigfaltigkeit, so ist die Prägarbe `\C^\infty` gegeben durch:
+Ist `X` eine glatte Mannigfaltigkeit, so ist die Prägarbe `\mathcal{C}^\infty` gegeben durch:
 
-    \C^\infty(U) = \{\text{unendlich oft reell differenzierbare Funktion } U\to\R \}
+    \mathcal{C}^\infty(U) = \{\text{unendlich oft reell differenzierbare Funktion } U\to\R \}
 
 Analog für komplexe Mannigfaltigkeiten `X` und holomorphe Funktionen.
 
