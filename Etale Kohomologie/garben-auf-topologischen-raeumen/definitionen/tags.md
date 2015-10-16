@@ -138,11 +138,11 @@ Die kanonische Abbildung `\underline{A}^\text{P} \to \underline{A}` gibt uns dur
 
 Es gilt `\Hom_{\PrSh(X)}(\underline{A}^\text{P}, G) = \Hom_\Ab(A, G(X))`. Sei nun `\phi: A\to G(X)` gegeben. Um einen Garben-Morphismus `\underline{A}\to G` zu konstruieren, müssen wir für jedes `U` kompatible Zuordnungen `\{f: U\to A \text{ lokal konstant}\} \to G(U)` finden.
 
-Nun ist `U` die disjunkte Vereinigung seiner offenen Teilmengen `f^{-1}(a),\ a\in A`. Die Garbeneigenschaft von `G` liefert:
+Sei `f: U\to A` eine lokal konstante Funktion. Nun ist `U` die disjunkte Vereinigung seiner offenen Teilmengen `f^{-1}(a),\ a\in A`. Die Garbeneigenschaft von `G` liefert:
 
     G(U) = \prod_{a\in A} G(f^{-1}(a))
 
-Wir ordnen eine lokal konstante Funktion `f: U\to A` das Element `(\phi(a)|_{f^{-1}(a)})_{a\in A}\in G(U)` zu. Die Abbildungen sind zueinander invers.
+Wir ordnen `f` das Element `(\phi(a)|_{f^{-1}(a)})_{a\in A}\in G(U)` zu. Die Abbildungen sind zueinander invers.
 
 #1-14:Satz
 
