@@ -72,7 +72,7 @@ Let $K$ be finitely generated. A \textit{model} of $K$ is a regular, proper sche
 For every model $\mathfrak{X}$ there is a canonical map $\pi_\mathfrak{X}:\operatorname{Spv}(K)\to\mathfrak{X}$. $\pi_\mathfrak{X}(v)$  is the unique point of $\mathfrak{X}$ such that $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\subset\mathcal{O}_v$ and the inclusion $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\hookrightarrow \mathcal{O}_v$ is a homomorphism of local rings.
 \end{definition}
 
-\begin{lemma}\label{2.3}
+\begin{lemma}\phantomsection\label{2.3}
 \begin{enumerate}[(i)]
 \item $\operatorname{Spv}(K)$, together with the maps $\pi_{\mathfrak{X}}$, is the projective limit of topological spaces: 
 \[\operatorname{Spv}(K) =\varprojlim_{\mathfrak{X}\in\mathfrak{M}(K)}\mathfrak{X}\]
@@ -159,7 +159,7 @@ M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact:
 \[ 0\to U_P/n\to K^\times/n\to\mathbb{Z}/n\mathbb{Z}\to 0 \]
 
-\begin{lemma}\label{4.3}
+\begin{lemma}\phantomsection\label{4.3}
 \begin{enumerate}[(i)]
 \item $\varphi_n$ induces an isomorphism $\varphi_n: U_{P'}/n\to U_P/n$.
 \item The following diagram commutes:
@@ -176,7 +176,7 @@ For a finite subset $S\subset X_0$ set:
 $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
 \end{definition}
 
-\begin{lemma}\label{4.5}
+\begin{lemma}\phantomsection\label{4.5}
 \begin{enumerate}[(i)]
 \item There exists a finite subset $S\subset X_0$ such that:
 \[ \operatorname{Pic}(X\setminus S)=0=\operatorname{Pic}(X'\setminus S') \]
@@ -193,7 +193,7 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 An abelian group is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotien $A/A_\text{tor}$ is free abelian. $A$ is free-by-finite if and only if $A$ is the direct sum of a finite group and a free abelian group.
 \end{definition}
 
-\begin{lemma}\label{5.2}
+\begin{lemma}\phantomsection\label{5.2}
 \begin{enumerate}[(i)]
 \item Let $A\to B$ be a homomorphism of abelian groups with finite kernel and cokernel. Then $A$ is free-by-finite iff $B$ is free-by-finite.
 \item Let $0\to A'\stackrel{i}{\to}A\stackrel{p}{\to}A''\to 0$ be an exact sequence of abelian groups. If $A'$ and $A''$ are free-by-finite, then $A$ is free-by-finite. Conversely, if $A$ is free-by-finite, then $A'$ is free-by-finite. If additionally, $A'$ is finitely generated, then $A''$ is free-by-finite.
@@ -254,7 +254,7 @@ Now, if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ show
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
 In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
-Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi:K'^\times \to K^\times$. $\varphi$ has the desired properties.
+Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. $\varphi$ has the desired properties.
 \end{proof}
 
 \begin{step}
