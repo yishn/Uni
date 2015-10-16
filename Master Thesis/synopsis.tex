@@ -210,7 +210,7 @@ Let $F$ be a number field. Then:
 \end{lemma}
 
 \begin{lemma}\label{5.4}
-Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0$ with $T\cap S=\varnothing$ such that the following map is injective:
+Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0\setminus S$ such that the following map is injective:
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
 In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
@@ -239,22 +239,20 @@ For existence, let $(S,T)$ be an admissible pair. First, we show that there is a
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
 \displaystyle \prod_{P\in T}k(\sigma P)^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
 \end{tikzcd} \phantom{\qquad (\star)} \]
-The vertical maps are injective by definition. Thus, it suffices to show that the composition $\varrho:K'^{S'}\to\prod k(\sigma P)^\times\to \prod k(P)^\times\to\operatorname{coker}(r_{S,T})$ is trivial. Consider the commutative diagram which results from tensoring $\mathbb{Z}/n\mathbb{Z}$ with $(\star)$:
+The vertical maps are injective by definition. Thus, it suffices to show that the composition $\varrho:K'^{S'}\to\prod k(\sigma P)^\times\to \prod k(P)^\times\to\operatorname{coker}(r_{S,T})$ is trivial. Consider the commutative diagram which results from tensoring $(\star)$ with $\mathbb{Z}/n\mathbb{Z}$:
 \[ \begin{tikzcd}
 K'^{S'}/n \rar[dashed]\dar & K^S/n\dar\\
 \displaystyle \prod_{P\in T}k(\sigma P)^\times/n \rar & \displaystyle \prod_{P\in T}k(P)^\times/n
 \end{tikzcd} \]
-According to Lemma~\ref{4.3} and Lemma~\ref{4.5} this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$.
+According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$. By symmetry, $\varphi^S$ is an isomorphism.
 
-Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. We have:
+Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By observing $(\star)$ we find:
 \[ r_{S,T_1}\circ\varphi^{S,T_2}=\Big(\prod_{P\in T_1}\varphi_P\Big)\circ r_{S',T_1'} = r_{S,T_1}\circ\varphi^{S,T_1} \]
-Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. By symmetry, $\varphi^S$ is an isomorphism. 
-
-Now, if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
+Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now, if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
 In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
-Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. $\varphi$ has the desired properties.
+Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. Note that for every $x\in K^\times$ we have $v_P(x)\neq 0$ for finitely many $P\in X_0$; similarly for $K'$ and $X'_0$. $\varphi$ has the desired properties.
 \end{proof}
 
 \begin{step}
