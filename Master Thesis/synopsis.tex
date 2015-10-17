@@ -136,9 +136,9 @@ which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k
 Let $E$ be a number field and let $X$ be a smooth projective geometrically connected curve over $E$. Let $\pi:X'\to X$ be a connected Galois covering of degree $d$ which splits completely, i.e. every closed point $P\in X_0$ has exactly $d$ pre-images in $X'$. Then $d=1$.
 \end{lemma}
 
-\paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
+\paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
-Let $X$ and $X'$ be the unique smooth projective curve over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$.
+Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$.
 
 \begin{lemma}\label{4.2}
 We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
@@ -210,14 +210,14 @@ Let $F$ be a number field. Then:
 \end{lemma}
 
 \begin{lemma}\label{5.4}
-Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0\setminus S$ such that the following map is injective:
+Let $S\subset X_0$ be admissible and $P_0\in X_0\setminus S$. Then there exists a finite subset $T\subset X_0\setminus S$ with $P_0\in T$ such that the following map is injective:
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
 In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
 
-\begin{definition}
-For each admissible $S\subset X_0$ we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
-\end{definition}
+\begin{remark}
+For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_2 \supset T_1$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
+\end{remark}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
