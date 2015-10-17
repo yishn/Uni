@@ -2,6 +2,7 @@
 *.html
 *.css
 *.js
+*.ico
 keywords.json
 
 ## Core latex/pdflatex auxiliary files:
