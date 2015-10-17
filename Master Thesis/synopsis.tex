@@ -259,6 +259,20 @@ Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isom
 Extending $\varphi$ to a map $K'\to K$ by setting $\varphi(0)=0$ yields a field isomorphism $\varphi:K'\to K$.
 \end{step}
 
+\begin{proof}
+Observe $\varphi(-1)^2 = \varphi(1) = 1$, and since $\varphi$ is bijective on $K'^\times$, it follows $\varphi(-1) \neq 1$ and hence $\varphi(-1) = -1$. Now, to prove the assertion, it suffices to show $\varphi(x + y) = \varphi(x) + \varphi(y)$ for all $x,y\in K'^\times$.
+\begin{itemize}
+\item \textit{Case 1:} If $x + y = 0$, we have:
+\[ \varphi(x + y) = 0 = \varphi(x) + \varphi(-1)\varphi(x) = \varphi(x) + \varphi(-x) = \varphi(x) + \varphi(y) \]
+\item \textit{Case 2:} Let $x + y\neq 0$. Looking at the commutative diagram in Step 1 we get
+\begin{align*}
+r_P(\varphi(x+ y)) &= \varphi_P(r_{P'}(x + y)) \\
+&= \varphi_P(r_{P'}(x)) + \varphi_P(r_{P'}(y)) = r_P(\varphi(x) + \varphi(y))
+\end{align*}
+for almost all $P\in X_0$. Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P}: \mathcal{O}_{P} \to k(P)$ are ring homomorphisms. Therefore, $\varphi(x+y) = \varphi(x) + \varphi(y)$.
+\end{itemize}
+\end{proof}
+
 \begin{step}
 $\varphi$ induces $\sigma:G_K\to G_{K'}$, i.e. $\sigma(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$, and is uniquely determined by this property.
 \end{step}
