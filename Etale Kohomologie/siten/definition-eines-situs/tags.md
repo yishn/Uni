@@ -20,7 +20,7 @@ Ist `X` ein topologischer Raum, so definiert `X_\text{top}` mit der Kategorie [w
 
 #2-3:Beispiel
 
-Sei `G` eine Gruppe. Sei `\Cat(T_G)` die Kategorie der Mengen mit einer Links-`G`-Wirkung und `\Cov(T_G)` die Menge von Familien surjektiver `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`.
+Sei `G` eine Gruppe. Sei `\Cat(T_G)` die Kategorie der Mengen mit einer Links-`G`-Wirkung und `\Cov(T_G)` die Menge von surjektiven Familien von `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`.
 
 Für `G`-Abbildungen `\phi:U\to X` und `\psi:V\to X` ist das Faserprodukt `U\times_X V\to X` von `G`-Mengen gerade das mengentheoretisches Faserprodukt
 
@@ -30,4 +30,4 @@ mit der `G`-Diagonalwirkung `g(u, v) = (gu, gv)`.
 
 #2-4:Beispiel
 
-Sei `G` eine proendliche Gruppe. Sei `\Cat(T_G)` die Kategorie der diskreten Links-`G`-Mengen und `\Cov(T_G)` die Mengen von Familien stetiger, surjektiver `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`. Vergleiche auch mit [Beispiel 2.3](#2-3).
+Sei `G` eine proendliche Gruppe. Sei `\Cat(T_G)` die Kategorie der diskreten Links-`G`-Mengen und `\Cov(T_G)` die Mengen von surjektiven Familien stetiger `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`. Vergleiche auch mit [Beispiel 2.3](#2-3).
