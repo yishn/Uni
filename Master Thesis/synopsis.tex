@@ -269,7 +269,9 @@ Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, 
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
 In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
-Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. Note that for every $x\in K^\times$ we have $v_P(x)\neq 0$ for finitely many $P\in X_0$; similarly for $K'$ and $X'_0$. $\varphi$ has the desired properties.
+Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. Note that for every $x\in K^\times$ we have $v_P(x)= 0$ for almost all $P\in X_0$; similarly for $K'$ and $X'_0$.
+
+Now note that for any $x\in U_{P'}$ we can find an admissible set $S\subset X_0\setminus \{P\}$ such that $x\in K'^{S'}$.
 \end{proof}
 
 \begin{step}
@@ -291,5 +293,9 @@ for all $P\in X_0\setminus S$. Note that $\varphi_P: k(P')\to k(P)$ is a field i
 \end{proof}
 
 \begin{step}
-$\varphi$ induces $\sigma:G_K\to G_{K'}$, i.e. $\sigma(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$, and is uniquely determined by this property.
+$\varphi$ induces $\sigma:G_K\to G_{K'}$, i.e. $\sigma(g) = \varphi^{-1}\circ g\circ \varphi$ for all $g\in G_K$, and is uniquely determined by this property.
 \end{step}
+
+\begin{proof}
+Let $\tau:G_K\to G_{K'},\ g\mapsto \varphi^{-1}\circ g\circ \varphi$. Clearly, $\tau$ is a group isomorphism and we have $\tau(G_L)=G_{L'}=\sigma(G_L)$ for every finite subextension $L/K$ of $\overline{K}/K$. By Lemma \ref{3.2}, $\tau$ induces bijections $\tau: \operatorname{Spv}_\text{d}^{(1)}(L)\to \operatorname{Spv}_\text{d}^{(1)}(L')$ for any intermediate field $L$ of $\overline{K}/K$.
+\end{proof}
