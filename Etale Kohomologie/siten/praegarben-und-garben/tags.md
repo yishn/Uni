@@ -50,7 +50,7 @@ Die erste Aussage kann man leicht einsehen. Für die zweite Aussage betrachte di
 
 > Sei `g\in G`. Dann ist die Rechtsmultiplikation `\cdot g: G\to G,\ g'\mapsto g' g` eine Abbildung von `G`-Mengen. Da `F` eine Prägarbe ist, erhalten wir die Abbildung `F(\cdot g): F(G)\to F(G)`.
 
-Wir zeigen nun, dass `F(G)` die Garbe `F` darstellt, d.h. wir konstruieren einen natürlichen Isomorphismus `F(S)\to \Abb_G(S, F(G))` für jede `G`-Menge `S`. Wir betrachten eine Kopie `G^{(s)}` von `G` für jedes `s\in S` und die Überdeckung `(\phi_s: G^{(s)}\to S)_{s\in S}\in\Cov(T_G)` mit `\phi_s(g) = gs`. Die Garbeneigenschaft liefert die exakte Folge:
+Wir zeigen nun, dass `F(G)` die Garbe `F` darstellt, d.h. wir konstruieren natürliche Isomorphismen `F(S)\to \Abb_G(S, F(G))` für jede `G`-Menge `S`. Wir betrachten eine Kopie `G^{(s)}` von `G` für jedes `s\in S` und die Überdeckung `(\phi_s: G^{(s)}\to S)_{s\in S}\in\Cov(T_G)` mit `\phi_s(g) = gs`. Die Garbeneigenschaft liefert die exakte Folge:
 
     \xymatrix{
         F(S) \ar[r] & \prod_{s\in S} F(G^{(s)}) \ar@<-.5ex>[r] \ar@<.5ex>[r] & \prod_{s, t\in S} F(G^{(s)}\times_S G^{(t)})
