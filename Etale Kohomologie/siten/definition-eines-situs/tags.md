@@ -18,6 +18,12 @@ Sei auf derselben Kategorie `\mathcal{T}` zwei Topologien definiert, d.h. wir ha
 
 Ist `X` ein topologischer Raum, so definiert `X_\text{top}` mit der Kategorie [wie oben](#2-1-INTRO) und den üblichen Überdeckungen einen Situs. Eine feinere Topologie auf `X` liefert auch eine feinere Grothendieck-Topologie.
 
+#2-2-1:Bemerkung
+
+Eine Familie von Abbildungen `(\varphi_i: U_i\to U)_{i\in I}` mit gleichem Ziel heißt *surjektive Familie*, ~~surjektiv|Familie~~ wenn:
+
+    \bigcup_{i\in I} \varphi_i(U_i) = U
+
 #2-3:Beispiel
 
 Sei `G` eine Gruppe. Sei `\Cat(T_G)` die Kategorie der Mengen mit einer Links-`G`-Wirkung und `\Cov(T_G)` die Menge von surjektiven Familien von `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`.
