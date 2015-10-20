@@ -4,7 +4,7 @@ Sei `X` ein topologischer Raum.
 
 #1-1:Definition
 
-Eine *Prägarbe (abelscher Gruppen)* ~~Prägarbe~~ `F` besteht aus folgenden Objekten:
+Eine *Prägarbe (abelscher Gruppen)* ~~Prägarbe|topologischer Raum~~ `F` besteht aus folgenden Objekten:
 
 *   Zu jeder offenen Teilmenge `U\opensubset X` gibt es eine abelsche Gruppe `F(U)`.
 *   Zu jedem Paar `V\subset U` offener Teilmengen gibt es einen Homomorphismus `\varrho^U_V:F(U)\to F(V)`, so dass für `W\subset V\subset U` gilt:
@@ -46,7 +46,7 @@ Analog für komplexe Mannigfaltigkeiten `X` und holomorphe Funktionen.
 
 #1-6:Definition
 
-Eine Prägarbe `F` heißt *Garbe* ~~Garbe~~, wenn sie die folgende Garbeneigenschaft erfüllt:
+Eine Prägarbe `F` heißt *Garbe* ~~Garbe|topologischer Raum~~, wenn sie die folgende Garbeneigenschaft erfüllt:
 
 Ist `U\opensubset X` und `(U_i)_{i\in I}` eine offene Überdeckung von `U` mit `s_i\in F(U_i)` gegeben, so existiert genau dann ein `s\in F(U)` mit `s|_{U_i} = s_i` für alle `i`, wenn für beliebige `i,j\in I` stets `s_i|_{U_i\cap U_j} = s_j|_{U_i\cap U_j}` gilt und dieses `s` eindeutig ist.
 

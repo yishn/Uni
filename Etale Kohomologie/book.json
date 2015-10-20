@@ -39,13 +39,17 @@
         "\\newcommand\\Z{\\mathbb{Z}}",
 
         "\\newcommand\\opensubset{\\subset_\\text{o}}",
+        "\\newcommand\\op{\\text{op}}",
 
-        "\\newcommand\\Sh{\\mathbf{Sh}}",
-        "\\newcommand\\PrSh{\\mathbf{PrSh}}",
-        "\\newcommand\\Ab{\\mathbf{Ab}}",
+        "\\newcommand\\Sh{\\textbf{Sh}}",
+        "\\newcommand\\PrSh{\\textbf{PrSh}}",
+        "\\newcommand\\Ab{\\textbf{Ab}}",
+        "\\newcommand\\GMengen{G\\textbf{-Mengen}}",
+        "\\newcommand\\Mengen{\\textbf{Mengen}}",
 
         "\\DeclareMathOperator{\\H}{H}",
         "\\DeclareMathOperator{\\Hom}{Hom}",
+        "\\DeclareMathOperator{\\Mor}{Mor}",
         "\\DeclareMathOperator{\\Abb}{Abb}",
         "\\DeclareMathOperator{\\Cat}{Cat}",
         "\\DeclareMathOperator{\\Cov}{Cov}",
