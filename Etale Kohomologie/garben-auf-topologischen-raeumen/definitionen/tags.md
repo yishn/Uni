@@ -34,7 +34,7 @@ Sei `A` eine abelsche Gruppe. Dann definiert `F(U)=A` für alle `U\opensubset X`
 
 #1-4:Beispiel
 
-Ist `T` ein weiterer topologischer Raum, so definiert `F(U) = \Abb_\text{stg}(U, T)` eine Prägarbe von Mengen (bzw. abelscher Gruppen, wenn `T` eine abelsche topologische Gruppe ist).
+Ist `T` ein weiterer topologischer Raum, so definiert `F(U) = \Abb_\stg(U, T)` eine Prägarbe von Mengen (bzw. abelscher Gruppen, wenn `T` eine abelsche topologische Gruppe ist).
 
 #1-5:Beispiel
 
@@ -122,9 +122,9 @@ Sei `f:F\to G` ein Garben-Morphismus. Dann sind äquivalent:
 
 Die *konstante Garbe* ~~konstant|Garbe~~ `\underline{A}` zu einer abelschen Gruppe `A` ist definiert durch:
 
-    \underline{A}(U) = \Hom_\text{stg}(U, A)
+    \underline{A}(U) = \Hom_\stg(U, A)
 
-wobei wir `A` als diskrete topologische Gruppe auffassen, d.h. `\Hom_\text{stg}(U, A)` besteht aus den lokal konstanten Funktionen auf `U`, während `\underline{A}^\text{P}(U)` aus den konstanten Funktionen auf `U` besteht. Es gibt einen natürlichen Homomorphismus `\underline{A}^\text{P} \to \underline{A}`. Dieser ist universell für Homomorphismen in Garben, siehe [Lemma 1.13](#1-13).
+wobei wir `A` als diskrete topologische Gruppe auffassen, d.h. `\Hom_\stg(U, A)` besteht aus den lokal konstanten Funktionen auf `U`, während `\underline{A}^\text{P}(U)` aus den konstanten Funktionen auf `U` besteht. Es gibt einen natürlichen Homomorphismus `\underline{A}^\text{P} \to \underline{A}`. Dieser ist universell für Homomorphismen in Garben, siehe [Lemma 1.13](#1-13).
 
 #1-13:Lemma
 
