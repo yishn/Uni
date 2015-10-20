@@ -3,7 +3,7 @@
 Sei `T` ein Situs und `\mathcal{C}` eine Kategorie mit Produkten. Eine *Prägarbe* ~~Prägarbe|Situs~~ auf `T` mit Werten in `\mathcal{C}` ist ein kontravarianter Funktor `F: \Cat(T)^\op \to\mathcal{C}`. Eine *Garbe* ~~Garbe|Situs~~ ist eine Prägarbe mit der Eigenschaft, dass für jede Überdeckung `(U_i\to U)_i\in\Cov(T)` die folgende Folge ein Differenzkern ist:
 
     \xymatrix{
-        F(U) \ar[r] & \prod_i F(U_i) \ar@<-.5ex>[r] \ar@<.5ex>[r] & \prod_{i, j} F(U_i\cap U_j)
+        F(U) \ar[r] & \prod_i F(U_i) \ar@<-.5ex>[r] \ar@<.5ex>[r] & \prod_{i, j} F(U_i\times_U U_j)
     }
 
 #2-6:Bemerkung
