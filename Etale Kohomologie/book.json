@@ -47,8 +47,8 @@
         "\\DeclareMathOperator{\\H}{H}",
         "\\DeclareMathOperator{\\Hom}{Hom}",
         "\\DeclareMathOperator{\\Abb}{Abb}",
-        "\\DeclareMathOperator{\\Kat}{Kat}",
-        "\\DeclareMathOperator{\\Ueb}{Üb}",
+        "\\DeclareMathOperator{\\Cat}{Cat}",
+        "\\DeclareMathOperator{\\Cov}{Cov}",
         "\\DeclareMathOperator{\\id}{id}",
         "\\DeclareMathOperator{\\coker}{coker}",
         "\\DeclareMathOperator*{\\colim}{colim}"
