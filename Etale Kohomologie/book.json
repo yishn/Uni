@@ -5,7 +5,6 @@
     "toc": [
         {
             "title": "Garben auf topologischen Räumen",
-            "path": "garben-auf-topologischen-raeumen/",
             "toc": [
                 {
                     "title": "Definitionen",
@@ -14,6 +13,19 @@
                 {
                     "title": "Garbenkohomologie",
                     "path": "garben-auf-topologischen-raeumen/garbenkohomologie/"
+                }
+            ]
+        },
+        {
+            "title": "Siten",
+            "toc": [
+                {
+                    "title": "Definition eines Situs",
+                    "path": "siten/definition-eines-situs/"
+                },
+                {
+                    "title": "Prägarben und Garben",
+                    "path": "siten/praegarben-und-garben/"
                 }
             ]
         },
@@ -35,6 +47,8 @@
         "\\DeclareMathOperator{\\H}{H}",
         "\\DeclareMathOperator{\\Hom}{Hom}",
         "\\DeclareMathOperator{\\Abb}{Abb}",
+        "\\DeclareMathOperator{\\Kat}{Kat}",
+        "\\DeclareMathOperator{\\Ueb}{Üb}",
         "\\DeclareMathOperator{\\id}{id}",
         "\\DeclareMathOperator{\\coker}{coker}",
         "\\DeclareMathOperator*{\\colim}{colim}"
