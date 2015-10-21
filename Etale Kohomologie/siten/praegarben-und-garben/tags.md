@@ -12,7 +12,7 @@ Die Kategorie `\PrSh_\mathcal{C}(T)` der `\mathcal{C}`-wertigen Prägarben auf `
 
 #2-7:Bemerkung
 
-Ist `(F_i)_{i\in I}` eine Familie von Garben, so ist die Produktprägarbe eine Garbe:
+Ist `(F_i)_{i\in I}` eine Familie von Garben, so ist die Produktprägarbe wieder eine Garbe:
 
     \Big(\prod_{i\in I} F_i\Big)(U) = \prod_{i\in I} F_i(U),\quad U\opensubset X
 
