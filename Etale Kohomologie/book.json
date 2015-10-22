@@ -56,8 +56,6 @@
         "\\newcommand{\\Ab}{\\textbf{Ab}}",
         "\\newcommand{\\GMengen}{G\\textbf{-Mengen}}",
         "\\newcommand{\\GMod}{G\\textbf{-Mod}}",
-        "\\newcommand{\\diskrGMengen}{\\textbf{diskrete }G\\textbf{-Mengen}}",
-        "\\newcommand{\\diskrGMod}{\\textbf{diskrete }G\\textbf{-Mod}}",
         "\\newcommand{\\Mengen}{\\textbf{Mengen}}",
         "\\newcommand{\\Funktoren}{\\textbf{Funktoren}}",
 
