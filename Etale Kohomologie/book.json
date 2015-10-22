@@ -4,15 +4,15 @@
     "accent": "#FF6600",
     "toc": [
         {
-            "title": "Garben auf topologischen Räumen",
+            "title": "Garben auf Räumen",
             "toc": [
                 {
                     "title": "Definitionen",
-                    "path": "garben-auf-topologischen-raeumen/definitionen/"
+                    "path": "garben-auf-raeumen/definitionen/"
                 },
                 {
                     "title": "Garbenkohomologie",
-                    "path": "garben-auf-topologischen-raeumen/garbenkohomologie/"
+                    "path": "garben-auf-raeumen/garbenkohomologie/"
                 }
             ]
         },
