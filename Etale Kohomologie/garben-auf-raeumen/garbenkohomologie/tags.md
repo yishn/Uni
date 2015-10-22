@@ -48,7 +48,7 @@ Für eine welke Garbe `F` gilt `\H^i(X, F) = 0` für alle `i\geq 1`.
 
         0\longrightarrow F(X)\longrightarrow G(X) \longrightarrow H(X) \longrightarrow 0
 
-  *Beweis von Schritt 1:* Sei `h\in H(X)`. Wir betrachten die Menge aller Paare `(U, s),\ U\opensubset X,\ s\in G(U)` mit `j(U)(s) = h|_U`. Nach Lemma von Zorn hat diese Menge ein maximales Element `(U, x)`. Sei `U\subsetneq X` und `x\in X\setminus U`. Nach [Korollar 1.12](#1-12) existiert eine Umgebung `V\opensubset X` von `x` und ein `t\in G(V)` mit `j(V)(t) = h|_V`. Somit gilt:
+  *Beweis von Schritt 1:* Sei `h\in H(X)`. Wir betrachten die Menge aller Paare `(U, s)`, `U\opensubset X`, `s\in G(U)` mit `j(U)(s) = h|_U`. Nach Lemma von Zorn hat diese Menge ein maximales Element `(U, x)`. Sei `U\subsetneq X` und `x\in X\setminus U`. Nach [Korollar 1.12](#1-12) existiert eine Umgebung `V\opensubset X` von `x` und ein `t\in G(V)` mit `j(V)(t) = h|_V`. Somit gilt:
 
         s|_{U\cap V} - t|_{U\cap V} \in \ker j(U\cap V) = F(U\cap V)
 
@@ -69,7 +69,7 @@ Für eine welke Garbe `F` gilt `\H^i(X, F) = 0` für alle `i\geq 1`.
 
   *Beweis von Schritt 3:* Bette `F\hookrightarrow I` in eine injektive Garbe ein mit Kokern `G`. Wir erhalten die lange exakte Kohomologiefolge:
 
-        0 \longrightarrow F(X) \longrightarrow I(X) \longrightarrow G(X) \longrightarrow \H^1(X, F) \longrightarrow \H^1(X, I)= 0
+        0 \longrightarrow F(X) \longrightarrow I(X) \longrightarrow G(X) \longrightarrow \H^1(X, F) \longrightarrow \H^1(X, I) = 0
 
   Nach Schritt 1 ist `I(X)\to G(X)` surjektiv, also `\H^1(X, F) = 0`.
 
