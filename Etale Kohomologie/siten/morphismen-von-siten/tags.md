@@ -67,7 +67,7 @@ Produkte in `\Cat(X_\text{top})` sind Durchschnitte. Der in [Definition 2.24](#2
 
 #2-26:Definition
 
-Sei `f: T'\to T` ein Siten-Morphismus, `\mathcal{C}` eine Kategorie mit Produkten und `F\in\PrSh_\mathcal{C}(T')`. Dann heißt die Prägarbe `U\mapsto F(f^\sharp)` das *direkte Bild* von `F` und wird mit `f_\ast^\text{P}F` bezeichnet. ~~direktes Bild|Prägarbe~~ Wir erhalten einen Funktor:
+Sei `f: T'\to T` ein Siten-Morphismus, `\mathcal{C}` eine Kategorie mit Produkten und `F\in\PrSh_\mathcal{C}(T')`. Dann heißt die Prägarbe `U\mapsto F(f^\sharp U)` das *direkte Bild* von `F` und wird mit `f_\ast^\text{P}F` bezeichnet. ~~direktes Bild|Prägarbe~~ Wir erhalten einen Funktor:
 
     f_\ast^\text{P}: \PrSh_\mathcal{C}(T')\to \PrSh_\mathcal{C}(T)
 
