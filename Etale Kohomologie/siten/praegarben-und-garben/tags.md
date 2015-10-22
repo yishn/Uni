@@ -73,8 +73,8 @@ Das Element `(x_s)_s \in \prod_{s\in S} F(G^{(s)})` liegt daher genau dann im Di
 
 Sei `G` eine proendliche Gruppe. Der Situs `T_G` aus [Beispiel 2.4](#2-4) ist subkanonisch. Man erhält eine Kategorienäquivalenz:
 
-    \mathbf{diskrete }\GMengen \stackrel{\sim}{\to} \Sh_\Mengen(T_G)
+    \textbf{diskrete }\GMengen \stackrel{\sim}{\to} \Sh_\Mengen(T_G)
 
 Für eine Garbe `F` wird `F(G)` durch die diskreten `G`-Mengen `\colim_{H\opennormal G}F(G/H)` und die `G`-Wirkung auf `F(G/H)` wie in [Beispiel 2.13](#2-13) zu einer diskreten `G`-Menge. Durch Übergang zu Gruppenobjekten erhalten wir die Kategorienäquivalenz:
 
-    \mathbf{diskrete }\GMod \stackrel{\sim}{\to} \Sh_\Ab(T_G)
+    \textbf{diskrete }\GMod \stackrel{\sim}{\to} \Sh_\Ab(T_G)
