@@ -16,6 +16,10 @@ Ist `(F_i)_{i\in I}` eine Familie von Garben, so ist die Produktprägarbe wieder
 
     \Big(\prod_{i\in I} F_i\Big)(U) = \prod_{i\in I} F_i(U),\quad U\opensubset X
 
+#2-8:Bemerkung
+
+Eine Prägarbe abelscher Gruppen ist genau dann eine Garbe, wenn sie als Prägarbe von Mengen eine Garbe ist. Prägarben bzw. Garben abelscher Gruppen sind die Gruppenobjekte in der Kategorie der Prägarben bzw. Garben von Mengen.
+
 #2-9:Definition
 
 Jedes Object `X` in `\Cat(T)` definiert eine mengenwertige Prägarbe:
@@ -68,3 +72,13 @@ induziert von den Abbildungen `G^{(h)}\to G^{(s)}\times_S G^{(t)},\ g\mapsto (gh
 * Die Komposition `G^{(h)}\to G^{(s)}\times_S G^{(t)}\to G^{(t)}` ist die Identitätsabbildung.
 
 Das Element `(x_s)_s \in \prod_{s\in S} F(G^{(s)})` liegt daher genau dann im Differenzkern, wenn `F(\cdot h)(x_s) = x_{hs}` für alle `h\in G` gilt. Somit ist der Differenzkern gerade `\Abb_G(S, F(G))`.
+
+#2-14:Beispiel
+
+Sei `G` eine proendliche Gruppe. Der Situs `T_G` aus [Beispiel 2.4](#2-4) ist subkanonisch. Man erhält eine Kategorienäquivalenz:
+
+    \diskrGMengen \stackrel{\sim}{\to} \Sh_\Mengen(T_G)
+
+Für eine Garbe `F` wird `F(G)` durch die diskreten `G`-Mengen `\colim_{H\opennormal G}F(G/H)` und die `G`-Wirkung auf `F(G/H)` wie in [Beispiel 2.13](#2-13) zu einer diskreten `G`-Menge. Durch Übergang zu Gruppenobjekten erhalten wir die Kategorienäquivalenz:
+
+    \diskrGMod \stackrel{\sim}{\to} \Sh_\Ab(T_G)
