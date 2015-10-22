@@ -52,9 +52,7 @@ Ist `U\opensubset X` und `(U_i)_{i\in I}` eine offene Überdeckung von `U` mit `
 
 Die Prägarben in [Beispiel 1.4](#1-4) und [1.5](#1-5) sind Garben. Man schreibt die Garbeneigenschaft auch kategoriell als Differenzkern:
 
-    \xymatrix{
-        F(U) \ar[r] & \prod_i F(U_i) \ar@<-.5ex>[r] \ar@<.5ex>[r] & \prod_{i, j} F(U_i\cap U_j)
-    }
+    \equalizer{F(U)}{\prod_i F(U_i)}{\prod_{i, j} F(U_i\cap U_j)}
 
 Extrem formal schließt man durch die Betrachtung der leeren Überdeckung der leeren Menge, dass `F(\varnothing) = 0` für jede Garbe `F` gilt.
 

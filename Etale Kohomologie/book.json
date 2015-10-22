@@ -35,22 +35,22 @@
         }
     ],
     "macros": [
-        "\\newcommand\\R{\\mathbb{R}}",
-        "\\newcommand\\Z{\\mathbb{Z}}",
+        "\\newcommand{\\R}{\\mathbb{R}}",
+        "\\newcommand{\\Z}{\\mathbb{Z}}",
 
-        "\\newcommand\\opensubset{\\subset_\\text{o}}",
-        "\\newcommand\\opennormal{\\lhd_\\text{o}}",
-        "\\newcommand\\op{\\text{op}}",
-        "\\newcommand\\stg{\\text{stg}}",
+        "\\newcommand{\\opensubset}{\\subset_\\text{o}}",
+        "\\newcommand{\\opennormal}{\\lhd_\\text{o}}",
+        "\\newcommand{\\op}{\\text{op}}",
+        "\\newcommand{\\stg}{\\text{stg}}",
 
-        "\\newcommand\\Sh{\\textbf{Sh}}",
-        "\\newcommand\\PrSh{\\textbf{PrSh}}",
-        "\\newcommand\\Ab{\\textbf{Ab}}",
-        "\\newcommand\\GMengen{G\\textbf{-Mengen}}",
-        "\\newcommand\\GMod{G\\textbf{-Mod}}",
-        "\\newcommand\\diskrGMengen{\\textbf{diskrete }G\\textbf{-Mengen}}",
-        "\\newcommand\\diskrGMod{\\textbf{diskrete }G\\textbf{-Mod}}",
-        "\\newcommand\\Mengen{\\textbf{Mengen}}",
+        "\\newcommand{\\Sh}{\\textbf{Sh}}",
+        "\\newcommand{\\PrSh}{\\textbf{PrSh}}",
+        "\\newcommand{\\Ab}{\\textbf{Ab}}",
+        "\\newcommand{\\GMengen}{G\\textbf{-Mengen}}",
+        "\\newcommand{\\GMod}{G\\textbf{-Mod}}",
+        "\\newcommand{\\diskrGMengen}{\\textbf{diskrete }G\\textbf{-Mengen}}",
+        "\\newcommand{\\diskrGMod}{\\textbf{diskrete }G\\textbf{-Mod}}",
+        "\\newcommand{\\Mengen}{\\textbf{Mengen}}",
 
         "\\DeclareMathOperator{\\H}{H}",
         "\\DeclareMathOperator{\\Hom}{Hom}",
@@ -60,6 +60,8 @@
         "\\DeclareMathOperator{\\Cov}{Cov}",
         "\\DeclareMathOperator{\\id}{id}",
         "\\DeclareMathOperator{\\coker}{coker}",
-        "\\DeclareMathOperator*{\\colim}{colim}"
+        "\\DeclareMathOperator*{\\colim}{colim}",
+
+        "\\newcommand{\\equalizer}[3]{\\xymatrix{#1 \\ar[r] & #2 \\ar@<-.5ex>[r] \\ar@<.5ex>[r] & #3}}"
     ]
 }
