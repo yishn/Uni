@@ -41,8 +41,13 @@ Sei `\mathcal{C}` eine Kategorie und `U` ein Objekt von `\mathcal{C}`. Die *Übe
 
 Sei `T` ein Situs und `U\in\Cat(T)`. Dann ist der *eingeschränkter Situs* `T|_U` definiert durch: ~~eingeschränkt|Situs~~
 
-    \Cat(T|_U) = \Cat(T)\downarrow U,\\
-    (\xymatrix{V_i \ar[r]\ar[d] & V\ar[dl] \\ U})_i\in \Cov(T|_U)\iff (V_i\to V)_i\in\Cov(T)
+    \Cat(T|_U) = \Cat(T)\downarrow U
+
+Eine Familie von Morphismen
+
+    \xymatrix{V_i \ar[r]\ar[d] & V\ar[dl] \\ U}
+
+ist genau dann in `\Cov(T|_U)`, wenn `(V_i\to V)_i\in\Cov(T)` gilt.
 
 #2-23:Definition
 
