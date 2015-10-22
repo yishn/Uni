@@ -30,6 +30,10 @@
                 {
                     "title": "Morphismen von Siten",
                     "path": "siten/morphismen-von-siten/"
+                },
+                {
+                    "title": "Limiten",
+                    "path": "siten/limiten/"
                 }
             ]
         },
@@ -55,6 +59,7 @@
         "\\newcommand{\\diskrGMengen}{\\textbf{diskrete }G\\textbf{-Mengen}}",
         "\\newcommand{\\diskrGMod}{\\textbf{diskrete }G\\textbf{-Mod}}",
         "\\newcommand{\\Mengen}{\\textbf{Mengen}}",
+        "\\newcommand{\\Funktoren}{\\textbf{Funktoren}}",
 
         "\\DeclareMathOperator{\\H}{H}",
         "\\DeclareMathOperator{\\Hom}{Hom}",
