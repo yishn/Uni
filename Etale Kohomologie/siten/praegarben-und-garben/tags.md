@@ -20,7 +20,7 @@ Eine Prägarbe abelscher Gruppen ist genau dann eine Garbe, wenn sie als Prägar
 
 #2-9:Definition
 
-Jedes Object `X` in `\Cat(T)` definiert eine mengenwertige Prägarbe:
+Jedes Objekt `X` in `\Cat(T)` definiert eine mengenwertige Prägarbe:
 
     F_X(U) = \Mor_{\Cat(T)}(U, X),\quad U\opensubset X
 
