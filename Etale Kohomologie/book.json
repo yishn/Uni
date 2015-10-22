@@ -26,6 +26,10 @@
                 {
                     "title": "Prägarben und Garben",
                     "path": "siten/praegarben-und-garben/"
+                },
+                {
+                    "title": "Morphismen von Siten",
+                    "path": "siten/morphismen-von-siten/"
                 }
             ]
         },
@@ -59,6 +63,8 @@
         "\\DeclareMathOperator{\\Cat}{Cat}",
         "\\DeclareMathOperator{\\Cov}{Cov}",
         "\\DeclareMathOperator{\\id}{id}",
+        "\\DeclareMathOperator{\\pr}{pr}",
+        "\\DeclareMathOperator{\\res}{res}",
         "\\DeclareMathOperator{\\coker}{coker}",
         "\\DeclareMathOperator*{\\colim}{colim}",
 
