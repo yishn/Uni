@@ -95,11 +95,11 @@ Ist `F` eine Garbe, so auch sein direktes Bild.
 
 Ist `(U_i\to U)_i\in\Cov(T)`, so auch `(f^\sharp U_i\to f^\sharp U)_i\in\Cov(T')`. Betrachte die Folge:
 
-    \equalizer{f_\ast^\text{P} F(U)}{\prod_i f_\ast^\text{P} F(U_i)}{\prod_{i,j} f_\ast^\text{P} F(U_i\times_U U_j)}
+    \equalizer{f_\ast^\text{P} F(U)}{\prod_i^\phantom{i} f_\ast^\text{P} F(U_i)}{\prod_{i,j}^\phantom{i} f_\ast^\text{P} F(U_i\times_U U_j)}
 
 Diese ist nach Definition von `f_\ast^\text{P}` und den Axiomen für ein Siten-Morphismus zur folgenden Folge identisch:
 
-    \equalizer{F(f^\sharp U)}{\prod_i F(f^\sharp U_i)}{\prod_{i,j}F(f^\sharp U_i\times_{f^\sharp U} f^\sharp U_j)}
+    \equalizer{F(f^\sharp U)}{\prod_i^\phantom{i} F(f^\sharp U_i)}{\prod_{i,j}^\phantom{i} F(f^\sharp U_i\times_{f^\sharp U} f^\sharp U_j)}
 
 Diese ist exakt.
 

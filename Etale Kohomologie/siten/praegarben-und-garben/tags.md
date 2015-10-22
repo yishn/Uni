@@ -2,7 +2,7 @@
 
 Sei `T` ein Situs und `\mathcal{C}` eine Kategorie mit Produkten. Eine *Prägarbe* ~~Prägarbe|Situs~~ auf `T` mit Werten in `\mathcal{C}` ist ein kontravarianter Funktor `F: \Cat(T)^\op \to\mathcal{C}`. Eine *Garbe* ~~Garbe|Situs~~ ist eine Prägarbe mit der Eigenschaft, dass für jede Überdeckung `(U_i\to U)_i\in\Cov(T)` die folgende Folge ein Differenzkern ist:
 
-    \equalizer{F(U)}{\prod_i F(U_i)}{\prod_{i, j} F(U_i\times_U U_j)}
+    \equalizer{F(U)}{\prod_i^\phantom{i} F(U_i)}{\prod_{i, j}^\phantom{i} F(U_i\times_U U_j)}
 
 #2-6:Bemerkung
 
@@ -54,7 +54,7 @@ Die erste Aussage kann man leicht einsehen. Für die zweite Aussage betrachte di
 
 Wir zeigen nun, dass `F(G)` die Garbe `F` darstellt, d.h. wir konstruieren natürliche Isomorphismen `F(S)\to \Abb_G(S, F(G))` für jede `G`-Menge `S`. Wir betrachten eine Kopie `G^{(s)}` von `G` für jedes `s\in S` und die Überdeckung `(\phi_s: G^{(s)}\to S)_{s\in S}\in\Cov(T_G)` mit `\phi_s(g) = gs`. Die Garbeneigenschaft liefert die exakte Folge:
 
-    \equalizer{F(S)}{\prod_{s\in S} F(G^{(s)})}{\prod_{s, t\in S} F(G^{(s)}\times_S G^{(t)})}
+    \equalizer{F(S)}{\prod_{s\in S}^\phantom{i} F(G^{(s)})}{\prod_{s, t\in S}^\phantom{i} F(G^{(s)}\times_S G^{(t)})}
 
 Wir identifizieren den mittleren Term mit `\Abb(S, F(G))` und zeigen, dass der Differenzkern die Teilmenge `\Abb_G(S, F(G))` ist.
 
