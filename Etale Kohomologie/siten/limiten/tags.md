@@ -6,7 +6,7 @@ Seien `I, \mathcal{C}` Kategorien und `F: I\to\mathcal{C}` ein kovarianter Funkt
 
 Der Funktor `\mathcal{C}\to\Mengen`, `X\mapsto \Hom_\Funktoren(F, c_X)` heißt `\underline{\colim} F`. Ist dieser darstellbar, wird das darstellende Objekt in `\mathcal{C}` mit `\colim F` bezeichnet und heißt *Kolimes* von `F`. ~~Kolimes~~ Ist `\underline{\colim}F` für jeden Funktor `F` darstellbar, so sagt man, dass Kolimiten in `\mathcal{C}` existieren. Man nennt `\mathcal{C}` auch *kovollständig*. ~~kovollständig|Kategorie~~
 
-Analog definiert man den *Limes* ~~Limes~~ durch `\underline{\lim} F: \mathcal{C}\to \Mengen`, `X\mapsto \Hom_\Funktoren(c_X, F)` und `\lim F` als das darstellende Objekt, falls existent. Existieren Limiten in `\mathcal{C}`, so nennt man `\mathcal{C}` vollständig. ~~vollständig|Kategorie~~
+Analog definiert man den *Limes* ~~Limes~~ durch `\underline{\lim} F: \mathcal{C}\to \Mengen`, `X\mapsto \Hom_\Funktoren(c_X, F)` und `\lim F` als das darstellende Objekt, falls existent. Existieren Limiten in `\mathcal{C}`, so nennt man `\mathcal{C}` *vollständig*. ~~vollständig|Kategorie~~
 
 #2-32:Beispiel
 
