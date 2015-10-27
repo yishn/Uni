@@ -60,7 +60,7 @@ Eine Kategorie `I` kann folgende Eigenschaften haben:
 
 #2-35-1:Definition
 
-`I` heißt *pseudogerichtet*, ~~pseudogerichtet|Kategorie~~ wenn (L1) und (L2) erfüllt sind. `I` heißt *gerichtet* oder *filtriert*, ~~gerichtet|Kategorie~~ ~~filtriert|Kategorie~~ wenn es nicht leer ist und (L1)–(L3) erfüllt sind.
+`I` heißt *pseudogerichtet* oder *pseudofiltrierend*, ~~pseudogerichtet|Kategorie~~ ~~pseudofiltrierend|Kategorie~~ wenn (L1) und (L2) erfüllt sind. `I` heißt *gerichtet* oder *filtriert*, ~~gerichtet|Kategorie~~ ~~filtriert|Kategorie~~ wenn es nicht leer ist und (L1)–(L3) erfüllt sind.
 
 #2-36:Satz
 
@@ -101,9 +101,9 @@ Gerichtete Kolimiten nach `\Ab` kommutieren mit endlichen Limiten. Pseudogericht
 
 ---
 
-Die erste Aussage folgt aus [Satz 2.41](#2-41) und [Satz 2.36](#2-36). Die Exaktheit gerichteter Kolimiten ist klar. Ist schließlich `I` pseudofiltrierend, so kann man `I` als disjunkte Vereinigung `I = \coprod_{s\in S} I_s` mit gerichteten `I_s` schreiben, wobei `S` die Menge der Zusammenhangskomponenten von `I` bezeichnet. Es gilt:
+Die erste Aussage folgt aus [Satz 2.41](#2-41) und [Satz 2.36](#2-36). Die Exaktheit gerichteter Kolimiten ist klar. Ist schließlich `I` pseudofiltrierend, so kann man `I` als disjunkte Vereinigung `I = \coprod_{J\in S} J` mit gerichteten `J` schreiben, wobei `S` die Menge der Zusammenhangskomponenten von `I` bezeichnet. Es gilt:
 
-    \colim_I = \bigoplus_{s\in S} \colim_{I_s}
+    \colim_I = \bigoplus_{J\in S} \colim_{J}
 
 #2-43:Lemma
 
