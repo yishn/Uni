@@ -52,9 +52,11 @@ Eine Kategorie `I` kann folgende Eigenschaften haben:
 
         \xymatrix{i \ar@<-.5ex>[r] \ar@<.5ex>[r] & j}
 
-  kann zu einem kommutativen Diagramm der folgenden Form vervollständigt werden:
+  kann zu einem Diagramm der folgenden Form vervollständigt werden
 
         \xymatrix{i \ar@<-.5ex>[r] \ar@<.5ex>[r] & j \ar[r] & k}
+
+  so dass beide Pfeile mit der Komposition nach `k` gleich werden.
 
 * *(L3)* `I` ist als ungerichteter Graph zusammenhängend. ~~L3~~
 
