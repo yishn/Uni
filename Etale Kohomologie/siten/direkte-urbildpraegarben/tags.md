@@ -98,7 +98,7 @@ Sei `\mathcal{A}` eine abelsche Kategorie mit beliebigen direkten Summen und Pro
 
 #2-53:Beispiel
 
-`\Cat(T)` habe Produkte. Ist `U\in\Cat(T)` und `j_U: T|_U\to T` die offene Einbettung, so hat für `(V\to U)\in\Cat(T) \downarrow U` die Kategorie `I_{(V\to U)}` das Endobjekt `(V, V\to U\times V)`. Daher ist `(j_U)_\text{P}^\ast: \PrSh(T)\to \PrSh(T|_U)` nichts weiter als die Einschränkungsabbildung `(j_U)_\text{P}^\ast F(V\to U) = F(V)`, also `(j_U)^\ast_\text{P} = (\res_U)^\text{P}_\ast`.
+`\Cat(T)` habe Produkte. Ist `U\in\Cat(T)` und `j_U: T|_U\to T` die offene Einbettung, so hat für `(V\to U)\in\Cat(T) \downarrow U` die Kategorie `I_{(V\to U)}` das Endobjekt `(V, V\to U\times V)`. Daher ist `(j_U)_\text{P}^\ast: \PrSh(T)\to \PrSh(T|_U)` nichts weiter als die Einschränkung `(j_U)_\text{P}^\ast F(V\to U) = F(V)`, also `(j_U)^\ast_\text{P} = (\res_U)^\text{P}_\ast`.
 
 Es hat daher `(j_U)^\ast_\text{P}` auch ein Linksadjungierten, nämlich die Fortsetzung durch Null, die man auch mit `(j_U)_!^\text{P}` bezeichnet. Wir haben Adjunktionen:
 

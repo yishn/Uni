@@ -18,7 +18,7 @@ In `\Mengen` existieren beliebige Limiten und Kolimiten.
 
 #2-34:Satz
 
-Sei `\mathcal{A}` eine abelsche Kategorie mit belibigen Koprodukten. Dann hat `\mathcal{A}` beliebige Kolimiten. Der Funktor `\colim` ist rechtsexakt.
+Sei `\mathcal{A}` eine abelsche Kategorie mit beliebigen Koprodukten. Dann hat `\mathcal{A}` beliebige Kolimiten. Der Funktor `\colim` ist rechtsexakt.
 
 ---
 
