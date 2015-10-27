@@ -24,7 +24,27 @@ Sei `U'\in\Cat(T')` und `F\in\PrSh(T)`. Dann definiert `F` einen Funktor auf `I_
 
 Zu einem Pfeil `\varepsilon: U'\to V'` in `\Cat(T')` erhalten wir einen Funktor `I_{V'}\to I_{U'}`, `(V, \phi)\mapsto(V, \phi\circ\varepsilon)` und somit einen Morphismus:
 
-    f^\ast_\text{P} F(V') = \colim_{(V, \phi)\in I_{V'}} F(V) \to f^\ast_\text{P} F(U') = \colim_{(U, \phi)\in I_{U'}} F(U)
+    f^\ast_\text{P} F(V') = \colim_{(V, \phi)\in I_{V'}} F(V) \longrightarrow f^\ast_\text{P} F(U') = \colim_{(U, \phi)\in I_{U'}} F(U)
+
+So wird `f^\ast_\text{P}F` zu einer Prägarbe. Zu zeigen ist noch die Funktoradjunktion.
+
+> Beachte zunächst, dass für `U\in\Cat(T)` das Objekt `(U, \id_{f^\sharp U})` ein Endobjekt in `I_{f^\sharp U}` ist. Daher gilt nach [Satz 2.40](#2-40):
+>
+>     f^\ast_\text{P} F(f^\sharp U) = F(U)
+
+Sei `\phi\in\Hom_{\PrSh(T')}(f^\ast_\text{P}F, G)` gegeben. Wir erhalten ein `\psi\in\Hom_{\PrSh(T)}(F, f^\text{P}_\ast G)` durch:
+
+    \psi(U): F(U) = f^\ast_\text{P} F(f^\sharp U) \stackrel{\phi}{\longrightarrow} G(f^\sharp U) = f^\text{P}_\ast G(U)
+
+Sei nun umgekehrt `\psi\in\Hom_{\PrSh(T)}(F, f^\text{P}_\ast G)`. Dann erhalten wir für jedes `(U, \varphi)\in I_{U'}` kompatible Homomorphismen:
+
+    F(U) \stackrel{\psi(U)}{\longrightarrow} f^\text{P}_\ast G(U) = G(f^\sharp U)\stackrel{G(\varphi)}{\longrightarrow} G(U')
+
+Diese setzen sich zusammen zu:
+
+    \phi(U'): f^\ast_\text{P} F(U') = \colim_{(U, \varphi)\in I_{U'}} F(U) \to G(U')
+
+Beide Konstruktionen sind invers zueinander.
 
 #2-46:Bemerkung
 
