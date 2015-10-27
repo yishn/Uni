@@ -53,3 +53,55 @@ Für eine Garbe `F` ist `f^\ast_\text{P} F` im Allgemeinen keine Garbe.
 #2-47:Korollar
 
 Ist `\mathcal{C}` eine abelsche Kategorie, so ist `f^\text{P}_\ast` linksexakt und `f^\ast_\text{P}` rechtsexakt. Ist `f^\ast_\text{P}` exakt, so überführt `f^\text{P}_\ast` Injektive in Injektive.
+
+#2-48:Bemerkung
+
+Es ist nicht klar, ob `f^\ast_\text{P}` mit dem Vergissfunktor `\Ab\to\Mengen` kommutiert. Dazu müsste die Indexkategorie gerichtet sein, vgl. [Satz 2.41](#2-41).
+
+#2-49:Satz
+
+Sei `f: T'\to T` ein Siten-Morphismus.
+
+1. Ist für jedes `U'\in\Cat(T')` die Indexkategorie `I_{U'}` in der Konstruktion von `f^\ast_\text{P}F(U')` pseudogerichtet, so ist `f^\ast_\text{P}: \PrSh_\Ab(T)\to\PrSh_\Ab(T')` exakt und `f^\text{P}_\ast` überführt Injektive in Injektive.
+2. `\Cat(T)` habe endliche Limiten. Dann ist für jedes `U'\in \Cat(T')` die Indexkategorie `I_{U'}` pseudogerichtet.
+
+---
+
+(i) folgt direkt aus [Korollar 2.42](#2-42). Für (ii) erhält man durch Konstruktion des geeigneten Faserprodukts bzw. Differenzkerns die Objekte für (L1) und (L2).
+
+#2-50:Definition
+
+Für ein Objekt `U\in\Cat(T)` und eine Prägarbe `F` auf `T|_U` heißt `(\res_U)^\ast_\text{P} F\in \PrSh(T)` die *Fortsetzung durch Null* von `F`. ~~Fortsetzung durch Null~~ Sie ist explizit gegeben durch:
+
+    (\res_U)^\ast_\text{P} F(V) = \coprod_{\Mor(V, U)} F(V)
+
+---
+
+Für `V\in\Cat(T)` gilt:
+
+    (\res_U)^\ast_\text{P} F(V) = \colim F(W)
+
+wobei die Indexkategorie durch Diagramme `V\to W\to U` in `\Cat(T)` gegeben ist. In dieser Kategorie ist die diskrete Kategorie der Diagramme `V\stackrel{\id}{\to} V\to U` final und (L1) ist erfüllt. Die Aussage folgt aus [Satz 2.40](#2-40).
+
+#2-51:Bemerkung
+
+Im Fall einer offenen Einbettung `U\opensubset X` topologischer Räume gilt für `F\in\PrSh_\Ab(U)` und `V\opensubset X`:
+
+    (\res_U)^\ast_\text{P} F(V) = \begin{cases}
+        F(V), & \text{wenn } V\subset U \\
+        0,    & \text{sonst}
+    \end{cases}
+
+#2-52:Korollar
+
+Sei `\mathcal{A}` eine abelsche Kategorie mit beliebigen direkten Summen und Produkten. Sind direkte Summen in `\mathcal{A}` exakt, so ist `(\res_U)_\text{P}^\ast` exakt und `(\res_U)^\text{P}_\ast: \PrSh_{\mathcal{A}}(T)\to\PrSh_\mathcal{A}(T|_U)` überführt Injektive in Injektive.
+
+#2-53:Beispiel
+
+`\Cat(T)` habe Produkte. Ist `U\in\Cat(T)` und `j_U: T|_U\to T` die offene Einbettung, so hat für `(V\to U)\in\Cat(T) \downarrow U` die Kategorie `I_{(V\to U)}` das Endobjekt `(V, V\to U\times V)`. Daher ist `(j_U)_\text{P}^\ast: \PrSh(T)\to \PrSh(T|_U)` nichts weiter als die Einschränkungsabbildung `(j_U)_\text{P}^\ast F(V\to U) = F(V)`, also `(j_U)^\ast_\text{P} = (\res_U)^\text{P}_\ast`.
+
+Es hat daher `(j_U)^\ast_\text{P}` auch ein Linksadjungierten, nämlich die Fortsetzung durch Null, die man auch mit `(j_U)_!^\text{P}` bezeichnet. Wir haben Adjunktionen:
+
+    (j_U)_!^\text{P} \dashv (j_U)^\ast_\text{P} \dashv (j_U)^\text{P}_\ast
+
+Insbesondere ist `(j_U)^\ast_\text{P}` exakt und `(j_U)^\text{P}_\ast` überführt Injektive in Injektive.
