@@ -10,5 +10,6 @@
     * [Inneres Hom & Tensorprodukt](siten/inneres-hom-und-tensorprodukt/)
 * Garben
     * [Genügend viele Injektive](garben/genuegend-viele-injektive/)
+    * [Čech-Kohomologie](garben/cech-kohomologie/)
 * [Literatur](literatur/)
 * [Index](index/)
