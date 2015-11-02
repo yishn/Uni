@@ -8,5 +8,7 @@
     * [Limiten](siten/limiten/)
     * [Direkte Urbildprägarben](siten/direkte-urbildpraegarben/)
     * [Inneres Hom & Tensorprodukt](siten/inneres-hom-und-tensorprodukt/)
+* Garben
+    * [Genügend viele Injektive](garben/genuegend-viele-injektive/)
 * [Literatur](literatur/)
 * [Index](index/)
