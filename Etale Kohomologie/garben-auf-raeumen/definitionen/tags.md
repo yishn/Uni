@@ -48,7 +48,7 @@ Analog für komplexe Mannigfaltigkeiten `X` und holomorphe Funktionen.
 
 Eine Prägarbe `F` heißt *Garbe* ~~Garbe|topologischer Raum~~, wenn sie die folgende Garbeneigenschaft erfüllt:
 
-Ist `U\opensubset X` und `(U_i)_{i\in I}` eine offene Überdeckung von `U` mit `s_i\in F(U_i)` gegeben, so existiert genau dann ein `s\in F(U)` mit `s|_{U_i} = s_i` für alle `i`, wenn für beliebige `i,j\in I` stets `s_i|_{U_i\cap U_j} = s_j|_{U_i\cap U_j}` gilt und dieses `s` eindeutig ist.
+> Ist `U\opensubset X` und `(U_i)_{i\in I}` eine offene Überdeckung von `U` mit `s_i\in F(U_i)` gegeben, so existiert genau dann ein `s\in F(U)` mit `s|_{U_i} = s_i` für alle `i`, wenn für beliebige `i,j\in I` stets `s_i|_{U_i\cap U_j} = s_j|_{U_i\cap U_j}` gilt und dieses `s` eindeutig ist.
 
 Die Prägarben in [Beispiel 1.4](#1-4) und [1.5](#1-5) sind Garben. Man schreibt die Garbeneigenschaft auch kategoriell als Differenzkern:
 
