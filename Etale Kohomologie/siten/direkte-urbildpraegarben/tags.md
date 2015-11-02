@@ -105,3 +105,34 @@ Es hat daher `(j_U)^\ast_\text{P}` auch ein Linksadjungierten, nämlich die Fort
     (j_U)_!^\text{P} \dashv (j_U)^\ast_\text{P} \dashv (j_U)^\text{P}_\ast
 
 Insbesondere ist `(j_U)^\ast_\text{P}` exakt und `(j_U)^\text{P}_\ast` überführt Injektive in Injektive.
+
+#2-54:Lemma
+
+Seien `g: T''\to T'`, `f: T'\to T` Siten-Morphismen. Dann gilt:
+
+1. `(fg)_\ast^\text{P} = f^\text{P}_\ast g^\text{P}_\ast`
+2. `(fg)^\ast_\text{P} = g^\ast_\text{P} f^\ast_\text{P}`
+
+---
+
+(i) liest man leicht aus der Definition ab. (ii) folgt aus (i) und der Eindeutigkeit des adjungierten Funktors.
+
+#2-55:Definition
+
+Für ein Objekt `C\in\mathcal{C}` bezeichnet `\underline{C}^\text{P}` die Prägarbe, die durch `\underline{C}^\text{P}(V) = C` für alle `V\in \Cat(T)` und `\id_C` als Übergansabbildungen definiert ist. `\underline{C}^\text{P}` heißt die *konstante Prägarbe* ~~konstant|Prägarbe (Situs)~~ zu `C`. Hat `\Cat(T)` ein Endobjekt `e`, so gilt für alle `F\in\PrSh_\mathcal{C}(T)`:
+
+    \Hom_{\PrSh_\mathcal{C}(T)}(\underline{C}^\text{P}, F) = \Mor_\mathcal{C}(C, F(e))
+
+Für `U\in\Cat(T)` wird die Fortsetzung durch Null der konstanten Prägarbe zu `C` auf `T|_U` mit `C_U^\text{P}` bezeichnet. Es gilt:
+
+    C_U^\text{P}(V) = \coprod_{\Mor(V, U)} C
+
+Die Funktoradjunktion liefert:
+
+    \Hom_{\PrSh_\mathcal{C}(T)}(C_U^\text{P}, F) = \Hom_{\PrSh_\mathcal{C}(T|_U)}(\underline{C}^\text{P}, F|_U) = \Mor_\mathcal{C}(C, F(U))
+
+#2-56:Bemerkung
+
+Fasst man das Objekt `C\in\mathcal{C}` als Prägarbe auf dem Situs `\{\bullet\}`, so gilt:
+
+    C_U^\text{P} = (\pr_U)^\ast_\text{P}(C)
