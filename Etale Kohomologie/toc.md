@@ -12,5 +12,6 @@
     * [Genügend viele Injektive](garben/genuegend-viele-injektive/)
     * [Čech-Kohomologie](garben/cech-kohomologie/)
     * [Verfeinerungen](garben/verfeinerungen/)
+    * [Garbifizierung](garben/garbifizierung/)
 * [Literatur](literatur/)
 * [Index](index/)

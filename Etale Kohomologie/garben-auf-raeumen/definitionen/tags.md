@@ -144,7 +144,7 @@ Wir ordnen `f` das Element `(\phi(a)|_{f^{-1}(a)})_{a\in A}\in G(U)` zu. Die Abb
 
 #1-14:Satz
 
-Es gibt einen zu `i: \Sh(X)\to \PrSh(X)` linksadjugierten Funktor `\PrSh(X)\to \Sh(x),\ F\mapsto F^\sim`, ~~Garbifizierungsfunktor~~ ~~Garbifizierung~~ d.h. für jede Prägarbe `F` und Garbe `G` gilt:
+Es gibt einen zu `i: \Sh(X)\to \PrSh(X)` linksadjugierten Funktor `\PrSh(X)\to \Sh(x),\ F\mapsto F^\sim`, ~~Garbifizierung|topologischer Raum~~ d.h. für jede Prägarbe `F` und Garbe `G` gilt:
 
     \Hom_{\PrSh(X)}(F, G) = \Hom_{\Sh(X)}(F^\sim, G)
 
