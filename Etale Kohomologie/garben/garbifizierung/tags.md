@@ -37,6 +37,15 @@ Es gibt einen natürlichen Homomorphismus `i_F: F\to F^+`. Es ist `i_F` genau da
 
    Die Garbeneigenschaft zeigt die Bijektivität des rechten vertikalen Pfeils, was die Existenz der Faktorisierung von (i) zeigt.
 
+   Für die Eindeutigkeit sei `F\to G` die Nullabbildung. Sei `\mathcal{U} = (U_i\to U)_i\in\Cov(T)` eine Überdeckung von `U\in\Cat(T)` und betrachte das kommutative Diagramm:
+
+        \xymatrix{
+            \check{\H}{}^0(\mathcal{U}, F) \ar[d]\ar[r] & \check{\H}{}^0(\mathcal{U}, G) \ar[d] \\
+            \prod_i F(U_i) \ar[r]                       & \prod_i G(U_i)
+        }
+
+    Die vertikalen Pfeile sind injektiv, daher ist `\check{\H}{}^0(\mathcal{U}, F)\to \check{\H}{}^0(\mathcal{U}, G) = G(U)` die Nullabbildung. Damit ist auch `\check{\H}{}^0(U, F) = F^+(U)\to G(U)` die Nullabbildung und deshalb auch `F^+\to G`.
+
 2. Dies folgt formal, da `F^+` durch Kernbildung und gerichteten Kolimiten entsteht.
 
 3. Die Prägarbe `\ker(i_F: F\to F^+)` besteht aus allen Schnitten, die auf einer Überdeckung zu Null werden. Insbesondere gilt `\ker(i_F)^+ = 0`. Wenden wir den linksexakten Funktor `+` auf die Folge `0\to\ker(i_F) \to F\to F^+` an, so erhalten wir die Inklusion `i_{F^+}: F^+\hookrightarrow F^\#`.
