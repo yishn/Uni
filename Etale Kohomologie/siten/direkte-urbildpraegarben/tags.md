@@ -28,7 +28,7 @@ Zu einem Pfeil `\varepsilon: U'\to V'` in `\Cat(T')` erhalten wir einen Funktor 
 
 So wird `f^\ast_\text{P}F` zu einer Prägarbe. Zu zeigen ist noch die Funktoradjunktion.
 
-> Beachte zunächst, dass für `U\in\Cat(T)` das Objekt `(U, \id_{f^\sharp U})` ein Endobjekt in `I_{f^\sharp U}` ist. Daher gilt nach [Satz 2.40](#2-40):
+> Beachte zunächst, dass für `U\in\Cat(T)` das Objekt `(U, \id_{f^\sharp U})` ein Endobjekt in `I_{f^\sharp U}` ist. Daher gilt nach [~](#2-40):
 >
 >     f^\ast_\text{P} F(f^\sharp U) = F(U)
 
@@ -56,7 +56,7 @@ Ist `\mathcal{C}` eine abelsche Kategorie, so ist `f^\text{P}_\ast` linksexakt u
 
 #2-48:Bemerkung
 
-Es ist nicht klar, ob `f^\ast_\text{P}` mit dem Vergissfunktor `\Ab\to\Mengen` kommutiert. Dazu müsste die Indexkategorie gerichtet sein, vgl. [Satz 2.41](#2-41).
+Es ist nicht klar, ob `f^\ast_\text{P}` mit dem Vergissfunktor `\Ab\to\Mengen` kommutiert. Dazu müsste die Indexkategorie gerichtet sein, vgl. [~](#2-41).
 
 #2-49:Satz
 
@@ -67,7 +67,7 @@ Sei `f: T'\to T` ein Siten-Morphismus.
 
 ---
 
-(i) folgt direkt aus [Korollar 2.42](#2-42). Für (ii) erhält man durch Konstruktion des geeigneten Faserprodukts bzw. Differenzkerns die Objekte für (L1) und (L2).
+(i) folgt direkt aus [~](#2-42). Für (ii) erhält man durch Konstruktion des geeigneten Faserprodukts bzw. Differenzkerns die Objekte für (L1) und (L2).
 
 #2-50:Definition
 
@@ -81,7 +81,7 @@ Für `V\in\Cat(T)` gilt:
 
     (\res_U)^\ast_\text{P} F(V) = \colim F(W)
 
-wobei die Indexkategorie durch Diagramme `V\to W\to U` in `\Cat(T)` gegeben ist. In dieser Kategorie ist die diskrete Kategorie der Diagramme `V\stackrel{\id}{\to} V\to U` final und (L1) ist erfüllt. Die Aussage folgt aus [Satz 2.40](#2-40).
+wobei die Indexkategorie durch Diagramme `V\to W\to U` in `\Cat(T)` gegeben ist. In dieser Kategorie ist die diskrete Kategorie der Diagramme `V\stackrel{\id}{\to} V\to U` final und (L1) ist erfüllt. Die Aussage folgt aus [~](#2-40).
 
 #2-51:Bemerkung
 

@@ -103,7 +103,7 @@ Gerichtete Kolimiten nach `\Ab` kommutieren mit endlichen Limiten. Pseudogericht
 
 ---
 
-Die erste Aussage folgt aus [Satz 2.41](#2-41) und [Satz 2.36](#2-36). Die Exaktheit gerichteter Kolimiten ist klar. Ist schließlich `I` pseudofiltrierend, so kann man `I` als disjunkte Vereinigung `I = \coprod_{J\in S} J` mit gerichteten `J` schreiben, wobei `S` die Menge der Zusammenhangskomponenten von `I` bezeichnet. Es gilt:
+Die erste Aussage folgt aus [~](#2-41) und [~](#2-36). Die Exaktheit gerichteter Kolimiten ist klar. Ist schließlich `I` pseudofiltrierend, so kann man `I` als disjunkte Vereinigung `I = \coprod_{J\in S} J` mit gerichteten `J` schreiben, wobei `S` die Menge der Zusammenhangskomponenten von `I` bezeichnet. Es gilt:
 
     \colim_I = \bigoplus_{J\in S} \colim_{J}
 

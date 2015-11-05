@@ -30,7 +30,7 @@ wobei `(f_{j_0}, \ldots, f_{j_k}) \times (g_{j_k}, \ldots, g_{j_{q-1}})` die fol
 
 #3-10-1:Bemerkung
 
-Man braucht nur nachzurechnen, dass `\check{C}{}^0(g, \psi, F) - \check{C}{}^0(f, \phi, F) = D^1\circ \d` gilt, vergleiche [Lemma 3.8](#3-8).
+Man braucht nur nachzurechnen, dass `\check{C}{}^0(g, \psi, F) - \check{C}{}^0(f, \phi, F) = D^1\circ \d` gilt, vergleiche [~](#3-8).
 
 #3-11-INTRO
 
@@ -50,7 +50,7 @@ Für `q\geq 0` heißen die Gruppen
 
     \check{\H}{}^q(X, F) = \colim_{\Cov(X)} \check{\H}{}^q(-, F)
 
-die *Čech-Kohomologiegruppen* von `X` mit Werten in `F`. Diese sind wohldefiniert nach [Lemma 3.10](#3-10). ~~Kohomologie|Čech~~ ~~Čech-Kohomologie~~
+die *Čech-Kohomologiegruppen* von `X` mit Werten in `F`. Diese sind wohldefiniert nach [~](#3-10). ~~Kohomologie|Čech~~ ~~Čech-Kohomologie~~
 
 #3-13:Lemma
 
@@ -58,4 +58,4 @@ Es ist `\check{\H}{}^q(X, -)` der `q`-te abgeleiteter Funktor von `\check{\H}{}^
 
 ---
 
-Nach [Lemma 3.11](#3-11) ist `\Cov(X)` gerichtet und somit der Kolimes exakt. Damit folgt alles formal aus Satz [Satz 3.8](#3-8).
+Nach [~](#3-11) ist `\Cov(X)` gerichtet und somit der Kolimes exakt. Damit folgt alles formal aus Satz [~](#3-8).

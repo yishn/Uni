@@ -36,4 +36,4 @@ mit der `G`-Diagonalwirkung `g(u, v) = (gu, gv)`.
 
 #2-4:Beispiel
 
-Sei `G` eine proendliche Gruppe. Sei `\Cat(T_G)` die Kategorie der diskreten Links-`G`-Mengen und `\Cov(T_G)` die Mengen von surjektiven Familien von `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`. Vergleiche auch mit [Beispiel 2.3](#2-3).
+Sei `G` eine proendliche Gruppe. Sei `\Cat(T_G)` die Kategorie der diskreten Links-`G`-Mengen und `\Cov(T_G)` die Mengen von surjektiven Familien von `G`-Abbildungen mit gleichem Ziel. Dies definiert einen Situs `T_G`. Vergleiche auch mit [~](#2-3).

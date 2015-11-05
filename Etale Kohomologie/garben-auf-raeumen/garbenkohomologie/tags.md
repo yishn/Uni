@@ -1,6 +1,6 @@
 #1-17:Definition
 
-Wir betrachten den *Schnittfunktor* ~~Schnittfunktor~~ `\Gamma(X, -): \Sh(X)\to \Ab`, `F\mapsto F(X)`. Da `i` nach [Korollar 1.15](#1-15) linksexakt ist und `F\mapsto F(X)` auf Prägarben exakt ist, ist `\Gamma(X, -)` linksexakt.
+Wir betrachten den *Schnittfunktor* ~~Schnittfunktor~~ `\Gamma(X, -): \Sh(X)\to \Ab`, `F\mapsto F(X)`. Da `i` nach [~](#1-15) linksexakt ist und `F\mapsto F(X)` auf Prägarben exakt ist, ist `\Gamma(X, -)` linksexakt.
 
 Sei `F` eine Garbe. Wir definieren die `i`-te *Kohomologie* ~~Kohomologie|Garbe~~ von `X` mit Werten in `F` als:
 
@@ -35,7 +35,7 @@ Eine Garbe `F` heißt *welk*, ~~welk|Garbe~~ wenn für jede offene Teilmenge `U\
 
 #1-21:Bemerkung
 
-*   Injektive Garben sind welk nach [Lemma 1.19](#1-19).
+*   Injektive Garben sind welk nach [~](#1-19).
 *   Ist `F` welk, so ist für jedes `U\opensubset X` die Einschränkung `F|_U` eine welke Garbe auf `U`.
 
 #1-22:Satz
@@ -48,7 +48,7 @@ Für eine welke Garbe `F` gilt `\H^i(X, F) = 0` für alle `i\geq 1`.
 
         0\longrightarrow F(X)\longrightarrow G(X) \longrightarrow H(X) \longrightarrow 0
 
-  *Beweis von Schritt 1:* Sei `h\in H(X)`. Wir betrachten die Menge aller Paare `(U, s)`, `U\opensubset X`, `s\in G(U)` mit `j(U)(s) = h|_U`. Nach Lemma von Zorn hat diese Menge ein maximales Element `(U, x)`. Sei `U\subsetneq X` und `x\in X\setminus U`. Nach [Korollar 1.12](#1-12) existiert eine Umgebung `V\opensubset X` von `x` und ein `t\in G(V)` mit `j(V)(t) = h|_V`. Somit gilt:
+  *Beweis von Schritt 1:* Sei `h\in H(X)`. Wir betrachten die Menge aller Paare `(U, s)`, `U\opensubset X`, `s\in G(U)` mit `j(U)(s) = h|_U`. Nach Lemma von Zorn hat diese Menge ein maximales Element `(U, x)`. Sei `U\subsetneq X` und `x\in X\setminus U`. Nach [~](#1-12) existiert eine Umgebung `V\opensubset X` von `x` und ein `t\in G(V)` mit `j(V)(t) = h|_V`. Somit gilt:
 
         s|_{U\cap V} - t|_{U\cap V} \in \ker j(U\cap V) = F(U\cap V)
 
@@ -91,7 +91,7 @@ Die Garbe `\underline{A}` ist welk, da die lokal konstanten Funktionen schon kon
 
 #1-24-1:Bemerkung
 
-Insbesondere ist für jedes irreduzible Schema die Zariski-Kohomologie mit Werten in konstanten Garben gleich `0`. Die Zariski-Topologie ist auch aus anderen Gründen nicht wirklich hilfreich, siehe z.B. [Lemma 1.25](#1-25).
+Insbesondere ist für jedes irreduzible Schema die Zariski-Kohomologie mit Werten in konstanten Garben gleich `0`. Die Zariski-Topologie ist auch aus anderen Gründen nicht wirklich hilfreich, siehe z.B. [~](#1-25).
 
 #1-25:Lemma
 

@@ -63,7 +63,7 @@ Sei `X` ein topologischer Raum und `U\opensubset X` mit der Teilraumtopologie. D
 
     U_\text{top} \cong X_\text{top}|_U
 
-Produkte in `\Cat(X_\text{top})` sind Durchschnitte. Der in [Definition 2.24](#2-24) definierter Morphismus `j_U: X_\text{top}|_U \to X_\text{top}` entspricht bzgl. diesem Isomorphismus gerade dem Siten-Morphismus `U_\text{top}\to X_\text{top}`, der durch die offenen Einbettung von `U` nach `X` induziert wird.
+Produkte in `\Cat(X_\text{top})` sind Durchschnitte. Der in [~](#2-24) definierter Morphismus `j_U: X_\text{top}|_U \to X_\text{top}` entspricht bzgl. diesem Isomorphismus gerade dem Siten-Morphismus `U_\text{top}\to X_\text{top}`, der durch die offenen Einbettung von `U` nach `X` induziert wird.
 
 #2-26:Definition
 
@@ -75,13 +75,13 @@ Ist `\mathcal{C}` eine abelsche Kategorie, so ist `f_\ast^\text{P}` exakt.
 
 #2-27:Beispiel
 
-Wir betrachten für `U\in\Cat(T)` den Morphismus `\pr_U: T\to \{\bullet\}` aus [Definition 2.20](#2-20). Prägarben auf `\{\bullet\}` sind nichts weiter als Objekte von `\mathcal{C}` und für eine Prägarbe `F` auf `T` gilt:
+Wir betrachten für `U\in\Cat(T)` den Morphismus `\pr_U: T\to \{\bullet\}` aus [~](#2-20). Prägarben auf `\{\bullet\}` sind nichts weiter als Objekte von `\mathcal{C}` und für eine Prägarbe `F` auf `T` gilt:
 
     (\pr_U)^\text{P}_\ast F(\bullet) = F(U)
 
 #2-28:Beispiel
 
-Wir betrachten für `U\in\Cat(T)` den Morphismus `\res_U: T\to T|_U` aus [Definition 2.23](#2-23). Es gilt:
+Wir betrachten für `U\in\Cat(T)` den Morphismus `\res_U: T\to T|_U` aus [~](#2-23). Es gilt:
 
     (\res_U)^\text{P}_\ast F(V\to U) = F(V)
 

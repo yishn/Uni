@@ -50,7 +50,7 @@ Eine Prägarbe `F` heißt *Garbe* ~~Garbe|topologischer Raum~~, wenn sie die fol
 
 > Ist `U\opensubset X` und `(U_i)_{i\in I}` eine offene Überdeckung von `U` mit `s_i\in F(U_i)` gegeben, so existiert genau dann ein `s\in F(U)` mit `s|_{U_i} = s_i` für alle `i`, wenn für beliebige `i,j\in I` stets `s_i|_{U_i\cap U_j} = s_j|_{U_i\cap U_j}` gilt und dieses `s` eindeutig ist.
 
-Die Prägarben in [Beispiel 1.4](#1-4) und [1.5](#1-5) sind Garben. Man schreibt die Garbeneigenschaft auch kategoriell als Differenzkern:
+Die Prägarben in [~](#1-4) und [~](#1-5) sind Garben. Man schreibt die Garbeneigenschaft auch kategoriell als Differenzkern:
 
     \equalizer{F(U)}{\prod_i^\phantom{i} F(U_i)}{\prod^\phantom{i}_{i, j} F(U_i\cap U_j)}
 
@@ -88,7 +88,7 @@ Sei `f:F\to G` ein Morphismus von Garben. Dann sind äquivalent:
 
 ---
 
-Offensichtlich ist der Prägarbenkern `\ker(f)` eine Garbe mit Halmen `\ker(f)_x = \ker(f_x)`. Die Injektivität von `f` ist somit äquivalent zu `\ker(f) = 0` und nach [Lemma 1.8](#1-8) zu (ii) und (iii).
+Offensichtlich ist der Prägarbenkern `\ker(f)` eine Garbe mit Halmen `\ker(f)_x = \ker(f_x)`. Die Injektivität von `f` ist somit äquivalent zu `\ker(f) = 0` und nach [~](#1-8) zu (ii) und (iii).
 
 #1-11:Lemma
 
@@ -99,14 +99,14 @@ Für eine Prägarbe `P` sind äquivalent:
 
 ---
 
-(i)`\implies`(ii) folgt aus [Korollar 1.9](#1-9). Sei nun umgekehrt `x\in X` mit `P_x\neq 0`. Wir betrachten die Prägarbe `F` gegeben durch:
+(i)`\implies`(ii) folgt aus [~](#1-9). Sei nun umgekehrt `x\in X` mit `P_x\neq 0`. Wir betrachten die Prägarbe `F` gegeben durch:
 
     F(U) = \begin{cases}
         0, & x\not\in U\\
         P_x, & \text{sonst}
     \end{cases}
 
-Diese ist sogar eine Garbe, die sog. *Wolkenkratzergarbe* ~~Wolkenkratzergarbe~~ zur Gruppe `P_x` im Punkt `x`. Der Halm von `F` in `x` ist gerade `P_x`. Nun definieren wir uns `f:P\to F` als `0` auf `P(U)` für `x\not\in U` und als die natürliche Abbildung `P(U)\to P_x` für `x\in U`. Die von `f` auf den Halm bei `x` induzierte Abbildung ist die Identität auf `P_x\neq 0`, weshalb `f` nach [Korollar 1.9](#1-9) nicht die Nullabbildung ist.
+Diese ist sogar eine Garbe, die sog. *Wolkenkratzergarbe* ~~Wolkenkratzergarbe~~ zur Gruppe `P_x` im Punkt `x`. Der Halm von `F` in `x` ist gerade `P_x`. Nun definieren wir uns `f:P\to F` als `0` auf `P(U)` für `x\not\in U` und als die natürliche Abbildung `P(U)\to P_x` für `x\in U`. Die von `f` auf den Halm bei `x` induzierte Abbildung ist die Identität auf `P_x\neq 0`, weshalb `f` nach [~](#1-9) nicht die Nullabbildung ist.
 
 #1-12:Korollar
 
@@ -122,7 +122,7 @@ Die *konstante Garbe* ~~konstant|Garbe~~ `\underline{A}` zu einer abelschen Grup
 
     \underline{A}(U) = \Hom_\stg(U, A)
 
-wobei wir `A` als diskrete topologische Gruppe auffassen, d.h. `\Hom_\stg(U, A)` besteht aus den lokal konstanten Funktionen auf `U`, während `\underline{A}^\text{P}(U)` aus den konstanten Funktionen auf `U` besteht. Es gibt einen natürlichen Homomorphismus `\underline{A}^\text{P} \to \underline{A}`. Dieser ist universell für Homomorphismen in Garben, siehe [Lemma 1.13](#1-13).
+wobei wir `A` als diskrete topologische Gruppe auffassen, d.h. `\Hom_\stg(U, A)` besteht aus den lokal konstanten Funktionen auf `U`, während `\underline{A}^\text{P}(U)` aus den konstanten Funktionen auf `U` besteht. Es gibt einen natürlichen Homomorphismus `\underline{A}^\text{P} \to \underline{A}`. Dieser ist universell für Homomorphismen in Garben, siehe [~](#1-13).
 
 #1-13:Lemma
 

@@ -24,7 +24,7 @@ Dann hat `\mathcal{A}` genügend viele Injektive.
 
 #3-4:Lemma
 
-Sei `\mathcal{A}` eine abelsche Kategorie, die den Bedingungen von [Satz 3.3](#3-3) genügt. Dann genügt für jeden Situs `T` auch `\PrSh_\mathcal{A}(T)` den Bedingungen von [Satz 3.3](#3-3).
+Sei `\mathcal{A}` eine abelsche Kategorie, die den Bedingungen von [~](#3-3) genügt. Dann genügt für jeden Situs `T` auch `\PrSh_\mathcal{A}(T)` den Bedingungen von [~](#3-3).
 
 ---
 

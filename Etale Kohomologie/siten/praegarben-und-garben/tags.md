@@ -34,15 +34,15 @@ Man nennt eine Prägarbe *darstellbar* durch `X`, wenn `F\cong F_X`. ~~darstellb
 
 #2-11:Bemerkung
 
-Die Prägarbe `F_X` aus [Definition 2.9](#2-9) ist nicht notwendigerweise eine Garbe. Ist `F_X` für jedes `X` eine Garbe, so nennt man den Situs *subkanonisch*. ~~subkanonisch|Situs~~
+Die Prägarbe `F_X` aus [~](#2-9) ist nicht notwendigerweise eine Garbe. Ist `F_X` für jedes `X` eine Garbe, so nennt man den Situs *subkanonisch*. ~~subkanonisch|Situs~~
 
 #2-12:Beispiel
 
-Der Situs `X_\text{top}` aus [Beispiel 2.2](#2-2) ist subkanonisch: Garben auf `X_\text{top}` sind gerade die gewöhnlichen Garben auf `X` und jedes `U\opensubset X` stellt eine Garbe dar nach [Beispiel 1.4](#1-4).
+Der Situs `X_\text{top}` aus [~](#2-2) ist subkanonisch: Garben auf `X_\text{top}` sind gerade die gewöhnlichen Garben auf `X` und jedes `U\opensubset X` stellt eine Garbe dar nach [~](#1-4).
 
 #2-13:Beispiel
 
-Der Situs `T_G` aus [Beispiel 2.3](#2-3) ist subkanonisch. Ferner sind in `T_G` alle Garben darstellbar, d.h. die Einbettung aus dem [Yoneda-Lemma](#2-10) liefert eine Kategorienäquivalenz:
+Der Situs `T_G` aus [~](#2-3) ist subkanonisch. Ferner sind in `T_G` alle Garben darstellbar, d.h. die Einbettung aus dem [Yoneda-Lemma](#2-10) liefert eine Kategorienäquivalenz:
 
     \GMengen \stackrel{\sim}{\longrightarrow} \Sh_\Mengen(T_G)
 
@@ -71,10 +71,10 @@ Das Element `(x_s)_s \in \prod_{s\in S} F(G^{(s)})` liegt daher genau dann im Di
 
 #2-14:Beispiel
 
-Sei `G` eine proendliche Gruppe. Der Situs `T_G` aus [Beispiel 2.4](#2-4) ist subkanonisch. Man erhält eine Kategorienäquivalenz:
+Sei `G` eine proendliche Gruppe. Der Situs `T_G` aus [~](#2-4) ist subkanonisch. Man erhält eine Kategorienäquivalenz:
 
     \textbf{diskrete }\GMengen \stackrel{\sim}{\longrightarrow} \Sh_\Mengen(T_G)
 
-Für eine Garbe `F` wird `F(G)` durch die diskreten `G`-Mengen `\colim_{H\opennormal G}F(G/H)` und die `G`-Wirkung auf `F(G/H)` wie in [Beispiel 2.13](#2-13) zu einer diskreten `G`-Menge. Durch Übergang zu Gruppenobjekten erhalten wir die Kategorienäquivalenz:
+Für eine Garbe `F` wird `F(G)` durch die diskreten `G`-Mengen `\colim_{H\opennormal G}F(G/H)` und die `G`-Wirkung auf `F(G/H)` wie in [~](#2-13) zu einer diskreten `G`-Menge. Durch Übergang zu Gruppenobjekten erhalten wir die Kategorienäquivalenz:
 
     \textbf{diskrete }\GMod \stackrel{\sim}{\longrightarrow} \Sh_\Ab(T_G)

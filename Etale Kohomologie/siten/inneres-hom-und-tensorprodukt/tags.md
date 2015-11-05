@@ -22,7 +22,7 @@ Ist `G\in\PrSh_\Ab(T)` ein injektives Objekt, so ist `\Hhom(-, G): \PrSh_\Ab(T)\
 
 ---
 
-Nach [Korollar 2.52](#2-52) ist `G|_U` injektiv für jedes `U\in\Cat(T)`. Dies zeigt die Exaktheit von `\Hom_{\PrSh(T|_U)}(-, G|_U)`. Die Aussage folgt.
+Nach [~](#2-52) ist `G|_U` injektiv für jedes `U\in\Cat(T)`. Dies zeigt die Exaktheit von `\Hom_{\PrSh(T|_U)}(-, G|_U)`. Die Aussage folgt.
 
 #2-61:Definition
 
