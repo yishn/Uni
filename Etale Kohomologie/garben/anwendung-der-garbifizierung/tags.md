@@ -1,6 +1,6 @@
 #3-22:Satz
 
-Es ist `\Sh_\Ab(T)` eine abelsche Kategorie und die Garbifizierung `\#: \PrSh_\Ab(T)\to \Sh_\Ab(T)` ist ein exakter Funktor. Die Einbettung `i: \Sh_\Ab(T)\to \PrSh_\Ab(T)` überführt Injektive in Injektive.
+Es ist `\Sh_\Ab(T)` eine abelsche Kategorie und die Garbifizierung `\#: \PrSh_\Ab(T)\to \Sh_\Ab(T)` ist ein exakter Funktor. Die Einbettung `\iota: \Sh_\Ab(T)\to \PrSh_\Ab(T)` überführt Injektive in Injektive.
 
 #3-23:Lemma
 

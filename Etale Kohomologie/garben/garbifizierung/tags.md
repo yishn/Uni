@@ -24,7 +24,7 @@ Es gibt einen natürlichen Homomorphismus `i_F: F\to F^+`. Es ist `i_F` genau da
 2. Die Zuordnung `F\mapsto F^+` liefert einen linksexakten Funktor `\PrSh(T)\to \PrSh(T)`.
 3. Ist `F` eine Prägarbe, so ist `F^+` eine separierte Prägarbe
 4. Ist `F` eine separierte Prägarbe, so ist `F^+` eine Garbe.
-5. Der Funktor `F\mapsto F^\# = (F^+)^+` ist linksadjungiert zur Inklusion `i: \Sh(T)\hookrightarrow \PrSh(T)`.
+5. Der Funktor `F\mapsto F^\# = (F^+)^+` ist linksadjungiert zur Inklusion `\iota: \Sh(T)\hookrightarrow \PrSh(T)`.
 
 ---
 

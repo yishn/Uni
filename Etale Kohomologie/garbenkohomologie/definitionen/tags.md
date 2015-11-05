@@ -26,27 +26,27 @@ Es gilt `\Gamma(U, F) = \Gamma(U, F|_U)`. Desweiteren ist `\res_{U,\ast}` exakt 
 
 #4-3:Definition
 
-Die abgeleiteten Funktoren des linksexakten Funktors `i: \Sh(T)\to\PrSh(T)` heißen die *Kohomologieprägarben*: ~~Kohomologieprägarbe~~
+Die abgeleiteten Funktoren des linksexakten Funktors `\iota: \Sh(T)\to\PrSh(T)` heißen die *Kohomologieprägarben*: ~~Kohomologieprägarbe~~
 
-    \Hh^q(F) = \mathrm{R}^q i(F)
+    \Hh^q(F) = \mathrm{R}^q \iota(F)
 
 #4-4:Lemma
 
 1. Für jedes `X\in\Cat(T)` und jedes `F\in\Sh(T)` gilt `\H^q(X, F) = \Hh^q(F)(X)`.
 2. Es gilt `\Hh^q(F)^\# = 0` für `q > 0`.
-3. Sei `X\in\Cat(T)`, `q > 0` und `a\in\H^q(X, F)`. Dann existiert eine Überdeckung `(U_i\to X)_i` mit `a|_{U_i} = 0` für alle `i`.
+3. Sei `X\in\Cat(T)`, `q > 0` und `a\in\H^q(X, F)`. Dann existiert eine Überdeckung `(U_i\to X)_i` mit `a|_{U_i} = 0` für alle `\iota`.
 
 ---
 
-1.  Wir bezeichnen den Schnittfunktor auf Prägarben mit `\Gamma_\text{P}(X, -)`. Dieser ist exakt und wir haben `\Gamma(X, -) = \Gamma_\text{P}(X, -)\circ i`. Daher folgt:
+1.  Wir bezeichnen den Schnittfunktor auf Prägarben mit `\Gamma_\text{P}(X, -)`. Dieser ist exakt und wir haben `\Gamma(X, -) = \Gamma_\text{P}(X, -)\circ \iota`. Daher folgt:
 
-        \mathrm{R}^q\Gamma(X, -) = \Gamma_P(X, -)\circ \mathrm{R}^q i = \Gamma_P(X, -)\circ \Hh^q
+        \mathrm{R}^q\Gamma(X, -) = \Gamma_P(X, -)\circ \mathrm{R}^q \iota = \Gamma_P(X, -)\circ \Hh^q
 
-   Dies zeigt (i).
+   Dies zeigt (\iota).
 
-2. Es ist `\#` exakt, `\id = \#\circ i` und für `q > 0` gilt:
+2. Es ist `\#` exakt, `\id = \#\circ \iota` und für `q > 0` gilt:
 
-        0 = \mathrm{R}^q \id = \# \circ \mathrm{R}^q i = \#\circ\Hh^q
+        0 = \mathrm{R}^q \id = \# \circ \mathrm{R}^q \iota = \#\circ\Hh^q
 
 3. Wegen `\Hh^q(F)^\# = 0` folgt nach [~](#3-21) schon `\Hh^q(F)^+ = 0`. Nach Konstuktion gilt also:
 

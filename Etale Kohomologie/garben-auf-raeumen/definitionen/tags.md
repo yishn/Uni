@@ -58,9 +58,9 @@ Extrem formal schließt man durch die Betrachtung der leeren Überdeckung der le
 
 #1-6-1
 
-Morphismen zwischen Garben sind Morphismen von Prägarben. ~~Morphismus|Garben~~ ~~Homomorphismus|Garben~~ Wir erhalten eine volltreue Kategorieneinbettung `i:\Sh(X)\hookrightarrow \PrSh(X)`.
+Morphismen zwischen Garben sind Morphismen von Prägarben. ~~Morphismus|Garben~~ ~~Homomorphismus|Garben~~ Wir erhalten eine volltreue Kategorieneinbettung `\iota:\Sh(X)\hookrightarrow \PrSh(X)`.
 
-Die direkte Prägarbensumme zweier Garben ist wieder eine Garbe, also ist `\Sh(X)` eine additive Kategorie und `i` ein additiver Funktor.
+Die direkte Prägarbensumme zweier Garben ist wieder eine Garbe, also ist `\Sh(X)` eine additive Kategorie und `\iota` ein additiver Funktor.
 
 #1-7:Definition
 
@@ -144,19 +144,19 @@ Wir ordnen `f` das Element `(\phi(a)|_{f^{-1}(a)})_{a\in A}\in G(U)` zu. Die Abb
 
 #1-14:Satz
 
-Es gibt einen zu `i: \Sh(X)\to \PrSh(X)` linksadjugierten Funktor `\PrSh(X)\to \Sh(x),\ F\mapsto F^\sim`, ~~Garbifizierung|topologischer Raum~~ d.h. für jede Prägarbe `F` und Garbe `G` gilt:
+Es gibt einen zu `\iota: \Sh(X)\to \PrSh(X)` linksadjugierten Funktor `\PrSh(X)\to \Sh(x),\ F\mapsto F^\sim`, ~~Garbifizierung|topologischer Raum~~ d.h. für jede Prägarbe `F` und Garbe `G` gilt:
 
     \Hom_{\PrSh(X)}(F, G) = \Hom_{\Sh(X)}(F^\sim, G)
 
-Es ist `i\circ{\sim}` linksexakt. Da `i` eine volltreue Einbettung ist, folgt rein formal `{\sim}\circ i = \id`.
+Es ist `\iota\circ{\sim}` linksexakt. Da `\iota` eine volltreue Einbettung ist, folgt rein formal `{\sim}\circ \iota = \id`.
 
 #1-15:Korollar
 
-`\Sh(X)` ist eine abelsche Kategorie. `i` ist linksexakt und der Garbifizierungsfunktor `\sim` ist exakt. Eine injektive Garbe ist injektiv als Prägarbe.
+`\Sh(X)` ist eine abelsche Kategorie. `\iota` ist linksexakt und der Garbifizierungsfunktor `\sim` ist exakt. Eine injektive Garbe ist injektiv als Prägarbe.
 
 ---
 
-Ist `f: F\to G` ein Garben-Morphismus, so ist die Prägarbe `\ker(f)` wieder eine Garbe. Für den Prägarbenkokern `\coker(f)^\text{P}` ist dies falsch, aber `(\coker(f)^\text{P})^\sim` hat die Universaleigenschaft des Kokerns in `\Sh(X)`. Alle Axiome einer abelschen Kategorie ergeben sich nun formal. Der Garbifizierungsfunktor `\sim` ist exakt, weshalb `i` Injektive in Injektive überführt.
+Ist `f: F\to G` ein Garben-Morphismus, so ist die Prägarbe `\ker(f)` wieder eine Garbe. Für den Prägarbenkokern `\coker(f)^\text{P}` ist dies falsch, aber `(\coker(f)^\text{P})^\sim` hat die Universaleigenschaft des Kokerns in `\Sh(X)`. Alle Axiome einer abelschen Kategorie ergeben sich nun formal. Der Garbifizierungsfunktor `\sim` ist exakt, weshalb `\iota` Injektive in Injektive überführt.
 
 #1-16:Lemma
 
