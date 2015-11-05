@@ -156,7 +156,7 @@ Es ist `\iota\circ{\sim}` linksexakt. Da `\iota` eine volltreue Einbettung ist, 
 
 ---
 
-Ist `f: F\to G` ein Garben-Morphismus, so ist die Prägarbe `\ker(f)` wieder eine Garbe. Für den Prägarbenkokern `\coker(f)^\text{P}` ist dies falsch, aber `(\coker(f)^\text{P})^\sim` hat die Universaleigenschaft des Kokerns in `\Sh(X)`. Alle Axiome einer abelschen Kategorie ergeben sich nun formal. Der Garbifizierungsfunktor `\sim` ist exakt, weshalb `\iota` Injektive in Injektive überführt.
+Ist `f: F\to G` ein Garben-Morphismus, so ist die Prägarbe `\ker(f)` wieder eine Garbe. Für den Prägarbenkokern `\coker^\text{P}(f)` ist dies falsch, aber `(\coker^\text{P}(f))^\sim` hat die Universaleigenschaft des Kokerns in `\Sh(X)`. Alle Axiome einer abelschen Kategorie ergeben sich nun formal. Der Garbifizierungsfunktor `\sim` ist exakt, weshalb `\iota` Injektive in Injektive überführt.
 
 #1-16:Lemma
 
