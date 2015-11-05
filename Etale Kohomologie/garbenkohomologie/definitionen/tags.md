@@ -42,7 +42,7 @@ Die abgeleiteten Funktoren des linksexakten Funktors `\iota: \Sh(T)\to\PrSh(T)` 
 
         \mathrm{R}^q\Gamma(X, -) = \Gamma_P(X, -)\circ \mathrm{R}^q \iota = \Gamma_P(X, -)\circ \Hh^q
 
-   Dies zeigt (\iota).
+   Dies zeigt (i).
 
 2. Es ist `\#` exakt, `\id = \#\circ \iota` und für `q > 0` gilt:
 
