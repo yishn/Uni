@@ -14,5 +14,8 @@
     * [Verfeinerungen](garben/verfeinerungen/)
     * [Garbifizierung](garben/garbifizierung/)
     * [Anwendung der Garbifizierung](garben/anwendung-der-garbifizierung/)
+* Garbenkohomologie
+    * [Definitionen](garbenkohomologie/definitionen/)
+    * [Verbindung zur Čech-Kohomologie](garbenkohomologie/verbindung-zur-cech-kohomologie/)
 * [Literatur](literatur/)
 * [Index](index/)
