@@ -26,7 +26,7 @@ Nach [~](#2-52) ist `G|_U` injektiv für jedes `U\in\Cat(T)`. Dies zeigt die Exa
 
 #2-61:Definition
 
-Das *Tensorprodukt* ~~Tensorprodukt~~ zweier Prägarben `F, G\in\PrSh_\Ab(T)` ist definiert durch:
+Das *Tensorprodukt* ~~Tensorprodukt|Prägarbe~~ zweier Prägarben `F, G\in\PrSh_\Ab(T)` ist definiert durch:
 
     (F\otimes^\text{P} G)(U) = F(U)\otimes G(U)
 

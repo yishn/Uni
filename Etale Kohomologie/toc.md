@@ -13,5 +13,6 @@
     * [Čech-Kohomologie](garben/cech-kohomologie/)
     * [Verfeinerungen](garben/verfeinerungen/)
     * [Garbifizierung](garben/garbifizierung/)
+    * [Anwendung der Garbifizierung](garben/anwendung-der-garbifizierung/)
 * [Literatur](literatur/)
 * [Index](index/)

@@ -71,7 +71,7 @@ Sei `f: T'\to T` ein Siten-Morphismus.
 
 #2-50:Definition
 
-Für ein Objekt `U\in\Cat(T)` und eine Prägarbe `F` auf `T|_U` heißt `(\res_U)^\ast_\text{P} F\in \PrSh(T)` die *Fortsetzung durch Null* von `F`. ~~Fortsetzung durch Null~~ Sie ist explizit gegeben durch:
+Für ein Objekt `U\in\Cat(T)` und eine Prägarbe `F` auf `T|_U` heißt `(\res_U)^\ast_\text{P} F\in \PrSh(T)` die *Fortsetzung durch Null* von `F`. ~~Fortsetzung durch Null|Prägarbe~~ Sie ist explizit gegeben durch:
 
     (\res_U)^\ast_\text{P} F(V) = \coprod_{\Mor(V, U)} F(V)
 
