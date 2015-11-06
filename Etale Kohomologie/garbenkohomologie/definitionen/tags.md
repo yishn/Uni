@@ -40,7 +40,7 @@ Die abgeleiteten Funktoren des linksexakten Funktors `\iota: \Sh(T)\to\PrSh(T)` 
 
 1.  Wir bezeichnen den Schnittfunktor auf Prägarben mit `\Gamma_\text{P}(X, -)`. Dieser ist exakt und wir haben `\Gamma(X, -) = \Gamma_\text{P}(X, -)\circ \iota`. Daher folgt:
 
-        \mathrm{R}^q\Gamma(X, -) = \Gamma_P(X, -)\circ \mathrm{R}^q \iota = \Gamma_P(X, -)\circ \Hh^q
+        \mathrm{R}^q\Gamma(X, -) = \Gamma_\text{P}(X, -)\circ \mathrm{R}^q \iota = \Gamma_\text{P}(X, -)\circ \Hh^q
 
    Dies zeigt (i).
 
