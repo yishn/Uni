@@ -17,5 +17,6 @@
 * Garbenkohomologie
     * [Definitionen](garbenkohomologie/definitionen/)
     * [Verbindung zur Čech-Kohomologie](garbenkohomologie/verbindung-zur-cech-kohomologie/)
+    * [Schlaffe Garben](garbenkohomologie/schlaffe-garben/)
 * [Literatur](literatur/)
 * [Index](index/)
