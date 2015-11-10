@@ -57,7 +57,7 @@ Die Aussage ist trivial für `p = 0`.
         (-1,3); (3,-1) **@{.}
     \end{xy}
 
-Nach [~](#4-4) (i) gilt `\Hh^q(F)^\# = 0` für `q \geq 1` und nach [~](#3-21) folgt `\Hh^q(F)^+ = 0`, also `E_2^{0,q} = 0` für `q\geq 1`. Für `q = 1` bedeutet dies:
+Nach [~](#4-4) (ii) gilt `\Hh^q(F)^\# = 0` für `q \geq 1` und nach [~](#3-21) folgt `\Hh^q(F)^+ = 0`, also `E_2^{0,q} = 0` für `q\geq 1`. Für `q = 1` bedeutet dies:
 
     \check{\H}{}^1(X, F) = E_2^{1,0} = E_\infty^{1,0} \cong \H^1(X, F)
 

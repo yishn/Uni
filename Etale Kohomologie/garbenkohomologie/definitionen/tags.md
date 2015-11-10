@@ -4,7 +4,7 @@ Sei `T` ein Situs, `F\in\Sh_\Ab(T)` und `X\in\Cat(T)`. Die abgeleiteten Funktore
 
     \Gamma(X, -): \Sh(T)\to \Ab,\ F\mapsto F(X)
 
-heißt die *Garbenkohomologie* von `X` mit Werten in `F`: ~~Kohomologie|Garbe~~
+heißt die *Garbenkohomologie* von `X` mit Werten in `F`: ~~Kohomologie|Garbe (Situs)~~
 
     \H^q_T(X, F) = \mathrm{R}^q\Gamma(X, -)(F)
 
