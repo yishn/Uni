@@ -18,5 +18,6 @@
     * [Definitionen](garbenkohomologie/definitionen/)
     * [Verbindung zur Čech-Kohomologie](garbenkohomologie/verbindung-zur-cech-kohomologie/)
     * [Schlaffe Garben](garbenkohomologie/schlaffe-garben/)
+    * [Höhere direkte Bilder](garbenkohomologie/hoehere-direkte-bilder/)
 * [Literatur](literatur/)
 * [Index](index/)
