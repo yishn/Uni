@@ -16,7 +16,7 @@ Die Garbenkohomologie liefert `\H^0(X, -) = \check{\H}{}^0(X, \Hh^0(-))` als Fun
 
 Die Spektralfolge `E_2^{pq} = \check{\H}{}^p(X, \Hh^q(F)) \Longrightarrow \H^{p+q}(X, F)` induziert insbesondere eine natürliche Abbildung:
 
-    \check{\H}{}^p(X, F) = \check{\H}{}^p(X, \Hh^0(F)) = E_2^{p,0} \twoheadrightarrow E_\infty^{p,0} \hookrightarrow \H^p(X, F)
+    \check{\H}{}^p(X, F) = \check{\H}{}^p(X, \Hh^0(F)) = E_2^{p,0} \to E_\infty^{p,0} \hookrightarrow \H^p(X, F)
 
 Die natürliche Abbildung `\check{\H}{}^p(X, F)\to \H^p(X, F)` ist ein Isomorphismus für `p = 0,1` und injektiv für `p = 2`.
 
