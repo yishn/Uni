@@ -43,12 +43,12 @@ Nun ist `J` injektiv. Somit genügt es für jedes `V\in\Cat(T)` die Exaktheit de
 Es gilt `\Z_U^\text{P}(V) = \bigoplus_{\Mor(V, U)} \Z`. Die Differentiale im obigen Komplex sind gegeben durch das folgende Diagramm von Mengenabbildungen:
 
     \xymatrix{
-        \displaystyle \coprod_i^\phantom{i} \Hom(V, U_i) &
-        \displaystyle \coprod_{i,j}^\phantom{i} \Hom(V, U_i\times_X U_j) \ar@<-.5ex>[l] \ar@<.5ex>[l] &
+        \displaystyle \coprod_i^\phantom{i} \Mor(V, U_i) &
+        \displaystyle \coprod_{i,j}^\phantom{i} \Mor(V, U_i\times_X U_j) \ar@<-.5ex>[l] \ar@<.5ex>[l] &
         \cdots \ar@<-1ex>[l] \ar[l] \ar@<1ex>[l]
     }
 
-Für gegebenes `\varphi\in \Hom(V, X)` bezeichnet `\Hom_\varphi(V, U_i)` die Menge der Morphismen `V\to U_i`, so dass das folgende Diagramm kommutiert:
+Für gegebenes `\varphi\in \Mor(V, X)` bezeichnet `\Mor_\varphi(V, U_i)` die Menge der Morphismen `V\to U_i`, so dass das folgende Diagramm kommutiert:
 
     \xymatrix{
         V \ar[r]\ar[d]_\varphi & U_i\ar[ld] \\
@@ -58,13 +58,13 @@ Für gegebenes `\varphi\in \Hom(V, X)` bezeichnet `\Hom_\varphi(V, U_i)` die Men
 Wir erhalten disjunkte Zerlegungen:
 
     \begin{align*}
-                    \Hom(V, U_i) &= \coprod_\varphi \Hom_\varphi(V, U_i)\\
-        \Hom(V, U_i\times_X U_j) &= \coprod_\varphi \Hom_\varphi(V, U_i\times_X U_j) \\
-                                 &= \coprod_\varphi \Hom_\varphi(V, U_i)\times \Hom_\varphi(V, U_j) \\
+                    \Mor(V, U_i) &= \coprod_\varphi \Mor_\varphi(V, U_i)\\
+        \Mor(V, U_i\times_X U_j) &= \coprod_\varphi \Mor_\varphi(V, U_i\times_X U_j) \\
+                                 &= \coprod_\varphi \Mor_\varphi(V, U_i)\times \Mor_\varphi(V, U_j) \\
                                  &\vdots
     \end{align*}
 
-Für gegebenes `\varphi\in \Hom(V, X)` setzen wir `S(\varphi) = \coprod_i\Hom_\varphi(V, U_i)`. Damit schreibt sich das obige Mengendiagramm als:
+Für gegebenes `\varphi\in \Mor(V, X)` setzen wir `S(\varphi) = \coprod_i\Mor_\varphi(V, U_i)`. Damit schreibt sich das obige Mengendiagramm als:
 
     \coprod_\varphi \Big(\xymatrix{
         \displaystyle S(\varphi) &
