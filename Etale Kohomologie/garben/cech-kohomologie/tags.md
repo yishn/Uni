@@ -14,7 +14,7 @@ und die Abbildung `\d: \check{C}{}^n(\mathcal{U}, F)\to \check{C}{}^{n+1}(\mathc
 
 #3-7:Definition
 
-`\check{\H}{}^q(\mathcal{U}, F) = \H^q(\check{C}{}^\bullet (\mathcal{U}, F))` heißt die `q`-te *Čech-Kohomologie* von `F` bzgl. `\mathcal{U}`. ~~Čech-Kohomologie~~ ~~Kohomologie|Čech~~ Die Einschränkung `s\mapsto (s|_{U_i})_i` definiert eine natürliche Abbildung `F(X) \to \check{\H}{}^0(\mathcal{U}, F)`.
+`\check{\H}{}^q(\mathcal{U}, F) = \H^q(\check{C}{}^\bullet (\mathcal{U}, F))` heißt die `q`-te *Čech-Kohomologie* von `F` bzgl. `\mathcal{U}`. ~~Čech-Kohomologie~~ ~~Kohomologie|Čech (lokal)~~ Die Einschränkung `s\mapsto (s|_{U_i})_i` definiert eine natürliche Abbildung `F(X) \to \check{\H}{}^0(\mathcal{U}, F)`.
 
 #3-8:Satz
 
