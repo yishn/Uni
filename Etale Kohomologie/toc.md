@@ -19,5 +19,6 @@
     * [Verbindung zur Čech-Kohomologie](garbenkohomologie/verbindung-zur-cech-kohomologie/)
     * [Schlaffe Garben](garbenkohomologie/schlaffe-garben/)
     * [Höhere direkte Bilder](garbenkohomologie/hoehere-direkte-bilder/)
+    * [Verträglichkeit mit Kolimiten](garbenkohomologie/vertraeglichkeit-mit-kolimiten/)
 * [Literatur](literatur/)
 * [Index](index/)
