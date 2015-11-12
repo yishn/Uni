@@ -20,5 +20,6 @@
     * [Schlaffe Garben](garbenkohomologie/schlaffe-garben/)
     * [Höhere direkte Bilder](garbenkohomologie/hoehere-direkte-bilder/)
     * [Verträglichkeit mit Kolimiten](garbenkohomologie/vertraeglichkeit-mit-kolimiten/)
+    * [Der Vergleichssatz](garbenkohomologie/der-vergleichssatz/)
 * [Literatur](literatur/)
 * [Index](index/)
