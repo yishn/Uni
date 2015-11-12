@@ -7,23 +7,23 @@ Ein *Morphismus* `f:T'\to T` zwischen zwei Siten ist gegeben durch einen Funktor
 
 #2-16:Bemerkung
 
-Für zwei Siten `T, T'` mit gleichen Kategorien `\mathcal{T}` ist `\id_\mathcal{T}: T'\to T` genau dann ein Siten-Morphismus, wenn `T'` eine Verfeinerung von `T` ist.
+Für zwei Siten `T, T'` mit gleichen Kategorien `\mathcal{T}` ist `\id_\mathcal{T}: T'\to T` genau dann ein Situs-Morphismus, wenn `T'` eine Verfeinerung von `T` ist.
 
 #2-17:Beispiel
 
-Ist `f: X'\to X` eine stetige Abbildung topologischer Räume, so definiert `f^\sharp: U\mapsto f^{-1}(U)` einen Siten-Morphismus `f: X'_\text{top}\to X_\text{top}`.
+Ist `f: X'\to X` eine stetige Abbildung topologischer Räume, so definiert `f^\sharp: U\mapsto f^{-1}(U)` einen Situs-Morphismus `f: X'_\text{top}\to X_\text{top}`.
 
 #2-18:Beispiel
 
-Ist `f: G'\to G` ein Gruppenhomomorphismus, so definiert `\GMengen\to G'\textbf{-Mengen}`, `M\mapsto M` ein Siten-Morphismus `f: T_{G'}\to T_G`.
+Ist `f: G'\to G` ein Gruppenhomomorphismus, so definiert `\GMengen\to G'\textbf{-Mengen}`, `M\mapsto M` ein Situs-Morphismus `f: T_{G'}\to T_G`.
 
 #2-19:Bemerkung
 
-Manchmal wird in der Literatur ein Siten-Morphismus `T'\to T` anders herum definiert.
+Manchmal wird in der Literatur ein Situs-Morphismus `T'\to T` anders herum definiert.
 
 #2-20:Definition
 
-Sei `U\in\Cat(T)` und `\{\bullet\}` die diskrete Kategorie mit einem Element und der offensichtlichen Topologie. Der Siten-Morphismus `\pr_U: T\to \{\bullet\}`, welcher `\bullet` auf `U` schickt, heißt die *Projektion* auf `U`. ~~Projektion|Siten~~
+Sei `U\in\Cat(T)` und `\{\bullet\}` die diskrete Kategorie mit einem Element und der offensichtlichen Topologie. Der Situs-Morphismus `\pr_U: T\to \{\bullet\}`, welcher `\bullet` auf `U` schickt, heißt die *Projektion* auf `U`. ~~Projektion|Siten~~
 
 #2-21:Definition
 
@@ -51,11 +51,11 @@ ist genau dann in `\Cov(T|_U)`, wenn `(V_i\to V)_i\in\Cov(T)` gilt.
 
 #2-23:Definition
 
-Der Funktor `\Cat(T)\downarrow U\to \Cat(T)`, `(V\to U)\mapsto V` definiert einen Siten-Morphismus `\res_U: T\to T|_U`, die sog. *Einschränkung*. ~~Einschränkung|Siten~~
+Der Funktor `\Cat(T)\downarrow U\to \Cat(T)`, `(V\to U)\mapsto V` definiert einen Situs-Morphismus `\res_U: T\to T|_U`, die sog. *Einschränkung*. ~~Einschränkung|Siten~~
 
 #2-24:Definition
 
-Die Kategorie `\Cat(T)` habe endliche Produkte. Dann definiert der Funktor `\Cat(T)\to \Cat(T|_U)`, `V\mapsto (V\times U\to U)` einen Siten-Morphismus `j_U: T|_U\to T`. Wir fassen `T|_U` als offenen Unterraum von `T` auf.
+Die Kategorie `\Cat(T)` habe endliche Produkte. Dann definiert der Funktor `\Cat(T)\to \Cat(T|_U)`, `V\mapsto (V\times U\to U)` einen Situs-Morphismus `j_U: T|_U\to T`. Wir fassen `T|_U` als offenen Unterraum von `T` auf.
 
 #2-25:Beispiel
 
@@ -63,11 +63,11 @@ Sei `X` ein topologischer Raum und `U\opensubset X` mit der Teilraumtopologie. D
 
     U_\text{top} \cong X_\text{top}|_U
 
-Produkte in `\Cat(X_\text{top})` sind Durchschnitte. Der in [~](#2-24) definierter Morphismus `j_U: X_\text{top}|_U \to X_\text{top}` entspricht bzgl. diesem Isomorphismus gerade dem Siten-Morphismus `U_\text{top}\to X_\text{top}`, der durch die offenen Einbettung von `U` nach `X` induziert wird.
+Produkte in `\Cat(X_\text{top})` sind Durchschnitte. Der in [~](#2-24) definierter Morphismus `j_U: X_\text{top}|_U \to X_\text{top}` entspricht bzgl. diesem Isomorphismus gerade dem Situs-Morphismus `U_\text{top}\to X_\text{top}`, der durch die offenen Einbettung von `U` nach `X` induziert wird.
 
 #2-26:Definition
 
-Sei `f: T'\to T` ein Siten-Morphismus, `\mathcal{C}` eine Kategorie mit Produkten und `F\in\PrSh_\mathcal{C}(T')`. Dann heißt die Prägarbe `U\mapsto F(f^\sharp U)` das *direkte Bild* von `F` und wird mit `f_\ast^\text{P}F` bezeichnet. ~~direktes Bild|Prägarbe~~ Wir erhalten einen Funktor:
+Sei `f: T'\to T` ein Situs-Morphismus, `\mathcal{C}` eine Kategorie mit Produkten und `F\in\PrSh_\mathcal{C}(T')`. Dann heißt die Prägarbe `U\mapsto F(f^\sharp U)` das *direkte Bild* von `F` und wird mit `f_\ast^\text{P}F` bezeichnet. ~~direktes Bild|Prägarbe~~ Wir erhalten einen Funktor:
 
     f_\ast^\text{P}: \PrSh_\mathcal{C}(T')\to \PrSh_\mathcal{C}(T)
 
@@ -97,7 +97,7 @@ Ist `(U_i\to U)_i\in\Cov(T)`, so auch `(f^\sharp U_i\to f^\sharp U)_i\in\Cov(T')
 
     \equalizer{f_\ast^\text{P} F(U)}{\prod_i^\phantom{i} f_\ast^\text{P} F(U_i)}{\prod_{i,j}^\phantom{i} f_\ast^\text{P} F(U_i\times_U U_j)}
 
-Diese ist nach Definition von `f_\ast^\text{P}` und den Axiomen für ein Siten-Morphismus zur folgenden Folge identisch:
+Diese ist nach Definition von `f_\ast^\text{P}` und den Axiomen für ein Situs-Morphismus zur folgenden Folge identisch:
 
     \equalizer{F(f^\sharp U)}{\prod_i^\phantom{i} F(f^\sharp U_i)}{\prod_{i,j}^\phantom{i} F(f^\sharp U_i\times_{f^\sharp U} f^\sharp U_j)}
 

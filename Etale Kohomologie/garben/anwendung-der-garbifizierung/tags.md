@@ -30,7 +30,7 @@ Wegen `F^+ = \check{\H}{}^0(-, F)` ist letzteres äquivalent zu (ii).
 
 #3-25:Satz
 
-Sei `f: T'\to T` ein Siten-Morphismus. Dann hat `f_\ast: \Sh_\Ab(T')\to \Sh_\Ab(T)` einen linksadjungierten Funktor `f^\ast: \Sh_\Ab(T)\to \Sh_\Ab(T')`.
+Sei `f: T'\to T` ein Situs-Morphismus. Dann hat `f_\ast: \Sh_\Ab(T')\to \Sh_\Ab(T)` einen linksadjungierten Funktor `f^\ast: \Sh_\Ab(T)\to \Sh_\Ab(T')`.
 
 ---
 

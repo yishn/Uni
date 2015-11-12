@@ -1,6 +1,6 @@
 #4-15-INTRO
 
-Sei `f: T'\to T` ein Siten-Morphismus. Wir haben den linksexakten Funktor `f_\ast: \Sh_\Ab(T')\to \Sh_\Ab(T)`.
+Sei `f: T'\to T` ein Situs-Morphismus. Wir haben den linksexakten Funktor `f_\ast: \Sh_\Ab(T')\to \Sh_\Ab(T)`.
 
 #4-15:Definition
 
@@ -38,7 +38,7 @@ weshalb auch `f_\ast F` schlaff ist.
 
 #4-18:Satz
 
-*(Leraysche Spektralfolge)* ~~Spektralfolge|Leray~~ Sei `f: T'\to T` ein Siten-Morphismus, `F\in\Sh(T')` und `U\in\Cat(T)`. Dann gibt es eine Spektralfolge:
+*(Leraysche Spektralfolge)* ~~Spektralfolge|Leray~~ Sei `f: T'\to T` ein Situs-Morphismus, `F\in\Sh(T')` und `U\in\Cat(T)`. Dann gibt es eine Spektralfolge:
 
     E_2^{pq} = \H^p_T(U, \mathrm{R}^q f_\ast(F)) \Longrightarrow \H^{p+q}_{T'}(f^\sharp U, F)
 

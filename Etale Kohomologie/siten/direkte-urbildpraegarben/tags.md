@@ -1,6 +1,6 @@
 #2-44:Satz
 
-Sei `f: T'\to T` ein Siten-Morphismus und `\mathcal{C}` eine kovollständige Kategorie mit Produkten. Dann hat `f^\text{P}_\ast: \PrSh_\mathcal{C}(T')\to \PrSh_\mathcal{C}(T)` einen linksadjungierten Funktor:
+Sei `f: T'\to T` ein Situs-Morphismus und `\mathcal{C}` eine kovollständige Kategorie mit Produkten. Dann hat `f^\text{P}_\ast: \PrSh_\mathcal{C}(T')\to \PrSh_\mathcal{C}(T)` einen linksadjungierten Funktor:
 
     f^\ast_\text{P}: \PrSh_\mathcal{C}(T)\to \PrSh_\mathcal{C}(T')
 
@@ -60,7 +60,7 @@ Es ist nicht klar, ob `f^\ast_\text{P}` mit dem Vergissfunktor `\Ab\to\Mengen` k
 
 #2-49:Satz
 
-Sei `f: T'\to T` ein Siten-Morphismus.
+Sei `f: T'\to T` ein Situs-Morphismus.
 
 1. Ist für jedes `U'\in\Cat(T')` die Indexkategorie `I_{U'}` in der Konstruktion von `f^\ast_\text{P}F(U')` pseudogerichtet, so ist `f^\ast_\text{P}: \PrSh_\Ab(T)\to\PrSh_\Ab(T')` exakt und `f^\text{P}_\ast` überführt Injektive in Injektive.
 2. `\Cat(T)` habe endliche Limiten. Dann ist für jedes `U'\in \Cat(T')` die Indexkategorie `I_{U'}` pseudogerichtet.
@@ -108,7 +108,7 @@ Insbesondere ist `(j_U)^\ast_\text{P}` exakt und `(j_U)^\text{P}_\ast` überfüh
 
 #2-54:Lemma
 
-Seien `g: T''\to T'`, `f: T'\to T` Siten-Morphismen. Dann gilt:
+Seien `g: T''\to T'`, `f: T'\to T` Situs-Morphismen. Dann gilt:
 
 1. `(fg)_\ast^\text{P} = f^\text{P}_\ast g^\text{P}_\ast`
 2. `(fg)^\ast_\text{P} = g^\ast_\text{P} f^\ast_\text{P}`
