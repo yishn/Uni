@@ -135,7 +135,7 @@ Nach [~](#2-52) ist auch `G|_U` für jedes `U\in\Cat(T)` als Prägarbe injektiv.
 
 Das Tensorprodukt und das innere Hom sind adjungiert als Funktoren `\Sh(T)\to \Sh(T)`, d.h:
 
-    \Hom_{\Sh(T)} (F\otimes^\text{P} G, H) \cong \Hom_{\Sh(T)}(F, \Hhom(G, H))
+    \Hom_{\Sh(T)} (F\otimes G, H) \cong \Hom_{\Sh(T)}(F, \Hhom(G, H))
 
 Insbesondere ist `-\otimes G` rechtsexakt und `\Hhom(G, -)` linksexakt.
 
