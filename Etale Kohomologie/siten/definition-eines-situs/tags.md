@@ -16,7 +16,7 @@ Sei auf derselben Kategorie `\mathcal{T}` zwei Topologien definiert, d.h. wir ha
 
 #2-2:Beispiel
 
-Ist `X` ein topologischer Raum, so definiert `X_\text{top}` mit der Kategorie [wie oben](#2-1-INTRO) und den üblichen Überdeckungen einen Situs. Eine feinere Topologie auf `X` liefert auch eine feinere Grothendieck-Topologie.
+Ist `X` ein topologischer Raum, so definiert `X_\top` mit der Kategorie [wie oben](#2-1-INTRO) und den üblichen Überdeckungen einen Situs. Eine feinere Topologie auf `X` liefert auch eine feinere Grothendieck-Topologie.
 
 #2-2-1:Bemerkung
 

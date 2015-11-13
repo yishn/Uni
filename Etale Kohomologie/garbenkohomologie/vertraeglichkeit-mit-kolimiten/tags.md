@@ -6,7 +6,7 @@ Sei `T` ein Situs. `U\in\Cat(T)` heißt *quasikompakt*, wenn jede Überdeckung `
 
 #4-22:Bemerkung
 
-Ist `X` ein topologischer Raum, so ist `X_\text{top}` genau dann noethersch, wenn `X` als topologischer Raum noethersch ist.
+Ist `X` ein topologischer Raum, so ist `X_\top` genau dann noethersch, wenn `X` als topologischer Raum noethersch ist.
 
 #4-23:Satz
 

@@ -41,4 +41,29 @@ Sei `G` eine proendliche Gruppe und `T_G` ihr klassfizierender Situs. Es sei `T_
 
 #4-26:Definition
 
-Eine stetige Abbildung `f: X'\to X` topologischer Räume heißt *lokal Homöomorphismus*, wenn zu jedem `x'\in X'` eine offene Umgebung `x'\in U'` existiert, so dass `f(U')\opensubset X` und die Einschränkung `f|_{U'}: U'\to f(U')` ein Homöomorphismus ist. ~~lokal|Homöomorphismus~~
+Eine stetige Abbildung `f: X'\to X` topologischer Räume heißt *lokaler Homöomorphismus*, wenn zu jedem `x'\in X'` eine offene Umgebung `x'\in U'` existiert, so dass `f(U')\opensubset X` und die Einschränkung `f|_{U'}: U'\to f(U')` ein Homöomorphismus ist. ~~lokal|Homöomorphismus~~
+
+#4-27:Beispiel
+
+Offene Einbettungen sind lokale Homöomorphismen.
+
+#4-28:Lemma
+
+Seien `f': X''\to X'` und `f: X'\to X` stetige Abbildungen topologischer Räume. Dann gilt:
+
+1. Sind `f` und `f'` lokale Homöomorphismen, so auch `f\circ f'`.
+2. Sind `f` und `f\circ f'` lokale Homöomorphismen, so auch `f`.
+
+#4-29:Definition
+
+Sei `X` ein topologischer Raum. Der *étale Situs* `X_\et` besteht aus der Kategorie der lokalen Homöomorphismen `Y\to X` mit den surjektiven Familien als Überdeckungen. ~~étale|Situs~~
+
+#4-30:Satz
+
+Der Situs-Morphismus `\iota: X_\et\to X_\top` definiert zueinander inverse Kategorienäquivalenzen:
+
+    \iota_\ast: \Sh(X_\et)\to\Sh(X_\top),\quad \iota^\ast: \Sh(X_\top)\to \Sh(X_\et)
+
+Insbesondere gilt für jede Garbe `F` auf `X_\top` und jede Garbe `G` auf `X_\et` und alle `q`:
+
+    \H_\et^q(X, \iota^\ast F) = \H_\top^q(X, F),\quad \H_\et^q(X, G) = \H_\top^q(X, \iota^\ast G)

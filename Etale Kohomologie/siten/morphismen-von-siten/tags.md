@@ -11,7 +11,7 @@ Für zwei Siten `T, T'` mit gleichen Kategorien `\mathcal{T}` ist `\id_\mathcal{
 
 #2-17:Beispiel
 
-Ist `f: X'\to X` eine stetige Abbildung topologischer Räume, so definiert `f^\sharp: U\mapsto f^{-1}(U)` einen Situs-Morphismus `f: X'_\text{top}\to X_\text{top}`.
+Ist `f: X'\to X` eine stetige Abbildung topologischer Räume, so definiert `f^\sharp: U\mapsto f^{-1}(U)` einen Situs-Morphismus `f: X'_\top\to X_\top`.
 
 #2-18:Beispiel
 
@@ -61,9 +61,9 @@ Die Kategorie `\Cat(T)` habe endliche Produkte. Dann definiert der Funktor `\Cat
 
 Sei `X` ein topologischer Raum und `U\opensubset X` mit der Teilraumtopologie. Dann haben wir einen natürlichen Siten-Isomorphismus:
 
-    U_\text{top} \cong X_\text{top}|_U
+    U_\top \cong X_\top|_U
 
-Produkte in `\Cat(X_\text{top})` sind Durchschnitte. Der in [~](#2-24) definierter Morphismus `j_U: X_\text{top}|_U \to X_\text{top}` entspricht bzgl. diesem Isomorphismus gerade dem Situs-Morphismus `U_\text{top}\to X_\text{top}`, der durch die offenen Einbettung von `U` nach `X` induziert wird.
+Produkte in `\Cat(X_\top)` sind Durchschnitte. Der in [~](#2-24) definierter Morphismus `j_U: X_\top|_U \to X_\top` entspricht bzgl. diesem Isomorphismus gerade dem Situs-Morphismus `U_\top\to X_\top`, der durch die offenen Einbettung von `U` nach `X` induziert wird.
 
 #2-26:Definition
 
