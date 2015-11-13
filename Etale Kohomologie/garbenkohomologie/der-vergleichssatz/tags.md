@@ -52,7 +52,7 @@ Offene Einbettungen sind lokale Homöomorphismen.
 Seien `f': X''\to X'` und `f: X'\to X` stetige Abbildungen topologischer Räume. Dann gilt:
 
 1. Sind `f` und `f'` lokale Homöomorphismen, so auch `f\circ f'`.
-2. Sind `f` und `f\circ f'` lokale Homöomorphismen, so auch `f`.
+2. Sind `f` und `f\circ f'` lokale Homöomorphismen, so auch `f'`.
 
 #4-29:Definition
 
