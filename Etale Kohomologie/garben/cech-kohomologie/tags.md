@@ -1,6 +1,6 @@
 #3-6-INTRO
 
-Sei `T` ein Situs, `\mathcal{U} = (U_i\to X)_i\in \Cov(T)` und `F\in\PrSh_\Ab(T)`.
+Sei `T` ein Situs, `\mathcal{U} = (U_i\to X)_i\in \Ub(T)` und `F\in\PrSh_\Ab(T)`.
 
 #3-6:Definition
 
@@ -36,7 +36,7 @@ Sei `J` eine injektive Prägarbe. Es gilt:
         &= \Hom_{\PrSh(T)}\Big( \bigoplus_{i_0,\ldots, i_n} \Z^\text{P}_{U_{i_0}\times_X\cdots \times_X U_{i_n}}, J \Big)
     \end{align*}
 
-Nun ist `J` injektiv. Somit genügt es für jedes `V\in\Cat(T)` die Exaktheit der folgende Folge zu zeigen:
+Nun ist `J` injektiv. Somit genügt es für jedes `V\in\Kat(T)` die Exaktheit der folgende Folge zu zeigen:
 
     \bigoplus_i \Z_{U_i}^\text{P}(V) \longleftarrow \bigoplus_{i,j} \Z^\text{P}_{U_i\times_X U_j}(V)\longleftarrow \cdots
 

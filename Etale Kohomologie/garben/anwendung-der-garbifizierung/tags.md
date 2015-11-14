@@ -7,7 +7,7 @@ Es ist `\Sh_\Ab(T)` eine abelsche Kategorie und die Garbifizierung `\#: \PrSh_\A
 Sei `f: F\to G` ein Garben-Morphismus. Dann sind äquivalent:
 
 1. `f` ist ein Monomorphismus in `\Sh(T)`.
-2. `f` ist ein Monomorphismus in `\PrSh(T)`, d.h. für jedes `U\in\Cat(T)` ist `f(U): F(U)\to G(U)` ein Monomorphismus.
+2. `f` ist ein Monomorphismus in `\PrSh(T)`, d.h. für jedes `U\in\Kat(T)` ist `f(U): F(U)\to G(U)` ein Monomorphismus.
 
 ---
 
@@ -18,7 +18,7 @@ Der Prägarbenkern ist bereits eine Garbe.
 Sei `f: F\to G` ein Garben-Morphismus. Dann sind äquivalent:
 
 1. `f` ist ein Epimorphismus in `\Sh(T)`.
-2. Zu jedem `U\in\Cat(T)` und `s\in G(U)` existiert eine Überdeckung `(U_i\to U)_i` und ein `t_i\in F(U_i)` mit `f(t_i) = s|_{U_i}`.
+2. Zu jedem `U\in\Kat(T)` und `s\in G(U)` existiert eine Überdeckung `(U_i\to U)_i` und ein `t_i\in F(U_i)` mit `f(t_i) = s|_{U_i}`.
 
 ---
 
@@ -51,7 +51,7 @@ Das folgende Diagramm kommutiert:
 
 #3-28:Satz
 
-Angenommen, `\Cat(T)` habe endliche Limiten. Dann ist `f^\ast` exakt und `f_\ast` überführt Injektive in Injektive.
+Angenommen, `\Kat(T)` habe endliche Limiten. Dann ist `f^\ast` exakt und `f_\ast` überführt Injektive in Injektive.
 
 ---
 
@@ -63,7 +63,7 @@ Da die Garbifizierung exakt ist, genügt zu zeigen, dass `(f^\ast_\text{P}C)^\# 
 
 #3-29:Definition
 
-Für `U\in\Cat(T)` heißt der Funktor `\res_U^\ast: \Sh(T|_U)\to \Sh(T)` die *Fortsetzung durch Null*. ~~Fortsetzung durch Null|Garbe~~
+Für `U\in\Kat(T)` heißt der Funktor `\res_U^\ast: \Sh(T|_U)\to \Sh(T)` die *Fortsetzung durch Null*. ~~Fortsetzung durch Null|Garbe~~
 
 #3-30:Lemma
 
@@ -75,7 +75,7 @@ Nach [~](#2-52) ist `(\res_U)^\ast_\text{P}` exakt. Nun verläuft der Beweis ana
 
 #3-31:Beispiel
 
-`\Cat(T)` habe Produkte. Für `U\in\Cat(T)` betrachten wir die offene Einbettung `j_U: T|_U\to T`. Dann gilt `j_U^\ast = (\res_U)_\ast` und wir benutzen die Bezeichnung `(j_U)_! = \res_U^\ast`. Wir haben Funktoradjunktionen:
+`\Kat(T)` habe Produkte. Für `U\in\Kat(T)` betrachten wir die offene Einbettung `j_U: T|_U\to T`. Dann gilt `j_U^\ast = (\res_U)_\ast` und wir benutzen die Bezeichnung `(j_U)_! = \res_U^\ast`. Wir haben Funktoradjunktionen:
 
     (j_U)_! \dashv j_U^\ast \dashv (j_U)_\ast
 
@@ -87,7 +87,7 @@ Sei `A` eine abelsche Gruppe. Die *konstante Garbe* ist die Garbifizierung der k
 
 #3-33:Definition
 
-Für `U\in\Cat(T)` und eine abelsche Gruppe `A` setzen wir:
+Für `U\in\Kat(T)` und eine abelsche Gruppe `A` setzen wir:
 
     A_U = \res_U^\ast(\underline{A}) = (\res_U)^\ast_\text{P} (\underline{A}^\text{P})^\#
 
@@ -107,7 +107,7 @@ Die Kategorie `\Sh_\Ab(T)` hat genügend viele Injektive.
 
 ---
 
-Wegen `\Hom(\Z_U, F) = F(U)` ist die Menge `\{\Z_U \mid U\in\Cat(T)\}` eine Menge von Erzeugern von `\Sh(T)` und das Ergebnis folgt aus [~](#3-3).
+Wegen `\Hom(\Z_U, F) = F(U)` ist die Menge `\{\Z_U \mid U\in\Kat(T)\}` eine Menge von Erzeugern von `\Sh(T)` und das Ergebnis folgt aus [~](#3-3).
 
 #3-36:Definition
 
@@ -129,7 +129,7 @@ Ist `G\in\Sh(T)` injektiv, so ist `\Hhom(-, G): \Sh(T)\to \Sh(T)` exakt.
 
 ---
 
-Nach [~](#2-52) ist auch `G|_U` für jedes `U\in\Cat(T)` als Prägarbe injektiv. Somit ist `\Hom_{\PrSh(T|_U)}(-, G|_U)` exakt für jedes `U`.
+Nach [~](#2-52) ist auch `G|_U` für jedes `U\in\Kat(T)` als Prägarbe injektiv. Somit ist `\Hom_{\PrSh(T|_U)}(-, G|_U)` exakt für jedes `U`.
 
 #3-39:Lemma
 

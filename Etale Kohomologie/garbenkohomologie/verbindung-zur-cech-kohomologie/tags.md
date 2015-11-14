@@ -1,6 +1,6 @@
 #4-5:Satz
 
-Sei `\mathcal{U} = (U_i\to X)_i\in\Cov(T)` und `F\in\Sh(T)`. Dann gibt es eine Spektralfolge:
+Sei `\mathcal{U} = (U_i\to X)_i\in\Ub(T)` und `F\in\Sh(T)`. Dann gibt es eine Spektralfolge:
 
     E_2^{pq} = \check{\H}{}^p(\mathcal{U}, \Hh^q(F)) \Longrightarrow \H^{p+q}(X, F)
 
@@ -64,7 +64,7 @@ Desweiteren impliziert `E_2^{0,1} = 0`, dass `\check{\H}{}^2(X, F) = E_2^{2,0} =
 
 #4-7:Satz
 
-Angenommen, für `X\in\Cat(T)` gilt die folgende Bedingung:
+Angenommen, für `X\in\Kat(T)` gilt die folgende Bedingung:
 
 * *(Č1)* ~~Č1~~ Für jede Prägarbe `P` mit `P^\# = 0` und alle `q\geq 1` gilt `\check{\H}{}^q(X, P) = 0`.
 

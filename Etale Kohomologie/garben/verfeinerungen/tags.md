@@ -1,6 +1,6 @@
 #3-9-INTRO
 
-Sei `T` ein Situs und `\mathcal{U} = (U_i\to X)_{i\in I},\ \mathcal{V} = (V_j\to X)_{j\in J}\in\Cov(T)`.
+Sei `T` ein Situs und `\mathcal{U} = (U_i\to X)_{i\in I},\ \mathcal{V} = (V_j\to X)_{j\in J}\in\Ub(T)`.
 
 #3-9:Definition
 
@@ -34,11 +34,11 @@ Man braucht nur nachzurechnen, dass `\check{C}{}^0(g, \psi, F) - \check{C}{}^0(f
 
 #3-11-INTRO
 
-Wir können die Menge `\Cov(X)` der Überdeckungen von `X\in\Cat(T)` durch die Verfeinerungsrelation halbordnen: Es gelte `\mathcal{U} \leq \mathcal{V}`, genau dann wenn `\mathcal{V}` eine Verfeinerung von `\mathcal{U}` ist.
+Wir können die Menge `\Ub(X)` der Überdeckungen von `X\in\Kat(T)` durch die Verfeinerungsrelation halbordnen: Es gelte `\mathcal{U} \leq \mathcal{V}`, genau dann wenn `\mathcal{V}` eine Verfeinerung von `\mathcal{U}` ist.
 
 #3-11:Lemma
 
-Die halbgeordnete Menge `\Cov(X)` ist gerichtet.
+Die halbgeordnete Menge `\Ub(X)` ist gerichtet.
 
 ---
 
@@ -48,7 +48,7 @@ Für `\mathcal{U}` und `\mathcal{V}` existiert nach Definition eines Situs' das 
 
 Für `q\geq 0` heißen die Gruppen
 
-    \check{\H}{}^q(X, F) = \colim_{\Cov(X)} \check{\H}{}^q(-, F)
+    \check{\H}{}^q(X, F) = \colim_{\Ub(X)} \check{\H}{}^q(-, F)
 
 die *Čech-Kohomologiegruppen* von `X` mit Werten in `F`. Diese sind wohldefiniert nach [~](#3-10). ~~Kohomologie|Čech~~ ~~Čech-Kohomologie~~
 
@@ -58,4 +58,4 @@ Es ist `\check{\H}{}^q(X, -)` der `q`-te abgeleiteter Funktor von `\check{\H}{}^
 
 ---
 
-Nach [~](#3-11) ist `\Cov(X)` gerichtet und somit der Kolimes exakt. Damit folgt alles formal aus Satz [~](#3-8).
+Nach [~](#3-11) ist `\Ub(X)` gerichtet und somit der Kolimes exakt. Damit folgt alles formal aus Satz [~](#3-8).

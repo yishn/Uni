@@ -2,9 +2,9 @@
 
 Für eine Garbe `F` auf einem Situs `T` sind folgende Aussagen äquivalent:
 
-1. `\H^q(U, F) = 0` für alle `q\geq 1` und `U\in\Cat(T)`.
-2. `\check{\H}{}^q(\mathcal{U}, F) = 0` für alle `q\geq 1` und `\mathcal{U}\in\Cov(T)`.
-3. `\check{\H}{}^q(U, F) = 0` für alle `q\geq 1` und `U\in\Cat(T)`.
+1. `\H^q(U, F) = 0` für alle `q\geq 1` und `U\in\Kat(T)`.
+2. `\check{\H}{}^q(\mathcal{U}, F) = 0` für alle `q\geq 1` und `\mathcal{U}\in\Ub(T)`.
+3. `\check{\H}{}^q(U, F) = 0` für alle `q\geq 1` und `U\in\Kat(T)`.
 
 ---
 

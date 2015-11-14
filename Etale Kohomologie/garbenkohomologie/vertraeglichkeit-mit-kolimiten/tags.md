@@ -1,8 +1,8 @@
 #4-20:Definition
 
-Sei `T` ein Situs. `U\in\Cat(T)` heißt *quasikompakt*, wenn jede Überdeckung `(U_i\to U)_i` eine endliche Verfeinerung `(V_j\to U)_j` besitzt. ~~quasikompakt~~
+Sei `T` ein Situs. `U\in\Kat(T)` heißt *quasikompakt*, wenn jede Überdeckung `(U_i\to U)_i` eine endliche Verfeinerung `(V_j\to U)_j` besitzt. ~~quasikompakt~~
 
-`T` heißt *noethersch*, wenn jedes `U\in\Cat(T)` quasikompakt ist. ~~noethersch|Situs~~
+`T` heißt *noethersch*, wenn jedes `U\in\Kat(T)` quasikompakt ist. ~~noethersch|Situs~~
 
 #4-22:Bemerkung
 
@@ -27,7 +27,7 @@ Es folgt für alle `q`:
 
     \colim_{i\in I} \check{\H}{}^q(\mathcal{U}, F_i) = \check{\H}{}^q \Big(\mathcal{U}, \colim_{i\in I}F_i\Big)
 
-Da `T` noethersch ist, liegen die endlichen Überdeckungen von `U` final in `\Cov(U)` und wir erhalten für alle `q`:
+Da `T` noethersch ist, liegen die endlichen Überdeckungen von `U` final in `\Ub(U)` und wir erhalten für alle `q`:
 
     \colim_{i\in I} \check{\H}{}^q(U, F_i) = \check{\H}{}^q \Big(U, \colim_{i\in I}F_i\Big)
 

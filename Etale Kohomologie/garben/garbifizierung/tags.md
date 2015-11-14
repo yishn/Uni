@@ -1,6 +1,6 @@
 #3-14:Definition
 
-Eine Prägarbe `F` abelscher Gruppen auf einem Situs `T` heißt *separiert*, wenn für jede Überdeckung `(U_i\to U)_i\in\Cov(T)` die folgende natürliche Abbildung injektiv ist: ~~separiert|Prägarbe~~
+Eine Prägarbe `F` abelscher Gruppen auf einem Situs `T` heißt *separiert*, wenn für jede Überdeckung `(U_i\to U)_i\in\Ub(T)` die folgende natürliche Abbildung injektiv ist: ~~separiert|Prägarbe~~
 
     \equalizer{F(U)}{\ker\Big( \prod_i^\phantom{i} F(U_i)}{\prod_{i,j}^\phantom{i} F(U_i\times_U U_j) \Big)}
 
@@ -28,7 +28,7 @@ Es gibt einen natürlichen Homomorphismus `i_F: F\to F^+`. Es ist `i_F` genau da
 
 ---
 
-1. Für jedes `U\in \Cat(T)` haben wir das kommutative Diagramm:
+1. Für jedes `U\in \Kat(T)` haben wir das kommutative Diagramm:
 
         \xymatrix{
             F(U) \ar[d]\ar[r]           & G(U) \ar[d] \\
@@ -37,7 +37,7 @@ Es gibt einen natürlichen Homomorphismus `i_F: F\to F^+`. Es ist `i_F` genau da
 
    Die Garbeneigenschaft zeigt die Bijektivität des rechten vertikalen Pfeils, was die Existenz der Faktorisierung von (i) zeigt.
 
-   Für die Eindeutigkeit sei `F\to G` die Nullabbildung. Sei `\mathcal{U} = (U_i\to U)_i\in\Cov(T)` eine Überdeckung von `U\in\Cat(T)` und betrachte das kommutative Diagramm:
+   Für die Eindeutigkeit sei `F\to G` die Nullabbildung. Sei `\mathcal{U} = (U_i\to U)_i\in\Ub(T)` eine Überdeckung von `U\in\Kat(T)` und betrachte das kommutative Diagramm:
 
         \xymatrix{
             \check{\H}{}^0(\mathcal{U}, F) \ar[d]\ar[r] & \check{\H}{}^0(\mathcal{U}, G) \ar[d] \\
@@ -87,6 +87,6 @@ Wir betrachten nun Prägarben von Mengen. Wir können keine Čech-Kohomologiegru
 
 Für eine Verfeinerung `\mathcal{V} = (V_j\to X)_j` von `\mathcal{U}` erhält man eine Abbildung `\check{\H}{}^0(\mathcal{U}, F)\to \check{\H}{}^0(\mathcal{V}, F)`, die unabhängig von der Wahl der Verfeinerungsabbildung ist. Wir setzen:
 
-    \check{\H}{}^0(X, F) = \colim_{\Cov(X)} \check{\H}{}^0(-, F)
+    \check{\H}{}^0(X, F) = \colim_{\Ub(X)} \check{\H}{}^0(-, F)
 
 Nun geht alles analog zum abelschen Fall, d.h. wir erhalten die Garbifizierung `\#: \PrSh_\Mengen(T)\to \Sh_\Mengen(T)`, der linksadjungiert zur Inklusion `\Sh_\Mengen(T)\to\PrSh_\Mengen(T)` ist.

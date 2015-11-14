@@ -8,27 +8,27 @@ Sei `f: T'\to T` ein Situs-Morphismus und `\mathcal{C}` eine kovollständige Kat
 
 ---
 
-Für `U'\in\Cat(T')` betrachten wir die Kategorie `I_{U'}` mit den folgenden Daten:
+Für `U'\in\Kat(T')` betrachten wir die Kategorie `I_{U'}` mit den folgenden Daten:
 
-* Objekte sind Tupeln der Form `(U, \phi)` mit `U\in \Cat(T)` und `\phi\in\Mor_{\Cat(T)}(U', f^\sharp U)`.
-* Morphismen `(U_1, \phi_1)\to (U_2, \phi_2)` sind Morphismen `\psi: U_2\to U_1` in `\Cat(T)`, so dass das folgende Diagramm in `\Cat(T')` kommutiert:
+* Objekte sind Tupeln der Form `(U, \phi)` mit `U\in \Kat(T)` und `\phi\in\Mor_{\Kat(T)}(U', f^\sharp U)`.
+* Morphismen `(U_1, \phi_1)\to (U_2, \phi_2)` sind Morphismen `\psi: U_2\to U_1` in `\Kat(T)`, so dass das folgende Diagramm in `\Kat(T')` kommutiert:
 
         \xymatrix{
             U' \ar[r]^{\phi_1} \ar[rd]_{\phi_2} & f^\sharp U_1 \\
                                                 & f^\sharp U_2 \ar[u]_{f^\sharp \psi}
         }
 
-Sei `U'\in\Cat(T')` und `F\in\PrSh(T)`. Dann definiert `F` einen Funktor auf `I_{U'}` und wir setzen:
+Sei `U'\in\Kat(T')` und `F\in\PrSh(T)`. Dann definiert `F` einen Funktor auf `I_{U'}` und wir setzen:
 
     f^\ast_\text{P} F(U') = \colim_{(U,\phi)\in I_{U'}} F(U)
 
-Zu einem Pfeil `\varepsilon: U'\to V'` in `\Cat(T')` erhalten wir einen Funktor `I_{V'}\to I_{U'}`, `(V, \phi)\mapsto(V, \phi\circ\varepsilon)` und somit einen Morphismus:
+Zu einem Pfeil `\varepsilon: U'\to V'` in `\Kat(T')` erhalten wir einen Funktor `I_{V'}\to I_{U'}`, `(V, \phi)\mapsto(V, \phi\circ\varepsilon)` und somit einen Morphismus:
 
     f^\ast_\text{P} F(V') = \colim_{(V, \phi)\in I_{V'}} F(V) \longrightarrow f^\ast_\text{P} F(U') = \colim_{(U, \phi)\in I_{U'}} F(U)
 
 So wird `f^\ast_\text{P}F` zu einer Prägarbe. Zu zeigen ist noch die Funktoradjunktion.
 
-> Beachte zunächst, dass für `U\in\Cat(T)` das Objekt `(U, \id_{f^\sharp U})` ein Endobjekt in `I_{f^\sharp U}` ist. Daher gilt nach [~](#2-40):
+> Beachte zunächst, dass für `U\in\Kat(T)` das Objekt `(U, \id_{f^\sharp U})` ein Endobjekt in `I_{f^\sharp U}` ist. Daher gilt nach [~](#2-40):
 >
 >     f^\ast_\text{P} F(f^\sharp U) = F(U)
 
@@ -62,8 +62,8 @@ Es ist nicht klar, ob `f^\ast_\text{P}` mit dem Vergissfunktor `\Ab\to\Mengen` k
 
 Sei `f: T'\to T` ein Situs-Morphismus.
 
-1. Ist für jedes `U'\in\Cat(T')` die Indexkategorie `I_{U'}` in der Konstruktion von `f^\ast_\text{P}F(U')` pseudogerichtet, so ist `f^\ast_\text{P}: \PrSh_\Ab(T)\to\PrSh_\Ab(T')` exakt und `f^\text{P}_\ast` überführt Injektive in Injektive.
-2. `\Cat(T)` habe endliche Limiten. Dann ist für jedes `U'\in \Cat(T')` die Indexkategorie `I_{U'}` pseudogerichtet.
+1. Ist für jedes `U'\in\Kat(T')` die Indexkategorie `I_{U'}` in der Konstruktion von `f^\ast_\text{P}F(U')` pseudogerichtet, so ist `f^\ast_\text{P}: \PrSh_\Ab(T)\to\PrSh_\Ab(T')` exakt und `f^\text{P}_\ast` überführt Injektive in Injektive.
+2. `\Kat(T)` habe endliche Limiten. Dann ist für jedes `U'\in \Kat(T')` die Indexkategorie `I_{U'}` pseudogerichtet.
 
 ---
 
@@ -71,17 +71,17 @@ Sei `f: T'\to T` ein Situs-Morphismus.
 
 #2-50:Definition
 
-Für ein Objekt `U\in\Cat(T)` und eine Prägarbe `F` auf `T|_U` heißt `(\res_U)^\ast_\text{P} F\in \PrSh(T)` die *Fortsetzung durch Null* von `F`. ~~Fortsetzung durch Null|Prägarbe~~ Sie ist explizit gegeben durch:
+Für ein Objekt `U\in\Kat(T)` und eine Prägarbe `F` auf `T|_U` heißt `(\res_U)^\ast_\text{P} F\in \PrSh(T)` die *Fortsetzung durch Null* von `F`. ~~Fortsetzung durch Null|Prägarbe~~ Sie ist explizit gegeben durch:
 
     (\res_U)^\ast_\text{P} F(V) = \coprod_{\Mor(V, U)} F(V)
 
 ---
 
-Für `V\in\Cat(T)` gilt:
+Für `V\in\Kat(T)` gilt:
 
     (\res_U)^\ast_\text{P} F(V) = \colim F(W)
 
-wobei die Indexkategorie durch Diagramme `V\to W\to U` in `\Cat(T)` gegeben ist. In dieser Kategorie ist die diskrete Kategorie der Diagramme `V\stackrel{\id}{\to} V\to U` final und (L1) ist erfüllt. Die Aussage folgt aus [~](#2-40).
+wobei die Indexkategorie durch Diagramme `V\to W\to U` in `\Kat(T)` gegeben ist. In dieser Kategorie ist die diskrete Kategorie der Diagramme `V\stackrel{\id}{\to} V\to U` final und (L1) ist erfüllt. Die Aussage folgt aus [~](#2-40).
 
 #2-51:Bemerkung
 
@@ -98,7 +98,7 @@ Sei `\mathcal{A}` eine abelsche Kategorie mit beliebigen direkten Summen und Pro
 
 #2-53:Beispiel
 
-`\Cat(T)` habe Produkte. Ist `U\in\Cat(T)` und `j_U: T|_U\to T` die offene Einbettung, so hat für `(V\to U)\in\Cat(T) \downarrow U` die Kategorie `I_{(V\to U)}` das Endobjekt `(V, V\to U\times V)`. Daher ist `(j_U)_\text{P}^\ast: \PrSh(T)\to \PrSh(T|_U)` nichts weiter als die Einschränkung `(j_U)_\text{P}^\ast F(V\to U) = F(V)`, also `(j_U)^\ast_\text{P} = (\res_U)^\text{P}_\ast`.
+`\Kat(T)` habe Produkte. Ist `U\in\Kat(T)` und `j_U: T|_U\to T` die offene Einbettung, so hat für `(V\to U)\in\Kat(T) \downarrow U` die Kategorie `I_{(V\to U)}` das Endobjekt `(V, V\to U\times V)`. Daher ist `(j_U)_\text{P}^\ast: \PrSh(T)\to \PrSh(T|_U)` nichts weiter als die Einschränkung `(j_U)_\text{P}^\ast F(V\to U) = F(V)`, also `(j_U)^\ast_\text{P} = (\res_U)^\text{P}_\ast`.
 
 Es hat daher `(j_U)^\ast_\text{P}` auch ein Linksadjungierten, nämlich die Fortsetzung durch Null, die man auch mit `(j_U)_!^\text{P}` bezeichnet. Wir haben Adjunktionen:
 
@@ -119,11 +119,11 @@ Seien `g: T''\to T'`, `f: T'\to T` Situs-Morphismen. Dann gilt:
 
 #2-55:Definition
 
-Für ein Objekt `C\in\mathcal{C}` bezeichnet `\underline{C}^\text{P}` die Prägarbe, die durch `\underline{C}^\text{P}(V) = C` für alle `V\in \Cat(T)` und `\id_C` als Übergansabbildungen definiert ist. `\underline{C}^\text{P}` heißt die *konstante Prägarbe* ~~konstant|Prägarbe (Situs)~~ zu `C`. Hat `\Cat(T)` ein Endobjekt `e`, so gilt für alle `F\in\PrSh_\mathcal{C}(T)`:
+Für ein Objekt `C\in\mathcal{C}` bezeichnet `\underline{C}^\text{P}` die Prägarbe, die durch `\underline{C}^\text{P}(V) = C` für alle `V\in \Kat(T)` und `\id_C` als Übergansabbildungen definiert ist. `\underline{C}^\text{P}` heißt die *konstante Prägarbe* ~~konstant|Prägarbe (Situs)~~ zu `C`. Hat `\Kat(T)` ein Endobjekt `e`, so gilt für alle `F\in\PrSh_\mathcal{C}(T)`:
 
     \Hom_{\PrSh_\mathcal{C}(T)}(\underline{C}^\text{P}, F) = \Mor_\mathcal{C}(C, F(e))
 
-Für `U\in\Cat(T)` wird die Fortsetzung durch Null der konstanten Prägarbe zu `C` auf `T|_U` mit `C_U^\text{P}` bezeichnet. Es gilt:
+Für `U\in\Kat(T)` wird die Fortsetzung durch Null der konstanten Prägarbe zu `C` auf `T|_U` mit `C_U^\text{P}` bezeichnet. Es gilt:
 
     C_U^\text{P}(V) = \coprod_{\Mor(V, U)} C
 

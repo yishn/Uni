@@ -1,12 +1,12 @@
 #2-5:Definition
 
-Sei `T` ein Situs und `\mathcal{C}` eine Kategorie mit Produkten. Eine *Prägarbe* ~~Prägarbe|Situs~~ auf `T` mit Werten in `\mathcal{C}` ist ein kontravarianter Funktor `F: \Cat(T)^\op \to\mathcal{C}`. Eine *Garbe* ~~Garbe|Situs~~ ist eine Prägarbe mit der Eigenschaft, dass für jede Überdeckung `(U_i\to U)_i\in\Cov(T)` die folgende Folge ein Differenzkern ist:
+Sei `T` ein Situs und `\mathcal{C}` eine Kategorie mit Produkten. Eine *Prägarbe* ~~Prägarbe|Situs~~ auf `T` mit Werten in `\mathcal{C}` ist ein kontravarianter Funktor `F: \Kat(T)^\op \to\mathcal{C}`. Eine *Garbe* ~~Garbe|Situs~~ ist eine Prägarbe mit der Eigenschaft, dass für jede Überdeckung `(U_i\to U)_i\in\Ub(T)` die folgende Folge ein Differenzkern ist:
 
     \equalizer{F(U)}{\prod_i^\phantom{i} F(U_i)}{\prod_{i, j}^\phantom{i} F(U_i\times_U U_j)}
 
 #2-6:Bemerkung
 
-Die Kategorie `\PrSh_\mathcal{C}(T)` der `\mathcal{C}`-wertigen Prägarben auf `T` hängt nur von `\Cat(T)` und nicht von `\Cov(T)` ab.
+Die Kategorie `\PrSh_\mathcal{C}(T)` der `\mathcal{C}`-wertigen Prägarben auf `T` hängt nur von `\Kat(T)` und nicht von `\Ub(T)` ab.
 
 #2-7:Bemerkung
 
@@ -20,9 +20,9 @@ Eine Prägarbe abelscher Gruppen ist genau dann eine Garbe, wenn sie als Prägar
 
 #2-9:Definition
 
-Jedes Objekt `X` in `\Cat(T)` definiert eine mengenwertige Prägarbe:
+Jedes Objekt `X` in `\Kat(T)` definiert eine mengenwertige Prägarbe:
 
-    F_X(U) = \Mor_{\Cat(T)}(U, X),\quad U\opensubset X
+    F_X(U) = \Mor_{\Kat(T)}(U, X),\quad U\opensubset X
 
 Man nennt eine Prägarbe *darstellbar* durch `X`, wenn `F\cong F_X`. ~~darstellbar|Prägarbe~~
 
@@ -30,7 +30,7 @@ Man nennt eine Prägarbe *darstellbar* durch `X`, wenn `F\cong F_X`. ~~darstellb
 
 *(Yoneda-Lemma)* Die Zuordnung `X\mapsto F_X` liefert eine volltreue Einbettung: ~~Yoneda-Lemma~~
 
-    \Cat(T)\hookrightarrow\PrSh_\Mengen(T)
+    \Kat(T)\hookrightarrow\PrSh_\Mengen(T)
 
 #2-11:Bemerkung
 
@@ -52,7 +52,7 @@ Die erste Aussage kann man leicht einsehen. Für die zweite Aussage betrachte di
 
 > Sei `g\in G`. Dann ist die Rechtsmultiplikation `\cdot g: G\to G,\ g'\mapsto g' g` eine Abbildung von `G`-Mengen. Da `F` eine Prägarbe ist, erhalten wir die Abbildung `F(\cdot g): F(G)\to F(G)`.
 
-Wir zeigen nun, dass `F(G)` die Garbe `F` darstellt, d.h. wir konstruieren natürliche Isomorphismen `F(S)\to \Abb_G(S, F(G))` für jede `G`-Menge `S`. Wir betrachten eine Kopie `G^{(s)}` von `G` für jedes `s\in S` und die Überdeckung `(\phi_s: G^{(s)}\to S)_{s\in S}\in\Cov(T_G)` mit `\phi_s(g) = gs`. Die Garbeneigenschaft liefert die exakte Folge:
+Wir zeigen nun, dass `F(G)` die Garbe `F` darstellt, d.h. wir konstruieren natürliche Isomorphismen `F(S)\to \Abb_G(S, F(G))` für jede `G`-Menge `S`. Wir betrachten eine Kopie `G^{(s)}` von `G` für jedes `s\in S` und die Überdeckung `(\phi_s: G^{(s)}\to S)_{s\in S}\in\Ub(T_G)` mit `\phi_s(g) = gs`. Die Garbeneigenschaft liefert die exakte Folge:
 
     \equalizer{F(S)}{\prod_{s\in S}^\phantom{i} F(G^{(s)})}{\prod_{s, t\in S}^\phantom{i} F(G^{(s)}\times_S G^{(t)})}
 

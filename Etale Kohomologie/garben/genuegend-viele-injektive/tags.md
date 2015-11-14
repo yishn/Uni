@@ -11,7 +11,7 @@ Eine Menge `\mathcal{M}` von Objekten einer Kategorie `\mathcal{C}` heißt *Meng
 
         \Hom_{\PrSh(T)}(\Z_U^\text{P}, F) = \Hom_\Ab(\Z, F(U)) = F(U)
 
-   ist `\{\Z_U^\text{P}\mid U\in\Cat(T)\}` eine Menge von Erzeugern für `\PrSh_\Ab(T)`.
+   ist `\{\Z_U^\text{P}\mid U\in\Kat(T)\}` eine Menge von Erzeugern für `\PrSh_\Ab(T)`.
 
 #3-3:Satz
 
@@ -30,7 +30,7 @@ Sei `\mathcal{A}` eine abelsche Kategorie, die den Bedingungen von [~](#3-3) gen
 
 Direkte Summen und gerichtete Kolimiten von `\mathcal{A}`-wertigen Prägarben werden stufenweise gebildet. Daher erbt sich Bedingung (AB5) von `\mathcal{A}`. Ist `\mathcal{M} = \{M_i\mid i\in I\}` eine Menge von Erzeugern, so ist eine Menge von Erzeugern in `\PrSh_\mathcal{A}(T)` gegeben durch:
 
-    \{(M_i)_U^\text{P} \mid i\in I,\ U\in\Cat(T)\}
+    \{(M_i)_U^\text{P} \mid i\in I,\ U\in\Kat(T)\}
 
 #3-5:Korollar
 
