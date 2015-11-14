@@ -105,4 +105,4 @@ Diese ist exakt.
 
 #2-29-1:Definition
 
-Wir erhalten einen Funktor `f_\ast: \Sh_\mathcal{C}(T')\to \Sh_\mathcal{C}(T)` und nennen `f_\ast F` die *direkte Bildgarbe* von `F`. ~~direktes Bild|Garbe~~ ~~direkte Bildgarbe~~ Offenbar gilt `f_\ast^\text{P}(iF) = i f_\ast(F)`, wobei `i` die Einbettung `\Sh_\mathcal{C}(T')\hookrightarrow \PrSh_\mathcal{C}(T')` bezeichnet.
+Wir erhalten einen Funktor `f_\ast: \Sh_\mathcal{C}(T')\to \Sh_\mathcal{C}(T)` und nennen `f_\ast F` die *direkte Bildgarbe* von `F`. ~~direktes Bild|Garbe~~ ~~direkte Bildgarbe~~ Offenbar gilt `f_\ast^\text{P}(\iota F) = \iota f_\ast(F)`, wobei `\iota` jeweils die Einbettung `\Sh_\mathcal{C}\hookrightarrow \PrSh_\mathcal{C}` bezeichnet.
