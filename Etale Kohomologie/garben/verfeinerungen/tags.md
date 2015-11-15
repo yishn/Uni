@@ -42,7 +42,7 @@ Die halbgeordnete Menge `\Ub(X)` ist gerichtet.
 
 ---
 
-Für `\mathcal{U}` und `\mathcal{V}` existiert nach Definition eines Situs' das Faserprodukt `(U_i\times_X V_j\to X)_{i,j}` und diese ist eine Überdeckung von `X`, die sowohol `\mathcal{U}` als auch `\mathcal{V}` verfeinert.
+Für `\mathcal{U}` und `\mathcal{V}` existiert nach Definition eines Situs' das Faserprodukt `(U_i\times_X V_j\to X)_{i,j}` und diese ist eine Überdeckung von `X`, die sowohl `\mathcal{U}` als auch `\mathcal{V}` verfeinert.
 
 #3-12:Definition
 
