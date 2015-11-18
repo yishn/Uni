@@ -21,5 +21,7 @@
     * [Höhere direkte Bilder](garbenkohomologie/hoehere-direkte-bilder/)
     * [Verträglichkeit mit Kolimiten](garbenkohomologie/vertraeglichkeit-mit-kolimiten/)
     * [Der Vergleichssatz](garbenkohomologie/der-vergleichssatz/)
+* Etwas algebraische Geometrie
+    * [(Quasi-)Endliche Morphismen](etwas-algebraische-geometrie/quasi-endliche-morphismen/)
 * [Literatur](literatur/)
 * [Index](index/)
