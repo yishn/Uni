@@ -23,5 +23,6 @@
     * [Der Vergleichssatz](garbenkohomologie/der-vergleichssatz/)
 * Etwas algebraische Geometrie
     * [(Quasi-)Endliche Morphismen](etwas-algebraische-geometrie/quasi-endliche-morphismen/)
+    * [Flache Morphismen](etwas-algebraische-geometrie/flache-morphismen/)
 * [Literatur](literatur/)
 * [Index](index/)

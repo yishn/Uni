@@ -83,10 +83,10 @@ Für eine stetige Abbildung `f:X \to Y` sind äquivalent:
 
 #4-32:Satz
 
-Sei `f: X\to Y` ein Schema-Morphismus lokal von endlicher Präsentation.
+Sei `f: X\to Y` ein Schema-Morphismus.
 
 1. `f` heißt *flach*, wenn für alle `x\in X` der Homomorphismus lokaler Ringe `f^\ast: \O_{Y,f(x)}\to \O_{X,x}` flach ist.
-2. `f` heißt *unverzweigt*, wenn die Diagonale `\Delta: X\to X\times_Y X` eine offene Immersion ist.
+2. `f` heißt *unverzweigt*, wenn er lokal von endlicher Präsentation ist und die Diagonale `\Delta: X\to X\times_Y X` eine offene Immersion ist.
 3. `f` heißt *étale*, wenn `f` flach und unverzweigt ist.
 
-Flache Morphismen sind universell offen. Der *étale Situs* eines Schemas `X` ist gegeben durch alle étalen Morphismen `Y\to X` mit surjektiven Familien als Überdeckungen. ~~flach|Schema-Morphismus~~ ~~unverzweigt|Schema-Morphismus~~ ~~étale|Schema-Morphismus~~
+Flache Morphismen lokal von endlicher Präsentation sind universell offen. Der *étale Situs* eines Schemas `X` ist gegeben durch alle étalen Morphismen `Y\to X` mit surjektiven Familien als Überdeckungen. ~~flach|Schema-Morphismus~~ ~~unverzweigt|Schema-Morphismus~~ ~~étale|Schema-Morphismus~~
