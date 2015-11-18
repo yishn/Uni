@@ -67,3 +67,26 @@ Der Situs-Morphismus `\iota: X_\et\to X_\top` definiert zueinander inverse Kateg
 Insbesondere gilt für jede Garbe `F` auf `X_\top` und jede Garbe `G` auf `X_\et` und alle `q`:
 
     \H_\et^q(X, \iota^\ast F) = \H_\top^q(X, F),\quad \H_\et^q(X, G) = \H_\top^q(X, \iota^\ast G)
+
+#4-31:Lemma
+
+Für eine stetige Abbildung `f:X \to Y` sind äquivalent:
+
+1. `f` ist ein lokaler Homöomorphismus.
+2. `f` ist offen und die Diagonale `\Delta: X\to X\times_Y X` ist eine offene Einbettung.
+
+---
+
+* (i)`\implies`(ii): `f` ist offensichtlich offen. Sei `x\in X` und `U\opensubset X` eine Umgebung von `x`, so dass `f|_U: U\to f(U)` ein Homöomorphismus auf einer offenen Teilmenge ist. Dann ist `(U\times U)\cap (X\times_Y X)\subset X\times X` eine offene Umgebung von `(x, x)` in `X\times_Y X`, die ausschließlich Punkte der Diagonale enthält. Also ist die Diagonale Vereinigung offener Teilmengen in `X`.
+
+* (ii)`\implies`(i): Sei `x\in X` und `U\opensubset X` eine Umgebung von `x`, so dass `(U\times U)\cap (X\times_Y X)` ganz in der Diagonale liegt. Dann ist `f|_U: U\to Y` injektiv. Da `f` offen ist, ist es ein Homöomorphismus auf sein Bild.
+
+#4-32:Satz
+
+Sei `f: X\to Y` ein Schema-Morphismus lokal von endlicher Präsentation.
+
+1. `f` heißt *flach*, wenn für alle `x\in X` der Homomorphismus lokaler Ringe `f^\ast: \O_{Y,f(x)}\to \O_{X,x}` flach ist.
+2. `f` heißt *unverzweigt*, wenn die Diagonale `\Delta: X\to X\times_Y X` eine offene Einbettung ist.
+3. `f` heißt *étale*, wenn `f` flach und unverzweigt ist.
+
+Flache Morphismen sind universell offen. Der *étale Situs* eines Schemas `X` ist gegeben durch alle étalen Morphismen `Y\to X` mit surjektiven Familien als Überdeckungen. ~~flach|Schema-Morphismus~~ ~~unverzweigt|Schema-Morphismus~~ ~~étale|Schema-Morphismus~~
