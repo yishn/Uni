@@ -47,7 +47,7 @@ Sei `k` ein Körper. Für ein Schema `f: X\to k` von endlichem Typ sind folgende
 
 #5-7:Definition
 
-Ein Schema-Morphismus `f: Y\to X` heißt *quasiendlich*, wenn `f` von endlichem Typ ist und die Fasern `f^{-1}(x)` für alle `x\in X` endliche Mengen sind. ~~quasiendlich|Schema-Morphismus~~
+Ein Schema-Morphismus `f: Y\to X` heißt *quasiendlich*, wenn `f` von endlichem Typ ist und die Fasern `f^{-1}(x)` für alle `x\in X` endliche Mengen sind. ~~quasiendlich|Morphismus~~
 
 #5-8:Lemma
 
