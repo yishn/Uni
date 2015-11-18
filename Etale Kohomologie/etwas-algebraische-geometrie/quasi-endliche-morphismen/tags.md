@@ -57,7 +57,7 @@ Ein Schema-Morphismus `f: Y\to X` heißt *quasiendlich*, wenn `f` von endlichem 
 
 #5-9:Theorem
 
-*(Zariskis Hauptsatz)* ~~Zariskis Hauptsatz~~ Sei `X` ein quasikompaktes Schema. Dann kann jeder separable, quasiendlicher Morphismus `f: Y\to X` als Komposition `Y\stackrel{f'}{\to} Y'\stackrel{g}{\to} X` geschrieben werden, wobei `f'` eine offene Einbettung und `g` ein endlicher Morphismus ist.
+*(Zariskis Hauptsatz)* ~~Zariskis Hauptsatz~~ Sei `X` ein quasikompaktes Schema. Dann kann jeder separable, quasiendlicher Morphismus `f: Y\to X` als Komposition `Y\stackrel{f'}{\to} Y'\stackrel{g}{\to} X` geschrieben werden, wobei `f'` eine offene Immersion und `g` ein endlicher Morphismus ist.
 
 #5-10:Korollar
 
