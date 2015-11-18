@@ -14,6 +14,10 @@ Es genügt die Eigenschaft auf einer offen affinen Überdeckung nachzuprüfen.
 
 Sei `X` ein normales Schema und `f: X'\to X` seine Normalisierung in einer endlich separablen Erweiterung seines Funktionenkörpers `k(X)`. Dann ist `f` endlich.
 
+---
+
+Siehe z.B. [[AM]](#LIT-AM) 5.17.
+
 #5-4:Lemma
 
 Es gilt:
@@ -30,7 +34,7 @@ Endliche Morphismen sind eigentlich.
 
 Affine Morphismen sind separiert, also genügt es zu zeigen, dass `f: Y\to X` universell abgeschlossen ist. Nach [~](#5-4) (iii) genügt zu zeigen, dass `f` abgeschlossen ist. Sei o.B.d.A. `X` affin, also `f: \Spec(B)\to \Spec(A)`. Dann ist `f` induziert durch `A\to A/\mathfrak{a} \hookrightarrow B`, wobei `\mathfrak{a} = \ker(f)` und `B` eine endliche `A/\mathfrak{a}`-Algebra ist.
 
-Der Morphismus `\Spec(A/\mathfrak{a})\to\Spec(A)` ist abgeschlossen. Dass `\Spec(B)\to \Spec(A/\mathfrak{a})` abgeschlossen ist, folgt aus dem Aufstiegstheorem von Cohen-Seidenberg für ganze Ringerweiterungen.
+Der Morphismus `\Spec(A/\mathfrak{a})\to\Spec(A)` ist abgeschlossen. Dass `\Spec(B)\to \Spec(A/\mathfrak{a})` abgeschlossen ist, folgt aus dem Aufstiegstheorem von Cohen-Seidenberg für ganze Ringerweiterungen, siehe z.B. [[AM]](#LIT-AM) 5.11.
 
 #5-6:Lemma
 

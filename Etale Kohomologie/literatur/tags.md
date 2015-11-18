@@ -7,3 +7,7 @@
   Lecture notes in mathematics **269**, **270**, **305** (1972/73)
 - *P. Deligne:* SGA 4½  
   Lecture notes in mathematics **569** (1977)
+
+#LIT-AM
+
+*M.F. Atiyah, I.G. Macdonald:* Introduction to Commutative Algebra
