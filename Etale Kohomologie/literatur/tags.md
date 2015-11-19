@@ -10,4 +10,4 @@
 
 #LIT-AM
 
-*M.F. Atiyah, I.G. Macdonald:* Introduction to Commutative Algebra
+*M.F. Atiyah, I.G. MacDonald:* Introduction to Commutative Algebra
