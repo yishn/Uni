@@ -1,3 +1,9 @@
+#5-11:Definition
+
+Ein Morphismus `f: Y\to X` heißt *flach*, wenn `\O_{Y,y}` eine flache `\O_{X,f(y)}`-Algebra ist für alle `y\in Y`.
+
+`f` heißt *treuflach*, wenn `f` flach und surjektiv ist.
+
 #5-12:Bemerkung
 
 Für ein Schema-Morphismus `f: \Spec(B)\to \Spec(A)` gilt:
