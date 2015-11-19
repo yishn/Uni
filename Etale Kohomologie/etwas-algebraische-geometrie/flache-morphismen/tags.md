@@ -2,7 +2,7 @@
 
 Ein Morphismus `f: Y\to X` heißt *flach*, wenn `\O_{Y,y}` eine flache `\O_{X,f(y)}`-Algebra ist für alle `y\in Y`.
 
-`f` heißt *treuflach*, wenn `f` flach und surjektiv ist.
+`f` heißt *treuflach*, wenn `f` flach und surjektiv ist. ~~treuflach|Schema-Morphismus~~ ~~flach|Schema-Morphismus~~
 
 #5-12:Bemerkung
 
