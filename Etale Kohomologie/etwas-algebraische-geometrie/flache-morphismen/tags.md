@@ -55,3 +55,59 @@ Sei o.B.d.A. `U` affin. Wir verfeinern `(f_i: U_i\to U)_i` durch `(h_j: V_j\to U
 Betrachte nun für jedes `i` die endliche Überdeckung `(V_j\times_U U_i\to U_i)_j`. Ist `U_i` affin, so können wir analog zum obigen Argument ein eindeutiges `s_{U_i}\in F(U_i)` finden mit `s_{U_i}|_{V_j\times_U U_i} = s_{i_j}|_{V_j\times_U U_i} = s_i|_{V_j\times_U U_i}` für alle `j`. Ist `U_i` nicht affin, so finden wir ein eindeutiges `s_{U_i}` mithilfe von (i) nach Übergang zu einer Zariski-Überdeckung von `U_i`.
 
 Wegen `s|_{V_j\times_U U_i} = s_{i_j}|_{V_j\times_U U_i} = s_i|_{V_j\times_U U_i}` und der Eindeutigkeit von `s_{U_i}` folgt `s|_{U_i} = s_{U_i} = s_i`.
+
+#5-19:Lemma
+
+Sei `f: A\to B` ein treuflacher Ringhomomorphismus und `M` ein `A`-Modul. Dann ist der folgende Komplex exakt:
+
+    0\longrightarrow M \longrightarrow B\otimes_A M \stackrel{\d}{\longrightarrow} B^{\otimes_A 2} \otimes_A M \stackrel{\d}{\longrightarrow} B^{\otimes_A 3} \otimes_A M \stackrel{\d}{\longrightarrow} \cdots
+
+wobei `\d = \sum_{i = 0}^r (-1)^i e_i\otimes\id` und
+
+    e_i: B^{\otimes_A r}\to B^{\otimes_A (r+1)},\ b_1\otimes\cdots\otimes b_r\mapsto b_1\otimes\cdots\otimes b_i\otimes 1\otimes b_{i+1}\otimes\cdots\otimes b_r
+
+---
+
+`\d^2 = 0` ist einfach auszurechnen. Hat `f: A\to B` einen Schnitt `g: B\to A` mit `gf = \id_A`, so gibt `\Delta\otimes\id_M` mit
+
+    \Delta: B^{\otimes_A(r+1)}\to B^{\otimes_A r},\ b_1\otimes\cdots\otimes b_{r+1}\mapsto g(b_1)b_2\otimes b_3\otimes \cdots\otimes b_{r+1}
+
+eine Nullhomotopie des Komplexes.
+
+Im allgemeinen Fall beachten wir, dass es ausreicht die Exaktheit des Komplexes nach Tensorieren mit der treuflachen `A`-Algebra `f: A\to B` zu zeigen. Nun hat `f\otimes\id: B = A\otimes_A B \to B\otimes_A B` den Schnitt `B\otimes_A B\to B`, `b_1\otimes b_2\mapsto b_1b_2`.
+
+#5-17:Theorem
+
+Sei `Z\to X` ein Schema. Dann ist `\Mor_X(-, Z)` eine Garbe auf `X_\fl`.
+
+---
+
+Sei `(f_i: U_i\to U)_i\in \Ub(X_\fl)`. Es ist zu zeigen, dass die folgende Folge exakt ist:
+
+    \equalizer{\Mor_X(U, Z)}{\prod_i^\phantom{i} \Mor_X(U_i, Z)}{\prod_{i,j}^\phantom{i} \Mor_X(U_i\times_U U_j, Z)}
+
+Da flache Überdeckungen surjektiv und flache lokale Ringhomomorphismen injektiv sind, sieht man leicht ein, dass dies aus der Exaktheit der folgenden Folge folgt:
+
+    \equalizer{\Mor(U, Z)}{\prod_i^\phantom{i} \Mor(U_i, Z)}{\prod_{i,j}^\phantom{i} \Mor(U_i\times_U U_j, Z)}
+
+Die Bedingung (i) in [~](#5-18) ist klar erfüllt. Daher reicht es, die Aussage für eine einelementige Überdeckung der Form `(f^\ast: \Spec(B)\to \Spec(A))` mit `f: A\to B` treuflach zu zeigen.
+
+Sei zunächst `Z = \Spec(C)` affin. Dann folgt die Aussage aus der Exaktheit des Komplexes in [~](#5-19):
+
+    0\longrightarrow A \stackrel{f}{\longrightarrow} B \stackrel{e_0-e_1}{\longrightarrow} B\otimes_A B
+
+Sind nämlich `g_1,g_2: C\to A` mit `fg_1 = fg_2` gegeben, so gilt `g_1 = g_2`, da `f` injektiv ist. Haben wir `h: C\to B` mit `e_0h = e_1h` gegeben, so gilt `\im(h)\subset\im(f)`, also faktorisiert `h` über `f`.
+
+Nun sei `Z` beliebig. Wir betrachten das Diagramm:
+
+    \xymatrix{
+        Y\times_X Y \ar[d]^{\pr_2}_{\pr_1} \\
+        Y = \Spec(B) \ar[d]_{f^\ast} \ar@/^/[rd]^-h \\
+        X = \Spec(A) \ar[r]^-{g_1}_-{g_2} & Z
+    }
+
+Sind `g_1,g_2: X\to Z` mit `g_1f^\ast = g_2f^\ast` gegeben, so ist `g_1 = g_2` zu zeigen. Da `f` surjektiv ist, gilt `g_1 = g_2` als stetige Abbildungen und wir können `g_1 = g_2` als Morphismen lokal verifizieren. Zu `x\in X` wähle eine affine Umgebung `W\opensubset Z` von `g_1(x) = g_2(x)` und affine Umgebung `U\opensubset X` von `x` mit `g_1(U) = g_2(U)\subset W`. Dann ist `f^{\ast}{}^{-1}(U)\subset Y` affin und `f^\ast: f^\ast{}^{-1}(U)\to U` treuflach. Die Gleichheit folgt nun aus dem affinen Fall.
+
+Nun sei `h: Y\to Z` mit `h\pr_1 = h\pr_2` gegeben. Wir wollen ein `g: X\to Z` mit `h = gf` konstruieren. Wegen der bereits bewiesenen Eindeutigkeit können wir dies lokal tun. Sei `x\in X`, `y\in f^\ast{}^{-1}(x)` und `U\opensubset Z` eine affine Umgebung von `h(y)`. Dann ist `y\in h^{-1}(U)\opensubset Y` und `x\in f^\ast(h^{-1}(U))`. Wir sind fertig, wenn wir eine affine Umgebung `x\in V\opensubset f^\ast(h^{-1}(U))` mit `f^\ast{}^{-1}(V)\subset h^{-1}(U)` finden können, da sich der affine Fall anwenden lässt.
+
+Da `f` von endlichem Typ ist, ist `f^\ast(h^{-1}(U))\opensubset X` nach [~](#5-15) (i). Also finden wir eine affine Umgebung `x\in V\opensubset f^\ast(h^{-1}(U))`. Sei `y'\in f^\ast{}^{-1}(V)`. Dann existiert ein `y''\in h^{-1}(U)` mit `f^\ast(y'') = f^\ast(y')`. Wir betrachten den Punkt `(y',y'')\in Y\times_X Y`. Nach Voraussetzung an `h` gilt `h(y') = h(y'')\in U`, also `y'\in h^{-1}(U)`.
