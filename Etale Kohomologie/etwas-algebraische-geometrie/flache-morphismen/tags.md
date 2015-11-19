@@ -88,7 +88,7 @@ Sei `Z\to X` ein Schema. Dann ist `\Mor_X(-, Z)` eine Garbe auf `X_\fl`.
 
 ---
 
-Sei `(f_i: U_i\to U)_i\in \Ub(X_\fl)`. Es ist zu zeigen, dass die folgende Folge exakt ist:
+Sei `(U_i\to U)_i\in \Ub(X_\fl)`. Es ist zu zeigen, dass die folgende Folge exakt ist:
 
     \equalizer{\Mor_X(U, Z)}{\prod_i^\phantom{i} \Mor_X(U_i, Z)}{\prod_{i,j}^\phantom{i} \Mor_X(U_i\times_U U_j, Z)}
 
