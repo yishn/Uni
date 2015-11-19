@@ -64,17 +64,23 @@ Sei `f: A\to B` ein treuflacher Ringhomomorphismus und `M` ein `A`-Modul. Dann i
 
 wobei `\d = \sum_{i = 0}^r (-1)^i e_i\otimes\id` und
 
-    e_i: B^{\otimes_A r}\to B^{\otimes_A (r+1)},\ b_1\otimes\cdots\otimes b_r\mapsto b_1\otimes\cdots\otimes b_i\otimes 1\otimes b_{i+1}\otimes\cdots\otimes b_r
+    \begin{align*}
+        B^{\otimes_A r} &\stackrel{e_i}{\longrightarrow} B^{\otimes_A (r+1)},\\
+        b_1\otimes\cdots\otimes b_r &\longmapsto b_1\otimes\cdots\otimes b_i\otimes 1\otimes b_{i+1}\otimes\cdots\otimes b_r
+    \end{align*}
 
 ---
 
 `\d^2 = 0` ist einfach auszurechnen. Hat `f: A\to B` einen Schnitt `g: B\to A` mit `gf = \id_A`, so gibt `\Delta\otimes\id_M` mit
 
-    \Delta: B^{\otimes_A(r+1)}\to B^{\otimes_A r},\ b_1\otimes\cdots\otimes b_{r+1}\mapsto g(b_1)b_2\otimes b_3\otimes \cdots\otimes b_{r+1}
+    \begin{align*}
+        B^{\otimes_A(r+1)} &\stackrel{\Delta}{\longrightarrow} B^{\otimes_A r},\\
+        b_1\otimes\cdots\otimes b_{r+1} &\longmapsto g(b_1)b_2\otimes b_3\otimes \cdots\otimes b_{r+1}
+    \end{align*}
 
 eine Nullhomotopie des Komplexes.
 
-Im allgemeinen Fall beachten wir, dass es ausreicht die Exaktheit des Komplexes nach Tensorieren mit der treuflachen `A`-Algebra `f: A\to B` zu zeigen. Nun hat `f\otimes\id: B = A\otimes_A B \to B\otimes_A B` den Schnitt `B\otimes_A B\to B`, `b_1\otimes b_2\mapsto b_1b_2`.
+Im allgemeinen Fall beachten wir, dass es ausreicht die Exaktheit des Komplexes nach Tensorieren mit der treuflachen `A`-Algebra `f: A\to B` zu zeigen. Nun hat `f\otimes_A B: B = A\otimes_A B \to B\otimes_A B` den Schnitt `B\otimes_A B\to B`, `b_1\otimes b_2\mapsto b_1b_2`.
 
 #5-17:Theorem
 
