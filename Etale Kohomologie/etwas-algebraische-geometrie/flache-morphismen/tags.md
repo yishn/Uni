@@ -37,7 +37,7 @@ Sei `f: Y\to X` ein Morphismus lokal von endlichem Typ.
 
 #5-16:Definition
 
-Sei `X` ein Schema. Der *flache Situs* `X_\fl` besteht aus der Kategorie der Schemata über `X` lokal von endlichem Typ. Eine Familie `(\phi_i: U_i\to Y)_i` von `X`-Morphismen ist genau dann eine Überdeckung, wenn `\phi_i` alle flach (automatisch lokal von endlichem Typ) und `Y = \bigcup_i\phi_i(U_i)` gilt.
+Sei `X` ein Schema. Der *flache Situs* `X_\fl` besteht aus der Kategorie der Schemata über `X` lokal von endlichem Typ. Eine Familie `(\phi_i: U_i\to Y)_i` von `X`-Morphismen ist genau dann eine Überdeckung, wenn `\phi_i` alle flach (automatisch lokal von endlichem Typ) und `Y = \bigcup_i\phi_i(U_i)` gilt. ~~flach|Situs~~
 
 #5-18:Lemma
 

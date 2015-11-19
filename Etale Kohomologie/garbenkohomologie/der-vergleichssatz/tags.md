@@ -1,6 +1,6 @@
 #4-24:Theorem
 
-Sei `\iota: T'\to T` ein Situs-Morphismus, so dass:
+*(Der Vergleichssatz)* ~~Vergleichssatz~~ Sei `\iota: T'\to T` ein Situs-Morphismus, so dass:
 
 1. `\iota^\sharp` ist eine volltreue Einbettung, d.h. wir können `\Kat(T)` als volle Unterkategorie von `\Kat(T')` auffassen.
 2. Sind `U` und `U_i,\ i\in I` Objekte von `T` und `(U_i\to U)_i\in\Ub(T')`, so gilt `(U_i\to U)\in\Ub(T)`.
