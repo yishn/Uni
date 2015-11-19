@@ -4,7 +4,7 @@ In diesem Kapitel seien alle Schemata lokal noethersch.
 
 #5-1:Definition
 
-Ein Schema-Morphismus `f: Y\to X` heißt *endlich*, wenn er affin ist und für jedes offen affines `U\opensubset X` ist `\Gamma(f^{-1}(U), \O_Y)` eine endliche `\Gamma(U, \O_X)`-Algebra.
+Ein Schema-Morphismus `f: Y\to X` heißt *endlich*, wenn er affin ist und für jedes offen affines `U\opensubset X` ist `\Gamma(f^{-1}(U), \O_Y)` eine endliche `\Gamma(U, \O_X)`-Algebra. ~~endlich|Schema-Morphismus~~
 
 #5-2:Bemerkung
 
