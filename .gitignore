@@ -23,6 +23,7 @@ keywords.json
 #*.pdf
 seal.pdf
 thesis.pdf
+article.pdf
 sources/
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
