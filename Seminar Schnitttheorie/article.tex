@@ -85,7 +85,7 @@ injektiv und besitzt den Schnitt:
 Sei $\mathcal{E}$ eine lokal freie Garbe vom Rang $r$ auf einer Varietät $X$. Dann gibt es einen flachen projektiven Morphismus $f:Y\to X$, so dass:
 \begin{enumerate}[(i)]
 \item Die induzierte Abbildung $f^\ast:A_\bullet(X)\to A_\bullet(Y)$ ist injektiv.
-\item Die Garbe $f^\ast\mathcal{E}$ besitzt eine Filtration von lokal freien Garben:
+\item Die Garbe $f^\ast\mathcal{E}$ besitzt eine \textit{vollständige Filtration}, d.h. eine Filtration von lokal freien Garben
 \[ 0 = \mathcal{E}_0 \subset \mathcal{E}_1 \subset\ldots\subset \mathcal{E}_r = f^\ast\mathcal{E} \]
 wobei $\mathcal{E}_i$ vom Rang $i$ ist.
 \end{enumerate}
@@ -180,10 +180,6 @@ A_{d+i}(X)\ni \alpha_i &\longmapsto c_1(\mathcal{O}_E(1))^i\cap q^\ast(\alpha_i)
 \[ c_0(\mathcal{E}) = 1,\quad \sum_{i=0}^r c_1(\mathcal{O}_E(1))^i\cap q^\ast(c_{r-i}(\mathcal{E})\cap\alpha) = 0 \]
 \end{enumerate}
 \end{theorem}
-
-\begin{remark}
-Chern-Klassen sind eindeutig durch die Eigenschaft (iii) bestimmt.
-\end{remark}
 
 \begin{definition}
 Für ein Vektorbündel $p:E\to X$ vom Rang $r$ mit Nullschnitt $s:X\to E$ definieren wir den \textit{Gysin-Rückzug} entlang des Nullschnitts als:
