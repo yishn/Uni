@@ -40,10 +40,9 @@ eine lokal freie Garbe auf $X$ vom Rang $r$.
 \begin{definition}
 \begin{enumerate}[(i)]
 \item Das \textit{projektive Vektorbündel} $p: \mathbf{P}(\mathcal{E})\to X$ einer lokal freien Garbe $\mathcal{E}$ über $X$ ist gegeben durch:
-\[ \mathbf{P}(\mathcal{E}) = \mathbf{Proj}_X(\operatorname{Sym}^\bullet\mathcal{E}) \]
-Es gibt einen natürlichen surjektiven Morphismus $p^\ast\mathcal{E}\to \mathcal{O}_\mathcal{E}(1)$.
+\[ \mathbf{P}(\mathcal{E}) = \mathbf{Proj}_X(\operatorname{Sym}^\bullet\mathcal{E})\to X \]
 \item Das \textit{projektive Vektorbündel} $p: P(E)\to X$ eines Vektorbündels $E\to X$ über $X$ ist gegeben durch:
-\[ P(E) = (E\setminus i_p(X))/\mathbb{G}_\text{m} \]
+\[ P(E) = (E\setminus i_0(X))/\mathbb{G}_\text{m}\to X \]
 \end{enumerate}
 \end{definition}
 
@@ -51,7 +50,7 @@ Es gibt einen natürlichen surjektiven Morphismus $p^\ast\mathcal{E}\to \mathcal
 Die \textit{Segre-Klassen} $s_i(E)$ für $i\geq 1-r$ eines Vektorbündels $E\to X$ vom Rang $r$ auf einer Varietät $X$ sind die Homomorphismen:
 \begin{align*}
 s_i(E)\cap -: A_d(X)&\to A_{d-i}(X),\\ 
-\alpha&\mapsto p_\ast(c_1(\mathcal{O}_\mathcal{E}(1))^{(r-1)+i} \cap p^\ast\alpha)
+\alpha&\mapsto p_\ast(c_1(\mathcal{O}_E(1))^{(r-1)+i} \cap p^\ast\alpha)
 \end{align*}
 wobei $r-1$ die relative Dimension des projektiven Vektorbündels $p: P(E)\to X$ bezeichnet.
 \end{definition}
