@@ -3,10 +3,191 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\author{Yichuan Shen}
+\usepackage{amsthm}
+\usepackage{paralist}
+\linespread{1.1}
+
+\author{von \textsc{yichuan shen}}
 \title{Vektorbündel \& Gysin-Homomorphismus}
 \begin{document}
+
+\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Satz}
+\newtheorem{corollary}[theorem]{Korollar}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Beispiel}
+\theoremstyle{remark}
+\newtheorem*{remark}{Bemerkung}
+
 \maketitle
 
-Hello World!
+\section{Definitionen}
+
+\begin{definition}
+\begin{enumerate}[(i)]
+\item Sei $p: E\to X$ ein Vektorbündel vom Rang $n$ und $X=\bigcup_\alpha U_\alpha$ eine offene Überdeckung mit $U_\alpha$-Isomorphismen $\varphi_j: f^{-1}(U_\alpha)\to \mathbf{A}_{U_\alpha}^n$. Wir bezeichnen den Nullschnitt mit $i_0: X\to E$.
+\item Für eine lokal freie Garbe $\mathcal{E}$ vom Rang $r$ auf $X$ definiert
+\[ \mathbf{V}(\mathcal{E}) = \mathbf{Spec}_X(\operatorname{Sym}^\bullet\mathcal{E})\to X \]
+ein Vektorbündel auf $X$.
+\item Für einen Vektorbündel $E\to X$ vom Rang $r$ definiert
+\[ \Gamma(E) = (U\mapsto \operatorname{Hom}_X(U, E)) \]
+eine lokal freie Garbe auf $X$ vom Rang $r$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+\begin{enumerate}[(i)]
+\item Das \textit{projektive Vektorbündel} $p: \mathbf{P}(\mathcal{E})\to X$ einer lokal freien Garbe $\mathcal{E}$ über $X$ ist gegeben durch:
+\[ \mathbf{P}(\mathcal{E}) = \mathbf{Proj}_X(\operatorname{Sym}^\bullet\mathcal{E}) \]
+Es gibt einen natürlichen surjektiven Morphismus $p^\ast\mathcal{E}\to \mathcal{O}_\mathcal{E}(1)$.
+\item Das \textit{projektive Vektorbündel} $p: P(E)\to X$ eines Vektorbündels $E\to X$ über $X$ ist gegeben durch:
+\[ P(E) = (E\setminus i_p(X))/\mathbb{G}_\text{m} \]
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Die \textit{Segre-Klassen} $s_i(E)$ für $i\geq 1-r$ eines Vektorbündels $E\to X$ vom Rang $r$ auf einer Varietät $X$ sind die Homomorphismen:
+\begin{align*}
+s_i(E)\cap -: A_d(X)&\to A_{d-i}(X),\\ 
+\alpha&\mapsto p_\ast(c_1(\mathcal{O}_\mathcal{E}(1))^{(r-1)+i} \cap p^\ast\alpha)
+\end{align*}
+wobei $r-1$ die relative Dimension des projektiven Vektorbündels $p: P(E)\to X$ bezeichnet.
+\end{definition}
+
+\begin{proposition}
+Sei $\mathcal{E} = \Gamma(E)$ ein Vektorbündel auf einer Varietät $X$ und $\alpha\in A_\bullet(X)$.
+\begin{enumerate}[(i)]
+\item $s_i(\mathcal{E})\cap\alpha = 0$ für alle $1-r\leq i <0$.
+\item $s_0(\mathcal{E})\cap\alpha = \alpha$
+\item Sei $\mathcal{F} = \Gamma(F)$ ein weiteres Vektorbündel auf $X$. Dann gilt für alle $i,j\geq 0$:
+\[ s_i(\mathcal{E})\cap (s_j(\mathcal{F}) \cap \alpha) = s_j(\mathcal{F}) \cap (s_i(\mathcal{E})\cap \alpha) \]
+\item Sei $f:Y\to X$ ein eigentlicher Morphismus und $\beta\in A_\bullet(Y)$. Dann gilt die Projektionsformel:
+\[ f_\ast(s_i(f^\ast\mathcal{E})\cap\beta) = s_i(\mathcal{E})\cap f_\ast\beta \]
+\item Sei $f:Y\to X$ ein flacher Morphismus. Dann gilt:
+\[ f^\ast(s_i(\mathcal{E})\cap \alpha) = s_i(f^\ast\mathcal{E})\cap f^\ast\alpha \]
+\item Ist $\mathcal{E}$ vom Rang $1$, also ein Geradenbündel. Dann gilt:
+\[ s_1(\mathcal{E}) \cap\alpha = -c_1(\mathcal{E})\cap \alpha \]
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+Sei $p:E\to X$ ein Vektorbündel vom Rang $r$. Dann ist
+\[ p^\ast: A_q(X)\to A_{q+r-1}(P(E)) \]
+injektiv und besitzt den Schnitt:
+\[ \alpha\mapsto p_\ast(c_1(\mathcal{O}_E(1))^{r-1}\cap\alpha) \]
+\end{corollary}
+
+\begin{corollary}
+Sei $\mathcal{E}$ eine lokal freie Garbe vom Rang $r$ auf einer Varietät $X$. Dann gibt es einen flachen projektiven Morphismus $f:Y\to X$, so dass:
+\begin{enumerate}[(i)]
+\item Die induzierte Abbildung $f^\ast:A_\bullet(X)\to A_\bullet(Y)$ ist injektiv.
+\item Die Garbe $f^\ast\mathcal{E}$ besitzt eine Filtration von lokal freien Garben:
+\[ 0 = \mathcal{E}_0 \subset \mathcal{E}_1 \subset\ldots\subset \mathcal{E}_r = f^\ast\mathcal{E} \]
+wobei $\mathcal{E}_i$ vom Rang $i$ ist.
+\end{enumerate}
+\end{corollary}
+
+\begin{proposition}
+Sei $\mathcal{E}$ eine lokal freie Garbe vom Rang $r$ und $\mathcal{L}$ ein Geradenbündel auf $X$. Dann gilt:
+\[ s_i(\mathcal{E}\otimes\mathcal{L}) = \sum_{j=0}^i(-1)^{i-j} \binom{r-1+i}{r-1+j}s_j(\mathcal{E}) c_1(\mathcal{L})^{i-j} \]
+\end{proposition}
+
+\begin{definition}
+Das \textit{Segre-Polynom} einer lokal freien Garbe $\mathcal{E}$ einer Varietät $X$ ist definiert durch:
+\[ s_t(\mathcal{E}) = \sum_{i = 0}^\infty s_i(\mathcal{E})t^i \in\operatorname{End}(A_\bullet(X))[t] \]
+Es hat höchstens Grad $\dim(X)$. Die \textit{totale Segre-Klasse} ist:
+\[ s(\mathcal{E}) = s_t(\mathcal{E})|_{t = 1} \in\operatorname{End}(A_\bullet(X)) \]
+\end{definition}
+
+\begin{remark}
+Die Segre-Klassen $s_i(\mathcal{E})$ sind für $i>0$  nilpotent und liegen in einem kommutativen Teilring von $\operatorname{End}(A_\bullet(X))$. Da $s_0(\mathcal{E}) = \operatorname{id}$, folgt:
+\[ s_t(\mathcal{E}) \in\operatorname{End}(A_\bullet(X))[t]^\times \]
+\end{remark}
+
+\begin{definition}
+Sei $E\to X$ ein Vektorbündel auf $X$ und $\mathcal{E} = \Gamma(E)$. Das \textit{Chern-Polynom} von $E$ bzw. $\mathcal{E}$ ist definiert durch:
+\[ c_t(\mathcal{E}) = s_t(\mathcal{E})^{-1} \in\operatorname{End}(A_\bullet(X))[t]^\times \]
+Die Koeffizienten sind die \textit{Chern-Klassen}:   
+\[ c_t(\mathcal{E}) = \sum_{i =0}^\infty c_i(\mathcal{E}) t^i \]
+wobei $c_i(\mathcal{E})\cap - : A_q(X)\to A_{q-i}(X)$. Die \textit{totale Chern-Klasse} ist:
+\[ c(\mathcal{E}) = c_t(\mathcal{E})|_{t =1}\in\operatorname{End}(A_\bullet(X)) \]
+\end{definition}
+
+\begin{remark}
+\begin{enumerate}[(i)]
+\item Die zwei Definitionen von $c_1$ stimmen überein.
+\item Die Chern-Klassen liegen in denselben kommutativen Teilring wie die Segre-Klassen, kommutieren also mit Segre-Klassen.
+\item Explizite Formeln für Chern-Klassen sind gegeben durch:
+\begin{align*}
+c_0 &= 1\\
+c_1 &= -s_1\\
+c_2 &= s_1^2 - s_2\\
+&\vdots\\
+c_n &= -s_1c_{n-1}-s_2c_{n-2}-\ldots -s_{n-1}c_1-s_n\\
+&\vdots
+\end{align*}
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}
+Sei $\mathcal{E} = \Gamma(E)$ ein Vektorbündel auf einer Varietät $X$ vom Rang $r$ und sei $\alpha\in A_\bullet(X)$.
+\begin{enumerate}[(i)]
+\item $c_i(\mathcal{E})\cap \alpha = 0$ für $i > r$.
+\item $c_0(\mathcal{E})\cap \alpha = \alpha$
+\item Sei $\mathcal{F} = \Gamma(F)$ ein weiteres Vektorbündel auf $X$. Dann gilt für alle $i,j\geq 0$:
+\[ c_i(\mathcal{E})\cap (c_j(\mathcal{F}) \cap \alpha) = c_j(\mathcal{F}) \cap (c_i(\mathcal{E})\cap \alpha) \]
+\item Sei $f:Y\to X$ ein eigentlicher Morphismus und $\beta\in A_\bullet(Y)$. Dann gilt die Projektionsformel:
+\[ f_\ast(c_i(f^\ast\mathcal{E})\cap\beta) = c_i(\mathcal{E})\cap f_\ast\beta \]
+\item Sei $f:Y\to X$ ein flacher Morphismus. Dann gilt:
+\[ f^\ast(c_i(\mathcal{E})\cap \alpha) = c_i(f^\ast\mathcal{E})\cap f^\ast\alpha \]
+\item \textit{(Whitneysche Summenformel)} Für eine kurze exakte Folge 
+\[ 0\longrightarrow\mathcal{E}'\longrightarrow\mathcal{E}\longrightarrow \mathcal{E}''\longrightarrow 0 \]
+von lokal freien Garben auf $X$ gilt:
+\[ c_n(\mathcal{E}) = \sum_{i+j = n}c_i(\mathcal{E}')c_j(\mathcal{E}'') \]
+\item Für einen Cartier-Divisor $D$ auf $X$ gilt:
+\[ c_1(\mathcal{O}_X(D))\cap [X] = [D] \]
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+Chern-Klassen sind eindeutig durch die Eigenschaften (v), (vi) und (vii) bestimmt.
+\end{remark}
+
+\begin{proposition}
+Sei $X$ eine Varietät und $\mathcal{E}$ eine lokal freie Garbe vom Rang $r$ auf $X$. Sei $s\in\Gamma(X,\mathcal{E})$ und $Z=Z(s)\hookrightarrow X$ das geschlossene Unterschema wo $s$ verschwindet und $j:U=X\setminus Z\hookrightarrow X$ das offene Komplement. Dann gilt:
+\begin{enumerate}[(i)]
+\item Für alle $\alpha\in A_\bullet(X)$ gilt $c_r(\mathcal{E})\cap\alpha = \beta$, wobei $\beta$ einen Vertreter besitzt, dessen Träger in $Z$ liegt.
+\item $c_r(j^\ast\mathcal{E}) = 0$
+\item Sei $Z=\varnothing$ und $\mathcal{E}$ besitzt eine vollständige Filtrierung mit Geradenbündeln $\mathcal{L}_1,\ldots,\mathcal{L}_r$ als Quotienten. Dann gilt für alle $\alpha\in A_\bullet(X)$:
+\[ j^\ast\Big(\prod_{i=1}^r c_1(\mathcal{L}_i)\cap\alpha \Big) = 0 \]
+\end{enumerate}
+\end{proposition}
+
+\begin{theorem}
+Sei $p:E\to X$ ein Vektorbündel vom Rang $r$ und $q:P(E)\to X$ das assoziierte projektive Vektorbündel.
+\begin{enumerate}[(i)]
+\item Der flache Rückzug $p^\ast: A_d(X)\to A_{d+r}(E)$ ist ein Isomorphismus.
+\item Es gibt einen kanonischen Isomorphismus:
+\begin{align*}
+\vartheta_E: \bigoplus_{i=0}^{r-1}A_{d+i}(X) &\stackrel{\sim}{\longrightarrow} A_{d+r-1}(P(E))\\
+A_{d+i}(X)\ni \alpha_i &\longmapsto c_1(\mathcal{O}_E(1))^i\cap q^\ast(\alpha_i)
+\end{align*}
+\item Sei $\mathcal{E} = \Gamma(E)$. Die Chern-Klassen von $\mathcal{E}$ sind eindeutig durch die folgende Formeln bestimmt:
+\[ c_0(\mathcal{E}) = 1,\quad \sum_{i=0}^r c_1(\mathcal{O}_E(1))^i\cap q^\ast(c_{r-i}(\mathcal{E})\cap\alpha) = 0 \]
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Chern-Klassen sind eindeutig durch die Eigenschaft (iii) bestimmt.
+\end{remark}
+
+\begin{definition}
+Für ein Vektorbündel $p:E\to X$ vom Rang $r$ mit Nullschnitt $s:X\to E$ definieren wir den \textit{Gysin-Rückzug} entlang des Nullschnitts als:
+\[ s^\ast = (p^\ast)^{-1}: A_{d+r}(E)\to A_d(X) \]
+\end{definition}
+
 \end{document}
