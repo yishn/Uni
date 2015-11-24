@@ -11,3 +11,7 @@
 #LIT-AM
 
 *M.F. Atiyah, I.G. MacDonald:* Introduction to Commutative Algebra
+
+#LIT-SP
+
+[The Stacks Project](http://stacks.math.columbia.edu/)

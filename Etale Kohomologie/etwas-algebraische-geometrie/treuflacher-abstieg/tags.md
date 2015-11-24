@@ -109,3 +109,15 @@ wobei `\alpha: M'\to B\otimes_A M'`, `m'\mapsto 1\otimes m'` und `\beta: M'\to B
 >     \end{align*}
 
 Somit erhalten wir einen Isomorphismus der Differenzkerne. Nach Definition von `M` ist der Differenzkern oben gerade `M\otimes_A B\cong B\otimes_A M`. Der Differenzkern unten ist isomorph zu `M'` nach [~](#5-19). Dies zeigt die Aussage, nachdem wir alle nötigen Kompatibilitäten nachgeprüft haben.
+
+#5-25:Bemerkung
+
+Die genaue Bedingung an `f`, für das die Aussage von [~](#5-24) richtig ist, lautet: `f` ist universell injektiv. Außer für treuflache gilt dies z.B. auch, wenn `f` einen Schnitt als `A`-Modulhomomorphismus hat. Siehe z.B. [[SP]](#LIT-SP) Tag [08WE](http://stacks.math.columbia.edu/tag/08WE).
+
+#5-26:Theorem
+
+Sei `X` ein Schema und `(U_i\to X)_i` eine Überdeckung in `X_\fl`. Dann ist jedes Abstiegsdatum für quasikohärente Garben bzgl. `(U_i\to X)_i` effektiv. Weiterhin ist der Funktor von der Kategorie der quasikohärenten `\O_X`-Moduln in die Kategorie der Abstiegsdaten bzgl. `(U_i\to X)_i` volltreu.
+
+---
+
+Siehe z.B. [[SP]](#LIT-SP) Tag [023T](http://stacks.math.columbia.edu/tag/023T).
