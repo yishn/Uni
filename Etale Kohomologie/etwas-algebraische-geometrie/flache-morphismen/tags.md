@@ -107,9 +107,9 @@ Sind nämlich `g_1,g_2: C\to A` mit `fg_1 = fg_2` gegeben, so gilt `g_1 = g_2`, 
 Nun sei `Z` beliebig. Wir betrachten das Diagramm:
 
     \xymatrix{
-        Y\times_X Y \ar[d]^{\pr_2}_{\pr_1} \\
+        Y\times_X Y \ar@<-.5ex>[d]_{\pr_1} \ar@<.5ex>[d]^{\pr_2} \\
         Y = \Spec(B) \ar[d]_{f^\ast} \ar@/^/[rd]^-h \\
-        X = \Spec(A) \ar[r]^-{g_1}_-{g_2} & Z
+        X = \Spec(A) \ar@<-.5ex>[r]_-{g_2} \ar@<.5ex>[r]^-{g_1} & Z
     }
 
 Sind `g_1,g_2: X\to Z` mit `g_1f^\ast = g_2f^\ast` gegeben, so ist `g_1 = g_2` zu zeigen. Da `f` surjektiv ist, gilt `g_1 = g_2` als stetige Abbildungen und wir können `g_1 = g_2` als Morphismen lokal verifizieren. Zu `x\in X` wähle eine affine Umgebung `W\opensubset Z` von `g_1(x) = g_2(x)` und affine Umgebung `U\opensubset X` von `x` mit `g_1(U) = g_2(U)\subset W`. Dann ist `f^{\ast}{}^{-1}(U)\subset Y` affin und `f^\ast: f^\ast{}^{-1}(U)\to U` treuflach. Die Gleichheit folgt nun aus dem affinen Fall.

@@ -84,9 +84,9 @@ Setze `M` als den `A`-Untermodul `M = \{m'\in M'\mid 1\otimes m' = \varphi(m'\ot
 Wir haben den kanonischen Homomorphismus `B\otimes_A M \to M'`, `b\otimes m\mapsto bm` und zeigen, dass diese ein Isomorphismus ist und einen Isomorphismus auf den Abstiegsdaten induziert. Betrachte das Diagramm:
 
     \xymatrix{
-        M'\otimes_A B \ar@<-.5ex>[rr]^-{\phantom{\Huge\prod}\alpha\otimes\id\phantom{\Huge\prod}} \ar@<.5ex>[rr]_-{\phantom{\Large\prod}\beta\otimes\id\phantom{\Large\prod}} \ar[d]_\varphi &&
+        M'\otimes_A B \ar@<.5ex>[rr]^-{\alpha\otimes\id} \ar@<-.5ex>[rr]_-{\beta\otimes\id} \ar[d]_\varphi &&
         B\otimes_A M'\otimes_A B \ar[d]^{\varphi_{2,3}} \\
-        B\otimes_A M' \ar@<-.5ex>[rr]^-{\phantom{\Huge\prod}e_1 \otimes\id\phantom{\Huge\prod}} \ar@<.5ex>[rr]_-{\phantom{\Large\prod}e_2\otimes\id\phantom{\Large\prod}} &&
+        B\otimes_A M' \ar@<.5ex>[rr]^-{e_1 \otimes\id} \ar@<-.5ex>[rr]_-{e_2\otimes\id} &&
         B\otimes_A B\otimes_A M'
     }
 
