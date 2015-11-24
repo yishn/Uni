@@ -24,5 +24,6 @@
 * Etwas algebraische Geometrie
     * [(Quasi-)Endliche Morphismen](etwas-algebraische-geometrie/quasi-endliche-morphismen/)
     * [Flache Morphismen](etwas-algebraische-geometrie/flache-morphismen/)
+    * [Treuflacher Abstieg](etwas-algebraische-geometrie/treuflacher-abstieg/)
 * [Literatur](literatur/)
 * [Index](index/)
