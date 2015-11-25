@@ -121,3 +121,15 @@ Sei `X` ein Schema und `(U_i\to X)_i` eine Überdeckung in `X_\fl`. Dann ist jed
 ---
 
 Siehe z.B. [[SP]](#LIT-SP) Tag [023T](http://stacks.math.columbia.edu/tag/023T).
+
+#5-27:Theorem
+
+Sei `(U_i\to X)_i\in \Ub(X_\fl)` und `Y = \coprod_i U_i`. Die Vorgabe eines Schemas `Z`, affin über `X`, entspricht der Vorgabe eines Schemas `Z'`, affin über `Y`, zusammen mit einem Isomorphismus `\pr_1^\ast Z'\stackrel{\sim}{\to}\pr_2^\ast Z'` auf `Y\times_X Y` mit `\pr_{1,3}^\ast\varphi = \pr_{2,3}^\ast\varphi \circ \pr_{1,2}^\ast \varphi` auf `Y\times_X Y\times_X Y`.
+
+---
+
+Ein affiner Morphismus `f: Z\to X` ist durch eine quasikohärente Garbe von `\O_X`-Algebren gegeben.
+
+#5-28:Theorem
+
+Sei `f: Y\to X` treuflach und von endlichem Typ. Sei `g: X'\to X` ein Morphismus und `g_Y: Y' = X'\times_X Y\to Y` der Basiswechsel. Ist `g_Y` quasikompakt, oder separiert, oder von endlichem Typ, oder eignetlich, oder offen, oder endlich, oder quasiendlich, so gilt das auch für `g`.
