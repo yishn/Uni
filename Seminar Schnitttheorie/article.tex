@@ -50,7 +50,7 @@ Sei $X$ ein Schema.
 \begin{enumerate}[(i)]
 \item Das \textit{projektive Vektorbündel} $p: \mathbf{P}(\mathcal{E})\to X$ einer lokal freien Garbe $\mathcal{E}$ über $X$ ist gegeben durch:
 \[ \mathbf{P}(\mathcal{E}) = \mathbf{Proj}_X(\operatorname{Sym}^\bullet\mathcal{E})\to X \]
-Es gibt einen natürlichen surjektiven Morphismus $p^\ast\mathbb{E} \to \mathcal{O}_\mathbb{E}(1)$.
+Es gibt einen natürlichen surjektiven Morphismus $p^\ast\mathcal{E} \to \mathcal{O}_\mathcal{E}(1)$.
 \item Das \textit{projektive Vektorbündel} $p: P(E)\to X$ eines Vektorbündels $E\to X$ über $X$ ist gegeben durch:
 \[ P(E) = (E\setminus i_0(X))/\mathbb{G}_\text{m}\to X \]
 \end{enumerate}
@@ -138,18 +138,18 @@ injektiv und besitzt den Schnitt:
 Die Komposition des Schnitts mit $p^\ast$ ist gerade $s_0(E)\cap - = \operatorname{id}$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[\textit{Splitting-Prinzip}]
 Sei $\mathcal{E}$ eine lokal freie Garbe vom Rang $r$ auf einer Varietät $X$. Dann gibt es einen flachen projektiven Morphismus $f:Y\to X$, so dass:
 \begin{enumerate}[(i)]
 \item Die induzierte Abbildung $f^\ast:A_\bullet(X)\to A_\bullet(Y)$ ist injektiv.
 \item Die Garbe $f^\ast\mathcal{E}$ besitzt eine \textit{vollständige Filtration}, d.h. eine Filtration von lokal freien Garben
 \[ 0 = \mathcal{E}_0 \subset \mathcal{E}_1 \subset\ldots\subset \mathcal{E}_r = f^\ast\mathcal{E} \]
-wobei $\mathcal{E}_i$ vom Rang $i$ ist.
+so dass die Quotienten $\mathcal{E}_i/\mathcal{E}_{i-1}$ vom Rang $1$ sind.
 \end{enumerate}
 \end{corollary}
 
 \begin{proof}
-Betrachte das projektive Vektorbündel $f: \mathbf{P}(\mathcal{E})\to X$ und die natürliche surjektive Abbildung $f^\ast\mathcal{E}\to\mathcal{O}_\mathcal{E}(1)$. Alles folgt aus dem vorherigen Korollar.
+Betrachte das projektive Vektorbündel $f: \mathbf{P}(\mathcal{E})\to X$ und die natürliche surjektive Abbildung $f^\ast\mathcal{E}\to\mathcal{O}_\mathcal{E}(1)$. Nach dem vorherigen Korollar ist $f^\ast$ injektiv.
 \end{proof}
 
 \begin{proposition}
@@ -220,6 +220,28 @@ Chern-Klassen sind eindeutig durch die Eigenschaften (v), (vi) und (vii) bestimm
 
 \begin{proof}
 (ii) und (vii) sind klar. (iii), (iv) und (v) folgen aus den Aussagen für die Segre-Klassen, da Chern-Klassen Polynome in den Segre-Klassen sind.
+
+Für (i) sei zunächst $E\to X$ ein Geradenbündel und $\mathcal{E} = \Gamma(E)$. Dann ist $P(E)=X$ und $\mathcal{O}_E(1)=\mathcal{E}^\vee$ und:
+\[ s_i(\mathcal{E})\cap\alpha = c_1(\mathcal{O}_E(1))^i\cap\alpha = (-1)^ic_1(\mathcal{E})^i\cap\alpha \]
+Somit gilt für die totale Segre-Klasse:
+\[ s(\mathcal{E}) = \sum_{i\geq 0}(-1)^ic_1(\mathcal{E})^i = \frac{1}{1+c_1(\mathcal{E})}\in\operatorname{End}(A_\bullet(X)) \]
+Dies zeigt $c_i(\mathcal{E}) = 0$ für $i> \operatorname{rk}(\mathcal{E}) = 1$. Für den allgemeinen Fall betrachte das Splitting-Prinzip und die Whitneysche Summenformel. Die Whitneysche Summenformel ist äquivalent zu $c(\mathcal{E}')c(\mathcal{E}'') = c(\mathcal{E})\in\operatorname{End}(A_\bullet(X))$. 
+
+Für die Summenformel können wir nach dem Splitting-Prinzip und (v) annehmen, dass $\mathcal{E}'$ und $\mathcal{E}''$ vollständige Filtrationen besitzen. Diese induzieren eine vollständige Filtration auf $\mathcal{E}$ mit Geradenbündeln $\mathcal{L}_1,\ldots,\mathcal{L}_r$ als Quotienten und zu zeigen ist:
+\[ c(\mathcal{E}) = \prod_{i=1}^r c(\mathcal{L}_i) = \prod_{i=1}^r(1+c_1(\mathcal{L}_i)) \]
+Ist $\sigma_i\in\operatorname{End}(A_\bullet(X))$ das $i$-te elementar-symmetrische Polynom in $c_1(\mathcal{L}_1),\ldots,$ $c_1(\mathcal{L}_r)$. Dann ist die obige Gleichung äquivalent zu $c_i(\mathcal{E}) = \sigma_i$. 
+
+Sei $p:P(E)\to X$ das zugehörige projektive Vektorbündel und $\tilde{\sigma}_i$ das $i$-te elementar-symmetrische Polynom in $c_1(p^\ast\mathcal{L}_1),\ldots,c_1(p^\ast\mathcal{L}_r)$. Setze $\zeta = c_1(\mathcal{O}_E(1))$. Die natürliche Surjektion $p^\ast\mathcal{E}^\vee\to \mathcal{O}_E(1)$ liefert einen Schnitt $s\in\mathrm{H}^0(P(E), p^\ast\mathcal{E}\otimes \mathcal{O}_E(1))$, das nirgendwo verschwindet. Die Garbe $p^\ast\mathcal{E}\otimes\mathcal{O}_E(1)$ hat eine vollständige Filtrierung mit Quotienten $p^\ast\mathcal{L}_i\otimes\mathcal{O}_E(1)$ und der nachfolgende Satz zeigt:
+\[ 0 = \prod_{i=1}^{r}(c_1(\mathcal{O}_E(1)) + c_1(p^\ast\mathcal{L}_i) = \sum_{i=0}^r\zeta^{r-i}\tilde{\sigma}_i\]
+Für ein $\alpha\in A_\bullet(X)$ und $\nu\geq 1$ gilt mit $s_j(\mathcal{E}) = 0$ für $-r<j<0$:
+\begin{align*}
+0 &= p_\ast\Big(\zeta^{\nu-1}\sum_{i=0}^r\zeta^{r-i}\tilde{\sigma}_i\cap p^\ast\alpha\Big)\\
+&= p_\ast\Big(\sum_{i=0}^r \zeta^{r-1+\nu-i}\cap p^\ast(\sigma_i\cap\alpha)\Big)\\
+&= (s_\nu(\mathcal{E})\sigma_0 + s_{\nu-1}(\mathcal{E})\sigma_1 + \ldots + s_{\nu-r}(\mathcal{E})\sigma_r)\cap \alpha
+\end{align*}
+und somit:
+\[ s(\mathcal{E})(\sigma_0+\sigma_1+\ldots+\sigma_r) = s_0(\mathcal{E})\sigma_0 = 1 \]
+Dies zeigt $c_i(\mathcal{E}) = \sigma_i$.
 \end{proof}
 
 \begin{proposition}
@@ -227,10 +249,22 @@ Sei $X$ eine Varietät und $\mathcal{E}$ eine lokal freie Garbe vom Rang $r$ auf
 \begin{enumerate}[(i)]
 \item Für alle $\alpha\in A_\bullet(X)$ gilt $c_r(\mathcal{E})\cap\alpha = \beta$, wobei $\beta$ einen Vertreter besitzt, dessen Träger in $Z$ liegt.
 \item $c_r(j^\ast\mathcal{E}) = 0$
-\item Sei $Z=\varnothing$ und $\mathcal{E}$ besitzt eine vollständige Filtrierung mit Geradenbündeln $\mathcal{L}_1,\ldots,\mathcal{L}_r$ als Quotienten. Dann gilt für alle $\alpha\in A_\bullet(X)$:
-\[ j^\ast\Big(\prod_{i=1}^r c_1(\mathcal{L}_i)\cap\alpha \Big) = 0 \]
+\item Sei $Z=\varnothing$ und $\mathcal{E}$ besitze eine vollständige Filtrierung mit Geradenbündeln $\mathcal{L}_1,\ldots,\mathcal{L}_r$ als Quotienten. Dann gilt für alle $\alpha\in A_\bullet(X)$:
+\[ \prod_{i=1}^r c_1(\mathcal{L}_i)\cap\alpha = 0 \]
 \end{enumerate}
 \end{proposition}
+
+\begin{proof}
+(i) folgt aus (ii) durch Rückzug:
+\[ j^\ast(c_r(\mathcal{E})\cap\alpha) = c_r(j^\ast\mathcal{E})\cap j^\ast\alpha = 0 \]
+und Ausschneidung $A_\bullet(Z)\to A_\bullet(X) \stackrel{j^\ast}{\to} A_\bullet(U)\to 0$. (ii) folgt aus (iii) mit dem Splitting-Prinzip und der Whitney-Formel $c_r(\mathcal{E}) = \prod_{i=1}^rc_1(\mathcal{L}_i)$.
+
+(iii) zeigen wir per Induktion über $r$. Sei $s_r\in\mathrm{H}^0(X, \mathcal{L}_r)$ das Bild von $s$ unter $\mathcal{E}\to\mathcal{L}_r$, und sei $i_r: Z_r\hookrightarrow X$ die Nullstellenmenge von $s_r$, d.h. die Menge aller Punke $x\in X$, so dass das Bild von $s_r$ in $(\mathcal{L}_r)_x \otimes_{\mathcal{O}_{X,x}} k(x)$ verschwindet. Dann kann $\mathcal{L}_r$ durch einen Pseudo-Divisor $(\mathcal{L}_r,Z_r,s_r)$ dargestellt werden und nach Konstruktion gilt:
+\[ c_1(\mathcal{L}_r)\cap \alpha = i_{r,\ast}((\mathcal{L}_r, Z_r, s_r)\cdot\alpha) = i_{r,\ast}\beta \in i_{r,\ast}A_\bullet(Z_r)\subset A_\bullet(X) \]
+Nach der Induktionsvoraussetzung, angewendet auf $\mathcal{E}' = i_r^\ast \ker(\mathcal{E}\to\mathcal{L}_r)$, mit dem induzierten nicht-verschwindenden Schnitt $s|_{Z_r}\in\mathrm{H}^0(Z_r,\mathcal{E}')\subset \mathrm{H}^0(Z_r, i_r^\ast\mathcal{E})$ und Filtrationsquotienten $i^\ast_r\mathcal{L}_1,\ldots,i_r^\ast\mathcal{L}_{r-1}$, erhalten wir:
+\[ \prod_{i=1}^rc_1(\mathcal{L}_i)\cap\alpha = \prod_{i=1}^{r-1} c_1(\mathcal{L}_i)\cap (i_{r,\ast}\beta) = i_{r,\ast}\Big(\prod_{i=1}^{r-1} c_1(i_r^\ast\mathcal{L}_i)\cap\beta\Big) = 0 \]
+Der Induktionsanfang $r=1$ folgt aus der Tatsache, dass für den trivialen Geradenbündel $c_1(\mathcal{O}_X) = 0$ gilt.
+\end{proof}
 
 \begin{theorem}
 Sei $p:E\to X$ ein Vektorbündel vom Rang $r$ und $q:P(E)\to X$ das assoziierte projektive Vektorbündel.
@@ -245,6 +279,12 @@ A_{d+i}(X)\ni \alpha_i &\longmapsto c_1(\mathcal{O}_E(1))^i\cap q^\ast(\alpha_i)
 \[ c_0(\mathcal{E}) = 1,\quad \sum_{i=0}^r c_1(\mathcal{O}_E(1))^i\cap q^\ast(c_{r-i}(\mathcal{E})\cap\alpha) = 0 \]
 \end{enumerate}
 \end{theorem}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Die Surjektivität wurde im zweiten Vortrag bewiesen.
+\end{enumerate}
+\end{proof}
 
 \begin{definition}
 Für ein Vektorbündel $p:E\to X$ vom Rang $r$ mit Nullschnitt $s:X\to E$ definieren wir den \textit{Gysin-Homomorphismus} entlang $s$ als:
