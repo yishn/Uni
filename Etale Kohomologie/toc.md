@@ -27,5 +27,6 @@
     * [Treuflacher Abstieg](etwas-algebraische-geometrie/treuflacher-abstieg/)
 * Étale Morphismen
     * [Separabilität](etale-morphismen/separabilität/)
+    * [Unverzweigte Morphismen](etale-morphismen/unverzweigte-morphismen/)
 * [Literatur](literatur/)
 * [Index](index/)

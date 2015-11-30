@@ -89,4 +89,4 @@ Sei `f: X\to Y` ein Schema-Morphismus.
 2. `f` heißt *unverzweigt*, wenn er lokal von endlicher Präsentation ist und die Diagonale `\Delta: X\to X\times_Y X` eine offene Immersion ist.
 3. `f` heißt *étale*, wenn `f` flach und unverzweigt ist.
 
-Flache Morphismen lokal von endlicher Präsentation sind universell offen. Der *étale Situs* eines Schemas `X` ist gegeben durch alle étalen Morphismen `Y\to X` mit surjektiven Familien als Überdeckungen. ~~unverzweigt|Schema-Morphismus~~ ~~étale|Schema-Morphismus~~ ~~étale|Situs (Schema)~~
+Flache Morphismen lokal von endlicher Präsentation sind universell offen. Der *étale Situs* eines Schemas `X` ist gegeben durch alle étalen Morphismen `Y\to X` mit surjektiven Familien als Überdeckungen. ~~étale|Schema-Morphismus~~ ~~étale|Situs (Schema)~~
