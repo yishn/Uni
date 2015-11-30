@@ -25,5 +25,7 @@
     * [(Quasi-)Endliche Morphismen](etwas-algebraische-geometrie/quasi-endliche-morphismen/)
     * [Flache Morphismen](etwas-algebraische-geometrie/flache-morphismen/)
     * [Treuflacher Abstieg](etwas-algebraische-geometrie/treuflacher-abstieg/)
+* Étale Morphismen
+    * [Separabilität](etale-morphismen/separabilität/)
 * [Literatur](literatur/)
 * [Index](index/)
