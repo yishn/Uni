@@ -283,19 +283,38 @@ Der Induktionsanfang $r=1$ folgt aus der Tatsache, dass für den trivialen Gerad
 \begin{theorem}
 Sei $p:E\to X$ ein Vektorbündel vom Rang $r$ und $q:P(E)\to X$ das assoziierte projektive Vektorbündel.
 \begin{enumerate}[(i)]
-\item Der flache Rückzug $p^\ast: A_d(X)\to A_{d+r}(E)$ ist ein Isomorphismus.
+\item Der flache Rückzug $p^\ast: A_k(X)\to A_{k+r}(E)$ ist ein Isomorphismus.
 \item Es gibt einen kanonischen Isomorphismus:
 \begin{align*}
-\vartheta_E: \bigoplus_{i=0}^{r-1}A_{d+i}(X) &\stackrel{\sim}{\longrightarrow} A_{d+r-1}(P(E))\\
-A_{d+i}(X)\ni \alpha_i &\longmapsto c_1(\mathcal{O}_E(1))^i\cap q^\ast(\alpha_i)
+\theta_E: \bigoplus_{i=0}^{r-1}A_{k +i}(X) &\stackrel{\sim}{\longrightarrow} A_{k +r-1}(P(E))\\
+A_{k+i}(X)\ni \alpha_i &\longmapsto c_1(\mathcal{O}_E(1))^i\cap q^\ast\alpha_i
 \end{align*}
-\item Sei $\mathcal{E} = \Gamma(E)$. Die Chern-Klassen von $\mathcal{E}$ sind eindeutig durch die folgende Formeln bestimmt:
-\[ c_0(\mathcal{E}) = 1,\quad \sum_{i=0}^r c_1(\mathcal{O}_E(1))^i\cap q^\ast(c_{r-i}(\mathcal{E})\cap\alpha) = 0 \]
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-Die Surjektivität von $p^\ast$ wurde im zweiten Vortrag bewiesen.
+Die Surjektivität von $p^\ast$ wurde im zweiten Vortrag schon gezeigt. Um zu sehen, dass $\theta_E$ surjektiv ist, können wir per noethersche Induktion auf den Fall reduzieren, in dem $E=X\times\mathbf{A}^r$ trivial ist. Per Induktion über $r$, genügt es zu zeigen, dass $\theta_{E\oplus 1}$ surjektiv ist, wenn $\theta_E$ surjektiv ist. Der Fall $r=1$ ist trivial.
+
+Die Inklusion $E\hookrightarrow E\oplus 1$ induziert eine offene Einbettung $j: E\hookrightarrow P(E\oplus 1)$ mit Komplement $i: P(E)\hookrightarrow P(E\oplus 1)$ mit $\mathcal{O}_E(1)= i^\ast\mathcal{O}_{E\oplus 1}(1)$. Sei $q': P(E\oplus 1)\to X$ die Projektion. Es gilt:
+\[ j^\ast c_1(\mathcal{O}_{E\oplus 1}(1)) = 0 \]
+da $\mathcal{O}_{E\oplus 1}(1)$ die Idealgarbe zu $P(E)\hookrightarrow P(E\oplus 1)$ und daher trivial auf $E$ ist. Außerdem gilt:
+\[ i_\ast q^\ast\alpha = c_1(\mathcal{O}_{E\oplus 1}(1))\cap q'^\ast\alpha \]
+Ferner gilt:
+\begin{align*}
+i_\ast(c_1(\mathcal{O}_E(1))^\nu \cap q^\ast\alpha) &= i_\ast(c_1(i^\ast\mathcal{O}_{E\oplus 1}(1))^\nu \cap q^\ast\alpha)\\
+&= c_1(\mathcal{O}_{E\oplus 1}(1))^\nu\cap i_\ast q^\ast \alpha\\
+&= c_1(\mathcal{O}_{E\oplus 1}(1))^{\nu+1}\cap q'^\ast\alpha
+\end{align*}
+Es kommutiert daher:
+\[\begin{tikzcd}
+& A_{k + r}(P(E)) \rar["i_\ast"] & A_{k + r}(P(E\oplus 1)) \rar["j^\ast"] & A_{k + r}(E)\rar & 0\\
+0 \rar & \displaystyle\bigoplus_{i=1}^r A_{k + i}(X) \rar \uar["\theta_E{[1]}"] & \displaystyle\bigoplus_{i=0}^r A_{k + i}(X) \uar["\theta_{E\oplus 1}"] \rar["\operatorname{pr}_0"']  & A_k(X) \rar\uar["p^\ast"'] & 0
+\end{tikzcd}\]
+wobei die obere Zeile wegen der Ausschneidungssequenz exakt ist. Nach dem Fünfer-Lemma folgt (i) aus (ii). Per Diagrammjagd sehen wir die Surjektivität von $\theta_E[1]$.
+
+Für die Injektivität sei $\theta_E(\alpha_0,\ldots,\alpha_{r-1})=0$ und $\nu$ der größte Index mit $\alpha_\nu\neq 0$. Dann gilt:
+\[ 0 = q_\ast(c_1(\mathcal{O}_E(1))^{r-1-\nu}\cap \theta_E(\alpha_0,\ldots,\alpha_{r-1})) = \sum_{i=0}^\nu s_{i-\nu}(\mathcal{E})\cap\alpha_i = \alpha_\nu \]
+ein Widerspruch.
 \end{proof}
 
 \begin{definition}
