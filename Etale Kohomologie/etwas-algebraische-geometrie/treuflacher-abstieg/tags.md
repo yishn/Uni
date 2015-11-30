@@ -133,3 +133,30 @@ Ein affiner Morphismus `f: Z\to X` ist durch eine quasikohärente Garbe von `\O_
 #5-28:Theorem
 
 Sei `f: Y\to X` treuflach und von endlichem Typ. Sei `g: X'\to X` ein Morphismus und `g_Y: Y' = X'\times_X Y\to Y` der Basiswechsel. Ist `g_Y` quasikompakt, oder separiert, oder von endlichem Typ, oder eignetlich, oder offen, oder endlich, oder quasiendlich, so gilt das auch für `g`.
+
+#5-29:Theorem
+
+Sei `f: Y\to X` treuflach. Ist `Y` ganz, normal oder regulär, so auch `X`.
+
+---
+
+1. Ein Schema `X` ist genau dann ganz, wenn `X` zusammenhängend und `\O_{X,x}` nullteilerfrei für alle `x\in X` ist. Ist `Y` zusammenhängend, so auch `X`, da `f` surjektiv ist. Wir haben eine Inklusion `\O_{X,f(y)}\hookrightarrow \O_{Y,y}` für alle `y\in Y`, weshalb `\O_{X,f(y)}` auch nullteilerfrei ist.
+
+2. Sei o.B.d.A. `X,Y` affin, d.h. wir haben einen treuflachen Ringhomomorphismus `f: A\to B` mit `B` normal und nullteilerfrei. Zu zeigen ist, dass `A` auch normal ist. Zunächst ist `A\subset B` auch nullteilerfrei. Nun sei `\frac{x}{y}\in \Quot(A)` ganz über `A`. Dann gilt `\frac{x}{y}\in B`, d.h. `x\in yB`. Daher wird `\cdot x: A\to A/yA` nach `-\otimes_A B` zur Nullabbildung, also ist `\cdot x` schon die Nullabbildung, da `f` treuflach ist. Somit gilt `\frac{x}{y}\in A`.
+
+3. Ein Schema `X` ist nach Serre genau dann regulär, wenn für alle `x\in X` ein `n\in\N` existiert, so dass für alle `m>n` und alle `\O_{X,x}`-Moduln `M,N` gilt:
+
+        \Tor_n^{\O_{X,x}}(M, N) = 0
+
+Nun gilt für `x = f(y)`:
+
+        \begin{align*}
+            \Tor_n^{\O_{X,x}}(M, N) = 0 &\iff \Tor_n^{\O_{X,x}}(M,N)\otimes_{\O_{X,x}} \O_{Y,y} = 0 \\
+                                        &\iff \Tor_n^{\O_{Y,y}}(M\otimes_{\O_{X,x}} \O_{Y,y}, N\otimes_{\O_{X,x}} \O_{Y,y}) = 0
+        \end{align*}
+
+Da `Y` regulär ist, gilt die hintere Aussage für `n > \dim(\O_{Y,y})`.
+
+#5-30:Theorem
+
+Sei `X` quasikompakt, also noethersch, und `f: Y\to X` treuflach und lokal von endlichem Typ. Dann existiert ein affines Schema `X'`, ein treuflacher, quasiendlicher Morphismus `h: X'\to X` und ein `X`-Morphismus `g: X'\to Y`.
