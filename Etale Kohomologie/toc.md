@@ -28,5 +28,6 @@
 * Étale Morphismen
     * [Separabilität](etale-morphismen/separabilität/)
     * [Unverzweigte Morphismen](etale-morphismen/unverzweigte-morphismen/)
+    * [Étale Morphismen](etale-morphismen/etale-morphismen/)
 * [Literatur](literatur/)
 * [Index](index/)
