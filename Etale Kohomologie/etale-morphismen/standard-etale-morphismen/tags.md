@@ -85,3 +85,13 @@ Sei `Y\to X` étale. Dann gilt:
 1. Für alle `y\in Y` gilt `\dim\O_{Y,y} = \dim \O_{X,f(y)}`.
 2. Ist `X` normal, so auch `Y`.
 3. Ist `X` regulär, so auch `Y`.
+
+---
+
+1. Sei o.B.d.A. `X = \Spec(A)` affin und lokal, `Y = \Spec(B_b)` mit einer endlichen `A`-Algebra `B`, und `\mathfrak{q}\subset B` ein Primideal über dem Maximalideal `\mathfrak{p}\subset A`. Da `A\to B_\mathfrak{q}` treuflach ist, ist `\Spec(B_\mathfrak{q})\to\Spec(A)` surjektiv. Daher gilt `\dim(B_\mathfrak{q})\geq\dim(A)`.
+
+   Andererseits gilt `\dim(B_\mathfrak{q})\leq\dim(B) = \dim(A)`, da `A\subset B` endlich ist.
+
+2. Siehe EGA IV-2, 6.5.4.
+
+3. Es gilt `\dim\O_{Y,y} = \dim\O_{X,f(y)} = n` nach (i). `\O_{X,f(y)}` ist regulär, also wird `\mathfrak{m}_{X,f(y)}` durch `n` Elemente erzeugt und `\mathfrak{m}_{Y,y} = \mathfrak{m}_{X,f(y)}\O_{Y,y}`. Daher wird `\mathfrak{m}_{Y,y}` durch `n` Elemente erzeugt, weshalb `\O_{Y,y}` regulär ist.
