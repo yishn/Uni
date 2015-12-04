@@ -29,3 +29,59 @@ Sei `B = A[b_1,\ldots,b_n]` und `\gamma\in C\setminus\mathfrak{q}` ein gemeinsam
 Da `B\to B_\mathfrak{p}` injektiv ist, faktorisiert `\tilde{f}` über `f: B\to C_\gamma`. Nun sei `C = A[c_1,\ldots,c_n]` und `\beta\in B\setminus\mathfrak{p}` ein gemeinsamer Nenner von `\varphi^{-1}(c_1),\ldots,\varphi^{-1}(c_n)`. Dann ist der von `f` induzierte Homomorphismus `B_\beta\to C_{\gamma f(\beta)}` surjektiv und injektiv. Dies zeigt (i).
 
 Die Eindeutigkeitsaussagte in (ii) folgt direkt aus der Injektion von `B\to B_\mathfrak{p}` und `C\to C_\mathfrak{q}`.
+
+#6-17-INTRO
+
+Sei `k` ein Körper und `P\in k[T]` normiert. Dann ist die `k`-Algebra `k[T]/(P)` genau dann étale, wenn `P` separabel ist.
+
+#6-17:Definition
+
+Sei `A` ein Ring und `P\in A[T]` normiert. `P` heißt *separabel*, wenn `(P, P') = A[T]` gilt. ~~separabel|Polynom~~
+
+#6-18:Lemma
+
+Sei `A` ein Ring und `P\in A[T]` normiert. `A\to A[T]/(P)` ist genau dann étale, wenn `P` separabel ist.
+
+---
+
+Da `P` normiert ist, ist `A[T]/(P)\cong A^{\deg(P)}` frei, also insbesondere flach. Nun gilt:
+
+    P \text{ separabel} \iff (P, P') = A[T] \iff P'\in (A[T]/(P))^\times
+
+Letzteres gilt genau dann, wenn `P'\in (k(\mathfrak{p})[T]/(P))^\times` für alle Primideale `\mathfrak{p}\subset A` gilt. Es gilt:
+
+    P'\in (k(\mathfrak{p})[T]/(P))^\times \iff P \text{ separabel in } k(\mathfrak{p})[T]
+
+Somit ist `P` genau dann separabel, wenn `k(\mathfrak{p})\to A[T]/(P)\otimes_A k(\mathfrak{p})` für alle Primideale `\mathfrak{p}\subset A` étale ist. Dies ist nun äquivalent dazu, dass `A\to B` unverzweigt ist.
+
+#6-19:Korollar
+
+Sei `P\in A[T]` normiert und `b\in B = A[T]/(P)`, so dass `P'\in B_b^\times`. Dann ist `A\to B_b` étale.
+
+#6-20:Definition
+
+Ein Morphismus wie in [~](#6-19) heißt *standard-étale*. ~~standard-étale|Schema-Morphismus~~
+
+#6-21:Theorem
+
+Sei `f: Y\to X` étale in einer offenen Umgebung von `y\in Y`. Dann existieren offene Umgebungen `V` und `U` von `y` und `f(y)`, so dass `f|_V: V\to U` ein standard-étaler Morphismus ist.
+
+#6-20-1:Theorem
+
+Sei `f: Y\to X` unverzweigt in einer offenen Umgebung von `y\in Y`. Dann existieren offen affine Umgebungen `V` und `U` von `y` und `f(y)`, so dass `f|_V: V\to U` die Komposition einer abgeschlossenen Einbettung und eines standard-étalen Morphismus' ist.
+
+#6-21-1:Korollar
+
+Ein Morphismus `f: Y\to X` ist genau dann étale, wenn für jeden Punkt `y\in Y` eine affin offene Umgebung `y\in V =\Spec(C)` und eine affin offene Umgebung `f(y)\in U = \Spec(A)` existieren, so dass:
+
+    C = A[T_1,\ldots,T_n]/(P_1,\ldots,P_n),\qquad \det \Big(\frac{\partial P_i}{\partial T_j}\Big)_{i,j}\in C^\times
+
+Man kann `n = 2` wählen.
+
+#6-22:Satz
+
+Sei `Y\to X` étale. Dann gilt:
+
+1. Für alle `y\in Y` gilt `\dim\O_{Y,y} = \dim \O_{X,f(y)}`.
+2. Ist `X` normal, so auch `Y`.
+3. Ist `X` regulär, so auch `Y`.
