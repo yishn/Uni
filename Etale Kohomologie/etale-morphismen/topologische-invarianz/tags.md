@@ -58,4 +58,4 @@ Homöomorphismen, so ist `p_0` genau dann ein Isomorphismus, wenn `p` ein Isomor
 >
 > `f` hat daher einen Schnitt.
 
-Es bleibt noch die wesentliche Surjektivität des Funktors zu zeigen. Wegen der Eindeutigkeit genügt es, dies lokal zu zeigen. Sei `A\to A_0 = A/I` ein Ringhomomorphismus und `C_0 = (A_0[T]/F_0)_{b_0}` eine standard-étale `A_0`-Algebra. Nun wähle ein `F\in A[T]` über `F_0` und ein beliebiges Urbild `b\in A[T]/F\to A_0[T]/F_0` von `b_0`.
+Dies zeigt, dass der Funktor volltreu ist. Es bleibt noch die wesentliche Surjektivität des Funktors zu zeigen. Wegen der Eindeutigkeit genügt es, dies lokal zu zeigen. Sei `A\to A_0 = A/I` ein Ringhomomorphismus und `C_0 = (A_0[T]/F_0)_{b_0}` eine standard-étale `A_0`-Algebra. Nun wähle ein `F\in A[T]` über `F_0` und ein beliebiges Urbild `b\in A[T]/F\to A_0[T]/F_0` von `b_0`.
