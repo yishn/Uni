@@ -30,5 +30,6 @@
     * [Unverzweigte Morphismen](etale-morphismen/unverzweigte-morphismen/)
     * [Étale Morphismen](etale-morphismen/etale-morphismen/)
     * [Standard-étale Morphismen](etale-morphismen/standard-etale-morphismen/)
+    * [Topologische Invarianz](etale-morphismen/topologische-invarianz/)
 * [Literatur](literatur/)
 * [Index](index/)
