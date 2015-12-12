@@ -31,5 +31,6 @@
     * [Étale Morphismen](etale-morphismen/etale-morphismen/)
     * [Standard-étale Morphismen](etale-morphismen/standard-etale-morphismen/)
     * [Topologische Invarianz](etale-morphismen/topologische-invarianz/)
+    * [In normale Schemata](etale-morphismen/in-normale-schemata/)
 * [Literatur](literatur/)
 * [Index](index/)
