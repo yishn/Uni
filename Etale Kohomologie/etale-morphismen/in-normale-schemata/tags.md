@@ -35,3 +35,37 @@ Es folgt die Injektivität von `B_\mathfrak{q}\to \O_{Y,y}`. Da `f'` eine abgesc
 Sei `X` ein zusammenhängendes, normales Schema und `K = k(X)` sein Funktionenkörper. Sei `L/K` eine endlich separable Erweiterung von `K` und `X_L` die Normalisierung von `X` in `L`. Desweiteren sei `U\opensubset X_L` ein offenes Unterschema, welches disjunkt zu `\supp(\Omega_{X_L/X})` ist. Dann ist `U\to X` étale.
 
 Umgekehrt ist jeder separierte, étale Morphismus `Y\to X` von der Form `Y = \coprod_i U_i\to X`, wobei die `U_i\to X` offene Unterschemata sind, welche disjunkt zu `\supp(\Omega_{X_L/X})` ist.
+
+#6-30-INTRO
+
+Sei `X` ein zusammenhängendes, normales Schema mit Funktionenkörper `K`. Sei `L/K` eine endliche Galoiserweiterung und `Y = X_L` die Normalisierung von `X` in `L`. Dann wirkt `G = \Gal(L/K)` von rechts auf `Y`. Für einen Zwischenkörper `L/K'/K` sei `X_{K'}` die Normalisierung von `X` in `K'`.
+
+#6-30:Definition
+
+Für `y\in Y` heißt
+
+    Z_y = \{\sigma\in G\mid y\sigma = y\}
+
+die *Zerlegungsgruppe* von `y` und
+
+    T_y = \{\sigma\in Z_y\mid \overline{\sigma}: k(y)\to k(y),\ \overline{\sigma} = \id_{k(y)} \}
+
+die *Trägheitsgruppe* von `y`. ~~Zerlegungsgruppe~~ ~~Trägheitsgruppe~~
+
+#6-31:Satz
+
+1. Für `x\in X` wirkt `G` transitiv auf der Menge der Punkte in `Y` über `x`.
+2. Sei `y\in Y`, `y'` das Bild von `y` in `X_{L^{Z_y}}` und `x` das Bild von `y` in `X`. Dann ist `y` der einzige Punkt von `Y` über `y'` und es gilt `k(x)\cong k(y')`.
+3. `Y\to X` ist genau dann étale bei `y\in Y`, wenn `T_y = 1` gilt.
+
+#6-32:Theorem
+
+*(Reinheitssatz von Zariski-Nagata)* ~~Reinheitssatz~~ Sei `X` ein reguläres, zusammenhängendes Schema und `X_L` die Normalisierung von `X` in einer endlich separablen Erweiterung `L/K = k(X)`. Sei `U_L\opensubset X_L` die maximal offene Teilmenge, so dass die Projektion `U_L\to X` étale ist. Dann ist `R_{X_L\setminus X} = X_L\setminus U_L`, der sog. *Verzweigungsort*, ein abgeschlossenes Unterschema, rein von Kodimension `1`. ~~Verzweigungsort~~
+
+#6-33:Theorem
+
+Sei `f: Y\to X` treuflach und endlich, ohne Normalitätsannahme. Dann ist der Verzweigungsort in `Y` rein von Kodimension `1`.
+
+#6-34:Bemerkung
+
+In kleinen Dimensionen folgt [~](#6-32) aus [~](#6-33). Ist nämlich `X` regulär und `\dim(X)\leq 2`, so ist `X_L\to X` treuflach.
