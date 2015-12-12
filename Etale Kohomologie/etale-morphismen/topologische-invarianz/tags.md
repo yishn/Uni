@@ -25,7 +25,7 @@ Morphismen mit der Eigenschaft in [~](#6-23) heißen *formal étale*. ~~formal �
 
 #6-25:Theorem
 
-*(Topologischer Invarianz étaler Morphismen)* Sei `X_0\subset X` ein abgeschlossenes Unterschema, das durch eine nilpotente Idealgarbe gegeben ist. Dann ist der Funktor `(Y\to X)\mapsto Y_0 = Y\times_X X_0` eine Äquivalenz zwischen der Kategorie der étalen `X`-Schemata und der étalen `X_0`-Schemata.
+*(Topologische Invarianz étaler Morphismen)* Sei `X_0\subset X` ein abgeschlossenes Unterschema, das durch eine nilpotente Idealgarbe gegeben ist. Dann ist der Funktor `(Y\to X)\mapsto Y_0 = Y\times_X X_0` eine Äquivalenz zwischen der Kategorie der étalen `X`-Schemata und der étalen `X_0`-Schemata.
 
 ---
 
