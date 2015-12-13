@@ -52,7 +52,7 @@ Es gilt `f\circ s = \id`, daher ist `s` étale nach [~](#6-12). Betrachte das ka
 
     \xymatrix{
         X \ar[r]^-{\Gamma_s} \ar[d]_s & X\times_X Y \ar[d]_{(s, \id)} \ar[r]^-{\sim} & Y \ar[ld]^-{(sf,\id)} \\
-        Y \ar[r]_{\Delta_f} & Y\times_X Y
+        Y \ar[r]_-{\Delta_f} & Y\times_X Y
     }
 
 Da `f` unverzweigt ist, ist `\Delta_f` und somit auch `\Gamma_s = s` eine offene Immersion. Ist `f` separiert, so ist `\Delta_f` und damit auch `\Gamma_s = s` eine abgeschlossene Immersion.
