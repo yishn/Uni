@@ -17,7 +17,7 @@ Sei `(A,\mathfrak{m},k)` ein lokaler Ring. Es seien `g,h\in A[T]` normiert und `
 
 #6-36:Definition
 
-Ein lokaler Ring `(A, \mathfrak{m},k)` heißt *henselsch*, wenn gilt: Ist `f\in A[T]` normiert und es gilt `\overline{f} = g_0\cdot h_0` mit normierten, teilerfremden Polynome `g_0,h_0\in k[T]`, so existieren normierte `g,h\in A[T]` mit `f = g\cdot h` und `\overline{g} = g_0`, `\overline{h} = h_0`.
+Ein lokaler Ring `(A, \mathfrak{m},k)` heißt *henselsch*, wenn gilt: Ist `f\in A[T]` normiert und es gilt `\overline{f} = g_0\cdot h_0` mit normierten, teilerfremden Polynome `g_0,h_0\in k[T]`, so existieren normierte `g,h\in A[T]` mit `f = g\cdot h` und `\overline{g} = g_0`, `\overline{h} = h_0`. ~~henselsch|Ring~~
 
 #6-37:Bemerkung
 
