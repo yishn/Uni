@@ -60,7 +60,7 @@ die *Trägheitsgruppe* von `y`. ~~Zerlegungsgruppe~~ ~~Trägheitsgruppe~~
 
 #6-32:Theorem
 
-*(Reinheitssatz von Zariski-Nagata)* ~~Reinheitssatz~~ Sei `X` ein reguläres, zusammenhängendes Schema und `X_L` die Normalisierung von `X` in einer endlich separablen Erweiterung `L/K = k(X)`. Sei `U_L\opensubset X_L` die maximal offene Teilmenge, so dass die Projektion `U_L\to X` étale ist. Dann ist `R_{X_L\setminus X} = X_L\setminus U_L`, der sog. *Verzweigungsort*, ein abgeschlossenes Unterschema, rein von Kodimension `1`. ~~Verzweigungsort~~
+*(Reinheitssatz von Zariski-Nagata)* ~~Reinheitssatz~~ Sei `X` ein reguläres, zusammenhängendes Schema und `X_L` die Normalisierung von `X` in einer endlich separablen Erweiterung `L/K = k(X)`. Sei `U_L\opensubset X_L` die maximal offene Teilmenge, so dass die Projektion `U_L\to X` étale ist. Dann ist `R_{X_L/X} = X_L\setminus U_L`, der sog. *Verzweigungsort*, ein abgeschlossenes Unterschema, rein von Kodimension `1`. ~~Verzweigungsort~~
 
 #6-33:Theorem
 
