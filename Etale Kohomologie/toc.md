@@ -32,5 +32,6 @@
     * [Standard-étale Morphismen](etale-morphismen/standard-etale-morphismen/)
     * [Topologische Invarianz](etale-morphismen/topologische-invarianz/)
     * [In normale Schemata](etale-morphismen/in-normale-schemata/)
+    * [Henselsche Ringe](etale-morphismen/henselsche-ringe/)
 * [Literatur](literatur/)
 * [Index](index/)
