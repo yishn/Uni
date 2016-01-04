@@ -92,4 +92,4 @@ Die Ganzabgeschlossenheit überträgt sich nicht von `A` auf `A^\hens`.
 
 #6-53:Satz
 
-Sei `A` exzellent, z.B. als Lokalisierung einer endlich erzeugten Algebra über `\Z` oder einem Körper. Dann ist `A^\hens` die Lokalisierung des Ganzabgschlusses `A'` von `A` in `\widehat{A}` bei `\mathfrak{m}' = \widehat{m}\cap A'`.
+Sei `A` exzellent, z.B. als Lokalisierung einer endlich erzeugten Algebra über `\Z` oder einem Körper. Dann ist `A^\hens` die Lokalisierung des Ganzabschlusses `A'` von `A` in `\widehat{A}` bei `\mathfrak{m}' = \widehat{m}\cap A'`.
