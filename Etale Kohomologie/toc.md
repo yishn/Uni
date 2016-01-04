@@ -34,5 +34,6 @@
     * [In normale Schemata](etale-morphismen/in-normale-schemata/)
 * Henselsche Ringe
     * [Definitionen](henselsche-ringe/definitionen/)
+    * [Henselisierung](henselsche-ringe/henselisierung/)
 * [Literatur](literatur/)
 * [Index](index/)
