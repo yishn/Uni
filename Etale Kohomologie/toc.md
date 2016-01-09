@@ -35,5 +35,7 @@
 * Henselsche Ringe
     * [Definitionen](henselsche-ringe/definitionen/)
     * [Henselisierung](henselsche-ringe/henselisierung/)
+* Étale Kohomologie
+    * [Étale Garben](etale-kohomologie/etale-garben/)
 * [Literatur](literatur/)
 * [Index](index/)
