@@ -32,3 +32,66 @@ Wichtige Garben:
 ---
 
 Dies ist eine Umformulierung von [~](#5-26).
+
+#7-2:Definition
+
+Sei `K` ein separabel abgeschlossener Körper und `\overline{x}: \Spec(K)\to X` ein geometrischer Punkt. Für eine Prägarbe `F\in\PrSh(X)` von Mengen oder abelsche Gruppen definieren wir den *Halm* von `F` in `\overline{x}` wie folgt: ~~Halm|geometrischer Punkt~~
+
+    F_{\overline{x}} = \colim_U F(U)
+
+wobei der Kolimes über alle étalen Umgebungen `U` von `\overline{x}` geht.
+
+#7-3:Beispiel
+
+Sei `\O_{X,\overline{x}}^\shens` die strikte Henselisierung von `\O_{X,\overline{x}}` bzgl. `k(x)\hookrightarrow K`, wobei `x` das Bild von `\overline{x}` in `X` bezeichnet. `\O_{X,\overline{x}}^\shens` heißt *strikte Henselisierung* von `X` in `\overline{x}`. Dann gilt: ~~strikt|Henselisierung (geom. Punkt)~~
+
+    (\mathbb{G}_\text{a})_\overline{x} = \mathbb{G}_\text{a}(\Spec \O_{X,\overline{x}}^\shens) = \O_{X,\overline{x}}^\shens
+    (\mathbb{G}_\text{m})_\overline{x} = \mathbb{G}_\text{m}(\Spec \O_{X,\overline{x}}^\shens) = (\O_{X,\overline{x}}^\shens)^\times
+
+Dehnt man eine Prägarbe `F` auf `X_\et` durch die Regel `F(\lim U_i) = \colim F(U_i)` aus, so gilt tautologisch `F_{\overline{x}} = F(\Spec\O_{X,\overline{x}}^\shens)`.
+
+#7-4:Lemma
+
+Eine Garbe `F\in\Sh(X_\et)` ist genau dann gleich Null, wenn `F_{\overline{x}} = 0` für jeden geometrischen Punkt `\overline{x}` von `X` gilt.
+
+---
+
+Sei `F_\overline{x} = 0` für alle geometrischen Punkte `\overline{x}` und `a\in F(U)` für `U\to X` étale. Zu jedem Punkt `u\in U` wählen wir einen geometrischen Punkt `\overline{x}: \Spec(K)\to U` über `u`, den wir über `U\to X` auch als geometrischen Punkt von `X` auffassen. Es gilt:
+
+    F_\overline{x} = \colim_V F(V)
+
+Mit `V` liegt auch `V\times_X U` in diesem System. Somit liegen die `V`, die über `U` faktorisieren final. Wegen `F_\overline{x} = 0` existiert ein `V` mit kommutativem Diagramm
+
+    \xymatrix{
+        \Spec(K) \ar[r]\ar[rrd]_{\overline{x}} & V \ar[r] & U \ar[d] \\
+        & & X
+    }
+
+und `a|_V = 0`. Die wechselnden `V` überdecken `U`, daher folgt `a = 0`.
+
+#7-5:Satz
+
+Ein Schema-Morphismus `f: Y\to X` liefert mit `(U\to X)\mapsto (U\times_X Y\to Y)` einen Situs-Morphismus `f: Y_\et\to X_\et`. Der assoziierte Funktor `f^\ast: \Sh_\Ab(X_\et)\to\Sh_\Ab(Y_\et)` ist exakt.
+
+---
+
+Dies folgt aus [~](#3-28) und dem nachfolgenden Lemma.
+
+#7-6:Lemma
+
+`X_\et` besitzt endliche Limiten.
+
+---
+
+Offenbar hat `X_\et` Faserprodukte. Daher bleibt die Existenz von Differenzkernen zu zeigen. In `\Schemata/X` existieren Differenzkerne: Für `f,g: U\to V` betrachte das Faserprodukt `W` im folgenden kartesischen Quadrat:
+
+    \xymatrix{
+        W \ar[r]\ar[d] & U \ar[d]^-{\Gamma_g} \\
+        U \ar[r]_-{\Gamma_f} & U\times_X V
+    }
+
+Beachte, dass beide Pfeile `W\to U` automatisch dieselben sind. Seien `U,V\in\Kat(X_\et)`. Dann ist `\Gamma_f` ein Morphismus in `X_\et`, also étale nach [~](#6-12). Somit ist `W\to U` als Basiswechsel étale und daher auch `W\to X`.
+
+#7-7:Bemerkung
+
+[~](#7-5) gilt auch für `X_\fl`.
