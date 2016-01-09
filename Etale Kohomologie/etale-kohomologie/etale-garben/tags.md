@@ -45,7 +45,7 @@ wobei der Kolimes über alle étalen Umgebungen `U` von `\overline{x}` geht.
 
 Sei `\O_{X,\overline{x}}^\shens` die strikte Henselisierung von `\O_{X,\overline{x}}` bzgl. `k(x)\hookrightarrow K`, wobei `x` das Bild von `\overline{x}` in `X` bezeichnet. `\O_{X,\overline{x}}^\shens` heißt *strikte Henselisierung* von `X` in `\overline{x}`. Dann gilt: ~~strikt|Henselisierung (geom. Punkt)~~
 
-    (\mathbb{G}_\text{a})_\overline{x} = \mathbb{G}_\text{a}(\Spec \O_{X,\overline{x}}^\shens) = \O_{X,\overline{x}}^\shens
+    (\mathbb{G}_\text{a})_\overline{x} = \mathbb{G}_\text{a}(\Spec \O_{X,\overline{x}}^\shens) = \O_{X,\overline{x}}^\shens \\
     (\mathbb{G}_\text{m})_\overline{x} = \mathbb{G}_\text{m}(\Spec \O_{X,\overline{x}}^\shens) = (\O_{X,\overline{x}}^\shens)^\times
 
 Dehnt man eine Prägarbe `F` auf `X_\et` durch die Regel `F(\lim U_i) = \colim F(U_i)` aus, so gilt tautologisch `F_{\overline{x}} = F(\Spec\O_{X,\overline{x}}^\shens)`.
