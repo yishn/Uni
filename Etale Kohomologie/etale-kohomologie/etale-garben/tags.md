@@ -95,3 +95,44 @@ Beachte, dass beide Pfeile `W\to U` automatisch dieselben sind. Seien `U,V\in\Ka
 #7-7:Bemerkung
 
 [~](#7-5) gilt auch für `X_\fl`.
+
+#7-8:Lemma
+
+Sei `\overline{x}: \Spec(K)\to X` ein geometrischer Punkt.
+
+1. Der Funktor `\Sh(X_\et)\to \Ab`, `F\mapsto F_\overline{x}` ist exakt.
+2. Für eine Prägarbe `F` ist die natürliche Abbildung `F_\overline{x}\to (F^\#)_\overline{x}` ein Isomorphismus.
+
+---
+
+1. Es gilt:
+
+        \Sh(\Spec(K)_\et) = \PrSh(\Spec(K)_\et) = \Ab
+
+    und `F_\overline{x} = \overline{x}^\ast(F) = \overline{x}_\text{P}^\ast(F)`. [~](#7-5) zeigt die Behauptung.
+
+2. Aussage folgt aus [~](#3-27) mit:
+
+        F^\#_\overline{x} = \overline{x}^\ast(F^\#) = \overline{x}_\text{P}F = \overline{x}^\ast(F) = F_\overline{x}
+
+#7-9:Satz
+
+Eine Folge `0\to F'\to F\to F''\to 0` von Garben abelscher Gruppen auf `X_\et` ist genau dann exakt, wenn für jeden geometrischen Punkt `\overline{x}` von `X` die Folge abelscher Gruppen `0\to F'_\overline{x}\to F_\overline{x}\to F''_\overline{x}\to 0` exakt ist.
+
+---
+
+Die Notwendigkeit folgt aus [~](#7-8) (i). Ist nun die Folge halmweise exakt, so haben die Kohomologieprägarben triviale Halme, also sind die Kohomologiegarben Null nach [~](#7-4).
+
+#7-10:Satz
+
+Sei `\pi: X'\to X` ein endlicher Morphismus. Dann ist `\pi_\ast: \Sh(X'_\et)\to \Sh(X_\et)` exakt.
+
+#7-11:Satz
+
+Betrachte den Situs `X_\mathrm{\acute{E}t}` mit étale Morphismen nach `X` von endlichem Typ als Objekte und surjektive Familien als Überdeckungen. Der Morphismus `\iota: X_\et\to X_\mathrm{\acute{E}t}` induziert eine Kategorienäquivalenz:
+
+    \Sh(X_\et) \overset{\iota_\ast}{\underset{\iota^\ast}{\longleftrightarrow}} \Sh(X_\mathrm{\acute{E}t})
+
+---
+
+Folgt aus dem Vergleichssatz [~](#4-24).
