@@ -39,7 +39,7 @@ Die Indexkategorie ist gerichtet, `(A^\shens, \mathfrak{m}^\shens)` ein henselsc
 
 #6-45-1:Sprechweise
 
-Sei `X` ein Schema, `K` ein Körper und `x: \Spec(K)\to X` ein `K`-wertiger Punkt. Eine *étale Umgebung von `x`* ist ein étaler, separierter Morphismus `Y\to X` mit `Y` zusammenhängend und einem kommutativen Diagramm:
+Sei `X` ein Schema, `K` ein Körper und `x: \Spec(K)\to X` ein `K`-wertiger Punkt. Eine *étale Umgebung von `x`* ist ein étaler, separierter Morphismus `Y\to X` mit `Y` zusammenhängend und einem kommutativen Diagramm: ~~étale|Umgebung~~
 
     \xymatrix{
         \Spec(K) \ar[r] \ar[rd]_x & Y \ar[d] \\
