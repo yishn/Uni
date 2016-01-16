@@ -3,7 +3,7 @@
 Zu einem (lokal noetherschen) Schema `X` betrachten wir folgende Siten:
 
 * Der *Zariski-Situs* `X_\Zar`. Objekte sind Zariski-offene Teilmengen von `X` und besitzt surjektive Familien als Überdeckungen. ~~Zariski|Situs~~
-* Der *(kleine) étale Situs* `X_\et`. Objekte sind étale Morphismen nach `X` und besitzt surjektive Familien als Überdeckungen. ~~étale|Situs (klein)~~
+* Der *(kleine) étale Situs* `X_\et`. Objekte sind étale Morphismen nach `X` und besitzt surjektive Familien als Überdeckungen.
 * Der *große étale Situs* `(\LFT/X)_\et`. Objekte sind Schemata lokal von endlichem Typ über `X` und besitzt surjektive Familien von étalen Morphismen als Überdeckungen. ~~étale|Situs (groß)~~
 * Der *flache Situs* `X_\fl`. Objekte sind Schemata lokal von endlichem Typ über `X` und besitzt surjektive Familien von flachen Morphismen als Überdeckungen.
 
