@@ -9,8 +9,8 @@ Sei `(A,\mathfrak{m})` ein lokaler Ring. Wir betrachten die Kategorie `\mathcal{
 * `f: A\to B` ist ein étaler Ringhomomorphismus.
 * `\Spec(B)` ist zusammenhängend.
 * `\mathfrak{q}\subset B` ist ein Primideal.
-* Die induzierte Inklusion `k(\mathfrak{m})\to k(\mathfrak{q})` ist ein Isomorphismus.
 * `f^{-1}(\mathfrak{q}) = \mathfrak{m}`
+* Die induzierte Inklusion `k(\mathfrak{m})\to k(\mathfrak{q})` ist ein Isomorphismus.
 
 Nach [~](#6-14) ist `\mathcal{K}` gerichtet und wir setzen `A^\hens = \colim_{(B,\mathfrak{q})\in \mathcal{K}} B`. Offensichtlich ist `A^\hens` lokal mit Maximalideal `\mathfrak{m}^\hens` über `\mathfrak{m}` mit Isomorphismus `A/\mathfrak{m} \stackrel{\sim}{\to} A^\hens/\mathfrak{m}^\hens`.
 
