@@ -87,8 +87,8 @@ Ist `X` ein affines Schema und `F\in \Qcoh(\O_X)`, so gilt `\H_\et^q(X, W(F)) = 
 
 #7-23:Korollar
 
-Für ein affines Schema `X` gilt `\H^q_\et(X, \mathbb{G}_\text{a}) = \H_\fl^q(X, \mathbb{G}_a) = 0` für `q > 0`.
+Für ein affines Schema `X` gilt `\H^q_\et(X, \Ga) = \H_\fl^q(X, \Ga) = 0` für `q > 0`.
 
 ---
 
-Es gilt `\mathbb{G}_\text{a} = W(\O_X)`.
+Es gilt `\Ga = W(\O_X)`.

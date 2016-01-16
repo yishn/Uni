@@ -19,9 +19,9 @@ Wichtige Garben:
 
 * Konstante Garben: Sei `A` eine abelsche Gruppe. Die konstante Garbe zu `A` ist die Garbifizierung der konstanten Prägarbe zu `A`. Die Garbifizierung hängt vom Situs ab. Die konstante Garbe wird aber dargestellt durch das Gruppenschema `\coprod_A X`. Insbesondere ist die konstante Garbe auf allen oben genannten Siten gleich.
 
-* Die *additive Gruppe* `\mathbb{G}_\text{a}` ist gegeben durch `\mathbb{G}_\text{a}(U) = \Gamma(U,\O_U)`. Sie wird dargestellt durch `\Z[T]\times_\Z X\cong \mathbf{A}^1_X`, ist also eine flache Garbe. ~~additiv|Gruppe~~
+* Die *additive Gruppe* `\Ga` ist gegeben durch `\Ga(U) = \Gamma(U,\O_U)`. Sie wird dargestellt durch `\Z[T]\times_\Z X\cong \mathbf{A}^1_X`, ist also eine flache Garbe. ~~additiv|Gruppe~~
 
-* Die *multiplikative Gruppe* `\mathbb{G}_\text{m}` ist gegeben durch `\mathbb{G}_\text{m}(U) = \Gamma(U,\O_U)^\times`. Sie wird dargestellt durch `\Z[T, T^{-1}]\times_\Z X`, ist also eine flache Garbe. ~~multiplikativ|Gruppe~~
+* Die *multiplikative Gruppe* `\Gm` ist gegeben durch `\Gm(U) = \Gamma(U,\O_U)^\times`. Sie wird dargestellt durch `\Z[T, T^{-1}]\times_\Z X`, ist also eine flache Garbe. ~~multiplikativ|Gruppe~~
 
 * Sei `F\in\Qcoh(\O_X)` ein quasikohärenter `\O_X`-Modul auf `X_\Zar`. Wir definieren die Prägarbe `W(F)` für ein `X`-Schema `U` durch `W(F)(U) = \Gamma(U, F\otimes_{\O_X} \O_U) = \Gamma(U, \pr^\ast F\otimes_{\pr^\ast\O_X}\O_U)`, wobei `\pr: U\to X`.
 
@@ -45,8 +45,8 @@ wobei der Kolimes über alle étalen Umgebungen `U` von `\overline{x}` geht.
 
 Sei `\O_{X,\overline{x}}^\shens` die strikte Henselisierung von `\O_{X,\overline{x}}` bzgl. `k(x)\hookrightarrow K`, wobei `x` das Bild von `\overline{x}` in `X` bezeichnet. `\O_{X,\overline{x}}^\shens` heißt *strikte Henselisierung* von `X` in `\overline{x}`. Dann gilt: ~~strikt|Henselisierung (geom. Punkt)~~
 
-    (\mathbb{G}_\text{a})_\overline{x} = \mathbb{G}_\text{a}(\Spec \O_{X,\overline{x}}^\shens) = \O_{X,\overline{x}}^\shens \\
-    (\mathbb{G}_\text{m})_\overline{x} = \mathbb{G}_\text{m}(\Spec \O_{X,\overline{x}}^\shens) = (\O_{X,\overline{x}}^\shens)^\times
+    (\Ga)_\overline{x} = \Ga(\Spec \O_{X,\overline{x}}^\shens) = \O_{X,\overline{x}}^\shens \\
+    (\Gm)_\overline{x} = \Gm(\Spec \O_{X,\overline{x}}^\shens) = (\O_{X,\overline{x}}^\shens)^\times
 
 Dehnt man eine Prägarbe `F` auf `X_\et` durch die Regel `F(\lim U_i) = \colim F(U_i)` aus, so gilt tautologisch `F_{\overline{x}} = F(\Spec\O_{X,\overline{x}}^\shens)`.
 
