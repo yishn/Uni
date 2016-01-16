@@ -132,7 +132,7 @@ Ein affiner Morphismus `f: Z\to X` ist durch eine quasikohärente Garbe von `\O_
 
 #5-28:Theorem
 
-Sei `f: Y\to X` treuflach und von endlichem Typ. Sei `g: X'\to X` ein Morphismus und `g_Y: Y' = X'\times_X Y\to Y` der Basiswechsel. Ist `g_Y` quasikompakt, oder separiert, oder von endlichem Typ, oder eignetlich, oder offen, oder endlich, oder quasiendlich, so gilt das auch für `g`.
+Sei `f: Y\to X` treuflach und von endlichem Typ. Sei `g: X'\to X` ein Morphismus und `g_Y: Y' = X'\times_X Y\to Y` der Basiswechsel. Ist `g_Y` quasikompakt, oder separiert, oder von endlichem Typ, oder eigentlich, oder offen, oder endlich, oder quasiendlich, so gilt das auch für `g`.
 
 #5-29:Theorem
 
