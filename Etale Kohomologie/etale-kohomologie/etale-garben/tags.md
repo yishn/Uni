@@ -136,3 +136,37 @@ Betrachte den Situs `X_\mathrm{\acute{E}t}` mit étale Morphismen nach `X` von e
 ---
 
 Folgt aus dem Vergleichssatz [~](#4-24).
+
+#7-12:Satz
+
+Sei `X` ein Schema, `I` eine gerichtete Indexkategorie und `F: I\to\Sh(X_\et)`, `i\mapsto F_i` ein Funktor. Dann gilt:
+
+1. Für jedes quasikompakte `U\in X_\et` und jedes `q\geq 0` gilt:
+
+        \H_\et^q(U, \colim_{i\in I} F_i) = \colim_{i\in I} \H_\et^q(U, F_i)
+
+2. `\colim_I` vertauscht mit Halmbildung und ist exakt auf Garben.
+
+#7-13-INTRO
+
+Sei `I` eine gerichtete Indexkategorie und `X: I^\op\to \Aff`, `i\mapsto X_i = \Spec(A_i)` ein Funktor in die Kategorie der affinen Schemata. Dann existiert `\lim X = \Spec(\colim A_i)`. Die Konstruktion verklebt sich, d.h. haben wir ein Funktor `X: I^\op\to \Schemata`, so dass für jeden Pfeil `i\to j` in `I` der Schema-Morphismus `X_j\to X_i` affin ist, dann existiert das Schema `X_\infty = \lim X`.
+
+In dieser Situation möge für jedes `i\in I` eine Garbe `F_i\in\Sh(X_{i,\et})` gegeben, so dass für jedes `i\to j` mit `\phi_{ji}: X_j\to X_i` stets `F_j = \phi_{ji}^\ast F_i` gilt. Dann ist `F_\infty = \phi_{\infty,i}^\ast F_i` unabhängig von `i`.
+
+#7-13:Theorem
+
+In der gegebenen Situation gibt es natürliche Isomorphismen `\colim_{i\in I} \H_\et^q(X_i, F_i) = \H_\et^q(X_\infty, F_\infty)`.
+
+---
+
+Siehe *Artin* GT, III Corollary 3.9.
+
+#7-14:Bemerkung
+
+Da wir angenommen haben, dass alle Schemata lokal noethersch sind, müssen wir das hier auch für `X_\infty` fordern.
+
+#7-15:Korollar
+
+Es sei `f: Y\to X` ein Schema-Morphismus, `\overline{x}: \Spec(K)\to X` ein geometrischer Punkt und `F\in\Sh(Y_\et)`. Dann gilt für die Halme der höheren direkten Bildgarben:
+
+    \mathrm{R}^qf_\ast(F)_{\overline{x}} = \H_\et^q(Y\times_X \Spec \O_{X,\overline{x}}^\shens, F)
