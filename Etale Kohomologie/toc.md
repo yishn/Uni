@@ -37,5 +37,6 @@
     * [Henselisierung](henselsche-ringe/henselisierung/)
 * Étale Kohomologie
     * [Étale Garben](etale-kohomologie/etale-garben/)
+    * [Kohomologievergleich](etale-kohomologie/kohomologievergleich/)
 * [Literatur](literatur/)
 * [Index](index/)
