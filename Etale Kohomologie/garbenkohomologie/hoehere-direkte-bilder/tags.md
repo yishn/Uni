@@ -38,7 +38,7 @@ weshalb auch `f_\ast F` schlaff ist.
 
 #4-18:Satz
 
-*(Leraysche Spektralfolge)* ~~Spektralfolge|Leray~~ Sei `f: T'\to T` ein Situs-Morphismus, `F\in\Sh(T')` und `U\in\Kat(T)`. Dann gibt es eine Spektralfolge:
+*(Leraysche Spektralfolge)* ~~Spektralfolge|Leray~~ ~~Leraysche Spektralfolge~~ Sei `f: T'\to T` ein Situs-Morphismus, `F\in\Sh(T')` und `U\in\Kat(T)`. Dann gibt es eine Spektralfolge:
 
     E_2^{pq} = \H^p_T(U, \mathrm{R}^q f_\ast(F)) \Longrightarrow \H^{p+q}_{T'}(f^\sharp U, F)
 
