@@ -53,7 +53,7 @@ Die Bedingung an `X` in [~](#7-18) ist erfüllt, wenn `X` quasiprojektiv über e
 
 *(M. Artin)* Sei `X` ein noethersches Schema, so dass jede endliche Menge von Punkten eine gemeinsame affine Umgebung besitzt. Dann ist für jede Prägarbe `F` auf `X_\et` die natürliche Abbildung
 
-    \check{\H}^q_\Zar(X, F) \to \H^q_\Zar(X, F^\#)
+    \check{\H}{}^q_\Zar(X, F) \to \H^q_\Zar(X, F^\#)
 
 ein Isomorphismus für alle `q>0`.
 
