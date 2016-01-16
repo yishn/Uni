@@ -43,7 +43,7 @@ eine Verfeinerung von `(V_k\to U_1\times_X\cdots\times_X U_n)_k` ist.
 
 ---
 
-Siehe *M. Artin:* On joins of Henselrings. Advancements in Mathematics 7 (1971) **282-296**.
+Siehe *M. Artin:* On joins of Henselrings, Advancements in Mathematics 7 (1971) **282-296**.
 
 #7-19:Bemerkung
 
