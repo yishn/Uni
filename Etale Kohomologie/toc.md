@@ -39,5 +39,6 @@
     * [Étale Garben](etale-kohomologie/etale-garben/)
     * [Kohomologievergleich](etale-kohomologie/kohomologievergleich/)
     * [Hilberts Satz 90](etale-kohomologie/hilberts-satz-90/)
+    * [Hauptfaserbündel](etale-kohomologie/hauptfaserbuendel/)
 * [Literatur](literatur/)
 * [Index](index/)
