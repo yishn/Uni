@@ -98,7 +98,7 @@ und `\d: \check{\mathcal{C}}{}^0(\mathcal{U}, G)\to \check{\mathcal{C}}{}^1(\mat
 
 `G(V)` wirkt auf `S(V)` durch `(s, g)\mapsto g^{-1}s`.
 
-#7-28:Satz
+#7-38:Satz
 
 Sei `X` ein normales Schema. Dann gilt `\H_\et^1(X, \Z) = 0`.
 
@@ -114,6 +114,6 @@ Daher genügt es zu zeigen, dass `\H^1_\et(X, \Z)\to \H^1_\et(\eta, \Z)` injekti
 
 Ist nun `S_(\eta)` trivial, so gilt `S_(\eta) \cong\coprod_\Z \eta` und somit `L_i = K` für alle `i`. Da `S\to X` treuflach ist und `\Z` transitiv operiert, ist jede Zusammenhangskomponente von `S` surjektiv über `X`, d.h. `S = \coprod_\Z X`. Somit ist `S` trivial.
 
-#7-28-1:Bemerkung
+#7-38-1:Bemerkung
 
 Der Beweis kann modifiziert werden, so dass man statt Normalität nur die folgende Bedingung braucht: `X` irreduzibel und jedes zusammenhängende étale `U\to X` ist irreduzibel. Diese Eigenschaft heißt *geometrisch einzweigig*. ~~geometrisch einzweigig~~
