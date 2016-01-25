@@ -105,12 +105,12 @@ In `\mathbf{T}(X)` gilt `i^! (F_1, F_2, \varphi) = (\ker\varphi, 0, 0)` und:
 Wir haben Adjunktionen `i^\ast\vdash i_\ast \vdash i^!` und `j_! \vdash j^\ast \vdash j_\ast`. Bzgl. der Kategorienäquivalenz in [~](#7-38-2) gilt:
 
     \begin{align*}
-        i^\ast: (F_1, F_2, \varphi) &\maspto F_1 \\
-        i^!: (F_1, F_2, \varphi) &\mapsto \ker(\varphi) \\
-        i_\ast: F_1 &\mapsto (F_1, 0, 0) \\
-        j^\ast: (F_1, F_2, \varphi) &\mapsto F_2 \\
-        j_!: F_2 &\mapsto (0, F_2, 0) \\
-        j_\ast: F_2 &\mapsto (i^\ast j_\ast F_2, F_2, \id)
+        i^\ast &: (F_1, F_2, \varphi) \mapsto F_1 \\
+        i^! &: (F_1, F_2, \varphi) \mapsto \ker(\varphi) \\
+        i_\ast &: F_1 \mapsto (F_1, 0, 0) \\
+        j^\ast &: (F_1, F_2, \varphi) \mapsto F_2 \\
+        j_! &: F_2 \mapsto (0, F_2, 0) \\
+        j_\ast &: F_2 \mapsto (i^\ast j_\ast F_2, F_2, \id)
     \end{align*}
 
 #7-44:Korollar
