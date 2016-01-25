@@ -68,7 +68,7 @@ Sei `\overline{K}` ein separabler Abschluss von `K` und `T_{\overline{\mathfrak{
 
 #7-40:Definition
 
-Sei `Y\subset X` ein Unterschema und `F\in\Sh(X_\et)`. `F` hat *Träger* in `Y`, wenn `F_\overline{x} = 0` für alle `\overline{x}\in X\setminus Y`.
+Sei `Y\subset X` ein Unterschema und `F\in\Sh(X_\et)`. `F` hat *Träger* in `Y`, wenn `F_\overline{x} = 0` für alle `\overline{x}\in X\setminus Y`. ~~Träger~~
 
 #7-41:Korollar
 
@@ -96,9 +96,9 @@ Es gilt `i_\ast \dashv i^!`.
 
 ---
 
-In `\mathbf{T}(X)` gilt `i^! (F_1, F_2, \varphi) = (\ker\varphi, 0, 0)` und:
+In `\mathbf{T}(X)` gilt `i^! (F_1, F_2, \varphi) = \ker\varphi` und:
 
-    \Hom_{\mathbf{T}(X)}((F_1, 0, 0), (F'_1, F'_2, \varphi)) = \Hom(F_1, \ker\varphi) = \Hom_{\mathbf{T}(X)}((F_1, 0, 0), (\ker\varphi, 0, 0))
+    \Hom_{\mathbf{T}(X)}((F_1, 0, 0), (F'_1, F'_2, \varphi)) = \Hom_{\mathbf{T}(X)}((F_1, 0, 0), (\ker\varphi, 0, 0)) = \Hom(F_1, \ker\varphi)
 
 #7-43-1:Bemerkung
 
