@@ -40,5 +40,6 @@
     * [Kohomologievergleich](etale-kohomologie/kohomologievergleich/)
     * [Hilberts Satz 90](etale-kohomologie/hilberts-satz-90/)
     * [Hauptfaserbündel](etale-kohomologie/hauptfaserbuendel/)
+    * [Der Tripel-Satz](etale-kohomologie/der-tripel-satz/)
 * [Literatur](literatur/)
 * [Index](index/)
