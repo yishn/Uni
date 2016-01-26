@@ -51,7 +51,7 @@ Dies ist kartesisch. Für `\overline{x}\in Z` hat der Halm von `(\star)` in `\ov
 
 Dies ist auch kartesisch und wir erhalten `\id\cong st`. Bleibt noch `ts\cong\id` zu zeigen.
 
-Da `i^\ast` und `j^\ast` exakt sind, erhalten wir die kartesischen Diagramme. Daran sehen wir für `s(F_1, F_2, \varphi)_1 = i^\ast s(F_1, F_2, \varphi)` unter Ausnutzung von `i^\ast i_\ast = \id` das kartesische Diagramm:
+Da `i^\ast` und `j^\ast` exakt sind, erhalten sie kartesische Diagramme. Daran sehen wir für `s(F_1, F_2, \varphi)_1 = i^\ast s(F_1, F_2, \varphi)` unter Ausnutzung von `i^\ast i_\ast = \id` das kartesische Diagramm:
 
     \xymatrix{
         i^\ast s(F_1, F_2, \varphi) \ar[r]\ar[d] & i^\ast j_\ast F_2 \ar[d] \\
