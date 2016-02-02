@@ -5,3 +5,7 @@
 > The introduction of the digit 0 or the group concept was general nonsense too, and mathematics was more or less stagnating for thousands of years because nobody was around to take such childish steps...
 
 &mdash;A. Grothendieck
+
+> Before functoriality, people lived in caves.
+
+&mdash; B. Conrad
