@@ -11,7 +11,7 @@ Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\i
 \end{definition}
 
 \begin{definition}\label{2.1}
-Let $K$ be a field of finite dimension. We denote the set of equivalence classes of non-archimedean valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
+Let $K$ be a field of finite dimension. We denote the set of equivalence classes of Krull valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
 
 We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$. The \textit{rank}\index{valuation!rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v$ is defined as the rank of its valuation group $\Gamma_v$ as a $\mathbb{Z}$-module:
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
@@ -112,7 +112,7 @@ Let $K_0/K$ be an algebraic extension.
 0, & \text{otherwise}
 \end{cases} \]
 Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
-\item Assume that the hypothesis of (i) is satisfied for two different prime numbers. Then $w$ is defectless.
+\item Assume that (i) is satisfied for two different prime numbers. Then $w$ is defectless.
 \end{enumerate}
 \end{proposition}
 
@@ -143,7 +143,7 @@ where the vertical maps are restrictions. Let $w\in\operatorname{Spv}_\text{d}^{
 k(w') \rar["\varphi_w"] & k(w)\\
 k(v') \rar["\varphi_v"']\uar[hook] & k(v)\uar[hook]
 \end{tikzcd} \]
-By a limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. Now it is easy to see that for every $g\in G_K$:
+By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. Now it is easy to see that for every $g\in G_K$:
 \[ \sigma(g\overline{v}) = \sigma(g)\sigma(\overline{v}) \]
 \end{remark}
 
@@ -173,8 +173,9 @@ Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the followin
 L'^\times/n \ar[r, "\varphi_n"]\dar & L^\times/n \dar\\
 M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 \end{tikzcd} \]
-Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact:
-\[ 0\to U_P/n\to K^\times/n\to\mathbb{Z}/n\mathbb{Z}\to 0 \]
+Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact, since valuation rings are integrally closed:
+\[ 0\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
+We'll use the same notation for $P' = \sigma(P)\in X'_0$.
 
 \begin{lemma}\phantomsection\label{4.3}
 \begin{enumerate}[(i)]
