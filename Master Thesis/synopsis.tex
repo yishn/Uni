@@ -250,7 +250,7 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \end{step}
 
 \begin{proof}
-Since any rational function on $X$ is uniquely determined by its values at those points where it is defined, $\varphi$ is unique. Furthermore, the following maps are injective for all finite subsets $S\subset X_0$:
+Since any rational function on $X$ is uniquely determined by its values at those points where it is defined, $\varphi$ is unique. In other words, the following maps are injective for all finite subsets $S\subset X_0$:
 \[ r_S:K^S \to\prod_{P\in X_0\setminus S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
 For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
@@ -270,9 +270,9 @@ Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, 
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
 In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
-Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. Note that for every $x\in K^\times$ we have $v_P(x)= 0$ for almost all $P\in X_0$; similarly for $K'$ and $X'_0$.
+Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. 
 
-Now note that for any $x\in U_{P'}$ we can find an admissible set $S\subset X_0\setminus \{P\}$ such that $x\in K'^{S'}$.
+Note that for every $x\in K^\times$ we have $v_P(x)= 0$ for almost all $P\in X_0$; similarly for $K'$ and $X'_0$. By Lemma \ref{4.5} (i) we can find an admissible set $S\subset X_0\setminus \{P\}$ such that $x\in K'^{S'}$ for any $x\in U_{P'}$.
 \end{proof}
 
 \begin{step}
@@ -293,10 +293,24 @@ for all $P\in X_0\setminus S$. Note that $\varphi_P: k(P')\to k(P)$ is a field i
 \end{itemize}
 \end{proof}
 
+\begin{remark}
+For any finite subextension $L/K$ of $\overline{K}/K$ there exists an isomorphism $\varphi_L: L'\to L$. If $K\subset L\subset M$ are finite subextensions, we have $\varphi_M|_{L'} = \varphi_{L'}$, since $r_Q(\varphi_M(x)) = r_Q(\varphi_L(x))$ for all $x\in L'^\times$ and almost all $Q\in (X_M)_0$. By passing to limits we obtain an isomorphism $\varphi: \overline{K}'\to \overline{K}$.
+\end{remark}
+
 \begin{step}
 $\varphi$ induces $\sigma:G_K\to G_{K'}$, i.e. $\sigma(g) = \varphi^{-1}\circ g\circ \varphi$ for all $g\in G_K$, and is uniquely determined by this property.
 \end{step}
 
 \begin{proof}
-Let $\tau:G_K\to G_{K'},\ g\mapsto \varphi^{-1}\circ g\circ \varphi$. Clearly, $\tau$ is a group isomorphism and we have $\tau(G_L)=G_{L'}=\sigma(G_L)$ for every finite subextension $L/K$ of $\overline{K}/K$. By Lemma \ref{3.2}, $\tau$ induces bijections $\tau: \operatorname{Spv}_\text{d}^{(1)}(L)\to \operatorname{Spv}_\text{d}^{(1)}(L')$ for any intermediate field $L$ of $\overline{K}/K$.
+Let $\tau:G_K\to G_{K'},\ g\mapsto \varphi^{-1}\circ g\circ \varphi$. Clearly, $\tau$ is a group isomorphism and we have $\tau(G_L)=G_{L'}=\sigma(G_L)$ for every finite subextension $L/K$ of $\overline{K}/K$. By applying Lemma \ref{3.2} on $\tau$, we get bijections $\tau: \operatorname{Spv}_\text{d}^{(1)}(L)\to \operatorname{Spv}_\text{d}^{(1)}(L')$ for any intermediate field $L$ of $\overline{K}/K$.
+
+We have $L_{\tau(v)} = (L_v)' = L_{\sigma(v)}$ for all $v\in\operatorname{Spv}_\text{d}^{(1)}(L)$, i.e. $\sigma$ and $\tau$ induce the same maps $\operatorname{Spv}_\text{d}^{(1)}(L)\to \operatorname{Spv}_\text{d}^{(1)}(L')$. By limit process, $\sigma$ and $\tau$ induce the same map $\operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K}')$.
+
+Let $g\in G_K$ and $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Remark \ref{3.3} we have:
+\[ \sigma(g)\sigma(\overline{v}) = \sigma(g\overline{v}) = \tau(g\overline{v}) = \tau(g)\tau(\overline{v}) = \tau(g) \sigma(\overline{v}) \]
+Therefore $\sigma(g)^{-1}\tau(g)$ is contained in the decomposition group $G_{\overline{v}}$ for all $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By the Theorem of F.K. Schmidt we have $G_{\overline{v}_1}\cap G_{\overline{v}_2} = 1$ for $\overline{v}_1\neq\overline{v}_2$. Therefore, $\sigma(g) = \tau(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$.
+
+For the uniqueness of $\varphi$ let $\psi: \overline{K}'\to \overline{K}$ be another isomorphism with $\sigma(g) = \psi^{-1} g \psi$. Setting $h = \psi\varphi^{-1}\in G_K$ we observe
+\[ h^{-1}gh = \varphi\sigma(g)\varphi^{-1} = \sigma^{-1}\sigma(g) = g \]
+for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by F.K. Schmidt, we have $h=1$ and thus $\varphi = \psi$.
 \end{proof}
