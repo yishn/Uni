@@ -142,6 +142,23 @@ Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
 \end{enumerate}
 \end{proposition}
 
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Since $\mathrm{H}^3(K_0, \mathbb{Z}/\ell\mathbb{Z})\neq 0$ by assumption, according to Lemma \ref{2.4} we can find a valuation $w_0\in|\operatorname{Spv}(K_0)|$ such that:
+\[ \mathrm{H}^3((K_0)_{w_0}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0 \]
+By requirement $\ell^\infty \nmid [(K_0)_{w_0} : K_0]$. By replacing $K_0$ by $(K_0)_{w_0}$, we can assume that $w_0$ is henselian.
+
+Assume that $w = w_0|_K$ is not henselian. Then there exists a $w_1\in|\operatorname{Spv}(K_0)|$ with $w_1\neq w_0$ and such that $w = w_1|_K$, for otherwise $w$ would have a unique prolongation to $K_0$ and hence to $\overline{K}$ since $w_0$ is henselian.
+
+Le $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w$ be a henselization of $K$ with respect to $w$ in $(K_0)_{w_1}$. Then $(K_0)_{w_1}$ is the composite of $K_0$ and $K_w$ and we have $\ell^\infty\nmid [(K_0)_{w_1} : K_w]$.
+
+Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
+
+Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the prolongation of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
+\item Choose a prime $\ell$ different from $\operatorname{char} k(w)$. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)$.
+\end{enumerate}
+\end{proof}
+
 \section{Local Correspondence}
 
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ the corresponding intermediate field of $\overline{K'}/K'$ will be denoted by $L'$. In other words $\sigma G_L=G_{L'}$.
@@ -292,7 +309,7 @@ According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be co
 
 Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By observing $(\star)$ we find:
 \[ r_{S,T_1}\circ\varphi^{S,T_2}=\Big(\prod_{P\in T_1}\varphi_P\Big)\circ r_{S',T_1'} = r_{S,T_1}\circ\varphi^{S,T_1} \]
-Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now, if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
+Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
 In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
