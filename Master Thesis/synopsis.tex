@@ -63,8 +63,16 @@ If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exi
 \paragraph{} Let $K$ be a finitely generated field of characteristic $0$ and dimension $2$.
 
 \begin{lemma}\label{2.2}
-Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In the last case we have $\operatorname{cd}(G_K)\leq 2$.
+Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. Furthermore, we have $\operatorname{cd}(G_K)\leq 2$.
 \end{lemma}
+
+\begin{proof}
+Assume that $K$ is not algebraically closed, i.e. $G_K\neq 1$ and set $v_i = v(w_i)$. If $v_1\neq v_2$, by the Theorem of F.K. Schmidt we have $G_{v_1}\cap G_{v_2} = 1 \neq G_K$, a contradiction. Therefore $v_1 = v_2$.
+
+Now $k(v_1) = k(v_2)$ is henselian with respect to both $w_1\mod v_1$ and $w_2\mod v_2$. Again by the Theorem of F.K. Schmidt we get $G_{k(v_1)} = 1$, hence $k(v_1)$ is separably closed.
+
+The second assertion follows from the first and from [K2], §5, Theorem 1.
+\end{proof}
 
 \begin{definition}
 Let $K$ be finitely generated. A \textit{model} of $K$ is a regular, proper scheme $\mathfrak{X}$ over $\mathbb{Z}$ with function field $K$. A \textit{morphism of models} is a morphism of schemes inducing the identity on $K$. We denote the category of models of $K$ by $\mathfrak{M}(K)$; it is filtered. 
