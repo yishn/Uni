@@ -26,7 +26,7 @@ Die erste Aussage ist Übung. Für festes `I` bilden die Funktoren `I\to\mathcal
 
 #2-34-1:Beispiel
 
-Sei `G` eine Gruppe und `\mathcal{C}` die Kategorie mit einem Objekt `C` und `\Aut(C) = G`. Ein Funktor `F: \mathcal{C}\to \Ab` ist gegeben durch eine abelschen Gruppe `A` und einen Gruppenhomomorphismus `G\to\Aut(A)`, also einen `G`-Modul. Es gilt:
+Sei `G` eine Gruppe und `\mathcal{C}` die Kategorie mit einem Objekt `C` und `\End(C) = G`. Ein Funktor `F: \mathcal{C}\to \Ab` ist gegeben durch eine abelschen Gruppe `A` und einen Gruppenhomomorphismus `G\to\Aut(A)`, also einen `G`-Modul. Es gilt:
 
     \lim F = A^G,\qquad \colim F = A_G
 
