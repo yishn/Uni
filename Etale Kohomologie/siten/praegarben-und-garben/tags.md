@@ -38,7 +38,7 @@ Die Prägarbe `F_X` aus [~](#2-9) ist nicht notwendigerweise eine Garbe. Ist `F_
 
 #2-12:Beispiel
 
-Der Situs `X_\top` aus [~](#2-2) ist subkanonisch: Garben auf `X_\top` sind gerade die gewöhnlichen Garben auf `X` und jedes `U\opensubset X` stellt eine Garbe dar nach [~](#1-4).
+Der Situs `X_\top` aus [~](#2-2) ist subkanonisch.
 
 #2-13:Beispiel
 
