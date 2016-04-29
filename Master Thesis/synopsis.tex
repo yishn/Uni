@@ -175,6 +175,12 @@ Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension 
 Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselization of $w$. Then $E'$ is a henselization of $K'$ with respect to a unique $w'\in\operatorname{Spv}_\text{d}^{(2)}(K')$. The map $w\mapsto w'$ does not depend on the choice of the henselization.
 \end{lemma}
 
+\begin{proof}
+Let $\ell_1,\ell_2$ be two different prime numbers different from $\operatorname{char} k(w)$ and let $E_0 = E(\mu_{\ell_1\ell_2})$. Then $E_0/E$, and also $E'_0/E'$, satisfies the condition of \ref{2.6} (ii). Thus there exists a unique henselian defectless valuation $w'_{E'}$ of $E'$, so $E'$ contains a henselization $K'_{w'}$ of $w'_{E'}|_{K'}$. By applying the same argument to $\sigma^{-1}$ we find that $E' = K'_{w'}$.
+
+Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
+\end{proof}
+
 \begin{lemma}\label{3.2}
 $\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denote the inertial fields of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
 \[ G_{k(v)}\cong\operatorname{Gal}(E^\text{t}/E) \to\operatorname{Gal}(E'^{\text{t}}/E')\cong G_{k(v')} \]
