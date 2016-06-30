@@ -17,7 +17,7 @@ function [iterations, xstar] = VGN(f, J, x0, dimension)
               
         iterations = iterations + 1;
 
-        if abs(xstar - xold) < 10^(-8)
+        if max(abs(xstar - xold)) <= 10^(-8)
             return
         end
     end
