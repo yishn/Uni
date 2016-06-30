@@ -1,18 +1,16 @@
-function [iterations, xstar] = VGN(f, J, x0, dimension)
-    % f should be a matrix like this:
-    % f = [t11 t12 ... t1n r1;
-    %      t21 t22 ... t2n r2;
-    %      ...
-    %      tk1 tk2 ... tkn rk]
+function [iterations, xstar] = VGN(f, J, x0)
+    % f is a vector function consisting of the 
+    % residue functions with respect to x
     %
-    % dimension = n
+    % J is the Jacobian matrix of f with respect to x
 
     iterations = 0;
     xstar = x0;
-    r = f(:, dimension + 1);
     
     while 1
         xold = xstar;
+        D = J(xold);
+        r = f(xold);
         xstar = xold - (D' * D) \ (D' * r);
               
         iterations = iterations + 1;
