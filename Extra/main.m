@@ -5,4 +5,5 @@ f = @(x) y - h(t, x);
 J = @(x) [-t ./ (x(2) + t), x(1) .* t ./ (x(2) + t).^2];
 x0 = [1, 2]';
 
-VGN(f, J, x0)
+[xstar, iterations] = VGN(f, J, x0)
+PlotFunction(xstar);
