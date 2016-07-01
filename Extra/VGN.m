@@ -1,4 +1,4 @@
-function [iterations, xstar] = VGN(f, J, x0)
+function [xstar, iterations] = VGN(f, J, x0)
     % f is a vector function consisting of the 
     % residue functions with respect to x
     %
