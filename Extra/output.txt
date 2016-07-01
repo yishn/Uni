@@ -1,0 +1,11 @@
+>> main
+
+xstar =
+
+    0.8422
+    1.6292
+
+
+iterations =
+
+     6
