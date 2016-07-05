@@ -1,0 +1,188 @@
+\documentclass[10pt,b5paper]{article}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{fontspec}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{paralist}
+\usepackage{tikz-cd}
+\linespread{1.1}
+
+\author{von \textsc{yichuan shen}}
+\title{Ebene Graphen}
+\begin{document}
+
+\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Satz}
+\newtheorem{corollary}[theorem]{Korollar}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Beispiel}
+\theoremstyle{remark}
+\newtheorem*{remark}{Bemerkung}
+
+\maketitle
+
+\section{Maximale Planarität}
+
+\begin{definition}
+Ein \textit{ebener Graph} ist ein Paar $G= (V, E)$ endlicher Mengen, so dass:
+\begin{enumerate}[(i)]
+\item $V$ ist Teilmenge von $\mathbb{R}^2$.
+\item Jedes Element in $E$ ist ein Polygonzug zwischen zwei Knoten.
+\item  Veschiedene Kanten haben verschiedene Menge von Endpunkten.
+\item Das Innere einer Kante enthält keine Knote oder einen Punkt einer anderen Kante.
+\end{enumerate}
+Elemente von $V$ heißen \textit{Knoten}, Elemente von $E$ heißen \textit{Kanten}.
+\end{definition}
+
+\begin{remark}
+\begin{itemize}
+\item  Ein ebener Graph $G$ definiert in natürlicher Weise einen (abstrakten) Graphen, den wir ebenfalls mit $G$ bezeichnen.
+\item Die unterliegende Punktmenge eines ebenen Graphens bezeichnen wir auch mit $G$:
+\[ G = V \cup\bigcup_{e\in E}e \]
+\end{itemize}
+\end{remark}
+
+\begin{definition}
+\begin{itemize}
+\item Sei $G = (V, E)$ ein ebener Graph. Die Zusammenhangskomponenten von $\mathbb{R}^2\setminus G$ heißen \textit{Gebiete} von $G$. 
+\item Die Menge aller Gebiete von $G$ bezeichnen wir mit $F(G)$.
+\item Sei $f\in F(G)$. Der Rand von $f$ bezeichnen wir mit $G[f]$. Wir können $G[f]$ als Teilgraph von $G$ auffassen.
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+Sei $G$ ein ebener Graph.
+\begin{itemize}
+\item $G$ heißt \textit{maximal eben}, wenn durch das Hinzufügen einer Kante $G$ kein ebener Graph mehr ist.
+\item $G$ heißt \textit{ebener Dreiecksgraph}, wenn jedes seiner Gebiete durch einen $K^3$ berandet ist.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+Ein ebener Graph $G$ mit $|G|\geq 3$ ist genau dann maximal eben, wenn er ein ebener Dreiecksgraph ist.
+\end{proposition}
+
+\begin{proof}
+Sei $G$ ein ebener Dreiecksgraph und $e$ eine zusätzliche Kante. Dann hat $e$ ihr Inneres in einem Gebiet $f$ von $G$ und ihre Endpunkte auf dem Rand von $f$. Per Definition ist $G[f] = K^3$ ein vollständiger Graph, also sind die Endpunkte von $e$ bereits in $G$ benachbart. Da Multikanten in einem ebenen Graphen nicht erlaubt sind, war $G$ schon maximal eben.
+
+Sei nun umgekehrt $G$ ein maximal ebener Graph und $f$ ein Gebiet von $G$. Setze $H=G[f]$ und betrachte den induzierten Untergraphen $G[H]$. Angenommen, es gibt zwei Knoten $x,y$ in $G[H]$, die nicht benachbart sind. Aber dann könnten wir einen Polygonzug zwischen $x$ und $y$ in $f$ konstruieren und diese als ebene Kante zu $G$ hinzufügen, ein Widerspruch zur Maximalität von $G$. Also muss $G[H]$ vollständig sein.
+
+Sei $n = |H|$. Angenommen, $H$ enthält keinen Kreis. Ist $n\geq 3$, so ist $K^3\subseteq G[H]\subseteq G$, d.h. $G$ enthält einen Kreis und daher $G\setminus H \neq\varnothing$. Für $n<3$ gilt auch $G\setminus H\neq\varnothing$, da $|G|\geq 3$. Andererseits ist $H$ ein Wald und hat daher genau einen Gebiet. $f$ ist ein Gebiet von $G[f] = H$, also ist $f$ das einzige Gebiet von $H$, d.h. $f\cup H = \mathbb{R}^2$. Insgesamt erhalten wir $G\setminus H \subseteq f$ und es folgt der Widerspruch:
+\[ G\setminus H = G\setminus H \cap f \subseteq G\cap f =\varnothing \]
+Also muss $H$ einen Kreis enthalten.
+
+Es bleibt noch zu zeigen, dass $n\leq 3$ ist. Nehmen wir an, dass $n\geq 4$. Sei $C = v_1v_2v_3v_4v_1$ ein Kreis in $G[H]$. Wegen $C\subseteq G$ liegt $f$ in einem Gebiet $c\in F(C)$. Sei $c'\in F(C)$ das andere Gebiet. $v_1$ und $v_3$ liegen auf dem Rand von $f$. Wir können sie mit einem Polygonzug $P$ in $c$ verbinden, das sich mit $G$ nicht schneidet. Daher muss die ebene Kante zwischen $v_2$ und $v_4$ in $c'$ befinden, da sich diese mit $P$ nicht schneiden darf. Das gleiche Argument für $v_2$ und $v_4$ zeigt, dass die ebene Kante zwischen $v_1$ und $v_3$ in $c'$ befinden muss. Dies ein Widerspruch, da eine solche Kante mit der Kante zwischen $v_2$ und $v_4$ schneiden muss.
+\end{proof}
+
+\begin{corollary}
+Ein ebener Graph $G$ der Ordnung $n\geq 3$ hat höchstens $3n-6$ Kanten.
+\end{corollary}
+
+\begin{proof}
+Jeder ebene Dreiecksgraph mit $n$ Ecken hat $3n-6$ Kanten.
+\end{proof}
+
+\begin{corollary}\label{cor:kuratowski-motivation}
+Kein ebener Graph enthält einen $K^5$ oder $K_{3,3}$ als einen topologischen Minor.
+\end{corollary}
+
+\begin{proof}
+$K^5$ hat $10 > 3\cdot 5 - 6$ Kanten. Für $K_{3,3}$ kann man mithilfe der Euler-Charakteristik für ebene Graphen auch eine widersprüchliche Abschätzung für die Kantenzahl finden, siehe Korollar 3.2.11 in [Diestel: Graphentheorie]. Mit $K^5$ und $K_{3,3}$ können natürlich auch deren Unterteilungen nicht als ebene Graphen auftreten.
+\end{proof}
+
+\begin{proposition}
+\begin{itemize}
+\item Eine \textit{Einbettung in die Ebene} eines (abstrakten) Graphen $G$ ist ein abstrakter Graphenisomorphismus zwischen $G$ und einem ebenen Graphen $H$. 
+\item $H$ nennen wir auch eine \textit{Zeichnung} von $G$.
+\item Ein Graph $G$ heißt \textit{plättbar}, wenn es eine Einbettung in die Ebene für $G$ gibt.
+\end{itemize}
+
+\end{proposition}
+
+\section{Satz von Kuratowski}
+
+Interessanterweise gilt auch die Umkehrung von Korollar~\ref{cor:kuratowski-motivation}:
+
+\begin{theorem}[\textit{Satz von Kuratowski, 1930}]
+Die folgenden Aussagen sind für einen Graphen $G$ äquivalent:
+\begin{enumerate}[(i)]
+\item $G$ ist plättbar.
+\item  $G$ enthält weder einen $K^5$ noch einen $K_{3,3}$ als Minor.
+\item  $G$ enthält weder einen $K^5$ noch einen $K_{3,3}$ als topologischen Minor.
+\end{enumerate}
+\end{theorem}
+
+Wir zeigen die Umkehrung zunächst für $3$-zusammenhängende Graphen. Dazu brauchen wir zunächst die folgenden Lemmata:
+
+\begin{lemma}\label{lem:kuratowski-2lemma}
+In einem $2$-zusammenhängenden ebenen Graphen ist jedes Gebiet durch einen Kreis berandet.
+\end{lemma}
+
+\begin{proof}
+Siehe Lemma 3.2.6 in [Diestel: Graphentheorie].
+\end{proof}
+
+\begin{lemma}\label{lem:kuratowski-3lemma}
+Ist $G$ $3$-zusammenhängend und $|G|>4$, so hat $G$ eine Kante $e$, so dass $G/e$ wieder $3$-zusammenhängend ist.
+\end{lemma}
+
+\begin{proof}
+Siehe Lemma 2.2.1 in [Diestel: Graphentheorie].
+\end{proof}
+
+\begin{proposition}
+Ist ein Graph $G$ $3$-zusammenhängend, und enthält $G$ weder einen $K^5$ noch einen $K_{3,3}$ als topologischen Minor, so ist $G$ plättbar.
+\end{proposition}
+
+\begin{proof}
+Per Induktion nach $|G|$. Für $|G|=4$ ist $G = K^4$ und $G$ plättbar:
+\[\begin{tikzcd}
+& 1\ar[d, -]\ar[ldd, -]\ar[rdd, -] & K^4\\
+& 2\ar[ld, -]\ar[rd, -] & \\
+3\ar[rr, -] & & 4
+\end{tikzcd}\]
+Sei nun $|G|>4$ und die Aussage wahr für kleinere Graphen. Nach Lemma~\ref{lem:kuratowski-3lemma} haben wir eine Kante $xy$, so dass $G/xy$ wieder $3$-zusammenhängend ist. Nun enthält $G/xy$ ebenfalls weder $K^5$ noch einen $K_{3,3}$ als topologischen Minor. Nach Induktionsvoraussetzung ist $G/xy$ plättbar. Sei also $H$ eine Zeichnung von $G/xy$.
+
+Sei $v$ der Knoten in $H$, das die Kante $xy$ repräsentiert. Betrachte das Gebiet $f$ von $H-v$, das den Punkt $v$ enthält und sei $C$ der Rand von $f$. Setze:
+\[ X = N(x) \setminus{y},\quad Y = N(y)\setminus{x} \]
+Dann gilt $X\cup Y\subseteq N(v)\subseteq C$. Da $H-v$ $2$-zusammenhängend ist, ist $C$ nach Lemma~\ref{lem:kuratowski-2lemma} ein Kreis. Seien $x_1,\ldots, x_k$ die Elemente in $X$ in natürlicher Reihenfolge entlang $C$ und $P_i$ der Verbindungsweg auf $C$ zwischen $x_i$ und $x_{i+1}$, wobei $x_{k+1} = x_1$. Betrachte den folgenden ebenen Graphen:
+\[ H' = H - \{vw \mid w\in Y\setminus X\} \]
+Wir können $H'$ auch als Zeichnung von $G-y$ deuten, indem wir den Knoten $v$ als $x$ auffassen. Ziel ist es nun, auch $y$ in der Zeichnung unterzubringen. 
+
+Dafür reicht es zu zeigen, dass ein $i$ existiert, so dass $Y\subseteq V(P_i)$. Dann können wir $y$ in dem Gebiet platzieren, der durch $x_i P_i x_{i+1} x x_i$ definiert ist. Angenommen, es existiert kein $i$ mit $Y\subseteq V(P_i)$. Wir unterscheiden drei Fälle:
+\begin{enumerate}
+\item Fall: Es gibt ein $y'\in Y\setminus X$. Sei etwa $y'\in P_i$ und $y''\in C\setminus P_i$ ein weiterer Nachbar von $y$. Setze $x'=x_i$ und $x''=x_{i+1}$. Dann werden $y'$ und $y''$ durch $x'$ und $x''$ in $C$ getrennt.
+\item Fall: Es ist $Y\subseteq X$ und $|Y| \leq 2$, d.h. $y$ hat genau zwei Nachbarn $y'$ und $y''$ auf $C$, die nicht im gleichen $P_i$ liegen. Diese werden durch zwei $x',x''\in X$ in $C$ getrennt.
+\item Fall: Es ist $Y\subseteq X$ und $|Y|\geq 3$.
+\end{enumerate}
+In den ersten beiden Fällen bilden $x,y',y''$ und $y,x',x''$ einen $\mathrm{T}K_{3,3}$ in $G$. Im dritten Fall haben $y$ und $x$ drei gemeinsame Nachbarn auf $C$. Diese bilden zusammen mit $x$ und $y$ einen $\mathrm{T}K^5$ in $G$.
+\end{proof}
+
+Um den Beweis von Satz von Kuratowski abzuschließen, muss man noch die folgenden Lemmata beweisen:
+
+\begin{lemma}
+Ein Graph enthält genau dann einen $\mathrm{T}K^5$ oder einen $\mathrm{T}K_{3,3}$, wenn er einen $K^5$ oder einen $K_{3,3}$ als Minor enthält.
+\end{lemma}
+
+\begin{proof}
+Siehe Lemma 3.4.2 in [Diestel: Graphentheorie].
+\end{proof}
+
+\begin{lemma}
+Ist $G$ ein Graph mit $|G|>4$, der kantenmaximal mit $\mathrm{T}K^5,\mathrm{T}K_{3,3}\not\subseteq G$ ist, so ist $G$ $3$-zusammenhängend.
+\end{lemma}
+
+\begin{proof}
+Siehe Lemma 3.4.5 in [Diestel: Graphentheorie].
+\end{proof}
+
+\section{Algebraisches Plättbarkeitskriterium}
+
+\end{document}
