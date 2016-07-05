@@ -31,14 +31,13 @@
 \section{Maximale Planarität}
 
 \begin{definition}
-Ein \textit{ebener Graph} ist ein Paar $G= (V, E)$ endlicher Mengen, so dass:
+Ein \textit{ebener Graph} ist ein Paar $G= (V, E)$ endlicher Mengen (Elemente von $V$ heißen \textit{Knoten}, Elemente von $E$ heißen \textit{Kanten}), so dass:
 \begin{enumerate}[(i)]
 \item $V$ ist Teilmenge von $\mathbb{R}^2$.
 \item Jedes Element in $E$ ist ein Polygonzug zwischen zwei Knoten.
 \item  Veschiedene Kanten haben verschiedene Menge von Endpunkten.
 \item Das Innere einer Kante enthält keine Knote oder einen Punkt einer anderen Kante.
 \end{enumerate}
-Elemente von $V$ heißen \textit{Knoten}, Elemente von $E$ heißen \textit{Kanten}.
 \end{definition}
 
 \begin{remark}
@@ -192,6 +191,7 @@ Sei $G=(V, E)$ ein Graph.
 \[\{\text{Abbildungen } h:E\to\mathbb{F}_2\}\] 
 mit komponentenweiser Addition. Wir identifizieren Vektoren darin mit Teilmengen von $E$. Somit ist die Addition von Teilmengen nichts anderes als das Bilden der symmetrischen Differenz der beiden Mengen:
 \[ E_1 + E_2 = (E_1 \cup E_2) \setminus (E_1\cap E_2) \]
+\item Der \textit{Schnittraum} $\mathcal{C}^\ast(G)$ von $G$ ist definiert als der $\mathbb{F}_2$-Untervektorraum des Kantenraums, der nur aus den Schnittmengen in $G$ besteht, d.h. Mengen der Form $E(V', V'')$ für eine Partition $\{V', V''\}$ in $G$.
 \item  Der \textit{Zyklenraum} $\mathcal{C}(G)$ von $G$ ist definiert als der $\mathbb{F}_2$-Untervektorraum des Kantenraums, der von den Kantenmengen von Kreisen in $G$ erzeugt wird. Vektoren in $\mathcal{C}(G)$ kann man als Summe von disjunkten Kreisen in $G$ schreiben.
 \item Eine Teilmenge $\mathcal{F}$ des Kantenraums von $G$ heißt \textit{schlicht}, wenn jede Kante in $G$ in höchstens zwei Mengen aus $\mathcal{F}$ liegt.
 \end{itemize}
@@ -249,5 +249,71 @@ Nach der Dimensionsformel Lemma~\ref{lem:dimensionsformel} gilt $\dim\mathcal{C}
 Keines der $C_0,C_1,\ldots,C_4$ sind leer und enthalten alle mindestens vier Kanten wegen der Bipartität. Mit dem gleichen Argument wie im vorherigen Lemma ist $\{C_0,C_1,\ldots,C_4\}$ ebenfalls schlicht, also folgt:
 \[ 20 = 5\cdot 4 \leq |C_0|+\ldots + |C_4|\leq 2\cdot \|K_{3,3}\| = 18\qedhere \]
 \end{proof}
+
+\section{Plättbarkeit \& Dualität}
+
+\begin{definition}
+Ein \textit{ebener Multigraph} ist ein Paar $G=(V,E)$ endlicher Mengen (Elemente von $V$ heißen \textit{Knoten}, Elemente von $E$ heißen \textit{Kanten}), so dass:
+\begin{enumerate}[(i)]
+\item $V$ ist Teilmenge von $\mathbb{R}^2$.
+\item Jedes Element in $E$ ist ein Polygonzug zwischen zwei Knoten oder ein Polygon, das genau eine Knote enthält.
+\item Das Innere einer Kante enthält keine Knote oder einen Punkt einer anderen Kante.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Sei $G=(V, E)$ ein ebener Multigraph. Wir setzen in jedes ebiet von $G$ einen neuen Knoten und verbinden diese zu einem neuen ebenen Multigraphen $G^\ast$:
+\begin{itemize}
+\item Für jede Kante $e$ von $G$ verbinden wir die neuen Knoten in den beiden Gebieten, auf deren Rand $e$ liegt, durch eine neue Kante $e^\ast$.
+\item Liegt $e$ nur auf dem Rand eines Gebiets, so legen wir an dessen neue Knote eine Schlinge $e^\ast$ durch $e$.
+\end{itemize}
+Der neue Graph $G^\ast$ heißt \textit{topologisches Dual} zu $G$.
+\end{definition}
+
+Wir finden den folgenden einfachen Zusammenhang zwischen einem Graphen und sein topologisches Dual:
+
+\begin{proposition}\label{prop:kombdual-motivation}
+Sei $G$ ein zusammenhängender ebener Multigraph und $E\subseteq E(G)$ eine Kantenmenge. $E$ ist genau dann von einem Kreis induziert, wenn $E^\ast = \{e^\ast\mid e\in E\}$ ein minimaler Schnitt in $G^\ast$ ist.
+\end{proposition}
+
+\begin{proof}
+Siehe Proposition 3.6.1 in [Diestel: Graphentheorie].
+\end{proof}
+
+\begin{definition}
+Sei $G$ ein abstrakter Multigraph. Ein abstrakter Multigraph $G^\ast$ heißt zu $G$ \textit{kombinatorisch dual}, wenn $E(G^\ast) = E(G)$ und die Minimalschnitte von $G^\ast$ gerade die Kantenmengen von Kreise in $G$ sind.
+\end{definition}
+
+\begin{proposition}\label{prop:kombdual-zyklenraum}
+Sei $G^\ast$ kombinatorisch dual zu $G$. Dann gilt:
+\[ \mathcal{C}^\ast(G^\ast) =\mathcal{C}(G) \]
+\end{proposition}
+
+\begin{proof}
+$\mathcal{C}^\ast(G^\ast)$ wird erzeugt durch die Minimalschnitte von $G^\ast$, während $\mathcal{C}(G)$ von den Kantenmengen von Kreise in $G$ erzeugt wird.
+\end{proof}
+
+\begin{lemma}\label{lem:schnittraum-schlicht}
+Sei $G=(V, E)$ ein Graph. Dann wird $\mathcal{C}^\ast(G)$ erzeugt von Schnitten der Form $E(v) = \{vw\mid w\in V\setminus\{v\} \},\ v\in V$.
+\end{lemma}
+
+\begin{proof}
+Sei $\{V', V''\}$ eine Partition von $G$ und betrachte den Schnitt $E(V', V'')$. Da jede Kante $vw$ in genau $E(v)$ und $E(w)$ liegt, gilt:
+\[ E(V', V'') = \sum_{v\in V'} E(v) \qedhere \]
+\end{proof}
+
+\begin{corollary}\label{cor:schnittraum-schlicht}
+Sei $G$ ein Graph. Dann hat $\mathcal{C}^\ast(G)$ eine schlichte Basis.
+\end{corollary}
+
+\begin{theorem}[\textit{Whitney 1993}]
+Ein Graph $G$ ist genau dann plättbar, wenn ein zu ihm kombinatorisch dualer Multigraph existiert.
+\end{theorem}
+
+\begin{proof}
+Eine Richtung folgt aus Satz~\ref{prop:kombdual-motivation}. Sei $G^\ast$ ein kombinatorisches Dual zu $G$. Nach Satz~\ref{prop:kombdual-zyklenraum} gilt $\mathcal{C}^\ast(G^\ast) =\mathcal{C}(G)$. Nach MacLane Theorem~\ref{thm:maclane} reicht es zu zeigen, dass $\mathcal{C}^\ast(G^\ast)$ eine schlichte Basis besitzt. Dies folgt aus Korollar~\ref{cor:schnittraum-schlicht}.
+\end{proof}
+
+
 
 \end{document}
