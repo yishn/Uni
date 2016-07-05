@@ -110,7 +110,7 @@ $K^5$ hat $10 > 3\cdot 5 - 6$ Kanten. Für $K_{3,3}$ kann man mithilfe der Euler
 
 Interessanterweise gilt auch die Umkehrung von Korollar~\ref{cor:kuratowski-motivation}:
 
-\begin{theorem}[\textit{Satz von Kuratowski, 1930}]
+\begin{theorem}[\textit{Satz von Kuratowski, 1930}]\label{thm:kuratowski}
 Die folgenden Aussagen sind für einen Graphen $G$ äquivalent:
 \begin{enumerate}[(i)]
 \item $G$ ist plättbar.
@@ -184,5 +184,70 @@ Siehe Lemma 3.4.5 in [Diestel: Graphentheorie].
 \end{proof}
 
 \section{Algebraisches Plättbarkeitskriterium}
+
+\begin{definition}
+Sei $G=(V, E)$ ein Graph.
+\begin{itemize}
+\item Der \textit{Kantenraum} von $G$ ist definiert als den $\mathbb{F}_2$-Vektorraum 
+\[\{\text{Abbildungen } h:E\to\mathbb{F}_2\}\] 
+mit komponentenweiser Addition. Wir identifizieren Vektoren darin mit Teilmengen von $E$. Somit ist die Addition von Teilmengen nichts anderes als das Bilden der symmetrischen Differenz der beiden Mengen:
+\[ E_1 + E_2 = (E_1 \cup E_2) \setminus (E_1\cap E_2) \]
+\item  Der \textit{Zyklenraum} $\mathcal{C}(G)$ von $G$ ist definiert als der $\mathbb{F}_2$-Untervektorraum des Kantenraums, der von den Kantenmengen von Kreisen in $G$ erzeugt wird. Vektoren in $\mathcal{C}(G)$ kann man als Summe von disjunkten Kreisen in $G$ schreiben.
+\item Eine Teilmenge $\mathcal{F}$ des Kantenraums von $G$ heißt \textit{schlicht}, wenn jede Kante in $G$ in höchstens zwei Mengen aus $\mathcal{F}$ liegt.
+\end{itemize}
+\end{definition}
+
+\begin{lemma}\label{lem:dimensionsformel}
+Sei $G$ ein zusammenhängender Graph mit $n$ Knoten und $m$ Kanten. Dann gilt für die Dimension des Zyklenraums:
+\[ \dim \mathcal{C}(G) = m-n+1 \]
+\end{lemma}
+
+\begin{proof}
+Siehe Satz 0.9.6 in [Diestel: Graphentheorie].
+\end{proof}
+
+\begin{theorem}[\textit{MacLane 1937}]\label{thm:maclane}
+Ein Graph $G$ ist genau dann plättbar, wenn sein Zyklenraum $\mathcal{C}(G)$ eine schlichte Basis besitzt.
+\end{theorem}
+
+\begin{proof}
+Für $|G|\leq 2$ ist die Aussage trivial. Sei $|G|\geq 3$. Sei $G$ zunächst einmal höchstens $1$-zusammenhängend, d.h. $G$ ist die Vereinigung zweier Untergraphen $G',G''\subset G$ mit $|G'\cap G''|\leq 1$. Ein Kreis in $G$ ist entweder ein Kreis in $G'$ oder ein Kreis in $G''$, also folgt:
+\[ \mathcal{C}(G) = \mathcal{C}(G')\oplus\mathcal{C}(G'') \]
+Somit hat $\mathcal{C}(G)$ genau dann eine schlichte Basis, wenn $\mathcal{C}(G')$ und $\mathcal{C}(G'')$ eine haben. Ferner ist $G$ genau dann plättbar, wenn $G'$ und $G''$ es sind. Somit folgt die Aussage induktiv. Sei ab jetzt $G$ $2$-zusammenhängend. 
+
+Sei $G$ plättbar und wähle eine Zeichnung. Nach Lemma~\ref{lem:kuratowski-2lemma} sind alle Gebietsränder Kreise, liegen also in $\mathcal{C}(G)$. Wir zeigen, dass die Gebietsränder schon ganz $\mathcal{C}(G)$ erzeugen. Da eine ebene Kante auf dem Rand höchstens zweier Gebiete liegen kann, besitzt $\mathcal{C}(G)$ dann eine schlichte Basis. 
+
+Sei $C\subset G$ ein Kreis und $f$ sein Innengebiet. Jede Kante $e$ liegt auf einem Kreis von $G$. Liegt das Innere von $e$ in $f$, so liegt $e$ auf dem Rand genau zweier Gebiete von $G$, die in $f$ enthalten sind. Liegt $e$ dagegen auf $C$, so liegt $e$ genau auf einem Gebiet, das in $f$ enthalten ist. Somit gilt:
+\[ C = \sum_{\substack{f'\in F(G)\\ f'\subseteq f}} E(G[f']) \]
+
+Sei nun umgekehrt $\{C_1,\ldots, C_k\}$ eine schlichte Basis von $\mathcal{C}(G)$. Für jede Kante $e$ besitzt $\mathcal{C}(G-e)$ auch eine schlichte Basis, denn:
+\begin{itemize}
+\item Liegt $e$ in nur einem Basiszyklus, etwa $C_1$, so ist $\{C_2,\ldots, C_k\}$ eine Basis von $\mathcal{C}(G-e)$.
+\item Liegt $e$ in zwei Basiszyklen, etwa $C_1$ und $C_2$, so ist $\{C_1+C_2,\ldots, C_k\}$ eine Basis von $\mathcal{C}(G-e)$.
+\end{itemize}
+Angenommen, $G$ ist nicht plättbar. Nach dem Satz von Kuratowski enthält $G$ einen $\mathrm{T}K^5$ oder einen $\mathrm{T}K_{3,3}$. Als Teilgraphen  von $G$ hat dann $\mathcal{C}(\mathrm{T}K^5)$ bzw. $\mathcal{C}(\mathrm{T}K_{3,3})$ eine schlichte Basis. Da topologische Minoren keine Kreise hinzufügen bzw. entfernen bleibt der Zyklenraum gleich, d.h. $\mathcal{C}(K^5)$ bzw. $\mathcal{C}(K_{3,3})$ hat eine schlichte Basis. Wir führen nun beide Fälle in den folgenden Lemmata zum Widerspruch.
+\end{proof}
+
+\begin{lemma}
+$\mathcal{C}(K^5)$ hat keine schlichte Basis.
+\end{lemma}
+
+\begin{proof}
+Nach der Dimensionsformel Lemma~\ref{lem:dimensionsformel} gilt $\dim\mathcal{C}(K^5) = 6$. Angenommen, $\mathcal{C}(K^5)$ habe eine schlichte Basis $B=\{C_1,\ldots,C_6\}$. Setze:
+\[ C_0 = C_1+\ldots + C_6 \]
+Keines der $C_0, C_1,\ldots, C_6$ sind leer und enthalten alle mindestens drei Kanten. Da eine Kante in höchstens zwei Zyklen aus $B$ liegt, liegt jede Kante in $C_0$ in nur einem der Basiszyklen in $B$. Daher ist die Menge $\{C_0,C_1,\ldots ,C_6\}$ ebenfalls schlicht, also folgt:
+\[ 21 = 7\cdot 3 \leq |C_0|+\ldots + |C_6| \leq 2\cdot \|K^5\| = 20 \qedhere \]
+\end{proof}
+
+\begin{lemma}
+$\mathcal{C}(K_{3,3})$ hat keine schlichte Basis.
+\end{lemma}
+
+\begin{proof}
+Nach der Dimensionsformel Lemma~\ref{lem:dimensionsformel} gilt $\dim\mathcal{C}(K_{3,3}) = 4$. Angenommen,  $\mathcal{C}(K_{3,3})$ habe eine schlichte Basis $B=\{C_1,\ldots, C_4\}$. Setze:
+\[ C_0 = C_1+\ldots + C_4 \]
+Keines der $C_0,C_1,\ldots,C_4$ sind leer und enthalten alle mindestens vier Kanten wegen der Bipartität. Mit dem gleichen Argument wie im vorherigen Lemma ist $\{C_0,C_1,\ldots,C_4\}$ ebenfalls schlicht, also folgt:
+\[ 20 = 5\cdot 4 \leq |C_0|+\ldots + |C_4|\leq 2\cdot \|K_{3,3}\| = 18\qedhere \]
+\end{proof}
 
 \end{document}
