@@ -150,7 +150,7 @@ Per Induktion nach $|G|$. Für $|G|=4$ ist $G = K^4$ und $G$ plättbar:
 \end{tikzcd}\]
 Sei nun $|G|>4$ und die Aussage wahr für kleinere Graphen. Nach Lemma~\ref{lem:kuratowski-3lemma} haben wir eine Kante $xy$, so dass $G/xy$ wieder $3$-zusammenhängend ist. Nun enthält $G/xy$ ebenfalls weder $K^5$ noch einen $K_{3,3}$ als topologischen Minor. Nach Induktionsvoraussetzung ist $G/xy$ plättbar. Sei also $H$ eine Zeichnung von $G/xy$.
 
-Sei $v$ der Knoten in $H$, das die Kante $xy$ repräsentiert. Betrachte das Gebiet $f$ von $H-v$, das den Punkt $v$ enthält und sei $C$ der Rand von $f$. Setze:
+Sei $v$ der Knoten in $H$, das die Kante $xy$ repräsentiert. Betrachte das Gebiet $f$ von $H-v$, das den Punkt $v$ enthält, und sei $C$ der Rand von $f$. Setze:
 \[ X = N(x) \setminus{y},\quad Y = N(y)\setminus{x} \]
 Dann gilt $X\cup Y\subseteq N(v)\subseteq C$. Da $H-v$ $2$-zusammenhängend ist, ist $C$ nach Lemma~\ref{lem:kuratowski-2lemma} ein Kreis. Seien $x_1,\ldots, x_k$ die Elemente in $X$ in natürlicher Reihenfolge entlang $C$ und $P_i$ der Verbindungsweg auf $C$ zwischen $x_i$ und $x_{i+1}$, wobei $x_{k+1} = x_1$. Betrachte den folgenden ebenen Graphen:
 \[ H' = H - \{vw \mid w\in Y\setminus X\} \]
