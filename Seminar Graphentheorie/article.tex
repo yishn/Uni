@@ -8,6 +8,11 @@
 \usepackage{amsthm}
 \usepackage{paralist}
 \usepackage{tikz-cd}
+\usepackage{hyperref}
+\hypersetup{
+	bookmarksopen=true,
+	pdfstartview=FitH
+}
 \linespread{1.1}
 
 \author{von \textsc{yichuan shen}}
@@ -27,6 +32,8 @@
 \newtheorem*{remark}{Bemerkung}
 
 \maketitle
+
+\paragraph{Präsentation} \url{http://slides.com/yichuanshen/ebene-graphen/}
 
 \section{Maximale Planarität}
 
@@ -192,7 +199,7 @@ Sei $G=(V, E)$ ein Graph.
 \[\{\text{Abbildungen } h:E\to\mathbb{F}_2\}\] 
 mit komponentenweiser Addition. Wir identifizieren Vektoren darin mit Teilmengen von $E$. Somit ist die Addition von Teilmengen nichts anderes als das Bilden der symmetrischen Differenz der beiden Mengen:
 \[ E_1 + E_2 = (E_1 \cup E_2) \setminus (E_1\cap E_2) \]
-\item Der \textit{Schnittraum} $\mathcal{C}^\ast(G)$ von $G$ ist definiert als der $\mathbb{F}_2$-Untervektorraum des Kantenraums, der nur aus den Schnittmengen in $G$ besteht, d.h. Mengen der Form $E(V', V'')$ für eine Partition $\{V', V''\}$ in $G$.
+\item Der \textit{Schnittraum} $\mathcal{C}^\ast(G)$ von $G$ ist definiert als der $\mathbb{F}_2$-Untervektorraum des Kantenraums, der nur aus den Schnittmengen in $G$ besteht, d.h. Mengen der Form $E(V', V'')$ wobei $\{V', V''\}$ eine Partition von $G$ ist.
 \item  Der \textit{Zyklenraum} $\mathcal{C}(G)$ von $G$ ist definiert als der $\mathbb{F}_2$-Untervektorraum des Kantenraums, der von den Kantenmengen von Kreisen in $G$ erzeugt wird. Vektoren in $\mathcal{C}(G)$ kann man als Summe von disjunkten Kreisen in $G$ schreiben.
 \item Eine Teilmenge $\mathcal{F}$ des Kantenraums von $G$ heißt \textit{schlicht}, wenn jede Kante in $G$ in höchstens zwei Mengen aus $\mathcal{F}$ liegt.
 \end{itemize}
