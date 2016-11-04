@@ -54,7 +54,7 @@ Let $v,w\in\operatorname{Spv}(K)$. We have:
 Thus $v$ is a closed point if and only if $\dim k(v)=0$.
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{2.2-pre}
 Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
 \[\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_v$. $w$ is henselian if and only if $v$ and $w\mod v$ are henselian.
@@ -67,7 +67,7 @@ Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\oper
 \end{lemma}
 
 \begin{proof}
-Assume that $K$ is not algebraically closed, i.e. $G_K\neq 1$ and set $v_i = v(w_i)$. If $v_1\neq v_2$, by the Theorem of F.K. Schmidt we have $G_{v_1}\cap G_{v_2} = 1 \neq G_K$, a contradiction. Therefore $v_1 = v_2$.
+Assume that $K$ is not algebraically closed, i.e. $G_K\neq 1$ and set $v_i = v(w_i)$. By Lemma~\ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. If $v_1\neq v_2$, by the Theorem of F.K. Schmidt we have $G_{v_1}\cap G_{v_2} = 1 \neq G_K$, a contradiction. Therefore $v_1 = v_2$.
 
 Now $k(v_1) = k(v_2)$ is henselian with respect to both $w_1\mod v_1$ and $w_2\mod v_2$. Again by the Theorem of F.K. Schmidt we get $G_{k(v_1)} = 1$, hence $k(v_1)$ is separably closed.
 
@@ -99,7 +99,7 @@ Let $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is 
 \end{lemma}
 
 \begin{proof}
-The degree $[K(\mu_\ell, \sqrt{-1}):K]$ is prime to $\ell$, thus we can assume that $\mu_\ell\subset K$ and $K$ is not formally real without loss of generality. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2) = \mu_\ell^{\otimes 2}$.
+The degree $[K(\mu_\ell, \sqrt{-1}):K]$ is prime to $\ell$, thus we can assume that $\mu_\ell\subset K$ and $K$ is not formally real with a usual norm argument. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2) = \mu_\ell^{\otimes 2}$.
 
 We write $\mathrm{H}^3(L) = \mathrm{H}^3(L, \mathbb{Z}/\ell\mathbb{Z}(2))$. Let $\mathfrak{X}$ be a model of $K$. $\mathfrak{X}_i$ denotes the set of points $x\in\mathfrak{X}$ whose closure $\overline{\{x\}}$ is $i$-dimensional. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By [K1] Theorem 0.8, the following map
 \[ \mathrm{H}^3(K)\longrightarrow \prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_{v_x}) \]
@@ -158,12 +158,12 @@ By requirement $\ell^\infty \nmid [(K_0)_{w_0} : K_0]$. By replacing $K_0$ by $(
 
 Assume that $w = w_0|_K$ is not henselian. Then there exists a $w_1\in|\operatorname{Spv}(K_0)|$ with $w_1\neq w_0$ and such that $w = w_1|_K$, for otherwise $w$ would have a unique prolongation to $K_0$ and hence to $\overline{K}$ since $w_0$ is henselian.
 
-Le $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w$ be a henselization of $K$ with respect to $w$ in $(K_0)_{w_1}$. Then $(K_0)_{w_1}$ is the composite of $K_0$ and $K_w$ and we have $\ell^\infty\nmid [(K_0)_{w_1} : K_w]$.
+Let $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w$ be a henselization of $K$ with respect to $w$ in $(K_0)_{w_1}$. Then $(K_0)_{w_1}$ is the composite of $K_0$ and $K_w$ and we have $\ell^\infty\nmid [(K_0)_{w_1} : K_w]$.
 
-Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
+Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$ as well. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
 
 Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the prolongation of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
-\item Choose a prime $\ell$ different from $\operatorname{char} k(w)$. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)$.
+\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)$.
 \end{enumerate}
 \end{proof}
 
