@@ -264,7 +264,8 @@ in which case $X'_k\to X'$ splits completely. By Lemma \ref{4.1} we get $k\cong 
 Now we drop the assumption that $k/\mathbb{Q}$ is Galois. There exists a finite extension $k_1/k$ such that $k_1/\mathbb{Q}$ is Galois and $X(k_1)\neq\varnothing$. Let $K_1 = Kk_1$ be the constant field extension of $K$ with $k_1$ and let $k'_1$ be the constant field of $K'_1$. Applying the above argument to $K_1$ and $K'_1$ yields $[k_1:\mathbb{Q}] = [k'_1:\mathbb{Q}]$. Therefore:
 \begin{align*}
 [k:\mathbb{Q}] &= [k_1:\mathbb{Q}]\cdot [K_1:K]^{-1} = [k'_1:\mathbb{Q}]\cdot [K'_1:K']^{-1}\\
-&\leq [k'_1:\mathbb{Q}]\cdot [k'_1:k']^{-1} = [k':\mathbb{Q}]
+&= [k'_1:\mathbb{Q}]\cdot ([K'_1: K'k_1'] \cdot [K'k_1':K'])^{-1}\\
+&= [k'_1:\mathbb{Q}]\cdot  ([K'_1: K'k_1'] \cdot [k'_1:k'])^{-1} \leq [k'_1:\mathbb{Q}]\cdot [k'_1:k']^{-1} = [k':\mathbb{Q}]
 \end{align*}
 By symmetry, we get $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
 \end{proof}
