@@ -287,6 +287,14 @@ Therefore $L/K$ is a constant field extension iff $L'/K'$ is a constant field ex
 Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
 
+\begin{remark}
+Consider $\overline{K}'' = \overline{K}'\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
+\[ \begin{tikzcd}
+G_K \ar[r, "\sigma"] & G_{K'} \ar[r] & G_{K'}
+\end{tikzcd} \]
+where the second map is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities.
+\end{remark}
+
 \paragraph{} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the following diagram commutes:
