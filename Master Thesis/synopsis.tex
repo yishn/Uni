@@ -34,7 +34,7 @@ We define:
 \operatorname{Spv}_\text{d}(K) &= \{v\in\operatorname{Spv}(K)\mid\operatorname{rank}(v)=\operatorname{rrank}(v) \} \\
 \operatorname{Spv}_\text{rd}(K) &= \{v\in\operatorname{Spv}_\text{d}(K)\mid \operatorname{rrank}(v)+\dim k(v)=\dim(K) \}
 \end{align*}
-Valuations in $\operatorname{Spv}_\text{d}$ are called \textit{defectless}\index{valuation!defectless}, those in $\operatorname{Spv}_\text{rd}$ are called \textit{rank-defectless}\index{valuation!rank-defectless}. For $\ast\in\{\text{d},\text{rd}\}$ we set:
+Valuations in $\operatorname{Spv}_\text{d}$ are called \textit{defectless}\index{valuation!defectless}, whereas those in $\operatorname{Spv}_\text{rd}$ are called \textit{rank-defectless}\index{valuation!rank-defectless}. For $\ast\in\{\text{d},\text{rd}\}$ we set:
 \[\operatorname{Spv}_\ast^{(i)}(K)=\{v\in\operatorname{Spv}_\ast(K)\mid \operatorname{rrank}(v)=i \} \]
 \end{definition}
 
@@ -226,13 +226,48 @@ By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname
 
 \section{Global Correspondence mod $n$}
 
+\begin{theorem}[\textit{Hilbert's Irreducibility Theorem}]\label{hilberts-irreducibility-theorem}
+Inhalt...
+\end{theorem}
+
 \begin{lemma}\label{4.1}
 Let $E$ be a number field and let $X$ be a smooth projective geometrically connected curve over $E$. Let $\pi:X'\to X$ be a connected Galois covering of degree $d$ which splits completely, i.e. every closed point $P\in X_0$ has exactly $d$ pre-images in $X'$. Then $d=1$.
 \end{lemma}
 
+\begin{proof}
+Let $f: X\to\mathbf{P}^1_E$ be a non-constant morphism and let $f' =  f\circ \pi: X'\to\mathbf{P}^1_E$. By Hilbert's Irreducibility Theorem \ref{hilberts-irreducibility-theorem} there exists a closed $E$-rational point $P$ of $\mathbf{P}^1_E$ which has only one pre-image under $f'$. Consequently, $P$ only has one pre-image under $f$, say $P'$, and $P'$ has only one pre-image under $\pi$.
+\end{proof}
+
 \paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
 Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$.
+
+\begin{lemma}\label{4.2-pre}
+We have $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
+\end{lemma}
+
+\begin{proof}
+By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X_0\to X'_0$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(\sigma(P))\to k(P)$.
+
+First we suppose that $k/\mathbb{Q}$ is a Galois extension and $X$ has a $k$-rational point $P_0$. We can consider $k'$ as a subfield of $k$ via: 
+\[\begin{tikzcd}
+k'\ar[r] & k(\sigma(P_0))\ar[r, "\varphi_{P_0}"', "\cong"] & k(P_0) \ar[r, "\cong"] & k
+\end{tikzcd}\]
+For all $P' = \sigma(P)\in X'_0$ we also get an embedding:
+\[ \begin{tikzcd}
+k \ar[r] & k(P) \ar[r, "\varphi_P^{-1}"', "\cong"] & k(P')
+\end{tikzcd} \]
+We see any embedding $k\to \overline{k(P')}$ maps $k$ into $k(P')$ because $k/\mathbb{Q}$ is Galois. Thus we have for all $P'\in X'_0$:
+\[ k\otimes_{k'} k(P')\cong \prod_{\operatorname{Hom}_{k'}(k, k(P'))} k(P') \]
+in which case $X'_k\to X'$ splits completely. By Lemma \ref{4.1} we get $k\cong k'$, hence $[k:\mathbb{Q}]= [k':\mathbb{Q}]$.
+
+Now we drop the assumption that $k/\mathbb{Q}$ is Galois. There exists a finite extension $k_1/k$ such that $k_1/\mathbb{Q}$ is Galois and $X(k_1)\neq\varnothing$. Let $K_1 = Kk_1$ be the constant field extension of $K$ with $k_1$ and let $k'_1$ be the constant field of $K'_1$. Applying the above argument to $K_1$ and $K'_1$ yields $[k_1:\mathbb{Q}] = [k'_1:\mathbb{Q}]$. Therefore:
+\begin{align*}
+[k:\mathbb{Q}] &= [k_1:\mathbb{Q}]\cdot [K_1:K]^{-1} = [k'_1:\mathbb{Q}]\cdot [K'_1:K']^{-1}\\
+&\leq [k'_1:\mathbb{Q}]\cdot [k'_1:k']^{-1} = [k':\mathbb{Q}]
+\end{align*}
+By symmetry, we get $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
+\end{proof}
 
 \begin{lemma}\label{4.2}
 We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
@@ -242,6 +277,12 @@ G_k \ar[r, "\sigma"'] & G_{k'}
 \end{tikzcd} \]
 Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$.
 \end{lemma}
+
+\begin{proof}
+Let $L/K$ be a finite subextension of $\overline{K}/K$. Let $\ell$ and $\ell'$ be the constant fields of $L$ and $L'$ respectively. Applying Lemma \ref{4.2-pre} to $K$ and $L$ gives:
+\[ [\ell:k] = [\ell':k'] \]
+Therefore $L/K$ is a constant field extension iff $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism $G_k\to G_{k'}$. Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
+\end{proof}
 
 \paragraph{} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
