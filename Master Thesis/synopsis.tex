@@ -273,7 +273,7 @@ By symmetry, we get $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
 \begin{lemma}\label{4.2}
 We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
 \[ \begin{tikzcd}
-G_K \ar[r, "\sigma"] \ar[d, "\text{res}"'] & G_{K'}\ar[d, "\text{res}"]\\
+G_K \ar[r, "\sigma"] \ar[d] & G_{K'}\ar[d]\\
 G_k \ar[r, "\sigma"'] & G_{k'}
 \end{tikzcd} \]
 Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$.
@@ -282,7 +282,9 @@ Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\ov
 \begin{proof}
 Let $L/K$ be a finite subextension of $\overline{K}/K$. Let $\ell$ and $\ell'$ be the constant fields of $L$ and $L'$ respectively. Applying Lemma \ref{4.2-pre} to $K$ and $L$ gives:
 \[ [\ell:k] = [\ell':k'] \]
-Therefore $L/K$ is a constant field extension iff $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism $G_k\to G_{k'}$. Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
+Therefore $L/K$ is a constant field extension iff $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism:
+\[G_k \cong \operatorname{Gal}(K\overline{k}/K) \to \operatorname{Gal}(K'\overline{k'}/K')\cong G_{k'}\] 
+Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
 
 \paragraph{} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
