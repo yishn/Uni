@@ -299,7 +299,12 @@ G_K \ar[r, "\sigma"] & G_{K'} \ar[r] & G_{K'}
 where the second map is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities.
 \end{remark}
 
-\paragraph{} Let $n\in\mathbb{N}$. For all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
+\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have determined that the following diagram commutes: 
+\[ \begin{tikzcd}
+G_K \ar[r]\ar[d, "\sigma"'] & G_k\\
+G_{K'}\ar[ru]
+\end{tikzcd} \]
+Now the operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the following diagram commutes:
 \[ \begin{tikzcd}
@@ -320,6 +325,19 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 \end{tikzcd} \]
 \end{enumerate}
 \end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item  We have $(K^\text{t}_P)^\times/n\cong \mathbb{Z}/n\mathbb{Z}$ since $\operatorname{char}k(P) = 0$. The canonical map $K^\times\to (K^\text{t}_P)^\times/n$ can be identified with the map $K^\times /n\to\mathbb{Z}/n$ induced by $v_P$. Now the following commutative diagram gives us the result:
+\[ \begin{tikzcd}
+0 \ar[d] & 0 \ar[d]\\
+U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
+K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
+(K^\text{t}_P)'^\times /n \ar[r, "\varphi_n"'] &  (K^\text{t}_P)^\times /n
+\end{tikzcd} \]
+\item Consider the field extension $K_P/K$
+\end{enumerate}
+\end{proof}
 
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
