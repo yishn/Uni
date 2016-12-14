@@ -1,6 +1,6 @@
 \chapter{Synopsis}
 
-\section{Some Results on $\operatorname{Spv}(K)$}
+\section{Some Results on the valuation spectra}
 
 \begin{definition}
 Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
@@ -244,15 +244,15 @@ Let $f: X\to\mathbf{P}^1_E$ be a non-constant morphism and let $f' =  f\circ \pi
 
 \paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
-Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$.
+Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
+
+By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X_0\to X'_0$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(\sigma(P))\to k(P)$.
 
 \begin{lemma}\label{4.2-pre}
 We have $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
 \end{lemma}
 
 \begin{proof}
-By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X_0\to X'_0$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(\sigma(P))\to k(P)$.
-
 First we suppose that $k/\mathbb{Q}$ is a Galois extension and $X$ has a $k$-rational point $P_0$. We can consider $k'$ as a subfield of $k$ via: 
 \[\begin{tikzcd}
 k'\ar[r] & k(\sigma(P_0))\ar[r, "\varphi_{P_0}"', "\cong"] & k(P_0) \ar[r, "\cong"] & k
@@ -311,7 +311,9 @@ Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the followin
 L'^\times/n \ar[r, "\varphi_n"]\dar & L^\times/n \dar\\
 M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 \end{tikzcd} \]
-Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. For $n\in\mathbb{N}$ the following sequence is exact, since valuation rings are integrally closed:
+Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. 
+
+Let $n\in\mathbb{N}$. Tensoring the exact sequence $0\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
 \[ 0\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
 We'll use the same notation for $P' = \sigma(P)\in X'_0$.
 
@@ -334,7 +336,7 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
 K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 (K^\text{t}_P)'^\times /n \ar[r, "\varphi_n"'] &  (K^\text{t}_P)^\times /n
-\end{tikzcd} \qedhere\]
+\end{tikzcd}\]
 \item Consider the field extension $K_P/K$. Without loss of generality, we can assume $K=K_P$. Then $r_P/n$ is an isomorphism and the composition
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[r, hook] & K_P^\times/n
@@ -346,6 +348,10 @@ k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"
 \end{tikzcd}  \qedhere\]
 \end{enumerate}
 \end{proof}
+
+\begin{theorem}[\textit{Mordell-Weil Theorem}]\label{mordell-weil-theorem}
+Inhalt...
+\end{theorem}
 
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
@@ -363,6 +369,21 @@ Such a set $S$ is called \textit{admissible}. If $V\subset X$ is an open subsche
 $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 \end{enumerate}
 \end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item By Mordell-Weil Theorem \ref{mordell-weil-theorem} the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
+\[ \bigcup_{i=1}^r \operatorname{supp}D_i\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}D'_j\subset S' \]
+is admissible. Now let $V\subset X$ be an open subscheme. By the approximation theorem, we can choose the $D_i$ and the $D'_j$ in $V_0$ and $\sigma (V_0)$ respectively.
+\item Observe that the following sequence is exact:
+\[ \begin{tikzcd}
+0 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& 0
+\end{tikzcd} \]
+Since the rightmost module is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
+\[ K^S/n = \bigcap_{P\in X_0\setminus X}U_P/n \]
+The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemma \ref{4.3} (i).\qedhere
+\end{enumerate}
+\end{proof}
 
 \section{The Proof}
 
