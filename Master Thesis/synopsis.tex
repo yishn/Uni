@@ -334,8 +334,16 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
 K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 (K^\text{t}_P)'^\times /n \ar[r, "\varphi_n"'] &  (K^\text{t}_P)^\times /n
-\end{tikzcd} \]
-\item Consider the field extension $K_P/K$
+\end{tikzcd} \qedhere\]
+\item Consider the field extension $K_P/K$. Without loss of generality, we can assume $K=K_P$. Then $r_P/n$ is an isomorphism and the composition
+\[\begin{tikzcd}
+k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[r, hook] & K_P^\times/n
+\end{tikzcd}\]
+is the inflation $\mathrm{H}^1(k(P), \mu_n) \to \mathrm{H}^1(K_P,\mu_n)$. The same holds for $P'$ due to Lemma \ref{3.2}. Therefore, the assertion follows from the commutativity of the following diagram:
+\[ \begin{tikzcd}
+k(P')^\times/n \ar[r, "\cong"] \ar[d, "\varphi_P/n"'] & \mathrm{H}^1(k(P'),\mu_n) \ar[r, "\mathrm{inf}"] \ar[d]& \mathrm{H}^1(K'_{P'}, \mu_n) \ar[d, "\varphi_n"] \\
+k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"'] & \mathrm{H}^1(K_{P}, \mu_n)
+\end{tikzcd}  \qedhere\]
 \end{enumerate}
 \end{proof}
 
