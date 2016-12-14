@@ -84,6 +84,7 @@ Let $K$ be finitely generated. A \textit{model} of $K$ is a regular, proper sche
 For every model $\mathfrak{X}$ there is a canonical map $\pi_\mathfrak{X}:\operatorname{Spv}(K)\to\mathfrak{X}$. $\pi_\mathfrak{X}(v)$  is the unique point of $\mathfrak{X}$ such that $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\subset\mathcal{O}_v$ and the inclusion $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\hookrightarrow \mathcal{O}_v$ is a homomorphism of local rings.
 \end{definition}
 
+\iffalse
 \begin{lemma}\phantomsection\label{2.3}
 \begin{enumerate}[(i)]
 \item $\operatorname{Spv}(K)$, together with the maps $\pi_{\mathfrak{X}}$, is the projective limit of topological spaces: 
@@ -96,6 +97,7 @@ In particular we have:
 \[ K_v=\varinjlim_{\mathfrak{X}\in\mathfrak{M}(K)}K_{\pi_\mathfrak{X}(v)} \]
 \end{enumerate}
 \end{lemma}
+\fi
 
 \begin{lemma}\label{2.4}
 Let $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
@@ -414,7 +416,7 @@ In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
 
 \begin{definition}
-For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_2 \supset T_1$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
+For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_1 \subset T_2$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
 \end{definition}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
