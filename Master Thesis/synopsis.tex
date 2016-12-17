@@ -396,10 +396,20 @@ An abelian group is called \textit{free-by-finite} if its torsion subgroup $A_\t
 \begin{lemma}\phantomsection\label{5.2}
 \begin{enumerate}[(i)]
 \item Let $f: A\to B$ be a homomorphism of abelian groups with finite kernel and cokernel. Then $A$ is free-by-finite iff $B$ is free-by-finite.
-\item Let $0\to A'\stackrel{i}{\to}A\stackrel{p}{\to}A''\to 0$ be an exact sequence of abelian groups. If $A'$ and $A''$ are free-by-finite, then $A$ is free-by-finite. Conversely, if $A$ is free-by-finite, then $A'$ is free-by-finite. If additionally, $A'$ is finitely generated, then $A''$ is free-by-finite.
+\item Let $0\longrightarrow A'\stackrel{i}{\longrightarrow}A\stackrel{p}{\longrightarrow}A''\longrightarrow 0$ be an exact sequence of abelian groups. If $A'$ and $A''$ are free-by-finite, then $A$ is free-by-finite. Conversely, if $A$ is free-by-finite, then $A'$ is free-by-finite. If additionally, $A'$ is finitely generated, then $A''$ is free-by-finite.
 \item Let $A$ be free-by-finite. Then $\bigcap_{n\in\mathbb{N}}nA=0$.
 \end{enumerate}
 \end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Let $A$ be free-by-finite, i.e. $A = A' \oplus F$ for some finite group $A'$ and free group $F$. Since $\ker(f)\subset A$ is finite, it's actually contained in $A'$.
+
+Now let $B$ be free-by-finite and $K = \ker(f)$. Since the injective map $A/K \to B$ induced by $f$ can be restricted to their torsion subgroups, we see that $(A/K)_\text{tor}$ is finite. Every $a\in A_\text{tor}$ can be written as $a = a' + k$ for some $a'\in A,\ k\in K$ such that $na'\in K$ for some $n\in\mathbb{N}$. Since both $(A/K)_\text{tor}$ and $K$ are finite, $A_\text{tor}$ is finite as well. TODO
+\item TODO
+\item It suffices to show this assertion for finite groups and for $A=\mathbb{Z}$. For $A$ finite we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
+\end{enumerate}
+\end{proof}
 
 \begin{lemma}\label{5.3}
 Let $F$ be a number field. Then:
