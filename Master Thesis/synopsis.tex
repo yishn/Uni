@@ -381,7 +381,7 @@ is admissible. Now let $V\subset X$ be an open subscheme. By the approximation t
 \[ \begin{tikzcd}
 0 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& 0
 \end{tikzcd} \]
-Since the rightmost module is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
+Since the right module is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n\mathbb{Z}$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
 \[ K^S/n = \bigcap_{P\in X_0\setminus X}U_P/n \]
 The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemma \ref{4.3} (i).\qedhere
 \end{enumerate}
@@ -449,6 +449,23 @@ Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
 In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
+
+\begin{proof}
+Let $U = X\setminus S$ and $P_1\in U$ be a closed point. We set:
+\[ C_1 = \ker(r_{P_1}|_{K^S}: K^S \to k(P_1)^\times) \]
+Since $r_{P_1}|_{k^\times}:k^\times \to k(P_1)^\times$ is injective, we have $C_1\cap k^\times = 1$ and the following map is injective:
+\[ C_1 \to\prod_{P\in S}\mathbb{Z},\ x \mapsto (v_P(x))_{P\in S} \]
+Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we set $T = \{P_1\}$ and we are done. Otherwise, let $x\in C_1,\ x\neq 1$. Then there exists an $a\in k^\times$ with the following properties:
+\begin{enumerate}[(i)]
+\item There exists a point $P_2\in X_0\setminus(S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
+\item $a$ is not a root of unity.
+\end{enumerate}
+We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order. It follows $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0$, such that the following map is injective:
+\[ C_1\to\prod_{i=2}^{r} k(P_i),\ x\mapsto(r_{P_i}(x))_i \]
+Finally for $T=\{P_1,\ldots,P_r\}$, the map $r_{S,T}$ is injective. For the second assertion, note that:
+\[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \prod_{P\in T}k(P)^\times /k^\times \Big) \]
+Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (ii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
+\end{proof}
 
 \begin{definition}
 For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_1 \subset T_2$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
