@@ -415,9 +415,34 @@ Now let $B$ be free-by-finite and $K = \ker(f)$. Since the injective map $A/K \t
 Let $F$ be a number field. Then:
 \begin{enumerate}[(i)]
 \item $F^\times$ is free-by-finite.
-\item Let $F_1,\ldots,F_n$ be finite extensions of $F$. Then $\prod_{i=1}^{n}F_i^\times/F^\times$ is free-by-finite, where $F^\times$ is considered as a subgroup of $\prod_{i=1}^{n}F_i^\times$ via the diagonal embedding.
+\item Let $F_1,\ldots,F_n$ be finite extensions of $F$. Then $\big(\prod_{i=1}^{n}F_i^\times\big)/F^\times$ is free-by-finite, where $F^\times$ is considered as a subgroup of $\prod_{i=1}^{n}F_i^\times$ via the diagonal embedding.
 \end{enumerate}
 \end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Let $\mathcal{P}(F)$ be the group of principal ideals of $F$. Consider the following exact sequence:
+\[ \begin{tikzcd}
+1 \ar[r] & \mathcal{O}_F^\times \ar[r] & F^\times \ar[r]& \mathcal{P}(F) \ar[r] & 1
+\end{tikzcd} \]
+By Dirichlet's Unit Theorem, $\mathcal{O}_F^\times$ is free-by-finite. $\mathcal{P}(F)$, as a subset of the ideal group of $F$, is free abelian, in particular free-by-finite. The assertion follows from Lemma \ref{5.2} (ii).
+\item Consider the following exact sequence:
+\[ \begin{tikzcd}
+1 \ar[r] & \displaystyle \prod_{i=1}^{n-1} F_i^\times \ar[r]& \displaystyle \Big(\prod_{i=1}^{n}F_i^\times\Big)/F^\times \ar[r]& F_n^\times/F^\times \ar[r]& 1
+\end{tikzcd} \]
+The left group is free-by-finite by (i), and by Lemma \ref{5.2} (ii), we can use induction to reduce to the case $n=1$.
+
+Let $\mathcal{P}(F)$ denote the group of principal ideals of $F$, $\mathcal{I}(F)$ the ideal group of $F$, and $\operatorname{Cl}(F) = \mathcal{I}(F)/\mathcal{P}(F)$ the ideal class group of $F$. We have the following exact sequence:
+\[ \begin{tikzcd}
+1 \ar[r]& \mathcal{O}_{F_1}^\times /\mathcal{O}_F^\times\ar[r] & F_1^\times / F^\times\ar[r] & \mathcal{P}(F_1)/\mathcal{P}(F)\ar[r] & 1
+\end{tikzcd} \]
+Again by Lemma \ref{5.2} (ii), it suffices to show that $\mathcal{P}(F_1)/\mathcal{P}(F)$ is free-by-finite. Using the snake lemma, we get the following exact sequence:
+\[
+0 \longrightarrow \ker(f)\longrightarrow \mathcal{P}(F_1)/\mathcal{P}(F)\longrightarrow \mathcal{I}(F_1)/\mathcal{I}(F)
+\longrightarrow \operatorname{coker}(f)\longrightarrow 0 \]
+where $f:\operatorname{Cl}(F)\to \operatorname{Cl}(F_1)$. Since the ideal class groups are finite, according to Lemma \ref{5.2} (i), it suffices to show that $\mathcal{I}(F_1)/\mathcal{I}(F)$ is free-by-finite. This follows from the fact that there are only finitely many primes of $F$ which are ramified in $F_1$.\qedhere
+\end{enumerate}
+\end{proof}
 
 \begin{lemma}\label{5.4}
 Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0\setminus S$ such that the following map is injective:
