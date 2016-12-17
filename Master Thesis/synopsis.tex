@@ -21,7 +21,7 @@ We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{rank-dimension-inequality}
 Let $v\in\operatorname{Spv}(K)$. Then we have:
 \[\operatorname{rank}(v)\leq \operatorname{rrank}(v)\quad\text{and}\quad\operatorname{rrank}(v)+\dim k(v)\leq\dim(K) \]
 \end{lemma}
@@ -152,7 +152,7 @@ Let $K_0/K$ be an algebraic extension.
 0, & \text{otherwise}
 \end{cases} \]
 Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
-\item Assume that (i) is satisfied for two different prime numbers. Then $w$ is defectless.
+\item Assume that (i) is satisfied for two different prime numbers. Then $w$ is a defectless valuation.
 \end{enumerate}
 \end{proposition}
 
@@ -169,7 +169,7 @@ Let $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w
 Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$ as well. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
 
 Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the prolongation of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
-\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)$.
+\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)$. By Lemma \ref{rank-dimension-inequality}, this inequality is actually an equality.
 \end{enumerate}
 \end{proof}
 
@@ -339,6 +339,7 @@ U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
 K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 (K^\text{t}_P)'^\times /n \ar[r, "\varphi_n"'] &  (K^\text{t}_P)^\times /n
 \end{tikzcd}\]
+Note that $(K^\text{t}_P)' = K'^{\text{t}}_{P'}$.
 \item Consider the field extension $K_P/K$. Without loss of generality, we can assume $K=K_P$. Then $r_P/n$ is an isomorphism and the composition
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[r, hook] & K_P^\times/n
@@ -496,9 +497,9 @@ The vertical maps are injective by definition. Thus, it suffices to show that th
 K'^{S'}/n \rar[dashed]\dar & K^S/n\dar\\
 \displaystyle \prod_{P\in T}k(\sigma P)^\times/n \rar & \displaystyle \prod_{P\in T}k(P)^\times/n
 \end{tikzcd} \]
-According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$. By symmetry, $\varphi^S$ is an isomorphism.
+According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$. By symmetry, $\varphi^{S,T}$ is an isomorphism.
 
-Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By observing $(\star)$ we find:
+Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By considering $(\star)$ we find:
 \[ r_{S,T_1}\circ\varphi^{S,T_2}=\Big(\prod_{P\in T_1}\varphi_P\Big)\circ r_{S',T_1'} = r_{S,T_1}\circ\varphi^{S,T_1} \]
 Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
