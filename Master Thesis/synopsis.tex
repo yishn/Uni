@@ -391,7 +391,7 @@ The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemm
 \section{The Proof}
 
 \begin{definition}\label{5.1}
-An abelian group is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotient $A/A_\text{tor}$ is free abelian. $A$ is free-by-finite if and only if $A$ is the direct sum of a finite group and a free abelian group.
+An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotient $A/A_\text{tor}$ is free abelian. $A$ is free-by-finite if and only if $A$ is the direct sum of a finite abelian group and a free abelian group.
 \end{definition}
 
 \begin{example}
@@ -419,7 +419,7 @@ Now let $A$ be free-by-finite, i.e. $A = A_\text{tor} \oplus F$ for some free ab
 \item Subgroups of free-by-finite groups are free-by-finite. Now assume $A'$ is finitely generated. We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B\setminus C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
-\item It suffices to show this assertion for finite groups and for $A=\mathbb{Z}$. For $A$ finite we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
+\item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For $A$ finite we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
 \end{enumerate}
 \end{proof}
 
