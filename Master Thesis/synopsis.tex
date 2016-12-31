@@ -414,8 +414,15 @@ An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $
 \begin{enumerate}[(i)]
 \item Let $B$ be free-by-finite and $K = \ker(f)$. Considering $A/K$ as a subgroup of $B$, we see that $A/K$ is free-by-finite. Since $(A/K)_\text{tor}$ and $K$ are finite, $K' = \{a\in A\mid na\in K \text{ for some }n\in\mathbb{N}\}$ is finite as well, in particular $A_\text{tor}$ is finite. In fact $K'=A_\text{tor}$, since $K\subset A_\text{tor}$. Now consider the surjection $A\to A/K\to (A/K)/(A/K)_\text{tor}$. This map has kernel $K'$, thus inducing an isomorphism from $A/A_\text{tor}$ to a free abelian group.
 
-\item TODO
 Now let $A$ be free-by-finite, i.e. $A = A_\text{tor} \oplus F$ for some free abelian group $F$, and $K=\ker(f)$. Since $K\subset A$ is finite, $K$ is actually contained in $A_\text{tor}$. Therefore, we see that $A/K$ is free by finite as well, and by extension, the image $I$ of $f$. Set $m = \#B/I$ and consider the canonical map $B\stackrel{\cdot m}{\to} I \to I/I_\text{tor}$. This map has kernel $\{b\in B \mid mb \in I_\text{tor}\} = B_\text{tor}$, making $B/B_\text{tor}$ isomorphic to a subgroup of the free abelian group $I/I_\text{tor}$. Now both $I_\text{tor}$ and $B_\text{tor}/I_\text{tor} \subset B/I$ are finite, hence $B_\text{tor}$ is finite as well.
+\item The exact sequence induces the exact sequence $0 \longrightarrow A'_\text{tor} \longrightarrow A_\text{tor} \longrightarrow A''_\text{tor}$. Since the surrounding groups are finite, $A_\text{tor}$ is finite as well. Using (i) we see that it suffices to show that $A/A_\text{tor}$ is free-by-finite. Consider the following commutative diagram with exact rows:
+\[ \begin{tikzcd}
+0 \ar[r]& A'/A'_\text{tor}\ar[r]\ar[d, "f"'] & A/A_\text{tor}\ar[r]\ar[d, "\cong"] & A/(A'+A_\text{tor}) \ar[r]\ar[d, "g"]& 0\\
+0 \ar[r] & p^{-1}(A''_\text{tor})/A_\text{tor} \ar[r]& A/A_\text{tor}\ar[r] & A''/A''_\text{tor}\ar[r] & 0
+\end{tikzcd} \]
+Note that $f$ is injective and $g$ is surjective. Using the snake lemma, we get an isomorphism $\operatorname{coker}(f)\cong \ker(g)$. We have:
+\[\ker(g) = \ker( (A/A')/(A_\text{tor}/A'_\text{tor}) \to A''/A''_\text{tor} ) = A''_\text{tor}/(A_\text{tor}/A'_\text{tor})\]
+which implies that $\operatorname{coker}(f)\cong \ker(g)$ is finite. Applying (i) on $f$, we can see that $p^{-1}(A''_\text{tor})/A_\text{tor}$ is free-by-finite. Since $A''/A''_\text{tor}$ is free abelian, the short exact sequence in the second row splits, making $A/A_\text{tor}$ a direct sum of a free-by-finite group and a free group.
 \item Subgroups of free-by-finite groups are free-by-finite. Now assume $A'$ is finitely generated. We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B\setminus C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
@@ -440,9 +447,9 @@ Let $F$ be a number field. Then:
 By Dirichlet's Unit Theorem, $\mathcal{O}_F^\times$ is free-by-finite. $\mathcal{P}(F)$, as a subset of the ideal group of $F$, is free abelian, in particular free-by-finite. The assertion follows from Lemma \ref{5.2} (ii).
 \item Consider the following exact sequence:
 \[ \begin{tikzcd}
-1 \ar[r] & \displaystyle \prod_{i=1}^{n-1} F_i^\times \ar[r]& \displaystyle \Big(\prod_{i=1}^{n}F_i^\times\Big)\Big/F^\times \ar[r]& F_n^\times/F^\times \ar[r]& 1
+1 \ar[r] & \displaystyle \prod_{i=2}^{n} F_i^\times \ar[r]& \displaystyle \Big(\prod_{i=1}^{n}F_i^\times\Big)\Big/F^\times \ar[r]& F_1^\times/F^\times \ar[r]& 1
 \end{tikzcd} \]
-The left group is free-by-finite by (i), and by Lemma \ref{5.2} (ii), we can use induction to reduce to the case $n=1$.
+The left group is free-by-finite by (i), and by Lemma \ref{5.2} (ii), we only need to prove that the right group is free-by-finite.
 
 Let $\mathcal{P}(F)$ denote the group of principal ideals of $F$, $\mathcal{I}(F)$ the ideal group of $F$, and $\operatorname{Cl}(F) = \mathcal{I}(F)/\mathcal{P}(F)$ the ideal class group of $F$. We have the following exact sequence:
 \[ \begin{tikzcd}
@@ -452,7 +459,7 @@ Again by Lemma \ref{5.2} (ii), it suffices to show that $\mathcal{P}(F_1)/\mathc
 \[
 0 \longrightarrow \ker(f)\longrightarrow \mathcal{P}(F_1)/\mathcal{P}(F)\longrightarrow \mathcal{I}(F_1)/\mathcal{I}(F)
 \longrightarrow \operatorname{coker}(f)\longrightarrow 0 \]
-where $f:\operatorname{Cl}(F)\to \operatorname{Cl}(F_1)$. Since the ideal class groups are finite, according to Lemma \ref{5.2} (i), it suffices to show that $\mathcal{I}(F_1)/\mathcal{I}(F)$ is free-by-finite. This follows from the fact that there are only finitely many primes of $F$ which are ramified in $F_1$.\qedhere
+where $f:\operatorname{Cl}(F)\to \operatorname{Cl}(F_1)$. Since the class numbers of number fields are finite, according to Lemma \ref{5.2} (i), it suffices to show that $\mathcal{I}(F_1)/\mathcal{I}(F)$ is free-by-finite. This follows from the fact that there are only finitely many primes of $F$ which are ramified in $F_1$.\qedhere
 \end{enumerate}
 \end{proof}
 
