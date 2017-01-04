@@ -17,7 +17,7 @@ A one-dimensional finitely generated field over its prime field is just a global
 \begin{definition}\label{2.1}
 Let $K$ be a field of finite dimension. We denote the set of equivalence classes of Krull valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
 
-We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$. The \textit{rank}\index{valuation!rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v$ is defined as the rank of its valuation group $\Gamma_v$ as a $\mathbb{Z}$-module:
+We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$. The \textit{rank}\index{valuation!rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K^\times\to\Gamma_v$ is defined as the rank of its valuation group $\Gamma_v$ as a $\mathbb{Z}$-module:
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
 \end{definition}
 
@@ -26,7 +26,7 @@ Let $v\in\operatorname{Spv}(K)$. Then we have:
 \[\operatorname{rank}(v)\leq \operatorname{rrank}(v)\quad\text{and}\quad\operatorname{rrank}(v)+\dim k(v)\leq\dim(K) \]
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{dimension-equality}
 Let $K$ be a finitely generated field and $v\in\operatorname{Spv}(K)$ with:
 \[\operatorname{rrank}(v)+\dim k(v)= \dim(K) \]
 Then $\Gamma_v$ is a finitely generated $\mathbb{Z}$-module and $k(v)$ is a finitely generated field.
@@ -49,7 +49,9 @@ where $S$ ranges over all finite subsets of $K$.
 \end{definition}
 
 \begin{lemma}
-$\operatorname{Spv}(K)$ with the topology defined above is a quasicompact $T_0$-space. Every closed subset $A\subset\operatorname{Spv}(K)$ is the closure of its closed points. In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasicompact $T_1$-space, endowed with the induced topology.
+$\operatorname{Spv}(K)$ with the topology defined above is a quasicompact $T_0$-space. Every closed subset $A\subset\operatorname{Spv}(K)$ is the closure of its closed points. 
+
+In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasicompact $T_1$-space, endowed with the induced topology. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
 \end{lemma}
 
 \begin{lemma}\label{2.2-prepre}
@@ -64,7 +66,22 @@ Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
-\paragraph{} Let $K$ be a finitely generated field of characteristic $0$ and dimension $2$.
+\begin{lemma}\label{lemma-spvd}
+Let $K$ be a finitely generated field of dimension $2$. Then we have:
+\begin{enumerate}[(i)]
+\item $\operatorname{Spv}^{(2)}(K) = \operatorname{Spv}^{(2)}_\text{d}(K) = \operatorname{Spv}^{(2)}_\text{rd}(K)$
+\item $\operatorname{Spv}(K) = \operatorname{Spv}_\text{d}(K)$
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Let $v\in\operatorname{Spv}^{(2)}(K)\subset |\operatorname{Spv}(K)|$. By Lemma \ref{2.2-prepre} we have $\dim k(v) = 0$ and thus the equality of the dimension inequality. By Lemma \ref{dimension-equality} $\Gamma_v$ is a finitely generated abelian group of rank $2$, thus not a subgroup of $\mathbb{R}$, i.e. $\operatorname{rank}(v)> 1$. 
+\item Let $v\in\operatorname{Spv}(K)$. If $\operatorname{rank}(v) = 2$, the assertion follows from Lemma \ref{rank-dimension-inequality}. If $\operatorname{rank}(v) = 0$, the value group $\Gamma_v$ is trivial, thus $\operatorname{rrank}(v) = 0$ as well. If $\operatorname{rank}(v) = 1$ and $\operatorname{rrank}(v) = 2$, we have $v\in\operatorname{Spv}^{(2)}_\text{d}(K)$ by (i), a contradiction. \qedhere
+\end{enumerate}
+\end{proof}
+
+\paragraph{} Let $K$ be a (not necessarily finitely generated) field of characteristic $0$ and dimension $2$.
 
 \begin{theorem}[\textit{F.K. Schmidt}]\label{theorem-fkschmidt}
 Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent henselian valuations of rank $1$ on a field $K$. Then $K$ is separably closed.
@@ -85,7 +102,7 @@ In this case, we have $\operatorname{cd}(G_K)\leq 2$.
 
 \begin{proof}
 \begin{itemize}
-\item Assume that $K$ is not algebraically closed. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are not of rank $1$. By the dimension inequality \ref{rank-dimension-inequality} and considering $\dim(K) = 2$ and $\dim k(w_i) = 0$ it follows $w_1,w_2\in\operatorname{Spv}^{(2)}_\text{rd}(K)$. Set $v_i=v(w_i)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
+\item Assume that $K$ is not algebraically closed. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are not of rank $1$. Thus they are of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
 \item Now assume (ii) holds.
 \item The second assertion follows from the first and from [K2], §5, Theorem 1.\qedhere
 \end{itemize}
@@ -128,7 +145,7 @@ where $w$ ranges over all rank-$2$ valuations with $v(w) = v$, can be identified
 \[ {}_\ell\operatorname{Br}(k) \longrightarrow \prod_{\tilde{w}\in\operatorname{Spv}^{(1)}(k)} {}_\ell\operatorname{Br}(k_{\tilde{w}}) \]
 where $k = k(v)$. This map is injective by the classical Hasse principle and its image is contained in $\bigoplus {}_\ell\operatorname{Br}(k_{\tilde{w}})$. Combining these maps yields the injection:
 \[ \mathrm{H}^3(K)\longrightarrow \bigoplus_{x\in\mathfrak{X}_1}\  \bigoplus_{\substack{w\in\operatorname{Spv}_\text{rd}^{(2)}(K) \\ v(w) = v_x}} \mathrm{H}^3(K_w) \]
-The direct sum ranges over a subset of $|\operatorname{Spv}(K)|$, thus concludes the proof.
+The direct sum ranges over a subset of $|\operatorname{Spv}(K)|$, thus this concludes the proof.
 \end{proof}
 
 \begin{lemma}\label{2.5}
