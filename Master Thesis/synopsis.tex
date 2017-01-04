@@ -61,21 +61,34 @@ Thus $v$ is a closed point if and only if it has no non-trivial specializations 
 \begin{lemma}\label{2.2-pre}
 Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
 \[\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
-If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_v$. $w$ is henselian if and only if $v$ and $w\mod v$ are henselian.
+If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
 \paragraph{} Let $K$ be a finitely generated field of characteristic $0$ and dimension $2$.
 
+\begin{theorem}[\textit{F.K. Schmidt}]\label{theorem-fkschmidt}
+Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent henselian valuations of rank $1$ on a field $K$. Then $K$ is separably closed.
+\end{theorem}
+
+\begin{proof}
+See Valued Fields.
+\end{proof}
+
 \begin{lemma}\label{2.2}
-Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. Furthermore, we have $\operatorname{cd}(G_K)\leq 2$.
+Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then the following statements are equivalent: 
+\begin{enumerate}[(i)]
+\item $K$ is not algebraically closed.
+\item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed
+\end{enumerate}
+In this case, we have $\operatorname{cd}(G_K)\leq 2$.
 \end{lemma}
 
 \begin{proof}
-Assume that $K$ is not algebraically closed, i.e. $G_K\neq 1$ and set $v_i = v(w_i)$. By Lemma~\ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. If $v_1\neq v_2$, by the Theorem of F.K. Schmidt we have $G_{v_1}\cap G_{v_2} = 1 \neq G_K$, a contradiction. Therefore $v_1 = v_2$.
-
-Now $k(v_1) = k(v_2)$ is henselian with respect to both $w_1\mod v_1$ and $w_2\mod v_2$. Again by the Theorem of F.K. Schmidt we get $G_{k(v_1)} = 1$, hence $k(v_1)$ is separably closed.
-
-The second assertion follows from the first and from [K2], §5, Theorem 1.
+\begin{itemize}
+\item Assume that $K$ is not algebraically closed. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are not of rank $1$. By the dimension inequality \ref{rank-dimension-inequality} and considering $\dim(K) = 2$ and $\dim k(w_i) = 0$ it follows $w_1,w_2\in\operatorname{Spv}^{(2)}_\text{rd}(K)$. Set $v_i=v(w_i)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
+\item Now assume (ii) holds.
+\item The second assertion follows from the first and from [K2], §5, Theorem 1.\qedhere
+\end{itemize}
 \end{proof}
 
 \begin{definition}
@@ -194,7 +207,7 @@ which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k
 \end{lemma}
 
 \begin{proof}
-Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. This means that if $v$ is nontrivial, we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. This implies that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
+Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. This means that if $v$ is nontrivial, we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. Lemma \ref{3.1} shows that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
 
 Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuations. By Lemma \ref{2.2} the following assertions are equivalent:
 \begin{enumerate}[(i)]
