@@ -116,7 +116,6 @@ A \textit{morphism of models} is a morphism of schemes inducing the identity on 
 For every model $\mathfrak{X}$ there is a canonical map $\pi_\mathfrak{X}:\operatorname{Spv}(K)\to\mathfrak{X}$. $\pi_\mathfrak{X}(v)$  is the unique point of $\mathfrak{X}$ such that $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\subset\mathcal{O}_v$ and the inclusion $\mathcal{O}_{\mathfrak{X}, \pi_\mathfrak{X}(v)}\hookrightarrow \mathcal{O}_v$ is a homomorphism of local rings.
 \end{definition}
 
-\iffalse
 \begin{lemma}\phantomsection\label{2.3}
 \begin{enumerate}[(i)]
 \item $\operatorname{Spv}(K)$, together with the maps $\pi_{\mathfrak{X}}$, is the projective limit of topological spaces: 
@@ -125,11 +124,14 @@ In particular we have:
 \[ |\operatorname{Spv}(K)| =\varprojlim_{\mathfrak{X}\in\mathfrak{M}(K)}|\mathfrak{X}| \]
 \item For all $v\in\operatorname{Spv}(K)$ we have:
 \[ \mathcal{O}_v = \varinjlim_{\mathfrak{X}\in\mathfrak{M}(K)}\mathcal{O}_{\mathfrak{X},\pi_\mathfrak{X}(v)} \]
-\item For $v\in\operatorname{Spv}(K)$ let $K_v$ be the quotient field of a henselization of $\mathcal{O}_v$ and for $\mathfrak{X}\in\mathfrak{M}(K),\ x\in\mathfrak{X}$ let $K_\mathfrak{X}$ be the quotient field of a henselization of $\mathcal{O}_{\mathfrak{X},x}$. Then:
+\item For $v\in\operatorname{Spv}(K)$ let $K_v$ be the quotient field of a henselization of $\mathcal{O}_v$ and for $\mathfrak{X}\in\mathfrak{M}(K),\ x\in\mathfrak{X}$ let $K_x$ be the quotient field of a henselization of $\mathcal{O}_{\mathfrak{X},x}$. Then:
 \[ K_v=\varinjlim_{\mathfrak{X}\in\mathfrak{M}(K)}K_{\pi_\mathfrak{X}(v)} \]
 \end{enumerate}
 \end{lemma}
-\fi
+
+\begin{proof}
+(i) and (ii) follow from [HK], Lemma 2.4.3 and (iii) is a consequence of (ii) and [EGA IV] 18.6.14.
+\end{proof}
 
 \begin{lemma}\label{2.4-finitelygenerated}
 Let $K$ be finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
@@ -618,7 +620,7 @@ Extending $\varphi$ to a map $K'\to K$ by setting $\varphi(0)=0$ yields a field 
 \end{step}
 
 \begin{proof}
-Observe $\varphi(-1)^2 = \varphi(1) = 1$, and since $\varphi$ is bijective on $K'^\times$, it follows $\varphi(-1) \neq 1$ and hence $\varphi(-1) = -1$. Now, to prove the assertion, it suffices to show $\varphi(x + y) = \varphi(x) + \varphi(y)$ for all $x,y\in K'^\times$.
+Observe that $\varphi(-1)^2 = \varphi(1) = 1$, and since $\varphi$ is bijective on $K'^\times$, it follows $\varphi(-1) \neq 1$ and hence $\varphi(-1) = -1$. Now, to prove the assertion, it suffices to show $\varphi(x + y) = \varphi(x) + \varphi(y)$ for all $x,y\in K'^\times$.
 \begin{itemize}
 \item \textit{Case 1:} If $x + y = 0$, we have:
 \[ \varphi(x + y) = 0 = \varphi(x) + \varphi(-1)\varphi(x) = \varphi(x) + \varphi(-x) = \varphi(x) + \varphi(y) \]
