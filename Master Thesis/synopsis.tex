@@ -307,7 +307,13 @@ Let $E$ be a number field and let $X$ be a smooth projective geometrically conne
 \end{lemma}
 
 \begin{proof}
-Let $f: X\to\mathbf{P}^1_E$ be a non-constant morphism and let $f' =  f\circ \pi: X'\to\mathbf{P}^1_E$. By Hilbert's Irreducibility Theorem \ref{hilberts-irreducibility-theorem} there exists a closed $E$-rational point $P$ of $\mathbf{P}^1_E$ which has only one pre-image under $f'$. Consequently, $P$ only has one pre-image under $f$, say $P'$, and $P'$ has only one pre-image under $\pi$.
+Let $f: X\to\mathbf{P}^1_E$ be a non-constant morphism and let $f' =  f\circ \pi: X'\to\mathbf{P}^1_E$. This induces a finite field extension $F/E(T)$ of their function fields. Since we're in characteristic $0$, $F/E(T)$ is also separable, and thus we have a primitive element $a\in F$, i.e. $F = E(T,a)$. 
+
+Consider the minimal polynomial of $a$ in $E(T)[A]$. Clearing out the denominators, we get an irreducible polynomial $f\in E[T,A]$. By Hilbert's Irreducibility Theorem \ref{hilberts-irreducibility-theorem} we can find an $e\in E$ such that $f(e,A)\in E[A]$ is irreducible. 
+
+Now $(T-e)\in\mathbf{A}^1_E$ corresponds to a closed point $P\in \mathbf{P}^1_E$, which in turn corresponds to a valuation in $E(T)$. So the points in the fiber $f'^{-1}(P)$ corresponds to valuations in $F$ above $T-e$. But $T-e$ is inert in $F/E(T)$ since $a\in E[T,a]/(T-e)$ has minimal polynomial $f(e,A)$ over $E[T]/(T-e)$ and $\deg f(e,A) = [F:E(T)]$. 
+
+This shows that $P$ has only one pre-image under $f'$. Therefore, it has only one pre-image under $f$, say $P'$, and $P'$ has only one pre-image under $\pi$. This concludes the proof.
 \end{proof}
 
 \paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
@@ -330,8 +336,8 @@ For all $P\in X_0$ and $P'=\sigma(P)\in X'_0$ we also get an embedding:
 k \ar[r] & k(P) \ar[r, "\varphi_P^{-1}"', "\cong"] & k(P')
 \end{tikzcd} \]
 We see any embedding $k\to \overline{k(P')}$ maps $k$ into $k(P')$ because $k/\mathbb{Q}$ is Galois. Thus we have for all $P'\in X'_0$:
-\[ k\otimes_{k'} k(P')\cong \prod_{\operatorname{Hom}_{k'}(k, k(P'))} k(P') \]
-in which case $X'_k\to X'$ splits completely. By Lemma \ref{4.1} we get $k\cong k'$, hence $[k:\mathbb{Q}]= [k':\mathbb{Q}]$.
+\[ k(P')\otimes_{k'} k\cong \prod_{\operatorname{Hom}_{k'}(k, k(P'))} k(P') \]
+in which case $X'\times_{k'}\operatorname{Spec} (k)\to X'$ splits completely. By Lemma \ref{4.1} we get $k\cong k'$, hence $[k:\mathbb{Q}]= [k':\mathbb{Q}]$.
 
 Now we drop the assumption that $k/\mathbb{Q}$ is Galois. There exists a finite extension $k_1/k$ such that $k_1/\mathbb{Q}$ is Galois and $X(k_1)\neq\varnothing$. Let $K_1 = Kk_1$ be the constant field extension of $K$ with $k_1$ and let $k'_1$ be the constant field of $K'_1$. Applying the above argument to $K_1$ and $K'_1$ yields $[k_1:\mathbb{Q}] = [k'_1:\mathbb{Q}]$. Therefore:
 \begin{align*}
@@ -643,5 +649,5 @@ Therefore $\sigma(g)^{-1}\tau(g)$ is contained in $G_{\overline{v}}$ for all $\o
 
 For the uniqueness of $\varphi$ let $\psi: \overline{K}'\to \overline{K}$ be another isomorphism with $\sigma(g) = \psi^{-1} g \psi$. Setting $h = \psi\varphi^{-1}\in G_K$ we observe
 \[ h^{-1}gh = \varphi\sigma(g)\varphi^{-1} = \sigma^{-1}\sigma(g) = g \]
-for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by F.K. Schmidt, we have $h=1$ and thus $\varphi = \psi$.
+for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by F.K. Schmidt \ref{theorem-fkschmidt}, we have $h=1$ and thus $\varphi = \psi$.
 \end{proof}
