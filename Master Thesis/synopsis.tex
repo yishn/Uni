@@ -587,8 +587,10 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \end{step}
 
 \begin{proof}
-Since any rational function on $X$ is uniquely determined by its values at those points where it is defined, $\varphi$ is unique. In other words, the following maps are injective for all finite subsets $S\subset X_0$:
+By Lemma \ref{5.4}, the following maps are injective for all finite subsets $S\subset X_0$:
 \[ r_S:K^S \to\prod_{P\in X_0\setminus S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
+Since any rational function on $X$ is uniquely determined by its values at those points where it is defined, $\varphi$ is unique.
+
 For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
@@ -609,7 +611,7 @@ In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\sub
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
 Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. 
 
-Note that for every $x\in K^\times$ we have $v_P(x)= 0$ for almost all $P\in X_0$; similarly for $K'$ and $X'_0$. By Lemma \ref{4.5} (i) we can find an admissible set $S\subset X_0\setminus \{P\}$ such that $x\in K'^{S'}$ for any $x\in U_{P'}$.
+The commutativity of the diagram follows from the commutativity of $(\star)$ with $T=X_0\setminus S$. Note that with Lemma \ref{4.5} (i), we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0\setminus \{P\}$ such that $x\in K'^{S'}$.
 \end{proof}
 
 \begin{step}
@@ -631,7 +633,7 @@ for all $P\in X_0\setminus S$. Note that $\varphi_P: k(P')\to k(P)$ is a field i
 \end{proof}
 
 \begin{remark}
-For any finite subextension $L/K$ of $\overline{K}/K$ there exists an isomorphism $\varphi_L: L'\to L$. If $K\subset L\subset M$ are finite subextensions, we have $\varphi_M|_{L'} = \varphi_{L'}$, since $r_Q(\varphi_M(x)) = r_Q(\varphi_L(x))$ for all $x\in L'^\times$ and almost all $Q\in (X_M)_0$. By passing to limits we obtain an isomorphism $\varphi: \overline{K}'\to \overline{K}$.
+For any finite subextension $L/K$ of $\overline{K}/K$ there exists an isomorphism $\varphi_L: L'\to L$. If $K\subset L\subset M$ are finite subextensions, we have $\varphi_M|_{L'} = \varphi_{L'}$, since $r_Q(\varphi_M(x)) = r_Q(\varphi_L(x))$ for all $x\in L'^\times$ and almost all $Q\in (X_M)_0$ according to Remark \ref{3.3} and Step 1. By passing to limits we obtain an isomorphism $\varphi: \overline{K}'\to \overline{K}$.
 \end{remark}
 
 \begin{step}
