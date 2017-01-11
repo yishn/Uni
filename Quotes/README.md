@@ -13,3 +13,9 @@
 > Before functoriality, people lived in caves.
 
 &mdash; B. Conrad
+
+---
+
+> Sheaf theory is the subject in which you do topology horizontally and algebra vertically.
+
+&mdash; M. Auslander
