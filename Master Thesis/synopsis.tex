@@ -1,6 +1,6 @@
-\chapter{Synopsis}
+\chapter{Valuations}
 
-\section{Some Results on the valuation spectra}
+\section{The Valuation Spectra}
 
 \begin{definition}
 Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
@@ -67,6 +67,8 @@ Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
 \[\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
+
+\section{The Main Lemma}
 
 \paragraph{} Let $K$ be a (not necessarily finitely generated) field of characteristic $0$ and dimension $2$.
 
@@ -235,9 +237,11 @@ Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to th
 \end{enumerate}
 \end{proof}
 
-\section{Local Correspondence}
+\chapter{Correspondences}
 
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ we denote the corresponding intermediate field of $\overline{K'}/K'$ by $L'$. In other words $\sigma G_L=G_{L'}$.
+
+\section{Local Correspondence}
 
 \begin{lemma}\label{3.1}
 Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselization of $w$. Then $E'$ is a henselization of $K'$ with respect to a unique $w'\in\operatorname{Spv}_\text{d}^{(2)}(K')$. The map $w\mapsto w'$ does not depend on the choice of the henselization.
@@ -296,6 +300,12 @@ By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname
 
 \section{Global Correspondence mod $n$}
 
+Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
+
+Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
+
+By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
+
 \begin{theorem}[\textit{Hilbert's Irreducibility Theorem}]\label{hilberts-irreducibility-theorem}
 Let $E$ be a number field and $f_1,\ldots, f_n$ be irreducible polynomials in $E[X_1,\ldots,X_r,Y_1,\ldots,Y_s]$. Then there exists $e_1,\ldots,e_r\in E$ such that the specializations
 \[ f_1(e_1,\ldots,e_r,Y_1,\ldots,Y_s),\ \ldots,\ f_n(e_1,\ldots,e_r,Y_1,\ldots,Y_s) \]
@@ -315,12 +325,6 @@ Now $T-e\in E[T]$ corresponds to a closed point $P\in \mathbf{P}^1_E$, which in 
 
 This shows that $P$ has only one pre-image under $f'$. Therefore, it has only one pre-image under $f$, say $P'$, and $P'$ has only one pre-image under $\pi$. This concludes the proof.
 \end{proof}
-
-\paragraph{} Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
-
-Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
-
-By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
 
 \begin{lemma}\label{4.2-pre}
 We have $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
@@ -428,53 +432,9 @@ k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"
 \end{enumerate}
 \end{proof}
 
-\begin{theorem}[\textit{Mordell-Weil Theorem}]\label{mordell-weil-theorem}
-Let $A$ be an abelian variety over a number field $F$. Then the abelian group $A(F)$ of $F$-rational points is finitely generated.
-\end{theorem}
+\chapter{Theorem}
 
-\begin{corollary}\label{mordell-weil-corollary}
-Let $C$ be a smooth projective curve over a number field $F$. Then the Picard group $\operatorname{Pic}(C)$ is finitely generated.
-\end{corollary}
-
-\begin{proof}
-We have the following exact sequence:
-\[ 0\longrightarrow \operatorname{Pic}^0(C) \longrightarrow\operatorname{Pic}(C) \longrightarrow \mathbb{Z} \longrightarrow 0  \]
-Now $\operatorname{Pic}^0(C)$ can be identified with the $F$-rational points of the Jacobian variety $J$ of $C$. $J(F)$ is finitely generated by the Mordell-Weil Theorem \ref{mordell-weil-theorem}, hence $\operatorname{Pic}(C)$ is finitely generated as well.
-\end{proof}
-
-\begin{definition}\label{4.4}
-For a finite subset $S\subset X_0$ set:
-\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0\setminus S \} \]
-$K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
-\end{definition}
-
-\begin{lemma}\phantomsection\label{4.5}
-\begin{enumerate}[(i)]
-\item There exists a finite subset $S\subset X_0$ such that:
-\[ \operatorname{Pic}(X\setminus S)=0=\operatorname{Pic}(X'\setminus S') \]
-Such a set $S$ is called \textit{admissible}. If $V\subset X$ is an open subscheme, then one can choose $S$ in $V_0$.
-\item Let $S$ be admissible. For all $n\in\mathbb{N}$ the following canonical maps are injective:
-\[ K^S/n \to K^\times /n,\quad K'^{S'}/n\to K'^\times /n \]
-$\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
-\end{enumerate}
-\end{lemma}
-
-\begin{proof}
-\begin{enumerate}[(i)]
-\item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
-\[ \bigcup_{i=1}^r \operatorname{supp}D_i\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}D'_j\subset S' \]
-is admissible. Now let $V\subset X$ be an open subscheme. By the approximation theorem, we can choose the $D_i$ and the $D'_j$ in $V_0$ and $\sigma (V_0)$ respectively.
-\item Observe that the following sequence is exact:
-\[ \begin{tikzcd}
-0 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& 0
-\end{tikzcd} \]
-Since the right module is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n\mathbb{Z}$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
-\[ K^S/n = \bigcap_{P\in X_0\setminus X}U_P/n \]
-The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemma \ref{4.3} (i).\qedhere
-\end{enumerate}
-\end{proof}
-
-\section{The Proof}
+\section{Free-By-Finite Groups}
 
 \begin{definition}\label{5.1}
 An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotient $A/A_\text{tor}$ is free abelian. $A$ is free-by-finite if and only if $A$ is the direct sum of a finite abelian group and a free abelian group.
@@ -551,6 +511,54 @@ where $f:\operatorname{Cl}(F)\to \operatorname{Cl}(F_1)$. Since the class number
 \end{enumerate}
 \end{proof}
 
+\section{Admissible Sets}
+
+\begin{theorem}[\textit{Mordell-Weil Theorem}]\label{mordell-weil-theorem}
+Let $A$ be an abelian variety over a number field $F$. Then the abelian group $A(F)$ of $F$-rational points is finitely generated.
+\end{theorem}
+
+\begin{corollary}\label{mordell-weil-corollary}
+Let $C$ be a smooth projective curve over a number field $F$. Then the Picard group $\operatorname{Pic}(C)$ is finitely generated.
+\end{corollary}
+
+\begin{proof}
+We have the following exact sequence:
+\[ 0\longrightarrow \operatorname{Pic}^0(C) \longrightarrow\operatorname{Pic}(C) \longrightarrow \mathbb{Z} \longrightarrow 0  \]
+Now $\operatorname{Pic}^0(C)$ can be identified with the $F$-rational points of the Jacobian variety $J$ of $C$. $J(F)$ is finitely generated by the Mordell-Weil Theorem \ref{mordell-weil-theorem}, hence $\operatorname{Pic}(C)$ is finitely generated as well.
+\end{proof}
+
+\begin{definition}\label{4.4}
+For a finite subset $S\subset X_0$ set:
+\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0\setminus S \} \]
+$K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
+\end{definition}
+
+\begin{lemma}\phantomsection\label{4.5}
+\begin{enumerate}[(i)]
+\item There exists a finite subset $S\subset X_0$ such that:
+\[ \operatorname{Pic}(X\setminus S)=0=\operatorname{Pic}(X'\setminus S') \]
+Such a set $S$ is called \textit{admissible}. If $V\subset X$ is an open subscheme, then one can choose $S$ in $V_0$.
+\item Let $S$ be admissible. For all $n\in\mathbb{N}$ the following canonical maps are injective:
+\[ K^S/n \to K^\times /n,\quad K'^{S'}/n\to K'^\times /n \]
+$\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
+\[ \bigcup_{i=1}^r \operatorname{supp}D_i\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}D'_j\subset S' \]
+is admissible. Now let $V\subset X$ be an open subscheme. By the approximation theorem, we can choose the $D_i$ and the $D'_j$ in $V_0$ and $\sigma (V_0)$ respectively.
+\item Observe that the following sequence is exact:
+\[ \begin{tikzcd}
+0 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& 0
+\end{tikzcd} \]
+Since the right module is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n\mathbb{Z}$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
+\[ K^S/n = \bigcap_{P\in X_0\setminus X}U_P/n \]
+The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemma \ref{4.3} (i).\qedhere
+\end{enumerate}
+\end{proof}
+
 \begin{lemma}\label{5.4}
 Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0\setminus S$ such that the following map is injective:
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
@@ -577,6 +585,8 @@ Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref
 \begin{definition}
 For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_1 \subset T_2$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
 \end{definition}
+
+\section{The Proof}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
