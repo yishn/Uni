@@ -577,7 +577,7 @@ Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we s
 \end{enumerate}
 We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$. It follows $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0\setminus S$, such that the following map is injective:
 \[ C_1\to\prod_{i=2}^{r} k(P_i),\ x\mapsto(r_{P_i}(x))_i \]
-Finally for $T=\{P_1,\ldots,P_r\}$, the map $r_{S,T}$ is injective. For the second assertion, note that:
+Finally for $T=\{P_1,\ldots,P_r\}$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism with the snake lemma:
 \[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \prod_{P\in T}k(P)^\times /k^\times \Big) \]
 Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
 \end{proof}
@@ -586,7 +586,7 @@ Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref
 For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_1 \subset T_2$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
 \end{definition}
 
-\section{The Proof}
+\section{Proof of Theorem}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
