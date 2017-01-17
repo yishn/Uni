@@ -396,7 +396,7 @@ M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. 
 
 Let $n\in\mathbb{N}$. Tensoring the exact sequence $0\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
-\[ 0\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
+\[ 1\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
 We'll use the same notation for $P' = \sigma(P)\in X'_0$.
 
 \begin{lemma}\phantomsection\label{4.3}
@@ -413,10 +413,10 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 \begin{proof}
 \begin{enumerate}[(i)]
 \item Consider the maximal unramified extension $L = K_P^\text{nr}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. Now $k(w) = k(v_P)^\text{s}$. Since $w$ is unramified over $v$, $w$ is discrete as well. We have the following exact sequence:
-\[ 1 \longrightarrow \mathcal{O}_w^\times/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
-Since $k(w)$ is separably closed, with Hensel's lemma and $\operatorname{char} k(w)=0$ we can see that $\mathcal{O}_w^\times$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
+\[ 1 \longrightarrow U_w/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
+Since $k(w)$ is separably closed, with Hensel's lemma and $\operatorname{char} k(w)=0$ we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
 \[ \begin{tikzcd}
-0 \ar[d] & 0 \ar[d]\\
+1 \ar[d] & 1 \ar[d]\\
 U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
 K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 L'^\times /n \ar[r, "\varphi_n"'] &  L^\times /n
