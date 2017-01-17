@@ -412,14 +412,16 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 
 \begin{proof}
 \begin{enumerate}[(i)]
-\item  We have $(K^\text{nr}_P)^\times/n\cong \mathbb{Z}/n\mathbb{Z}$ since $\operatorname{char}k(P) = 0$. The canonical map $K^\times/n \to (K^\text{nr}_P)^\times/n$ can be identified with the map $K^\times /n\to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram gives us the result:
+\item Consider the maximal unramified extension $L = K_P^\text{nr}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. Now $k(w) = k(v_P)^\text{s}$. Since $w$ is unramified over $v$, $w$ is discrete as well. We have the following exact sequence:
+\[ 1 \longrightarrow \mathcal{O}_w^\times/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
+Since $k(w)$ is separably closed, with Hensel's lemma and $\operatorname{char} k(w)=0$ we can see that $\mathcal{O}_w^\times$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
 \[ \begin{tikzcd}
 0 \ar[d] & 0 \ar[d]\\
 U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
 K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
-(K^\text{nr}_P)'^\times /n \ar[r, "\varphi_n"'] &  (K^\text{nr}_P)^\times /n
+L'^\times /n \ar[r, "\varphi_n"'] &  L^\times /n
 \end{tikzcd}\]
-Note that $(K^\text{nr}_P)' = (K'^{\text{nr}}_{P'})$ as proven in Lemma \ref{3.2}.
+Note that $(K^\text{nr}_P)' = K'^{\text{nr}}_{P'}$ as proven in Lemma \ref{3.2}.
 \item Consider the field extension $K_P/K$. Without loss of generality, we can assume $K=K_P$. Then $r_P/n$ is an isomorphism and the composition
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[rr, hook] && K_P^\times/n
@@ -575,9 +577,9 @@ Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we s
 \item There exists a point $P_2\in X_0\setminus(S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
 \item $a$ is not a root of unity.
 \end{enumerate}
-We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$. It follows $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0\setminus S$, such that the following map is injective:
+We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$. It follows $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0$, such that the following map is injective:
 \[ C_1\to\prod_{i=2}^{r} k(P_i),\ x\mapsto(r_{P_i}(x))_i \]
-Finally for $T=\{P_1,\ldots,P_r\}$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism with the snake lemma:
+Finally for $T=\{P_1,\ldots,P_r\}\subset U_0$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism with the snake lemma:
 \[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \prod_{P\in T}k(P)^\times /k^\times \Big) \]
 Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
 \end{proof}
