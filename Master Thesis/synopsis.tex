@@ -160,7 +160,7 @@ According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can 
 Note that the right set is closed in $\operatorname{Spv}(K)$.
 \end{proof}
 
-\begin{lemma}\label{2.4}
+\begin{lemma}[\textit{Main Lemma}]\label{2.4}
 Let $K$ be not necessarily finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
 \[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})\to\prod_{w\in |\operatorname{Spv}(K)| }\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z}) \]
 \end{lemma}
@@ -343,7 +343,7 @@ Let us consider the morphism $f:X'\times_{k'} k\to X'$. We want to see that $f$ 
 \[ f^{-1}(P') = \operatorname{Spec} k(P')\times_{k'} k \]
 Any embedding $k\to \overline{k(P')}$ maps $k$ into $k(P')$ because $k/\mathbb{Q}$ is Galois. Thus we have:
 \[ k(P')\otimes_{k'} k\cong \prod_{\operatorname{Hom}_{k'}(k, k(P'))} k(P') \]
-Now we can see that $f$ splits completely indeed. By Lemma \ref{4.1} we get $k\cong k'$, hence $[k:\mathbb{Q}]= [k':\mathbb{Q}]$.
+Now we can see that $f$ splits completely. By Lemma \ref{4.1} we get $[k:k'] = 1$, hence $[k:\mathbb{Q}]= [k':\mathbb{Q}]$.
 
 Now we drop the assumption that $k/\mathbb{Q}$ is Galois. There exists a finite extension $k_1/k$ such that $k_1/\mathbb{Q}$ is Galois and $X(k_1)\neq\varnothing$. Let $K_1 = Kk_1$ be the constant field extension of $K$ with $k_1$ and let $k'_1$ be the constant field of $K'_1$. Applying the above argument to $K_1$ and $K'_1$ yields $[k_1:\mathbb{Q}] = [k'_1:\mathbb{Q}]$. Therefore:
 \begin{align*}
@@ -553,9 +553,9 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 is admissible. Now let $V\subset X$ be an open subscheme. By the approximation theorem, we can choose the $D_i$ and the $D'_j$ in $V_0$ and $\sigma (V_0)$ respectively.
 \item Observe that the following sequence is exact:
 \[ \begin{tikzcd}
-0 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& 0
+1 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& \operatorname{Pic}(X\setminus S) = 0
 \end{tikzcd} \]
-Since the right module is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n\mathbb{Z}$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
+Since $\bigoplus\mathbb{Z}$ is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n\mathbb{Z}$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
 \[ K^S/n = \bigcap_{P\in X_0\setminus X}U_P/n \]
 The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemma \ref{4.3} (i).\qedhere
 \end{enumerate}
