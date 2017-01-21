@@ -543,7 +543,7 @@ $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the correspondi
 \begin{enumerate}[(i)]
 \item There exists a finite subset $S\subset X_0$ such that:
 \[ \operatorname{Pic}(X\setminus S)=0=\operatorname{Pic}(X'\setminus S') \]
-Such a set $S$ is called \textit{admissible}. If $V\subset X$ is an open subscheme, then one can choose $S$ in $V_0$.
+Such a set $S$ is called \textit{admissible}. If $V\subset X$ is an open subscheme, then we can choose $S$ in $V_0$.
 \item Let $S$ be admissible. For all $n\in\mathbb{N}$ the following canonical maps are injective:
 \[ K^S/n \to K^\times /n,\quad K'^{S'}/n\to K'^\times /n \]
 $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
@@ -581,8 +581,8 @@ Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we s
 \item There exists a point $P_2\in X_0\setminus(S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
 \item $a$ is not a root of unity.
 \end{enumerate}
-We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$. It follows $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0$, such that the following map is injective:
-\[ C_1\to\prod_{i=2}^{r} k(P_i),\ x\mapsto(r_{P_i}(x))_i \]
+Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$ and $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0$, such that the following map is injective:
+\[ C_1\to\prod_{i=2}^{r} k(P_i)^\times,\ x\mapsto(r_{P_i}(x))_i \]
 Finally for $T=\{P_1,\ldots,P_r\}\subset U_0$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism:
 \[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \Big(\prod_{P\in T}k(P)^\times \Big)\Big/k^\times \Big) \]
 Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
