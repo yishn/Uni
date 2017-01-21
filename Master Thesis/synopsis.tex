@@ -603,11 +603,9 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \end{step}
 
 \begin{proof}
-By Lemma \ref{5.4}, the following maps are injective for all finite subsets $S\subset X_0$:
+By Lemma \ref{5.4}, the following maps are injective for all admissible subsets $S\subset X_0$:
 \[ r_S:K^S \to\prod_{P\in X_0\setminus S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
-Since any rational function on $X$ is uniquely determined by its values at those points where it is defined, $\varphi$ is unique.
-
-For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
+Therefore, $\varphi$ is unique. For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
 \displaystyle \prod_{P\in T}k(\sigma P)^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
