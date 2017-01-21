@@ -426,7 +426,7 @@ Note that $(K^\text{nr}_P)' = K'^{\text{nr}}_{P'}$ as proven in Lemma \ref{3.2}.
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[rr, hook] && K_P^\times/n
 \end{tikzcd}\]
-is the inflation $\operatorname{inf}: \mathrm{H}^1(k(P), \mu_n) \to \mathrm{H}^1(K_P,\mu_n)$. The same holds for $P'$ due to Lemma \ref{3.2}. Therefore, the assertion follows from the commutativity of the following diagram:
+coincides with the inflation $\operatorname{inf}: \mathrm{H}^1(k(P), \mu_n) \to \mathrm{H}^1(K_P,\mu_n)$. The same holds for $P'$ due to Lemma \ref{3.2}. Therefore, the assertion follows from the commutativity of the following diagram:
 \[ \begin{tikzcd}
 k(P')^\times/n \ar[r, "\cong"] \ar[d, "\varphi_P/n"'] & \mathrm{H}^1(k(P'),\mu_n) \ar[r, "\mathrm{inf}"] \ar[d]& \mathrm{H}^1(K'_{P'}, \mu_n) \ar[d, "\varphi_n"] \\
 k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"'] & \mathrm{H}^1(K_{P}, \mu_n)
@@ -550,7 +550,7 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 \begin{enumerate}[(i)]
 \item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
 \[ \bigcup_{i=1}^r \operatorname{supp}D_i\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}D'_j\subset S' \]
-is admissible. Now let $V\subset X$ be an open subscheme. By the approximation theorem, we can choose the $D_i$ and the $D'_j$ in $V_0$ and $\sigma (V_0)$ respectively.
+is admissible. Now let $V\subset X$ be an open subscheme. By the approximation theorem, we can choose the $D_i$ and the $D'_j$ so that their support is in $V_0$ and $\sigma (V_0)$ respectively.
 \item Observe that the following sequence is exact:
 \[ \begin{tikzcd}
 1 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& \operatorname{Pic}(X\setminus S) = 0
@@ -579,8 +579,8 @@ Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we s
 \end{enumerate}
 We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$. It follows $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0$, such that the following map is injective:
 \[ C_1\to\prod_{i=2}^{r} k(P_i),\ x\mapsto(r_{P_i}(x))_i \]
-Finally for $T=\{P_1,\ldots,P_r\}\subset U_0$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism with the snake lemma:
-\[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \prod_{P\in T}k(P)^\times /k^\times \Big) \]
+Finally for $T=\{P_1,\ldots,P_r\}\subset U_0$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism:
+\[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \Big(\prod_{P\in T}k(P)^\times \Big)\Big/k^\times \Big) \]
 Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
 \end{proof}
 
@@ -605,7 +605,7 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \begin{proof}
 By Lemma \ref{5.4}, the following maps are injective for all admissible subsets $S\subset X_0$:
 \[ r_S:K^S \to\prod_{P\in X_0\setminus S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
-Therefore, $\varphi$ is unique. For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
+Now it's evident that $\varphi$ is unique. For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
 \displaystyle \prod_{P\in T}k(\sigma P)^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
