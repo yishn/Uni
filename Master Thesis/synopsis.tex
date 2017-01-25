@@ -56,15 +56,13 @@ In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorna
 See [ZS] VI §7 Theorem 40.
 \end{proof}
 
-\begin{lemma}\label{2.2-prepre}
+\begin{lemma}\label{2.2-pre}
 Let $v,w\in\operatorname{Spv}(K)$. We have:
 \[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
-Thus $v$ is a closed point if and only if it has no non-trivial specializations or iff $\dim k(v)=0$, i.e. $k(v)$ has positive characteristic and is algebraic over its prime field. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
-\end{lemma}
-
-\begin{lemma}\label{2.2-pre}
-Let $v\in\operatorname{Spv}(K)$. There is a canonical bijection:
+Thus $v$ is a closed point if and only if it has no non-trivial specializations. Furthermore, for a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection: 
 \[\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
+Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has positive characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
+
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
@@ -187,7 +185,7 @@ Since $K_j$ is finitely generated we obtain $\operatorname{res}_{K_j/K_0}(g) = 0
 \end{proof}
 
 \begin{lemma}\label{2.5}
-Let $K$ be henselian with respect to $w\in|\operatorname{Spv}(K)|$. Set $k=k(w)$ and $\Gamma = \Gamma_w$. Then $k$ is an algebraic extension of a finite field $\mathbb{F}_p$ by Lemma \ref{2.2-prepre}. Let $\ell\neq p$ be a prime and assume $\mu_\ell\subset K$. Then:
+Let $K$ be henselian with respect to $w\in|\operatorname{Spv}(K)|$. Set $k=k(w)$ and $\Gamma = \Gamma_w$. Then $k$ is an algebraic extension of a finite field $\mathbb{F}_p$ by Lemma \ref{2.2-pre}. Let $\ell\neq p$ be a prime and assume $\mu_\ell\subset K$. Then:
 \[ \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}) = \begin{cases}
 \mathbb{Z}/\ell\mathbb{Z}, & \ell^\infty\nmid [k:\mathbb{F}_p] \text{ and } \dim_{\mathbb{F}_\ell}(\Gamma / \ell\Gamma) = 2\\
 0, & \text{otherwise}
