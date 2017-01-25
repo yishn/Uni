@@ -397,7 +397,7 @@ M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 \end{tikzcd} \]
 Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. 
 
-Let $n\in\mathbb{N}$. Tensoring the exact sequence $0\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
+Let $n\in\mathbb{N}$. Tensoring the exact sequence $1\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
 \[ 1\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
 We'll use the same notation for $P' = \sigma(P)\in X'_0$.
 
@@ -448,6 +448,7 @@ An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $
 \begin{itemize}
 \item Free or finite abelian groups are free-by-finite.
 \item Finitely generated abelian groups are free-by-finite by the structure theorem for finitely generated $\mathbb{Z}$-modules.
+\item Any subgroup of a free-by-finite group is free-by-finite as well.
 \end{itemize}
 \end{example}
 
@@ -455,7 +456,7 @@ An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $
 \begin{enumerate}[(i)]
 \item Let $f: A\to B$ be a homomorphism of abelian groups with finite kernel and cokernel. Then $A$ is free-by-finite iff $B$ is free-by-finite.
 \item Let $0\longrightarrow A'\stackrel{i}{\longrightarrow}A\stackrel{p}{\longrightarrow}A''\longrightarrow 0$ be an exact sequence of abelian groups. If $A'$ and $A''$ are free-by-finite, then $A$ is free-by-finite. 
-\item Let $0\longrightarrow A'\stackrel{i}{\longrightarrow}A\stackrel{p}{\longrightarrow}A''\longrightarrow 0$ be an exact sequence of abelian groups. If $A$ is free-by-finite, then $A'$ is free-by-finite. Additionally, if $A'$ is finitely generated, then $A''$ is free-by-finite.
+\item Let $0\longrightarrow A'\stackrel{i}{\longrightarrow}A\stackrel{p}{\longrightarrow}A''\longrightarrow 0$ be an exact sequence of abelian groups. If $A$ is free-by-finite and $A'$ is finitely generated, then $A''$ is free-by-finite.
 \item Let $A$ be free-by-finite. Then $\bigcap_{n\in\mathbb{N}}nA=0$.
 \end{enumerate}
 \end{lemma}
@@ -475,7 +476,7 @@ Observe the following commutative diagram with exact rows, where we consider $A'
 Note that $f$ is injective and $g$ is surjective. Using the snake lemma, we get an isomorphism $\operatorname{coker}(f)\cong \ker(g)$. We have:
 \[\ker(g) = \ker( (A/A')/(A_\text{tor}/A'_\text{tor}) \to A''/A''_\text{tor} ) = A''_\text{tor}/(A_\text{tor}/A'_\text{tor})\]
 Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is finite, too. Applying (i) on $f$, we can see that $p^{-1}(A''_\text{tor})/A_\text{tor}$ is free-by-finite. Since $A''/A''_\text{tor}$ is free abelian, the short exact sequence in the second row splits, making $A/A_\text{tor}$ a direct sum of a free-by-finite group and a free group.
-\item Subgroups of free-by-finite groups are free-by-finite. Now assume $A'$ is finitely generated. We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
+\item We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B\setminus C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
 \item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For $A$ finite we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
@@ -588,7 +589,7 @@ Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_
 \[ C_1\to\prod_{i=2}^{r} k(P_i)^\times,\ x\mapsto(r_{P_i}(x))_i \]
 Finally for $T=\{P_1,\ldots,P_r\}\subset U_0$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism:
 \[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \Big(\prod_{P\in T}k(P)^\times \Big)\Big/k^\times \Big) \]
-Since $K^S/k^\times$ is finitely generated, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
+Since $K^S/k^\times$ is generated by the uniformizers of the corresponding valuations in $S$, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
 \end{proof}
 
 \begin{definition}
