@@ -19,6 +19,7 @@ Let $K$ be a field of finite dimension. We denote the set of equivalence classes
 
 We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$. The \textit{rank}\index{valuation!rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v\cup\{\infty\}$ is defined as the rank of its valuation group $\Gamma_v$ as a $\mathbb{Z}$-module:
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
+We write $K_v$ for the quotient field of a henselization of $\mathcal{O}_v$.
 \end{definition}
 
 \begin{lemma}\label{rank-dimension-inequality}
@@ -82,6 +83,15 @@ Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent henselian valuations o
 See Valued Fields.
 \end{proof}
 
+\begin{corollary}\label{corollary-fkschmidt}
+Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent valuations of rank $1$ on a field $K$ with decomposition groups $G_{v_1},G_{v_2}\subset G_K$. Then $G_{v_1}\cap G_{v_2}=1$.
+\end{corollary}
+
+\begin{proof}
+The compositum $K_{v_1}K_{v_2}$ in a fixed separable closure of $K$ is henselian with respect to both $v_1$ and $v_2$, hence separably closed by Theorem \ref{theorem-fkschmidt}. Therefore:
+\[1=G_{K_{v_1}K_{v_2}} = G_{K_{v_1}}\cap G_{K_{v_2}} = G_{v_1}\cap G_{v_2} \qedhere\]
+\end{proof}
+
 \begin{lemma}\label{2.2}
 Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then the following statements are equivalent: 
 \begin{enumerate}[(i)]
@@ -115,7 +125,7 @@ In particular we have:
 \[ |\operatorname{Spv}(K)| =\varprojlim_{\mathfrak{X}\in\mathfrak{M}(K)}|\mathfrak{X}| \]
 \item For all $v\in\operatorname{Spv}(K)$ we have:
 \[ \mathcal{O}_v = \varinjlim_{\mathfrak{X}\in\mathfrak{M}(K)}\mathcal{O}_{\mathfrak{X},\pi_\mathfrak{X}(v)} \]
-\item For $v\in\operatorname{Spv}(K)$ let $K_v$ be the quotient field of a henselization of $\mathcal{O}_v$ and for $\mathfrak{X}\in\mathfrak{M}(K),\ x\in\mathfrak{X}$ let $K_x$ be the quotient field of a henselization of $\mathcal{O}_{\mathfrak{X},x}$. Then:
+\item For $\mathfrak{X}\in\mathfrak{M}(K),\ x\in\mathfrak{X}$ let $K_x$ be the quotient field of a henselization of $\mathcal{O}_{\mathfrak{X},x}$. Then we have:
 \[ K_v=\varinjlim_{\mathfrak{X}\in\mathfrak{M}(K)}K_{\pi_\mathfrak{X}(v)} \]
 \end{enumerate}
 \end{lemma}
@@ -241,7 +251,7 @@ Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to th
 
 \chapter{Correspondences}
 
-Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ we denote the corresponding intermediate field of $\overline{K'}/K'$ by $L'$. In other words $\sigma G_L=G_{L'}$.
+Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and let $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ we denote the corresponding intermediate field of $\overline{K'}/K'$ by $L'$. In other words, $\sigma G_L=G_{L'}$.
 
 \section{Local Correspondence}
 
@@ -669,9 +679,9 @@ We have $L_{\tau(v)} = (L_v)' = L_{\sigma(v)}$ for all $v\in\operatorname{Spv}_\
 
 Let $g\in G_K$ and $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Remark \ref{3.3} we have:
 \[ \sigma(g)\sigma(\overline{v}) = \sigma(g\overline{v}) = \tau(g\overline{v}) = \tau(g)\tau(\overline{v}) = \tau(g) \sigma(\overline{v}) \]
-Therefore $\sigma(g)^{-1}\tau(g)$ is contained in $G_{\overline{v}}$ for all $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt} we have $G_{\overline{v}_1}\cap G_{\overline{v}_2} = 1$ for $\overline{v}_1\neq\overline{v}_2$. Therefore, $\sigma(g) = \tau(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$.
+Therefore $\sigma(g)^{-1}\tau(g)$ is contained in $G_{\overline{v}}$ for all $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By the Theorem of F.K. Schmidt \ref{corollary-fkschmidt} we have $G_{\overline{v}_1}\cap G_{\overline{v}_2} = 1$ for $\overline{v}_1\neq\overline{v}_2$. Therefore, $\sigma(g) = \tau(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$.
 
 For the uniqueness of $\varphi$ let $\psi: \overline{K}'\to \overline{K}$ be another isomorphism with $\sigma(g) = \psi^{-1} g \psi$. Setting $h = \psi\varphi^{-1}\in G_K$ we observe
 \[ h^{-1}gh = \varphi\sigma(g)\varphi^{-1} = \sigma^{-1}\sigma(g) = g \]
-for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ by F.K. Schmidt \ref{theorem-fkschmidt}. Since $\overline{v}$ was arbitrary, we get $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by F.K. Schmidt \ref{theorem-fkschmidt}, we have $h=1$ and thus $\varphi = \psi$.
+for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ by F.K. Schmidt \ref{corollary-fkschmidt}. Since $\overline{v}$ was arbitrary, we get $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by F.K. Schmidt \ref{corollary-fkschmidt}, we have $h=1$ and thus $\varphi = \psi$.
 \end{proof}
