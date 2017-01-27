@@ -88,7 +88,7 @@ Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent valuations of rank $1$
 \end{corollary}
 
 \begin{proof}
-The compositum $K_{v_1}K_{v_2}$ in a fixed separable closure of $K$ is henselian with respect to both $v_1$ and $v_2$, hence separably closed by Theorem \ref{theorem-fkschmidt}. Therefore:
+Let $K_{v_i}$ be a henselization of $K$ with respect to $v_i$. The compositum $K_{v_1}K_{v_2}$ in a fixed separable closure of $K$ is henselian with respect to both $v_1$ and $v_2$, hence separably closed by Theorem \ref{theorem-fkschmidt}. Therefore:
 \[1=G_{K_{v_1}K_{v_2}} = G_{K_{v_1}}\cap G_{K_{v_2}} = G_{v_1}\cap G_{v_2} \qedhere\]
 \end{proof}
 
@@ -393,7 +393,7 @@ G_K \ar[r, "\sigma"] & G_{K'} \ar[r] & G_{K'}
 where the second map is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities.
 \end{remark}
 
-\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have determined that the following diagram commutes: 
+\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have reduced the problem, so that the following diagram commutes: 
 \[ \begin{tikzcd}
 G_K \ar[r]\ar[d, "\sigma"'] & G_k\\
 G_{K'}\ar[ru]
@@ -405,7 +405,7 @@ Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the followin
 L'^\times/n \ar[r, "\varphi_n"]\dar & L^\times/n \dar\\
 M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 \end{tikzcd} \]
-Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding discrete normalized valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. 
+Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding normalized discrete valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. 
 
 Let $n\in\mathbb{N}$. Tensoring the exact sequence $1\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
 \[ 1\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
@@ -655,12 +655,12 @@ Observe that $\varphi(-1)^2 = \varphi(1) = 1$, and since $\varphi$ is bijective 
 \begin{itemize}
 \item \textit{Case 1:} If $x + y = 0$, we have:
 \[ \varphi(x + y) = 0 = \varphi(x) + \varphi(-1)\varphi(x) = \varphi(x) + \varphi(-x) = \varphi(x) + \varphi(y) \]
-\item \textit{Case 2:} Let $x + y\neq 0$ and $S\subset X_0$ be a finite subset such that $\varphi(x + y)$, $\varphi(x)$ and $\varphi(y)$ are contained in $K^S$. Looking at the commutative diagram in \mbox{Step 1} we get
+\item \textit{Case 2:} Let $x + y\neq 0$ and $S\subset X_0$ be an admissible finite subset such that $\varphi(x + y)$, $\varphi(x)$ and $\varphi(y)$ are contained in $K^S$. Looking at the commutative diagram in \mbox{Step 1} we get
 \begin{align*}
 r_P(\varphi(x+ y)) &= \varphi_P(r_{P'}(x + y)) \\
 &= \varphi_P(r_{P'}(x)) + \varphi_P(r_{P'}(y)) = r_P(\varphi(x) + \varphi(y))
 \end{align*}
-for all $P\in X_0\setminus S$. Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P}: \mathcal{O}_{P} \to k(P)$ are ring homomorphisms. Since $K^S\to \prod_{P\in X_0\setminus S} k(P)^\times$ is injective, we get $\varphi(x+y) = \varphi(x) + \varphi(y)$.\qedhere
+for all $P\in X_0\setminus S$. Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P'}: \mathcal{O}_{P'} \to k(P')$ are ring homomorphisms. Since $K^S\to \prod_{P\in X_0\setminus S} k(P)^\times$ is injective, we get $\varphi(x+y) = \varphi(x) + \varphi(y)$.\qedhere
 \end{itemize}
 \end{proof}
 
