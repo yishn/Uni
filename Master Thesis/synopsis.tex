@@ -19,7 +19,6 @@ Let $K$ be a field of finite dimension. We denote the set of equivalence classes
 
 We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$. The \textit{rank}\index{valuation!rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v\cup\{\infty\}$ is defined as the rank of its valuation group $\Gamma_v$ as a $\mathbb{Z}$-module:
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
-We write $K_v$ for a henselization of $K$ with respect to $v$.
 \end{definition}
 
 \begin{lemma}\label{rank-dimension-inequality}
@@ -61,7 +60,10 @@ See [ZS] VI §7 Theorem 40.
 Let $v,w\in\operatorname{Spv}(K)$. We have:
 \[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
 Thus $v$ is a closed point if and only if it has no non-trivial specializations. Furthermore, for a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection: 
-\[\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} \to \operatorname{Spv}k(v),\ w\mapsto w\mod v\]
+\begin{align*}
+\{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} &\longrightarrow \operatorname{Spv}k(v)\\ 
+w&\longmapsto w\mod v
+\end{align*}
 Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has positive characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
 
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
@@ -69,6 +71,18 @@ If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exi
 
 \begin{proof}
 See Valued Fields 4.1.4.
+\end{proof}
+
+\begin{theorem}\label{theorem-henselization}
+Let $K$ be a field and $v\in\operatorname{Spv}(K)$. Then there is a Galois extension $K_v/K$ with a henselian extension $\overline{v}$ of $v$ with the following characterization:
+
+If $K'/K$ is henselian with respect to an extension $w$ of $v$, then there exists a uniquely determined $K$-embedding $K_v\to K'$, so that $w$ extends $\overline{v}$.
+
+Furthermore, $\overline{v}$ has the same value group as $v$ and $k(\overline{v}) = k(v)$. $G_{K_v}$ is the decomposition group $G_{\overline{v}}\subset G_K$ of the unique extension of $\overline{v}$ to $K^\text{s}$. $K_v$ is called a \textit{henselization} of $K$ with respect to $v$. Any two henselization of $K$ with respect to $v$ are $K$-conjugate.
+\end{theorem}
+
+\begin{proof}
+See Valued Fields Lemma 5.2.1, Lemma 5.2.2, Theorem 5.2.5.
 \end{proof}
 
 \begin{theorem}\label{theorem-absoluteinertia}
@@ -97,12 +111,11 @@ See Valued Fields 4.4.1.
 \end{proof}
 
 \begin{corollary}\label{corollary-fkschmidt}
-Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent valuations of rank $1$ on a field $K$ with decomposition groups $G_{v_1},G_{v_2}\subset G_K$. Then $G_{v_1}\cap G_{v_2}=1$.
+Let $w_1,w_2\in\operatorname{Spv}(K^\text{s})$ be two inequivalent valuations of rank $1$ with decomposition groups $G_{{w_1}},G_{{w_2}}\subset G_K$. Then $G_{{w_1}}\cap G_{{w_2}}=1$.
 \end{corollary}
 
 \begin{proof}
-Let $K_{v_i}$ be a henselization of $K$ with respect to $v_i$. The compositum $K_{v_1}K_{v_2}$ in a fixed separable closure of $K$ is henselian with respect to both $v_1$ and $v_2$, hence separably closed by Theorem \ref{theorem-fkschmidt}. Therefore:
-\[1=G_{K_{v_1}K_{v_2}} = G_{K_{v_1}}\cap G_{K_{v_2}} = G_{v_1}\cap G_{v_2} \qedhere\]
+Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}$ and set $v_i = w_i|_L$. Then $L$ is henselian with respect to both $v_1$ and $v_2$. Since $v_1$ and $v_2$ are unramified in $K^\text{s}/L$, they are inequivalent valuations of rank $1$. Now $L$ is separably closed by Theorem \ref{theorem-fkschmidt}. Therefore by Theorem \ref{theorem-henselization} we get $G_{{w_1}}\cap G_{{w_1}}=G_L =1$.
 \end{proof}
 
 \section{The Main Lemma}
@@ -298,7 +311,7 @@ Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuation
 \item The composite $K_{w_1}K_{w_2}$ is not algebraically closed.
 \item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v(w_1) = v(w_2)$.
 \end{enumerate}
-In this case, $k(v')$ is separably closed where $v'$ is the unique extension of the valuation on $K_v$ to $K_{w_1}K_{w_2}$ where $v=v(w_1)$. By Theorem \ref{theorem-absoluteinertia} $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
+In this case, $k(v')$ is separably closed where $v'$ is the unique extension of the valuation on $K_v$ to $K_{w_1}K_{w_2}$ where $v=v(w_1)$. By Theorem \ref{theorem-absoluteinertia} (ii) $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
 Thus $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ maps $\operatorname{Spv}_\text{rd}^{(2)}(K)$ onto $\operatorname{Spv}_\text{rd}^{(2)}(K')$ such that:
 \[ v(w_1)=v(w_2) \iff v(\sigma(w_1)) = v(\sigma(w_2)) \]
 This shows that $\sigma$ also induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$ and for all $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ we have $\sigma(v(w)) = v(\sigma(w))$.
@@ -441,7 +454,7 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 
 \begin{proof}
 \begin{enumerate}[(i)]
-\item Consider the absolute inertia field $L = K_P^\text{t}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. Now $k(w) = k(v_P)^\text{s}$. Since $w$ is unramified over $v$, $w$ is discrete as well. We have the following exact sequence:
+\item Consider the absolute inertia field $L = K_P^\text{t}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. By Theorem \ref{theorem-absoluteinertia} (i), $w$ is discrete as well with $k(w) = k(v_P)^\text{s}$. We have the following exact sequence:
 \[ 1 \longrightarrow U_w/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
 Since $k(w)$ is separably closed, with $\operatorname{char} k(w)=0$ and Hensel's lemma we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
 \[ \begin{tikzcd}
@@ -696,9 +709,9 @@ We have $L_{\tau(v)} = (L_v)' = L_{\sigma(v)}$ for all $v\in\operatorname{Spv}_\
 
 Let $g\in G_K$ and $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Remark \ref{3.3} we have:
 \[ \sigma(g)\sigma(\overline{v}) = \sigma(g\overline{v}) = \tau(g\overline{v}) = \tau(g)\tau(\overline{v}) = \tau(g) \sigma(\overline{v}) \]
-Therefore $\sigma(g)^{-1}\tau(g)$ is contained in $G_{\overline{v}}$ for all $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By the Theorem of F.K. Schmidt \ref{corollary-fkschmidt} we have $G_{\overline{v}_1}\cap G_{\overline{v}_2} = 1$ for $\overline{v}_1\neq\overline{v}_2$. Therefore, $\sigma(g) = \tau(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$.
+Therefore $\sigma(g)^{-1}\tau(g)$ is contained in $G_{\overline{v}}$ for all $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Corollary \ref{corollary-fkschmidt} we have $G_{\overline{v}_1}\cap G_{\overline{v}_2} = 1$ for $\overline{v}_1\neq\overline{v}_2$. Therefore, $\sigma(g) = \tau(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$.
 
 For the uniqueness of $\varphi$ let $\psi: \overline{K}'\to \overline{K}$ be another isomorphism with $\sigma(g) = \psi^{-1} g \psi$. Setting $h = \psi\varphi^{-1}\in G_K$ we observe
 \[ h^{-1}gh = \varphi\sigma(g)\varphi^{-1} = \sigma^{-1}\sigma(g) = g \]
-for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ by F.K. Schmidt \ref{corollary-fkschmidt}. Since $\overline{v}$ was arbitrary, we get $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by F.K. Schmidt \ref{corollary-fkschmidt}, we have $h=1$ and thus $\varphi = \psi$.
+for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ by Corollary \ref{corollary-fkschmidt}. Since $\overline{v}$ was arbitrary, we get $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by Corollary \ref{corollary-fkschmidt}, we have $h=1$ and thus $\varphi = \psi$.
 \end{proof}
