@@ -76,7 +76,7 @@ See Valued Fields 4.1.4.
 \begin{theorem}\label{theorem-henselization}
 Let $K$ be a field and $v\in\operatorname{Spv}(K)$. Then there is a Galois extension $K_v/K$ with a henselian extension $\overline{v}$ of $v$ with the following characterization:
 
-If $K'/K$ is henselian with respect to an extension $w$ of $v$, then there exists a uniquely determined $K$-embedding $K_v\to K'$, so that $w$ extends $\overline{v}$.
+\textit{If $K'/K$ is henselian with respect to an extension $w$ of $v$, then there exists a uniquely determined $K$-embedding $K_v\to K'$, so that $w$ extends $\overline{v}$.}
 
 Furthermore, $\overline{v}$ has the same value group as $v$ and $k(\overline{v}) = k(v)$. $G_{K_v}$ is the decomposition group $G_{\overline{v}}\subset G_K$ of the unique extension of $\overline{v}$ to $K^\text{s}$. $K_v$ is called a \textit{henselization} of $K$ with respect to $v$. Any two henselization of $K$ with respect to $v$ are $K$-conjugate.
 \end{theorem}
@@ -126,14 +126,14 @@ Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and di
 Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then the following statements are equivalent: 
 \begin{enumerate}[(i)]
 \item $K$ is not algebraically closed.
-\item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed
+\item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed.
 \end{enumerate}
 In this case, we have $\operatorname{cd}(G_K)\leq 2$.
 \end{lemma}
 
 \begin{proof}
 \begin{itemize}
-\item Assume that $K$ is not algebraically closed. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are not of rank $1$. Thus they are of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{rd}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
+\item Assume that $K$ is not algebraically closed. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are not of rank $1$. Thus they are of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{rd}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
 \item Now assume (ii) holds.
 \item The second assertion follows from the first and from [K2], §5, Theorem 1.\qedhere
 \end{itemize}
