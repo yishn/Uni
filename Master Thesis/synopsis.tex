@@ -47,30 +47,28 @@ where $S$ ranges over all finite subsets of $K$.
 \end{definition}
 
 \begin{lemma}\label{spv-topology}
-$\operatorname{Spv}(K)$ with the topology defined above is a quasicompact $T_0$-space. Every closed subset $A\subset\operatorname{Spv}(K)$ is the closure of its closed points. 
-
-In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasicompact $T_1$-space, endowed with the induced topology. 
+$\operatorname{Spv}(K)$ with the topology defined above is a quasicompact $T_0$-space. In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasicompact $T_1$-space, endowed with the induced topology. Let $v,w\in\operatorname{Spv}(K)$. We have:
+\[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
+Thus $v$ is a closed point if and only if it has no non-trivial specializations.
 \end{lemma}
 
 \begin{proof}
-See [ZS] VI §7 Theorem 40.
+See [ZS] VI §17 Theorem 38, §17 Theorem 40.
 \end{proof}
 
 \begin{lemma}\label{2.2-pre}
-Let $v,w\in\operatorname{Spv}(K)$. We have:
-\[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
-Thus $v$ is a closed point if and only if it has no non-trivial specializations. Furthermore, for a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection: 
+For a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection: 
 \begin{align*}
 \{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} &\longrightarrow \operatorname{Spv}k(v)\\ 
 w&\longmapsto w\mod v
 \end{align*}
-Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has positive characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
+Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
 
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
 \begin{proof}
-See Valued Fields 4.1.4.
+See Valued Fields 4.1.4, [ZS] VI §3 Theorem 3.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
@@ -582,6 +580,10 @@ $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the correspondi
 Let $P_1,\ldots,P_n\in X_0$ be pairwise distinct closed points, $x_1,\ldots,x_n\in K$ and $a_1,\ldots,a_n\in\mathbb{Z}$. Then there is some $x\in K$, such that for all $i$ we have:
 \[ v_{P_i}(x-x_i) = a_i \]
 \end{theorem}
+
+\begin{proof}
+See [ZS] VI §10 Theorem 18
+\end{proof}
 
 \begin{lemma}\phantomsection\label{4.5}
 \begin{enumerate}[(i)]
