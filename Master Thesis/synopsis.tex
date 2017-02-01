@@ -244,7 +244,7 @@ Now the first assertion follows from [Se], Ch. I, §4.
 
 The second assertion follows from the first one, applied to $L$, by using the following equation of supernatural numbers ([E], Theorem 20.21):
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
-for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $(\Gamma':\Gamma)< \infty$ and $\operatorname{rank}(w) = \operatorname{rank}(v)$ in an algebraic field extension ([ZS], Ch. VI, §11, Lemma 1 and 2).
+for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $\operatorname{rank}(w) = \operatorname{rank}(v)$ in an algebraic field extension ([ZS], Ch. VI, §11, Lemma 1 and 2).
 \end{proof}
 
 \begin{proposition}\label{2.6}
@@ -266,13 +266,13 @@ Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
 \[ \mathrm{H}^3((K_0)_{w_0}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0 \]
 By requirement $\ell^\infty \nmid [(K_0)_{w_0} : K_0]$. By replacing $K_0$ by $(K_0)_{w_0}$, we can assume that $w_0$ is henselian.
 
-Assume that $w = w_0|_K$ is not henselian. Then there exists a $w_1\in|\operatorname{Spv}(K_0)|$ with $w_1\neq w_0$ and such that $w = w_1|_K$, for otherwise $w$ would have a unique prolongation to $K_0$ and hence to $\overline{K}$ since $w_0$ is henselian.
+Assume that $w = w_0|_K$ is not henselian. Then there exists a $w_1\in|\operatorname{Spv}(K_0)|$ with $w_1\neq w_0$ and such that $w = w_1|_K$, for otherwise $w$ would have a unique extension to $K_0$ and hence to $\overline{K}$ since $w_0$ is henselian.
 
 Let $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w$ be a henselization of $K$ with respect to $w$ in $(K_0)_{w_1}$. Then $(K_0)_{w_1}$ is the composite of $K_0$ and $K_w$ and we have $\ell^\infty\nmid [(K_0)_{w_1} : K_w]$.
 
 Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$ as well. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
 
-Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the prolongation of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
+Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the extension of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
 \item Choose the prime $\ell$ different from $\operatorname{char} k(w)$ so that (i) holds. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\leq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2$. By Lemma \ref{rank-dimension-inequality}, this inequality is actually an equality. \qedhere
 \end{enumerate}
 \end{proof}
