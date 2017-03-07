@@ -68,7 +68,7 @@ If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exi
 \end{lemma}
 
 \begin{proof}
-See Valued Fields 4.1.4, [ZS] VI §3 Theorem 3.
+See Valued Fields 2.3, 4.1.4, [ZS] VI §3 Theorem 3.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
@@ -98,6 +98,18 @@ where $v_L$ is the unique extension of $v$ to $L$.
 
 \begin{proof}
 See Valued Fields 5.2.7.
+\end{proof}
+
+\begin{lemma}\label{lemma-henselization-specialization}
+Let $K$ be a field and $w\in\operatorname{Spv}(K)$ with a fixed henselization $K_w$ of $w$. If $v\in\operatorname{Spv}(K)$ such that $w$ is a specialization of $v$, then there is a henselization $K_v$ of $v$ such that $K_v\subset K_w\subset K_v^\text{t}$.
+\end{lemma}
+
+\begin{proof}
+Let $\overline{w}$ be the extension of $w\in\operatorname{Spv}(K_w)$ on $K^\text{s}$. By Valued Fields 3.1.5 we can find an extension $\overline{v}$ of $v$ on $K^\text{s}$ such that $\overline{w}$ is a specialization of $\overline{v}$. Let $K_v$ be the fixed field of $G_{\overline{v}}\subset G_K$.
+
+Let $\sigma\in G_{\overline{w}}$. Then both $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ are overrings of $\mathcal{O}_{\overline{w}}$. Now the overrings of valuation rings are totally ordered by inclusion and correspond to localizations of $\mathcal{O}_{\overline{w}}$ at prime ideals (See Valued Fields 2.3). Since $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ have the same Krull dimension, they must be the same, thus $\sigma\in G_{\overline{v}}$. This proves $K_v\subset K_w$.
+
+Now let $\sigma\in G_{K_v^\text{t}}$, i.e. $\sigma\in G_{\overline{v}}$ such that the induced automorphism on the residue field $\overline{\sigma}:k(\overline{v})\to k(\overline{v})$ is the identity. Let $\mathfrak{p}\subset\mathcal{O}_{\overline{w}}$ be a prime ideal with $\mathcal{O}_{\overline{v}} = (\mathcal{O}_{\overline{w}})_\mathfrak{p}$. In particular, the restriction $\overline{\sigma}|: \mathcal{O}_{\overline{w}}/\mathfrak{p}\to \mathcal{O}_{\overline{w}}/\mathfrak{p}$ is the identity, thus $\sigma(\mathcal{O}_{\overline{w}})=\mathcal{O}_{\overline{w}}$, i.e. $\sigma\in G_{\overline{w}}$. This proves $K_w\subset K_v^\text{t}$.
 \end{proof}
 
 \begin{theorem}[\textit{F.K. Schmidt}]\label{theorem-fkschmidt}
@@ -304,14 +316,14 @@ which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k
 \end{lemma}
 
 \begin{proof}
-Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. This means that if $v$ is nontrivial, we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. Lemma \ref{3.1} shows that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
+Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$ with Lemma \ref{lemma-henselization-specialization}, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. This means that if $v$ is nontrivial, we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. Lemma \ref{3.1} shows that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
 
 Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuations. By Lemma \ref{2.2} the following statements are equivalent:
 \begin{enumerate}[(i)]
 \item The composite $K_{w_1}K_{w_2}$ is not algebraically closed.
 \item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v(w_1) = v(w_2)$.
 \end{enumerate}
-In this case, $k(v')$ is separably closed where $v'$ is the unique extension of the valuation on $K_v$ to $K_{w_1}K_{w_2}$ where $v=v(w_1)$. By Theorem \ref{theorem-absoluteinertia} (ii) $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
+In this case, $k(v')$ is separably closed where $v'$ is the unique extension of the valuation on $K_v$ to $K_{w_1}K_{w_2}$ where $v=v(w_1)$. By Lemma \ref{lemma-henselization-specialization} we have $K_{w_1}K_{w_2}\subset K_v^\text{t}$ and by Theorem \ref{theorem-absoluteinertia} (ii) $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
 Thus $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ maps $\operatorname{Spv}_\text{rd}^{(2)}(K)$ onto $\operatorname{Spv}_\text{rd}^{(2)}(K')$ such that:
 \[ v(w_1)=v(w_2) \iff v(\sigma(w_1)) = v(\sigma(w_2)) \]
 This shows that $\sigma$ also induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$ and for all $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ we have $\sigma(v(w)) = v(\sigma(w))$.
