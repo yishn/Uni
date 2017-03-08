@@ -72,11 +72,13 @@ See Valued Fields 2.3, 4.1.4, [ZS] VI §3 Theorem 3.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
-Let $K$ be a field and $v\in\operatorname{Spv}(K)$. Then there is a Galois extension $K_v/K$ with a henselian extension $\overline{v}$ of $v$ with the following characterization:
+Let $K$ be a field and $v\in\operatorname{Spv}(K)$. Then there is a separable extension $K_v/K$ with a henselian extension $\overline{v}$ of $v$ with the following characterization:
 
 \textit{If $K'/K$ is henselian with respect to an extension $w$ of $v$, then there exists a uniquely determined $K$-embedding $K_v\to K'$, so that $w$ extends $\overline{v}$.}
 
-Furthermore, $\overline{v}$ has the same value group as $v$ and $k(\overline{v}) = k(v)$. $G_{K_v}$ is the decomposition group $G_{\overline{v}}\subset G_K$ of the unique extension of $\overline{v}$ to $K^\text{s}$. $K_v$ is called a \textit{henselization} of $K$ with respect to $v$. Any two henselization of $K$ with respect to $v$ are $K$-conjugate.
+$K_v$ is called a \textit{henselization} of $K$ with respect to $v$. Furthermore, $\overline{v}$ has the same value group as $v$ and the same residue field $k(\overline{v}) = k(v)$. $G_{K_v}$ is the decomposition group $G_{\overline{v}}\subset G_K$ of the unique extension of $\overline{v}$ to $K^\text{s}$. 
+
+Conversely, taking the fixed field of the decomposition group of an extension $\overline{v}'$ of $v$ in $K^\text{s}$ yields a henselization of $K$ with respect to $v$. Any two of such henselizations are $K$-conjugate.
 \end{theorem}
 
 \begin{proof}
@@ -258,7 +260,7 @@ Now the first assertion follows from [Se], Ch. I, §4.
 
 The second assertion follows from the first one, applied to $L$, by using the following equation of supernatural numbers ([E], Theorem 20.21):
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
-for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $\operatorname{rank}(w) = \operatorname{rank}(v)$ in an algebraic field extension ([ZS], Ch. VI, §11, Lemma 1 and 2).
+for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $\operatorname{rank}(w) = \operatorname{rank}(v)$ in an algebraic field extension ([ZS], Ch. VI, §11, Lemma 2).
 \end{proof}
 
 \begin{proposition}\label{2.6}
