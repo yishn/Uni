@@ -451,11 +451,15 @@ G_{K'}\ar[ru]
 \end{tikzcd} \]
 Now the operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
-Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$ the following diagram commutes:
+
+\begin{remark}\label{remark-localphi-extension}
+Obviously, for intermediate fields $L\subset M$ of $\overline{K}/K$, the following diagram commutes:
 \[ \begin{tikzcd}
 L'^\times/n \ar[r, "\varphi_n"]\dar & L^\times/n \dar\\
 M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 \end{tikzcd} \]
+\end{remark}
+
 Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding normalized discrete valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. 
 
 Let $n\in\mathbb{N}$. Tensoring the exact sequence $1\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
@@ -485,7 +489,7 @@ K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 L'^\times /n \ar[r, "\varphi_n"'] &  L^\times /n
 \end{tikzcd}\]
 Note that $(K^\text{t}_P)' = K'^{\text{t}}_{P'}$ as proven in Lemma \ref{3.2}.
-\item Consider the field extension $K_P/K$. Without loss of generality, we can assume $K=K_P$. Since $\operatorname{char}k(P)=0$, by Hensel's lemma, $r_P/n$ is an isomorphism and the composition
+\item Consider the field extension $K_P/K$. By Remark \ref{remark-localphi-extension}, without loss of generality, we can assume $K=K_P$. Since $\operatorname{char}k(P)=0$, by Hensel's lemma, $r_P/n$ is an isomorphism and the composition
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[rr, hook] && K_P^\times/n
 \end{tikzcd}\]
