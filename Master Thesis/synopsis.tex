@@ -3,7 +3,7 @@
 \section{The Valuation Spectra}
 
 \begin{definition}
-Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
+Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely generated} if $K/P$ is finitely generated. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
 \[\dim(K) = \begin{cases}
 \operatorname{trdeg}(K/P), & \operatorname{char}(K)>0\\
 \operatorname{trdeg}(K/P)+1, & \text{otherwise}
@@ -11,7 +11,10 @@ Let $K$ be a field and $P$ its prime field. The \textit{(Kronecker) dimension}\i
 \end{definition}
 
 \begin{remark}
-A one-dimensional finitely generated field over its prime field is just a global field. A two-dimensional finitely generated field over $\mathbb{Q}$ is a function field in one variable over $\mathbb{Q}$.
+\begin{itemize}
+\item A one-dimensional finitely generated field is just a global field. 
+\item A two-dimensional finitely generated field over $\mathbb{Q}$ is a function field in one variable over $\mathbb{Q}$.
+\end{itemize}
 \end{remark}
 
 \begin{definition}\label{2.1}
@@ -23,7 +26,11 @@ We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\
 
 \begin{lemma}\label{rank-dimension-inequality}
 Let $v\in\operatorname{Spv}(K)$. Then we have:
-\[\operatorname{rank}(v)\leq \operatorname{rrank}(v)\quad\text{and}\quad\operatorname{rrank}(v)+\dim k(v)\leq\dim(K) \]
+\begin{enumerate}[(i)]
+\item $\operatorname{rank}(v)\leq \operatorname{rrank}(v)$
+\item $\operatorname{rrank}(v)+\dim k(v)\leq\dim(K)$
+\end{enumerate}
+Moreover, if equality holds in (ii) and $K$ is finitely generated, then $k(v)$ is finitely generated as well, and $\Gamma_v$ is a finitely generated $\mathbb{Z}$-module.
 \end{lemma}
 
 \begin{proof}
@@ -64,7 +71,7 @@ w&\longmapsto w\mod v
 \end{align*}
 Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
 
-If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
+If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{d}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
 \begin{proof}
