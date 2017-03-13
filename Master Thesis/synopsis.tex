@@ -34,7 +34,7 @@ Moreover, if equality holds in (ii) and $K$ is finitely generated, then $k(v)$ i
 \end{lemma}
 
 \begin{proof}
-See Valued Fields 3.4.1 and 3.4.3.
+See \cite{EP05} 3.4.1 and 3.4.3.
 \end{proof}
 
 \begin{definition}
@@ -60,7 +60,7 @@ Thus $v$ is a closed point if and only if it has no non-trivial specializations.
 \end{lemma}
 
 \begin{proof}
-See [ZS] VI §17 Theorem 38, §17 Theorem 40.
+See \cite{ZS60} VI §17 Theorem 38, §17 Theorem 40.
 \end{proof}
 
 \begin{lemma}\label{2.2-pre}
@@ -75,7 +75,7 @@ If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exi
 \end{lemma}
 
 \begin{proof}
-See Valued Fields 2.3, 4.1.4, [ZS] VI §3 Theorem 3.
+See \cite{EP05} 2.3, 4.1.4, \cite{ZS60} VI §3 Theorem 3.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
@@ -89,7 +89,7 @@ Conversely, taking the fixed field of the decomposition group of an extension $\
 \end{theorem}
 
 \begin{proof}
-See Valued Fields Lemma 5.2.1, Lemma 5.2.2, Theorem 5.2.5.
+See \cite{EP05} Lemma 5.2.1, Lemma 5.2.2, Theorem 5.2.5.
 \end{proof}
 
 \begin{theorem}\label{theorem-absoluteinertia}
@@ -106,7 +106,7 @@ where $v_L$ is the unique extension of $v$ to $L$.
 \end{theorem}
 
 \begin{proof}
-See Valued Fields 5.2.7.
+See \cite{EP05} 5.2.7.
 \end{proof}
 
 \begin{lemma}\label{lemma-henselization-specialization}
@@ -114,9 +114,9 @@ Let $K$ be a field and $w\in\operatorname{Spv}(K)$ with a fixed henselization $K
 \end{lemma}
 
 \begin{proof}
-Let $\overline{w}$ be the extension of $w\in\operatorname{Spv}(K_w)$ on $K^\text{s}$. By Valued Fields 3.1.5 we can find an extension $\overline{v}$ of $v$ on $K^\text{s}$ such that $\overline{w}$ is a specialization of $\overline{v}$. Let $K_v$ be the fixed field of $G_{\overline{v}}\subset G_K$.
+Let $\overline{w}$ be the extension of $w\in\operatorname{Spv}(K_w)$ on $K^\text{s}$. By \cite{EP05} 3.1.5 we can find an extension $\overline{v}$ of $v$ on $K^\text{s}$ such that $\overline{w}$ is a specialization of $\overline{v}$. Let $K_v$ be the fixed field of $G_{\overline{v}}\subset G_K$.
 
-Let $\sigma\in G_{\overline{w}}$. Then both $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ are overrings of $\mathcal{O}_{\overline{w}}$. Now the overrings of valuation rings are totally ordered by inclusion and correspond to localizations of $\mathcal{O}_{\overline{w}}$ at prime ideals (See Valued Fields 2.3). Since $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ have the same Krull dimension, they must be the same, thus $\sigma\in G_{\overline{v}}$. This proves $K_v\subset K_w$.
+Let $\sigma\in G_{\overline{w}}$. Then both $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ are overrings of $\mathcal{O}_{\overline{w}}$. Now the overrings of valuation rings are totally ordered by inclusion and correspond to localizations of $\mathcal{O}_{\overline{w}}$ at prime ideals (See \cite{EP05} 2.3). Since $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ have the same Krull dimension, they must be the same, thus $\sigma\in G_{\overline{v}}$. This proves $K_v\subset K_w$.
 
 Now let $\sigma\in G_{K_v^\text{t}}$, i.e. $\sigma\in G_{\overline{v}}$ such that the induced automorphism on the residue field $\overline{\sigma}:k(\overline{v})\to k(\overline{v})$ is the identity. Let $\mathfrak{p}\subset\mathcal{O}_{\overline{w}}$ be a prime ideal with $\mathcal{O}_{\overline{v}} = (\mathcal{O}_{\overline{w}})_\mathfrak{p}$. In particular, the restriction $\overline{\sigma}|: \mathcal{O}_{\overline{w}}/\mathfrak{p}\to \mathcal{O}_{\overline{w}}/\mathfrak{p}$ is the identity, thus $\sigma(\mathcal{O}_{\overline{w}})=\mathcal{O}_{\overline{w}}$, i.e. $\sigma\in G_{\overline{w}}$. This proves $K_w\subset K_v^\text{t}$.
 \end{proof}
@@ -126,7 +126,7 @@ Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent henselian valuations o
 \end{theorem}
 
 \begin{proof}
-See Valued Fields 4.4.1.
+See \cite{EP05} 4.4.1.
 \end{proof}
 
 \begin{corollary}\label{corollary-fkschmidt}
@@ -267,7 +267,7 @@ Now the first assertion follows from [Se], Ch. I, §4.
 
 The second assertion follows from the first one, applied to $L$, by using the following equation of supernatural numbers ([E], Theorem 20.21):
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
-for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $\operatorname{rank}(w) = \operatorname{rank}(v)$ in an algebraic field extension ([ZS], Ch. VI, §11, Lemma 2).
+for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $\operatorname{rank}(w) = \operatorname{rank}(v)$ in an algebraic field extension (\cite{ZS60}, Ch. VI, §11, Lemma 2).
 \end{proof}
 
 \begin{proposition}\label{2.6}
@@ -605,7 +605,7 @@ Let $P_1,\ldots,P_n\in X_0$ be pairwise distinct closed points, $x_1,\ldots,x_n\
 \end{theorem}
 
 \begin{proof}
-See [ZS] VI §10 Theorem 18
+See \cite{ZS60} VI §10 Theorem 18
 \end{proof}
 
 \begin{lemma}\phantomsection\label{4.5}
