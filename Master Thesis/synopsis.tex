@@ -98,7 +98,7 @@ Let $K$ be a henselian field with respect to $v: K\to\Gamma\cup\{\infty\}$ with 
 Then we have:
 \begin{enumerate}[(i)]
 \item $w$ has value group $\Gamma$ and residue class field $k(v)^\text{s}$.
-\item $K^\text{t}$ is a Galois extension of $K$ and $\operatorname{Gal}(K^\text{t}/K)\cong G_{k(v)}$. There exists an inclusion-preserving one-to-one correspondence: 
+\item $K^\text{t}$ is a Galois extension of $K$ and $\operatorname{Gal}(K^\text{t}/K)\cong G_{k(v)}$ as profinite groups. There exists an inclusion-preserving one-to-one correspondence: 
 \begin{align*}
 \{ \text{Intermediate extensions in $K^\text{t}/K$} \} &\longrightarrow \{\text{Separable extensions of $k(v)$} \}\\ 
 L &\longmapsto k(v_L)  
@@ -273,9 +273,13 @@ If $L/K$ is an algebraic extension and $\mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z
 \end{lemma}
 
 \begin{proof}
-Let $G_\ell$ be an pro-$\ell$ Sylow group of $G_K$. By the ramification theory for general valuations ([E], §20) we have $G_\ell\cong\mathbb{Z}_\ell(1)^r\rtimes G_k(\ell)$ where the action is defined via the cyclotomic character and $r = \dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. In particular, $r\leq 2$ and $G_k(\ell)$ is the pro-$\ell$-Sylow group of $G_k$ hence $G_k(\ell)\cong \mathbb{Z}_\ell$ or $G_k(\ell) \cong 1$.
+Let $T$ be the absolute inertia group of $K$ and consider the short exact sequence from Theorem \ref{theorem-absoluteinertia}:
+\[ 1\longrightarrow T\longrightarrow G_K\longrightarrow G_k\longrightarrow 1 \]
+Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\hat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_k(\ell)$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
+\[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_k(\ell)\longrightarrow 1 \]
+Since $G_k(\ell)$ is a free pro-$\ell$ group, this sequence splits, and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_k(\ell)$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq 2$.
 
-Let $G_K(\ell)$ be the maximal pro-$\ell$-quotient of $G_K$. Since $\mu_\ell\subset K$, the action of $G_k$ on the pro-$\ell$-Sylow group of the inertia group of $w$ factors through $G_k(\ell)$. We see that the canonical projection $G_K\to G_K(\ell)$ is an isomorphism. Therefore we have:
+Let $G_K(\ell)$ be the maximal pro-$\ell$-quotient of $G_K$. Since $\mu_\ell\subset K$, the action of $G_k$ on the pro-$\ell$-Sylow group of the inertia group of $w$ factors through $G_k(\ell)$. We see that the canonical projection $G_K\to G_K(\ell)$ restricts to an isomorphism $G_\ell\to G_K(\ell)$. Therefore we have:
 \[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^3(G_K(\ell),\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) \]
 Now the first assertion follows from [Se], Ch. I, §4.
 
