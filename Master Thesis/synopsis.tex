@@ -83,8 +83,8 @@ Let $K$ be a field and $v\in\operatorname{Spv}(K)$. Then there is a separable ex
 
 \textit{If $K'/K$ is henselian with respect to an extension $w$ of $v$, then there exists a uniquely determined $K$-embedding $K_v\to K'$, so that $w$ extends $\overline{v}$.}
 
-$K_v$ is called a \textit{henselization} of $K$ with respect to $v$. Furthermore, $\overline{v}$ has the same value group as $v$ and the same residue field $k(\overline{v}) = k(v)$. $G_{K_v}$ is the decomposition group $G_{\overline{v}}\subset G_K$ of the unique extension of $\overline{v}$ to $K^\text{s}$. 
-
+$K_v$ is called a \textit{henselization} of $K$ with respect to $v$. Furthermore, $\overline{v}$ has the same value group as $v$ and the same residue field $k(\overline{v}) = k(v)$. $G_{K_v}$ is the decomposition group of the unique extension of $\overline{v}$ to $K^\text{s}$:
+\[ G_{\overline{v}} = \{ \sigma\in G_K\mid \sigma(\mathcal{O}_{\overline{v}}) =\mathcal{O}_{\overline{v}} \} \subset G_K \]
 Conversely, taking the fixed field of the decomposition group of an extension $\overline{v}'$ of $v$ in $K^\text{s}$ yields a henselization of $K$ with respect to $v$. Any two of such henselizations are $K$-conjugate.
 \end{theorem}
 
@@ -93,7 +93,9 @@ See \cite{EP05} Lemma 5.2.1, Lemma 5.2.2, Theorem 5.2.5.
 \end{proof}
 
 \begin{theorem}\label{theorem-absoluteinertia}
-Let $K$ be a henselian field with respect to $v: K\to\Gamma\cup\{\infty\}$. Let $K^\text{t}$ be the absolute inertia field of $K$ with the unique extension $w$ of $v$. Then:
+Let $K$ be a henselian field with respect to $v: K\to\Gamma\cup\{\infty\}$ with unique extension $\overline{v}$ on $K^\text{s}$. Let $K^\text{t}$ be the absolute inertia field of $K$ with the unique extension $w$ of $v$, i.e. $K^\text{t}$ is the fixed field of the absolute inertia group $T$: 
+\[ T = \{ \sigma\in G_K\mid \sigma(x)\equiv x\mod \mathfrak{m}_{\overline{v}} \quad \text{for all }x\in\mathcal{O}_{\overline{v}} \}\lhd G_K \]
+Then we have:
 \begin{enumerate}[(i)]
 \item $w$ has value group $\Gamma$ and residue class field $k(v)^\text{s}$.
 \item $K^\text{t}$ is a Galois extension of $K$ and $\operatorname{Gal}(K^\text{t}/K)\cong G_{k(v)}$. There exists an inclusion-preserving one-to-one correspondence: 
@@ -106,7 +108,7 @@ where $v_L$ is the unique extension of $v$ to $L$.
 \end{theorem}
 
 \begin{proof}
-See \cite{EP05} 5.2.7.
+See \cite{EP05} Theorem 5.2.7.
 \end{proof}
 
 \begin{lemma}\label{lemma-henselization-specialization}
@@ -114,11 +116,23 @@ Let $K$ be a field and $w\in\operatorname{Spv}(K)$ with a fixed henselization $K
 \end{lemma}
 
 \begin{proof}
-Let $\overline{w}$ be the extension of $w\in\operatorname{Spv}(K_w)$ on $K^\text{s}$. By \cite{EP05} 3.1.5 we can find an extension $\overline{v}$ of $v$ on $K^\text{s}$ such that $\overline{w}$ is a specialization of $\overline{v}$. Let $K_v$ be the fixed field of $G_{\overline{v}}\subset G_K$.
+Let $\overline{w}$ be the extension of $w\in\operatorname{Spv}(K_w)$ on $K^\text{s}$. By \cite{EP05} Lemma 3.1.5 we can find an extension $\overline{v}$ of $v$ on $K^\text{s}$ such that $\overline{w}$ is a specialization of $\overline{v}$. Let $K_v$ be the fixed field of $G_{\overline{v}}\subset G_K$.
 
 Let $\sigma\in G_{\overline{w}}$. Then both $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ are overrings of $\mathcal{O}_{\overline{w}}$. Now the overrings of valuation rings are totally ordered by inclusion and correspond to localizations of $\mathcal{O}_{\overline{w}}$ at prime ideals (See \cite{EP05} 2.3). Since $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ have the same Krull dimension, they must be the same, thus $\sigma\in G_{\overline{v}}$. This proves $K_v\subset K_w$.
 
 Now let $\sigma\in G_{K_v^\text{t}}$, i.e. $\sigma\in G_{\overline{v}}$ such that the induced automorphism on the residue field $\overline{\sigma}:k(\overline{v})\to k(\overline{v})$ is the identity. Let $\mathfrak{p}\subset\mathcal{O}_{\overline{w}}$ be a prime ideal with $\mathcal{O}_{\overline{v}} = (\mathcal{O}_{\overline{w}})_\mathfrak{p}$. In particular, the restriction $\overline{\sigma}|: \mathcal{O}_{\overline{w}}/\mathfrak{p}\to \mathcal{O}_{\overline{w}}/\mathfrak{p}$ is the identity, thus $\sigma(\mathcal{O}_{\overline{w}})=\mathcal{O}_{\overline{w}}$, i.e. $\sigma\in G_{\overline{w}}$. This proves $K_w\subset K_v^\text{t}$.
+\end{proof}
+
+\begin{theorem}\label{theorem-sylowgroups-inertiagroup}
+Let $K$ be a henselian field with respect to $v:K\to\Gamma\cup\{\infty\}$ with unique extension $\overline{v}$ on $K^\text{s}$, and $p=\operatorname{char}k(v)$. Then the absolute ramification group
+\[ V = \Big\{ \sigma\in G_K\mathop{\Big|} \frac{\sigma(x)}{x}-1\in\mathfrak{m}_{\overline{v}}\quad \text{for all }x\in {K^\text{s}}^\times \Big\} \lhd T \]
+is the unique $p$-Sylow group of the absolute inertia group $T$. $V$ is trivial if $p=0$. We have the following isomorphism of profinite groups:
+\[ T/V \cong \prod_{\ell\neq p\text{ prime}}\mathbb{Z}_\ell^{r_\ell} \]
+where $r_\ell = \dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$.
+\end{theorem}
+
+\begin{proof}
+See \cite{EP05} Theorem 5.3.3.
 \end{proof}
 
 \begin{theorem}[\textit{F.K. Schmidt}]\label{theorem-fkschmidt}
@@ -126,7 +140,7 @@ Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent henselian valuations o
 \end{theorem}
 
 \begin{proof}
-See \cite{EP05} 4.4.1.
+See \cite{EP05} Theorem 4.4.1.
 \end{proof}
 
 \begin{corollary}\label{corollary-fkschmidt}
