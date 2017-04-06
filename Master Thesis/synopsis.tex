@@ -136,19 +136,23 @@ See \cite{EP05} Theorem 5.3.3.
 \end{proof}
 
 \begin{theorem}[\textit{F.K. Schmidt}]\label{theorem-fkschmidt}
-Let $v_1,v_2\in\operatorname{Spv}(K)$ be two inequivalent henselian valuations of rank $1$ on a field $K$. Then $K$ is separably closed.
+Let $v_1,v_2\in\operatorname{Spv}(K)$ be two independent henselian valuations on a field $K$, i.e. $\mathcal{O}_{v_1}\mathcal{O}_{v_2}=K$. Then $K$ is separably closed.
 \end{theorem}
 
 \begin{proof}
 See \cite{EP05} Theorem 4.4.1.
 \end{proof}
 
+\begin{remark}
+Two valuations of rank $1$ are independent iff they are inequivalent.
+\end{remark}
+
 \begin{corollary}\label{corollary-fkschmidt}
 Let $w_1,w_2\in\operatorname{Spv}(K^\text{s})$ be two inequivalent valuations of rank $1$ with decomposition groups $G_{{w_1}},G_{{w_2}}\subset G_K$. Then $G_{{w_1}}\cap G_{{w_2}}=1$.
 \end{corollary}
 
 \begin{proof}
-Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_i|_L$. Then $L$ is henselian with respect to both $v_1$ and $v_2$. Since $w_1,w_2$ are the only extensions of $v_1$ and $v_2$ in $K^\text{s}$ respectively, $v_1$ and $v_2$ are inequivalent valuations of rank $1$. Now $L$ is separably closed by Theorem \ref{theorem-fkschmidt}. Therefore by Theorem \ref{theorem-henselization} we get $G_{{w_1}}\cap G_{{w_1}}=G_L =1$.
+Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_i|_L$. Then $L$ is henselian with respect to both $v_1$ and $v_2$. Since $w_1,w_2$ are the only extensions of $v_1$ and $v_2$ in $K^\text{s}$ respectively, $v_1$ and $v_2$ are inequivalent valuations of rank $1$. Now $L$ is separably closed by Theorem \ref{theorem-fkschmidt}. Therefore, by Theorem \ref{theorem-henselization}, we get $G_{{w_1}}\cap G_{{w_1}}=G_L =1$.
 \end{proof}
 
 \section{The Main Lemma}
@@ -156,20 +160,15 @@ Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_
 Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and of dimension $2$.
 
 \begin{lemma}\label{2.2}
-Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then the following statements are equivalent: 
-\begin{enumerate}[(i)]
-\item $K$ is not algebraically closed.
-\item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed.
-\end{enumerate}
-In this case, we have $\operatorname{cd}(G_K)\leq 2$.
+Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(G_K)\leq 2$.
 \end{lemma}
 
 \begin{proof}
-\begin{itemize}
-\item Assume that $K$ is not algebraically closed. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are not of rank $1$. Thus they are of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{rd}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
-\item Now assume (ii) holds.
-\item The second assertion follows from the first and from [K2], §5, Theorem 1.\qedhere
-\end{itemize}
+Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, for otherwise $\dim k(w_i)=\dim (K)\neq 0$. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are dependent. Since two different valuations of rank $1$ are independent, at least one of $w_1$ and $w_2$ is of rank $2$. Now, let's assume that $w_1$ is of rank $1$ and $w_2$ is of rank $2$. Since they are dependent, it follows $v(w_2) = w_1$ and $w_1$ has a non-trivial specialization, a contradiction to $w_1\in |\operatorname{Spv}(K)|$.
+
+Thus $w_1,w_2$ are both of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see that $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{d}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
+
+The second assertion follows from the first and from [K2], §5, Theorem 1.
 \end{proof}
 
 \begin{definition}
@@ -314,7 +313,7 @@ Let $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w
 Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$ as well. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
 
 Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the extension of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
-\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$ so that (i) holds. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\leq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2$. By Lemma \ref{rank-dimension-inequality}, this inequality is actually an equality. \qedhere
+\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$ so that (i) holds. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\leq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2$. TODO \iffalse By Lemma \ref{rank-dimension-inequality}, this inequality is actually an equality.\fi \qedhere
 \end{enumerate}
 \end{proof}
 
@@ -562,7 +561,7 @@ Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is fini
 \item We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B\setminus C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
-\item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For $A$ finite we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
+\item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For finite $A$ we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
 \end{enumerate}
 \end{proof}
 
