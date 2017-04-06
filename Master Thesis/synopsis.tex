@@ -40,8 +40,8 @@ See \cite{EP05} 3.4.1 and 3.4.3.
 \begin{definition}
 We define:
 \begin{align*}
-\operatorname{Spv}_\text{d}(K) &= \{v\in\operatorname{Spv}(K)\mid\operatorname{rank}(v)=\operatorname{rrank}(v) \} \\
-\operatorname{Spv}_\text{rd}(K) &= \{v\in\operatorname{Spv}_\text{d}(K)\mid \operatorname{rrank}(v)+\dim k(v)=\dim(K) \}
+\operatorname{Spv}_\text{d}(K) &= \{v\in\operatorname{Spv}(K)\mid \operatorname{rrank}(v)+\dim k(v)=\dim(K) \} \\
+\operatorname{Spv}_\text{rd}(K) &= \{v\in\operatorname{Spv}_\text{d}(K)\mid \operatorname{rank}(v)=\operatorname{rrank}(v) \}
 \end{align*}
 Valuations in $\operatorname{Spv}_\text{d}(K)$ are called \textit{defectless}\index{valuation!defectless}, whereas those in $\operatorname{Spv}_\text{rd}(K)$ are called \textit{rank-defectless}\index{valuation!rank-defectless}. For $\ast\in\{\text{d},\text{rd}\}$ we set:
 \[\operatorname{Spv}_\ast^{(i)}(K)=\{v\in\operatorname{Spv}_\ast(K)\mid \operatorname{rrank}(v)=i \} \]
@@ -324,7 +324,8 @@ Let $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w
 Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$ as well. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
 
 Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the extension of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
-\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$ so that (i) holds. According to Lemma \ref{2.5} we have $\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\leq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2$. TODO \iffalse By Lemma \ref{rank-dimension-inequality}, this inequality is actually an equality.\fi \qedhere
+\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$ so that (i) holds. According to Lemma \ref{2.5} we have:
+\[\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)\qedhere\]
 \end{enumerate}
 \end{proof}
 
@@ -353,19 +354,21 @@ which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k
 \end{lemma}
 
 \begin{proof}
-Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$ with Lemma \ref{lemma-henselization-specialization}, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. This means that if $v$ is nontrivial, we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. Lemma \ref{3.1} shows that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
+Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$ with Lemma \ref{lemma-henselization-specialization}, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. If $v$ is nontrivial, then in this case we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. Lemma \ref{3.1} shows that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
 
-Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuations. By Lemma \ref{2.2} the following statements are equivalent:
+Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuations. The following statements are equivalent:
 \begin{enumerate}[(i)]
 \item The composite $K_{w_1}K_{w_2}$ is not algebraically closed.
 \item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v(w_1) = v(w_2)$.
 \end{enumerate}
+The implication (i)$\implies$(ii) follows from Lemma \ref{2.2}. TODO
+
 In this case, $k(v')$ is separably closed where $v'$ is the unique extension of the valuation on $K_v$ to $K_{w_1}K_{w_2}$ where $v=v(w_1)$. By Lemma \ref{lemma-henselization-specialization} we have $K_{w_1}K_{w_2}\subset K_v^\text{t}$ and by Theorem \ref{theorem-absoluteinertia} (ii) $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
 Thus $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ maps $\operatorname{Spv}_\text{rd}^{(2)}(K)$ onto $\operatorname{Spv}_\text{rd}^{(2)}(K')$ such that:
 \[ v(w_1)=v(w_2) \iff v(\sigma(w_1)) = v(\sigma(w_2)) \]
 This shows that $\sigma$ also induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$ and for all $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ we have $\sigma(v(w)) = v(\sigma(w))$.
 
-Let $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ and let $N$ be the normal subgroup of $G_{K_v}$ generated by all subgroups $G_{K_w}$ for $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $v(w) = v$. Since a global field has no non-trivial algebraic extension in which every prime splits completely, we get $N=G_{K_v}$. This shows that $K'_{v'} = (K_v)'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, let $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $w_1\neq w_2$ and $v=v(w_1)=v(w_2)$, then:
+Let $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ and let $N$ be the normal subgroup of $G_{K_v}$ generated by all subgroups $G_{K_w}$ for $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $v(w) = v$. Since a global field has no non-trivial algebraic extension in which every prime splits completely, we get $N=G_{K_v}$. This shows that $K'_{v'} := (K_v)'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, let $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $w_1\neq w_2$ and $v=v(w_1)=v(w_2)$, then:
 \[ \sigma(G_{K^\text{t}_v}) = \sigma(G_{K_{w_1}}\cap G_{K_{w_2}}) = G_{K'_{w'_1}}\cap G_{K'_{w'_2}} = G_{(K')^\text{t}_{v'}} \]
 Therefore, $\sigma$ induces with Theorem \ref{theorem-absoluteinertia} the following isomorphism:
 \[ G_{k(v)} \cong G_{K_v}/G_{K_v^\text{t}} \to G_{K'_{v'}}/G_{(K')_{v'}^\text{t}}\cong G_{k(v')} \]
@@ -395,7 +398,7 @@ Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respe
 
 Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
 
-By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
+By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X^{\phantom{'}}_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
 
 \begin{theorem}[\textit{Hilbert's Irreducibility Theorem}]\label{hilberts-irreducibility-theorem}
 Let $E$ be a number field and $f_1,\ldots, f_n$ be irreducible polynomials in $E[X_1,\ldots,X_r,Y_1,\ldots,Y_s]$. Then there exists $e_1,\ldots,e_r\in E$ such that the specializations
