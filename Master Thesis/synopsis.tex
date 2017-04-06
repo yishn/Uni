@@ -203,7 +203,9 @@ Let $K$ be finitely generated and $\ell\neq 2$ be a prime. The following map, in
 
 \begin{proof}
 Let $L=K(\mu_{\ell},\sqrt{-1})/K$. Consider the restriction and corestriction maps:
-\[ \operatorname{res}: \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \to \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z}) \qquad \operatorname{cor}:\mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z})\to \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \]
+\[ \begin{tikzcd}
+\mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z})\ar[r, "\operatorname{cor}"]& \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) 
+\end{tikzcd} \]
 We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is coprime to $\ell$, we see that $\operatorname{res}$ is injective. Thus we can assume that $K=L$, i.e. $\mu_{\ell}\subset K$ and $K$ is not formally real. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2) = \mu_\ell^{\otimes 2}$ and let us write $\mathrm{H}^3(L) = \mathrm{H}^3(L, \mathbb{Z}/\ell\mathbb{Z}(2))$. 
 
 Let $\mathfrak{X}$ be a model of $K$. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By \cite{Ka86} Theorem 0.8, the map
@@ -274,13 +276,22 @@ If $L/K$ is an algebraic extension and $\mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z
 \begin{proof}
 Let $T$ be the absolute inertia group of $K$ and consider the short exact sequence from Theorem \ref{theorem-absoluteinertia}:
 \[ 1\longrightarrow T\longrightarrow G_K\longrightarrow G_k\longrightarrow 1 \]
-Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\hat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_k(\ell)$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
-\[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_k(\ell)\longrightarrow 1 \]
-Since $G_k(\ell)$ is a free pro-$\ell$ group, this sequence splits, and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_k(\ell)$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq 2$.
+Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\hat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_{k,\ell}$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
+\[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_{k,\ell}\longrightarrow 1 \]
+Since $G_{k,\ell}$ is a free pro-$\ell$ group, this sequence splits and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_{k,\ell}$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq 2$.
 
-Let $G_K(\ell)$ be the maximal pro-$\ell$-quotient of $G_K$. Since $\mu_\ell\subset K$, the action of $G_k$ on the pro-$\ell$-Sylow group of the inertia group of $w$ factors through $G_k(\ell)$. We see that the canonical projection $G_K\to G_K(\ell)$ restricts to an isomorphism $G_\ell\to G_K(\ell)$. Therefore we have:
-\[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^3(G_K(\ell),\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) \]
-Now the first assertion follows from [Se], Ch. I, §4.
+Let $G_K(\ell)$ be the maximal pro-$\ell$ quotient of $G_K$. Since $\mu_\ell\subset K$, the action of $G_k$ on the $\ell$-Sylow group of the inertia group of $w$ factors through the maximal pro-$\ell$ quotient $G_k(\ell)$ of $G_k$. Since $G_{k,\ell}\cong G_k(\ell)$, we also see that the canonical projection $G_K\to G_K(\ell)$ restricts to an isomorphism $G_\ell\to G_K(\ell)$. Now consider the following composition:
+\[ \begin{tikzcd}
+\mathrm{H}^3(G_K(\ell),\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{inf}"] & \mathrm{H}^3(G_K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})
+\end{tikzcd} \]
+Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = [G_K:G_\ell]$. However, $[G_K:G_\ell]$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By [Se], Ch. I, §4, Proposition 22 we have:
+\[\operatorname{cd}(G_\ell) = \operatorname{cd}(\mathbb{Z}_\ell^r\rtimes G_k(\ell)) = \begin{cases}
+r, & G_k(\ell) = 0 \\
+r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
+\end{cases} \] 
+since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ if $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. According to the proof of [Se], Ch. I, §4, Proposition 22, we have:
+\[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) = \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
+By [NSW] Theorem 2.4.6, we have $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^1(\mathbb{Z}_\ell, \mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})) = \mathbb{Z}/\ell\mathbb{Z}$, since $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\operatorname{Hom}_\text{cont}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$.
 
 The second assertion follows from the first one, applied to $L$, by using the following equation of supernatural numbers ([E], Theorem 20.21):
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
