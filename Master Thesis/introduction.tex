@@ -1,12 +1,31 @@
 \chapter{Introduction}
 
-\begin{theorem}[\textit{Pop}]\label{thm:main-result}
-Let $K,K'$ be two finite field extensions of $\mathbb{Q}(T)$. If there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $K'\to K$.
-\end{theorem}
+Given an algebraic variety $X$, we can ask ourselves how much information about $X$ is contained in the knowledge of its étale fundamental group $\pi_1^{\text{ét}}(X)$. Especially interesting are schemes which should be reconstructible solely from its étale fundamental group. If $X$ is the spectrum of a field $K$, the étale fundamental group of $X$ is just its absolute Galois group $G_K$. 
+
+Finite fields have an abelian absolute Galois group. In fact, they all have the same absolute Galois group $\hat{\mathbb{Z}}$, therefore not much information can be retrieved from these groups. The study of these types of questions belong in the area of \textit{anabelian geometry}. This term refers to the fact that the less abelian $\pi_1^\text{ét}(X)$ is, the more information it carries about $X$.
+
+Number fields stand in stark contrast to finite fields. Two number fields $k$, $k'$ with isomorphic Galois groups $G_k$, $G_{k'}$ are isomorphic as fields as well. It was J. Neukirch who investigated this question for the first time in the end of the 1960s (see \cite{Ne69}, \cite{Uc76}, \cite{Ne77}, \cite{Uc77}). Together with K. Uchida, their studies resulted in the following theorem for global fields:
 
 \begin{theorem}[\textit{Neukirch-Uchida}]\label{thm:neukirch-uchida}
-Let $k,k'$ be two global fields. Then any isomorphism $G_k\to G_{k'}$ is induced by a unique isomorphism $k'^{\text{s}}\to k^\text{s}$.  In particular, if $k,k'$ have isomorphic absolute Galois groups, they are isomorphic as fields.
+Let $k,k'$ be two global fields. Then any isomorphism $\sigma: G_k\to G_{k'}$ between their absolute Galois groups is induced by a unique field isomorphism $\varphi: k'^{\text{s}}\to k^\text{s}$, i.e: 
+\[\sigma(g) =\varphi^{-1}g\varphi \quad \text{for all }g\in G_k\] 
+In particular $\varphi$ induces a field isomorphism $k'\to k$.
 \end{theorem}
+
+This means that global fields should be reconstructible from their Galois groups. Furthermore, the Galois group $G_k$ also contains important arithmetic information from $k$. 
+
+It is believed that spectra of finitely generated fields are the building blocks of the anabelian world, which led Grothendieck to the conjecture that Theorem \ref{thm:neukirch-uchida} should also hold for arbitrary finitely generated fields $k$ and $k'$ of characteristic $0$.
+
+This has been proved by F. Pop (see \cite{Po90}, \cite{Po94}, \cite{Po95}) using model theory. In this thesis, we want to follow M. Spiess \cite{Sp96} to prove the statement for finitely generated fields with transcendence degree $1$ over $\mathbb{Q}$, using a purely arithmetical approach and a direct generalization of the original proof of Theorem \ref{thm:neukirch-uchida}:
+
+\pagebreak
+
+\begin{theorem}[\textit{Pop}]\label{thm:main-result}
+Let $K,K'$ be two finite field extensions of $\mathbb{Q}(T)$. Then any isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups is induced by a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$, i.e: 
+\[\sigma(g) =\varphi^{-1}g\varphi \quad \text{for all }g\in G_k\]
+In particular $\varphi$ induces a field isomorphism $K'\to K$.
+\end{theorem}
+
 
 \clearpage
 
