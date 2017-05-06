@@ -54,7 +54,7 @@ where $S$ ranges over all finite subsets of $K$.
 \end{definition}
 
 \begin{lemma}\label{spv-topology}
-$\operatorname{Spv}(K)$ with the topology defined above is a quasicompact $T_0$-space. In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasicompact $T_1$-space, endowed with the induced topology. Let $v,w\in\operatorname{Spv}(K)$. We have:
+$\operatorname{Spv}(K)$ with the topology defined above is a quasi-compact $T_0$-space. In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasi-compact $T_1$-space, endowed with the induced topology. Let $v,w\in\operatorname{Spv}(K)$. We have:
 \[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
 Thus $v$ is a closed point if and only if it has no non-trivial specializations.
 \end{lemma}
@@ -251,7 +251,7 @@ Let $f\in\mathrm{H}^3(K)$ such that $\operatorname{res}_{K_w/K}(f) = 0$ for all 
 Let  $w\in |\operatorname{Spv}(K)|$. Since $\mathrm{H}^3(K_w) = \varinjlim_I \mathrm{H}^3((K_i)_w)$ there exists an $i = i(w)\in I$ such that $\operatorname{res}_{(K_i)_w/K}(g) = 0$. By Lemma \ref{2.4-closedset} there is an open neighborhood $U_{i(w)}\subset |\operatorname{Spv}(K_i)|$ of $w$ such that $\operatorname{res}_{(K_i)_v/K}(g)=0$ for all $v\in U_{i(w)}$. For $K_i\subset K_j\subset K$ let
 \[ \varphi_i: |\operatorname{Spv}(K)| \to |\operatorname{Spv}(K_i)| \]
 \[ \varphi_{ij}: |\operatorname{Spv}(K_j)|\to |\operatorname{Spv}(K_i)| \]
-be the restriction maps. They are continuous. Since $|\operatorname{Spv}(K)|$ is quasicompact by Lemma \ref{spv-topology} we can find a finite set $S\subset |\operatorname{Spv}(K)|$ such that:
+be the restriction maps. They are continuous. Since $|\operatorname{Spv}(K)|$ is quasi-compact by Lemma \ref{spv-topology} we can find a finite set $S\subset |\operatorname{Spv}(K)|$ such that:
 \[ \bigcup_{w\in S}\varphi^{-1}_{i(w)}(U_{i(w)}) = |\operatorname{Spv}(K)| \]
 Let $j\in I$ such that $K_j$ is the composite of the fields $K_{i(w)},\ w\in S$. We also have:
 \[ \bigcup_{w\in S}\varphi^{-1}_{i(w)j}(U_{i(w)}) = |\operatorname{Spv}(K_j)| \]
@@ -372,7 +372,7 @@ Let $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ and let $N$ be the normal subgrou
 \[ \sigma(G_{K^\text{t}_v}) = \sigma(G_{K_{w_1}}\cap G_{K_{w_2}}) = G_{K'_{w'_1}}\cap G_{K'_{w'_2}} = G_{(K')^\text{t}_{v'}} \]
 Therefore, $\sigma$ induces with Theorem \ref{theorem-absoluteinertia} the following isomorphism:
 \[ G_{k(v)} \cong G_{K_v}/G_{K_v^\text{t}} \to G_{K'_{v'}}/G_{(K')_{v'}^\text{t}}\cong G_{k(v')} \]
-The rest follows from the Theorem of Neukirch-Uchida.
+The rest follows from the Theorem of Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
 
 \begin{remark}\label{3.3}
@@ -417,7 +417,7 @@ Consider the minimal polynomial of $a$ in $E(T)[A]$. Clearing out the denominato
 
 Now $T-e\in E[T]$ corresponds to a closed point $P\in \mathbf{P}^1_E$, which in turn corresponds to a valuation in $E(T)$. So the points in the fiber $f'^{-1}(P)$ corresponds to valuations in $F$ above $T-e$. But $T-e$ is inert in $F/E(T)$ since $a\in E[T,a]/(T-e)$ has minimal polynomial $f(e,A)$ over $E[T]/(T-e)$ and $\deg f(e,A) = [F:E(T)]$. 
 
-This shows that $P$ has only one pre-image under $f'$. Therefore, it has only one pre-image under $f$, say $P'$, and $P'$ has only one pre-image under $\pi$. This concludes the proof.
+This shows that $P$ has only one preimage under $f'$. Therefore, it has only one preimage under $f$, say $P'$, and $P'$ has only one preimage under $\pi$. This concludes the proof.
 \end{proof}
 
 \begin{lemma}\label{4.2-pre}
@@ -475,12 +475,12 @@ G_K \ar[r, "\sigma"] & G_{K'} \ar[r] & G_{K'}
 where the second map is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities.
 \end{remark}
 
-\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have reduced the problem, so that the following diagram commutes: 
+\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have replaced $\sigma$, so that now the following diagram commutes: 
 \[ \begin{tikzcd}
 G_K \ar[r]\ar[d, "\sigma"'] & G_k\\
 G_{K'}\ar[ru]
 \end{tikzcd} \]
-Now the operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
+The operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 
 \begin{remark}\label{remark-localphi-extension}
