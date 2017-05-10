@@ -159,12 +159,26 @@ Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_
 
 Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and of dimension $2$.
 
+\begin{lemma}\phantomsection\label{lemma-defectless-valuations}
+\begin{enumerate}[(i)]
+\item $\operatorname{Spv}_\text{d}^{(1)}(K) = \operatorname{Spv}_\text{rd}^{(1)}(K)$
+\item $\operatorname{Spv}^{(2)}(K) = \operatorname{Spv}_\text{d}^{(2)}(K)$
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}[(i)]
+\item Let $v$ be a defectless valuation of rational rank $1$. By Lemma \ref{rank-dimension-inequality}, $\operatorname{rank}(v) \leq \operatorname{rrank}(v) = 1$. Since $\Gamma_v$ is not trivial, $\operatorname{rank}(v) = 1=\operatorname{rrank}(v)$.
+\item Let $v$ be a valuation of rational rank $2$. Due to Lemma \ref{rank-dimension-inequality}, the dimension inequality is an equality. \qedhere
+\end{enumerate}
+\end{proof}
+
 \begin{lemma}\label{2.2}
 Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(G_K)\leq 2$.
 \end{lemma}
 
 \begin{proof}
-Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, for otherwise $\dim k(w_i)=\dim (K)\neq 0$. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are dependent. Since two different valuations of rank $1$ are independent, at least one of $w_1$ and $w_2$ is of rank $2$. Now, let's assume that $w_1$ is of rank $1$ and $w_2$ is of rank $2$. Since they are dependent, it follows $v(w_2) = w_1$ and $w_1$ has a non-trivial specialization, a contradiction to $w_1\in |\operatorname{Spv}(K)|$.
+Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, for otherwise $\dim k(w_i)=\dim (K)\neq 0$. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are dependent. Since two different valuations of rank $1$ are independent, at least one of $w_1$ and $w_2$ is of rank $2$. Now, assume that $w_1$ is, say, of rank $1$ and $w_2$ is of rank $2$. Since they are dependent, it follows $v(w_2) = w_1$ and $w_1$ has a non-trivial specialization, a contradiction to $w_1\in |\operatorname{Spv}(K)|$.
 
 Thus $w_1,w_2$ are both of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see that $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{d}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
 
