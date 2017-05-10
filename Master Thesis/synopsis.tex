@@ -2,6 +2,8 @@
 
 \section{The Valuation Spectra}
 
+This section we recall facts from valuation theory.
+
 \begin{definition}
 Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely generated} if $K/P$ is finitely generated. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
 \[\dim(K) = \begin{cases}
@@ -69,9 +71,9 @@ For a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection:
 \{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} &\longrightarrow \operatorname{Spv}k(v)\\ 
 w&\longmapsto w\mod v
 \end{align*}
-Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$. By the dimension inequality \ref{rank-dimension-inequality} we have $\operatorname{Spv}^{(n)}(K)\subset |\operatorname{Spv}(K)|$ where $n=\dim(K)$.
+Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$.
 
-If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{d}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
+If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
 \begin{proof}
@@ -162,14 +164,14 @@ Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and of
 \begin{lemma}\phantomsection\label{lemma-defectless-valuations}
 \begin{enumerate}[(i)]
 \item $\operatorname{Spv}_\text{d}^{(1)}(K) = \operatorname{Spv}_\text{rd}^{(1)}(K)$
-\item $\operatorname{Spv}^{(2)}(K) = \operatorname{Spv}_\text{d}^{(2)}(K)$
+\item $\operatorname{Spv}^{(2)}(K) = \operatorname{Spv}_\text{d}^{(2)}(K)\subset |\operatorname{Spv}(K)|$
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
 \begin{enumerate}[(i)]
 \item Let $v$ be a defectless valuation of rational rank $1$. By Lemma \ref{rank-dimension-inequality}, $\operatorname{rank}(v) \leq \operatorname{rrank}(v) = 1$. Since $\Gamma_v$ is not trivial, $\operatorname{rank}(v) = 1=\operatorname{rrank}(v)$.
-\item Let $v$ be a valuation of rational rank $2$. Due to Lemma \ref{rank-dimension-inequality}, the dimension inequality is an equality. \qedhere
+\item Let $v$ be a valuation of rational rank $2$. Due to Lemma \ref{rank-dimension-inequality}, the dimension inequality is an equality and we have $\dim k(v) = 0$. \qedhere
 \end{enumerate}
 \end{proof}
 
@@ -210,6 +212,8 @@ In particular we have:
 (i) and (ii) follow from [HK], Lemma 2.4.3 and (iii) is a consequence of (ii) and the fact that henselizations commute with filtrated direct limits, see \cite{EGA4} 18.6.14.
 \end{proof}
 
+The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
+
 \begin{lemma}\label{2.4-finitelygenerated}
 Let $K$ be finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
 \[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})\longrightarrow\prod_{w\in |\operatorname{Spv}(K)| }\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z}) \]
@@ -233,6 +237,8 @@ where $k = k(v)$. This map is injective by the classical Hasse principle and its
 The direct sum ranges over a subset of $|\operatorname{Spv}(K)|$, thus this concludes the proof. 
 \end{proof}
 
+In order to generalize Lemma \ref{2.4-finitelygenerated} for arbitrary, not necessarily finitely generated $K$, we need the following Lemma:
+
 \begin{lemma}\label{2.4-closedset}
 Let $f\in\mathrm{H}^3(K)$. Then the support of $f$ is closed in $|\operatorname{Spv}(K)|$:
 \[ \operatorname{supp}(f) = \{w\in |\operatorname{Spv}(K)|\mid \operatorname{res}_{K_w/K}(f)\neq 0 \} \]
@@ -251,6 +257,8 @@ According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can 
 \[ \operatorname{supp}(f) = \bigcap_{\mathfrak{X}\in \mathfrak{M}(K)} \pi_\mathfrak{X}^{-1}(\{ y\in\mathfrak{X}_0\mid \operatorname{res}_{K_y/K}(f)\neq 0 \}) \]
 Note that the right set is closed in $\operatorname{Spv}(K)$.
 \end{proof}
+
+Now the general case follows by a quasi-compactness argument:
 
 \begin{lemma}[\textit{Main Lemma}]\label{2.4}
 Let $K$ be not necessarily finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
@@ -274,6 +282,8 @@ Let $v\in |\operatorname{Spv}(K_j)|$ and let $i = i(w),\ w\in S$ such that $v\in
 Since $K_j$ is finitely generated we obtain $\operatorname{res}_{K_j/K_0}(g) = 0$ with Lemma \ref{2.4-finitelygenerated}, thus $f = \operatorname{res}_{K/K_0}(g) = 0$.
 \end{proof}
 
+Now we calculate the cohomology groups $\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z})$ for $w\in |\operatorname{Spv}(K)|$. With the help of Lemma \ref{2.4} we can find a cohomological criterion of henselian fields over $K$ with respect to a $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$.
+
 \begin{lemma}\label{2.5}
 Let $K$ be henselian with respect to $w\in|\operatorname{Spv}(K)|$. Set $k=k(w)$ and $\Gamma = \Gamma_w$. Then $k$ is an algebraic extension of a finite field $\mathbb{F}_p$ by Lemma \ref{2.2-pre}. Let $\ell\neq p$ be a prime and assume $\mu_\ell\subset K$. Then:
 \[ \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}) = \begin{cases}
@@ -290,6 +300,7 @@ If $L/K$ is an algebraic extension and $\mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z
 \begin{proof}
 Let $T$ be the absolute inertia group of $K$ and consider the short exact sequence from Theorem \ref{theorem-absoluteinertia}:
 \[ 1\longrightarrow T\longrightarrow G_K\longrightarrow G_k\longrightarrow 1 \]
+
 Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\hat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_{k,\ell}$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
 \[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_{k,\ell}\longrightarrow 1 \]
 Since $G_{k,\ell}$ is a free pro-$\ell$ group, this sequence splits and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_{k,\ell}$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq 2$.
@@ -298,14 +309,14 @@ Let $G_K(\ell)$ be the maximal pro-$\ell$ quotient of $G_K$. Since $\mu_\ell\sub
 \[ \begin{tikzcd}
 \mathrm{H}^3(G_K(\ell),\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{inf}"] & \mathrm{H}^3(G_K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})
 \end{tikzcd} \]
-Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = [G_K:G_\ell]$. However, $[G_K:G_\ell]$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By [Se], Ch. I, §4, Proposition 22 we have:
+Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = [G_K:G_\ell]$. However, $[G_K:G_\ell]$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By \cite{Se64}, Ch. I, §4, Proposition 22 we have:
 \[\operatorname{cd}(G_\ell) = \operatorname{cd}(\mathbb{Z}_\ell^r\rtimes G_k(\ell)) = \begin{cases}
 r, & G_k(\ell) = 0 \\
 r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
 \end{cases} \] 
-since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ if $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. According to the proof of [Se], Ch. I, §4, Proposition 22, we have:
+since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ if $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. According to the proof of \cite{Se64}, Ch. I, §4, Proposition 22, we have:
 \[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) = \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
-By [NSW] Theorem 2.4.6, we have $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^1(\mathbb{Z}_\ell, \mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})) = \mathbb{Z}/\ell\mathbb{Z}$, since $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\operatorname{Hom}_\text{cont}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$.
+By [NSW] Theorem 2.4.6, we have $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^1(\mathbb{Z}_\ell, \mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})) = \mathbb{Z}/\ell\mathbb{Z}$, since $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$.
 
 The second assertion follows from the first one, applied to $L$, by using the following equation of supernatural numbers ([E], Theorem 20.21):
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
@@ -349,6 +360,8 @@ Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension 
 
 \section{Local Correspondence}
 
+In this section we want to see that $\sigma$ induces bijections on defectless valuations. A direct consequence of Proposition \ref{2.6} is the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$:
+
 \begin{lemma}\label{3.1}
 Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselization of $w$. Then $E'$ is a henselization of $K'$ with respect to a unique $w'\in\operatorname{Spv}_\text{d}^{(2)}(K')$. The map $w\mapsto w'$ does not depend on the choice of the henselization.
 \end{lemma}
@@ -358,6 +371,8 @@ Let $\ell_1,\ell_2$ be two different prime numbers different from $\operatorname
 
 Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
 \end{proof}
+
+Using the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ above we want to establish a bijection $\operatorname{Spv}_\text{rd}^{(2)}(K)\to \operatorname{Spv}_\text{rd}^{(2)}(K')$ in order to establish a bijection between the defectless rank-$1$ valuations:
 
 \begin{lemma}\label{3.2}
 $\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. 
@@ -408,6 +423,8 @@ By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
 
+In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $K'^\times/n\to K^\times/n$ for all $n\in\mathbb{N}$.
+
 Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
 Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
@@ -433,6 +450,8 @@ Now $T-e\in E[T]$ corresponds to a closed point $P\in \mathbf{P}^1_E$, which in 
 
 This shows that $P$ has only one preimage under $f'$. Therefore, it has only one preimage under $f$, say $P'$, and $P'$ has only one preimage under $\pi$. This concludes the proof.
 \end{proof}
+
+First of all, we want to show that $\sigma$ induces an isomorphism between the absolute Galois groups of the constant fields $G_k$ and $G_{k'}$. We need the following Lemma:
 
 \begin{lemma}\label{4.2-pre}
 We have $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
@@ -489,7 +508,7 @@ G_K \ar[r, "\sigma"] & G_{K'} \ar[r] & G_{K'}
 where the second map is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities.
 \end{remark}
 
-\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have replaced $\sigma$, so that now the following diagram commutes: 
+\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have replaced $\sigma$, so that the following diagram commutes now:
 \[ \begin{tikzcd}
 G_K \ar[r]\ar[d, "\sigma"'] & G_k\\
 G_{K'}\ar[ru]
