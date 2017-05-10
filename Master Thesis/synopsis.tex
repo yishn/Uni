@@ -589,7 +589,7 @@ Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is fini
 \item We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B\setminus C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
-\item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For finite $A$ we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
+\item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For finite $A$ we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nontrivial nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
 \end{enumerate}
 \end{proof}
 
@@ -654,7 +654,7 @@ Let $P_1,\ldots,P_n\in X_0$ be pairwise distinct closed points, $x_1,\ldots,x_n\
 \end{theorem}
 
 \begin{proof}
-See \cite{ZS60} VI §10 Theorem 18
+See \cite{ZS60} VI §10 Theorem 18.
 \end{proof}
 
 \begin{lemma}\phantomsection\label{4.5}
@@ -713,7 +713,9 @@ For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injectiv
 \section{Proof of Theorem}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
-Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ with $\sigma(g)=\varphi^{-1}g\varphi$ for all $g\in G_K$. In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
+Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ such that:
+\[\sigma(g)=\varphi^{-1}g\varphi\quad \text{for all }g\in G_K\] 
+In particular $\varphi$ induces a field isomorphism $\varphi:K'\to K$.
 \end{theorem}
 
 \begin{step}
