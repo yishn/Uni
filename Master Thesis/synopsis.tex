@@ -45,8 +45,8 @@ We define:
 \operatorname{Spv}_\text{d}(K) &= \{v\in\operatorname{Spv}(K)\mid \operatorname{rrank}(v)+\dim k(v)=\dim(K) \} \\
 \operatorname{Spv}_\text{rd}(K) &= \{v\in\operatorname{Spv}_\text{d}(K)\mid \operatorname{rank}(v)=\operatorname{rrank}(v) \}
 \end{align*}
-Valuations in $\operatorname{Spv}_\text{d}(K)$ are called \textit{defectless}\index{valuation!defectless}, whereas those in $\operatorname{Spv}_\text{rd}(K)$ are called \textit{rank-defectless}\index{valuation!rank-defectless}. For $\ast\in\{\text{d},\text{rd}\}$ we set:
-\[\operatorname{Spv}_\ast^{(i)}(K)=\{v\in\operatorname{Spv}_\ast(K)\mid \operatorname{rrank}(v)=i \} \]
+Valuations in $\operatorname{Spv}_\text{d}(K)$ are called \textit{defectless}\index{valuation!defectless}, whereas those in $\operatorname{Spv}_\text{rd}(K)$ are called \textit{rank-defectless}\index{valuation!rank-defectless}. For $\bullet\in\{\text{d},\text{rd}\}$ we set:
+\[\operatorname{Spv}_\bullet^{(i)}(K)=\{v\in\operatorname{Spv}_\bullet(K)\mid \operatorname{rrank}(v)=i \} \]
 \end{definition}
 
 \begin{definition}
@@ -611,7 +611,7 @@ Note that $f$ is injective and $g$ is surjective. Using the snake lemma, we get 
 \[\ker(g) = \ker( (A/A')/(A_\text{tor}/A'_\text{tor}) \to A''/A''_\text{tor} ) = A''_\text{tor}/(A_\text{tor}/A'_\text{tor})\]
 Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is finite, too. Applying (i) on $f$, we can see that $p^{-1}(A''_\text{tor})/A_\text{tor}$ is free-by-finite. Since $A''/A''_\text{tor}$ is free abelian, the short exact sequence in the second row splits, making $A/A_\text{tor}$ a direct sum of a free-by-finite group and a free group.
 \item We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
-\[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B\setminus C}\mathbb{Z}b \longrightarrow 0 \]
+\[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B -  C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
 \item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For finite $A$ we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nontrivial nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
 \end{enumerate}
@@ -670,7 +670,7 @@ where $\operatorname{NS}(C)$ denotes the finitely generated Néron-Severi group 
 
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
-\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0\setminus S \} \]
+\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0 -  S \} \]
 $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
 \end{definition}
 
@@ -686,8 +686,8 @@ See \cite{ZS60} VI §10 Theorem 18.
 \begin{lemma}\phantomsection\label{4.5}
 \begin{enumerate}[(i)]
 \item There exists a finite subset $S\subset X_0$ such that:
-\[ \operatorname{Pic}(X\setminus S)=0=\operatorname{Pic}(X'\setminus S') \]
-Such a set $S$ is called \textit{admissible}. If $T\subset X_0$ is a finite set of closed points, then we can choose $S$ in $X_0\setminus T$.
+\[ \operatorname{Pic}(X -  S)=0=\operatorname{Pic}(X' -  S') \]
+Such a set $S$ is called \textit{admissible}. If $T\subset X_0$ is a finite set of closed points, then we can choose $S$ in $X_0 -  T$.
 \item Let $S$ be admissible. For all $n\in\mathbb{N}$ the following canonical maps are injective:
 \[ K^S/n \to K^\times /n,\quad K'^{S'}/n\to K'^\times /n \]
 $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
@@ -698,31 +698,31 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 \begin{enumerate}[(i)]
 \item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
 \[ \bigcup_{i=1}^r \operatorname{supp}D_i\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}D'_j\subset S' \]
-is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their support is in $X_0\setminus T$ and $X'_0\setminus T'$ respectively.
+is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their support is in $X_0 -  T$ and $X'_0 -  T'$ respectively.
 \item Observe that the following sequence is exact:
 \[ \begin{tikzcd}
-1 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0\setminus S}\mathbb{Z} \ar[r]& \operatorname{Pic}(X\setminus S) = 0
+1 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0 -  S}\mathbb{Z} \ar[r]& \operatorname{Pic}(X -  S) = 0
 \end{tikzcd} \]
 Since $\bigoplus\mathbb{Z}$ is $\mathbb{Z}$-flat, tensoring with $\mathbb{Z}/n\mathbb{Z}$ yields another exact sequence and we can consider $K^S/n$ as a subgroup of $K^\times/n$. Then:
-\[ K^S/n = \bigcap_{P\in X_0\setminus S}U_P/n \]
+\[ K^S/n = \bigcap_{P\in X_0 -  S}U_P/n \]
 The analogous result holds for $K'^{S'}/n$. Thus the assertion follows from Lemma \ref{4.3} (i).\qedhere
 \end{enumerate}
 \end{proof}
 
 \begin{lemma}\label{5.4}
-Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0\setminus S$ such that the following map is injective:
+Let $S\subset X_0$ be admissible. Then there exists a finite subset $T\subset X_0 -  S$ such that the following map is injective:
 \[ r_{S,T}:K^S \to\prod_{P\in T}k(P)^\times,\ x\mapsto(r_P(x))_{P\in T} \]
 In this case, $\operatorname{coker}(r_{S,T})$ is free-by-finite.
 \end{lemma}
 
 \begin{proof}
-Let $U = X\setminus S$ and $P_1\in U$ be a closed point. We set:
+Let $U = X -  S$ and $P_1\in U$ be a closed point. We set:
 \[ C_1 = \ker(r_{P_1}|_{K^S}: K^S \to k(P_1)^\times) \]
 Since $r_{P_1}|_{k^\times}:k^\times \to k(P_1)^\times$ is injective, we have $C_1\cap k^\times = 1$ and the following map is injective:
 \[ C_1 \to\prod_{P\in S}\mathbb{Z},\ x \mapsto (v_P(x))_{P\in S} \]
 Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we set $T = \{P_1\}$ and we are done. Otherwise, let $x\in C_1,\ x\neq 1$. Then there exists an $a\in k^\times$ with the following properties:
 \begin{enumerate}[(i)]
-\item There exists a point $P_2\in X_0\setminus(S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
+\item There exists a point $P_2\in X_0 - (S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
 \item $a$ is not a root of unity.
 \end{enumerate}
 Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$ and $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in U_0$, such that the following map is injective:
@@ -733,7 +733,7 @@ Since $K^S/k^\times$ is generated by the uniformizers of the corresponding valua
 \end{proof}
 
 \begin{definition}
-For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_2 \supset T_1$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
+For each admissible $S\subset X_0$ and $T_1\subset X_0 -  S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_2 \supset T_1$. Therefore,  we can find a finite subset $T\subset X_0 -  S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
 \end{definition}
 
 \section{Proof of Pop's Theorem}
@@ -754,7 +754,7 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 
 \begin{proof}
 By Lemma \ref{5.4}, the following maps are injective for all admissible subsets $S\subset X_0$:
-\[ r_S:K^S \to\prod_{P\in X_0\setminus S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
+\[ r_S:K^S \to\prod_{P\in X_0 -  S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
 Now it's evident that $\varphi$ is unique. For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
@@ -769,15 +769,15 @@ K'^{S'}/n \rar[dashed]\dar & K^S/n\dar\\
 \end{tikzcd} \]
 According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$. By symmetry, $\varphi^{S,T}$ is an isomorphism.
 
-Let $T_1, T_2\subset X_0\setminus S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By considering $(\star)$ we find:
+Let $T_1, T_2\subset X_0 -  S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By considering $(\star)$ we find:
 \[ r_{S,T_1}\circ\varphi^{S,T_2}=\Big(\prod_{P\in T_1}\varphi_P\Big)\circ r_{S',T_1'} = r_{S,T_1}\circ\varphi^{S,T_1} \]
 Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
-\[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0\setminus S}\varphi_P \Big)\circ r_{S'} \]
-In other words, we can replace $T$ by $X_0\setminus S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
-\[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0\setminus S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
+\[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0 -  S}\varphi_P \Big)\circ r_{S'} \]
+In other words, we can replace $T$ by $X_0 -  S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
+\[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0 -  S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
 Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. 
 
-The commutativity of the diagram follows from the commutativity of $(\star)$ with $T=X_0\setminus S$. Note that with Lemma \ref{4.5} (i), we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0\setminus \{P\}$ such that $x\in K'^{S'}$.
+The commutativity of the diagram follows from the commutativity of $(\star)$ with $T=X_0 -  S$. Note that with Lemma \ref{4.5} (i), we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0 -  \{P\}$ such that $x\in K'^{S'}$.
 \end{proof}
 
 \begin{step}
@@ -795,7 +795,7 @@ Observe that $\varphi(-1)^2 = \varphi(1) = 1$, and since $\varphi$ is bijective 
 r_P(\varphi(x+ y)) &= \varphi_P(r_{P'}(x + y)) \\
 &= \varphi_P(r_{P'}(x)) + \varphi_P(r_{P'}(y)) = r_P(\varphi(x) + \varphi(y))
 \end{align*}
-for all $P\in X_0\setminus S$. Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P'}: \mathcal{O}_{P'} \to k(P')$ are ring homomorphisms. Since $K^S\to \prod_{P\in X_0\setminus S} k(P)^\times$ is injective, we get $\varphi(x+y) = \varphi(x) + \varphi(y)$.\qedhere
+for all $P\in X_0 -  S$. Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P'}: \mathcal{O}_{P'} \to k(P')$ are ring homomorphisms. Since $K^S\to \prod_{P\in X_0 -  S} k(P)^\times$ is injective, we get $\varphi(x+y) = \varphi(x) + \varphi(y)$.\qedhere
 \end{itemize}
 \end{proof}
 
