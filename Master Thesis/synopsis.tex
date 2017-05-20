@@ -2,7 +2,7 @@
 
 \section{The Valuation Spectra}
 
-This section we recall facts from valuation theory.
+In this section we shall recall facts from valuation theory.
 
 \begin{definition}
 Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely generated} if $K/P$ is finitely generated. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
@@ -372,7 +372,7 @@ Let $\ell_1,\ell_2$ be two different prime numbers different from $\operatorname
 Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
 \end{proof}
 
-Using the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ above we want to establish a bijection $\operatorname{Spv}_\text{rd}^{(2)}(K)\to \operatorname{Spv}_\text{rd}^{(2)}(K')$ in order to establish a bijection between the defectless rank-$1$ valuations:
+We will see that the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ above restricts to a bijection $\operatorname{Spv}_\text{rd}^{(2)}(K)\to \operatorname{Spv}_\text{rd}^{(2)}(K')$. Using this, we shall establish a bijection between the defectless valuations of rational rank $1$:
 
 \begin{lemma}\label{3.2}
 $\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. 
@@ -423,7 +423,7 @@ By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
 
-In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $K'^\times/n\to K^\times/n$ for all $n\in\mathbb{N}$.
+In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $K'^\times/n\to K^\times/n$ and $U_{v'}/n\to U_v/n$ for all $n\in\mathbb{N}$ and defectless valuations $v$ of rational rank $1$ with $\operatorname{char}k(v) =0$.
 
 Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
@@ -503,17 +503,16 @@ Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \begin{remark}
 Consider $\overline{K}'' = \overline{K}'\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
 \[ \begin{tikzcd}
-G_K \ar[r, "\sigma"] & G_{K'} \ar[r] & G_{K'}
+G_K \ar[r, "\sigma"] & G_{K'} \ar[r, "\phi"] & G_{K'}
 \end{tikzcd} \]
-where the second map is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities.
-\end{remark}
-
-\paragraph{} Let $n\in\mathbb{N}$. In the previous remark, we have replaced $\sigma$, so that the following diagram commutes now:
+where $\phi$ is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities. Now the following diagram commutes:
 \[ \begin{tikzcd}
 G_K \ar[r]\ar[d, "\sigma"'] & G_k\\
 G_{K'}\ar[ru]
 \end{tikzcd} \]
-The operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
+\end{remark}
+
+\paragraph{} Let $n\in\mathbb{N}$. The operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 
 \begin{remark}\label{remark-localphi-extension}
@@ -543,7 +542,7 @@ k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
 
 \begin{proof}
 \begin{enumerate}[(i)]
-\item Consider the absolute inertia field $L = K_P^\text{t}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. By Theorem \ref{theorem-absoluteinertia} (i), $w$ is discrete as well with $k(w) = k(v_P)^\text{s}$. We have the following exact sequence:
+\item Consider the absolute inertia field $L = K_P^\text{t}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. By Theorem \ref{theorem-absoluteinertia} (i), $w$ is discrete as well and we have $k(w) = k(v_P)^\text{s}$. Observe the following exact sequence:
 \[ 1 \longrightarrow U_w/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
 Since $k(w)$ is separably closed, with $\operatorname{char} k(w)=0$ and Hensel's lemma we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
 \[ \begin{tikzcd}
@@ -567,10 +566,14 @@ k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"
 
 \chapter{Theorem}
 
+Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us constructing a group isomorphism $K'^\times\to K^\times$ from the modulo $n$ isomorphisms $K'^\times/n\to K^\times/n$.
+
 \section{Free-By-Finite Groups}
 
 \begin{definition}\label{5.1}
-An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotient $A/A_\text{tor}$ is free abelian. $A$ is free-by-finite if and only if $A$ is the direct sum of a finite abelian group and a free abelian group.
+Let $A$ be an abelian group. We have the following short exact sequence:
+\[0\longrightarrow A_\text{tor} \longrightarrow A\longrightarrow A/A_\text{tor}\longrightarrow 0 \]
+$A$ is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is finite and the quotient $A/A_\text{tor}$ is free abelian. If $A$ is free-by-finite, the above sequence splits and $A$ is the direct sum of a finite abelian group and a free abelian group. It's evident that the converse also holds.
 \end{definition}
 
 \begin{example}
@@ -592,10 +595,12 @@ An abelian group $A$ is called \textit{free-by-finite} if its torsion subgroup $
 
 \begin{proof}
 \begin{enumerate}[(i)]
-\item Let $B$ be free-by-finite and $K = \ker(f)$. Considering $A/K$ as a subgroup of $B$, we see that $A/K$ is free-by-finite. Since $(A/K)_\text{tor}$ and $K$ are finite, $K' = \{a\in A\mid na\in K \text{ for some }n\in\mathbb{N}\}$ is finite as well, in particular $A_\text{tor}$ is finite. In fact $K'=A_\text{tor}$, since $K\subset A_\text{tor}$. Now consider the surjection $A\to A/K\to (A/K)/(A/K)_\text{tor}$. This map has kernel $K'$, thus inducing an isomorphism from $A/A_\text{tor}$ to a free abelian group.
+\item Let $B$ be free-by-finite and $K = \ker(f)$. Considering $A/K$ as a subgroup of $B$, we see that $A/K$ is free-by-finite. Since $(A/K)_\text{tor}$ and $K$ are finite, $K' = \{a\in A\mid na\in K \text{ for some }n\in\mathbb{N}\}$ is finite as well, in particular $A_\text{tor}\subset K'$ is finite. In fact $K'=A_\text{tor}$, since $K\subset A_\text{tor}$. Now consider the surjection $A\to A/K\to (A/K)/(A/K)_\text{tor}$. This map has kernel $K'$, thus inducing an isomorphism from $A/A_\text{tor}$ to a free abelian group.
 
-Now let $A$ be free-by-finite, i.e. $A = A_\text{tor} \oplus F$ for some free abelian group $F$, and $K=\ker(f)$. Since $K\subset A$ is finite, $K$ is actually contained in $A_\text{tor}$. Therefore, we see that $A/K$ is free by finite as well, and by extension, the image $I$ of $f$. Set $m = \#B/I$ and consider the canonical map $B\stackrel{\cdot m}{\to} I \to I/I_\text{tor}$. This map has kernel $\{b\in B \mid mb \in I_\text{tor}\} = B_\text{tor}$, making $B/B_\text{tor}$ isomorphic to a subgroup of the free abelian group $I/I_\text{tor}$. Now both $I_\text{tor}$ and $B_\text{tor}/I_\text{tor} \subset B/I$ are finite, hence $B_\text{tor}$ is finite as well.
-\item The exact sequence induces the exact sequence $0 \longrightarrow A'_\text{tor} \longrightarrow A_\text{tor} \longrightarrow A''_\text{tor}$. Since the surrounding groups are finite, $A_\text{tor}$ is finite as well. Using (i) we see that it suffices to show that $A/A_\text{tor}$ is free-by-finite. 
+Now let $A$ be free-by-finite, i.e. $A = A_\text{tor} \oplus F$ for some free abelian group $F$, and $K=\ker(f)\subset A_\text{tor}$. We see that $A/K$ is free by finite as well, and by extension, the image $I$ of $f$. Set $m = \#B/I$ and consider the canonical map $B\stackrel{\cdot m}{\to} I \to I/I_\text{tor}$. This map has kernel $\{b\in B \mid mb \in I_\text{tor}\} = B_\text{tor}$, making $B/B_\text{tor}$ isomorphic to a subgroup of the free abelian group $I/I_\text{tor}$. Now both $I_\text{tor}$ and $B_\text{tor}/I_\text{tor} \subset B/I$ are finite, hence $B_\text{tor}$ is finite as well.
+\item The exact sequence induces the exact sequence:
+\[0 \longrightarrow A'_\text{tor} \longrightarrow A_\text{tor} \longrightarrow A''_\text{tor}\] 
+Since the surrounding groups are finite, $A_\text{tor}$ is finite as well. Using (i) we see that it suffices to show that $A/A_\text{tor}$ is free-by-finite. 
 
 Observe the following commutative diagram with exact rows, where we consider $A'$ as a subgroup of $A$:
 \[ \begin{tikzcd}
@@ -616,7 +621,9 @@ The left abelian group is finitely generated, particularly free-by-finite. The r
 Let $F$ be a number field. Then:
 \begin{enumerate}[(i)]
 \item $F^\times$ is free-by-finite.
-\item Let $F_1,\ldots,F_n$ be finite extensions of $F$. Then $\big(\prod_{i=1}^{n}F_i^\times\big)/F^\times$ is free-by-finite, where $F^\times$ is considered as a subgroup of $\prod_{i=1}^{n}F_i^\times$ via the diagonal embedding.
+\item Let $F_1,\ldots,F_n$ be finite extensions of $F$. Then 
+\[\Big(\prod_{i=1}^{n}F_i^\times\Big)/F^\times\] 
+is free-by-finite, where $F^\times$ is considered as a subgroup of $\prod_{i=1}^{n}F_i^\times$ via the diagonal embedding.
 \end{enumerate}
 \end{lemma}
 
@@ -729,7 +736,7 @@ Since $K^S/k^\times$ is generated by the uniformizers of the corresponding valua
 For each admissible $S\subset X_0$ and $T_1\subset X_0\setminus S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_2 \supset T_1$. Therefore,  we can find a finite subset $T\subset X_0\setminus S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
 \end{definition}
 
-\section{Proof of Theorem}
+\section{Proof of Pop's Theorem}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ such that:
