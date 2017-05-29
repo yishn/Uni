@@ -46,7 +46,7 @@ Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely gener
 \end{definition}
 
 \begin{definition}\label{2.1}
-Let $K$ be a field of finite dimension. We denote the set of equivalence classes of Krull valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
+Let $K$ be a field of finite dimension. We denote the set of (equivalence classes) of Krull valuations of $K$ by $\operatorname{Spv}(K)$.
 
 We can endow $\operatorname{Spv}(K)$ with a natural topology by declaring following sets as a basis of open sets:
 \[\{v\in\operatorname{Spv}(K)\mid v(x)\geq 0\text{ for all }x\in S\} \]
@@ -141,14 +141,8 @@ Let $\ell_1,\ell_2$ be two different prime numbers different from $\operatorname
 Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
 \end{proof}
 
-\begin{lemma}
-$\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{rd}^{(2)}(K) \to\operatorname{Spv}_\text{rd}^{(2)}(K')$.
-\end{lemma}
-
 \begin{lemma}\label{3.2}
-$\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. 
-
-Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denote the absolute inertia field of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
+$\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. $\sigma$ induces an isomorphism:
 \[ G_{k(v)}\cong\operatorname{Gal}(E^\text{t}/E) \to\operatorname{Gal}(E'^{\text{t}}/E')\cong G_{k(v')} \]
 which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k(v)^\text{s}$. In particular $\varphi_v=\varphi_v^\text{s}|_{k(v')}:k(v')\to k(v)$ is an isomorphism.
 \end{lemma}
@@ -162,7 +156,7 @@ Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with f
 By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X^{\phantom{'}}_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
 
 \begin{lemma}\label{4.2}
-We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
+$\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
 \[ \begin{tikzcd}
 G_K \ar[r, "\sigma"] \ar[d] & G_{K'}\ar[d]\\
 G_k \ar[r, "\sigma"'] & G_{k'}
@@ -186,14 +180,11 @@ G_{K'}\ar[ru]
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 
 \begin{lemma}\phantomsection\label{4.3}
-\begin{enumerate}[(i)]
-\item $\varphi_n$ induces an isomorphism $\varphi_n: U_{P'}/n\to U_P/n$.
-\item The following diagram commutes:
+$\varphi_n$ induces an isomorphism $\varphi_n: U_{P'}/n\to U_P/n$. The following diagram commutes:
 \[ \begin{tikzcd}
 U_{P'}/n \rar["\varphi_n"] \dar["r_{P'}/n"'] & U_P/n \dar["r_P/n"]\\
-k(P')^\times/n \rar["\varphi_n"'] & k(P)^\times/n
+k(P')^\times/n \rar["\varphi_P/n"'] & k(P)^\times/n
 \end{tikzcd} \]
-\end{enumerate}
 \end{lemma}
 
 \section{Proof of Pop's Theorem}
@@ -209,9 +200,7 @@ $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the correspondi
 \item There exists a finite subset $S\subset X_0$ such that:
 \[ \operatorname{Pic}(X -  S)=0=\operatorname{Pic}(X' -  S') \]
 Such a set $S$ is called \textit{admissible}. If $T\subset X_0$ is a finite set of closed points, then we can choose $S$ in $X_0 -  T$.
-\item Let $S$ be admissible. For all $n\in\mathbb{N}$ the following canonical maps are injective:
-\[ K^S/n \to K^\times /n,\quad K'^{S'}/n\to K'^\times /n \]
-$\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
+\item Let $S$ be admissible. For all $n\in\mathbb{N}$ the map $\varphi_n$ induces isomorphisms: \[\varphi_n: K'^{S'}/n\to K^S/n\]
 \end{enumerate}
 \end{lemma}
 
