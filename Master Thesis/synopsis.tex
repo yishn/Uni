@@ -324,21 +324,16 @@ for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the r
 \end{proof}
 
 \begin{proposition}\label{2.6}
-Let $K_0/K$ be an algebraic extension.
-\begin{enumerate}[(i)]
-\item Suppose there exists a prime number $\ell$ with $\ell^\infty\nmid[K_0:K]$ and such that for every algebraic extension $L/K_0$ we have: 
+Let $K_0/K$ be an algebraic extension. Suppose there exists a prime number $\ell\neq 2$ with $\ell^\infty\nmid[K_0:K]$ and such that for every algebraic extension $L/K_0$ we have: 
 \[ \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z}) = \begin{cases}
 \mathbb{Z}/\ell\mathbb{Z}, & \ell^\infty\nmid [L:K_0]\\
 0, & \text{otherwise}
 \end{cases} \]
 Then there exists a unique henselian $w\in|\operatorname{Spv}(K)|$.
-\item Assume that (i) is satisfied for two different prime numbers. Then $w$ is a defectless valuation.
-\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-\begin{enumerate}[(i)]
-\item Since $\mathrm{H}^3(K_0, \mathbb{Z}/\ell\mathbb{Z})\neq 0$ by assumption, according to Lemma \ref{2.4} we can find a valuation $w_0\in|\operatorname{Spv}(K_0)|$ such that:
+Since $\mathrm{H}^3(K_0, \mathbb{Z}/\ell\mathbb{Z})\neq 0$ by assumption, according to Lemma \ref{2.4} we can find a valuation $w_0\in|\operatorname{Spv}(K_0)|$ such that:
 \[ \mathrm{H}^3((K_0)_{w_0}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0 \]
 By requirement $\ell^\infty \nmid [(K_0)_{w_0} : K_0]$. By replacing $K_0$ by $(K_0)_{w_0}$, we can assume that $w_0$ is henselian.
 
@@ -349,9 +344,6 @@ Let $(K_0)_{w_1}$ be a henselization of $K_0$ with respect to $w_1$ and let $K_w
 Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some $\tau\in G_K$ of $K_w$ lies in $K_0$, hence $\ell^\infty\nmid [K_w : K]$ as well. Consequently, $\ell^\infty \nmid [(K_0)_{w_1} : K]$ and therefore $\ell^\infty \nmid [(K_0)_{w_1} : K_0]$. By requirement, $\mathrm{H}^3((K_0)_{w_1}, \mathbb{Z}/\ell\mathbb{Z}) \neq 0$.
 
 Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the extension of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}(G_{(K_0)_{w_1}})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
-\item Choose the prime $\ell$ different from $\operatorname{char} k(w)$ so that (i) holds. According to Lemma \ref{2.5} we have:
-\[\operatorname{rrank}(w)=\dim_\mathbb{Q}(\Gamma_w\otimes_\mathbb{Z}\mathbb{Q} )\geq \dim_{\mathbb{F}_\ell}(\Gamma_w /\ell\Gamma_w) = 2 = \dim(K)\qedhere\]
-\end{enumerate}
 \end{proof}
 
 \chapter{Correspondences}
@@ -367,7 +359,11 @@ Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselizatio
 \end{lemma}
 
 \begin{proof}
-Let $\ell_1,\ell_2$ be two different prime numbers different from $\operatorname{char} k(w)$ and let $E_0 = E(\mu_{\ell_1\ell_2})$. Then, by Lemma \ref{2.5}, $E_0/E$, and also $E'_0/E'$, satisfy the condition of Proposition \ref{2.6} (ii). Thus there exists a unique henselian defectless valuation $w'_{E'}$ of $E'$, so $E'$ contains a henselization $K'_{w'}$ of $w' = w'_{E'}|_{K'}$. By applying the same argument to $\sigma^{-1}$ we find that $E' = K'_{w'}$.
+Let $\ell_1,\ell_2$ be two different odd prime numbers different from $p=\operatorname{char} k(w)$ and let $E_0 = E(\mu_{\ell_1\ell_2})$. Since $K$ is finitely generated, by Lemma \ref{rank-dimension-inequality}, $k(w)$ and $\Gamma_w$ are finitely generated as well. In particular we have $\ell_i^\infty \nmid [k(w):\mathbb{F}_p]$ and, since $\Gamma_w$ is torsion free, $\dim_{\mathbb{F}_{\ell_i}}(\Gamma_w/{\ell_i}\Gamma_w) = \dim_{\mathbb{Q}}(\Gamma_w\otimes_{\mathbb{Z}}\mathbb{Q})= \operatorname{rrank}(w)=2$ for $i=1,2$.
+
+By Lemma \ref{2.5}, $E_0/E$, and also $E'_0/E'$, satisfy the condition of Proposition \ref{2.6} for both $\ell_1$ and $\ell_2$. Thus there exists a unique henselian valuation $w'_{E'}\in|\operatorname{Spv}(E')|$. Choose a prime $\ell\neq \operatorname{char} k(w'_{E'})$ from $\ell_1,\ell_2$. Since $\mathrm{H}^3(E',\mathbb{Z}/\ell\mathbb{Z})\cong \mathrm{H}^3(E,\mathbb{Z}/\ell\mathbb{Z})\neq 0$, we get from Lemma \ref{2.5}:
+\[\operatorname{rrank}(w'_{E'}) = \dim_{\mathbb{Q}}(\Gamma_{w'_{E'}}\otimes_\mathbb{Z}\mathbb{Q}) \geq \dim_{\mathbb{F}_\ell}(\Gamma_{w'_{E'}}/\ell\Gamma_{w'_{E'}})=2=\dim(E')\]
+which makes $w'_{E'}\in\operatorname{Spv}^{(2)}_\text{d}(E')$. Now $E'$ contains a henselization $K'_{w'}$ of $w' = w'_{E'}|_{K'}\in\operatorname{Spv}^{(2)}_\text{d}(K')$. By applying the same argument to $\sigma^{-1}$ we find that $E' = K'_{w'}$.
 
 Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
 \end{proof}
