@@ -303,7 +303,7 @@ Let $T$ be the absolute inertia group of $K$ and consider the short exact sequen
 
 Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\hat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_{k,\ell}$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
 \[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_{k,\ell}\longrightarrow 1 \]
-Since $G_{k,\ell}$ is a free pro-$\ell$ group, this sequence splits and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_{k,\ell}$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq 2$.
+Since $G_{k,\ell}$ is a free pro-$\ell$ group, this sequence splits and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_{k,\ell}$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq \dim(K)= 2$.
 
 Let $G_K(\ell)$ be the maximal pro-$\ell$ quotient of $G_K$. Since $\mu_\ell\subset K$, the action of $G_k$ on the $\ell$-Sylow group of the inertia group of $w$ factors through the maximal pro-$\ell$ quotient $G_k(\ell)$ of $G_k$. Since $G_{k,\ell}\cong G_k(\ell)$, we also see that the canonical projection $G_K\to G_K(\ell)$ restricts to an isomorphism $G_\ell\to G_K(\ell)$. Now consider the following composition:
 \[ \begin{tikzcd}
@@ -314,7 +314,7 @@ Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorn
 r, & G_k(\ell) = 0 \\
 r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
 \end{cases} \] 
-since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ if $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. According to the proof of \cite{Se64}, Ch. I, §4, Proposition 22, we have:
+since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ iff $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. According to the proof of \cite{Se64}, Ch. I, §4, Proposition 22, we have:
 \[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) = \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
 By [NSW] Theorem 2.4.6, we have $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^1(\mathbb{Z}_\ell, \mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})) = \mathbb{Z}/\ell\mathbb{Z}$, since $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$.
 
@@ -368,7 +368,7 @@ which makes $w'_{E'}\in\operatorname{Spv}^{(2)}_\text{d}(E')$. Now $E'$ contains
 Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
 \end{proof}
 
-We will see that the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ above restricts to a bijection $\operatorname{Spv}_\text{rd}^{(2)}(K)\to \operatorname{Spv}_\text{rd}^{(2)}(K')$. Using this, we shall establish a bijection between the defectless valuations of rational rank $1$:
+This lemma yields a bijection $\sigma:\operatorname{Spv}_\text{d}^{(2)}(K) \to\operatorname{Spv}_\text{d}^{(2)}(K')$. We will see that this bijection restricts to a bijection $\operatorname{Spv}_\text{rd}^{(2)}(K)\to \operatorname{Spv}_\text{rd}^{(2)}(K')$. With that, we shall establish a bijection between the defectless valuations of rational rank $1$:
 
 \begin{lemma}\label{3.2}
 $\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. 
@@ -381,19 +381,19 @@ which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k
 \begin{proof}
 Lemma \ref{3.1} shows that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$. For all $v\in\operatorname{Spv}(K)$ we choose a fixed henselization $K_v\subset\overline{K}$ with Lemma \ref{lemma-henselization-specialization}, such that if $v,w\in\operatorname{Spv}(K)$ and $w$ is a specialization of $v$ we have $K_v\subset K_w$. If $v$ is nontrivial, then in this case we get $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v=v(w)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. We set $K'_{\sigma(w)} = (K_w)'$ for $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$. Lemma \ref{3.1} shows that $K'_{\sigma(w)}$ is a henselization of $K'$ with respect to $\sigma(w)$.
 
-Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuations. The following statements are equivalent:
+Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuations. By Lemma \ref{2.2}, the following statements are equivalent:
 \begin{enumerate}[(i)]
 \item The composite $K_{w_1}K_{w_2}$ is not algebraically closed.
 \item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v(w_1) = v(w_2)$.
 \end{enumerate}
-The implication (i)$\implies$(ii) follows from Lemma \ref{2.2}. TODO
-
-In this case, $k(v')$ is separably closed where $v'$ is the unique extension of the valuation on $K_v$ to $K_{w_1}K_{w_2}$ where $v=v(w_1)$. By Lemma \ref{lemma-henselization-specialization} we have $K_{w_1}K_{w_2}\subset K_v^\text{t}$ and by Theorem \ref{theorem-absoluteinertia} (ii) $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
+If (ii) holds, $k(v)$ is separably closed where $v=v(w_1)$. By Lemma \ref{lemma-henselization-specialization} we have $K_{w_1}K_{w_2}\subset K_v^\text{t}$ and by Theorem \ref{theorem-absoluteinertia} (ii) $K_{w_1}K_{w_2}$ is the absolute inertia field $K_v^\text{t}$ of $K_v$. Furthermore, $K'_{\sigma(w_1)}K'_{\sigma(w_2)} = (K_{w_1}K_{w_2})' \neq \overline{K'}$ and again by Lemma \ref{2.2} we get: \[\sigma(w_1),\sigma(w_2)\in\operatorname{Spv}_\text{rd}^{(2)}(K)\quad \text{and} \quad v(\sigma(w_1)) = v(\sigma(w_2))\]
 Thus $\sigma: \operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$ maps $\operatorname{Spv}_\text{rd}^{(2)}(K)$ onto $\operatorname{Spv}_\text{rd}^{(2)}(K')$ such that:
 \[ v(w_1)=v(w_2) \iff v(\sigma(w_1)) = v(\sigma(w_2)) \]
-This shows that $\sigma$ also induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K')$ and for all $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ we have $\sigma(v(w)) = v(\sigma(w))$.
+Let $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$. Since $v\not\in |\operatorname{Spv}(K)|$, there exists a $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ such that $v(w)=v$. We define $v'=v(\sigma(w))$. This shows that $\sigma$ also induces a bijection: 
+\[\sigma:\operatorname{Spv}_\text{d}^{(1)}(K)\to\operatorname{Spv}_\text{d}^{(1)}(K'),\ v\mapsto v'\] 
+This map is well-defined and for all $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ we have $\sigma(v(w)) = v(\sigma(w))$.
 
-Let $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ and let $N$ be the normal subgroup of $G_{K_v}$ generated by all subgroups $G_{K_w}$ for $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $v(w) = v$. Since a global field has no non-trivial algebraic extension in which every prime splits completely, we get $N=G_{K_v}$. This shows that $K'_{v'} := (K_v)'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. Furthermore, let $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $w_1\neq w_2$ and $v=v(w_1)=v(w_2)$, then:
+Let $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ and let $N$ be the normal subgroup of $G_{K_v}$ generated by all subgroups $G_{K_w}$ for $w\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $v(w) = v$. Since a global field has no non-trivial algebraic extension in which every prime splits completely, we get $N=G_{K_v}$. This shows that $(K_v)'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. We write $K'_{v'} = (K_v)'$. Furthermore, let $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ with $w_1\neq w_2$ and $v=v(w_1)=v(w_2)$, then:
 \[ \sigma(G_{K^\text{t}_v}) = \sigma(G_{K_{w_1}}\cap G_{K_{w_2}}) = G_{K'_{w'_1}}\cap G_{K'_{w'_2}} = G_{(K')^\text{t}_{v'}} \]
 Therefore, $\sigma$ induces with Theorem \ref{theorem-absoluteinertia} the following isomorphism:
 \[ G_{k(v)} \cong G_{K_v}/G_{K_v^\text{t}} \to G_{K'_{v'}}/G_{(K')_{v'}^\text{t}}\cong G_{k(v')} \]
@@ -629,7 +629,7 @@ is free-by-finite, where $F^\times$ is considered as a subgroup of $\prod_{i=1}^
 \[ \begin{tikzcd}
 1 \ar[r] & \mathcal{O}_F^\times \ar[r] & F^\times \ar[r]& \mathcal{P}(F) \ar[r] & 1
 \end{tikzcd} \]
-By Dirichlet's Unit Theorem, $\mathcal{O}_F^\times$ is free-by-finite. $\mathcal{P}(F)$, as a subset of the ideal group of $F$, is free abelian, in particular free-by-finite. The assertion follows from Lemma \ref{5.2} (ii).
+By Dirichlet's Unit Theorem, $\mathcal{O}_F^\times$ is finitely generated and thus free-by-finite. $\mathcal{P}(F)$, as a subset of the ideal group of $F$, is free abelian, in particular free-by-finite. The assertion follows from Lemma \ref{5.2} (ii).
 \item Consider the following exact sequence:
 \[ \begin{tikzcd}
 1 \ar[r] & \displaystyle \prod_{i=2}^{n} F_i^\times \ar[r]& \displaystyle \Big(\prod_{i=1}^{n}F_i^\times\Big)\Big/F^\times \ar[r]& F_1^\times/F^\times \ar[r]& 1
