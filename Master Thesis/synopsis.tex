@@ -666,7 +666,7 @@ where $\operatorname{NS}(C)$ denotes the finitely generated Néron-Severi group 
 
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
-\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0 -  S \} \]
+\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0 -  S \} = \bigcap_{P\in X_0 -  S} U_P \]
 $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
 \end{definition}
 
@@ -751,7 +751,9 @@ k(P')^\times \ar[r, "\varphi_P"'] & k(P)^\times
 \begin{proof}
 By Lemma \ref{5.4}, the following maps are injective for all admissible subsets $S\subset X_0$:
 \[ r_S:K^S \to\prod_{P\in X_0 -  S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
-Now it's evident that $\varphi$ is unique. For existence, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
+Using the desired commutativity of the diagram above and, with Lemma \ref{4.5} (i), the fact that for all $x\in K^\times$ there is an admissible set $S\subset X_0$ such that $x\in K^S$, it's evident that $\varphi$ is unique. 
+
+For the existence of $\varphi$, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
 \displaystyle \prod_{P\in T}k(\sigma P)^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
@@ -773,7 +775,7 @@ In other words, we can replace $T$ by $X_0 -  S$ in $(\star)$. If $S_1\subset S_
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0 -  S_2}\varphi_P \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
 Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. 
 
-The commutativity of the diagram follows from the commutativity of $(\star)$ with $T=X_0 -  S$. Note that with Lemma \ref{4.5} (i), we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0 -  \{P\}$ such that $x\in K'^{S'}$.
+The commutativity of the desired diagram follows from the commutativity of $(\star)$ with $T=X_0 -  S$. Note that with Lemma \ref{4.5} (i), we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0 -  \{P\}$ such that $x\in K'^{S'}$.
 \end{proof}
 
 \begin{step}
