@@ -253,7 +253,7 @@ For $x\in\mathfrak{X}$ let $\mathcal{O}_x$ be a henselization of $\mathcal{O}_{\
 \mathrm{H}^3(K)\ar[r, "\varphi"]\ar[d, "f"'] & \displaystyle\prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_x)\ar[d, "\psi"]\\
 \displaystyle\prod_{y\in\mathfrak{X}_0}\mathrm{H}^3(K_y) \ar[r, "g"']& \displaystyle\prod_{\substack{x\in\mathfrak{X}_1 \\ y\in\mathfrak{X}_0}}\prod_{z\in P_{x,y}}\mathrm{H}^3(K_z)
 \end{tikzcd} \]
-According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Now, one easily checks that:
+According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Now, one checks that:
 \[ \operatorname{supp}(f) = \bigcap_{\mathfrak{X}\in \mathfrak{M}(K)} \pi_\mathfrak{X}^{-1}(\{ y\in\mathfrak{X}_0\mid \operatorname{res}_{K_y/K}(f)\neq 0 \}) \]
 Note that the right set is closed in $\operatorname{Spv}(K)$.
 \end{proof}
@@ -421,7 +421,7 @@ where the vertical maps are restrictions. Let $w\in\operatorname{Spv}_\text{d}^{
 k(w') \rar["\varphi_w"] & k(w)\\
 k(v') \rar["\varphi_v"']\uar[hook] & k(v)\uar[hook]
 \end{tikzcd} \]
-By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. It follows for $g\in G_K$:
+By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. It follows for any $g\in G_K$:
 \[G_{\sigma(g\overline{v})} = \sigma(G_{g\overline{v}}) = \sigma(g^{-1} G_{\overline{v}}g) = \sigma(g)^{-1} G_{\sigma(\overline{v})}\sigma(g) = G_{\sigma(g)\sigma(\overline{v})}\]
 Therefore, $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$.
 \end{remark}
@@ -571,7 +571,7 @@ k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"
 
 \chapter{Theorem}
 
-Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us constructing a group isomorphism $K'^\times\to K^\times$ from the modulo $n$ isomorphisms $K'^\times/n\to K^\times/n$.
+Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us constructing a group isomorphism $K'^\times\to K^\times$ from the modulo $n$ isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$.
 
 \section{Free-By-Finite Groups}
 
@@ -765,14 +765,14 @@ Using the desired commutativity of the diagram above and, with Lemma \ref{4.5} (
 For the existence of $\varphi$, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
-\displaystyle \prod_{P\in T}k(\sigma P)^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
+\displaystyle \prod_{P\in T}k(P')^\times \rar["\prod\varphi_P"'] & \displaystyle \prod_{P\in T}k(P)^\times
 \end{tikzcd} \phantom{\qquad (\star)} \]
 The vertical maps are injective by definition. Thus, it suffices to show that the following composition is trivial:
-\[\varrho:K'^{S'}\longrightarrow\prod_{P\in T} k(\sigma P)^\times \longrightarrow \prod_{P\in T} k(P)^\times\longrightarrow\operatorname{coker}(r_{S,T})\] 
+\[\varrho:K'^{S'}\longrightarrow\prod_{P\in T} k(P')^\times \longrightarrow \prod_{P\in T} k(P)^\times\longrightarrow\operatorname{coker}(r_{S,T})\] 
 Consider the commutative diagram which results from tensoring $(\star)$ with $\mathbb{Z}/n\mathbb{Z}$:
 \[ \begin{tikzcd}
 K'^{S'}/n \rar[dashed]\dar & K^S/n\dar\\
-\displaystyle \prod_{P\in T}k(\sigma P)^\times/n \rar & \displaystyle \prod_{P\in T}k(P)^\times/n
+\displaystyle \prod_{P\in T}k(P')^\times/n \rar & \displaystyle \prod_{P\in T}k(P)^\times/n
 \end{tikzcd} \]
 According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be completed by $\varphi_n: K'^{S'}/n\to K^S/n$. This implies $\varrho/n=0$, i.e. $\operatorname{im}(\varrho)\subset n\operatorname{coker}(r_{S,T})$ for every $n\in\mathbb{N}$. By Lemma~\ref{5.2} (iii) and Lemma~\ref{5.4} it follows $\varrho = 0$. By symmetry, $\varphi^{S,T}$ is an isomorphism.
 
