@@ -361,9 +361,11 @@ Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselizatio
 \begin{proof}
 Let $\ell_1,\ell_2$ be two different odd prime numbers different from $p=\operatorname{char} k(w)$ and let $E_0 = E(\mu_{\ell_1\ell_2})$. Since $K$ is finitely generated, by Lemma \ref{rank-dimension-inequality}, $k(w)$ and $\Gamma_w$ are finitely generated as well. In particular we have $\ell_i^\infty \nmid [k(w):\mathbb{F}_p]$ and, since $\Gamma_w$ is torsion free, $\dim_{\mathbb{F}_{\ell_i}}(\Gamma_w/{\ell_i}\Gamma_w) = \dim_{\mathbb{Q}}(\Gamma_w\otimes_{\mathbb{Z}}\mathbb{Q})= \operatorname{rrank}(w)=2$ for $i=1,2$.
 
-By Lemma \ref{2.5}, $E_0/E$, and also $E'_0/E'$, satisfy the condition of Proposition \ref{2.6} for both $\ell_1$ and $\ell_2$. Thus there exists a unique henselian valuation $w'_{E'}\in|\operatorname{Spv}(E')|$. Choose a prime $\ell\neq \operatorname{char} k(w'_{E'})$ from $\ell_1,\ell_2$. Since $\mathrm{H}^3(E',\mathbb{Z}/\ell\mathbb{Z})\cong \mathrm{H}^3(E,\mathbb{Z}/\ell\mathbb{Z})\neq 0$, we get from Lemma \ref{2.5}:
-\[\operatorname{rrank}(w'_{E'}) = \dim_{\mathbb{Q}}(\Gamma_{w'_{E'}}\otimes_\mathbb{Z}\mathbb{Q}) \geq \dim_{\mathbb{F}_\ell}(\Gamma_{w'_{E'}}/\ell\Gamma_{w'_{E'}})=2=\dim(E')\]
-which makes $w'_{E'}\in\operatorname{Spv}^{(2)}_\text{d}(E')$. Now $E'$ contains a henselization $K'_{w'}$ of $w' = w'_{E'}|_{K'}\in\operatorname{Spv}^{(2)}_\text{d}(K')$. By applying the same argument to $\sigma^{-1}$ we find that $E' = K'_{w'}$.
+By Lemma \ref{2.5}, $E_0/E$, and also $E'_0/E'$, satisfy the condition of Proposition \ref{2.6} for both $\ell_1$ and $\ell_2$. Thus there exists a unique henselian valuation $w'_{E'}\in|\operatorname{Spv}(E')|$. Now $E'$ contains a henselization $K'_{w'}$ with respect to $w' = w'_{E'}|_{K'}$. By applying the same argument to $\sigma^{-1}$ we find that $E' = K'_{w'}$.
+
+It remains to see that $\operatorname{rrank}(w')=2$. Choose a prime $\ell\neq \operatorname{char} k(w')$ from $\ell_1,\ell_2$. Since $\mathrm{H}^3(E'_0(\mu_{\ell}),\mathbb{Z}/\ell\mathbb{Z})\neq 0$ by Lemma \ref{2.6}, we get from Lemma \ref{2.5}:
+\[\operatorname{rrank}(w')= \operatorname{rrank}( \widetilde{w}') = \dim_{\mathbb{Q}}(\Gamma_{\widetilde{w}'}\otimes_\mathbb{Z}\mathbb{Q}) \geq \dim_{\mathbb{F}_\ell}(\Gamma_{\widetilde{w}'}/\ell\Gamma_{\widetilde{w}'})=2\]
+where $\widetilde{w}'$ is the extension of $w'_{E'}$ to $E'_0(\mu_{\ell})$. This makes $w'\in\operatorname{Spv}^{(2)}_\text{d}(K')$. 
 
 Let $F$ be another henselization of $w$. Then $E, F$ are $K$-isomorphic, hence $E',F'$ are $K'$-isomorphic and the corresponding henselian valuations of $E', F'$ respectively are mapped to each other.
 \end{proof}
