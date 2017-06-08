@@ -421,8 +421,9 @@ where the vertical maps are restrictions. Let $w\in\operatorname{Spv}_\text{d}^{
 k(w') \rar["\varphi_w"] & k(w)\\
 k(v') \rar["\varphi_v"']\uar[hook] & k(v)\uar[hook]
 \end{tikzcd} \]
-By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. Now it is easy to see that for every $g\in G_K$:
-\[ \sigma(g\overline{v}) = \sigma(g)\sigma(\overline{v}) \]
+By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. It follows for $g\in G_K$:
+\[G_{\sigma(g\overline{v})} = \sigma(G_{g\overline{v}}) = \sigma(g^{-1} G_{\overline{v}}g) = \sigma(g)^{-1} G_{\sigma(\overline{v})}\sigma(g) = G_{\sigma(g)\sigma(\overline{v})}\]
+Therefore, $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$.
 \end{remark}
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
