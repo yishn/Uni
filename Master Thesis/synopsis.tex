@@ -253,7 +253,7 @@ For $x\in\mathfrak{X}$ let $\mathcal{O}_x$ be a henselization of $\mathcal{O}_{\
 \mathrm{H}^3(K)\ar[r, "\varphi"]\ar[d, "f"'] & \displaystyle\prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_x)\ar[d, "\psi"]\\
 \displaystyle\prod_{y\in\mathfrak{X}_0}\mathrm{H}^3(K_y) \ar[r, "g"']& \displaystyle\prod_{\substack{x\in\mathfrak{X}_1 \\ y\in\mathfrak{X}_0}}\prod_{z\in P_{x,y}}\mathrm{H}^3(K_z)
 \end{tikzcd} \]
-According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Now, one checks that:
+According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Now, Lemma \ref{2.3} (i) yields:
 \[ \operatorname{supp}(f) = \bigcap_{\mathfrak{X}\in \mathfrak{M}(K)} \pi_\mathfrak{X}^{-1}(\{ y\in\mathfrak{X}_0\mid \operatorname{res}_{K_y/K}(f)\neq 0 \}) \]
 Note that the right set is closed in $\operatorname{Spv}(K)$.
 \end{proof}
@@ -494,7 +494,7 @@ We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K
 G_K \ar[r, "\sigma"] \ar[d] & G_{K'}\ar[d]\\
 G_k \ar[r, "\sigma"'] & G_{k'}
 \end{tikzcd} \]
-Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$.
+Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$ which restricts to an isomorphism $\varphi: k'\to k$.
 \end{lemma}
 
 \begin{proof}
@@ -506,9 +506,9 @@ Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
 
 \begin{remark}
-Consider $\overline{K}'' = \overline{K}'\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
+Consider $\overline{K''} = \overline{K}'\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
 \[ \begin{tikzcd}
-G_K \ar[r, "\sigma"] & G_{K'} \ar[r, "\phi"] & G_{K'}
+G_K \ar[r, "\sigma"] & G_{K'} \ar[r, "\phi", "\cong"'] & \operatorname{Gal}(\overline{K''}/K')
 \end{tikzcd} \]
 where $\phi$ is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities. Now the following diagram commutes:
 \[ \begin{tikzcd}
