@@ -348,7 +348,7 @@ Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to th
 
 \chapter{Correspondences}
 
-Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and let $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ we denote the corresponding intermediate field of $\overline{K'}/K'$ by $L'$. In other words, $\sigma G_L=G_{L'}$.
+Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$ and let $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ we denote the corresponding intermediate field of $\overline{K'}/K'$ by $L'$. In other words, $\sigma (G_L)=G_{L'}$.
 
 \section{Local Correspondence}
 
@@ -649,11 +649,19 @@ Let $\mathcal{P}(F)$ denote the group of principal ideals of $F$, $\mathcal{I}(F
 \[ \begin{tikzcd}
 1 \ar[r]& \mathcal{O}_{F_1}^\times /\mathcal{O}_F^\times\ar[r] & F_1^\times / F^\times\ar[r] & \mathcal{P}(F_1)/\mathcal{P}(F)\ar[r] & 1
 \end{tikzcd} \]
-Again by Lemma \ref{5.2} (ii), it suffices to show that $\mathcal{P}(F_1)/\mathcal{P}(F)$ is free-by-finite. Using the snake lemma, we get the following exact sequence:
+Again by Lemma \ref{5.2} (ii), it suffices to show that $\mathcal{P}(F_1)/\mathcal{P}(F)$ is free-by-finite. 
+Consider the following diagram with exact rows and columns:
+\[ \begin{tikzcd}
+& 0 \ar[d] & 0 \ar[d] & \ker(f) \ar[d]& \\
+0\ar[r] & \mathcal{P}(F) \ar[d] \ar[r]& \mathcal{I}(F) \ar[r]\ar[d]& \operatorname{Cl}(F)\ar[r]\ar[d, "f"] & 0\\
+0 \ar[r]& \mathcal{P}(F_1)\ar[d] \ar[r]& \mathcal{I}(F_1) \ar[d]\ar[r]& \operatorname{Cl}(F_1)\ar[d] \ar[r]& 0 \\
+& \mathcal{P}(F_1)/\mathcal{P}(F) & \mathcal{I}(F_1)/\mathcal{I}(F) & \operatorname{coker}(f) &
+\end{tikzcd} \]
+Using the snake lemma, we get the following exact sequence:
 \[
 0 \longrightarrow \ker(f)\longrightarrow \mathcal{P}(F_1)/\mathcal{P}(F)\longrightarrow \mathcal{I}(F_1)/\mathcal{I}(F)
 \longrightarrow \operatorname{coker}(f)\longrightarrow 0 \]
-where $f:\operatorname{Cl}(F)\to \operatorname{Cl}(F_1)$. Since the class numbers of number fields are finite, according to Lemma \ref{5.2} (i), it suffices to show that $\mathcal{I}(F_1)/\mathcal{I}(F)$ is free-by-finite. This follows from the fact that there are only finitely many primes of $F$ which are ramified in $F_1$.\qedhere
+Since the class numbers of number fields are finite, according to Lemma \ref{5.2} (i), it suffices to show that $\mathcal{I}(F_1)/\mathcal{I}(F)$ is free-by-finite. This follows from the fact that there are only finitely many primes of $F$ which are ramified in $F_1$.\qedhere
 \end{enumerate}
 \end{proof}
 
@@ -702,7 +710,7 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 \begin{proof}
 \begin{enumerate}[(i)]
 \item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
-\[ \bigcup_{i=1}^r \operatorname{supp}D_i\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}D'_j\subset S' \]
+\[ \bigcup_{i=1}^r \operatorname{supp}(D_i)\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}(D'_j)\subset S' \]
 is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their support is in $X_0 -  T$ and $X'_0 -  T'$ respectively.
 \item Observe that the following sequence is exact:
 \[ \begin{tikzcd}
