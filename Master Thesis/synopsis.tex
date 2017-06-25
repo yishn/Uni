@@ -428,11 +428,11 @@ Therefore, $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$ by Corollary \r
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
 
-In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $K'^\times/n\to K^\times/n$ and $U_{v'}/n\to U_v/n$ for all $n\in\mathbb{N}$ and defectless valuations $v$ of rational rank $1$ with $\operatorname{char}k(v) =0$.
+In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$.
 
 Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
-Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of valuations $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$ and similarly identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
+Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of discrete valuations $v$ with $v(k^\times)=0$. That is exactly all $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$. Similarly, we identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
 
 By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X^{\phantom{'}}_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
 
@@ -506,7 +506,7 @@ Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
 
 \begin{remark}
-Consider $\overline{K''} = \overline{K}'\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
+Consider $\overline{K''} = \overline{K'}\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
 \[ \begin{tikzcd}
 G_K \ar[r, "\sigma"] & G_{K'} \ar[r, "\phi", "\cong"'] & \operatorname{Gal}(\overline{K''}/K')
 \end{tikzcd} \]
@@ -530,9 +530,9 @@ M'^\times/n \ar[r, "\varphi_n"'] & M^\times/n
 
 Let $P\in X_0$ and $v_P:K\to\mathbb{Z}\cup\{\infty\}$ be the corresponding normalized discrete valuation and let $U_P$ be the group of units of the valuation ring $\mathcal{O}_P$. We denote the natural projection $U_P\to k(P)^\times,\ x\mapsto x\mod P$ by $r_P$. We shall also write $K_P$ for a henselization of $K$ with respect to $v_P$.
 
-Let $n\in\mathbb{N}$. Tensoring the exact sequence $1\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
+Tensoring the exact sequence $1\to U_P\to K^\times \to\mathbb{Z}\to 0$ with $\mathbb{Z}/n\mathbb{Z}$ preserves its exactness since $\mathbb{Z}$ is $\mathbb{Z}$-flat:
 \[ 1\longrightarrow U_P/n\longrightarrow K^\times/n\longrightarrow\mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
-We'll use the same notation for $P' = \sigma(P)\in X'_0$.
+Thus we can consider $U_P/n$ as a subgroup of $K^\times/n$. We'll use the same notation for $P' = \sigma(P)\in X'_0$.
 
 \begin{lemma}\phantomsection\label{4.3}
 \begin{enumerate}[(i)]
