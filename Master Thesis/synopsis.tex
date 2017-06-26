@@ -159,21 +159,21 @@ Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_
 
 \section{The Main Lemma}
 
-Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and of dimension $2$.
+Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and of dimension $2$. First, let us recall some facts from Galois cohomology:
 
-\begin{lemma}\phantomsection\label{lemma-defectless-valuations}
-\begin{enumerate}[(i)]
-\item $\operatorname{Spv}_\text{d}^{(1)}(K) = \operatorname{Spv}_\text{rd}^{(1)}(K)$
-\item $\operatorname{Spv}^{(2)}(K) = \operatorname{Spv}_\text{d}^{(2)}(K)\subset |\operatorname{Spv}(K)|$
-\end{enumerate}
-\end{lemma}
-
-\begin{proof}
-\begin{enumerate}[(i)]
-\item Let $v$ be a defectless valuation of rational rank $1$. By Lemma \ref{rank-dimension-inequality}, $\operatorname{rank}(v) \leq \operatorname{rrank}(v) = 1$. Since $\Gamma_v$ is not trivial, $\operatorname{rank}(v) = 1=\operatorname{rrank}(v)$.
-\item Let $v$ be a valuation of rational rank $2$. Due to Lemma \ref{rank-dimension-inequality}, the dimension inequality is an equality and we have $\dim k(v) = 0$. \qedhere
-\end{enumerate}
-\end{proof}
+\begin{proposition}[\textit{Kummer Theory}]\label{prop:kummer-theory}
+Let $F$ be a field and $n\in\mathbb{N}$ invertible in $F$. Let $\mu_n\subset F^\text{s}$ be the group of all $n$-th roots of unity. Consider the following short exact sequence:
+\[ 1\longrightarrow \mu_n\longrightarrow (F^\text{s})^\times \stackrel{n}{\longrightarrow} (F^\text{s})^\times \longrightarrow 1 \]
+This gives rise to the following long exact cohomology sequence:
+\[\begin{tikzcd}
+\cdots\longrightarrow F^\times \ar[r, "n"]& F^\times \ar[r]& \mathrm{H}^1(F, \mu_n)\ar[r] & \mathrm{H}^1(F, (F^\text{s})^\times)\ar[dlll]\\
+\mathrm{H}^1(F, (F^\text{s})^\times)\ar[r] & \mathrm{H}^2(F, \mu_n)\ar[r] & \operatorname{Br}(F)\ar[r, "n"] & \operatorname{Br}(F) \longrightarrow \cdots
+\end{tikzcd}\]
+Since $\mathrm{H}^1(F, (F^\text{s})^\times)=0$ by Hilbert's Theorem 90, we get isomorphisms:
+\begin{align*}
+\mathrm{H}^1(F,\mu_n) \cong F^\times/n, \qquad \mathrm{H}^2(F, \mu_n) \cong {}_n\operatorname{Br}(F)
+\end{align*}
+\end{proposition}
 
 \begin{lemma}\label{2.2}
 Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(G_K)\leq 2$.
