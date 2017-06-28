@@ -22,7 +22,7 @@ Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely gener
 \begin{definition}\label{2.1}
 Let $K$ be a field of finite dimension. We denote the set of equivalence classes of Krull valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
 
-We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$ and set $U_v=\mathcal{O}_v^\times$ and let $k(v)=\mathcal{O}_v/\mathfrak{m}_v$ be its residue field. The \textit{rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v\cup\{\infty\}$ is defined as the rank of its value group $\Gamma_v$ as a $\mathbb{Z}$-module:
+We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$, let $U_v=\mathcal{O}_v^\times$ be the unit group of $v$, and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$ be its residue field. The \textit{rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v\cup\{\infty\}$ is defined as the rank of its value group $\Gamma_v$ as a $\mathbb{Z}$-module:
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
 \end{definition}
 
@@ -50,8 +50,8 @@ Valuations in $\operatorname{Spv}_\text{d}(K)$ are called \textit{defectless}\in
 \end{definition}
 
 \begin{definition}
-We can endow $\operatorname{Spv}(K)$ with a natural topology by declaring following sets as a basis of open sets:
 \[\{v\in\operatorname{Spv}(K)\mid v(x)\geq 0\text{ for all }x\in S\} \]
+We can endow $\operatorname{Spv}(K)$ with a natural topology by declaring the following sets as a basis of open sets:
 where $S$ ranges over all finite subsets of $K$. 
 \end{definition}
 
@@ -159,7 +159,7 @@ Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_
 
 \section{The Main Lemma}
 
-Let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ and of dimension $2$. First, let us recall some facts from Galois cohomology:
+First, let us recall some facts from Galois cohomology:
 
 \begin{proposition}[\textit{Kummer Theory}]\label{prop:kummer-theory}
 Let $F$ be a field and $n\in\mathbb{N}$ invertible in $F$. Let $\mu_n\subset F^\text{s}$ be the group of all $n$-th roots of unity. Consider the following short exact sequence:
@@ -174,6 +174,8 @@ Since $\mathrm{H}^1(F, (F^\text{s})^\times)=0$ by Hilbert's Theorem 90, we get i
 \mathrm{H}^1(F,\mu_n) \cong F^\times/n, \qquad \mathrm{H}^2(F, \mu_n) \cong {}_n\operatorname{Br}(F)
 \end{align*}
 \end{proposition}
+
+\paragraph{} Now let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ of dimension $2$. In this section, we want to give a cohomological characterization of $K$ being henselian.
 
 \begin{lemma}\label{2.2}
 Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(G_K)\leq 2$.
@@ -282,7 +284,7 @@ Let $v\in |\operatorname{Spv}(K_j)|$ and let $i = i(w),\ w\in S$ such that $v\in
 Since $K_j$ is finitely generated we obtain $\operatorname{res}_{K_j/K_0}(g) = 0$ with Lemma \ref{2.4-finitelygenerated}, thus $f = \operatorname{res}_{K/K_0}(g) = 0$.
 \end{proof}
 
-Now we calculate the cohomology groups $\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z})$ for $w\in |\operatorname{Spv}(K)|$. With the help of Lemma \ref{2.4} we can find a cohomological criterion of henselian fields over $K$ with respect to a $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$.
+Now we calculate the cohomology groups $\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z})$ for $w\in |\operatorname{Spv}(K)|$. With the help of our Main Lemma \ref{2.4} we can find a cohomological criterion of henselian fields over $K$ with respect to a $w\in |\operatorname{Spv}(K)|$.
 
 \begin{lemma}\label{2.5}
 Let $K$ be henselian with respect to $w\in|\operatorname{Spv}(K)|$. Set $k=k(w)$ and $\Gamma = \Gamma_w$. Then $k$ is an algebraic extension of a finite field $\mathbb{F}_p$ by Lemma \ref{2.2-pre}. Let $\ell\neq p$ be a prime and assume $\mu_\ell\subset K$. Then:
@@ -309,7 +311,7 @@ Let $G_K(\ell)$ be the maximal pro-$\ell$ quotient of $G_K$. Since $\mu_\ell\sub
 \[ \begin{tikzcd}
 \mathrm{H}^3(G_K(\ell),\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{inf}"] & \mathrm{H}^3(G_K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})
 \end{tikzcd} \]
-Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = [G_K:G_\ell]$. However, $[G_K:G_\ell]$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By \cite{Se64}, Ch. I, §4, Proposition 22 we have:
+Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = (G_K:G_\ell)$. However, $(G_K:G_\ell)$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By \cite{Se64}, Ch. I, §4, Proposition 22 we have:
 \[\operatorname{cd}(G_\ell) = \operatorname{cd}(\mathbb{Z}_\ell^r\rtimes G_k(\ell)) = \begin{cases}
 r, & G_k(\ell) = 0 \\
 r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
