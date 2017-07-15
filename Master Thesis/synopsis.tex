@@ -236,7 +236,7 @@ We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is co
 
 Let $\mathfrak{X}$ be a model of $K$. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By \cite{Ka86} Theorem 0.8, the map
 \[ \mathrm{H}^3(K)\longrightarrow \prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_{v_x}) \]
-is injective and its image is contained in $\bigoplus \mathrm{H}^3(K_{v_x})$. By \cite{Ka86} Lemma 1.4, for a discrete valuation $v$ of $K$ the map
+is injective and, in fact, the proof shows that its image is contained in $\bigoplus \mathrm{H}^3(K_{v_x})$. By \cite{Ka86} Lemma 1.4, for a discrete valuation $v$ of $K$ the map
 \[ \mathrm{H}^3(K_v) \longrightarrow \prod_w\mathrm{H}^3(K_w) \]
 where $w$ ranges over all rank-$2$ valuations with $v(w) = v$, can be identified with the following map:
 \[ {}_\ell\operatorname{Br}(k) \longrightarrow \prod_{\widetilde{w}\in\operatorname{Spv}^{(1)}(k)} {}_\ell\operatorname{Br}(k_{\widetilde{w}}) \]
@@ -436,7 +436,7 @@ Therefore, $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$ by Corollary \r
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
 
-In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$. Due to Proposition \ref{prop:kummer-theory}, we have isomorphisms:
+Let $n\in\mathbb{N}$. In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$. Due to Proposition \ref{prop:kummer-theory}, we have isomorphisms:
 \[ \mathrm{H}^1(K',\mu_n)\cong K'^\times/n,\qquad \mathrm{H}^1(K,\mu_n)\cong K^\times/n \]
 Our goal is to establish an isomorphism between the corresponding cohomology groups.
 
@@ -725,7 +725,7 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 \begin{enumerate}[(i)]
 \item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
 \[ \bigcup_{i=1}^r \operatorname{supp}(D_i)\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}(D'_j)\subset S' \]
-is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their support is in $X_0 -  T$ and $X'_0 -  T'$ respectively.
+is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their support lies in $X_0 -  T$ and $X'_0 -  T'$ respectively.
 \item Observe that the following sequence is exact:
 \[ \begin{tikzcd}
 1 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0 -  S}\mathbb{Z} \ar[r]& \operatorname{Pic}(X -  S) = 0
