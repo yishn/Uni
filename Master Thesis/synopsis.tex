@@ -19,8 +19,10 @@ Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely gener
 \end{itemize}
 \end{remark}
 
+\paragraph{} Let $K$ be a field of finite dimension.
+
 \begin{definition}\label{2.1}
-Let $K$ be a field of finite dimension. We denote the set of equivalence classes of Krull valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
+We denote the set of equivalence classes of Krull valuations of $K$ by $\operatorname{Spv}(K)$. We often do not distinguish between a valuation and its equivalence class. 
 
 We denote the valuation ring of $v\in\operatorname{Spv}(K)$ by $(\mathcal{O}_v,\mathfrak{m}_v)$, let $U_v=\mathcal{O}_v^\times$ be the unit group of $v$, and $k(v)=\mathcal{O}_v/\mathfrak{m}_v$ be its residue field. The \textit{rank} of $v$ is defined as the Krull dimension of its valuation ring $\mathcal{O}_v$. The \textit{rational rank}\index{valuation!rational rank} of $v:K\to\Gamma_v\cup\{\infty\}$ is defined as the rank of its value group $\Gamma_v$ as a $\mathbb{Z}$-module:
 \[\operatorname{rrank}(v) = \dim_\mathbb{Q}(\Gamma_v\otimes_\mathbb{Z}\mathbb{Q}) \]
@@ -50,19 +52,23 @@ Valuations in $\operatorname{Spv}_\text{d}(K)$ are called \textit{defectless}\in
 \end{definition}
 
 \begin{definition}
-\[\{v\in\operatorname{Spv}(K)\mid v(x)\geq 0\text{ for all }x\in S\} \]
 We can endow $\operatorname{Spv}(K)$ with a natural topology by declaring the following sets as a basis of open sets:
+\[U_S =\{v\in\operatorname{Spv}(K)\mid v(x)\geq 0\text{ for all }x\in S\} \]
 where $S$ ranges over all finite subsets of $K$. 
 \end{definition}
 
 \begin{lemma}\label{spv-topology}
-$\operatorname{Spv}(K)$ with the topology defined above is a quasi-compact $T_0$-space. In particular the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasi-compact $T_1$-space, endowed with the induced topology. Let $v,w\in\operatorname{Spv}(K)$. We have:
+Let $v,w\in\operatorname{Spv}(K)$. We have:
 \[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
 Thus $v$ is a closed point if and only if it has no non-trivial specializations.
+
+$\operatorname{Spv}(K)$ is a quasi-compact Jacobson space, i.e. every closed subset $A\subset\operatorname{Spv}(K)$ is the closure of its closed points. In particular, the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasi-compact $T_1$-space, endowed with the induced topology. 
 \end{lemma}
 
 \begin{proof}
-See \cite{ZS60} VI §17 Theorem 38, §17 Theorem 40.
+The first assertion follows from \cite{ZS60} VI, §17 Theorem 38. The quasi-compactness of $\operatorname{Spv}(K)$ follows from \cite{ZS60} VI, §17 Theorem 40. 
+
+Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and assume $U_S\cap A\neq\varnothing$. Let $v\in U_S\cap A$ be a point which is not closed.
 \end{proof}
 
 \begin{lemma}\label{2.2-pre}
@@ -161,7 +167,7 @@ Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_
 
 First, let us recall some facts from Galois cohomology:
 
-\begin{proposition}[\textit{Kummer Theory}]\label{prop:kummer-theory}
+\begin{proposition}\label{prop:kummer-theory}
 Let $F$ be a field and $n\in\mathbb{N}$ invertible in $F$. Let $\mu_n\subset F^\text{s}$ be the group of all $n$-th roots of unity. Consider the following short exact sequence:
 \[ 1\longrightarrow \mu_n\longrightarrow (F^\text{s})^\times \stackrel{n}{\longrightarrow} (F^\text{s})^\times \longrightarrow 1 \]
 This gives rise to the following long exact cohomology sequence:
@@ -186,7 +192,7 @@ Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, f
 
 Thus $w_1,w_2$ are both of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see that $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{d}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
 
-The second assertion follows from the first and from [K2], §5, Theorem 1.
+The second assertion follows from the first and from \cite{Ka79}, §5, Theorem 1.
 \end{proof}
 
 \begin{definition}
@@ -211,7 +217,7 @@ In particular we have:
 \end{lemma}
 
 \begin{proof}
-(i) and (ii) follow from [HK], Lemma 2.4.3 and (iii) is a consequence of (ii) and the fact that henselizations commute with filtrated direct limits, see \cite{EGA4} 18.6.14.
+(i) and (ii) follow from \cite{HK94}, Lemma 2.4.3, and (iii) is a consequence of (ii) and the fact that henselizations commute with filtrated direct limits, e.g. see \cite{EGA4} 18.6.14.
 \end{proof}
 
 The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
@@ -430,13 +436,17 @@ Therefore, $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$ by Corollary \r
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
 
-In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$.
+In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$. Due to Proposition \ref{prop:kummer-theory}, we have isomorphisms:
+\[ \mathrm{H}^1(K',\mu_n)\cong K'^\times/n,\qquad \mathrm{H}^1(K,\mu_n)\cong K^\times/n \]
+Our goal is to establish an isomorphism between the corresponding cohomology groups.
 
+\begin{definition}
 Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
 Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of discrete valuations $v$ with $v(k^\times)=0$. That is exactly all $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$. Similarly, we identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
 
 By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X^{\phantom{'}}_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
+\end{definition}
 
 \begin{theorem}[\textit{Hilbert's Irreducibility Theorem}]\label{hilberts-irreducibility-theorem}
 Let $E$ be a number field and $f_1,\ldots, f_n$ be irreducible polynomials in $E[X_1,\ldots,X_r,Y_1,\ldots,Y_s]$. Then there exists $e_1,\ldots,e_r\in E$ such that the specializations
@@ -685,13 +695,15 @@ where $\operatorname{NS}(C)$ denotes the finitely generated Néron-Severi group 
 
 \begin{definition}\label{4.4}
 For a finite subset $S\subset X_0$ set:
-\[ K^S=\{x\in K^\times \mid v_P(x)=0\text{ for all }P\in X_0 -  S \} = \bigcap_{P\in X_0 -  S} U_P \]
+\begin{align*}
+K^S &= \bigcap_{P\in X_0 -  S} U_P
+\end{align*}
 $K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
 \end{definition}
 
 \begin{theorem}[\textit{Weak Approximation Theorem}]\label{weak-approximation}
-Let $P_1,\ldots,P_n\in X_0$ be pairwise distinct closed points, $x_1,\ldots,x_n\in K$ and $a_1,\ldots,a_n\in\mathbb{Z}$. Then there is some $x\in K$, such that for all $i$ we have:
-\[ v_{P_i}(x-x_i) = a_i \]
+Let $v_1,\ldots,v_n\in X_0$ be inequivalent discrete valuations, $x_1,\ldots,x_n\in K$ and $a_1,\ldots,a_n\in\mathbb{Z}$. Then there is some $x\in K$, such that for all $i$ we have:
+\[ v_i(x-x_i) = a_i \]
 \end{theorem}
 
 \begin{proof}
