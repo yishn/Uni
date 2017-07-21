@@ -236,7 +236,7 @@ We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is co
 
 Let $\mathfrak{X}$ be a model of $K$. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By \cite{Ka86} Theorem 0.8, the map
 \[ \mathrm{H}^3(K)\longrightarrow \prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_{v_x}) \]
-is injective and, in fact, the proof shows that its image is contained in $\bigoplus \mathrm{H}^3(K_{v_x})$. By \cite{Ka86} Lemma 1.4, for a discrete valuation $v$ of $K$ the map
+is injective, and, in fact, the proof shows that its image is contained in $\bigoplus \mathrm{H}^3(K_{v_x})$. By \cite{Ka86} Lemma 1.4, for a discrete valuation $v$ of $K$ the map
 \[ \mathrm{H}^3(K_v) \longrightarrow \prod_w\mathrm{H}^3(K_w) \]
 where $w$ ranges over all rank-$2$ valuations with $v(w) = v$, can be identified with the following map:
 \[ {}_\ell\operatorname{Br}(k) \longrightarrow \prod_{\widetilde{w}\in\operatorname{Spv}^{(1)}(k)} {}_\ell\operatorname{Br}(k_{\widetilde{w}}) \]
@@ -261,7 +261,7 @@ For $x\in\mathfrak{X}$ let $\mathcal{O}_x$ be a henselization of $\mathcal{O}_{\
 \mathrm{H}^3(K)\ar[r, "\varphi"]\ar[d, "f"'] & \displaystyle\prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_x)\ar[d, "\psi"]\\
 \displaystyle\prod_{y\in\mathfrak{X}_0}\mathrm{H}^3(K_y) \ar[r, "g"']& \displaystyle\prod_{\substack{x\in\mathfrak{X}_1 \\ y\in\mathfrak{X}_0}}\prod_{z\in P_{x,y}}\mathrm{H}^3(K_z)
 \end{tikzcd} \]
-According to [Sa], Theorem (2-15) $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Now, Lemma \ref{2.3} (i) yields:
+According to \cite{Sa87}, Theorem 5.3, $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Now, Lemma \ref{2.3} (i) yields:
 \[ \operatorname{supp}(f) = \bigcap_{\mathfrak{X}\in \mathfrak{M}(K)} \pi_\mathfrak{X}^{-1}(\{ y\in\mathfrak{X}_0\mid \operatorname{res}_{K_y/K}(f)\neq 0 \}) \]
 Note that the right set is closed in $\operatorname{Spv}(K)$.
 \end{proof}
