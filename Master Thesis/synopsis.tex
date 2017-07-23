@@ -120,15 +120,11 @@ See \cite{EP05} Theorem 5.2.7.
 \end{proof}
 
 \begin{lemma}\label{lemma-henselization-specialization}
-Let $K$ be a field and $w\in\operatorname{Spv}(K)$ with a fixed henselization $K_w$ of $w$. If $v\in\operatorname{Spv}(K)$ such that $w$ is a specialization of $v$, then there is a henselization $K_v$ of $v$ such that $K_v\subset K_w\subset K_v^\text{t}$.
+Let $K$ be a field and $v\in\operatorname{Spv}(K)$ with a fixed henselization $K_v$ of $v$. If $w\in\operatorname{Spv}(K)$ such that $w$ is a specialization of $v$, then there is a henselization $K_w$ of $w$ such that $K_v\subset K_w\subset K_v^\text{t}$.
 \end{lemma}
 
 \begin{proof}
-Let $\overline{w}$ be the extension of $w\in\operatorname{Spv}(K_w)$ on $K^\text{s}$. By \cite{EP05} Lemma 3.1.5 we can find an extension $\overline{v}$ of $v$ on $K^\text{s}$ such that $\overline{w}$ is a specialization of $\overline{v}$. Let $K_v$ be the fixed field of $G_{\overline{v}}\subset G_K$.
-
-Let $\sigma\in G_{\overline{w}}$. Then both $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ are overrings of $\mathcal{O}_{\overline{w}}$. Now the overrings of valuation rings are totally ordered by inclusion and correspond to localizations of $\mathcal{O}_{\overline{w}}$ at prime ideals (See \cite{EP05} 2.3). Since $\mathcal{O}_{\overline{v}}$ and $\sigma(\mathcal{O}_{\overline{v}})$ have the same Krull dimension, they must be the same, thus $\sigma\in G_{\overline{v}}$. This proves $K_v\subset K_w$.
-
-Now let $\sigma\in G_{K_v^\text{t}}$, i.e. $\sigma\in G_{\overline{v}}$ such that the induced automorphism on the residue field $\overline{\sigma}:k(\overline{v})\to k(\overline{v})$ is the identity. Let $\mathfrak{p}\subset\mathcal{O}_{\overline{w}}$ be a prime ideal with $\mathcal{O}_{\overline{v}} = (\mathcal{O}_{\overline{w}})_\mathfrak{p}$. In particular, the restriction $\overline{\sigma}|: \mathcal{O}_{\overline{w}}/\mathfrak{p}\to \mathcal{O}_{\overline{w}}/\mathfrak{p}$ is the identity, thus $\sigma(\mathcal{O}_{\overline{w}})=\mathcal{O}_{\overline{w}}$, i.e. $\sigma\in G_{\overline{w}}$. This proves $K_w\subset K_v^\text{t}$.
+By Lemma \ref{2.2-pre}, $w$ induces a valuation $\tilde{w}\in\operatorname{Spv}k(v)$. Let $k(v)_{\tilde{w}}$ be henselization of $k(v)$ with respect to $\tilde{w}$. By Theorem \ref{theorem-absoluteinertia}, $k(v)_{\tilde{w}}$ corresponds to an intermediate extension $K_v\subset L \subset K^\text{t}_v$. Let $v_L$ be the unique extension of $v$ on $L$. Then $k(v_L)=k(v)_{\tilde{w}}$. Let $w_L$ be the valuation on $L$ corresponding to $\tilde{w}\in \operatorname{Spv} k(v_L)$. By \cite{EP05} 4.1.4, $w_L$ is henselian iff both $v_L$ and $\tilde{w}$ are henselian, thus $L$ is a henselization of $w$.
 \end{proof}
 
 \begin{theorem}\label{theorem-sylowgroups-inertiagroup}
@@ -169,11 +165,11 @@ First, let us recall some facts from Galois cohomology:
 
 \begin{proposition}\label{prop:kummer-theory}
 Let $F$ be a field and $n\in\mathbb{N}$ invertible in $F$. Let $\mu_n\subset F^\text{s}$ be the group of all $n$-th roots of unity. Consider the following short exact sequence:
-\[ 1\longrightarrow \mu_n\longrightarrow (F^\text{s})^\times \stackrel{n}{\longrightarrow} (F^\text{s})^\times \longrightarrow 1 \]
+\[ 1\longrightarrow \mu_n\longrightarrow (F^\text{s})^\times \stackrel{\cdot n}{\longrightarrow} (F^\text{s})^\times \longrightarrow 1 \]
 This gives rise to the following long exact cohomology sequence:
 \[\begin{tikzcd}
-\cdots\longrightarrow F^\times \ar[r, "n"]& F^\times \ar[r]& \mathrm{H}^1(F, \mu_n)\ar[r] & \mathrm{H}^1(F, (F^\text{s})^\times)\ar[dlll]\\
-\mathrm{H}^1(F, (F^\text{s})^\times)\ar[r] & \mathrm{H}^2(F, \mu_n)\ar[r] & \operatorname{Br}(F)\ar[r, "n"] & \operatorname{Br}(F) \longrightarrow \cdots
+\cdots\longrightarrow F^\times \ar[r, "\cdot n"]& F^\times \ar[r]& \mathrm{H}^1(F, \mu_n)\ar[r] & \mathrm{H}^1(F, (F^\text{s})^\times)\ar[dlll]\\
+\mathrm{H}^1(F, (F^\text{s})^\times)\ar[r] & \mathrm{H}^2(F, \mu_n)\ar[r] & \operatorname{Br}(F)\ar[r, "\cdot n"] & \operatorname{Br}(F) \longrightarrow \cdots
 \end{tikzcd}\]
 Since $\mathrm{H}^1(F, (F^\text{s})^\times)=0$ by Hilbert's Theorem 90, we get isomorphisms:
 \begin{align*}
