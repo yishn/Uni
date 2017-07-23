@@ -385,7 +385,7 @@ This lemma yields a bijection $\sigma:\operatorname{Spv}_\text{d}^{(2)}(K) \to\o
 \begin{lemma}\label{3.2}
 $\sigma$ induces a bijection $\sigma:\operatorname{Spv}_\text{d}^{(1)}(K) \to\operatorname{Spv}_\text{d}^{(1)}(K')$. If $E=K_v\subset\overline{K}$ is a henselization of $K$ with respect to $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$, then $E'$ is a henselization of $K'$ with respect to $v'=\sigma(v)$. 
 
-Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denote the absolute inertia field of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
+Furthermore, if $E^{\text{t}}$ and $E'^{\text{t}}$ denote the absolute inertia fields of $E$ and $E'$ respectively, then $\sigma$ induces an isomorphism:
 \[ G_{k(v)}\cong\operatorname{Gal}(E^\text{t}/E) \to\operatorname{Gal}(E'^{\text{t}}/E')\cong G_{k(v')} \]
 which is induced by a unique isomorphism $\varphi_v^\text{s}:k(v')^\text{s}\to k(v)^\text{s}$. In particular $\varphi_v=\varphi_v^\text{s}|_{k(v')}:k(v')\to k(v)$ is an isomorphism.
 \end{lemma}
@@ -444,9 +444,9 @@ Let $n\in\mathbb{N}$. In this section we shall show that $\sigma: G_K\to G_{K'}$
 Our goal is to establish an isomorphism between the corresponding cohomology groups.
 
 \begin{definition}
-Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closure of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
+Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closures of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
-Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function field $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of discrete valuations $v$ with $v(k^\times)=0$. That is exactly all $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$. Similarly, we identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
+Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function fields $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of discrete valuations $v$ with $v(k^\times)=0$. That is exactly all $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$. Similarly, we identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
 
 By Lemma \ref{3.2} $\sigma$ induces a bijection $\sigma: X^{\phantom{'}}_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
 \end{definition}
@@ -728,7 +728,7 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 \begin{enumerate}[(i)]
 \item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
 \[ \bigcup_{i=1}^r \operatorname{supp}(D_i)\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}(D'_j)\subset S' \]
-is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their support lies in $X_0 -  T$ and $X'_0 -  T'$ respectively.
+is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their supports lie in $X_0 -  T$ and $X'_0 -  T'$ respectively.
 \item Observe that the following sequence is exact:
 \[ \begin{tikzcd}
 1 \ar[r] & K^S \ar[r]& K^\times \ar[r, "\operatorname{div}"]& \displaystyle \bigoplus_{P\in X_0 -  S}\mathbb{Z} \ar[r]& \operatorname{Pic}(X -  S) = 0
