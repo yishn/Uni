@@ -102,7 +102,7 @@ See \cite{EP05} Lemma 5.2.1, Lemma 5.2.2, Theorem 5.2.5.
 
 \begin{theorem}\label{theorem-absoluteinertia}
 Let $K$ be a henselian field with respect to $v: K\to\Gamma\cup\{\infty\}$ with unique extension $\overline{v}$ on $K^\text{s}$. Let $K^\text{t}$ be the absolute inertia field of $K$ with the unique extension $w$ of $v$, i.e. $K^\text{t}$ is the fixed field of the absolute inertia group $T$: 
-\[ T = \{ \sigma\in G_K\mid \sigma(x)\equiv x\mod \mathfrak{m}_{\overline{v}} \quad \text{for all }x\in\mathcal{O}_{\overline{v}} \}\lhd G_K \]
+\[ T = \{ \sigma\in G_K\mid \sigma(x)\equiv x\mod \mathfrak{m}_{\overline{v}} \quad \text{for all }x\in\mathcal{O}_{\overline{v}} \}\]
 Then we have:
 \begin{enumerate}[(i)]
 \item $w$ has value group $\Gamma$ and residue class field $k(v)^\text{s}$.
@@ -192,7 +192,7 @@ Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, f
 
 Thus $w_1,w_2$ are both of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see that $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{d}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
 
-For the second assertion, let $K$ be not algebraically closed and $v=v(w_1)=v(w_2)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. The restriction $v|$ of $v$ on $k=\mathbb{Q}(T)\subset K$ is a discrete valuation. Choose a henselization $k_{v|}$ of $k$ such that $k_{v|}\subset K$ and consider the absolute inertia field $k_{v|}^\text{t}$ of $k_{v|}$. Since $k(v)$ is separably closed, we have $k_{v|}^\text{t}\subset K$. Since $v|\in \operatorname{Spv} ({k_{v|}^\text{t}})$ is discrete and henselian, \cite{Ka79} §5, Theorem 1 shows $\operatorname{cd}(k_{v|}^\text{t})\leq 2$. In particular, $\operatorname{cd}(K)\leq 2$.
+For the second assertion, let $K$ be not algebraically closed and $v=v(w_1)=v(w_2)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. The restriction $v|$ of $v$ on $k=\mathbb{Q}(T)\subset K$ is a discrete valuation. Choose a henselization $k_{v|}$ of $k$ such that $k_{v|}\subset K$ and consider the absolute inertia field $k_{v|}^\text{t}$ of $k_{v|}$. Since $k(v)$ is separably closed, we have $k_{v|}^\text{t}\subset K$. Since $v|\in \operatorname{Spv} ({k_{v|}^\text{t}})$ is discrete and henselian, \cite{Ka79} §5, Theorem 1 shows $\operatorname{cd}\big(G_{k_{v|}^\text{t}}\big)\leq 2$. In particular, $\operatorname{cd}(G_K)\leq 2$.
 \end{proof}
 
 \begin{definition}
@@ -308,8 +308,7 @@ If $L/K$ is an algebraic extension and $\mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z
 \begin{proof}
 Let $T$ be the absolute inertia group of $K$ and consider the short exact sequence from Theorem \ref{theorem-absoluteinertia}:
 \[ 1\longrightarrow T\longrightarrow G_K\longrightarrow G_k\longrightarrow 1 \]
-
-Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\hat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_{k,\ell}$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
+Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\widehat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_{k,\ell}$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
 \[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_{k,\ell}\longrightarrow 1 \]
 Since $G_{k,\ell}$ is a free pro-$\ell$ group, this sequence splits and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_{k,\ell}$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq \dim(K)= 2$.
 
@@ -317,7 +316,7 @@ Let $G_K(\ell)$ be the maximal pro-$\ell$ quotient of $G_K$. Since $\mu_\ell\sub
 \[ \begin{tikzcd}
 \mathrm{H}^3(G_K(\ell),\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{inf}"] & \mathrm{H}^3(G_K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})
 \end{tikzcd} \]
-Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = (G_K:G_\ell)$. However, $(G_K:G_\ell)$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By \cite{Se64}, Ch. I, §4, Proposition 22 we have:
+Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorname{inf}$ is injective and $\operatorname{res}$ is surjective. We have $\operatorname{cor}\circ\operatorname{res} = (G_K:G_\ell)$. However, $(G_K:G_\ell)$ is coprime to $\ell$, which makes $\operatorname{res}$ injective as well. Therefore, $\operatorname{inf}$ and $\operatorname{res}$ are both isomorphisms and it suffices to calculate $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})$. By \cite{Se64}, Ch. I, §4, Proposition 22 we have
 \[\operatorname{cd}(G_\ell) = \operatorname{cd}(\mathbb{Z}_\ell^r\rtimes G_k(\ell)) = \begin{cases}
 r, & G_k(\ell) = 0 \\
 r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
@@ -326,9 +325,16 @@ since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb
 \[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) = \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
 By [NSW] Theorem 2.4.6, we have $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^1(\mathbb{Z}_\ell, \mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})) = \mathbb{Z}/\ell\mathbb{Z}$, since $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$.
 
-The second assertion follows from the first one, applied to $L$, by using the following equation of supernatural numbers (\cite{En72}, Theorem 20.21):
+The second assertion follows from the first one, applied to $L$, by inspecting the following equation of supernatural numbers (\cite{En72}, Theorem 20.21):
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
-for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. Note that $\operatorname{rrank}(w) = \operatorname{rrank}(v)$ in an algebraic field extension (\cite{ZS60}, Ch. VI, §11, Lemma 1).
+for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. By using this equation, it suffices to show the following equivalences:
+\begin{enumerate}[(i)]
+\item $\ell^\infty \nmid [k':k] \iff \ell^\infty \nmid [k':\mathbb{F}_p]$
+\item $\ell^\infty\nmid (\Gamma':\Gamma) \iff \dim_{\mathbb{F}_\ell}(\Gamma'/\ell\Gamma')=2$
+\end{enumerate}
+(i) is clear. For (ii) let $T'$ be the absolute inertia group of $L$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T'$ is isomorphic to $\mathbb{Z}_\ell^{r'}$, where $r'=\dim_{\mathbb{F}_\ell}(\Gamma'/\ell\Gamma')$. Furthermore, we have $(\Gamma':\Gamma) = (T:T')$ and the following exact sequence of $\ell$-Sylow groups:
+\[ 0 \longrightarrow \mathbb{Z}_\ell^{r'} \longrightarrow \mathbb{Z}_\ell^{r}\longrightarrow (T/T')_\ell\longrightarrow 0 \]
+Now $(T/T')_\ell$ is finite if and only if $r'=r=2$.
 \end{proof}
 
 \begin{proposition}\label{2.6}
