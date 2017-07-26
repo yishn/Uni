@@ -2,7 +2,7 @@
 
 \section{The Valuation Spectra}
 
-In this section we shall recall facts from valuation theory.
+In this section we shall recall some facts from valuation theory.
 
 \begin{definition}
 Let $K$ be a field and $P$ its prime field. $K$ is called \textit{finitely generated} if $K/P$ is finitely generated. The \textit{(Kronecker) dimension}\index{dimension!Kronecker} $\dim(K)$ of $K$ is defined as:
@@ -83,7 +83,7 @@ If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exi
 \end{lemma}
 
 \begin{proof}
-See \cite{EP05} Section 2.3, Corollary 4.1.4, \cite{ZS60} VI, §3 Theorem 3.
+See \cite{EP05} Section 2.3 and Corollary 4.1.4, \cite{ZS60} VI, §3 Theorem 3.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
@@ -97,7 +97,7 @@ Conversely, taking the fixed field of the decomposition group of an extension $\
 \end{theorem}
 
 \begin{proof}
-See \cite{EP05} Lemma 5.2.1, Lemma 5.2.2, Theorem 5.2.5.
+See \cite{EP05} Lemma 5.2.1, Lemma 5.2.2, and Theorem 5.2.5.
 \end{proof}
 
 \begin{theorem}\label{theorem-absoluteinertia}
@@ -180,7 +180,7 @@ Since $\mathrm{H}^1(F, (F^\text{s})^\times)=0$ by Hilbert's Theorem 90, we get i
 \paragraph{} Now let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ of dimension $2$. In this section, we want to give a cohomological characterization of $K$ being henselian.
 
 \begin{lemma}\label{2.2}
-Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(G_K)\leq 2$.
+Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(K)\leq 2$.
 \end{lemma}
 
 \begin{proof}
@@ -213,7 +213,7 @@ In particular we have:
 \end{lemma}
 
 \begin{proof}
-(i) and (ii) follow from \cite{HK94} Lemma 2.4.3, and (iii) is a consequence of (ii) and the fact that henselizations commute with filtrated direct limits, e.g. see \cite{EGA4} Proposition 18.6.14.
+(i) and (ii) follow from \cite{HK94} Lemma 2.4.3 and the fact that singularities of two-dimensional $\mathbb{Z}$-schemes of finite type can be resolved. (iii) is a consequence of (ii) and the fact that henselizations commute with filtrated direct limits, e.g. see \cite{EGA4} Proposition 18.6.14.
 \end{proof}
 
 The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
@@ -682,12 +682,10 @@ Let $\mathcal{P}(F)$ denote the group of principal ideals of $F$, $\mathcal{I}(F
 1 \ar[r]& \mathcal{O}_{F_1}^\times /\mathcal{O}_F^\times\ar[r] & F_1^\times / F^\times\ar[r] & \mathcal{P}(F_1)/\mathcal{P}(F)\ar[r] & 1
 \end{tikzcd} \]
 Again by Lemma \ref{5.2} (ii), it suffices to show that $\mathcal{P}(F_1)/\mathcal{P}(F)$ is free-by-finite. 
-Consider the following diagram with exact rows and columns:
+Consider the following diagram with exact rows:
 \[ \begin{tikzcd}
-& 0 \ar[d] & 0 \ar[d] & \ker(f) \ar[d]& \\
 0\ar[r] & \mathcal{P}(F) \ar[d] \ar[r]& \mathcal{I}(F) \ar[r]\ar[d]& \operatorname{Cl}(F)\ar[r]\ar[d, "f"] & 0\\
-0 \ar[r]& \mathcal{P}(F_1)\ar[d] \ar[r]& \mathcal{I}(F_1) \ar[d]\ar[r]& \operatorname{Cl}(F_1)\ar[d] \ar[r]& 0 \\
-& \mathcal{P}(F_1)/\mathcal{P}(F) & \mathcal{I}(F_1)/\mathcal{I}(F) & \operatorname{coker}(f) &
+0 \ar[r]& \mathcal{P}(F_1) \ar[r]& \mathcal{I}(F_1) \ar[r]& \operatorname{Cl}(F_1) \ar[r]& 0 
 \end{tikzcd} \]
 Using the snake lemma, we get the following exact sequence:
 \[
