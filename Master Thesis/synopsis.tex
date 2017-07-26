@@ -218,6 +218,21 @@ In particular we have:
 
 The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
 
+\begin{lemma}\label{2.4-pre}
+Let $K$ be henselian with respect to a discrete valuation $v$, $k=k(v)$ its residue field with $\operatorname{cd}(k)\leq 2$. Let $\ell\neq p$ be a prime where $p=\operatorname{char}(k)$. Then:
+\[ \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^2(k, \mu_{\ell}) \cong {}_\ell\operatorname{Br}(k) \]
+\end{lemma}
+
+\begin{proof}
+Let $T$ be the absolute inertia group of $K$ and $V\lhd T$ its absolute ramification group. By Theorem \ref{theorem-sylowgroups-inertiagroup}, $V$ is the $p$-Sylow group of $T$ and the $\ell$-Sylow group of $T/V$ is isomorphic to $\mathbb{Z}_\ell$. Therefore, by \cite{Se64} Ch. I, §3 Proposition 15:
+\[ \operatorname{cd}_\ell(T)\leq \operatorname{cd}_\ell(V) + \operatorname{cd}_\ell(\mathbb{Z}_\ell) = 1 \]
+Inspection of the Hochschild-Serre spectral sequence 
+\[E_2^{i,j}=\mathrm{H}^i(G_K/T, \mathrm{H}^j(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\Longrightarrow\mathrm{H}^{i+j}(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))\]
+yields an isomorphism $\mathrm{H}^2(G_K/T, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))$. By Theorem \ref{theorem-absoluteinertia}, we have  $G_K/T\cong G_k$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mu_{\ell}$, hence:
+\[ \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^1(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell}) \]
+By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group, where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore $\operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell})\cong \mu_{\ell}$. The rest follows from Proposition \ref{prop:kummer-theory}.
+\end{proof}
+
 \begin{lemma}\label{2.4-finitelygenerated}
 Let $K$ be finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
 \[ \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z})\longrightarrow\prod_{w\in |\operatorname{Spv}(K)| }\mathrm{H}^3(K_w,\mathbb{Z}/\ell\mathbb{Z}) \]
@@ -232,11 +247,13 @@ We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is co
 
 Let $\mathfrak{X}$ be a model of $K$. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By \cite{Ka86} Theorem 0.8, the map
 \[ \mathrm{H}^3(K)\longrightarrow \prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_{v_x}) \]
-is injective, and, in fact, the proof shows that its image is contained in $\bigoplus \mathrm{H}^3(K_{v_x})$. By \cite{Ka86} Lemma 1.4, for a discrete valuation $v$ of $K$ the map
+is injective, and, in fact, the proof shows that its image is contained in $\bigoplus \mathrm{H}^3(K_{v_x})$. 
+
+Let $v$ be a discrete valuation of $K$ with residue field $k=k(v)$. By Lemma \ref{2.4-pre}, the map
 \[ \mathrm{H}^3(K_v) \longrightarrow \prod_w\mathrm{H}^3(K_w) \]
 where $w$ ranges over all rank-$2$ valuations with $v(w) = v$, can be identified with the following map:
 \[ {}_\ell\operatorname{Br}(k) \longrightarrow \prod_{\widetilde{w}\in\operatorname{Spv}^{(1)}(k)} {}_\ell\operatorname{Br}(k_{\widetilde{w}}) \]
-where $k = k(v)$. This map is injective by the classical Hasse principle and its image is contained in $\bigoplus {}_\ell\operatorname{Br}(k_{\widetilde{w}})$. Combining these maps yields the injection:
+This map is injective by the classical Hasse principle and its image is contained in $\bigoplus {}_\ell\operatorname{Br}(k_{\widetilde{w}})$. Combining these maps yields the injection:
 \[\Phi: \mathrm{H}^3(K)\longrightarrow \bigoplus_{x\in\mathfrak{X}_1}\  \bigoplus_{\substack{w\in\operatorname{Spv}_\text{rd}^{(2)}(K) \\ v(w) = v_x}} \mathrm{H}^3(K_w) \]
 The direct sum ranges over a subset of $|\operatorname{Spv}(K)|$, thus this concludes the proof. 
 \end{proof}
@@ -317,19 +334,19 @@ Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorn
 r, & G_k(\ell) = 0 \\
 r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
 \end{cases} \] 
-since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ iff $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. According to the proof of \cite{Se64} Ch. I, §4 Proposition 22, we have:
-\[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) = \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
-By [NSW] Theorem 2.4.6, we have $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathrm{H}^1(\mathbb{Z}_\ell, \mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})) = \mathbb{Z}/\ell\mathbb{Z}$, since $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$.
+since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ iff $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. Inspecting the Hochschild-Serre spectral sequence yields an isomorphism:
+\[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) \cong \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
+Using $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})\cong\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$ and \cite{NSW} Theorem 2.4.6, we can calculate $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})\cong\mathbb{Z}/\ell\mathbb{Z}$.
 
-The second assertion follows from the first one, applied to $L$, by inspecting the following equation of supernatural numbers (\cite{En72} Theorem 20.21):
+For the second assertion, we assume $\ell^\infty\nmid [k:\mathbb{F}_p]$ and $\dim_{\mathbb{F}_\ell}(\Gamma / \ell\Gamma) = 2$. By \cite{En72} Theorem 20.21, we have the following equation of supernatural numbers:
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
-for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique prolongation of $w$ to $L$. By using this equation, it suffices to show the following equivalences:
+for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique extension of $w$ to $L$. By using this equation and the already proven statement from the first part, it suffices to show the following equivalences:
 \begin{enumerate}[(i)]
 \item $\ell^\infty \nmid [k':k] \iff \ell^\infty \nmid [k':\mathbb{F}_p]$
 \item $\ell^\infty\nmid (\Gamma':\Gamma) \iff \dim_{\mathbb{F}_\ell}(\Gamma'/\ell\Gamma')=2$
 \end{enumerate}
-(i) is clear. For (ii) let $T'$ be the absolute inertia group of $L$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T'$ is isomorphic to $\mathbb{Z}_\ell^{r'}$, where $r'=\dim_{\mathbb{F}_\ell}(\Gamma'/\ell\Gamma')$. Furthermore, we have $(\Gamma':\Gamma) = (T:T')$ and the following exact sequence of $\ell$-Sylow groups:
-\[ 0 \longrightarrow \mathbb{Z}_\ell^{r'} \longrightarrow \mathbb{Z}_\ell^{r}\longrightarrow (T/T')_\ell\longrightarrow 0 \]
+(i) follows from $[k':\mathbb{F}_p]=[k':k][k:\mathbb{F}_p]$. For (ii) let $T'$ be the absolute inertia group of $L$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T'$ is isomorphic to $\mathbb{Z}_\ell^{r'}$, where $r'=\dim_{\mathbb{F}_\ell}(\Gamma'/\ell\Gamma')$. Furthermore, we have $(\Gamma':\Gamma) = (T:T')$ and the following exact sequence of $\ell$-Sylow groups:
+\[ 0 \longrightarrow \mathbb{Z}_\ell^{r'} \longrightarrow \mathbb{Z}_\ell^{r}\longrightarrow (T/T')_\ell\longrightarrow 1 \]
 Now $(T/T')_\ell$ is finite if and only if $r'=r=2$.
 \end{proof}
 
