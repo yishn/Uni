@@ -7,7 +7,7 @@ Finite fields have an abelian absolute Galois group. In fact, they all have the 
 Number fields stand in stark contrast to finite fields. Two number fields $k$, $k'$ with isomorphic Galois groups $G_k$, $G_{k'}$ are isomorphic as fields as well. It was J. Neukirch who investigated this question for the first time in the end of the 1960s (see \cite{Ne69}, \cite{Uc76}, \cite{Ne77}, \cite{Uc77}). Together with K. Uchida, their studies resulted in the following theorem for global fields:
 
 \begin{theorem}[\textit{Neukirch-Uchida}]\label{thm:neukirch-uchida}
-Let $k,k'$ be two global fields. Then any isomorphism $\sigma: G_k\to G_{k'}$ between their absolute Galois groups is induced by a unique field isomorphism $\varphi: k'^{\text{s}}\to k^\text{s}$, i.e: 
+Let $k,k'$ be two global fields. Then any isomorphism $\sigma: G_k\to G_{k'}$ between their absolute Galois groups is induced by a unique field isomorphism $\varphi: k'^{\text{s}}\to k^\text{s}$ between their separable closures, i.e: 
 \[\sigma(g) =\varphi^{-1}g\varphi \quad \text{for all }g\in G_k\] 
 In particular $\varphi$ induces a field isomorphism $k'\to k$.
 \end{theorem}
@@ -21,8 +21,8 @@ This has been proven by F. Pop (see \cite{Po90}, \cite{Po94}, \cite{Po95}) using
 \pagebreak
 
 \begin{theorem}[\textit{Pop}]\label{thm:main-result}
-Let $K,K'$ be two finite field extensions of $\mathbb{Q}(T)$. Then any isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups is induced by a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$, i.e: 
-\[\sigma(g) =\varphi^{-1}g\varphi \quad \text{for all }g\in G_k\]
+Let $K,K'$ be two finite field extensions of $\mathbb{Q}(T)$. Then any isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups is induced by a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ between their algebraic closures, i.e: 
+\[\sigma(g) =\varphi^{-1}g\varphi \quad \text{for all }g\in G_K\]
 In particular $\varphi$ induces a field isomorphism $K'\to K$.
 \end{theorem}
 
@@ -52,11 +52,12 @@ $\begin{array}{ll}
 \\
 \overline{K} & \text{algebraic closure of $K$}\\
 K^\text{s} & \text{separable closure of $K$}\\
-K^\text{t} & \text{absolute inertia field of $K$}\\
+K^\text{t} & \text{absolute inertia field of a henselian $K$}\\
 K_v & \text{henselization of $K$ with respect to $v$}\\
+\mu_n & \text{$n$-th roots of unity in a separable closure}\\
+\\
 G_K & \text{absolute Galois group of $K$}\\
 \operatorname{Gal}(L/K) & \text{Galois group of $L/K$}\\
 \operatorname{char}(K) & \text{characteristic of $K$}\\
 \operatorname{trdeg}(L/K) & \text{transcendence degree of $L/K$}\\
-\mu_n & \text{$n$-th roots of unity in a separable closure}
 \end{array}$

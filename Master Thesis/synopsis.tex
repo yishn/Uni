@@ -216,8 +216,6 @@ In particular we have:
 (i) and (ii) follow from \cite{HK94} Lemma 2.4.3 and the fact that singularities of two-dimensional $\mathbb{Z}$-schemes of finite type can be resolved. (iii) is a consequence of (ii) and the fact that henselizations commute with filtrated direct limits, e.g. see \cite{EGA4} Proposition 18.6.14.
 \end{proof}
 
-The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
-
 \begin{lemma}\label{2.4-pre}
 Let $K$ be henselian with respect to a discrete valuation $v$, $k=k(v)$ its residue field with $\operatorname{cd}(k)\leq 2$. Let $\ell\neq p$ be a prime where $p=\operatorname{char}(k)$. Then:
 \[ \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^2(k, \mu_{\ell}) \cong {}_\ell\operatorname{Br}(k) \]
@@ -226,12 +224,14 @@ Let $K$ be henselian with respect to a discrete valuation $v$, $k=k(v)$ its resi
 \begin{proof}
 Let $T$ be the absolute inertia group of $K$ and $V\lhd T$ its absolute ramification group. By Theorem \ref{theorem-sylowgroups-inertiagroup}, $V$ is the $p$-Sylow group of $T$ and the $\ell$-Sylow group of $T/V$ is isomorphic to $\mathbb{Z}_\ell$. Therefore, by \cite{Se64} Ch. I, §3 Proposition 15:
 \[ \operatorname{cd}_\ell(T)\leq \operatorname{cd}_\ell(V) + \operatorname{cd}_\ell(\mathbb{Z}_\ell) = 1 \]
-Inspection of the Hochschild-Serre spectral sequence 
+Thus, the Hochschild-Serre spectral sequence degenerates on $E_2$:
 \[E_2^{i,j}=\mathrm{H}^i(G_K/T, \mathrm{H}^j(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\Longrightarrow\mathrm{H}^{i+j}(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))\]
-yields an isomorphism $\mathrm{H}^2(G_K/T, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))$. By Theorem \ref{theorem-absoluteinertia}, we have  $G_K/T\cong G_k$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mu_{\ell}$, hence:
+It yields an isomorphism $\mathrm{H}^2(G_K/T, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))$. By Theorem \ref{theorem-absoluteinertia}, we have  $G_K/T\cong G_k$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mu_{\ell}$, hence:
 \[ \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^1(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell}) \]
-By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group, where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore $\operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell})\cong \mu_{\ell}$. The rest follows from Proposition \ref{prop:kummer-theory}.
+By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group of rank $1$, where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore, $\operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell})\cong \mu_{\ell}$. The rest follows from Proposition \ref{prop:kummer-theory}.
 \end{proof}
+
+The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
 
 \begin{lemma}\label{2.4-finitelygenerated}
 Let $K$ be finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restrictions, is injective:
@@ -322,7 +322,7 @@ If $L/K$ is an algebraic extension and $\mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z
 Let $T$ be the absolute inertia group of $K$ and consider the short exact sequence from Theorem \ref{theorem-absoluteinertia}:
 \[ 1\longrightarrow T\longrightarrow G_K\longrightarrow G_k\longrightarrow 1 \]
 Let $G_\ell$ be an $\ell$-Sylow group of $G_K$. By Theorem \ref{theorem-sylowgroups-inertiagroup}, the $\ell$-Sylow group of $T$ isomorphic to $\mathbb{Z}_\ell^r$, where $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)$. Furthermore, $G_k\subset G_{\mathbb{F}_p}\cong\widehat{\mathbb{Z}}$, thus the $\ell$-Sylow group $G_{k,\ell}$ of $G_k$ is either isomorphic to $\mathbb{Z}_\ell$ or trivial. The exact sequence above gives rise to the short exact sequence of their $\ell$-Sylow subgroups:
-\[ 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_{k,\ell}\longrightarrow 1 \]
+\[ (\star)\qquad 0\longrightarrow\mathbb{Z}_\ell^r \longrightarrow G_\ell \longrightarrow G_{k,\ell}\longrightarrow 1 \phantom{\qquad (\star)} \]
 Since $G_{k,\ell}$ is a free pro-$\ell$ group, this sequence splits and we have an isomorphism $G_\ell \cong \mathbb{Z}_\ell^r\rtimes G_{k,\ell}$ with $r =\dim_{\mathbb{F}_\ell}(\Gamma/\ell\Gamma)\leq \operatorname{rrank}(\Gamma)\leq \dim(K)= 2$.
 
 Let $G_K(\ell)$ be the maximal pro-$\ell$ quotient of $G_K$. Since $\mu_\ell\subset K$, the action of $G_k$ on the $\ell$-Sylow group of the inertia group of $w$ factors through the maximal pro-$\ell$ quotient $G_k(\ell)$ of $G_k$. Since $G_{k,\ell}\cong G_k(\ell)$, we also see that the canonical projection $G_K\to G_K(\ell)$ restricts to an isomorphism $G_\ell\to G_K(\ell)$. Now consider the following composition:
@@ -334,7 +334,7 @@ Since $\operatorname{res}\circ\operatorname{inf}$ is an isomorphism, $\operatorn
 r, & G_k(\ell) = 0 \\
 r + 1, & G_k(\ell)\cong\mathbb{Z}_\ell
 \end{cases} \] 
-since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ iff $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. Inspecting the Hochschild-Serre spectral sequence yields an isomorphism:
+since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb{Z}/\ell\mathbb{Z}) =0$ iff $G_k(\ell) = 0$ or $r < 2$. Now let $G_k(\ell) \cong\mathbb{Z}_\ell$ and $r = 2$. The Hochschild-Serre spectral sequence to $(\star)$ degenerates on $E_2$ and yields an isomorphism:
 \[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) \cong \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
 Using $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})\cong\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$ and \cite{NSW} Theorem 2.4.6, we can calculate $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})\cong\mathbb{Z}/\ell\mathbb{Z}$.
 
