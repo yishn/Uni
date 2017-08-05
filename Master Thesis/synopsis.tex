@@ -339,9 +339,9 @@ since $\operatorname{cd}(\mathbb{Z}_\ell)=1$. Thus $\mathrm{H}^3(G_\ell, \mathbb
 \[ \mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z}) \cong \mathrm{H}^1(G_k(\ell), \mathrm{H}^2 (\mathbb{Z}_\ell^r, \mathbb{Z}/\ell\mathbb{Z})) \]
 Using $\mathrm{H}^1(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})\cong\operatorname{Hom}_\text{cont.}(\mathbb{Z}_\ell, \mathbb{Z}/\ell\mathbb{Z})=\mathbb{Z}/\ell\mathbb{Z}$ and \cite{NSW} Theorem 2.4.6, we can calculate $\mathrm{H}^2(\mathbb{Z}_\ell^r,\mathbb{Z}/\ell\mathbb{Z}) \cong\mathbb{Z}/\ell\mathbb{Z}$. Therefore, $\mathrm{H}^3(G_\ell,\mathbb{Z}/\ell\mathbb{Z})\cong\mathbb{Z}/\ell\mathbb{Z}$.
 
-For the second assertion, we assume $\ell^\infty\nmid [k:\mathbb{F}_p]$ and $\dim_{\mathbb{F}_\ell}(\Gamma / \ell\Gamma) = 2$. By \cite{En72} Theorem 20.21, we have the following equation of supernatural numbers:
+For the second assertion, we assume $\ell^\infty\nmid [k:\mathbb{F}_p]$ and $r=\dim_{\mathbb{F}_\ell}(\Gamma / \ell\Gamma) = 2$. By \cite{En72} Theorem 20.21, we have the following equation of supernatural numbers:
 \[ [L:K] = (\Gamma':\Gamma) \cdot [k':k]\cdot p^d \]
-for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ the residue field of the unique extension of $w$ to $L$. By using this equation and the already proven statement from the first part, it suffices to show the following equivalences:
+for some $d \leq \infty$, where $\Gamma'$ denotes the value group and $k'$ is the residue field of the unique extension of $w$ to $L$. By using this equation and the already proven assertion from the first part, it suffices to show the following equivalences:
 \begin{enumerate}[(i)]
 \item $\ell^\infty \nmid [k':k] \iff \ell^\infty \nmid [k':\mathbb{F}_p]$
 \item $\ell^\infty\nmid (\Gamma':\Gamma) \iff \dim_{\mathbb{F}_\ell}(\Gamma'/\ell\Gamma')=2$
@@ -504,7 +504,7 @@ For all $P\in X_0$ and $P'=\sigma(P)\in X'_0$ we also get an embedding:
 \[ \begin{tikzcd}
 k \ar[r] & k(P) \ar[r, "\varphi_P^{-1}"', "\cong"] & k(P')
 \end{tikzcd} \]
-Let us consider the morphism $f:X'\times_{k'} k\to X'$. For $P'\in X'_0$ we have as topological spaces:
+Let us consider the morphism $f:X'\times_{k'} k\to X'$. For $P'\in X'_0$ we have:
 \[ f^{-1}(P') = \operatorname{Spec} k(P')\times_{k'} k \]
 Any embedding $k\to \overline{k(P')}$ maps $k$ into $k(P')$ because $k/\mathbb{Q}$ is Galois. Thus we have:
 \[ k(P')\otimes_{k'} k\cong \prod_{\operatorname{Hom}_{k'}(k, k(P'))} k(P') \]
