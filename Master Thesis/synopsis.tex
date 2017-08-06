@@ -81,9 +81,11 @@ $\operatorname{Spv}(K)$ is a quasi-compact Jacobson space, i.e. every closed sub
 \begin{proof}
 The quasi-compactness of $\operatorname{Spv}(K)$ follows from \cite{ZS60} VI, §17 Theorem 40. 
 
-Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and assume $U_S\cap A\neq\varnothing$. Let us assume there exist a point $v\in U_S\cap A$ which is not closed. Let $\overline{S}$ be the image of $S\subset \mathcal{O}_v$ in $k(v)$. If $\operatorname{char}k(v)=0$, then $R=\mathbb{Z}[\overline{S}]\subset k(v)$ is a subring that is not a field, since $\overline{S}$ is finite. If $\operatorname{char} k(v)=p>0$, $k(v)/\mathbb{F}_p$ is an algebraic extension, thus we can find an element $T\in k(v)$ which is transcendental over $\mathbb{F}_p$. In this case, $R=\mathbb{F}_p[T, \overline{S}]\subset k(v)$ is a subring that is not a field. In both cases, by \cite{ZS60} VI, §4 Corollary 1 to Lemma, there exist a non-trivial valuation $\widetilde{v_1}\in\operatorname{Spv}k(v)$ with $\overline{S}\subset R\subset \mathcal{O}_{\widetilde{v_1}}$. By Lemma \ref{2.2-pre}, $\widetilde{v_1}$ corresponds to a valuation $v_1\in\operatorname{Spv}(K)$ with $S\subset \mathcal{O}_{v_1}\subsetneq \mathcal{O}_v$, i.e. $v_1\in \overline{\{v\}}\cap U_S$ and $\operatorname{rank}(v_1)>\operatorname{rank}(v)$. Repeating this process for $v_1$ and so on, we get a specialization chain in $U_S$:
-\[ \mathcal{O}_{v_n}\subset \cdots \subset\mathcal{O}_{v_1}\subset\mathcal{O}_v \]
-Since $K$ is assumed to be finite dimensional, Lemma \ref{rank-dimension-inequality} assures that this sequence ends with a closed point $v_n\in \overline{\{v\}}\cap U_S$.
+Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and assume $U_S\cap A\neq\varnothing$. Let us assume there exist a point $v\in U_S\cap A$ which is not closed. Let $\overline{S}$ be the image of $S\subset \mathcal{O}_v$ in $k(v)$. If $\operatorname{char}k(v)=0$, then $R=\mathbb{Z}[\overline{S}]\subset k(v)$ is a subring that is not a field, since $\overline{S}$ is finite. If $\operatorname{char} k(v)=p>0$, $k(v)/\mathbb{F}_p$ is not an algebraic extension, thus we can find an element $T\in k(v)$ which is transcendental over $\mathbb{F}_p$. In this case, $R=\mathbb{F}_p[T, \overline{S}]\subset k(v)$ is a subring that is not a field. In both cases, \cite{ZS60} VI, §4 Corollary 1 to Lemma guarantees the existence of a non-trivial valuation $\widetilde{v_1}\in\operatorname{Spv}k(v)$ with $\overline{S}\subset R\subset \mathcal{O}_{\widetilde{v_1}}$. By Lemma \ref{2.2-pre}, $\widetilde{v_1}$ corresponds to a valuation $v_1\in\operatorname{Spv}(K)$ with $S\subset \mathcal{O}_{v_1}\subsetneq \mathcal{O}_v$, i.e. $v_1\in \overline{\{v\}}\cap U_S$ and $\operatorname{rank}(v_1)>\operatorname{rank}(v)$. Repeating this process for $v_1$ and so on, we get a specialization chain of valuations in $U_S$:
+\[\mathcal{O}_v\supset \mathcal{O}_{v_1}\supset\cdots \supset\mathcal{O}_{v_n} \]
+Since $K$ is assumed to be finite dimensional, Lemma \ref{rank-dimension-inequality} assures that this sequence ends with a closed point $v_n\in \overline{\{v\}}\cap U_S\subset A\cap U_S$.
+
+Let $(U_i)_i$ be an open cover of $|\operatorname{Spv}(K)|$ and $U=\bigcup_i U_i$. Consider the closed set $A=\operatorname{Spv}(K)-U$. Since $\operatorname{Spv}(K)$ is a Jacobian space, $A$ is the closure of its closed points. However, $A$ doesn't contain any closed points, hence $A$ is empty. Therefore, $(U_i)_i$ already covers $\operatorname{Spv}(K)$ entirely and $|\operatorname{Spv}(K)|$ inherits the quasi-compactness from $\operatorname{Spv}(K)$.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
@@ -604,7 +606,7 @@ k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"
 
 \chapter{Theorem}
 
-Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us to construct a group isomorphism $K'^\times\to K^\times$ from the modulo $n$ isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$.
+Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us construct a group isomorphism $\varphi: K'^\times\to K^\times$ from the modulo $n$ isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$ we constructed in the last chapter.
 
 \section{Free-By-Finite Groups}
 
@@ -617,7 +619,7 @@ $A$ is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is 
 \begin{example}
 \begin{itemize}
 \item Free or finite abelian groups are free-by-finite.
-\item Finitely generated abelian groups are free-by-finite by the structure theorem for finitely generated $\mathbb{Z}$-modules.
+\item Finitely generated abelian groups are free-by-finite by the structure theorem.
 \item Any subgroup of a free-by-finite group is free-by-finite as well.
 \end{itemize}
 \end{example}
@@ -651,7 +653,7 @@ Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is fini
 \item We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B -  C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
-\item It suffices to prove this assertion for finite groups and for $A=\mathbb{Z}$. For finite $A$ we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nontrivial nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
+\item It suffices to show this assertion for finite groups and for $A=\mathbb{Z}$. For finite $A$ we have $nA = 0$ for $n = \#A$. Since $\mathbb{Z}$ has no nontrivial nilpotent elements, the intersection of all prime ideals of $\mathbb{Z}$ is already trivial. \qedhere
 \end{enumerate}
 \end{proof}
 
@@ -676,7 +678,7 @@ By Dirichlet's Unit Theorem, $\mathcal{O}_F^\times$ is finitely generated and th
 \[ \begin{tikzcd}
 1 \ar[r] & \displaystyle \prod_{i=2}^{n} F_i^\times \ar[r]& \displaystyle \Big(\prod_{i=1}^{n}F_i^\times\Big)\Big/F^\times \ar[r]& F_1^\times/F^\times \ar[r]& 1
 \end{tikzcd} \]
-The left group is free-by-finite by (i), and by Lemma \ref{5.2} (ii), we only need to prove that the right group is free-by-finite.
+The left group is free-by-finite by (i), and by Lemma \ref{5.2} (ii), we only need to show that $F_1^\times/F^\times$ is free-by-finite.
 
 Let $\mathcal{P}(F)$ denote the group of principal ideals of $F$, $\mathcal{I}(F)$ the ideal group of $F$, and $\operatorname{Cl}(F) = \mathcal{I}(F)/\mathcal{P}(F)$ the ideal class group of $F$. We have the following exact sequence:
 \[ \begin{tikzcd}
