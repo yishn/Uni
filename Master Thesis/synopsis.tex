@@ -57,33 +57,33 @@ We can endow $\operatorname{Spv}(K)$ with a natural topology by declaring the fo
 where $S$ ranges over all finite subsets of $K$. 
 \end{definition}
 
-\begin{lemma}\label{spv-topology}
+\begin{lemma}\label{2.2-pre}
 Let $v,w\in\operatorname{Spv}(K)$. We have:
 \[\mathcal{O}_w\subset\mathcal{O}_v \iff w\in\overline{\{v\}} \]
-Thus $v$ is a closed point if and only if it has no non-trivial specializations.
-
-$\operatorname{Spv}(K)$ is a quasi-compact Jacobson space, i.e. every closed subset $A\subset\operatorname{Spv}(K)$ is the closure of its closed points. In particular, the set of closed points $|\operatorname{Spv}(K)|$ of $\operatorname{Spv}(K)$ is a quasi-compact $T_1$-space, endowed with the induced topology. 
-\end{lemma}
-
-\begin{proof}
-The first assertion follows from \cite{ZS60} VI, §17 Theorem 38. The quasi-compactness of $\operatorname{Spv}(K)$ follows from \cite{ZS60} VI, §17 Theorem 40. 
-
-Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and assume $U_S\cap A\neq\varnothing$. Let $v\in U_S\cap A$ be a point which is not closed.
-\end{proof}
-
-\begin{lemma}\label{2.2-pre}
-For a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection: 
+Thus $v$ is a closed point if and only if it has no non-trivial specializations. For a fixed $v\in \operatorname{Spv}(K)$ there is a canonical bijection: 
 \begin{align*}
 \{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} &\longrightarrow \operatorname{Spv}k(v)\\ 
 w&\longmapsto w\mod v
 \end{align*}
-Therefore $v$ is a closed point iff $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, $v$ is a closed point iff $\dim k(v)=0$.
-
+Therefore $v$ is a closed point if and only if $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, if $|\operatorname{Spv}(K)|$ denotes the set of all closed points in $\operatorname{Spv}(K)$, we have:
+\[ |\operatorname{Spv}(K)|=\{v\in\operatorname{Spv}(K)\mid \dim k(v)=0\} \]
 If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
 \begin{proof}
-See \cite{EP05} Section 2.3 and Corollary 4.1.4, \cite{ZS60} VI, §3 Theorem 3 and VI, §4 Corollary 2 to Theorem 4.
+The first equivalence follows from \cite{ZS60} VI, §17 Theorem 38. For the other statements, see \cite{EP05} Section 2.3 and Corollary 4.1.4, \cite{ZS60} VI, §3 Theorem 3 and VI, §4 Corollary 2 to Lemma.
+\end{proof}
+
+\begin{lemma}\label{spv-topology}
+$\operatorname{Spv}(K)$ is a quasi-compact Jacobson space, i.e. every closed subset $A\subset\operatorname{Spv}(K)$ is the closure of its closed points. In particular, $|\operatorname{Spv}(K)|$ is a quasi-compact $T_1$-space, endowed with the induced topology. 
+\end{lemma}
+
+\begin{proof}
+The quasi-compactness of $\operatorname{Spv}(K)$ follows from \cite{ZS60} VI, §17 Theorem 40. 
+
+Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and assume $U_S\cap A\neq\varnothing$. Let us assume there exist a point $v\in U_S\cap A$ which is not closed. Let $\overline{S}$ be the image of $S\subset \mathcal{O}_v$ in $k(v)$. If $\operatorname{char}k(v)=0$, then $R=\mathbb{Z}[\overline{S}]\subset k(v)$ is a subring that is not a field, since $\overline{S}$ is finite. If $\operatorname{char} k(v)=p>0$, $k(v)/\mathbb{F}_p$ is an algebraic extension, thus we can find an element $T\in k(v)$ which is transcendental over $\mathbb{F}_p$. In this case, $R=\mathbb{F}_p[T, \overline{S}]\subset k(v)$ is a subring that is not a field. In both cases, by \cite{ZS60} VI, §4 Corollary 1 to Lemma, there exist a non-trivial valuation $\widetilde{v_1}\in\operatorname{Spv}k(v)$ with $\overline{S}\subset R\subset \mathcal{O}_{\widetilde{v_1}}$. By Lemma \ref{2.2-pre}, $\widetilde{v_1}$ corresponds to a valuation $v_1\in\operatorname{Spv}(K)$ with $S\subset \mathcal{O}_{v_1}\subsetneq \mathcal{O}_v$, i.e. $v_1\in \overline{\{v\}}\cap U_S$ and $\operatorname{rank}(v_1)>\operatorname{rank}(v)$. Repeating this process for $v_1$ and so on, we get a specialization chain in $U_S$:
+\[ \mathcal{O}_{v_n}\subset \cdots \subset\mathcal{O}_{v_1}\subset\mathcal{O}_v \]
+Since $K$ is assumed to be finite dimensional, Lemma \ref{rank-dimension-inequality} assures that this sequence ends with a closed point $v_n\in \overline{\{v\}}\cap U_S$.
 \end{proof}
 
 \begin{theorem}\label{theorem-henselization}
