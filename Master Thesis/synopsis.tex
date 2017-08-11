@@ -65,9 +65,9 @@ Thus $v$ is a closed point if and only if it has no non-trivial specializations.
 \{ w\in\operatorname{Spv}(K)\mid \mathcal{O}_w\subset\mathcal{O}_v \} &\longrightarrow \operatorname{Spv}k(v)\\ 
 w&\longmapsto w\mod v
 \end{align*}
-Therefore $v$ is a closed point if and only if $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, if $|\operatorname{Spv}(K)|$ denotes the set of all closed points in $\operatorname{Spv}(K)$, we have:
+Therefore, $v$ is a closed point if and only if $k(v)$ only admits the trivial valuation, i.e. $k(v)$ has characteristic $p>0$ and is algebraic over $\mathbb{F}_p$. In other words, if $|\operatorname{Spv}(K)|$ denotes the set of all closed points in $\operatorname{Spv}(K)$, we have:
 \[ |\operatorname{Spv}(K)|=\{v\in\operatorname{Spv}(K)\mid \dim k(v)=0\} \]
-If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$ then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
+If $w\in\operatorname{Spv}_\text{rd}^{(i)}(K)$ for some $i\geq 1$, then there exists a unique $v(w)\in\operatorname{Spv}_\text{rd}^{(i-1)}(K)$ such that $\mathcal{O}_w\subset\mathcal{O}_{v(w)}$. $w$ is henselian if and only if $v(w)$ and $w\mod v(w)$ are henselian.
 \end{lemma}
 
 \begin{proof}
@@ -81,7 +81,7 @@ $\operatorname{Spv}(K)$ is a quasi-compact Jacobson space, i.e. every closed sub
 \begin{proof}
 The quasi-compactness of $\operatorname{Spv}(K)$ follows from \cite{ZS60} VI, §17 Theorem 40. 
 
-Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and let $U_S\cap A\neq\varnothing$. Assume there exist a point $v\in U_S\cap A$ which is not closed. Let $\overline{S}$ be the image of $S\subset \mathcal{O}_v$ in $k(v)$. If $\operatorname{char}k(v)=0$, then $R=\mathbb{Z}[\overline{S}]\subset k(v)$ is a subring that is not a field, since $\overline{S}$ is finite. If $\operatorname{char} k(v)=p>0$, $k(v)/\mathbb{F}_p$ is not an algebraic extension, thus we can find an element $T\in k(v)$ which is transcendental over $\mathbb{F}_p$. In this case, $R=\mathbb{F}_p[T, \overline{S}]\subset k(v)$ is a subring that is not a field. In both cases, \cite{ZS60} VI, §4 Corollary 1 to Lemma guarantees the existence of a non-trivial valuation $\widetilde{v_1}\in\operatorname{Spv}k(v)$ with $\overline{S}\subset R\subset \mathcal{O}_{\widetilde{v_1}}$. By Lemma \ref{2.2-pre}, $\widetilde{v_1}$ corresponds to a valuation $v_1\in\operatorname{Spv}(K)$ with $S\subset \mathcal{O}_{v_1}\subsetneq \mathcal{O}_v$, i.e. $v_1\in \overline{\{v\}}\cap U_S$ and $\operatorname{rank}(v_1)>\operatorname{rank}(v)$. Repeating this process for $v_1$ and so on, we get a specialization chain of valuations in $U_S$:
+Let $A\subset \operatorname{Spv}(K)$ be a closed set, $S\subset K$ finite, and let $U_S\cap A\neq\varnothing$. Assume there exists a point $v\in U_S\cap A$ which is not closed. Let $\overline{S}$ be the image of $S\subset \mathcal{O}_v$ in $k(v)$. If $\operatorname{char}k(v)=0$, then $R=\mathbb{Z}[\overline{S}]\subset k(v)$ is a subring that is not a field since $\overline{S}$ is finite. If $\operatorname{char} k(v)=p>0$, $k(v)/\mathbb{F}_p$ is not an algebraic extension, thus we can find an element $T\in k(v)$ which is transcendental over $\mathbb{F}_p$. In this case, $R=\mathbb{F}_p[T, \overline{S}]\subset k(v)$ is a subring that is not a field. In both cases, \cite{ZS60} VI, §4 Corollary 1 to Lemma guarantees the existence of a non-trivial valuation $\widetilde{v_1}\in\operatorname{Spv}k(v)$ with $\overline{S}\subset R\subset \mathcal{O}_{\widetilde{v_1}}$. By Lemma \ref{2.2-pre}, $\widetilde{v_1}$ corresponds to a valuation $v_1\in\operatorname{Spv}(K)$ with $S\subset \mathcal{O}_{v_1}\subsetneq \mathcal{O}_v$, i.e. $v_1\in \overline{\{v\}}\cap U_S$ and $\operatorname{rank}(v_1)>\operatorname{rank}(v)$. Repeating this process for $v_1$ and so on, we get a specialization chain of valuations in $U_S$:
 \[\mathcal{O}_v\supsetneq \mathcal{O}_{v_1}\supsetneq\cdots \supsetneq\mathcal{O}_{v_n} \]
 Since $K$ is assumed to be finite dimensional, Lemma \ref{rank-dimension-inequality} assures that this sequence ends with a closed point $v_n\in \overline{\{v\}}\cap U_S\subset A\cap U_S$.
 
@@ -186,11 +186,11 @@ Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\oper
 \end{lemma}
 
 \begin{proof}
-Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, for otherwise $\dim k(w_i)=\dim (K)\neq 0$. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are dependent. Since two different valuations of rank $1$ are independent, at least one of $w_1$ and $w_2$ is of rank $2$. Now, assume that $w_1$ is, say, of rank $1$ and $w_2$ is of rank $2$. Since they are dependent, it follows $v(w_2) = w_1$ and $w_1$ has a non-trivial specialization, a contradiction to $w_1\in |\operatorname{Spv}(K)|$.
+Assume that $K$ is not algebraically closed. $w_1$ and $w_2$ can't be trivial, for otherwise $\dim k(w_i)=\dim (K)\neq 0$. By the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we can see that $w_1,w_2$ are dependent. Since two different valuations of rank $1$ are independent, at least one of $w_1$ and $w_2$ is of rank $2$. Now assume that $w_1$ is, say, of rank $1$ and $w_2$ is of rank $2$. Since they are dependent, it follows $v(w_2) = w_1$ and $w_1$ has a non-trivial specialization, a contradiction to $w_1\in |\operatorname{Spv}(K)|$.
 
-Thus $w_1,w_2$ are both of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see that $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{d}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
+Thus $w_1,w_2$ are both of rank $2$ and by Lemma \ref{rank-dimension-inequality} we can see that $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$. Set $v_i=v(w_i)\in\operatorname{Spv}^{(1)}_\text{d}(K)$. By Lemma \ref{2.2-pre} $K$ is henselian with respect to both $v_1$ and $v_2$. Again, by the Theorem of F.K. Schmidt \ref{theorem-fkschmidt}, we get $v_1 = v_2$. Furthermore, $k(v_1) = k(v_2)$ is henselian with respect to two different valuations of rank $1$, namely $w_1\mod v_1$ and $w_2\mod v_1$, making $k(v_1)$ separably closed.
 
-For the second assertion, let $K$ be not algebraically closed and $v=v(w_1)=v(w_2)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. The restriction $v|$ of $v$ on $k=\mathbb{Q}(T)\subset K$ is a discrete valuation. Choose a henselization $k_{v|}$ of $k$ such that $k_{v|}\subset K$ and consider the absolute inertia field $k_{v|}^\text{t}$ of $k_{v|}$. Since $k(v)$ is separably closed, we have $k_{v|}^\text{t}\subset K$, i.e. $G_K\subset G_{k_{v|}^\text{t}}$. Since $v|\in \operatorname{Spv} ({k_{v|}^\text{t}})$ is discrete and henselian, \cite{Ka79} §5, Theorem 1 shows $\operatorname{cd}\big(G_{k_{v|}^\text{t}}\big)\leq 2$. In particular, $\operatorname{cd}(G_K)\leq 2$.
+For the second assertion, let $K$ be not algebraically closed and $v=v(w_1)=v(w_2)\in\operatorname{Spv}_\text{d}^{(1)}(K)$. The restriction $v|$ of $v$ on $k=\mathbb{Q}(T)\subset K$ is a discrete valuation. Choose a henselization $k_{v|}$ of $k$ such that $k_{v|}\subset K$ and consider the absolute inertia field $k_{v|}^\text{t}$ of $k_{v|}$. Since $k(v)$ is separably closed, we have $k_{v|}^\text{t}\subset K$, i.e. $G_K\subset G_{k_{v|}^\text{t}}$. Since $v|\in \operatorname{Spv}_\text{d}^{(1)} ({k_{v|}^\text{t}})$ is discrete and henselian, \cite{Ka79} §5, Theorem 1 shows $\operatorname{cd}\big(G_{k_{v|}^\text{t}}\big)\leq 2$. In particular, $\operatorname{cd}(G_K)\leq 2$.
 \end{proof}
 
 \begin{definition}
@@ -231,10 +231,10 @@ thus the following Hochschild-Serre spectral sequence degenerates on $E_2$:
 \[E_2^{i,j}=\mathrm{H}^i(G_K/T, \mathrm{H}^j(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\Longrightarrow\mathrm{H}^{i+j}(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))\]
 It yields an isomorphism $\mathrm{H}^2(k, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2))$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mu_{\ell}$, hence:
 \[ \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^1(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell}) \]
-By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group of rank $1$, where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore, $\operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell})\cong \mu_{\ell}$. The rest follows from Proposition \ref{prop:kummer-theory}.
+By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group of rank $1$ where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore, $\operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell})\cong \mu_{\ell}$. The rest follows from Proposition \ref{prop:kummer-theory}.
 \end{proof}
 
-The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then, we'll use a quasi-compactness argument to see that we can drop the assumption that $K$ is finitely generated.
+The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then we'll use a quasi-compactness argument to drop the assumption that $K$ is finitely generated.
 
 \begin{lemma}\label{2.4-finitelygenerated}
 Let $K$ be finitely generated and $\ell\neq 2$ be a prime. The following map, induced by the restriction maps, is injective:
@@ -246,7 +246,7 @@ Let $L=K(\mu_{\ell},\sqrt{-1})/K$. Consider the restriction and corestriction ma
 \[ \begin{tikzcd}
 \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z})\ar[r, "\operatorname{cor}"]& \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) 
 \end{tikzcd} \]
-We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is coprime to $\ell$, we see that $\operatorname{res}$ is injective. Thus we can assume that $K=L$, i.e. $\mu_{\ell}\subset K$ and $K$ is not formally real. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2) = \mu_\ell^{\otimes 2}$ and let us write $\mathrm{H}^3(L) = \mathrm{H}^3(L, \mathbb{Z}/\ell\mathbb{Z}(2))$. 
+We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is coprime to $\ell$, we see that $\operatorname{res}$ is injective. Thus we can assume that $K=L$, i.e. $\mu_{\ell}\subset K$ and $K$ is not formally real. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2)$ and let us write $\mathrm{H}^3(L) = \mathrm{H}^3(L, \mathbb{Z}/\ell\mathbb{Z}(2))$. 
 
 Let $\mathfrak{X}$ be a model of $K$. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By \cite{Ka86} Theorem 0.8, the map
 \[ \mathrm{H}^3(K)\longrightarrow \prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_{v_x}) \]
@@ -256,7 +256,7 @@ Let $v$ be a discrete valuation of $K$ with residue field $k=k(v)$. Consider the
 \[ \phi: \mathrm{H}^3(K_v) \longrightarrow \prod_w\mathrm{H}^3(K_w) \]
 where $w$ ranges over all rank-$2$ valuations with $v(w) = v$. By Lemma \ref{rank-dimension-inequality}, we have $\dim(k) = 1$, thus $k$ is a global field of characteristic $0$, hence a number field. \cite{Se64} Ch. II, §4 Prop. 13 shows $\operatorname{cd}_\ell(k)\leq 2$. With Lemma \ref{2.4-pre}, $\phi$ can be identified with
 \[ {}_\ell\operatorname{Br}(k) \longrightarrow \prod_{\widetilde{w}\in\operatorname{Spv}^{(1)}(k)} {}_\ell\operatorname{Br}(k_{\widetilde{w}}) \]
-which is injective by the classical Hasse principle. Furthermore, its image is contained in $\bigoplus {}_\ell\operatorname{Br}(k_{\widetilde{w}})$. Combining these maps yields the following injection:
+which is injective by the classical Hasse principle. Moreover, its image is contained in $\bigoplus {}_\ell\operatorname{Br}(k_{\widetilde{w}})$. Combining these maps yields the following injection:
 \[\Phi: \mathrm{H}^3(K)\longrightarrow \bigoplus_{x\in\mathfrak{X}_1}\  \bigoplus_{\substack{w\in\operatorname{Spv}_\text{rd}^{(2)}(K) \\ v(w) = v_x}} \mathrm{H}^3(K_w) \]
 The direct sum ranges over a subset of $|\operatorname{Spv}(K)|$, thus this concludes the proof. 
 \end{proof}
@@ -277,7 +277,7 @@ For $x\in\mathfrak{X}$ let $\mathcal{O}_x$ be a henselization of $\mathcal{O}_{\
 \mathrm{H}^3(K)\ar[r, "\varphi"]\ar[d, "f"'] & \displaystyle\prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_x)\ar[d, "\psi"]\\
 \displaystyle\prod_{y\in\mathfrak{X}_0}\mathrm{H}^3(K_y) \ar[r, "g"']& \displaystyle\prod_{\substack{x\in\mathfrak{X}_1 \\ y\in\mathfrak{X}_0}}\prod_{z\in P_{x,y}}\mathrm{H}^3(K_z)
 \end{tikzcd} \]
-According to \cite{Sa87} Theorem 5.3, $g$ is injective. Now, $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. Therefore, the set
+According to \cite{Sa87} Theorem 5.3, $g$ is injective. Now $\psi\circ\varphi$ can be identified with the injective map $\Phi$ from the proof of the previous Lemma. Thus its image is contained in $\bigoplus\mathrm{H}^3(K_w)$. Therefore, $f$ is injective as well and its image is contained in $\bigoplus\mathrm{H}^3(K_y)$. This shows that the set
 \[ A_\mathfrak{X} = \{ y\in\mathfrak{X}_0\mid \operatorname{res}_{K_y/K}(\alpha)\neq 0 \} \]
 is finite, thus closed in $\mathfrak{X}$. Now Lemma \ref{2.3} (i) yields
 \[ \operatorname{supp}(\alpha) = \bigcap_{\mathfrak{X}\in \mathfrak{M}(K)} \pi_\mathfrak{X}^{-1}(A_\mathfrak{X}) \]
@@ -296,10 +296,10 @@ Just like in Lemma \ref{2.4-finitelygenerated} we can assume that $\mu_\ell\subs
 
 Let $\alpha\in\mathrm{H}^3(K)$ such that $\operatorname{res}_{K_w/K}(\alpha) = 0$ for all $w\in |\operatorname{Spv}(K)|$. There exists a finitely generated subfield $K_0$ of $K$ such that $\alpha = \operatorname{res}_{K/K_0}(\beta)$ for some $\beta\in\mathrm{H}^3(K_0)$ and $K/K_0$ is algebraic. Let $\{K_i\mid i\in I\}$ be the set of all finite extensions of $K_0$ contained in $K$.
 
-Let $w\in |\operatorname{Spv}(K)|$. We denote the restriction of $w$ to $K_i$ with $w$ as well. Since $\mathrm{H}^3(K_w) = \varinjlim_I \mathrm{H}^3((K_i)_w)$ there exists an $i = i(w)\in I$ such that $\operatorname{res}_{(K_i)_w/K}(g) = 0$. By Lemma \ref{2.4-closedset} there is an open neighborhood $U_{i(w)}\subset |\operatorname{Spv}(K_i)|$ of $w$ such that $\operatorname{res}_{(K_i)_v/K}(g)=0$ for all $v\in U_{i(w)}$. For $K_i\subset K_j\subset K$ let
+Let $w\in |\operatorname{Spv}(K)|$. We denote the restriction of $w$ to $K_i$ with $w$ as well. Since $\mathrm{H}^3(K_w) = \varinjlim_I \mathrm{H}^3((K_i)_w)$, there exists an $i = i(w)\in I$ such that $\operatorname{res}_{(K_i)_w/K}(g) = 0$. By Lemma \ref{2.4-closedset}, there is an open neighborhood $U_{i(w)}\subset |\operatorname{Spv}(K_i)|$ of $w$ such that $\operatorname{res}_{(K_i)_v/K}(g)=0$ for all $v\in U_{i(w)}$. For $K_i\subset K_j\subset K$ let
 \[ \varphi_i: |\operatorname{Spv}(K)| \to |\operatorname{Spv}(K_i)| \]
 \[ \varphi_{ij}: |\operatorname{Spv}(K_j)|\to |\operatorname{Spv}(K_i)| \]
-be the restriction maps. They are continuous. Since $|\operatorname{Spv}(K)|$ is quasi-compact by Lemma \ref{spv-topology} we can find a finite set $S\subset |\operatorname{Spv}(K)|$ such that:
+be the restriction maps. They are continuous. Since $|\operatorname{Spv}(K)|$ is quasi-compact by Lemma \ref{spv-topology}, we can find a finite set $S\subset |\operatorname{Spv}(K)|$ such that:
 \[ \bigcup_{w\in S}\varphi^{-1}_{i(w)}(U_{i(w)}) = |\operatorname{Spv}(K)| \]
 Let $j\in I$ such that $K_j$ is the composite of the fields $K_{i(w)},\ w\in S$. Then we have:
 \[ \bigcup_{w\in S}\varphi^{-1}_{i(w)j}(U_{i(w)}) = |\operatorname{Spv}(K_j)| \]
@@ -393,7 +393,7 @@ Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselizatio
 \begin{proof}
 Let $\ell_1,\ell_2$ be two different odd prime numbers different from $p=\operatorname{char} k(w)$ and let $E_0 = E(\mu_{\ell_1\ell_2})$. Since $K$ is finitely generated, by Lemma \ref{rank-dimension-inequality}, $k(w)$ and $\Gamma_w$ are finitely generated as well. In particular we have $\ell_i^\infty \nmid [k(w):\mathbb{F}_p]$ and, since $\Gamma_w$ is torsion free, $\dim_{\mathbb{F}_{\ell_i}}(\Gamma_w/{\ell_i}\Gamma_w) = \dim_{\mathbb{Q}}(\Gamma_w\otimes_{\mathbb{Z}}\mathbb{Q})= \operatorname{rrank}(w)=2$ for $i=1,2$.
 
-By Proposition \ref{2.5}, $E_0/E$, and also $E'_0/E'$, satisfy the condition of Proposition \ref{2.6} for both $\ell_1$ and $\ell_2$. Thus there exists a unique henselian valuation $w'_{E'}\in|\operatorname{Spv}(E')|$. Now $E'$ contains a henselization $K'_{w'}$ with respect to $w' = w'_{E'}|_{K'}$. By applying the same argument to $\sigma^{-1}$ we find that $E' = K'_{w'}$.
+By Proposition \ref{2.5}, $E_0/E$, and also $E'_0/E'$, satisfy the condition of Proposition \ref{2.6} for both $\ell_1$ and $\ell_2$. Thus there exists a unique henselian valuation $w'_{E'}\in|\operatorname{Spv}(E')|$. Now $E'$ contains a henselization $K'_{w'}$ with respect to $w' = w'_{E'}|_{K'}$. By applying the same argument to $\sigma^{-1}$ we see that $E' = K'_{w'}$.
 
 It remains to see that $\operatorname{rrank}(w')=2$. Choose a prime $\ell\neq \operatorname{char} k(w')$ from $\ell_1,\ell_2$. Since $\mathrm{H}^3(E'_0(\mu_{\ell}),\mathbb{Z}/\ell\mathbb{Z})\neq 0$ by Lemma \ref{2.6}, we get from Proposition \ref{2.5}:
 \[\operatorname{rrank}(w')= \operatorname{rrank}( \widetilde{w}') = \dim_{\mathbb{Q}}(\Gamma_{\widetilde{w}'}\otimes_\mathbb{Z}\mathbb{Q}) \geq \dim_{\mathbb{F}_\ell}(\Gamma_{\widetilde{w}'}/\ell\Gamma_{\widetilde{w}'})=2\]
@@ -420,7 +420,7 @@ Let $w_1,w_2 \in\operatorname{Spv}_\text{d}^{(2)}(K)$ be two different valuation
 \item The composite $K_{w_1}K_{w_2}$ is not algebraically closed.
 \item $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K)$ and $v(w_1) = v(w_2)$.
 \end{enumerate}
-The implication (i)$\implies$(ii) follows from Lemma \ref{2.2}. Now assume (ii) holds. Let $v=v(w_1)\in \operatorname{Spv}_\text{d}^{(1)}(K_{w_1}K_{w_2})$. Then $k(v)$ is separably closed. We have $K_{w_1}K_{w_2}\subset K_v^\text{t}$ and hence $K_{w_1}K_{w_2}=K_v^\text{t}$ by Theorem \ref{theorem-absoluteinertia}. $\Gamma_v$ is equal to the value group of $v|_K\in\operatorname{Spv}_\text{d}^{(1)}(K)$, which is finitely generated. However, value groups of valuations on an algebraically closed field are divisible, hence $K_v^\text{t}$ can't be algebraically closed and neither can the composite $K_{w_1}K_{w_2}$.
+The implication (i)$\implies$(ii) follows from Lemma \ref{2.2}. Now assume (ii) holds. Let $v=v(w_1)\in \operatorname{Spv}_\text{d}^{(1)}(K_{w_1}K_{w_2})$. Then $k(v)$ is separably closed. We have $K_{w_1}K_{w_2}\subset K_v^\text{t}$ and hence $K_{w_1}K_{w_2}=K_v^\text{t}$ by Theorem \ref{theorem-absoluteinertia}. $\Gamma_v$ is equal to the value group of $v|_K\in\operatorname{Spv}_\text{d}^{(1)}(K)$, which is finitely generated. However, value groups of valuations on an algebraically closed field are divisible and in particular not finitely generated, hence $K_v^\text{t}$ can't be algebraically closed and neither can the composite $K_{w_1}K_{w_2}$.
 
 We have analogous statements (i') and (ii') for $K'$, $w'_1$, $w'_2$ of (i) and (ii) respectively. The equivalence of the corresponding statements holds for $K'$ as well. Now (i) and (i') are equivalent, because:
 \[\sigma\big(G_{K_{w_1}K_{w_2}}\big) = \sigma\big(G_{K_{w_1}}\cap G_{K_{w_2}}\big) = G_{K'_{w'_1}}\cap G_{K'_{w'_2}} = G_{K'_{w'_1}K'_{w'_2}} \]
@@ -454,16 +454,25 @@ where the vertical maps are restrictions. Let $w\in\operatorname{Spv}_\text{d}^{
 k(w') \rar["\varphi_w"] & k(w)\\
 k(v') \rar["\varphi_v"']\uar[hook] & k(v)\uar[hook]
 \end{tikzcd} \]
-By limit process we see that $\sigma$ induces a bijection $\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'})$. Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$. It follows for any $g\in G_K$:
-\[G_{\sigma(g\overline{v})} = \sigma(G_{g\overline{v}}) = \sigma(g^{-1} G_{\overline{v}}g) = \sigma(g)^{-1} G_{\sigma(\overline{v})}\sigma(g) = G_{\sigma(g)\sigma(\overline{v})}\]
-Therefore, $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$ by Corollary \ref{corollary-fkschmidt}.
+By limit process we see that $\sigma$ induces a bijection: 
+\[\sigma: \operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K'}),\ \overline{v}\mapsto\overline{v}'\]
 \end{remark}
+
+\begin{lemma}\label{lemma-sigma-groupaction-valuation}
+Let $\overline{v}\in \operatorname{Spv}_\text{d}^{(1)}(\overline{K})$, $g\in G_K$, and $G_{\overline{v}}\subset G_K$ be the decomposition group of $\overline{v}$. Then we have $\sigma(G_{\overline{v}}) = G_{\sigma(\overline{v})}$ and $\sigma(g\overline{v})=\sigma(g)\sigma(\overline{v})$.
+\end{lemma}
+
+\begin{proof}
+The first equality is just a rephrasing of $(K_{\overline{v}})' = K'_{\overline{v}'}$. We have:
+\[G_{\sigma(g\overline{v})} = \sigma(G_{g\overline{v}}) = \sigma(g G_{\overline{v}}g^{-1}) = \sigma(g) G_{\sigma(\overline{v})}\sigma(g)^{-1} = G_{\sigma(g)\sigma(\overline{v})}\]
+Now the second assertion follows by Corollary \ref{corollary-fkschmidt}.
+\end{proof}
 
 \section{Global Correspondence mod \texorpdfstring{$n$}{n}}
 
 Let $n\in\mathbb{N}$. In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$. By Proposition \ref{prop:kummer-theory}, we have isomorphisms:
 \[ \mathrm{H}^1(K',\mu_n)\cong K'^\times/n,\qquad \mathrm{H}^1(K,\mu_n)\cong K^\times/n \]
-Our goal is to establish an isomorphism between the corresponding cohomology groups.
+In this section, our goal is to establish an isomorphism between the corresponding cohomology groups.
 
 \begin{definition}
 Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closures of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
@@ -500,7 +509,7 @@ We have $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
 \end{lemma}
 
 \begin{proof}
-First we assume that $k/\mathbb{Q}$ is a Galois extension and $X$ has a $k$-rational point $P_0$. We can consider $k'$ as a subfield of $k$ via: 
+First, we assume that $k/\mathbb{Q}$ is a Galois extension and $X$ has a $k$-rational point $P_0$. We can consider $k'$ as a subfield of $k$ via: 
 \[\begin{tikzcd}
 k'\ar[r] & k(P'_0)\ar[r, "\varphi_{P_0}"', "\cong"] & k(P_0) \ar[r, "\cong"] & k
 \end{tikzcd}\]
@@ -531,7 +540,7 @@ We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K
 G_K \ar[r, "\sigma"] \ar[d] & G_{K'}\ar[d]\\
 G_k \ar[r, "\sigma"'] & G_{k'}
 \end{tikzcd} \]
-Moreover, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$ which restricts to an isomorphism $\varphi: k'\to k$.
+Furthermore, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:\overline{k'}\to\overline{k}$ which restricts to an isomorphism $\varphi: k'\to k$.
 \end{lemma}
 
 \begin{proof}
@@ -549,8 +558,8 @@ G_K \ar[r, "\sigma"] & G_{K'} \ar[r, "\phi", "\cong"'] & \operatorname{Gal}(\ove
 \end{tikzcd} \]
 where $\phi$ is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\otimes y\mapsto \varphi^{-1}(y)\cdot x$, we may assume that $k=k'$, $\overline{k} = \overline{k'}$ and that $\varphi:\overline{k}\to\overline{k}$, $\sigma: G_k\to G_k$ are identities. Now the following diagram commutes:
 \[ \begin{tikzcd}
-G_K \ar[r]\ar[d, "\sigma"'] & G_k\\
-G_{K'}\ar[ru]
+G_K \ar[d]\ar[r, "\sigma"] & G_{K'} \ar[ld]\\
+G_{k} &
 \end{tikzcd} \]
 \end{remark}
 
@@ -586,7 +595,7 @@ k(P')^\times/n \rar["\varphi_P^\times/n"'] & k(P)^\times/n
 \begin{enumerate}[(i)]
 \item Consider the absolute inertia field $L = K_P^\text{t}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. By Theorem \ref{theorem-absoluteinertia} (i), $w$ is discrete as well and we have $k(w) = k(v_P)^\text{s}$. Observe the following exact sequence:
 \[ 1 \longrightarrow U_w/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
-Since $k(w)$ is separably closed, with $\operatorname{char} k(w)=0$ and Hensel's lemma we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
+Since $k(w)$ is separably closed, with $\operatorname{char} k(w)=0$ and Hensel's lemma, we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
 \[ \begin{tikzcd}
 1 \ar[d] & 1 \ar[d]\\
 U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
@@ -594,7 +603,7 @@ K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 L'^\times /n \ar[r, "\varphi_n"'] &  L^\times /n
 \end{tikzcd}\]
 Note that $(K^\text{t}_P)' = K'^{\text{t}}_{P'}$ as proven in Lemma \ref{3.2}.
-\item Consider the field extension $K_P/K$. By Remark \ref{remark-localphi-extension}, we can assume $K=K_P$ without loss of generality. Since $\operatorname{char}k(P)=0$, by Hensel's lemma the map $r_P/n: U_P/n\to k(P)^\times/n$ is an isomorphism and the composition
+\item Consider the field extension $K_P/K$. By Remark \ref{remark-localphi-extension}, we can assume $K=K_P$ without loss of generality. Since $\operatorname{char}k(P)=0$, by Hensel's lemma, the map $r_P/n: U_P/n\to k(P)^\times/n$ is an isomorphism and the composition
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[rr, hook] && K_P^\times/n
 \end{tikzcd}\]
@@ -651,7 +660,7 @@ Observe the following commutative diagram with exact rows, where we consider $A'
 \end{tikzcd} \]
 Note that $f$ is injective and $g$ is surjective. Using the snake lemma, we get an isomorphism $\operatorname{coker}(f)\cong \ker(g)$. We have:
 \[\ker(g) = \ker( (A/A')/(A_\text{tor}/A'_\text{tor}) \to A''/A''_\text{tor} ) = A''_\text{tor}/(A_\text{tor}/A'_\text{tor})\]
-Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is finite, too. Applying (i) on $f$, we can see that $p^{-1}(A''_\text{tor})/A_\text{tor}$ is free-by-finite. Since $A''/A''_\text{tor}$ is free abelian, the short exact sequence in the second row splits, making $A/A_\text{tor}$ a direct sum of a free-by-finite group and a free group.
+Since $A''_\text{tor}$ is finite, $\operatorname{coker}(f)\cong \ker(g)$ is finite too. Applying (i) on $f$, we can see that $p^{-1}(A''_\text{tor})/A_\text{tor}$ is free-by-finite. Since $A''/A''_\text{tor}$ is free abelian, the short exact sequence in the second row splits, making $A/A_\text{tor}$ a direct sum of a free-by-finite group and a free group.
 \item We consider $A'$ as a subgroup of $A$. Let $T=A_\text{tor}$. By replacing $A'$, $A$, $A''$ with $A'/(T\cap A')$, $A/T$, $A''/p(T)$ respectively, we can assume that $A$ is free and $A'$ is free of finite rank. Let $B$ be a basis of $A$. There exists a finite subset $C\subset B$ such that $A'\subset \bigoplus_{b\in C}\mathbb{Z}b$. We get an exact sequence:
 \[ 0 \longrightarrow \Big(\bigoplus_{b\in C} \mathbb{Z}b\Big)\Big/A' \longrightarrow A/A' \longrightarrow \bigoplus_{b\in B -  C}\mathbb{Z}b \longrightarrow 0 \]
 The left abelian group is finitely generated, particularly free-by-finite. The right group is free, hence also free-by-finite. By (ii), $A/A'\cong A''$ is free-by-finite as well.
@@ -721,11 +730,11 @@ For a finite subset $S\subset X_0$ set:
 \begin{align*}
 K^S &= \bigcap_{P\in X_0 -  S} U_P
 \end{align*}
-$K'^{S'}$ is defined similarly. For finite subsets $S$ of $X_0$, the corresponding subsets of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
+$K'^{S'}$ is defined similarly. For finite subsets $S\subset X_0$ the corresponding subset of $X_0'$ will be denoted by $S'$, i.e. $S'=\{\sigma P\mid P\in S \} $.
 \end{definition}
 
 \begin{theorem}[\textit{Weak Approximation Theorem}]\label{weak-approximation}
-Let $v_1,\ldots,v_n\in X_0$ be inequivalent discrete valuations, $x_1,\ldots,x_n\in K$ and $a_1,\ldots,a_n\in\mathbb{Z}$. Then there is some $x\in K$, such that for all $i$ we have:
+Let $v_1,\ldots,v_n\in X_0$ be inequivalent discrete valuations, $x_1,\ldots,x_n\in K$ and $a_1,\ldots,a_n\in\mathbb{Z}$. Then there exist some $x\in K$ such that for all $i=1,\ldots,n$ we have:
 \[ v_i(x-x_i) = a_i \]
 \end{theorem}
 
@@ -746,7 +755,7 @@ $\varphi_n$ induces isomorphisms $\varphi_n: K'^{S'}/n\to K^S/n$.
 
 \begin{proof}
 \begin{enumerate}[(i)]
-\item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and similarly let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly any finite $S\subset X_0$ such that
+\item By Corollary \ref{mordell-weil-corollary}, the Picard group of $X$ is finitely generated. Let $D_1,\ldots, D_r$ be Weil divisors of $X$ such that the associated line bundles generate $\operatorname{Pic}(X)$ and, similarly, let $D'_1,\ldots,D'_s$ generate $\operatorname{Pic}(X')$. Clearly, any finite subset $S\subset X_0$ such that
 \[ \bigcup_{i=1}^r \operatorname{supp}(D_i)\subset S\quad\text{and}\quad \bigcup_{j=1}^s\operatorname{supp}(D'_j)\subset S' \]
 is admissible. Now let $T\subset X_0$ be finite. By the Weak Approximation Theorem \ref{weak-approximation}, we can add a principal divisor to the $D_i$ and the $D'_j$ so that their supports lie in $X_0 -  T$ and $X'_0 -  T'$ respectively.
 \item Observe that the following sequence is exact:
@@ -775,9 +784,9 @@ Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we s
 \item There exists a point $P_2\in X_0 - (S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
 \item $a$ is not a root of unity.
 \end{enumerate}
-Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$ and $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in X_0-S$, such that the following map is injective:
+Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$ and $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in X_0-S$ such that the following map is injective:
 \[ C_1\to\prod_{i=2}^{r} k(P_i)^\times,\ x\mapsto(r_{P_i}(x))_i \]
-Finally for $T=\{P_1,\ldots,P_r\}\subset X_0-S$, the map $r_{S,T}$ is injective. For the second assertion, note the following isomorphism:
+Finally for $T=\{P_1,\ldots,P_r\}\subset X_0-S$ the map $r_{S,T}$ is injective. For the second assertion note the following isomorphism:
 \[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \Big(\prod_{P\in T}k(P)^\times \Big)\Big/k^\times \Big) \]
 Since $K^S/k^\times$ is generated by the uniformizers of the corresponding valuations in $S$, Lemma \ref{5.2} (iii) and Lemma \ref{5.3} (ii) show that the latter group is free-by-finite.
 \end{proof}
@@ -807,12 +816,12 @@ By Lemma \ref{5.4}, the following maps are injective for all admissible subsets 
 \[ r_S:K^S \to\prod_{P\in X_0 -  S} k(P)^\times,\ x\mapsto (r_P(x))_P \]
 Using the desired commutativity of the diagram above and, with Lemma \ref{4.5} (i), the fact that for all $x\in K^\times$ there is an admissible set $S\subset X_0$ such that $x\in K^S$, it's evident that $\varphi$ is unique. 
 
-For the existence of $\varphi$, let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$, making the following diagram commutative:
+For the existence of $\varphi$ let $(S,T)$ be an admissible pair. First, we show that there is a unique homomorphism $\varphi^{S,T}$ which makes the following diagram commutative:
 \[ (\star) \qquad \begin{tikzcd}
 K'^{S'} \rar["\varphi^{S,T}", dashed] \dar["r_{S',T'}"'] & K^S \dar["r_{S,T}"]\\
 \displaystyle \prod_{P\in T}k(P')^\times \rar["\prod\varphi_P^\times"'] & \displaystyle \prod_{P\in T}k(P)^\times
 \end{tikzcd} \phantom{\qquad (\star)} \]
-The vertical maps are injective by definition. Thus, it suffices to show that the following composition is trivial:
+The vertical maps are injective by definition. Thus it suffices to show that the following composition is trivial:
 \[\varrho:K'^{S'}\longrightarrow\prod_{P\in T} k(P')^\times \longrightarrow \prod_{P\in T} k(P)^\times\longrightarrow\operatorname{coker}(r_{S,T})\] 
 Consider the commutative diagram which results from tensoring $(\star)$ with $\mathbb{Z}/n\mathbb{Z}$:
 \[ \begin{tikzcd}
@@ -823,13 +832,13 @@ According to Lemma~\ref{4.3} and Lemma~\ref{4.5} (ii) this diagram can now be co
 
 Let $T_1, T_2\subset X_0 -  S$ be two $S$-admissible subsets and suppose $T_1\subset T_2$. By inspecting $(\star)$ we find:
 \[ r_{S,T_1}\circ\varphi^{S,T_2}=\Big(\prod_{P\in T_1}\varphi_P^\times\Big)\circ r_{S',T_1'} = r_{S,T_1}\circ\varphi^{S,T_1} \]
-Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence, $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
+Since $r_{S,T_1}$ is injective we get $\varphi^{S,T_2}=\varphi^{S,T_1}$. Hence $\varphi^{S,T}$ is actually independent of $T$, thus we can omit the $T$ from its notation. Now if $T$ ranges over all $S$-admissible subsets of $X_0$, then $(\star)$ shows:
 \[ r_S\circ\varphi^S = \Big(\prod_{P\in X_0 -  S}\varphi_P^\times \Big)\circ r_{S'} \]
 In other words, we can replace $T$ by $X_0 -  S$ in $(\star)$. If $S_1\subset S_2$ are two admissible subsets, then:
 \[ r_{S_2}\circ\varphi^{S_2}|_{K'^{S'_1}} = \Big(\prod_{P\in X_0 -  S_2}\varphi_P^\times \Big)\circ r_{S'_2}|_{K'^{S'_1}} = r_{S_2}\circ\varphi^{S_1} \]
-Hence, $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Thus, we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. 
+Thus $\varphi^{S_1}=\varphi^{S_2}|_{K'^{S'_1}}$. Hence we can combine the isomorphisms $\varphi^S$, where $S$ ranges over the admissible subsets of $X_0$, into an isomorphism $\varphi = \varinjlim \varphi^S: K'^\times \to K^\times$. 
 
-The commutativity of the desired diagram follows from the commutativity of $(\star)$ with $T=X_0 -  S$. Note that with Lemma \ref{4.5} (i), we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0 -  \{P\}$ such that $x\in K'^{S'}$.
+The commutativity of the desired diagram follows from the commutativity of $(\star)$ with $T=X_0 -  S$. Note that with Lemma \ref{4.5} (i) we can find for all $x\in U_{P'}$ an admissible set $S\subset X_0 -  \{P\}$ such that $x\in K'^{S'}$.
 \end{proof}
 
 \begin{step}
@@ -842,17 +851,17 @@ Observe that $\varphi(-1)^2 = \varphi(1) = 1$, and since $\varphi$ is bijective 
 \begin{itemize}
 \item \textit{Case 1:} If $x + y = 0$, we have:
 \[ \varphi(x + y) = 0 = \varphi(x) + \varphi(-1)\varphi(x) = \varphi(x) + \varphi(-x) = \varphi(x) + \varphi(y) \]
-\item \textit{Case 2:} Let $x + y\neq 0$ and $S\subset X_0$ be an admissible finite subset such that $\varphi(x + y)$, $\varphi(x)$ and $\varphi(y)$ are contained in $K^S$. Looking at the commutative diagram in \mbox{Step 1} we get
+\item \textit{Case 2:} Let $x + y\neq 0$ and $S\subset X_0$ be an admissible finite subset such that $\varphi(x + y)$, $\varphi(x)$ and $\varphi(y)$ are contained in $K^S$. Looking at the commutative diagram in \mbox{Step 1} we get for all $P\in X_0 -  S$:
 \begin{align*}
 r_P(\varphi(x+ y)) &= \varphi_P(r_{P'}(x + y)) \\
 &= \varphi_P(r_{P'}(x)) + \varphi_P(r_{P'}(y)) = r_P(\varphi(x) + \varphi(y))
 \end{align*}
-for all $P\in X_0 -  S$. Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P'}: \mathcal{O}_{P'} \to k(P')$ are ring homomorphisms. Since $K^S\to \prod_{P\in X_0 -  S} k(P)^\times$ is injective, we get $\varphi(x+y) = \varphi(x) + \varphi(y)$.\qedhere
+Note that $\varphi_P: k(P')\to k(P)$ is a field isomorphism and that the residue maps $r_{P'}: \mathcal{O}_{P'} \to k(P')$ are ring homomorphisms. Since $K^S\to \prod_{P\in X_0 -  S} k(P)^\times$ is injective, we get $\varphi(x+y) = \varphi(x) + \varphi(y)$.\qedhere
 \end{itemize}
 \end{proof}
 
 \begin{remark}
-For any finite subextension $L/K$ of $\overline{K}/K$ there exists an isomorphism $\varphi_L: L'\to L$. If $K\subset L\subset M$ are finite subextensions, we have $\varphi_M|_{L'} = \varphi_{L'}$, since $r_Q(\varphi_M(x)) = r_Q(\varphi_L(x))$ for all $x\in L'^\times$ and almost all $Q\in (X_M)_0$ according to Remark \ref{3.3} and Step 1. By passing to limits we obtain an isomorphism $\varphi: \overline{K}'\to \overline{K}$.
+For any finite subextension $L/K$ of $\overline{K}/K$ there exists an isomorphism $\varphi_L: L'\to L$. If $K\subset L\subset M$ are finite subextensions, we have $\varphi_M|_{L'} = \varphi_{L'}$ since $r_Q(\varphi_M(x)) = r_Q(\varphi_L(x))$ for all $x\in L'^\times$ and almost all $Q\in (X_M)_0$ according to Remark \ref{3.3} and Step 1. By passing to limits we obtain an isomorphism $\varphi: \overline{K}'\to \overline{K}$.
 \end{remark}
 
 \begin{step}
@@ -864,11 +873,11 @@ Let $\tau:G_K\to G_{K'},\ g\mapsto \varphi^{-1}\circ g\circ \varphi$. Clearly, $
 
 We have $L_{\tau(v)} = (L_v)' = L_{\sigma(v)}$ for all $v\in\operatorname{Spv}_\text{d}^{(1)}(L)$, i.e. $\sigma$ and $\tau$ induce the same maps $\operatorname{Spv}_\text{d}^{(1)}(L)\to \operatorname{Spv}_\text{d}^{(1)}(L')$. By limit process, $\sigma$ and $\tau$ induce the same map $\operatorname{Spv}_\text{d}^{(1)}(\overline{K})\to \operatorname{Spv}_\text{d}^{(1)}(\overline{K}')$.
 
-Let $g\in G_K$ and $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Remark \ref{3.3} we have:
+Let $g\in G_K$ and $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Lemma \ref{lemma-sigma-groupaction-valuation} we have:
 \[ \sigma(g)\sigma(\overline{v}) = \sigma(g\overline{v}) = \tau(g\overline{v}) = \tau(g)\tau(\overline{v}) = \tau(g) \sigma(\overline{v}) \]
 Therefore $\sigma(g)^{-1}\tau(g)$ is contained in $G_{\overline{v}}$ for all $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$. By Corollary \ref{corollary-fkschmidt} we have $G_{\overline{v}_1}\cap G_{\overline{v}_2} = 1$ for $\overline{v}_1\neq\overline{v}_2$. Therefore, $\sigma(g) = \tau(g) = \varphi^{-1}g\varphi$ for all $g\in G_K$.
 
 For the uniqueness of $\varphi$ let $\psi: \overline{K}'\to \overline{K}$ be another isomorphism with $\sigma(g) = \psi^{-1} g \psi$. Setting $h = \psi\varphi^{-1}\in G_K$ we observe
 \[ h^{-1}gh = \varphi\sigma(g)\varphi^{-1} = \sigma^{-1}\sigma(g) = g \]
-for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have therefore $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ by Corollary \ref{corollary-fkschmidt}. Since $\overline{v}$ was arbitrary, we get $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by Corollary \ref{corollary-fkschmidt}, we have $h=1$ and thus $\varphi = \psi$.
+for all $g\in G_K$. For $\overline{v}\in\operatorname{Spv}_\text{d}^{(1)}(\overline{K})$ we have $G_{\overline{v}} = h G_{\overline{v}} h^{-1} = G_{h\overline{v}}$, thus $h\in G_{\overline{v}}$ by Corollary \ref{corollary-fkschmidt}. Since $\overline{v}$ was arbitrary, we get $h\in G_{\overline{v}}$ for all $\overline{v}$. Again, by Corollary \ref{corollary-fkschmidt}, we get $h=1$ and thus $\varphi = \psi$.
 \end{proof}
