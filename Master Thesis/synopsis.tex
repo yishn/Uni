@@ -1,6 +1,6 @@
 \chapter{Valuations}
 
-\section{The Valuation Spectra}
+\section{The Valuation Spectrum}
 
 In this section we shall recall some facts from valuation theory.
 
@@ -126,7 +126,7 @@ Let $K$ be a field and $v\in\operatorname{Spv}(K)$ with a fixed henselization $K
 \end{lemma}
 
 \begin{proof}
-By Lemma \ref{2.2-pre}, $w$ induces a valuation $\tilde{w}\in\operatorname{Spv}k(v)$. Let $k(v)_{\tilde{w}}$ be henselization of $k(v)$ with respect to $\tilde{w}$. By Theorem \ref{theorem-absoluteinertia}, $k(v)_{\tilde{w}}$ corresponds to an intermediate extension $K_v\subset L \subset K^\text{t}_v$. Let $v_L$ be the unique extension of $v$ on $L$. Then $k(v_L)=k(v)_{\tilde{w}}$. Let $w_L$ be the valuation on $L$ corresponding to $\tilde{w}\in \operatorname{Spv} k(v_L)$. By \cite{EP05} Corollary 4.1.4, $w_L$ is henselian iff both $v_L$ and $\tilde{w}$ are henselian, thus $L$ is a henselization of $w$.
+By Lemma \ref{2.2-pre}, $w$ induces a valuation $\tilde{w}\in\operatorname{Spv}k(v)$. Let $k(v)_{\tilde{w}}$ be henselization of $k(v)$ with respect to $\tilde{w}$. By Theorem \ref{theorem-absoluteinertia}, $k(v)_{\tilde{w}}$ corresponds to an intermediate extension $K_v\subset L \subset K^\text{t}_v$. Let $v_L$ be the unique extension of $v$ on $L$. Then $k(v_L)=k(v)_{\tilde{w}}$. Let $w_L$ be the valuation on $L$ corresponding to $\tilde{w}\in \operatorname{Spv} k(v_L)$. By \cite{EP05} Corollary 4.1.4, $w_L$ is henselian if and only if both $v_L$ and $\tilde{w}$ are henselian, thus $L$ is a henselization of $w$.
 \end{proof}
 
 \begin{theorem}\label{theorem-sylowgroups-inertiagroup}
@@ -150,15 +150,15 @@ See \cite{EP05} Theorem 4.4.1.
 \end{proof}
 
 \begin{remark}
-Two valuations of rank $1$ are independent iff they are inequivalent.
+Two valuations of rank $1$ are independent if and only if they are inequivalent.
 \end{remark}
 
 \begin{corollary}\label{corollary-fkschmidt}
-Let $w_1,w_2\in\operatorname{Spv}(K^\text{s})$ be two inequivalent valuations of rank $1$ with decomposition groups $G_{{w_1}},G_{{w_2}}\subset G_K$. Then $G_{{w_1}}\cap G_{{w_2}}=1$.
+Let $v_1,v_2\in\operatorname{Spv}(K^\text{s})$ be two inequivalent valuations of rank $1$ with decomposition groups $G_{{v_1}},G_{{v_2}}\subset G_K$. Then $G_{{v_1}}\cap G_{{v_2}}=1$.
 \end{corollary}
 
 \begin{proof}
-Let $L$ be the fixed field of $G_{w_1}\cap G_{w_2}\subset G_K$ and set $v_i = w_i|_L$. Then $L$ is henselian with respect to both $v_1$ and $v_2$. Since $w_1,w_2$ are the only extensions of $v_1$ and $v_2$ in $K^\text{s}$ respectively, $v_1$ and $v_2$ are inequivalent valuations of rank $1$. Now $L$ is separably closed by Theorem \ref{theorem-fkschmidt}. Therefore, by Theorem \ref{theorem-henselization}, we get $G_{{w_1}}\cap G_{{w_1}}=G_L =1$.
+Let $L$ be the fixed field of $G_{v_1}\cap G_{v_2}\subset G_K$. Then $L$ is henselian with respect to both $v_1|_L$ and $v_2|_L$. Since $v_1,v_2$ are the only extensions of $v_1|_L$ and $v_2|_L$ in $K^\text{s}$ respectively, $v_1$ and $v_2$ are inequivalent valuations of rank $1$ as well. Now $L$ is separably closed by Theorem \ref{theorem-fkschmidt}. Therefore, by Theorem \ref{theorem-henselization}, we get $G_{{v_1}}\cap G_{{v_1}}=G_L =1$.
 \end{proof}
 
 \section{The Main Lemma}
@@ -182,7 +182,7 @@ Since $\mathrm{H}^1(F, (F^\text{s})^\times)=0$ by Hilbert's Theorem 90, we get i
 \paragraph{} Now let $K$ be a (not necessarily finitely generated) field over $\mathbb{Q}$ of dimension $2$. In this section, we want to give a cohomological characterization of $K$ being henselian.
 
 \begin{lemma}\label{2.2}
-Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$ and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(K)\leq 2$.
+Let $K$ be henselian with respect to two different valuations $w_1,w_2\in |\operatorname{Spv}(K)|$. Then $K$ is algebraically closed or $w_1,w_2\in\operatorname{Spv}_\text{rd}^{(2)}(K),\ v(w_1)=v(w_2)$, and $k(v(w_1))$ is separably closed. In this case, we have $\operatorname{cd}(K)\leq 2$.
 \end{lemma}
 
 \begin{proof}
@@ -546,7 +546,7 @@ Furthermore, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:
 \begin{proof}
 Let $L/K$ be a finite subextension of $\overline{K}/K$. Let $\ell$ and $\ell'$ be the constant fields of $L$ and $L'$ respectively. Applying Lemma \ref{4.2-pre} to $K$ and $L$ gives:
 \[ [\ell:k] = [\ell':k'] \]
-Therefore $L/K$ is a constant field extension iff $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism:
+Therefore $L/K$ is a constant field extension if and only if $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism:
 \[G_k \cong \operatorname{Gal}(K\overline{k}/K) \to \operatorname{Gal}(K'\overline{k'}/K')\cong G_{k'}\] 
 Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
@@ -637,7 +637,7 @@ $A$ is called \textit{free-by-finite} if its torsion subgroup $A_\text{tor}$ is 
 
 \begin{lemma}\phantomsection\label{5.2}
 \begin{enumerate}[(i)]
-\item Let $f: A\to B$ be a homomorphism of abelian groups with finite kernel and cokernel. Then $A$ is free-by-finite iff $B$ is free-by-finite.
+\item Let $f: A\to B$ be a homomorphism of abelian groups with finite kernel and cokernel. Then $A$ is free-by-finite if and only if $B$ is free-by-finite.
 \item Let $0\longrightarrow A'\stackrel{i}{\longrightarrow}A\stackrel{p}{\longrightarrow}A''\longrightarrow 0$ be an exact sequence of abelian groups. If $A'$ and $A''$ are free-by-finite, then $A$ is free-by-finite. 
 \item Let $0\longrightarrow A'\stackrel{i}{\longrightarrow}A\stackrel{p}{\longrightarrow}A''\longrightarrow 0$ be an exact sequence of abelian groups. If $A$ is free-by-finite and $A'$ is finitely generated, then $A''$ is free-by-finite.
 \item Let $A$ be free-by-finite. Then $\bigcap_{n\in\mathbb{N}}nA=0$.
