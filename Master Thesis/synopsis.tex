@@ -219,19 +219,25 @@ In particular we have:
 \end{proof}
 
 \begin{lemma}\label{2.4-pre}
-Let $K$ be henselian with respect to a discrete valuation $v$, $k=k(v)$ its residue field. Let $p=\operatorname{char}(k)$, $\ell\neq p$ be a prime, and $\operatorname{cd}_\ell(k)\leq 2$. Then:
-\[ \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^2(k, \mu_{\ell}) \cong {}_\ell\operatorname{Br}(k) \]
+Let $K$ be henselian with respect to a discrete valuation $v$, $k=k(v)$ its residue field. Let $\ell$ be a prime such that $\ell=\operatorname{char}(k)$ or $\operatorname{cd}_\ell(k)\leq 2$. Then:
+\[ \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^2(k, \mathbb{Z}/\ell\mathbb{Z}(1)) \cong {}_\ell\operatorname{Br}(k) \]
 \end{lemma}
 
 \begin{proof}
+Let $p=\operatorname{char}(k)$. If $\ell = p$, the first isomorphism follows from \cite{Ka86} Lemma 1.4 (3) and the second one from \cite{Ka86} §0. Now assume $\ell\neq p$ and $\operatorname{cd}_\ell(k)\leq 2$.
+
 Let $T$ be the absolute inertia group of $K$ and $V\lhd T$ its absolute ramification group. By Theorem \ref{theorem-sylowgroups-inertiagroup}, $V$ is the $p$-Sylow group of $T$ and the $\ell$-Sylow group of $T/V$ is isomorphic to $\mathbb{Z}_\ell$. Therefore, by \cite{Se64} Ch. I, §3 Proposition 15:
 \[ \operatorname{cd}_\ell(T)\leq \operatorname{cd}_\ell(V) + \operatorname{cd}_\ell(\mathbb{Z}_\ell) = 1 \]
 By Theorem \ref{theorem-absoluteinertia}, we have an isomorphism $G_K/T\cong G_k$. Furthermore, we have $\operatorname{cd}_\ell(G_K/T)=\operatorname{cd}_\ell(k)\leq 2$ by requirement,
 thus the following Hochschild-Serre spectral sequence degenerates on $E_2$:
 \[E_2^{i,j}=\mathrm{H}^i(G_K/T, \mathrm{H}^j(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\Longrightarrow\mathrm{H}^{i+j}(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))\]
-It yields an isomorphism $\mathrm{H}^2(k, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2))$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mu_{\ell}$, hence:
-\[ \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)) \cong \mathrm{H}^1(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T, \mu_{\ell}) \cong \operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell}) \]
-By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group of rank $1$ where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore, $\operatorname{Hom}_\text{cont.}(T/V, \mu_{\ell})\cong \mu_{\ell}$. The rest follows from Proposition \ref{prop:kummer-theory}.
+It yields an isomorphism $\mathrm{H}^2(k, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2))$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mathbb{Z}/\ell\mathbb{Z}(1)= \mu_{\ell}$ and $\mathbb{Z}/\ell\mathbb{Z}(2)=\mu_{\ell}^{\otimes 2}$, hence:
+\begin{align*}
+\mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)) &\cong \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(1)) \\
+&\cong \operatorname{Hom}_\text{cont.}(T, \mathbb{Z}/\ell\mathbb{Z}(1)) \\
+&\cong \operatorname{Hom}_\text{cont.}(T/V, \mathbb{Z}/\ell\mathbb{Z}(1))
+\end{align*}
+By Theorem \ref{theorem-sylowgroups-inertiagroup}, $T/V$ is the free pro-$\mathcal{C}$ group of rank $1$ where $\mathcal{C}$ is the class of all finite groups with order prime to $p$. Therefore, $\operatorname{Hom}_\text{cont.}(T/V, \mathbb{Z}/\ell\mathbb{Z}(1))\cong \mathbb{Z}/\ell\mathbb{Z}(1)$. The second isomorphism follows from Proposition \ref{prop:kummer-theory}
 \end{proof}
 
 The following lemma is the key result in proving Theorem \ref{thm:main-result}. First, we use K. Kato's two-dimensional local-global principle to show the assertion for finitely generated $K$. Then we'll use a quasi-compactness argument to drop the assumption that $K$ is finitely generated.
@@ -246,7 +252,7 @@ Let $L=K(\mu_{\ell},\sqrt{-1})/K$. Consider the restriction and corestriction ma
 \[ \begin{tikzcd}
 \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) \ar[r, "\operatorname{res}"] & \mathrm{H}^3(L,\mathbb{Z}/\ell\mathbb{Z})\ar[r, "\operatorname{cor}"]& \mathrm{H}^3(K,\mathbb{Z}/\ell\mathbb{Z}) 
 \end{tikzcd} \]
-We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is coprime to $\ell$, we see that $\operatorname{res}$ is injective. Thus we can assume that $K=L$, i.e. $\mu_{\ell}\subset K$ and $K$ is not formally real. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2)$ and let us write $\mathrm{H}^3(L) = \mathrm{H}^3(L, \mathbb{Z}/\ell\mathbb{Z}(2))$. 
+We have $\operatorname{cor}\circ\operatorname{res} = [L:K]$. Since $[L:K]$ is coprime to $\ell$, we see that $\operatorname{res}$ is injective. Thus we can assume that $K=L$, i.e. $\mu_{\ell}\subset K$ and $K$ is not formally real. Now we can replace $\mathbb{Z}/\ell\mathbb{Z}$ by $\mathbb{Z}/\ell\mathbb{Z}(2) = \mu_{\ell}^{\otimes 2}$ and let us write $\mathrm{H}^3(L) = \mathrm{H}^3(L, \mathbb{Z}/\ell\mathbb{Z}(2))$. 
 
 Let $\mathfrak{X}$ be a model of $K$. For $x\in\mathfrak{X}_1$ the local ring $\mathcal{O}_{\mathfrak{X}, x}$ is a discrete valuation ring and defines a valuation $v_x\in\operatorname{Spv}_\text{d}^{(1)}(K)$. By \cite{Ka86} Theorem 0.8, the map
 \[ \mathrm{H}^3(K)\longrightarrow \prod_{x\in\mathfrak{X}_1}\mathrm{H}^3(K_{v_x}) \]
@@ -254,7 +260,7 @@ is injective, and, in fact, the proof shows that its image is contained in $\big
 
 Let $v$ be a discrete valuation of $K$ with residue field $k=k(v)$. Consider the following map induced by the restriction maps: 
 \[ \phi: \mathrm{H}^3(K_v) \longrightarrow \prod_w\mathrm{H}^3(K_w) \]
-where $w$ ranges over all rank-$2$ valuations with $v(w) = v$. By Lemma \ref{rank-dimension-inequality}, we have $\dim(k) = 1$, thus $k$ is a global field of characteristic $0$, hence a number field. \cite{Se64} Ch. II, §4 Prop. 13 shows $\operatorname{cd}_\ell(k)\leq 2$. With Lemma \ref{2.4-pre}, $\phi$ can be identified with
+where $w$ ranges over all rank-$2$ valuations with $v(w) = v$. By Lemma \ref{rank-dimension-inequality}, we have $\dim(k) = 1$, thus $k$ is a global field. \cite{Se64} Ch. II, §4 Prop. 11 and \cite{Se64} Ch. II, §4 Prop. 13 show $\operatorname{cd}_\ell(k)\leq 2$. With Lemma \ref{2.4-pre}, $\phi$ can be identified with
 \[ {}_\ell\operatorname{Br}(k) \longrightarrow \prod_{\widetilde{w}\in\operatorname{Spv}^{(1)}(k)} {}_\ell\operatorname{Br}(k_{\widetilde{w}}) \]
 which is injective by the classical Hasse principle. Moreover, its image is contained in $\bigoplus {}_\ell\operatorname{Br}(k_{\widetilde{w}})$. Combining these maps yields the following injection:
 \[\Phi: \mathrm{H}^3(K)\longrightarrow \bigoplus_{x\in\mathfrak{X}_1}\  \bigoplus_{\substack{w\in\operatorname{Spv}_\text{rd}^{(2)}(K) \\ v(w) = v_x}} \mathrm{H}^3(K_w) \]
@@ -546,7 +552,7 @@ Furthermore, $\sigma:G_k\to G_{k'}$ is induced by a unique isomorphism $\varphi:
 \begin{proof}
 Let $L/K$ be a finite subextension of $\overline{K}/K$. Let $\ell$ and $\ell'$ be the constant fields of $L$ and $L'$ respectively. Applying Lemma \ref{4.2-pre} to $K$ and $L$ gives:
 \[ [\ell:k] = [\ell':k'] \]
-Therefore $L/K$ is a constant field extension if and only if $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism:
+Therefore, $L/K$ is a constant field extension if and only if $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism:
 \[G_k \cong \operatorname{Gal}(K\overline{k}/K) \to \operatorname{Gal}(K'\overline{k'}/K')\cong G_{k'}\] 
 Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
