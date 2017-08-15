@@ -231,7 +231,7 @@ Let $T$ be the absolute inertia group of $K$ and $V\lhd T$ its absolute ramifica
 By Theorem \ref{theorem-absoluteinertia}, we have an isomorphism $G_K/T\cong G_k$. Furthermore, we have $\operatorname{cd}_\ell(G_K/T)=\operatorname{cd}_\ell(k)\leq 2$ by requirement,
 thus the following Hochschild-Serre spectral sequence degenerates on $E_2$:
 \[E_2^{i,j}=\mathrm{H}^i(G_K/T, \mathrm{H}^j(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\Longrightarrow\mathrm{H}^{i+j}(G_K, \mathbb{Z}/\ell\mathbb{Z}(2))\]
-It yields an isomorphism $\mathrm{H}^2(k, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2))$. Since $\mu_{\ell}$ is contained in the absolute inertia field of $K$, $T$ acts trivially on $\mathbb{Z}/\ell\mathbb{Z}(1)= \mu_{\ell}$ and $\mathbb{Z}/\ell\mathbb{Z}(2)=\mu_{\ell}^{\otimes 2}$, hence:
+It yields an isomorphism $\mathrm{H}^2(k, \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)))\cong \mathrm{H}^3(K, \mathbb{Z}/\ell\mathbb{Z}(2))$. Let $K^\text{t}/K$ be the absolute inertia field of $K$ and $w\in\operatorname{Spv}(K^\text{t})$ the extension of $v$. Since $k(w)$ is separably closed by Theorem \ref{theorem-absoluteinertia}, $\mu_{\ell}$ is contained in $K^\text{t}$ by Hensel's lemma. Therefore, $T = G_{K^\text{t}}$ acts trivially on $\mathbb{Z}/\ell\mathbb{Z}(1)= \mu_{\ell}$ and $\mathbb{Z}/\ell\mathbb{Z}(2)=\mu_{\ell}^{\otimes 2}$, hence:
 \begin{align*}
 \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(2)) &\cong \mathrm{H}^1(T, \mathbb{Z}/\ell\mathbb{Z}(1)) \\
 &\cong \operatorname{Hom}_\text{cont.}(T, \mathbb{Z}/\ell\mathbb{Z}(1)) \\
@@ -601,7 +601,7 @@ k(P')^\times/n \rar["\varphi_P^\times/n"'] & k(P)^\times/n
 \begin{enumerate}[(i)]
 \item Consider the absolute inertia field $L = K_P^\text{t}$ of $K_P$ and let $w$ be the unique extension of $v_P$ in $L$. By Theorem \ref{theorem-absoluteinertia} (i), $w$ is discrete as well and we have $k(w) = k(v_P)^\text{s}$. Observe the following exact sequence:
 \[ 1 \longrightarrow U_w/n \longrightarrow L^\times /n\longrightarrow \mathbb{Z}/n\mathbb{Z}\longrightarrow 0 \]
-Since $k(w)$ is separably closed, with $\operatorname{char} k(w)=0$ and Hensel's lemma, we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
+Since $k(w)$ is separably closed, with Hensel's lemma, we can see that $U_w$ is a divisible group, hence we get an isomorphism $L^\times /n\cong \mathbb{Z}/n\mathbb{Z}$ induced by $w$. Therefore, the canonical map $K^\times/n\to L^\times/n$ can be identified with the map $K^\times/n \to\mathbb{Z}/n\mathbb{Z}$ induced by $v_P$. Now the following commutative diagram with exact columns gives us the result:
 \[ \begin{tikzcd}
 1 \ar[d] & 1 \ar[d]\\
 U_{P'}/n \ar[r, dashed]\ar[d] & U_P/n\ar[d]\\
@@ -609,7 +609,7 @@ K'^\times /n \ar[r, "\varphi_n"]\ar[d] & K^\times/n\ar[d]\\
 L'^\times /n \ar[r, "\varphi_n"'] &  L^\times /n
 \end{tikzcd}\]
 Note that $(K^\text{t}_P)' = K'^{\text{t}}_{P'}$ as proven in Lemma \ref{3.2}.
-\item Consider the field extension $K_P/K$. By Remark \ref{remark-localphi-extension}, we can assume $K=K_P$ without loss of generality. Since $\operatorname{char}k(P)=0$, by Hensel's lemma, the map $r_P/n: U_P/n\to k(P)^\times/n$ is an isomorphism and the composition
+\item Consider the field extension $K_P/K$. By Remark \ref{remark-localphi-extension}, we can assume $K=K_P$ without loss of generality. By Hensel's lemma, the map $r_P/n: U_P/n\to k(P)^\times/n$ is an isomorphism and the composition
 \[\begin{tikzcd}
 k(P)^\times / n\ar[rr, "(r_P/n)^{-1}"] && U_P/n \ar[rr, hook] && K_P^\times/n
 \end{tikzcd}\]
