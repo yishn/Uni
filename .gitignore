@@ -20,10 +20,10 @@ keywords.json
 # these rules might exclude image files for figures etc.
 #*.ps
 #*.eps
-#*.pdf
-seal.pdf
-thesis.pdf
+*.pdf
 sources/
+!AlgebraischeGeometrie.pdf
+!article.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
