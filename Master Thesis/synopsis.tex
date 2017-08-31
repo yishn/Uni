@@ -384,13 +384,11 @@ Since $K_0$ is henselian with respect to $w_0$, a conjugate $\tau(K_w)$ for some
 Now $(K_0)_{w_1}$ is henselian both with respect to $w_1$ and with respect to the extension of $w_0$. Lemma \ref{2.2} yields $\operatorname{cd}((K_0)_{w_1})\leq 2$, a contradiction. The uniqueness of $w$ is again a consequence of Lemma \ref{2.2}.
 \end{proof}
 
-\chapter{Partial Correspondences}
+\chapter{Local Correspondence}
 
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$, and let $\sigma:G_K\to G_{K'}$ be an isomorphism of profinite groups. For intermediate fields $L$ of $\overline{K}/K$ we denote the corresponding intermediate field of $\overline{K'}/K'$ by $L'$. In other words, $\sigma (G_L)=G_{L'}$.
 
-\section{Local Correspondence}
-
-In this section we want to see that $\sigma$ induces bijections on defectless valuations. A direct consequence of Proposition \ref{2.6} is the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$:
+In this chapter we want to see that $\sigma$ induces bijections on defectless valuations. A direct consequence of Proposition \ref{2.6} is the bijection $\operatorname{Spv}_\text{d}^{(2)}(K)\to \operatorname{Spv}_\text{d}^{(2)}(K')$:
 
 \begin{lemma}\label{3.1}
 Let $w\in\operatorname{Spv}_\text{d}^{(2)}(K)$ and let $E=K_w$ be a henselization of $w$. Then $E'$ is a henselization of $K'$ with respect to a unique $w'\in\operatorname{Spv}_\text{d}^{(2)}(K')$. The map $w\mapsto w'$ does not depend on the choice of the henselization.
@@ -476,19 +474,17 @@ The first equality is just a rephrasing of $(K_{\overline{v}})' = K'_{\overline{
 Now the second assertion follows by Corollary \ref{corollary-fkschmidt}.
 \end{proof}
 
-\section{Global Correspondence mod \texorpdfstring{$n$}{n}}
+\chapter{Global Correspondence}
 
-Let $n\in\mathbb{N}$. In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$. By Proposition \ref{prop:kummer-theory}, we have isomorphisms:
-\[ \mathrm{H}^1(K',\mu_n)\cong K'^\times/n,\qquad \mathrm{H}^1(K,\mu_n)\cong K^\times/n \]
-In this section, our goal is to establish an isomorphism between the corresponding cohomology groups.
-
-\begin{definition}
 Let $k$ and $k'$ be the algebraic closures of $\mathbb{Q}$ in $K$ and $K'$ respectively, i.e. the constant fields of $K$ and $K'$, and let $\overline{k}$ and $\overline{k'}$ be the algebraic closures of $k$ and $k'$ in $\overline{K}$ and $\overline{K'}$ respectively.
 
 Let $X$ and $X'$ be the unique smooth projective curves over $k$ and $k'$ with function fields $K$ and $K'$ respectively. We identify the set of closed points $X_0$ of $X$ with the set of discrete valuations $v$ with $v(k^\times)=0$. That is exactly all $v\in\operatorname{Spv}_\text{d}^{(1)}(K)$ with $\operatorname{char} k(v)=0$. Similarly, we identify $X'_0$ with the corresponding subset of $\operatorname{Spv}_\text{d}^{(1)}(K')$. 
 
 By Proposition \ref{3.2} $\sigma$ induces a bijection $\sigma: X^{\phantom{'}}_0\to X'_0,\ P\mapsto P'$ and for any $P\in X_0$ an isomorphism $\varphi_P: k(P')\to k(P)$.
-\end{definition}
+
+\section{Isomorphism of Constant Fields}
+
+In this section we shall establish an isomorphism between the absolute Galois groups of the constant fields $k$ and $k'$. In particular, since both $k$ and $k'$ are number fields, the theorem of Neukirch-Uchida \ref{thm:neukirch-uchida} will yield an isomorphism between $k$ and $k'$.
 
 \begin{theorem}[\textit{Hilbert's Irreducibility Theorem}]\label{hilberts-irreducibility-theorem}
 Let $E$ be a number field and $f_1,\ldots, f_n$ be irreducible polynomials in $E[X_1,\ldots,X_r,Y_1,\ldots,Y_s]$. Then there exists $e_1,\ldots,e_r\in E$ such that the specializations
@@ -509,8 +505,6 @@ Now $T-e\in E[T]$ corresponds to a closed point $P\in \mathbf{P}^1_E$, which in 
 
 This shows that $P$ has only one preimage under $f'$. Therefore, it has only one preimage under $f$, say $P'$, and $P'$ has only one preimage under $\pi$. This concludes the proof.
 \end{proof}
-
-We start by showing that $\sigma$ induces an isomorphism between the absolute Galois groups of the constant fields $G_k$ and $G_{k'}$. We need the following Lemma:
 
 \begin{lemma}\label{4.2-pre}
 We have $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
@@ -543,7 +537,7 @@ By symmetry, we get $[k:\mathbb{Q}] = [k':\mathbb{Q}]$.
 \end{proof}
 
 \begin{lemma}\label{4.2}
-We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $G_k\to G_{k'}$ such that the following diagram commutes:
+We have $(K\overline{k})'=K'\overline{k'}$, i.e. $\sigma(G_{K\overline{k}})=G_{K'\overline{k'}}$. $\sigma$ induces an isomorphism $\sigma: G_k\to G_{k'}$ such that the following diagram commutes:
 \[ \begin{tikzcd}
 G_K \ar[r, "\sigma"] \ar[d] & G_{K'}\ar[d]\\
 G_k \ar[r, "\sigma"'] & G_{k'}
@@ -556,10 +550,15 @@ Let $L/K$ be a finite subextension of $\overline{K}/K$. Let $\ell$ and $\ell'$ b
 \[ [\ell:k] = [\ell':k'] \]
 Therefore, $L/K$ is a constant field extension if and only if $L'/K'$ is a constant field extension. Since $K\overline{k}/K$ and $K'\overline{k'}/K$ are the union of their finite subextensions, we obtain $(K\overline{k})' = K'\overline{k'}$. This implies that $\sigma$ induces an isomorphism:
 \[G_k \cong \operatorname{Gal}(K\overline{k}/K) \to \operatorname{Gal}(K'\overline{k'}/K')\cong G_{k'}\] 
-Everything else follows from Neukirch-Uchida \ref{thm:neukirch-uchida}.
+Everything else follows from the theorem of Neukirch-Uchida \ref{thm:neukirch-uchida}.
 \end{proof}
 
-\begin{remark}
+\section{Global Correspondence mod \texorpdfstring{$n$}{n}}
+
+Let $n\in\mathbb{N}$. In this section we shall show that $\sigma: G_K\to G_{K'}$ induces group isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$. By Proposition \ref{prop:kummer-theory}, we have isomorphisms:
+\[ \mathrm{H}^1(K',\mu_n)\cong K'^\times/n,\qquad \mathrm{H}^1(K,\mu_n)\cong K^\times/n \]
+Our goal is to establish an isomorphism between these cohomology groups.
+
 Let $\overline{K''} = \overline{K'}\otimes_{\overline{k'}}\overline{k}$ via the isomorphism $\varphi: \overline{k'}\to \overline{k}$. If we replace $\sigma: G_K\to G_{K'}$ with the composition
 \[ \begin{tikzcd}
 G_K \ar[r, "\sigma"] & G_{K'} \ar[r, "\phi", "\cong"'] & \operatorname{Gal}(\overline{K''}/K')
@@ -569,9 +568,8 @@ where $\phi$ is induced by the isomorphism $\overline{K''}\to\overline{K'},\ x\o
 G_K \ar[d]\ar[r, "\sigma"] & G_{K'} \ar[ld]\\
 G_{k} &
 \end{tikzcd} \]
-\end{remark}
 
-\paragraph{} Let $n\in\mathbb{N}$. The operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\xi = g\xi$ for all $\xi\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
+The operation of $G_K$ and $G_{K'}$ on $\mu_n$ factors through $G_k$, thus we have $\sigma(g)\zeta = g\zeta$ for all $\zeta\in\mu_n$ and $g\in G_K$. Therefore, for all intermediate fields $L$ of $\overline{K}/K$, $\sigma$ induces an isomorphism:
 \[ \varphi_n:L'^\times/n \cong\mathrm{H}^1(L', \mu_n) \to \mathrm{H}^1(L,\mu_n) \cong L^\times/n \]
 
 \begin{remark}\label{remark-localphi-extension}
@@ -623,11 +621,11 @@ k(P)^\times/n \ar[r, "\cong"'] & \mathrm{H}^1(k(P),\mu_n)  \ar[r, "\mathrm{inf}"
 \end{enumerate}
 \end{proof}
 
-\chapter{Theorem}
+\chapter{Proof of Pop's Theorem}
 
-Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us construct a group isomorphism $\varphi: K'^\times\to K^\times$ from the modulo $n$ isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$ we constructed in the last chapter.
+Before we start proving Pop's Theorem \ref{thm:main-result}, we need some tools that will help us construct a group isomorphism $\varphi: K'^\times\to K^\times$ from the modulo $n$ isomorphisms $\varphi_n: K'^\times/n\to K^\times/n$ which we constructed in the previous chapter.
 
-\section{Free-By-Finite Groups}
+\section{Free-by-Finite Groups}
 
 \begin{definition}\label{5.1}
 Let $A$ be an abelian group. We have the following short exact sequence:
@@ -792,7 +790,7 @@ Therefore, $C_1$ is a free abelian group of finite rank. If $C_1 = 1$, then we s
 \item There exists a point $P_2\in X_0 - (S\cup\{P_1\})$ which lies above the prime of $k(x)$ corresponding to the polynomial $x-a\in k[x]$.
 \item $a$ is not a root of unity.
 \end{enumerate}
-Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$ and $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in X_0-S$ such that the following map is injective:
+Clearly, (i) and (ii) hold for almost all $a\in k^\times$. We set $C_2 = \ker(r_{P_2}|_{C_1})\subset C_1$. $C_2$ is free abelian of finite rank as well. By requirement, $r_{P_2}(x)=a$ and $a\in k^\times$ is not of finite order, thus $x\not\in C_2$ and $\operatorname{rank}(C_2) < \operatorname{rank}(C_1)$. By repeating this process until $C_r=1$, we get points $P_2,\ldots,P_r\in X_0-S$ such that the following map is injective:
 \[ C_1\to\prod_{i=2}^{r} k(P_i)^\times,\ x\mapsto(r_{P_i}(x))_i \]
 Finally for $T=\{P_1,\ldots,P_r\}\subset X_0-S$ the map $r_{S,T}$ is injective. For the second assertion note the following isomorphism:
 \[ \operatorname{coker}(r_{S,T}) \cong\operatorname{coker}\Big(K^S/k^\times \to \Big(\prod_{P\in T}k(P)^\times \Big)\Big/k^\times \Big) \]
@@ -803,7 +801,7 @@ Since $K^S/k^\times$ is generated by the uniformizers of the corresponding valua
 For each admissible $S\subset X_0$ and $T_1\subset X_0 -  S$ with injective $r_{S,T_1}$ we also have the injectivity of $r_{S,T_2}$ for every $T_2 \supset T_1$. Therefore,  we can find a finite subset $T\subset X_0 -  S$ such that both $r_{S,T}$ and $r_{S',T'}$ are injective. Such a $T$ will be called $S$-\textit{admissible} and $(S,T)$ is called \textit{admissible pair}.
 \end{definition}
 
-\section{Proof of Pop's Theorem}
+\section{Proof}
 
 \begin{theorem}[\textit{Pop}]\label{1.1}
 Let $K,K'$ be two finitely generated fields of characteristic $0$ and dimension $2$. Suppose there is an isomorphism $\sigma:G_K\to G_{K'}$ between their absolute Galois groups, then there exists a unique field isomorphism $\varphi:\overline{K'}\to\overline{K}$ such that:
